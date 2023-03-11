@@ -41,6 +41,19 @@ class Temperature:
     """ Temperature conversion requires a specialized converter. """
 
     def convert(self, value, source, dest):
+        """ Convert between temperatures using kelvin as a baseline.
+
+        Args:
+            value (Decimal): the decimal value to convert.
+            source (str): the source unit name.
+            dest (str): the destination unit name.
+
+        Returns:
+            Decimal: the result of the conversion.
+
+        Raises:
+            KeyError: if the source or dest unit is invalid.
+        """
         kelvin = self.to_kelvin(value, source)
         return self.from_kelvin(kelvin, dest)
 
@@ -54,7 +67,7 @@ class Temperature:
         elif source_unit == 'kelvin':
             return value
         else:
-            raise ValueError(f'Unsupported unit: {source_unit}')
+            raise KeyError(source_unit)
 
     def from_kelvin(self, value, dest_unit):
         if dest_unit == 'celcius':
@@ -66,7 +79,7 @@ class Temperature:
         elif dest_unit == 'kelvin':
             return value
         else:
-            raise ValueError(f'Unsupported unit: {dest_unit}')
+            raise KeyError(dest_unit)
 
 
 def get_converter(name):

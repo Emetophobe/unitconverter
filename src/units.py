@@ -112,10 +112,39 @@ temperature_names = {
     'rankine': ['r']
 }
 
+# TODO: change baseline from kilograms to grams?
+# TODO: verify these numbers
+mass_values = {
+    'carats': 0.0002,
+    'milligrams': 1e-6,
+    'grams': 1e-3,
+    'kilograms': 1.0,
+    'ounces': 0.028349523125,
+    'pounds': 0.45359237,
+    'stones': 6.35029318,
+    'tons': 1016.0469088,
+    'tons (US)': 907.18474,
+    'tonnes': 1000.0,
+}
+
+mass_names = {
+    'carats': ['carat'],
+    'milligrams': ['milligram', 'mg'],
+    'grams': ['gram', 'g'],
+    'kilograms': ['kilogram', 'k'],
+    'ounces': ['ounce', 'oz'],
+    'pounds': ['pound', 'lbs'],
+    'stones': ['stone'],
+    'tons': ['ton'],
+    'tons (US)': ['ton (US)'],
+    'tonnes': ['tonn'],
+}
+
 all_unit_values = {
     'area': area_values,
     'bytes': bytes_values,
     'length': length_values,
+    'mass': mass_values,
     'temperature': None,  # Temperature is a special case
 }
 
@@ -123,6 +152,7 @@ all_unit_names = {
     'area': area_names,
     'bytes': bytes_names,
     'length': length_names,
+    'mass': mass_names,
     'temperature': temperature_names,
 }
 
@@ -141,4 +171,4 @@ def find_unit(name):
             if name == unitname or name in aliases:
                 return (category, unitname)
 
-    raise ValueError(f'Unsupported unit name: {name}')
+    raise ValueError(f'Unsupported unit: {name}')

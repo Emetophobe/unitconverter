@@ -46,18 +46,18 @@ The following unit categories are currently supported:
     $ ./converter.py 600 seconds minutes
     600 seconds = 10 minutes
 
-Unit names can be a shortform or symbol:
+Unit names can be a symbol or shortform:
 
     $ ./converter.py 10 centimeters meters
     10 centimeters = 0.1 meters
 
-    $ ./converter.py 10 centimeter m
-    10 centimeter = 0.1 m
+    $ ./converter.py 10 centimeters m
+    10 centimeters = 0.1 m
 
     $ ./converter.py 10 cm m
     10 cm = 0.1 m
 
-Set decimal precision with `--precision`/`-p`:
+Set rounding precision with `--precision`/`-p`:
 
     $ ./converter.py 12 meters inches -p 5
     12 meters = 472.44094 inches
@@ -67,18 +67,23 @@ Display thousands separators with `--comma`/`-c`:
     $ ./converter.py 5 cm nm -c
     5 cm = 50,000,000 nm
 
-Multi word unit names are also supported, but for now they need to be wrapped in quotes; i.e "cubic meters":
+An error is displayed when attempting to convert between incompatible units:
+
+    $ ./converter.py 58 inches grams
+    Error: unit mismatch: inches=length, grams=mass
+
+Multi-word unit names are also supported, but for now they need to be wrapped in quotes; i.e "cubic meters":
 
     $ ./converter.py 1 "cubic meters" liters
     1 cubic meters = 1000 liters
 
     $ ./converter.py 1 "cu m" liters
-    1 cu m = 1 liters
+    1 cu m = 1000 liters
 
-Many multi-word units also have a shortform, i.e "cubic meters" can also be represented as "m3" or "m^3":
+If you prefer to avoid using multi-word names you can use the symbol or shortform instead. For example "cubic meters" can be shortened to "m3" or "m^3":
 
-    $ ./converter.py 1 m3 liter
-    1 m3 = 1000 liter
+    $ ./converter.py 1 m3 liters
+    1 m3 = 1000 liters
 
-    $ ./converter.py 1 m^3 liter
-    1 m^3 = 1000 liter
+    $ ./converter.py 1 m^3 liters
+    1 m^3 = 1000 liters

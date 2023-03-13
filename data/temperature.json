@@ -1,4 +1,10 @@
 {
+  "kelvin": {
+    "scale": "",
+    "aliases": [
+      "k"
+    ]
+  },
   "celcius": {
     "scale": "",
     "aliases": [
@@ -9,12 +15,6 @@
     "scale": "",
     "aliases": [
       "f"
-    ]
-  },
-  "kelvin": {
-    "scale": "",
-    "aliases": [
-      "k"
     ]
   },
   "rankine": {

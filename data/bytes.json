@@ -35,14 +35,14 @@
     ]
   },
   "megabytes": {
-    "scale": "1000^2",
+    "scale": "1e+6",
     "aliases": [
       "megabyte",
       "MB"
     ]
   },
   "mebibytes": {
-    "scale": "1024^2",
+    "scale": "1.049e+6",
     "aliases": [
       "mebibyte",
       "MiB"
@@ -56,14 +56,14 @@
     ]
   },
   "gigabytes": {
-    "scale": "1000^3",
+    "scale": "1e+9",
     "aliases": [
       "gigabyte",
       "GB"
     ]
   },
   "gibibytes": {
-    "scale": "1024^3",
+    "scale": "1.074e+9",
     "aliases": [
       "gibibyte",
       "GiB"
@@ -77,14 +77,14 @@
     ]
   },
   "terabytes": {
-    "scale": "1000^4",
+    "scale": "1e+12",
     "aliases": [
       "terabyte",
       "TB"
     ]
   },
   "tebibytes": {
-    "scale": "1024^4",
+    "scale": "1.1e+12",
     "aliases": [
       "tebibyte",
       "TiB"
@@ -98,14 +98,14 @@
     ]
   },
   "petabytes": {
-    "scale": "1000^5",
+    "scale": "1e+15",
     "aliases": [
       "petabyte",
       "PB"
     ]
   },
   "pebibytes": {
-    "scale": "1024^5",
+    "scale": "1.126e+15",
     "aliases": [
       "pebibyte",
       "PiB"
@@ -119,14 +119,14 @@
     ]
   },
   "exabytes": {
-    "scale": "1000^6",
+    "scale": "1e+18",
     "aliases": [
       "exabyte",
       "EB"
     ]
   },
   "exbibytes": {
-    "scale": "1024^6",
+    "scale": "1.153e+18",
     "aliases": [
       "exbibyte",
       "EiB"
@@ -140,14 +140,14 @@
     ]
   },
   "zettabytes": {
-    "scale": "1000^7",
+    "scale": "1e+21",
     "aliases": [
       "zettabyte",
       "ZB"
     ]
   },
   "zebibytes": {
-    "scale": "1024^7",
+    "scale": "1.181e+21",
     "aliases": [
       "zebibyte",
       "ZiB"
@@ -161,14 +161,14 @@
     ]
   },
   "yottabytes": {
-    "scale": "1000^8",
+    "scale": "1e+24",
     "aliases": [
       "yottabyte",
       "YB"
     ]
   },
   "yobibytes": {
-    "scale": "1024^8",
+    "scale": "1.209e+24",
     "aliases": [
       "yobibyte",
       "YiB"
@@ -182,7 +182,7 @@
     ]
   },
   "ronnabytes": {
-    "scale": "1000^9",
+    "scale": "1e+27",
     "aliases": [
       "ronnabyte",
       "RB"
@@ -196,7 +196,7 @@
     ]
   },
   "quettabytes": {
-    "scale": "1000^10",
+    "scale": "1e+30",
     "aliases": [
       "quettabyte",
       "QB"

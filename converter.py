@@ -50,28 +50,13 @@ class Converter:
         """
         value = Decimal(value)
 
-        # Temperature is a special case
         if source.category == 'temperature':
-            return self.convert_temperature(value, source, dest)
+            # Special case: temperature uses a custom converter
+            kelvin = self.to_kelvin(value, source)
+            return self.from_kelvin(kelvin, dest)
         else:
+            # Perform the conversion normally
             return value * (Decimal(source.scale) / Decimal(dest.scale))
-
-    def convert_temperature(self, value: Decimal, source: Unit, dest: Unit) -> Decimal:
-        """ Convert temperatures using kelvin as a baseline.
-
-        Args:
-            value (Decimal): the decimal value to convert.
-            source (Unit): the source unit.
-            dest (Unit): the destination unit.
-
-        Returns:
-            Decimal: the result of the conversion.
-
-        Raises:
-            ValueError: if the source or dest unit is invalid.
-        """
-        kelvin = self.to_kelvin(value, source)
-        return self.from_kelvin(kelvin, dest)
 
     def to_kelvin(self, value: Decimal, source: Unit) -> Decimal:
         """ Convert temperature unit to kelvin. """

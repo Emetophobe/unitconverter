@@ -6,20 +6,6 @@
       "g"
     ]
   },
-  "milligrams": {
-    "scale": "1e-3",
-    "aliases": [
-      "milligram",
-      "mg"
-    ]
-  },
-  "kilograms": {
-    "scale": "1e3",
-    "aliases": [
-      "kilogram",
-      "kg"
-    ]
-  },
   "yoctograms": {
     "scale": "1e-24",
     "aliases": [
@@ -69,6 +55,13 @@
       "\u03bcg"
     ]
   },
+  "milligrams": {
+    "scale": "1e-3",
+    "aliases": [
+      "milligram",
+      "mg"
+    ]
+  },
   "centigrams": {
     "scale": "1e-2",
     "aliases": [
@@ -95,6 +88,13 @@
     "aliases": [
       "hectogram",
       "hg"
+    ]
+  },
+  "kilograms": {
+    "scale": "1e3",
+    "aliases": [
+      "kilogram",
+      "kg"
     ]
   },
   "megagrams": {
@@ -194,7 +194,7 @@
     ]
   },
   "tonnes": {
-    "scale": "1000000",
+    "scale": "1e6",
     "aliases": [
       "tonne",
       "metric ton",

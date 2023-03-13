@@ -25,7 +25,7 @@ class Unit:
         return f'{self.scale} {self.name}, {self.category}, {self.aliases}'
 
     def __repr__(self) -> str:
-        return f'Unit({self.scale} {self.name}, {self.category}, {self.aliases})'
+        return f'Unit({self.name}, {self.category}, {self.scale}, {self.aliases})'
 
 
 class Converter:

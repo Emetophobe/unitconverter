@@ -27,6 +27,13 @@
       "KiB"
     ]
   },
+  "kilobits": {
+    "scale": "125",
+    "aliases": [
+      "kilobit",
+      "kb"
+    ]
+  },
   "megabytes": {
     "scale": "1000^2",
     "aliases": [
@@ -39,6 +46,13 @@
     "aliases": [
       "mebibyte",
       "MiB"
+    ]
+  },
+  "megabits": {
+    "scale": "125000",
+    "aliases": [
+      "megabit",
+      "mb"
     ]
   },
   "gigabytes": {
@@ -55,6 +69,13 @@
       "GiB"
     ]
   },
+  "gigabits": {
+    "scale": "1.25e+8",
+    "aliases": [
+      "gigabit",
+      "gb"
+    ]
+  },
   "terabytes": {
     "scale": "1000^4",
     "aliases": [
@@ -67,6 +88,13 @@
     "aliases": [
       "tebibyte",
       "TiB"
+    ]
+  },
+  "terabits": {
+    "scale": "1.25e+11",
+    "aliases": [
+      "terabit",
+      "tb"
     ]
   },
   "petabytes": {
@@ -83,6 +111,13 @@
       "PiB"
     ]
   },
+  "petabits": {
+    "scale": "1.25e+14",
+    "aliases": [
+      "petabit",
+      "pb"
+    ]
+  },
   "exabytes": {
     "scale": "1000^6",
     "aliases": [
@@ -95,6 +130,13 @@
     "aliases": [
       "exbibyte",
       "EiB"
+    ]
+  },
+  "exabits": {
+    "scale": "1.25e+17",
+    "aliases": [
+      "exabit",
+      "eb"
     ]
   },
   "zettabytes": {
@@ -111,6 +153,13 @@
       "ZiB"
     ]
   },
+  "zettabits": {
+    "scale": "1.25e+20",
+    "aliases": [
+      "zettabit",
+      "zb"
+    ]
+  },
   "yottabytes": {
     "scale": "1000^8",
     "aliases": [
@@ -125,6 +174,13 @@
       "YiB"
     ]
   },
+  "yottabits": {
+    "scale": "1.25e+23",
+    "aliases": [
+      "yottabit",
+      "yb"
+    ]
+  },
   "ronnabytes": {
     "scale": "1000^9",
     "aliases": [
@@ -132,11 +188,25 @@
       "RB"
     ]
   },
+  "ronnabits": {
+    "scale": "1.25e+26",
+    "aliases": [
+      "ronnabit",
+      "rb"
+    ]
+  },
   "quettabytes": {
     "scale": "1000^10",
     "aliases": [
       "quettabyte",
       "QB"
+    ]
+  },
+  "quettabits": {
+    "scale": "1.25e+29",
+    "aliases": [
+      "quettabit",
+      "qb"
     ]
   }
 }

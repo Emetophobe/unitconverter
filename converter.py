@@ -179,7 +179,7 @@ def print_error(error_msg: str, status: int = 1) -> None:
 
 
 def main() -> None:
-    parser = argparse.ArgumentParser(description='A basic unit converter.')
+    parser = argparse.ArgumentParser(description='A simple unit converter.')
 
     parser.add_argument(
         'value',
@@ -241,9 +241,9 @@ def main() -> None:
         print_error(e)
 
     if source.category != dest.category:
-        raise ValueError(f'Error: unit mismatch:'
-                         f' {source.name}={source.category},'
-                         f' {dest.name}={dest.category}')
+        print_error(f'Error: unit mismatch:'
+                    f' {source.name}={source.category},'
+                    f' {dest.name}={dest.category}')
 
     # Perform the conversion
     try:

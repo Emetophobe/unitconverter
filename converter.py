@@ -75,12 +75,13 @@ class Converter:
 
     def to_kelvin(self, value: Decimal, source: Unit) -> Decimal:
         """ Convert temperature unit to kelvin. """
-        if source.name == 'celcius':
-            return value + Decimal(273.15)
+        five_ninths = Decimal('5') / Decimal('9')
+        if source.name == 'celsius':
+            return value + Decimal('273.15')
         elif source.name == 'fahrenheit':
-            return (value + Decimal(459.67)) * Decimal(5 / 9)
+            return (value + Decimal('459.67')) * five_ninths
         elif source.name == 'rankine':
-            return value * Decimal(5 / 9)
+            return value * five_ninths
         elif source.name == 'kelvin':
             return value
         else:
@@ -88,12 +89,13 @@ class Converter:
 
     def from_kelvin(self, value: Decimal, dest: Unit) -> Decimal:
         """ Convert temperature unit from kelvin. """
-        if dest.name == 'celcius':
-            return value - Decimal(273.15)
+        nine_fifths = Decimal('9') / Decimal('5')
+        if dest.name == 'celsius':
+            return value - Decimal('273.15')
         elif dest.name == 'fahrenheit':
-            return value * Decimal(9 / 5) - Decimal(459.67)
+            return value * nine_fifths - Decimal('459.67')
         elif dest.name == 'rankine':
-            return value * Decimal(9 / 5)
+            return value * nine_fifths
         elif dest.name == 'kelvin':
             return value
         else:

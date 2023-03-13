@@ -1,0 +1,205 @@
+{
+  "grams": {
+    "scale": "1",
+    "aliases": [
+      "gram",
+      "g"
+    ]
+  },
+  "milligrams": {
+    "scale": "1e-3",
+    "aliases": [
+      "milligram",
+      "mg"
+    ]
+  },
+  "kilograms": {
+    "scale": "1e3",
+    "aliases": [
+      "kilogram",
+      "kg"
+    ]
+  },
+  "yoctograms": {
+    "scale": "1e-24",
+    "aliases": [
+      "yoctogram",
+      "yg"
+    ]
+  },
+  "zeptograms": {
+    "scale": "1e-21",
+    "aliases": [
+      "zeptogram",
+      "zg"
+    ]
+  },
+  "attograms": {
+    "scale": "1e-18",
+    "aliases": [
+      "attogram",
+      "ag"
+    ]
+  },
+  "femtograms": {
+    "scale": "1e-15",
+    "aliases": [
+      "femtogram",
+      "fg"
+    ]
+  },
+  "picograms": {
+    "scale": "1e-12",
+    "aliases": [
+      "picogram",
+      "pg"
+    ]
+  },
+  "nanograms": {
+    "scale": "1e-9",
+    "aliases": [
+      "nanogram",
+      "ng"
+    ]
+  },
+  "micrograms": {
+    "scale": "1e-6",
+    "aliases": [
+      "microgram",
+      "\u03bcg"
+    ]
+  },
+  "centigrams": {
+    "scale": "1e-2",
+    "aliases": [
+      "centigram",
+      "cg"
+    ]
+  },
+  "decigrams": {
+    "scale": "1e-1",
+    "aliases": [
+      "decigram",
+      "dg"
+    ]
+  },
+  "decagrams": {
+    "scale": "1e1",
+    "aliases": [
+      "decagram",
+      "dag"
+    ]
+  },
+  "hectograms": {
+    "scale": "1e2",
+    "aliases": [
+      "hectogram",
+      "hg"
+    ]
+  },
+  "megagrams": {
+    "scale": "1e6",
+    "aliases": [
+      "megagram",
+      "Mg"
+    ]
+  },
+  "gigagrams": {
+    "scale": "1e9",
+    "aliases": [
+      "gigagram",
+      "Gg"
+    ]
+  },
+  "teragrams": {
+    "scale": "1e12",
+    "aliases": [
+      "teragram",
+      "Tg"
+    ]
+  },
+  "petagrams": {
+    "scale": "1e15",
+    "aliases": [
+      "petagram",
+      "Pg"
+    ]
+  },
+  "exagrams": {
+    "scale": "1e18",
+    "aliases": [
+      "exagram",
+      "Eg"
+    ]
+  },
+  "zettagrams": {
+    "scale": "1e21",
+    "aliases": [
+      "zettagram",
+      "Zg"
+    ]
+  },
+  "yottalgrams": {
+    "scale": "1e24",
+    "aliases": [
+      "yottalgram",
+      "Yg"
+    ]
+  },
+  "carats": {
+    "scale": "0.2",
+    "aliases": [
+      "carat",
+      "car",
+      "ct"
+    ]
+  },
+  "ounces": {
+    "scale": "28.34952",
+    "aliases": [
+      "ounce",
+      "oz"
+    ]
+  },
+  "pounds": {
+    "scale": "453.592",
+    "aliases": [
+      "pound",
+      "lbs"
+    ]
+  },
+  "stones": {
+    "scale": "6350.29",
+    "aliases": [
+      "stone",
+      "st"
+    ]
+  },
+  "tons (UK)": {
+    "scale": "1016046.9",
+    "aliases": [
+      "ton (UK)",
+      "long ton",
+      "long tons",
+      "LT"
+    ]
+  },
+  "tons (US)": {
+    "scale": "907184.74",
+    "aliases": [
+      "ton (US)",
+      "short ton",
+      "short tons",
+      "ST"
+    ]
+  },
+  "tonnes": {
+    "scale": "1000000",
+    "aliases": [
+      "tonne",
+      "metric ton",
+      "metric tons",
+      "t"
+    ]
+  }
+}

@@ -1,0 +1,401 @@
+{
+  "cubic meters": {
+    "scale": "1",
+    "aliases": [
+      "cubic meter",
+      "cubic metre",
+      "cubic metres",
+      "cu m",
+      "m^3",
+      "m3"
+    ]
+  },
+  "cubic yoctometers": {
+    "scale": "1e-24",
+    "aliases": [
+      "cubic yoctometer",
+      "cubic yoctometre",
+      "cubic yoctometres",
+      "cu ym",
+      "ym^3",
+      "ym3"
+    ]
+  },
+  "cubic zeptometers": {
+    "scale": "1e-21",
+    "aliases": [
+      "cubic zeptometer",
+      "cubic zeptometre",
+      "cubic zeptometres",
+      "cu zm",
+      "zm^3",
+      "zm3"
+    ]
+  },
+  "cubic attometers": {
+    "scale": "1e-18",
+    "aliases": [
+      "cubic attometer",
+      "cubic attometre",
+      "cubic attometres",
+      "cu am",
+      "am^3",
+      "am3"
+    ]
+  },
+  "cubic femtometers": {
+    "scale": "1e-15",
+    "aliases": [
+      "cubic femtometer",
+      "cubic femtometre",
+      "cubic femtometres",
+      "cu fm",
+      "fm^3",
+      "fm3"
+    ]
+  },
+  "cubic picometers": {
+    "scale": "1e-12",
+    "aliases": [
+      "cubic picometer",
+      "cubic picometre",
+      "cubic picometres",
+      "cu pm",
+      "pm^3",
+      "pm3"
+    ]
+  },
+  "cubic nanometers": {
+    "scale": "1e-9",
+    "aliases": [
+      "cubic nanometer",
+      "cubic nanometre",
+      "cubic nanometres",
+      "cu nm",
+      "nm^3",
+      "nm3"
+    ]
+  },
+  "cubic micrometers": {
+    "scale": "1e-6",
+    "aliases": [
+      "cubic micrometer",
+      "cubic micrometre",
+      "cubic micrometres",
+      "cu \u03bcm",
+      "\u03bcm^3",
+      "\u03bcm3"
+    ]
+  },
+  "cubic millimeters": {
+    "scale": "1e-3",
+    "aliases": [
+      "cubic millimeter",
+      "cubic millimetre",
+      "cubic millimetres",
+      "cu mm",
+      "mm^3",
+      "mm3"
+    ]
+  },
+  "cubic centimeters": {
+    "scale": "1e-2",
+    "aliases": [
+      "cubic centimeter",
+      "cubic centimetre",
+      "cubic centimetres",
+      "cu cm",
+      "cm^3",
+      "cm3"
+    ]
+  },
+  "cubic decimeters": {
+    "scale": "1e-1",
+    "aliases": [
+      "cubic decimeter",
+      "cubic decimetre",
+      "cubic decimetres",
+      "cu dm",
+      "dm^3",
+      "dm3"
+    ]
+  },
+  "cubic decameters": {
+    "scale": "1e1",
+    "aliases": [
+      "cubic decameter",
+      "cubic decametre",
+      "cubic decametres",
+      "cu dam",
+      "dam^3",
+      "dam3"
+    ]
+  },
+  "cubic hectometers": {
+    "scale": "1e2",
+    "aliases": [
+      "cubic hectometer",
+      "cubic hectometre",
+      "cubic hectometres",
+      "cu hm",
+      "hm^3",
+      "hm3"
+    ]
+  },
+  "cubic kilometers": {
+    "scale": "1e3",
+    "aliases": [
+      "cubic kilometer",
+      "cubic kilometre",
+      "cubic kilometres",
+      "cu km",
+      "km^3",
+      "km3"
+    ]
+  },
+  "cubic megameters": {
+    "scale": "1e6",
+    "aliases": [
+      "cubic megameter",
+      "cubic megametre",
+      "cubic megametres",
+      "cu Mm",
+      "Mm^3",
+      "Mm3"
+    ]
+  },
+  "cubic gigameters": {
+    "scale": "1e9",
+    "aliases": [
+      "cubic gigameter",
+      "cubic gigametre",
+      "cubic gigametres",
+      "cu Gm",
+      "Gm^3",
+      "Gm3"
+    ]
+  },
+  "cubic terameters": {
+    "scale": "1e12",
+    "aliases": [
+      "cubic terameter",
+      "cubic terametre",
+      "cubic terametres",
+      "cu Tm",
+      "Tm^3",
+      "Tm3"
+    ]
+  },
+  "cubic petameters": {
+    "scale": "1e15",
+    "aliases": [
+      "cubic petameter",
+      "cubic petametre",
+      "cubic petametres",
+      "cu Pm",
+      "Pm^3",
+      "Pm3"
+    ]
+  },
+  "cubic exameters": {
+    "scale": "1e18",
+    "aliases": [
+      "cubic exameter",
+      "cubic exametre",
+      "cubic exametres",
+      "cu Em",
+      "Em^3",
+      "Em3"
+    ]
+  },
+  "cubic zettameters": {
+    "scale": "1e21",
+    "aliases": [
+      "cubic zettameter",
+      "cubic zettametre",
+      "cubic zettametres",
+      "cu Zm",
+      "Zm^3",
+      "Zm3"
+    ]
+  },
+  "cubic yottalmeters": {
+    "scale": "1e24",
+    "aliases": [
+      "cubic yottalmeter",
+      "cubic yottalmetre",
+      "cubic yottalmetres",
+      "cu Ym",
+      "Ym^3",
+      "Ym3"
+    ]
+  },
+  "liters": {
+    "scale": "1000",
+    "aliases": [
+      "liter",
+      "litre",
+      "litres",
+      "l"
+    ]
+  },
+  "bushels": {
+    "scale": "27.496156037386",
+    "aliases": [
+      "bushel",
+      "bushel (UK)",
+      "bushels (UK)"
+    ]
+  },
+  "bushels (US)": {
+    "scale": "28.37786",
+    "aliases": [
+      "bushel (US)"
+    ]
+  },
+  "cubic feet": {
+    "scale": "35.31467",
+    "aliases": [
+      "cubic foot",
+      "cu ft",
+      "ft^3"
+    ]
+  },
+  "cubic inches": {
+    "scale": "61023.744095",
+    "aliases": [
+      "cubic inch",
+      "cu in",
+      "in^3"
+    ]
+  },
+  "cubic yards": {
+    "scale": "1.30795",
+    "aliases": [
+      "cubic yard",
+      "cu y"
+    ]
+  },
+  "cups": {
+    "scale": "3519.5079728",
+    "aliases": [
+      "cup",
+      "cup (UK)",
+      "cups (UK)"
+    ]
+  },
+  "cups (US)": {
+    "scale": "4226.7528377",
+    "aliases": [
+      "cup (US)"
+    ]
+  },
+  "fluid ounces": {
+    "scale": "35195.07973",
+    "aliases": [
+      "fluid ounce",
+      "fluid ounce (UK)",
+      "fl oz",
+      "fl oz (UK)"
+    ]
+  },
+  "fluid ounces (US)": {
+    "scale": "33814.0227",
+    "aliases": [
+      "fluid ounce (US)",
+      "fl oz (US)"
+    ]
+  },
+  "gallons": {
+    "scale": "219.9692482991",
+    "aliases": [
+      "gallon",
+      "gallon (UK)",
+      "gal",
+      "gal (UK)"
+    ]
+  },
+  "gallons (US, dry)": {
+    "scale": "227.0207446",
+    "aliases": [
+      "gallon (US, dry)",
+      "gal (US, dry)"
+    ]
+  },
+  "gallons (US, liquid)": {
+    "scale": "264.172052",
+    "aliases": [
+      "gallon (US, liquid)",
+      "gal (US, liquid)"
+    ]
+  },
+  "pints": {
+    "scale": "1759.7539863927",
+    "aliases": [
+      "pint",
+      "pint (UK)"
+    ]
+  },
+  "pints (US, dry)": {
+    "scale": "1816.1659565",
+    "aliases": [
+      "pint (US, dry)"
+    ]
+  },
+  "pints (US, liquid)": {
+    "scale": "2113.3762983",
+    "aliases": [
+      "pint (US, liquid)"
+    ]
+  },
+  "quarts": {
+    "scale": "879.8769931964",
+    "aliases": [
+      "quart",
+      "quart (UK)"
+    ]
+  },
+  "quarts (US, dry)": {
+    "scale": "908.082937",
+    "aliases": [
+      "quart (US, dry)"
+    ]
+  },
+  "quarts (US, liquid)": {
+    "scale": "1056.68821",
+    "aliases": [
+      "quart (US, liquid)"
+    ]
+  },
+  "tablespoons": {
+    "scale": "1.77582E-5",
+    "aliases": [
+      "tablespoon",
+      "tablespoon (UK)",
+      "tablespoons (UK)",
+      "tbps"
+    ]
+  },
+  "tablespoons (US)": {
+    "scale": "1.47868E-5",
+    "aliases": [
+      "tablespoon (US)",
+      "tbps (US)"
+    ]
+  },
+  "teaspoons": {
+    "scale": "5.919388E-6",
+    "aliases": [
+      "teaspoon",
+      "teaspoon (UK)",
+      "tsp"
+    ]
+  },
+  "teaspoons (US)": {
+    "scale": "4.928922E-6",
+    "aliases": [
+      "teaspoon (US)",
+      "tsp (US)"
+    ]
+  }
+}

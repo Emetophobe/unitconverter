@@ -1,0 +1,219 @@
+{
+  "meters": {
+    "scale": "1",
+    "aliases": [
+      "meter",
+      "metre",
+      "metres",
+      "m"
+    ]
+  },
+  "centimeters": {
+    "scale": "1e-2",
+    "aliases": [
+      "centimeter",
+      "centimetre",
+      "centimetres",
+      "cm"
+    ]
+  },
+  "decimeters": {
+    "scale": "1e-1",
+    "aliases": [
+      "decimeter",
+      "decimetre",
+      "decimetres",
+      "dm"
+    ]
+  },
+  "kilometers": {
+    "scale": "1e3",
+    "aliases": [
+      "kilometer",
+      "kilometre",
+      "kilometres",
+      "km"
+    ]
+  },
+  "micrometers": {
+    "scale": "1e-6",
+    "aliases": [
+      "micrometer",
+      "micrometre",
+      "micrometres",
+      "\u03bcm"
+    ]
+  },
+  "millimeters": {
+    "scale": "1e-3",
+    "aliases": [
+      "millimeter",
+      "millimetre",
+      "millimetres",
+      "mm"
+    ]
+  },
+  "nanometers": {
+    "scale": "1e-9",
+    "aliases": [
+      "nanometer",
+      "nanometre",
+      "nanometres",
+      "nm"
+    ]
+  },
+  "yoctometers": {
+    "scale": "1e-24",
+    "aliases": [
+      "yoctometer",
+      "yoctometre",
+      "yoctometres",
+      "ym"
+    ]
+  },
+  "zeptometers": {
+    "scale": "1e-21",
+    "aliases": [
+      "zeptometer",
+      "zeptometre",
+      "zeptometres",
+      "zm"
+    ]
+  },
+  "attometers": {
+    "scale": "1e-18",
+    "aliases": [
+      "attometer",
+      "attometre",
+      "attometres",
+      "am"
+    ]
+  },
+  "femtometers": {
+    "scale": "1e-15",
+    "aliases": [
+      "femtometer",
+      "femtometre",
+      "femtometres",
+      "fm"
+    ]
+  },
+  "picometers": {
+    "scale": "1e-12",
+    "aliases": [
+      "picometer",
+      "picometre",
+      "picometres",
+      "pm"
+    ]
+  },
+  "decameters": {
+    "scale": "1e1",
+    "aliases": [
+      "decameter",
+      "decametre",
+      "decametres",
+      "dam"
+    ]
+  },
+  "hectometers": {
+    "scale": "1e2",
+    "aliases": [
+      "hectometer",
+      "hectometre",
+      "hectometres",
+      "hm"
+    ]
+  },
+  "megameters": {
+    "scale": "1e6",
+    "aliases": [
+      "megameter",
+      "megametre",
+      "megametres",
+      "Mm"
+    ]
+  },
+  "gigameters": {
+    "scale": "1e9",
+    "aliases": [
+      "gigameter",
+      "gigametre",
+      "gigametres",
+      "Gm"
+    ]
+  },
+  "terameters": {
+    "scale": "1e12",
+    "aliases": [
+      "terameter",
+      "terametre",
+      "terametres",
+      "Tm"
+    ]
+  },
+  "petameters": {
+    "scale": "1e15",
+    "aliases": [
+      "petameter",
+      "petametre",
+      "petametres",
+      "Pm"
+    ]
+  },
+  "exameters": {
+    "scale": "1e18",
+    "aliases": [
+      "exameter",
+      "exametre",
+      "exametres",
+      "Em"
+    ]
+  },
+  "zettameters": {
+    "scale": "1e21",
+    "aliases": [
+      "zettameter",
+      "zettametre",
+      "zettametres",
+      "Zm"
+    ]
+  },
+  "yottalmeters": {
+    "scale": "1e24",
+    "aliases": [
+      "yottalmeter",
+      "yottalmetre",
+      "yottalmetres",
+      "Ym"
+    ]
+  },
+  "feet": {
+    "scale": "0.3048",
+    "aliases": [
+      "foot",
+      "ft"
+    ]
+  },
+  "inches": {
+    "scale": "0.0254",
+    "aliases": [
+      "inch",
+      "in"
+    ]
+  },
+  "miles": {
+    "scale": "1609.344",
+    "aliases": [
+      "mile",
+      "mi"
+    ]
+  },
+  "yards": {
+    "scale": "0.9144",
+    "aliases": [
+      "yard",
+      "y"
+    ]
+  }
+}

@@ -1,0 +1,142 @@
+{
+  "bytes": {
+    "scale": "1",
+    "aliases": [
+      "byte",
+      "B"
+    ]
+  },
+  "bits": {
+    "scale": "0.125",
+    "aliases": [
+      "bit",
+      "b"
+    ]
+  },
+  "kilobytes": {
+    "scale": "1000",
+    "aliases": [
+      "kilobyte",
+      "kB"
+    ]
+  },
+  "kibibytes": {
+    "scale": "1024",
+    "aliases": [
+      "kibibyte",
+      "KiB"
+    ]
+  },
+  "megabytes": {
+    "scale": "1000^2",
+    "aliases": [
+      "megabyte",
+      "MB"
+    ]
+  },
+  "mebibytes": {
+    "scale": "1024^2",
+    "aliases": [
+      "mebibyte",
+      "MiB"
+    ]
+  },
+  "gigabytes": {
+    "scale": "1000^3",
+    "aliases": [
+      "gigabyte",
+      "GB"
+    ]
+  },
+  "gibibytes": {
+    "scale": "1024^3",
+    "aliases": [
+      "gibibyte",
+      "GiB"
+    ]
+  },
+  "terabytes": {
+    "scale": "1000^4",
+    "aliases": [
+      "terabyte",
+      "TB"
+    ]
+  },
+  "tebibytes": {
+    "scale": "1024^4",
+    "aliases": [
+      "tebibyte",
+      "TiB"
+    ]
+  },
+  "petabytes": {
+    "scale": "1000^5",
+    "aliases": [
+      "petabyte",
+      "PB"
+    ]
+  },
+  "pebibytes": {
+    "scale": "1024^5",
+    "aliases": [
+      "pebibyte",
+      "PiB"
+    ]
+  },
+  "exabytes": {
+    "scale": "1000^6",
+    "aliases": [
+      "exabyte",
+      "EB"
+    ]
+  },
+  "exbibytes": {
+    "scale": "1024^6",
+    "aliases": [
+      "exbibyte",
+      "EiB"
+    ]
+  },
+  "zettabytes": {
+    "scale": "1000^7",
+    "aliases": [
+      "zettabyte",
+      "ZB"
+    ]
+  },
+  "zebibytes": {
+    "scale": "1024^7",
+    "aliases": [
+      "zebibyte",
+      "ZiB"
+    ]
+  },
+  "yottabytes": {
+    "scale": "1000^8",
+    "aliases": [
+      "yottabyte",
+      "YB"
+    ]
+  },
+  "yobibytes": {
+    "scale": "1024^8",
+    "aliases": [
+      "yobibyte",
+      "YiB"
+    ]
+  },
+  "ronnabytes": {
+    "scale": "1000^9",
+    "aliases": [
+      "ronnabyte",
+      "RB"
+    ]
+  },
+  "quettabytes": {
+    "scale": "1000^10",
+    "aliases": [
+      "quettabyte",
+      "QB"
+    ]
+  }
+}

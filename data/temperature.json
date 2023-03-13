@@ -1,0 +1,26 @@
+{
+  "celcius": {
+    "scale": "",
+    "aliases": [
+      "c"
+    ]
+  },
+  "fahrenheit": {
+    "scale": "",
+    "aliases": [
+      "f"
+    ]
+  },
+  "kelvin": {
+    "scale": "",
+    "aliases": [
+      "k"
+    ]
+  },
+  "rankine": {
+    "scale": "",
+    "aliases": [
+      "r"
+    ]
+  }
+}

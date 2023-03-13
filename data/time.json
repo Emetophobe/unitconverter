@@ -6,6 +6,27 @@
       "s"
     ]
   },
+  "yoctoseconds": {
+    "scale": "1e-24",
+    "aliases": [
+      "yoctosecond",
+      "ys"
+    ]
+  },
+  "zeptoseconds": {
+    "scale": "1e-21",
+    "aliases": [
+      "zeptosecond",
+      "zs"
+    ]
+  },
+  "attoseconds": {
+    "scale": "1e-18",
+    "aliases": [
+      "attosecond",
+      "as"
+    ]
+  },
   "femtoseconds": {
     "scale": "1e-15",
     "aliases": [
@@ -39,107 +60,6 @@
     "aliases": [
       "millisecond",
       "ms"
-    ]
-  },
-  "minutes": {
-    "scale": "60",
-    "aliases": [
-      "minute",
-      "min"
-    ]
-  },
-  "hours": {
-    "scale": "3600",
-    "aliases": [
-      "hour",
-      "hr"
-    ]
-  },
-  "days": {
-    "scale": "86400",
-    "aliases": [
-      "day"
-    ]
-  },
-  "weeks": {
-    "scale": "604800",
-    "aliases": [
-      "week"
-    ]
-  },
-  "fortnights": {
-    "scale": "1209600",
-    "aliases": [
-      "fortnight"
-    ]
-  },
-  "months": {
-    "scale": "2678400",
-    "aliases": [
-      "month"
-    ]
-  },
-  "years": {
-    "scale": "31536000",
-    "aliases": [
-      "year"
-    ]
-  },
-  "years (gregorian)": {
-    "scale": "31556952",
-    "aliases": [
-      "year (gregorian)"
-    ]
-  },
-  "years (julian)": {
-    "scale": "31557600",
-    "aliases": [
-      "year (julian)"
-    ]
-  },
-  "years (leap)": {
-    "scale": "31622400",
-    "aliases": [
-      "year (leap)"
-    ]
-  },
-  "decades": {
-    "scale": "315360000",
-    "aliases": [
-      "decade"
-    ]
-  },
-  "centuries": {
-    "scale": "3153600000",
-    "aliases": [
-      "century"
-    ]
-  },
-  "millennia": {
-    "scale": "31536000000",
-    "aliases": [
-      "millennia"
-    ]
-  },
-  "yoctoseconds": {
-    "scale": "1e-24",
-    "aliases": [
-      "yoctosecond",
-      "ys"
-    ]
-  },
-  "zeptoseconds": {
-    "scale": "1e-21",
-    "aliases": [
-      "zeptosecond",
-      "zs"
-    ]
-  },
-  "attoseconds": {
-    "scale": "1e-18",
-    "aliases": [
-      "attosecond",
-      "as"
     ]
   },
   "centiseconds": {
@@ -224,6 +144,86 @@
     "aliases": [
       "yottalsecond",
       "Ys"
+    ]
+  },
+  "minutes": {
+    "scale": "60",
+    "aliases": [
+      "minute",
+      "min"
+    ]
+  },
+  "hours": {
+    "scale": "3600",
+    "aliases": [
+      "hour",
+      "hr"
+    ]
+  },
+  "days": {
+    "scale": "86400",
+    "aliases": [
+      "day"
+    ]
+  },
+  "weeks": {
+    "scale": "604800",
+    "aliases": [
+      "week"
+    ]
+  },
+  "fortnights": {
+    "scale": "1209600",
+    "aliases": [
+      "fortnight"
+    ]
+  },
+  "months": {
+    "scale": "2678400",
+    "aliases": [
+      "month"
+    ]
+  },
+  "years": {
+    "scale": "31536000",
+    "aliases": [
+      "year"
+    ]
+  },
+  "years (gregorian)": {
+    "scale": "31556952",
+    "aliases": [
+      "year (gregorian)"
+    ]
+  },
+  "years (julian)": {
+    "scale": "31557600",
+    "aliases": [
+      "year (julian)"
+    ]
+  },
+  "years (leap)": {
+    "scale": "31622400",
+    "aliases": [
+      "year (leap)"
+    ]
+  },
+  "decades": {
+    "scale": "315360000",
+    "aliases": [
+      "decade"
+    ]
+  },
+  "centuries": {
+    "scale": "3153600000",
+    "aliases": [
+      "century"
+    ]
+  },
+  "millennia": {
+    "scale": "31536000000",
+    "aliases": [
+      "millennia"
     ]
   }
 }

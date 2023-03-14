@@ -2,24 +2,33 @@
   "kelvin": {
     "scale": "",
     "aliases": [
+      "kelvins",
+      "K",
       "k"
     ]
   },
   "celsius": {
     "scale": "",
     "aliases": [
+      "\u00b0C",
+      "C",
       "c"
     ]
   },
   "fahrenheit": {
     "scale": "",
     "aliases": [
+      "\u00b0F",
+      "F",
       "f"
     ]
   },
   "rankine": {
     "scale": "",
     "aliases": [
+      "\u00b0R",
+      "\u00b0Ra",
+      "R",
       "r"
     ]
   }

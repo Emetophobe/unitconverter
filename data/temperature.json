@@ -1,6 +1,6 @@
 {
   "kelvin": {
-    "scale": "",
+    "scale": null,
     "aliases": [
       "kelvins",
       "K",
@@ -8,7 +8,7 @@
     ]
   },
   "celsius": {
-    "scale": "",
+    "scale": null,
     "aliases": [
       "\u00b0C",
       "C",
@@ -16,7 +16,7 @@
     ]
   },
   "fahrenheit": {
-    "scale": "",
+    "scale": null,
     "aliases": [
       "\u00b0F",
       "F",
@@ -24,7 +24,7 @@
     ]
   },
   "rankine": {
-    "scale": "",
+    "scale": null,
     "aliases": [
       "\u00b0R",
       "\u00b0Ra",

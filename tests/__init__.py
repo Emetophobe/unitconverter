@@ -2,7 +2,7 @@
 
 from unittest import TestCase
 from decimal import Decimal
-from converter import Converter
+from converter import Converter, Unit
 
 
 class AbstractTestCase(TestCase):
@@ -28,5 +28,7 @@ class AbstractTestCase(TestCase):
 
 
 __all__ = [
-    'AbstractTestCase'
+    'AbstractTestCase',
+    'Converter',
+    'Unit'
 ]

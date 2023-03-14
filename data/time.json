@@ -223,7 +223,9 @@
   "millennia": {
     "scale": "31536000000",
     "aliases": [
-      "millennia"
+      "millennias",
+      "millennium",
+      "millenniums"
     ]
   }
 }

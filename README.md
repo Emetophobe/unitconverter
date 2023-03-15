@@ -6,6 +6,8 @@ The following unit categories are currently supported:
 
 * Area (square meters, square miles, acres, hectares, etc..)
 * Bytes (bits, bytes, kilobytes, kibibytes, etc..)
+* Electric current (amperes)
+* Electric potential (volts)
 * Length (meters, feet, inches, etc...)
 * Mass (grams, pounds, ounces, etc...)
 * Temperature (celsius, fahrenheit, kelvin, and rankine)

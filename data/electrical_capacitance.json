@@ -1,164 +1,152 @@
 {
-  "tesla": {
+  "farad": {
     "scale": "1",
     "aliases": [
-      "T"
+      "F"
     ]
   },
-  "quectotesla": {
+  "quectofarad": {
     "scale": "1e-30",
     "aliases": [
-      "qT"
+      "qF"
     ]
   },
-  "rontotesla": {
+  "rontofarad": {
     "scale": "1e-27",
     "aliases": [
-      "rT"
+      "rF"
     ]
   },
-  "yoctotesla": {
+  "yoctofarad": {
     "scale": "1e-24",
     "aliases": [
-      "yT"
+      "yF"
     ]
   },
-  "zeptotesla": {
+  "zeptofarad": {
     "scale": "1e-21",
     "aliases": [
-      "zT"
+      "zF"
     ]
   },
-  "attotesla": {
+  "attofarad": {
     "scale": "1e-18",
     "aliases": [
-      "aT"
+      "aF"
     ]
   },
-  "femtotesla": {
+  "femtofarad": {
     "scale": "1e-15",
     "aliases": [
-      "fT"
+      "fF"
     ]
   },
-  "picotesla": {
+  "picofarad": {
     "scale": "1e-12",
     "aliases": [
-      "pT"
+      "pF"
     ]
   },
-  "nanotesla": {
+  "nanofarad": {
     "scale": "1e-9",
     "aliases": [
-      "nT"
+      "nF"
     ]
   },
-  "microtesla": {
+  "microfarad": {
     "scale": "1e-6",
     "aliases": [
-      "\u00b5T"
+      "\u00b5F"
     ]
   },
-  "millitesla": {
+  "millifarad": {
     "scale": "1e-3",
     "aliases": [
-      "mT"
+      "mF"
     ]
   },
-  "centitesla": {
+  "centifarad": {
     "scale": "1e-2",
     "aliases": [
-      "cT"
+      "cF"
     ]
   },
-  "decitesla": {
+  "decifarad": {
     "scale": "1e-1",
     "aliases": [
-      "dT"
+      "dF"
     ]
   },
-  "decatesla": {
+  "decafarad": {
     "scale": "1e1",
     "aliases": [
-      "daT"
+      "daF"
     ]
   },
-  "hectotesla": {
+  "hectofarad": {
     "scale": "1e2",
     "aliases": [
-      "hT"
+      "hF"
     ]
   },
-  "kilotesla": {
+  "kilofarad": {
     "scale": "1e3",
     "aliases": [
-      "kT"
+      "kF"
     ]
   },
-  "megatesla": {
+  "megafarad": {
     "scale": "1e6",
     "aliases": [
-      "MT"
+      "MF"
     ]
   },
-  "gigatesla": {
+  "gigafarad": {
     "scale": "1e9",
     "aliases": [
-      "GT"
+      "GF"
     ]
   },
-  "teratesla": {
+  "terafarad": {
     "scale": "1e12",
     "aliases": [
-      "TT"
+      "TF"
     ]
   },
-  "petatesla": {
+  "petafarad": {
     "scale": "1e15",
     "aliases": [
-      "PT"
+      "PF"
     ]
   },
-  "exatesla": {
+  "exafarad": {
     "scale": "1e18",
     "aliases": [
-      "ET"
+      "EF"
     ]
   },
-  "zettatesla": {
+  "zettafarad": {
     "scale": "1e21",
     "aliases": [
-      "ZT"
+      "ZF"
     ]
   },
-  "yottatesla": {
+  "yottafarad": {
     "scale": "1e24",
     "aliases": [
-      "YT"
+      "YF"
     ]
   },
-  "ronnatesla": {
+  "ronnafarad": {
     "scale": "1e27",
     "aliases": [
-      "RT"
+      "RF"
     ]
   },
-  "quettatesla": {
+  "quettafarad": {
     "scale": "1e30",
     "aliases": [
-      "QT"
-    ]
-  },
-  "gamma": {
-    "scale": "1e-9",
-    "aliases": [
-      "y"
-    ]
-  },
-  "guass": {
-    "scale": "1e-4",
-    "aliases": [
-      "G"
+      "QF"
     ]
   }
 }

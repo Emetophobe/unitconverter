@@ -1,164 +1,152 @@
 {
-  "tesla": {
+  "siemens": {
     "scale": "1",
     "aliases": [
-      "T"
+      "S"
     ]
   },
-  "quectotesla": {
+  "quectosiemens": {
     "scale": "1e-30",
     "aliases": [
-      "qT"
+      "qS"
     ]
   },
-  "rontotesla": {
+  "rontosiemens": {
     "scale": "1e-27",
     "aliases": [
-      "rT"
+      "rS"
     ]
   },
-  "yoctotesla": {
+  "yoctosiemens": {
     "scale": "1e-24",
     "aliases": [
-      "yT"
+      "yS"
     ]
   },
-  "zeptotesla": {
+  "zeptosiemens": {
     "scale": "1e-21",
     "aliases": [
-      "zT"
+      "zS"
     ]
   },
-  "attotesla": {
+  "attosiemens": {
     "scale": "1e-18",
     "aliases": [
-      "aT"
+      "aS"
     ]
   },
-  "femtotesla": {
+  "femtosiemens": {
     "scale": "1e-15",
     "aliases": [
-      "fT"
+      "fS"
     ]
   },
-  "picotesla": {
+  "picosiemens": {
     "scale": "1e-12",
     "aliases": [
-      "pT"
+      "pS"
     ]
   },
-  "nanotesla": {
+  "nanosiemens": {
     "scale": "1e-9",
     "aliases": [
-      "nT"
+      "nS"
     ]
   },
-  "microtesla": {
+  "microsiemens": {
     "scale": "1e-6",
     "aliases": [
-      "\u00b5T"
+      "\u00b5S"
     ]
   },
-  "millitesla": {
+  "millisiemens": {
     "scale": "1e-3",
     "aliases": [
-      "mT"
+      "mS"
     ]
   },
-  "centitesla": {
+  "centisiemens": {
     "scale": "1e-2",
     "aliases": [
-      "cT"
+      "cS"
     ]
   },
-  "decitesla": {
+  "decisiemens": {
     "scale": "1e-1",
     "aliases": [
-      "dT"
+      "dS"
     ]
   },
-  "decatesla": {
+  "decasiemens": {
     "scale": "1e1",
     "aliases": [
-      "daT"
+      "daS"
     ]
   },
-  "hectotesla": {
+  "hectosiemens": {
     "scale": "1e2",
     "aliases": [
-      "hT"
+      "hS"
     ]
   },
-  "kilotesla": {
+  "kilosiemens": {
     "scale": "1e3",
     "aliases": [
-      "kT"
+      "kS"
     ]
   },
-  "megatesla": {
+  "megasiemens": {
     "scale": "1e6",
     "aliases": [
-      "MT"
+      "MS"
     ]
   },
-  "gigatesla": {
+  "gigasiemens": {
     "scale": "1e9",
     "aliases": [
-      "GT"
+      "GS"
     ]
   },
-  "teratesla": {
+  "terasiemens": {
     "scale": "1e12",
     "aliases": [
-      "TT"
+      "TS"
     ]
   },
-  "petatesla": {
+  "petasiemens": {
     "scale": "1e15",
     "aliases": [
-      "PT"
+      "PS"
     ]
   },
-  "exatesla": {
+  "exasiemens": {
     "scale": "1e18",
     "aliases": [
-      "ET"
+      "ES"
     ]
   },
-  "zettatesla": {
+  "zettasiemens": {
     "scale": "1e21",
     "aliases": [
-      "ZT"
+      "ZS"
     ]
   },
-  "yottatesla": {
+  "yottasiemens": {
     "scale": "1e24",
     "aliases": [
-      "YT"
+      "YS"
     ]
   },
-  "ronnatesla": {
+  "ronnasiemens": {
     "scale": "1e27",
     "aliases": [
-      "RT"
+      "RS"
     ]
   },
-  "quettatesla": {
+  "quettasiemens": {
     "scale": "1e30",
     "aliases": [
-      "QT"
-    ]
-  },
-  "gamma": {
-    "scale": "1e-9",
-    "aliases": [
-      "y"
-    ]
-  },
-  "guass": {
-    "scale": "1e-4",
-    "aliases": [
-      "G"
+      "QS"
     ]
   }
 }

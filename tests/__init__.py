@@ -31,8 +31,14 @@ class AbstractTestCase(TestCase):
 
         return units
 
-    def print_conversions(self, base_unit: Unit, units: dict) -> None:
+    def print_conversions(self, base_unit: Unit = None, units: dict = None) -> None:
         """ Print unit conversion table. """
+        if not base_unit:
+            base_unit = self.base_unit
+
+        if not units:
+            units = self.units
+
         for name, properties in units.items():
             dest = Unit(name, base_unit.category, **properties)
             result = self.converter.convert(self.base_value, base_unit, dest)

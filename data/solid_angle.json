@@ -1,164 +1,152 @@
 {
-  "tesla": {
+  "steradian": {
     "scale": "1",
     "aliases": [
-      "T"
+      "sr"
     ]
   },
-  "quectotesla": {
+  "quectosteradian": {
     "scale": "1e-30",
     "aliases": [
-      "qT"
+      "qsr"
     ]
   },
-  "rontotesla": {
+  "rontosteradian": {
     "scale": "1e-27",
     "aliases": [
-      "rT"
+      "rsr"
     ]
   },
-  "yoctotesla": {
+  "yoctosteradian": {
     "scale": "1e-24",
     "aliases": [
-      "yT"
+      "ysr"
     ]
   },
-  "zeptotesla": {
+  "zeptosteradian": {
     "scale": "1e-21",
     "aliases": [
-      "zT"
+      "zsr"
     ]
   },
-  "attotesla": {
+  "attosteradian": {
     "scale": "1e-18",
     "aliases": [
-      "aT"
+      "asr"
     ]
   },
-  "femtotesla": {
+  "femtosteradian": {
     "scale": "1e-15",
     "aliases": [
-      "fT"
+      "fsr"
     ]
   },
-  "picotesla": {
+  "picosteradian": {
     "scale": "1e-12",
     "aliases": [
-      "pT"
+      "psr"
     ]
   },
-  "nanotesla": {
+  "nanosteradian": {
     "scale": "1e-9",
     "aliases": [
-      "nT"
+      "nsr"
     ]
   },
-  "microtesla": {
+  "microsteradian": {
     "scale": "1e-6",
     "aliases": [
-      "\u00b5T"
+      "\u00b5sr"
     ]
   },
-  "millitesla": {
+  "millisteradian": {
     "scale": "1e-3",
     "aliases": [
-      "mT"
+      "msr"
     ]
   },
-  "centitesla": {
+  "centisteradian": {
     "scale": "1e-2",
     "aliases": [
-      "cT"
+      "csr"
     ]
   },
-  "decitesla": {
+  "decisteradian": {
     "scale": "1e-1",
     "aliases": [
-      "dT"
+      "dsr"
     ]
   },
-  "decatesla": {
+  "decasteradian": {
     "scale": "1e1",
     "aliases": [
-      "daT"
+      "dasr"
     ]
   },
-  "hectotesla": {
+  "hectosteradian": {
     "scale": "1e2",
     "aliases": [
-      "hT"
+      "hsr"
     ]
   },
-  "kilotesla": {
+  "kilosteradian": {
     "scale": "1e3",
     "aliases": [
-      "kT"
+      "ksr"
     ]
   },
-  "megatesla": {
+  "megasteradian": {
     "scale": "1e6",
     "aliases": [
-      "MT"
+      "Msr"
     ]
   },
-  "gigatesla": {
+  "gigasteradian": {
     "scale": "1e9",
     "aliases": [
-      "GT"
+      "Gsr"
     ]
   },
-  "teratesla": {
+  "terasteradian": {
     "scale": "1e12",
     "aliases": [
-      "TT"
+      "Tsr"
     ]
   },
-  "petatesla": {
+  "petasteradian": {
     "scale": "1e15",
     "aliases": [
-      "PT"
+      "Psr"
     ]
   },
-  "exatesla": {
+  "exasteradian": {
     "scale": "1e18",
     "aliases": [
-      "ET"
+      "Esr"
     ]
   },
-  "zettatesla": {
+  "zettasteradian": {
     "scale": "1e21",
     "aliases": [
-      "ZT"
+      "Zsr"
     ]
   },
-  "yottatesla": {
+  "yottasteradian": {
     "scale": "1e24",
     "aliases": [
-      "YT"
+      "Ysr"
     ]
   },
-  "ronnatesla": {
+  "ronnasteradian": {
     "scale": "1e27",
     "aliases": [
-      "RT"
+      "Rsr"
     ]
   },
-  "quettatesla": {
+  "quettasteradian": {
     "scale": "1e30",
     "aliases": [
-      "QT"
-    ]
-  },
-  "gamma": {
-    "scale": "1e-9",
-    "aliases": [
-      "y"
-    ]
-  },
-  "guass": {
-    "scale": "1e-4",
-    "aliases": [
-      "G"
+      "Qsr"
     ]
   }
 }

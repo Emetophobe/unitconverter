@@ -38,7 +38,6 @@ class TestIlluminance(AbstractTestCase):
             "yottalux": "1E-24",
             "ronnalux": "1E-27",
             "quettalux": "1E-30",
-
         }
 
         # Test all lux conversions

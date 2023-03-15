@@ -11,10 +11,16 @@ The following unit categories are currently supported:
 * Temperature (celsius, fahrenheit, kelvin, and rankine)
 * Time (seconds, minutes, hours, days, etc...)
 * Volume (cubic meters, liters, quarts, gallons, cups, etc...)
+* Absorbed dose (gray)
 * Amount of substance (moles, atoms)
 * Catalytic activity (katal, mol/sec)
+* Dose equivalent (sievert)
+* Electric charge (coulomb)
 * Electric current (amperes)
 * Electric potential (volts)
+* Electrical capacitance (farad)
+* Electrical conductance (siemens)
+* Electrical inductance (henry)
 * Electrical resistance (ohm)
 * Energy (joules)
 * Force (newtons, dynes, poundals, etc..)
@@ -27,6 +33,8 @@ The following unit categories are currently supported:
 * Power (watts, joules per second)
 * Pressure (pascal, bar, psi)
 * Radioactivity (becqueral, curie, rutherford)
+* Solid angle (steradian)
+* Plane angle (radian)
 
 ### This script is a work in progress. Bug reports or suggestions are welcome.
 

@@ -1,164 +1,152 @@
 {
-  "tesla": {
+  "radian": {
     "scale": "1",
     "aliases": [
-      "T"
+      "rad"
     ]
   },
-  "quectotesla": {
+  "quectoradian": {
     "scale": "1e-30",
     "aliases": [
-      "qT"
+      "qrad"
     ]
   },
-  "rontotesla": {
+  "rontoradian": {
     "scale": "1e-27",
     "aliases": [
-      "rT"
+      "rrad"
     ]
   },
-  "yoctotesla": {
+  "yoctoradian": {
     "scale": "1e-24",
     "aliases": [
-      "yT"
+      "yrad"
     ]
   },
-  "zeptotesla": {
+  "zeptoradian": {
     "scale": "1e-21",
     "aliases": [
-      "zT"
+      "zrad"
     ]
   },
-  "attotesla": {
+  "attoradian": {
     "scale": "1e-18",
     "aliases": [
-      "aT"
+      "arad"
     ]
   },
-  "femtotesla": {
+  "femtoradian": {
     "scale": "1e-15",
     "aliases": [
-      "fT"
+      "frad"
     ]
   },
-  "picotesla": {
+  "picoradian": {
     "scale": "1e-12",
     "aliases": [
-      "pT"
+      "prad"
     ]
   },
-  "nanotesla": {
+  "nanoradian": {
     "scale": "1e-9",
     "aliases": [
-      "nT"
+      "nrad"
     ]
   },
-  "microtesla": {
+  "microradian": {
     "scale": "1e-6",
     "aliases": [
-      "\u00b5T"
+      "\u00b5rad"
     ]
   },
-  "millitesla": {
+  "milliradian": {
     "scale": "1e-3",
     "aliases": [
-      "mT"
+      "mrad"
     ]
   },
-  "centitesla": {
+  "centiradian": {
     "scale": "1e-2",
     "aliases": [
-      "cT"
+      "crad"
     ]
   },
-  "decitesla": {
+  "deciradian": {
     "scale": "1e-1",
     "aliases": [
-      "dT"
+      "drad"
     ]
   },
-  "decatesla": {
+  "decaradian": {
     "scale": "1e1",
     "aliases": [
-      "daT"
+      "darad"
     ]
   },
-  "hectotesla": {
+  "hectoradian": {
     "scale": "1e2",
     "aliases": [
-      "hT"
+      "hrad"
     ]
   },
-  "kilotesla": {
+  "kiloradian": {
     "scale": "1e3",
     "aliases": [
-      "kT"
+      "krad"
     ]
   },
-  "megatesla": {
+  "megaradian": {
     "scale": "1e6",
     "aliases": [
-      "MT"
+      "Mrad"
     ]
   },
-  "gigatesla": {
+  "gigaradian": {
     "scale": "1e9",
     "aliases": [
-      "GT"
+      "Grad"
     ]
   },
-  "teratesla": {
+  "teraradian": {
     "scale": "1e12",
     "aliases": [
-      "TT"
+      "Trad"
     ]
   },
-  "petatesla": {
+  "petaradian": {
     "scale": "1e15",
     "aliases": [
-      "PT"
+      "Prad"
     ]
   },
-  "exatesla": {
+  "exaradian": {
     "scale": "1e18",
     "aliases": [
-      "ET"
+      "Erad"
     ]
   },
-  "zettatesla": {
+  "zettaradian": {
     "scale": "1e21",
     "aliases": [
-      "ZT"
+      "Zrad"
     ]
   },
-  "yottatesla": {
+  "yottaradian": {
     "scale": "1e24",
     "aliases": [
-      "YT"
+      "Yrad"
     ]
   },
-  "ronnatesla": {
+  "ronnaradian": {
     "scale": "1e27",
     "aliases": [
-      "RT"
+      "Rrad"
     ]
   },
-  "quettatesla": {
+  "quettaradian": {
     "scale": "1e30",
     "aliases": [
-      "QT"
-    ]
-  },
-  "gamma": {
-    "scale": "1e-9",
-    "aliases": [
-      "y"
-    ]
-  },
-  "guass": {
-    "scale": "1e-4",
-    "aliases": [
-      "G"
+      "Qrad"
     ]
   }
 }

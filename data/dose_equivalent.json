@@ -1,164 +1,159 @@
 {
-  "tesla": {
+  "sievert": {
     "scale": "1",
     "aliases": [
-      "T"
+      "Sv"
     ]
   },
-  "quectotesla": {
+  "quectosievert": {
     "scale": "1e-30",
     "aliases": [
-      "qT"
+      "qSv"
     ]
   },
-  "rontotesla": {
+  "rontosievert": {
     "scale": "1e-27",
     "aliases": [
-      "rT"
+      "rSv"
     ]
   },
-  "yoctotesla": {
+  "yoctosievert": {
     "scale": "1e-24",
     "aliases": [
-      "yT"
+      "ySv"
     ]
   },
-  "zeptotesla": {
+  "zeptosievert": {
     "scale": "1e-21",
     "aliases": [
-      "zT"
+      "zSv"
     ]
   },
-  "attotesla": {
+  "attosievert": {
     "scale": "1e-18",
     "aliases": [
-      "aT"
+      "aSv"
     ]
   },
-  "femtotesla": {
+  "femtosievert": {
     "scale": "1e-15",
     "aliases": [
-      "fT"
+      "fSv"
     ]
   },
-  "picotesla": {
+  "picosievert": {
     "scale": "1e-12",
     "aliases": [
-      "pT"
+      "pSv"
     ]
   },
-  "nanotesla": {
+  "nanosievert": {
     "scale": "1e-9",
     "aliases": [
-      "nT"
+      "nSv"
     ]
   },
-  "microtesla": {
+  "microsievert": {
     "scale": "1e-6",
     "aliases": [
-      "\u00b5T"
+      "\u00b5Sv"
     ]
   },
-  "millitesla": {
+  "millisievert": {
     "scale": "1e-3",
     "aliases": [
-      "mT"
+      "mSv"
     ]
   },
-  "centitesla": {
+  "centisievert": {
     "scale": "1e-2",
     "aliases": [
-      "cT"
+      "cSv"
     ]
   },
-  "decitesla": {
+  "decisievert": {
     "scale": "1e-1",
     "aliases": [
-      "dT"
+      "dSv"
     ]
   },
-  "decatesla": {
+  "decasievert": {
     "scale": "1e1",
     "aliases": [
-      "daT"
+      "daSv"
     ]
   },
-  "hectotesla": {
+  "hectosievert": {
     "scale": "1e2",
     "aliases": [
-      "hT"
+      "hSv"
     ]
   },
-  "kilotesla": {
+  "kilosievert": {
     "scale": "1e3",
     "aliases": [
-      "kT"
+      "kSv"
     ]
   },
-  "megatesla": {
+  "megasievert": {
     "scale": "1e6",
     "aliases": [
-      "MT"
+      "MSv"
     ]
   },
-  "gigatesla": {
+  "gigasievert": {
     "scale": "1e9",
     "aliases": [
-      "GT"
+      "GSv"
     ]
   },
-  "teratesla": {
+  "terasievert": {
     "scale": "1e12",
     "aliases": [
-      "TT"
+      "TSv"
     ]
   },
-  "petatesla": {
+  "petasievert": {
     "scale": "1e15",
     "aliases": [
-      "PT"
+      "PSv"
     ]
   },
-  "exatesla": {
+  "exasievert": {
     "scale": "1e18",
     "aliases": [
-      "ET"
+      "ESv"
     ]
   },
-  "zettatesla": {
+  "zettasievert": {
     "scale": "1e21",
     "aliases": [
-      "ZT"
+      "ZSv"
     ]
   },
-  "yottatesla": {
+  "yottasievert": {
     "scale": "1e24",
     "aliases": [
-      "YT"
+      "YSv"
     ]
   },
-  "ronnatesla": {
+  "ronnasievert": {
     "scale": "1e27",
     "aliases": [
-      "RT"
+      "RSv"
     ]
   },
-  "quettatesla": {
+  "quettasievert": {
     "scale": "1e30",
     "aliases": [
-      "QT"
+      "QSv"
     ]
   },
-  "gamma": {
-    "scale": "1e-9",
+  "roentgen equivalent man": {
+    "scale": "100",
     "aliases": [
-      "y"
-    ]
-  },
-  "guass": {
-    "scale": "1e-4",
-    "aliases": [
-      "G"
+      "roentgen",
+      "rem"
     ]
   }
 }

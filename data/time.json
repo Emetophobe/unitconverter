@@ -179,13 +179,13 @@
     ]
   },
   "months": {
-    "scale": "2678400",
+    "scale": "2.628E+6",
     "aliases": [
       "month"
     ]
   },
   "years": {
-    "scale": "31536000",
+    "scale": "3.1536E+7",
     "aliases": [
       "year"
     ]
@@ -209,19 +209,19 @@
     ]
   },
   "decades": {
-    "scale": "315360000",
+    "scale": "3.1536E+8",
     "aliases": [
       "decade"
     ]
   },
   "centuries": {
-    "scale": "3153600000",
+    "scale": "3.1536E+9",
     "aliases": [
       "century"
     ]
   },
   "millennia": {
-    "scale": "31536000000",
+    "scale": "3.1536E+10",
     "aliases": [
       "millennias",
       "millennium",

@@ -1,164 +1,152 @@
 {
-  "tesla": {
+  "gray": {
     "scale": "1",
     "aliases": [
-      "T"
+      "Gy"
     ]
   },
-  "quectotesla": {
+  "quectogray": {
     "scale": "1e-30",
     "aliases": [
-      "qT"
+      "qGy"
     ]
   },
-  "rontotesla": {
+  "rontogray": {
     "scale": "1e-27",
     "aliases": [
-      "rT"
+      "rGy"
     ]
   },
-  "yoctotesla": {
+  "yoctogray": {
     "scale": "1e-24",
     "aliases": [
-      "yT"
+      "yGy"
     ]
   },
-  "zeptotesla": {
+  "zeptogray": {
     "scale": "1e-21",
     "aliases": [
-      "zT"
+      "zGy"
     ]
   },
-  "attotesla": {
+  "attogray": {
     "scale": "1e-18",
     "aliases": [
-      "aT"
+      "aGy"
     ]
   },
-  "femtotesla": {
+  "femtogray": {
     "scale": "1e-15",
     "aliases": [
-      "fT"
+      "fGy"
     ]
   },
-  "picotesla": {
+  "picogray": {
     "scale": "1e-12",
     "aliases": [
-      "pT"
+      "pGy"
     ]
   },
-  "nanotesla": {
+  "nanogray": {
     "scale": "1e-9",
     "aliases": [
-      "nT"
+      "nGy"
     ]
   },
-  "microtesla": {
+  "microgray": {
     "scale": "1e-6",
     "aliases": [
-      "\u00b5T"
+      "\u00b5Gy"
     ]
   },
-  "millitesla": {
+  "milligray": {
     "scale": "1e-3",
     "aliases": [
-      "mT"
+      "mGy"
     ]
   },
-  "centitesla": {
+  "centigray": {
     "scale": "1e-2",
     "aliases": [
-      "cT"
+      "cGy"
     ]
   },
-  "decitesla": {
+  "decigray": {
     "scale": "1e-1",
     "aliases": [
-      "dT"
+      "dGy"
     ]
   },
-  "decatesla": {
+  "decagray": {
     "scale": "1e1",
     "aliases": [
-      "daT"
+      "daGy"
     ]
   },
-  "hectotesla": {
+  "hectogray": {
     "scale": "1e2",
     "aliases": [
-      "hT"
+      "hGy"
     ]
   },
-  "kilotesla": {
+  "kilogray": {
     "scale": "1e3",
     "aliases": [
-      "kT"
+      "kGy"
     ]
   },
-  "megatesla": {
+  "megagray": {
     "scale": "1e6",
     "aliases": [
-      "MT"
+      "MGy"
     ]
   },
-  "gigatesla": {
+  "gigagray": {
     "scale": "1e9",
     "aliases": [
-      "GT"
+      "GGy"
     ]
   },
-  "teratesla": {
+  "teragray": {
     "scale": "1e12",
     "aliases": [
-      "TT"
+      "TGy"
     ]
   },
-  "petatesla": {
+  "petagray": {
     "scale": "1e15",
     "aliases": [
-      "PT"
+      "PGy"
     ]
   },
-  "exatesla": {
+  "exagray": {
     "scale": "1e18",
     "aliases": [
-      "ET"
+      "EGy"
     ]
   },
-  "zettatesla": {
+  "zettagray": {
     "scale": "1e21",
     "aliases": [
-      "ZT"
+      "ZGy"
     ]
   },
-  "yottatesla": {
+  "yottagray": {
     "scale": "1e24",
     "aliases": [
-      "YT"
+      "YGy"
     ]
   },
-  "ronnatesla": {
+  "ronnagray": {
     "scale": "1e27",
     "aliases": [
-      "RT"
+      "RGy"
     ]
   },
-  "quettatesla": {
+  "quettagray": {
     "scale": "1e30",
     "aliases": [
-      "QT"
-    ]
-  },
-  "gamma": {
-    "scale": "1e-9",
-    "aliases": [
-      "y"
-    ]
-  },
-  "guass": {
-    "scale": "1e-4",
-    "aliases": [
-      "G"
+      "QGy"
     ]
   }
 }

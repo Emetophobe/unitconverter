@@ -3,14 +3,14 @@
 from tests import AbstractTestCase
 
 
-class TestEnergy(AbstractTestCase):
+class TestAmountSubstance(AbstractTestCase):
 
     def setUp(self):
         super().setUp()
         self.base_unit = self.converter.find_unit('mole')
         self.units = self.converter.units['amount substance']
 
-    def test_amount_substance(self):
+    def test_mole(self):
         """ Test mole conversions. """
         expected_values = {
             "moles": "1",
@@ -26,10 +26,10 @@ class TestEnergy(AbstractTestCase):
             "millimoles": "1E+3",
             "centimoles": "1E+2",
             "decimoles": "1E+1",
-            "decamoles": "0.1",
-            "hectomoles": "0.01",
-            "kilomoles": "0.001",
-            "megamoles": "0.000001",
+            "decamoles": "1E-1",
+            "hectomoles": "1E-2",
+            "kilomoles": "1E-3",
+            "megamoles": "1E-6",
             "gigamoles": "1E-9",
             "teramoles": "1E-12",
             "petamoles": "1E-15",

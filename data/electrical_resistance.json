@@ -1,0 +1,152 @@
+{
+  "ohm": {
+    "scale": "1",
+    "aliases": [
+      "\u03a9"
+    ]
+  },
+  "quectoohm": {
+    "scale": "1e-30",
+    "aliases": [
+      "q\u03a9"
+    ]
+  },
+  "rontoohm": {
+    "scale": "1e-27",
+    "aliases": [
+      "r\u03a9"
+    ]
+  },
+  "yoctoohm": {
+    "scale": "1e-24",
+    "aliases": [
+      "y\u03a9"
+    ]
+  },
+  "zeptoohm": {
+    "scale": "1e-21",
+    "aliases": [
+      "z\u03a9"
+    ]
+  },
+  "attoohm": {
+    "scale": "1e-18",
+    "aliases": [
+      "a\u03a9"
+    ]
+  },
+  "femtoohm": {
+    "scale": "1e-15",
+    "aliases": [
+      "f\u03a9"
+    ]
+  },
+  "picoohm": {
+    "scale": "1e-12",
+    "aliases": [
+      "p\u03a9"
+    ]
+  },
+  "nanoohm": {
+    "scale": "1e-9",
+    "aliases": [
+      "n\u03a9"
+    ]
+  },
+  "microohm": {
+    "scale": "1e-6",
+    "aliases": [
+      "\u00b5\u03a9"
+    ]
+  },
+  "milliohm": {
+    "scale": "1e-3",
+    "aliases": [
+      "m\u03a9"
+    ]
+  },
+  "centiohm": {
+    "scale": "1e-2",
+    "aliases": [
+      "c\u03a9"
+    ]
+  },
+  "deciohm": {
+    "scale": "1e-1",
+    "aliases": [
+      "d\u03a9"
+    ]
+  },
+  "decaohm": {
+    "scale": "1e1",
+    "aliases": [
+      "da\u03a9"
+    ]
+  },
+  "hectoohm": {
+    "scale": "1e2",
+    "aliases": [
+      "h\u03a9"
+    ]
+  },
+  "kiloohm": {
+    "scale": "1e3",
+    "aliases": [
+      "k\u03a9"
+    ]
+  },
+  "megaohm": {
+    "scale": "1e6",
+    "aliases": [
+      "M\u03a9"
+    ]
+  },
+  "gigaohm": {
+    "scale": "1e9",
+    "aliases": [
+      "G\u03a9"
+    ]
+  },
+  "teraohm": {
+    "scale": "1e12",
+    "aliases": [
+      "T\u03a9"
+    ]
+  },
+  "petaohm": {
+    "scale": "1e15",
+    "aliases": [
+      "P\u03a9"
+    ]
+  },
+  "exaohm": {
+    "scale": "1e18",
+    "aliases": [
+      "E\u03a9"
+    ]
+  },
+  "zettaohm": {
+    "scale": "1e21",
+    "aliases": [
+      "Z\u03a9"
+    ]
+  },
+  "yottaohm": {
+    "scale": "1e24",
+    "aliases": [
+      "Y\u03a9"
+    ]
+  },
+  "ronnaohm": {
+    "scale": "1e27",
+    "aliases": [
+      "R\u03a9"
+    ]
+  },
+  "quettaohm": {
+    "scale": "1e30",
+    "aliases": [
+      "Q\u03a9"
+    ]
+  }
+}

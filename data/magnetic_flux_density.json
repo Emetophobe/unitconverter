@@ -1,0 +1,165 @@
+{
+  "tesla": {
+    "scale": "1",
+    "aliases": [
+      "T"
+    ]
+  },
+  "quectotesla": {
+    "scale": "1e-30",
+    "aliases": [
+      "qT"
+    ]
+  },
+  "rontotesla": {
+    "scale": "1e-27",
+    "aliases": [
+      "rT"
+    ]
+  },
+  "yoctotesla": {
+    "scale": "1e-24",
+    "aliases": [
+      "yT"
+    ]
+  },
+  "zeptotesla": {
+    "scale": "1e-21",
+    "aliases": [
+      "zT"
+    ]
+  },
+  "attotesla": {
+    "scale": "1e-18",
+    "aliases": [
+      "aT"
+    ]
+  },
+  "femtotesla": {
+    "scale": "1e-15",
+    "aliases": [
+      "fT"
+    ]
+  },
+  "picotesla": {
+    "scale": "1e-12",
+    "aliases": [
+      "pT"
+    ]
+  },
+  "nanotesla": {
+    "scale": "1e-9",
+    "aliases": [
+      "nT"
+    ]
+  },
+  "microtesla": {
+    "scale": "1e-6",
+    "aliases": [
+      "\u00b5T"
+    ]
+  },
+  "millitesla": {
+    "scale": "1e-3",
+    "aliases": [
+      "mT"
+    ]
+  },
+  "centitesla": {
+    "scale": "1e-2",
+    "aliases": [
+      "cT"
+    ]
+  },
+  "decitesla": {
+    "scale": "1e-1",
+    "aliases": [
+      "dT"
+    ]
+  },
+  "decatesla": {
+    "scale": "1e1",
+    "aliases": [
+      "daT"
+    ]
+  },
+  "hectotesla": {
+    "scale": "1e2",
+    "aliases": [
+      "hT"
+    ]
+  },
+  "kilotesla": {
+    "scale": "1e3",
+    "aliases": [
+      "kT"
+    ]
+  },
+  "megatesla": {
+    "scale": "1e6",
+    "aliases": [
+      "MT"
+    ]
+  },
+  "gigatesla": {
+    "scale": "1e9",
+    "aliases": [
+      "GT"
+    ]
+  },
+  "teratesla": {
+    "scale": "1e12",
+    "aliases": [
+      "TT"
+    ]
+  },
+  "petatesla": {
+    "scale": "1e15",
+    "aliases": [
+      "PT"
+    ]
+  },
+  "exatesla": {
+    "scale": "1e18",
+    "aliases": [
+      "ET"
+    ]
+  },
+  "zettatesla": {
+    "scale": "1e21",
+    "aliases": [
+      "ZT"
+    ]
+  },
+  "yottatesla": {
+    "scale": "1e24",
+    "aliases": [
+      "YT"
+    ]
+  },
+  "ronnatesla": {
+    "scale": "1e27",
+    "aliases": [
+      "RT"
+    ]
+  },
+  "quettatesla": {
+    "scale": "1e30",
+    "aliases": [
+      "QT"
+    ]
+  },
+  "gamma": {
+    "scale": "1e-9",
+    "aliases": [
+      "y"
+    ]
+  },
+  "guass": {
+    "scale": "1e-4",
+    "aliases": [
+      "GS",
+      "G"
+    ]
+  }
+}

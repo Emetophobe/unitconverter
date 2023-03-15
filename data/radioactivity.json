@@ -1,0 +1,164 @@
+{
+  "becquerel": {
+    "scale": "1",
+    "aliases": [
+      "Bq"
+    ]
+  },
+  "quectobecquerel": {
+    "scale": "1e-30",
+    "aliases": [
+      "qBq"
+    ]
+  },
+  "rontobecquerel": {
+    "scale": "1e-27",
+    "aliases": [
+      "rBq"
+    ]
+  },
+  "yoctobecquerel": {
+    "scale": "1e-24",
+    "aliases": [
+      "yBq"
+    ]
+  },
+  "zeptobecquerel": {
+    "scale": "1e-21",
+    "aliases": [
+      "zBq"
+    ]
+  },
+  "attobecquerel": {
+    "scale": "1e-18",
+    "aliases": [
+      "aBq"
+    ]
+  },
+  "femtobecquerel": {
+    "scale": "1e-15",
+    "aliases": [
+      "fBq"
+    ]
+  },
+  "picobecquerel": {
+    "scale": "1e-12",
+    "aliases": [
+      "pBq"
+    ]
+  },
+  "nanobecquerel": {
+    "scale": "1e-9",
+    "aliases": [
+      "nBq"
+    ]
+  },
+  "microbecquerel": {
+    "scale": "1e-6",
+    "aliases": [
+      "\u00b5Bq"
+    ]
+  },
+  "millibecquerel": {
+    "scale": "1e-3",
+    "aliases": [
+      "mBq"
+    ]
+  },
+  "centibecquerel": {
+    "scale": "1e-2",
+    "aliases": [
+      "cBq"
+    ]
+  },
+  "decibecquerel": {
+    "scale": "1e-1",
+    "aliases": [
+      "dBq"
+    ]
+  },
+  "decabecquerel": {
+    "scale": "1e1",
+    "aliases": [
+      "daBq"
+    ]
+  },
+  "hectobecquerel": {
+    "scale": "1e2",
+    "aliases": [
+      "hBq"
+    ]
+  },
+  "kilobecquerel": {
+    "scale": "1e3",
+    "aliases": [
+      "kBq"
+    ]
+  },
+  "megabecquerel": {
+    "scale": "1e6",
+    "aliases": [
+      "MBq"
+    ]
+  },
+  "gigabecquerel": {
+    "scale": "1e9",
+    "aliases": [
+      "GBq"
+    ]
+  },
+  "terabecquerel": {
+    "scale": "1e12",
+    "aliases": [
+      "TBq"
+    ]
+  },
+  "petabecquerel": {
+    "scale": "1e15",
+    "aliases": [
+      "PBq"
+    ]
+  },
+  "exabecquerel": {
+    "scale": "1e18",
+    "aliases": [
+      "EBq"
+    ]
+  },
+  "zettabecquerel": {
+    "scale": "1e21",
+    "aliases": [
+      "ZBq"
+    ]
+  },
+  "yottabecquerel": {
+    "scale": "1e24",
+    "aliases": [
+      "YBq"
+    ]
+  },
+  "ronnabecquerel": {
+    "scale": "1e27",
+    "aliases": [
+      "RBq"
+    ]
+  },
+  "quettabecquerel": {
+    "scale": "1e30",
+    "aliases": [
+      "QBq"
+    ]
+  },
+  "curie": {
+    "scale": "3.7e+10",
+    "aliases": [
+      "Ci"
+    ]
+  },
+  "rutherford": {
+    "scale": "1e6",
+    "aliases": [
+      "Rd"
+    ]
+  }
+}

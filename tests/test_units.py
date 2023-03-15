@@ -11,11 +11,11 @@ class TestUnits(AbstractTestCase):
         aliases = {}
 
         for unit in self.yield_units():
-            self.assertNotIn(unit.name, aliases.keys(), msg.format(unit.name))
+            self.assertFalse(unit.name in aliases.keys(), msg.format(unit.name))
             aliases[unit.name] = unit
 
             for alias in unit.aliases:
-                self.assertNotIn(alias, aliases.keys(), msg.format(alias))
+                self.assertFalse(alias in aliases.keys(), msg.format(alias))
                 aliases[alias] = unit
 
     def yield_units(self) -> Unit:

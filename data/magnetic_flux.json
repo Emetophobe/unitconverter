@@ -1,0 +1,158 @@
+{
+  "weber": {
+    "scale": "1",
+    "aliases": [
+      "Wb"
+    ]
+  },
+  "quectoweber": {
+    "scale": "1e-30",
+    "aliases": [
+      "qWb"
+    ]
+  },
+  "rontoweber": {
+    "scale": "1e-27",
+    "aliases": [
+      "rWb"
+    ]
+  },
+  "yoctoweber": {
+    "scale": "1e-24",
+    "aliases": [
+      "yWb"
+    ]
+  },
+  "zeptoweber": {
+    "scale": "1e-21",
+    "aliases": [
+      "zWb"
+    ]
+  },
+  "attoweber": {
+    "scale": "1e-18",
+    "aliases": [
+      "aWb"
+    ]
+  },
+  "femtoweber": {
+    "scale": "1e-15",
+    "aliases": [
+      "fWb"
+    ]
+  },
+  "picoweber": {
+    "scale": "1e-12",
+    "aliases": [
+      "pWb"
+    ]
+  },
+  "nanoweber": {
+    "scale": "1e-9",
+    "aliases": [
+      "nWb"
+    ]
+  },
+  "microweber": {
+    "scale": "1e-6",
+    "aliases": [
+      "\u00b5Wb"
+    ]
+  },
+  "milliweber": {
+    "scale": "1e-3",
+    "aliases": [
+      "mWb"
+    ]
+  },
+  "centiweber": {
+    "scale": "1e-2",
+    "aliases": [
+      "cWb"
+    ]
+  },
+  "deciweber": {
+    "scale": "1e-1",
+    "aliases": [
+      "dWb"
+    ]
+  },
+  "decaweber": {
+    "scale": "1e1",
+    "aliases": [
+      "daWb"
+    ]
+  },
+  "hectoweber": {
+    "scale": "1e2",
+    "aliases": [
+      "hWb"
+    ]
+  },
+  "kiloweber": {
+    "scale": "1e3",
+    "aliases": [
+      "kWb"
+    ]
+  },
+  "megaweber": {
+    "scale": "1e6",
+    "aliases": [
+      "MWb"
+    ]
+  },
+  "gigaweber": {
+    "scale": "1e9",
+    "aliases": [
+      "GWb"
+    ]
+  },
+  "teraweber": {
+    "scale": "1e12",
+    "aliases": [
+      "TWb"
+    ]
+  },
+  "petaweber": {
+    "scale": "1e15",
+    "aliases": [
+      "PWb"
+    ]
+  },
+  "exaweber": {
+    "scale": "1e18",
+    "aliases": [
+      "EWb"
+    ]
+  },
+  "zettaweber": {
+    "scale": "1e21",
+    "aliases": [
+      "ZWb"
+    ]
+  },
+  "yottaweber": {
+    "scale": "1e24",
+    "aliases": [
+      "YWb"
+    ]
+  },
+  "ronnaweber": {
+    "scale": "1e27",
+    "aliases": [
+      "RWb"
+    ]
+  },
+  "quettaweber": {
+    "scale": "1e30",
+    "aliases": [
+      "QWb"
+    ]
+  },
+  "maxwell": {
+    "scale": "1e-8",
+    "aliases": [
+      "Mx"
+    ]
+  }
+}

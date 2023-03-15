@@ -1,0 +1,158 @@
+{
+  "katal": {
+    "scale": "1",
+    "aliases": [
+      "kat"
+    ]
+  },
+  "quectokatal": {
+    "scale": "1e-30",
+    "aliases": [
+      "qkat"
+    ]
+  },
+  "rontokatal": {
+    "scale": "1e-27",
+    "aliases": [
+      "rkat"
+    ]
+  },
+  "yoctokatal": {
+    "scale": "1e-24",
+    "aliases": [
+      "ykat"
+    ]
+  },
+  "zeptokatal": {
+    "scale": "1e-21",
+    "aliases": [
+      "zkat"
+    ]
+  },
+  "attokatal": {
+    "scale": "1e-18",
+    "aliases": [
+      "akat"
+    ]
+  },
+  "femtokatal": {
+    "scale": "1e-15",
+    "aliases": [
+      "fkat"
+    ]
+  },
+  "picokatal": {
+    "scale": "1e-12",
+    "aliases": [
+      "pkat"
+    ]
+  },
+  "nanokatal": {
+    "scale": "1e-9",
+    "aliases": [
+      "nkat"
+    ]
+  },
+  "microkatal": {
+    "scale": "1e-6",
+    "aliases": [
+      "\u00b5kat"
+    ]
+  },
+  "millikatal": {
+    "scale": "1e-3",
+    "aliases": [
+      "mkat"
+    ]
+  },
+  "centikatal": {
+    "scale": "1e-2",
+    "aliases": [
+      "ckat"
+    ]
+  },
+  "decikatal": {
+    "scale": "1e-1",
+    "aliases": [
+      "dkat"
+    ]
+  },
+  "decakatal": {
+    "scale": "1e1",
+    "aliases": [
+      "dakat"
+    ]
+  },
+  "hectokatal": {
+    "scale": "1e2",
+    "aliases": [
+      "hkat"
+    ]
+  },
+  "kilokatal": {
+    "scale": "1e3",
+    "aliases": [
+      "kkat"
+    ]
+  },
+  "megakatal": {
+    "scale": "1e6",
+    "aliases": [
+      "Mkat"
+    ]
+  },
+  "gigakatal": {
+    "scale": "1e9",
+    "aliases": [
+      "Gkat"
+    ]
+  },
+  "terakatal": {
+    "scale": "1e12",
+    "aliases": [
+      "Tkat"
+    ]
+  },
+  "petakatal": {
+    "scale": "1e15",
+    "aliases": [
+      "Pkat"
+    ]
+  },
+  "exakatal": {
+    "scale": "1e18",
+    "aliases": [
+      "Ekat"
+    ]
+  },
+  "zettakatal": {
+    "scale": "1e21",
+    "aliases": [
+      "Zkat"
+    ]
+  },
+  "yottakatal": {
+    "scale": "1e24",
+    "aliases": [
+      "Ykat"
+    ]
+  },
+  "ronnakatal": {
+    "scale": "1e27",
+    "aliases": [
+      "Rkat"
+    ]
+  },
+  "quettakatal": {
+    "scale": "1e30",
+    "aliases": [
+      "Qkat"
+    ]
+  },
+  "mole per second": {
+    "scale": "1",
+    "aliases": [
+      "mol/s"
+    ]
+  }
+}

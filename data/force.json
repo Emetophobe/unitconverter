@@ -177,31 +177,31 @@
   "dynes": {
     "scale": "1e-5",
     "aliases": [
-        "dyne",
-        "dyn"
+      "dyne",
+      "dyn"
     ]
   },
   "kilogram-force": {
     "scale": "9.80665",
     "aliases": [
-        "kiloponds",
-        "kilopond",
-        "kgf"
+      "kiloponds",
+      "kilopond",
+      "kgf"
     ]
   },
   "pound-force": {
     "scale": "4.448222",
     "aliases": [
-        "pounds of force",
-        "pound of force",
-        "lbf"
+      "pounds of force",
+      "pound of force",
+      "lbf"
     ]
   },
   "poundals": {
     "scale": "0.138254954376",
     "aliases": [
-        "poundal",
-        "pdl"
+      "poundal",
+      "pdl"
     ]
   }
 }

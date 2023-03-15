@@ -12,16 +12,21 @@ The following unit categories are currently supported:
 * Time (seconds, minutes, hours, days, etc...)
 * Volume (cubic meters, liters, quarts, gallons, cups, etc...)
 * Amount of substance (moles, atoms)
+* Catalytic activity (katal, mol/sec)
 * Electric current (amperes)
 * Electric potential (volts)
+* Electrical resistance (ohm)
 * Energy (joules)
 * Force (newtons, dynes, poundals, etc..)
 * Frequency (hertz)
 * Illuminance (lux)
 * Luminous flux (lumens)
 * Luminous intensity (candela)
+* Magnetic flux (weber, maxwell)
+* Magnetic flux density (tesla, guass, gamma)
 * Power (watts, joules per second)
 * Pressure (pascal, bar, psi)
+* Radioactivity (becqueral, curie, rutherford)
 
 ### This script is a work in progress. Bug reports or suggestions are welcome.
 

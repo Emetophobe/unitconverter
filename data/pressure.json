@@ -1,0 +1,168 @@
+{
+  "pascal": {
+    "scale": "1",
+    "aliases": [
+      "Pa"
+    ]
+  },
+  "quectopascal": {
+    "scale": "1e-30",
+    "aliases": [
+      "qPa"
+    ]
+  },
+  "rontopascal": {
+    "scale": "1e-27",
+    "aliases": [
+      "rPa"
+    ]
+  },
+  "yoctopascal": {
+    "scale": "1e-24",
+    "aliases": [
+      "yPa"
+    ]
+  },
+  "zeptopascal": {
+    "scale": "1e-21",
+    "aliases": [
+      "zPa"
+    ]
+  },
+  "attopascal": {
+    "scale": "1e-18",
+    "aliases": [
+      "aPa"
+    ]
+  },
+  "femtopascal": {
+    "scale": "1e-15",
+    "aliases": [
+      "fPa"
+    ]
+  },
+  "picopascal": {
+    "scale": "1e-12",
+    "aliases": [
+      "pPa"
+    ]
+  },
+  "nanopascal": {
+    "scale": "1e-9",
+    "aliases": [
+      "nPa"
+    ]
+  },
+  "micropascal": {
+    "scale": "1e-6",
+    "aliases": [
+      "\u00b5Pa"
+    ]
+  },
+  "millipascal": {
+    "scale": "1e-3",
+    "aliases": [
+      "mPa"
+    ]
+  },
+  "centipascal": {
+    "scale": "1e-2",
+    "aliases": [
+      "cPa"
+    ]
+  },
+  "decipascal": {
+    "scale": "1e-1",
+    "aliases": [
+      "dPa"
+    ]
+  },
+  "decapascal": {
+    "scale": "1e1",
+    "aliases": [
+      "daPa"
+    ]
+  },
+  "hectopascal": {
+    "scale": "1e2",
+    "aliases": [
+      "hPa"
+    ]
+  },
+  "kilopascal": {
+    "scale": "1e3",
+    "aliases": [
+      "kPa"
+    ]
+  },
+  "megapascal": {
+    "scale": "1e6",
+    "aliases": [
+      "MPa"
+    ]
+  },
+  "gigapascal": {
+    "scale": "1e9",
+    "aliases": [
+      "GPa"
+    ]
+  },
+  "terapascal": {
+    "scale": "1e12",
+    "aliases": [
+      "TPa"
+    ]
+  },
+  "petapascal": {
+    "scale": "1e15",
+    "aliases": [
+      "PPa"
+    ]
+  },
+  "exapascal": {
+    "scale": "1e18",
+    "aliases": [
+      "EPa"
+    ]
+  },
+  "zettapascal": {
+    "scale": "1e21",
+    "aliases": [
+      "ZPa"
+    ]
+  },
+  "yottapascal": {
+    "scale": "1e24",
+    "aliases": [
+      "YPa"
+    ]
+  },
+  "ronnapascal": {
+    "scale": "1e27",
+    "aliases": [
+      "RPa"
+    ]
+  },
+  "quettapascal": {
+    "scale": "1e30",
+    "aliases": [
+      "QPa"
+    ]
+  },
+  "bar": {
+    "scale": "1e+5",
+    "aliases": []
+  },
+  "barye": {
+    "scale": "0.1",
+    "aliases": [
+      "Ba"
+    ]
+  },
+  "psi": {
+    "scale": "6894.76",
+    "aliases": [
+      "pound per square inch"
+    ]
+  }
+}

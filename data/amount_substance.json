@@ -1,0 +1,183 @@
+{
+  "moles": {
+    "scale": "1",
+    "aliases": [
+      "mole",
+      "mol"
+    ]
+  },
+  "quectomoles": {
+    "scale": "1e-30",
+    "aliases": [
+      "quectomole",
+      "qmol"
+    ]
+  },
+  "rontomoles": {
+    "scale": "1e-27",
+    "aliases": [
+      "rontomole",
+      "rmol"
+    ]
+  },
+  "yoctomoles": {
+    "scale": "1e-24",
+    "aliases": [
+      "yoctomole",
+      "ymol"
+    ]
+  },
+  "zeptomoles": {
+    "scale": "1e-21",
+    "aliases": [
+      "zeptomole",
+      "zmol"
+    ]
+  },
+  "attomoles": {
+    "scale": "1e-18",
+    "aliases": [
+      "attomole",
+      "amol"
+    ]
+  },
+  "femtomoles": {
+    "scale": "1e-15",
+    "aliases": [
+      "femtomole",
+      "fmol"
+    ]
+  },
+  "picomoles": {
+    "scale": "1e-12",
+    "aliases": [
+      "picomole",
+      "pmol"
+    ]
+  },
+  "nanomoles": {
+    "scale": "1e-9",
+    "aliases": [
+      "nanomole",
+      "nmol"
+    ]
+  },
+  "micromoles": {
+    "scale": "1e-6",
+    "aliases": [
+      "micromole",
+      "\u00b5mol"
+    ]
+  },
+  "millimoles": {
+    "scale": "1e-3",
+    "aliases": [
+      "millimole",
+      "mmol"
+    ]
+  },
+  "centimoles": {
+    "scale": "1e-2",
+    "aliases": [
+      "centimole",
+      "cmol"
+    ]
+  },
+  "decimoles": {
+    "scale": "1e-1",
+    "aliases": [
+      "decimole",
+      "dmol"
+    ]
+  },
+  "decamoles": {
+    "scale": "1e1",
+    "aliases": [
+      "decamole",
+      "damol"
+    ]
+  },
+  "hectomoles": {
+    "scale": "1e2",
+    "aliases": [
+      "hectomole",
+      "hmol"
+    ]
+  },
+  "kilomoles": {
+    "scale": "1e3",
+    "aliases": [
+      "kilomole",
+      "kmol"
+    ]
+  },
+  "megamoles": {
+    "scale": "1e6",
+    "aliases": [
+      "megamole",
+      "Mmol"
+    ]
+  },
+  "gigamoles": {
+    "scale": "1e9",
+    "aliases": [
+      "gigamole",
+      "Gmol"
+    ]
+  },
+  "teramoles": {
+    "scale": "1e12",
+    "aliases": [
+      "teramole",
+      "Tmol"
+    ]
+  },
+  "petamoles": {
+    "scale": "1e15",
+    "aliases": [
+      "petamole",
+      "Pmol"
+    ]
+  },
+  "examoles": {
+    "scale": "1e18",
+    "aliases": [
+      "examole",
+      "Emol"
+    ]
+  },
+  "zettamoles": {
+    "scale": "1e21",
+    "aliases": [
+      "zettamole",
+      "Zmol"
+    ]
+  },
+  "yottamoles": {
+    "scale": "1e24",
+    "aliases": [
+      "yottamole",
+      "Ymol"
+    ]
+  },
+  "ronnamoles": {
+    "scale": "1e27",
+    "aliases": [
+      "ronnamole",
+      "Rmol"
+    ]
+  },
+  "quettamoles": {
+    "scale": "1e30",
+    "aliases": [
+      "quettamole",
+      "Qmol"
+    ]
+  },
+  "atoms": {
+    "scale": "1.660538863127E-24",
+    "aliases": [
+      "atom"
+    ]
+  }
+}

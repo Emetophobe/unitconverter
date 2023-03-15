@@ -1,0 +1,152 @@
+{
+  "candela": {
+    "scale": "1",
+    "aliases": [
+      "cd"
+    ]
+  },
+  "quectocandela": {
+    "scale": "1e-30",
+    "aliases": [
+      "qcd"
+    ]
+  },
+  "rontocandela": {
+    "scale": "1e-27",
+    "aliases": [
+      "rcd"
+    ]
+  },
+  "yoctocandela": {
+    "scale": "1e-24",
+    "aliases": [
+      "ycd"
+    ]
+  },
+  "zeptocandela": {
+    "scale": "1e-21",
+    "aliases": [
+      "zcd"
+    ]
+  },
+  "attocandela": {
+    "scale": "1e-18",
+    "aliases": [
+      "acd"
+    ]
+  },
+  "femtocandela": {
+    "scale": "1e-15",
+    "aliases": [
+      "fcd"
+    ]
+  },
+  "picocandela": {
+    "scale": "1e-12",
+    "aliases": [
+      "pcd"
+    ]
+  },
+  "nanocandela": {
+    "scale": "1e-9",
+    "aliases": [
+      "ncd"
+    ]
+  },
+  "microcandela": {
+    "scale": "1e-6",
+    "aliases": [
+      "\u00b5cd"
+    ]
+  },
+  "millicandela": {
+    "scale": "1e-3",
+    "aliases": [
+      "mcd"
+    ]
+  },
+  "centicandela": {
+    "scale": "1e-2",
+    "aliases": [
+      "ccd"
+    ]
+  },
+  "decicandela": {
+    "scale": "1e-1",
+    "aliases": [
+      "dcd"
+    ]
+  },
+  "decacandela": {
+    "scale": "1e1",
+    "aliases": [
+      "dacd"
+    ]
+  },
+  "hectocandela": {
+    "scale": "1e2",
+    "aliases": [
+      "hcd"
+    ]
+  },
+  "kilocandela": {
+    "scale": "1e3",
+    "aliases": [
+      "kcd"
+    ]
+  },
+  "megacandela": {
+    "scale": "1e6",
+    "aliases": [
+      "Mcd"
+    ]
+  },
+  "gigacandela": {
+    "scale": "1e9",
+    "aliases": [
+      "Gcd"
+    ]
+  },
+  "teracandela": {
+    "scale": "1e12",
+    "aliases": [
+      "Tcd"
+    ]
+  },
+  "petacandela": {
+    "scale": "1e15",
+    "aliases": [
+      "Pcd"
+    ]
+  },
+  "exacandela": {
+    "scale": "1e18",
+    "aliases": [
+      "Ecd"
+    ]
+  },
+  "zettacandela": {
+    "scale": "1e21",
+    "aliases": [
+      "Zcd"
+    ]
+  },
+  "yottacandela": {
+    "scale": "1e24",
+    "aliases": [
+      "Ycd"
+    ]
+  },
+  "ronnacandela": {
+    "scale": "1e27",
+    "aliases": [
+      "Rcd"
+    ]
+  },
+  "quettacandela": {
+    "scale": "1e30",
+    "aliases": [
+      "Qcd"
+    ]
+  }
+}

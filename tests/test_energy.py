@@ -10,7 +10,7 @@ class TestEnergy(AbstractTestCase):
         self.base_unit = self.converter.find_unit('joules')
         self.units = self.converter.units['energy']
 
-    def test_amperes(self):
+    def test_joules(self):
         """ Test joule conversions. """
         expected_values = {
             "joules": "1",

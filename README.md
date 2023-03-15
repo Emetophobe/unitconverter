@@ -11,11 +11,17 @@ The following unit categories are currently supported:
 * Temperature (celsius, fahrenheit, kelvin, and rankine)
 * Time (seconds, minutes, hours, days, etc...)
 * Volume (cubic meters, liters, quarts, gallons, cups, etc...)
-
+* Amount of substance (moles, atoms)
 * Electric current (amperes)
 * Electric potential (volts)
 * Energy (joules)
+* Force (newtons, dynes, poundals, etc..)
+* Frequency (hertz)
+* Illuminance (lux)
+* Luminous flux (lumens)
+* Luminous intensity (candela)
 * Power (watts, joules per second)
+* Pressure (pascal, bar, psi)
 
 ### This script is a work in progress. Bug reports or suggestions are welcome.
 
@@ -30,7 +36,7 @@ The following unit categories are currently supported:
 
 ## Usage
 
-    usage: converter.py [-h] [-p size] [-c] [-l] value source dest
+    usage: converter.py [-h] [-p size] [-c] [-e] [-l] value source dest
 
     A simple unit converter.
 
@@ -43,9 +49,9 @@ The following unit categories are currently supported:
     -h, --help            show this help message and exit
     -p size, --precision size
                             rounding precision (default: None)
-    -c, --comma           show thousands separator (default: False)
+    -c, --commas          show thousands separator (default: False)
+    -e, --exponent        show E notation when possible (default: False)
     -l, --list            list unit categories and exit
-
 
 ## Examples
 

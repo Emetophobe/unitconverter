@@ -1,0 +1,207 @@
+{
+  "newtons": {
+    "scale": "1",
+    "aliases": [
+      "newton",
+      "N"
+    ]
+  },
+  "quectonewtons": {
+    "scale": "1e-30",
+    "aliases": [
+      "quectonewton",
+      "qN"
+    ]
+  },
+  "rontonewtons": {
+    "scale": "1e-27",
+    "aliases": [
+      "rontonewton",
+      "rN"
+    ]
+  },
+  "yoctonewtons": {
+    "scale": "1e-24",
+    "aliases": [
+      "yoctonewton",
+      "yN"
+    ]
+  },
+  "zeptonewtons": {
+    "scale": "1e-21",
+    "aliases": [
+      "zeptonewton",
+      "zN"
+    ]
+  },
+  "attonewtons": {
+    "scale": "1e-18",
+    "aliases": [
+      "attonewton",
+      "aN"
+    ]
+  },
+  "femtonewtons": {
+    "scale": "1e-15",
+    "aliases": [
+      "femtonewton",
+      "fN"
+    ]
+  },
+  "piconewtons": {
+    "scale": "1e-12",
+    "aliases": [
+      "piconewton",
+      "pN"
+    ]
+  },
+  "nanonewtons": {
+    "scale": "1e-9",
+    "aliases": [
+      "nanonewton",
+      "nN"
+    ]
+  },
+  "micronewtons": {
+    "scale": "1e-6",
+    "aliases": [
+      "micronewton",
+      "\u00b5N"
+    ]
+  },
+  "millinewtons": {
+    "scale": "1e-3",
+    "aliases": [
+      "millinewton",
+      "mN"
+    ]
+  },
+  "centinewtons": {
+    "scale": "1e-2",
+    "aliases": [
+      "centinewton",
+      "cN"
+    ]
+  },
+  "decinewtons": {
+    "scale": "1e-1",
+    "aliases": [
+      "decinewton",
+      "dN"
+    ]
+  },
+  "decanewtons": {
+    "scale": "1e1",
+    "aliases": [
+      "decanewton",
+      "daN"
+    ]
+  },
+  "hectonewtons": {
+    "scale": "1e2",
+    "aliases": [
+      "hectonewton",
+      "hN"
+    ]
+  },
+  "kilonewtons": {
+    "scale": "1e3",
+    "aliases": [
+      "kilonewton",
+      "kN"
+    ]
+  },
+  "meganewtons": {
+    "scale": "1e6",
+    "aliases": [
+      "meganewton",
+      "MN"
+    ]
+  },
+  "giganewtons": {
+    "scale": "1e9",
+    "aliases": [
+      "giganewton",
+      "GN"
+    ]
+  },
+  "teranewtons": {
+    "scale": "1e12",
+    "aliases": [
+      "teranewton",
+      "TN"
+    ]
+  },
+  "petanewtons": {
+    "scale": "1e15",
+    "aliases": [
+      "petanewton",
+      "PN"
+    ]
+  },
+  "exanewtons": {
+    "scale": "1e18",
+    "aliases": [
+      "exanewton",
+      "EN"
+    ]
+  },
+  "zettanewtons": {
+    "scale": "1e21",
+    "aliases": [
+      "zettanewton",
+      "ZN"
+    ]
+  },
+  "yottanewtons": {
+    "scale": "1e24",
+    "aliases": [
+      "yottanewton",
+      "YN"
+    ]
+  },
+  "ronnanewtons": {
+    "scale": "1e27",
+    "aliases": [
+      "ronnanewton",
+      "RN"
+    ]
+  },
+  "quettanewtons": {
+    "scale": "1e30",
+    "aliases": [
+      "quettanewton",
+      "QN"
+    ]
+  },
+  "dynes": {
+    "scale": "1e-5",
+    "aliases": [
+        "dyne",
+        "dyn"
+    ]
+  },
+  "kilogram-force": {
+    "scale": "9.80665",
+    "aliases": [
+        "kiloponds",
+        "kilopond",
+        "kgf"
+    ]
+  },
+  "pound-force": {
+    "scale": "4.448222",
+    "aliases": [
+        "pounds of force",
+        "pound of force",
+        "lbf"
+    ]
+  },
+  "poundals": {
+    "scale": "0.138254954376",
+    "aliases": [
+        "poundal",
+        "pdl"
+    ]
+  }
+}

@@ -1,0 +1,152 @@
+{
+  "hertz": {
+    "scale": "1",
+    "aliases": [
+      "Hz"
+    ]
+  },
+  "quectohertz": {
+    "scale": "1e-30",
+    "aliases": [
+      "qHz"
+    ]
+  },
+  "rontohertz": {
+    "scale": "1e-27",
+    "aliases": [
+      "rHz"
+    ]
+  },
+  "yoctohertz": {
+    "scale": "1e-24",
+    "aliases": [
+      "yHz"
+    ]
+  },
+  "zeptohertz": {
+    "scale": "1e-21",
+    "aliases": [
+      "zHz"
+    ]
+  },
+  "attohertz": {
+    "scale": "1e-18",
+    "aliases": [
+      "aHz"
+    ]
+  },
+  "femtohertz": {
+    "scale": "1e-15",
+    "aliases": [
+      "fHz"
+    ]
+  },
+  "picohertz": {
+    "scale": "1e-12",
+    "aliases": [
+      "pHz"
+    ]
+  },
+  "nanohertz": {
+    "scale": "1e-9",
+    "aliases": [
+      "nHz"
+    ]
+  },
+  "microhertz": {
+    "scale": "1e-6",
+    "aliases": [
+      "\u00b5Hz"
+    ]
+  },
+  "millihertz": {
+    "scale": "1e-3",
+    "aliases": [
+      "mHz"
+    ]
+  },
+  "centihertz": {
+    "scale": "1e-2",
+    "aliases": [
+      "cHz"
+    ]
+  },
+  "decihertz": {
+    "scale": "1e-1",
+    "aliases": [
+      "dHz"
+    ]
+  },
+  "decahertz": {
+    "scale": "1e1",
+    "aliases": [
+      "daHz"
+    ]
+  },
+  "hectohertz": {
+    "scale": "1e2",
+    "aliases": [
+      "hHz"
+    ]
+  },
+  "kilohertz": {
+    "scale": "1e3",
+    "aliases": [
+      "kHz"
+    ]
+  },
+  "megahertz": {
+    "scale": "1e6",
+    "aliases": [
+      "MHz"
+    ]
+  },
+  "gigahertz": {
+    "scale": "1e9",
+    "aliases": [
+      "GHz"
+    ]
+  },
+  "terahertz": {
+    "scale": "1e12",
+    "aliases": [
+      "THz"
+    ]
+  },
+  "petahertz": {
+    "scale": "1e15",
+    "aliases": [
+      "PHz"
+    ]
+  },
+  "exahertz": {
+    "scale": "1e18",
+    "aliases": [
+      "EHz"
+    ]
+  },
+  "zettahertz": {
+    "scale": "1e21",
+    "aliases": [
+      "ZHz"
+    ]
+  },
+  "yottahertz": {
+    "scale": "1e24",
+    "aliases": [
+      "YHz"
+    ]
+  },
+  "ronnahertz": {
+    "scale": "1e27",
+    "aliases": [
+      "RHz"
+    ]
+  },
+  "quettahertz": {
+    "scale": "1e30",
+    "aliases": [
+      "QHz"
+    ]
+  }
+}

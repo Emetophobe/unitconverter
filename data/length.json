@@ -8,60 +8,6 @@
       "m"
     ]
   },
-  "centimeters": {
-    "scale": "1e-2",
-    "aliases": [
-      "centimeter",
-      "centimetre",
-      "centimetres",
-      "cm"
-    ]
-  },
-  "decimeters": {
-    "scale": "1e-1",
-    "aliases": [
-      "decimeter",
-      "decimetre",
-      "decimetres",
-      "dm"
-    ]
-  },
-  "kilometers": {
-    "scale": "1e3",
-    "aliases": [
-      "kilometer",
-      "kilometre",
-      "kilometres",
-      "km"
-    ]
-  },
-  "micrometers": {
-    "scale": "1e-6",
-    "aliases": [
-      "micrometer",
-      "micrometre",
-      "micrometres",
-      "\u03bcm"
-    ]
-  },
-  "millimeters": {
-    "scale": "1e-3",
-    "aliases": [
-      "millimeter",
-      "millimetre",
-      "millimetres",
-      "mm"
-    ]
-  },
-  "nanometers": {
-    "scale": "1e-9",
-    "aliases": [
-      "nanometer",
-      "nanometre",
-      "nanometres",
-      "nm"
-    ]
-  },
   "yoctometers": {
     "scale": "1e-24",
     "aliases": [
@@ -107,6 +53,51 @@
       "pm"
     ]
   },
+  "nanometers": {
+    "scale": "1e-9",
+    "aliases": [
+      "nanometer",
+      "nanometre",
+      "nanometres",
+      "nm"
+    ]
+  },
+  "micrometers": {
+    "scale": "1e-6",
+    "aliases": [
+      "micrometer",
+      "micrometre",
+      "micrometres",
+      "\u03bcm"
+    ]
+  },
+  "millimeters": {
+    "scale": "1e-3",
+    "aliases": [
+      "millimeter",
+      "millimetre",
+      "millimetres",
+      "mm"
+    ]
+  },
+  "centimeters": {
+    "scale": "1e-2",
+    "aliases": [
+      "centimeter",
+      "centimetre",
+      "centimetres",
+      "cm"
+    ]
+  },
+  "decimeters": {
+    "scale": "1e-1",
+    "aliases": [
+      "decimeter",
+      "decimetre",
+      "decimetres",
+      "dm"
+    ]
+  },
   "decameters": {
     "scale": "1e1",
     "aliases": [
@@ -123,6 +114,15 @@
       "hectometre",
       "hectometres",
       "hm"
+    ]
+  },
+  "kilometers": {
+    "scale": "1e3",
+    "aliases": [
+      "kilometer",
+      "kilometre",
+      "kilometres",
+      "km"
     ]
   },
   "megameters": {

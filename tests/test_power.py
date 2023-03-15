@@ -10,7 +10,7 @@ class TestPower(AbstractTestCase):
         self.base_unit = self.converter.find_unit('watts')
         self.units = self.converter.units['power']
 
-    def test_amperes(self):
+    def test_watts(self):
         """ Test watt conversions. """
         expected_values = {
             "watts": "1",

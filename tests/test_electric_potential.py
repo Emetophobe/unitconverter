@@ -3,15 +3,15 @@
 from tests import AbstractTestCase
 
 
-class TestElectricCurrent(AbstractTestCase):
+class TestElectricPotential(AbstractTestCase):
 
     def setUp(self):
         super().setUp()
         self.base_unit = self.converter.find_unit('volts')
         self.units = self.converter.units['electric potential']
 
-    def test_amperes(self):
-        """ Test ampere conversions. """
+    def test_volts(self):
+        """ Test volt conversions. """
         expected_values = {
             "volts": "1",
             "quectovolts": "1E+30",

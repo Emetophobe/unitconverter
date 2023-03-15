@@ -147,8 +147,6 @@ def format_decimal(value: Decimal,
                    ) -> str:
     """ Format a decimal into a string for display.
 
-    The exponent argument takes precedence over the precision and commas arguments.
-
     Args:
         value (Decimal): the decimal value.
         exponent (bool, optional): use e notation when possible. Defaults to False.
@@ -158,12 +156,13 @@ def format_decimal(value: Decimal,
     Returns:
         str: the formatted string.
     """
+    precision = f'.{precision}' if precision is not None else ''
+
     if exponent:
-        return f'{value:.2E}'
+        return f'{value:{precision}E}'
 
     comma = ',' if commas else ''
-    precision = f'.{precision}f' if precision is not None else ''
-    return f'{value:{comma}{precision}}'
+    return f'{value:{comma}{precision}f}'
 
 
 def print_error(error_msg: str, status: int = 1) -> None:
@@ -235,12 +234,8 @@ def main() -> None:
         print_error(f'Error: {args.value} is not a valid number.')
 
     # Check precision
-    if args.precision is not None:
-        if args.exponent:
-            print_error('Error: Cannot use precision with exponent argument.')
-
-        if args.precision < 0 or args.precision > 20:
-            print_error('Error: precision must be between 0 and 20.')
+    if args.precision is not None and (args.precision < 0 or args.precision > 20):
+        print_error('Error: precision must be between 0 and 20.')
 
     # Get the source and dest units
     try:

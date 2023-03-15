@@ -1,0 +1,152 @@
+{
+  "lux": {
+    "scale": "1",
+    "aliases": [
+      "lx"
+    ]
+  },
+  "quectolux": {
+    "scale": "1e-30",
+    "aliases": [
+      "qlx"
+    ]
+  },
+  "rontolux": {
+    "scale": "1e-27",
+    "aliases": [
+      "rlx"
+    ]
+  },
+  "yoctolux": {
+    "scale": "1e-24",
+    "aliases": [
+      "ylx"
+    ]
+  },
+  "zeptolux": {
+    "scale": "1e-21",
+    "aliases": [
+      "zlx"
+    ]
+  },
+  "attolux": {
+    "scale": "1e-18",
+    "aliases": [
+      "alx"
+    ]
+  },
+  "femtolux": {
+    "scale": "1e-15",
+    "aliases": [
+      "flx"
+    ]
+  },
+  "picolux": {
+    "scale": "1e-12",
+    "aliases": [
+      "plx"
+    ]
+  },
+  "nanolux": {
+    "scale": "1e-9",
+    "aliases": [
+      "nlx"
+    ]
+  },
+  "microlux": {
+    "scale": "1e-6",
+    "aliases": [
+      "\u00b5lx"
+    ]
+  },
+  "millilux": {
+    "scale": "1e-3",
+    "aliases": [
+      "mlx"
+    ]
+  },
+  "centilux": {
+    "scale": "1e-2",
+    "aliases": [
+      "clx"
+    ]
+  },
+  "decilux": {
+    "scale": "1e-1",
+    "aliases": [
+      "dlx"
+    ]
+  },
+  "decalux": {
+    "scale": "1e1",
+    "aliases": [
+      "dalx"
+    ]
+  },
+  "hectolux": {
+    "scale": "1e2",
+    "aliases": [
+      "hlx"
+    ]
+  },
+  "kilolux": {
+    "scale": "1e3",
+    "aliases": [
+      "klx"
+    ]
+  },
+  "megalux": {
+    "scale": "1e6",
+    "aliases": [
+      "Mlx"
+    ]
+  },
+  "gigalux": {
+    "scale": "1e9",
+    "aliases": [
+      "Glx"
+    ]
+  },
+  "teralux": {
+    "scale": "1e12",
+    "aliases": [
+      "Tlx"
+    ]
+  },
+  "petalux": {
+    "scale": "1e15",
+    "aliases": [
+      "Plx"
+    ]
+  },
+  "exalux": {
+    "scale": "1e18",
+    "aliases": [
+      "Elx"
+    ]
+  },
+  "zettalux": {
+    "scale": "1e21",
+    "aliases": [
+      "Zlx"
+    ]
+  },
+  "yottalux": {
+    "scale": "1e24",
+    "aliases": [
+      "Ylx"
+    ]
+  },
+  "ronnalux": {
+    "scale": "1e27",
+    "aliases": [
+      "Rlx"
+    ]
+  },
+  "quettalux": {
+    "scale": "1e30",
+    "aliases": [
+      "Qlx"
+    ]
+  }
+}

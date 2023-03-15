@@ -1,0 +1,177 @@
+{
+  "quectovolts": {
+    "scale": "1e-30",
+    "aliases": [
+      "quectovolt",
+      "qV"
+    ]
+  },
+  "rontovolts": {
+    "scale": "1e-27",
+    "aliases": [
+      "rontovolt",
+      "rV"
+    ]
+  },
+  "yoctovolts": {
+    "scale": "1e-24",
+    "aliases": [
+      "yoctovolt",
+      "yV"
+    ]
+  },
+  "zeptovolts": {
+    "scale": "1e-21",
+    "aliases": [
+      "zeptovolt",
+      "zV"
+    ]
+  },
+  "attovolts": {
+    "scale": "1e-18",
+    "aliases": [
+      "attovolt",
+      "aV"
+    ]
+  },
+  "femtovolts": {
+    "scale": "1e-15",
+    "aliases": [
+      "femtovolt",
+      "fV"
+    ]
+  },
+  "picovolts": {
+    "scale": "1e-12",
+    "aliases": [
+      "picovolt",
+      "pV"
+    ]
+  },
+  "nanovolts": {
+    "scale": "1e-9",
+    "aliases": [
+      "nanovolt",
+      "nV"
+    ]
+  },
+  "microvolts": {
+    "scale": "1e-6",
+    "aliases": [
+      "microvolt",
+      "\u00b5V"
+    ]
+  },
+  "millivolts": {
+    "scale": "1e-3",
+    "aliases": [
+      "millivolt",
+      "mV"
+    ]
+  },
+  "centivolts": {
+    "scale": "1e-2",
+    "aliases": [
+      "centivolt",
+      "cV"
+    ]
+  },
+  "decivolts": {
+    "scale": "1e-1",
+    "aliases": [
+      "decivolt",
+      "dV"
+    ]
+  },
+  "decavolts": {
+    "scale": "1e1",
+    "aliases": [
+      "decavolt",
+      "daV"
+    ]
+  },
+  "volts": {
+    "scale": "1",
+    "aliases": [
+      "volt",
+      "V"
+    ]
+  },
+  "hectovolts": {
+    "scale": "1e2",
+    "aliases": [
+      "hectovolt",
+      "hV"
+    ]
+  },
+  "kilovolts": {
+    "scale": "1e3",
+    "aliases": [
+      "kilovolt",
+      "kV"
+    ]
+  },
+  "megavolts": {
+    "scale": "1e6",
+    "aliases": [
+      "megavolt",
+      "MV"
+    ]
+  },
+  "gigavolts": {
+    "scale": "1e9",
+    "aliases": [
+      "gigavolt",
+      "GV"
+    ]
+  },
+  "teravolts": {
+    "scale": "1e12",
+    "aliases": [
+      "teravolt",
+      "TV"
+    ]
+  },
+  "petavolts": {
+    "scale": "1e15",
+    "aliases": [
+      "petavolt",
+      "PV"
+    ]
+  },
+  "exavolts": {
+    "scale": "1e18",
+    "aliases": [
+      "exavolt",
+      "EV"
+    ]
+  },
+  "zettavolts": {
+    "scale": "1e21",
+    "aliases": [
+      "zettavolt",
+      "ZV"
+    ]
+  },
+  "yottavolts": {
+    "scale": "1e24",
+    "aliases": [
+      "yottavolt",
+      "YV"
+    ]
+  },
+  "ronnavolts": {
+    "scale": "1e27",
+    "aliases": [
+      "ronnavolt",
+      "RV"
+    ]
+  },
+  "quettavolts": {
+    "scale": "1e30",
+    "aliases": [
+      "quettavolt",
+      "QV"
+    ]
+  }
+}

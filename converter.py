@@ -242,7 +242,6 @@ def main() -> None:
     # Perform the conversion
     try:
         result = converter.convert(value, source, dest)
-        result = remove_exponent(result)
     except ValueError as e:
         print_error(e)
     except DecimalException:

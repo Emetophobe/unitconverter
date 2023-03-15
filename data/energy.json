@@ -1,0 +1,177 @@
+{
+  "joules": {
+    "scale": "1",
+    "aliases": [
+      "joule",
+      "J"
+    ]
+  },
+  "quectojoules": {
+    "scale": "1e-30",
+    "aliases": [
+      "quectojoule",
+      "qJ"
+    ]
+  },
+  "rontojoules": {
+    "scale": "1e-27",
+    "aliases": [
+      "rontojoule",
+      "rJ"
+    ]
+  },
+  "yoctojoules": {
+    "scale": "1e-24",
+    "aliases": [
+      "yoctojoule",
+      "yJ"
+    ]
+  },
+  "zeptojoules": {
+    "scale": "1e-21",
+    "aliases": [
+      "zeptojoule",
+      "zJ"
+    ]
+  },
+  "attojoules": {
+    "scale": "1e-18",
+    "aliases": [
+      "attojoule",
+      "aJ"
+    ]
+  },
+  "femtojoules": {
+    "scale": "1e-15",
+    "aliases": [
+      "femtojoule",
+      "fJ"
+    ]
+  },
+  "picojoules": {
+    "scale": "1e-12",
+    "aliases": [
+      "picojoule",
+      "pJ"
+    ]
+  },
+  "nanojoules": {
+    "scale": "1e-9",
+    "aliases": [
+      "nanojoule",
+      "nJ"
+    ]
+  },
+  "microjoules": {
+    "scale": "1e-6",
+    "aliases": [
+      "microjoule",
+      "\u00b5J"
+    ]
+  },
+  "millijoules": {
+    "scale": "1e-3",
+    "aliases": [
+      "millijoule",
+      "mJ"
+    ]
+  },
+  "centijoules": {
+    "scale": "1e-2",
+    "aliases": [
+      "centijoule",
+      "cJ"
+    ]
+  },
+  "decijoules": {
+    "scale": "1e-1",
+    "aliases": [
+      "decijoule",
+      "dJ"
+    ]
+  },
+  "decajoules": {
+    "scale": "1e1",
+    "aliases": [
+      "decajoule",
+      "daJ"
+    ]
+  },
+  "hectojoules": {
+    "scale": "1e2",
+    "aliases": [
+      "hectojoule",
+      "hJ"
+    ]
+  },
+  "kilojoules": {
+    "scale": "1e3",
+    "aliases": [
+      "kilojoule",
+      "kJ"
+    ]
+  },
+  "megajoules": {
+    "scale": "1e6",
+    "aliases": [
+      "megajoule",
+      "MJ"
+    ]
+  },
+  "gigajoules": {
+    "scale": "1e9",
+    "aliases": [
+      "gigajoule",
+      "GJ"
+    ]
+  },
+  "terajoules": {
+    "scale": "1e12",
+    "aliases": [
+      "terajoule",
+      "TJ"
+    ]
+  },
+  "petajoules": {
+    "scale": "1e15",
+    "aliases": [
+      "petajoule",
+      "PJ"
+    ]
+  },
+  "exajoules": {
+    "scale": "1e18",
+    "aliases": [
+      "exajoule",
+      "EJ"
+    ]
+  },
+  "zettajoules": {
+    "scale": "1e21",
+    "aliases": [
+      "zettajoule",
+      "ZJ"
+    ]
+  },
+  "yottajoules": {
+    "scale": "1e24",
+    "aliases": [
+      "yottajoule",
+      "YJ"
+    ]
+  },
+  "ronnajoules": {
+    "scale": "1e27",
+    "aliases": [
+      "ronnajoule",
+      "RJ"
+    ]
+  },
+  "quettajoules": {
+    "scale": "1e30",
+    "aliases": [
+      "quettajoule",
+      "QJ"
+    ]
+  }
+}

@@ -6,20 +6,23 @@ The following unit categories are currently supported:
 
 * Area (square meters, square miles, acres, hectares, etc..)
 * Bytes (bits, bytes, kilobytes, kibibytes, etc..)
-* Electric current (amperes)
-* Electric potential (volts)
 * Length (meters, feet, inches, etc...)
 * Mass (grams, pounds, ounces, etc...)
 * Temperature (celsius, fahrenheit, kelvin, and rankine)
 * Time (seconds, minutes, hours, days, etc...)
 * Volume (cubic meters, liters, quarts, gallons, cups, etc...)
 
+* Electric current (amperes)
+* Electric potential (volts)
+* Energy (joules)
+* Power (watts, joules per second)
+
 ### This script is a work in progress. Bug reports or suggestions are welcome.
 
 
 ## Requirements
 
-    Python 3.9 or newer.
+    Python 3.9 or newer
 
 ## Installation
 

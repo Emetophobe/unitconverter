@@ -10,7 +10,7 @@ class TestUnits(AbstractTestCase):
         msg = 'Duplicate name or alias: {}'
         aliases = {}
 
-        for unit in self.get_units():
+        for unit in self.yield_units():
             self.assertNotIn(unit.name, aliases.keys(), msg.format(unit.name))
             aliases[unit.name] = unit
 
@@ -18,7 +18,7 @@ class TestUnits(AbstractTestCase):
                 self.assertNotIn(alias, aliases.keys(), msg.format(alias))
                 aliases[alias] = unit
 
-    def get_units(self) -> Unit:
+    def yield_units(self) -> Unit:
         """ Iterate over the unit categories and yield Units. """
         for category, units in self.all_units.items():
             for unitname, properties in units.items():

@@ -140,19 +140,30 @@ class Converter:
                 print()
 
 
-def remove_exponent(value: Decimal) -> Decimal:
-    """ Convert exponent notation to decimal notation if possible.
+def format_decimal(value: Decimal,
+                   exponent: bool = False,
+                   precision: int = None,
+                   commas: bool = False,
+                   ) -> str:
+    """ Format a decimal into a string for display.
+
+    The exponent argument takes precedence over the precision and commas arguments.
 
     Args:
-        value (Decimal): source value.
+        value (Decimal): the decimal value.
+        exponent (bool, optional): use e notation when possible. Defaults to False.
+        precision (int, optional): set rounding precision. Defaults to None.
+        commas (bool, optional): use commas for thousands separators. Defaults to False.
 
     Returns:
-        Decimal: the converted value.
+        str: the formatted string.
     """
-    if value == value.to_integral():
-        return value.quantize(Decimal(1))
-    else:
-        return value.normalize()
+    if exponent:
+        return f'{value:.2E}'
+
+    comma = ',' if commas else ''
+    precision = f'.{precision}f' if precision is not None else ''
+    return f'{value:{comma}{precision}}'
 
 
 def print_error(error_msg: str, status: int = 1) -> None:
@@ -189,7 +200,7 @@ def main() -> None:
         type=int)
 
     parser.add_argument(
-        '-c', '--comma',
+        '-c', '--commas',
         help='show thousands separator (default: False)',
         action='store_true'
     )
@@ -223,9 +234,13 @@ def main() -> None:
     except DecimalException:
         print_error(f'Error: {args.value} is not a valid number.')
 
-    precision = args.precision
-    if precision is not None and (precision < 0 or precision > 20):
-        print_error('Error: precision must be between 0 and 20.')
+    # Check precision
+    if args.precision is not None:
+        if args.exponent:
+            print_error('Error: Cannot use precision with exponent argument.')
+
+        if args.precision < 0 or args.precision > 20:
+            print_error('Error: precision must be between 0 and 20.')
 
     # Get the source and dest units
     try:
@@ -247,13 +262,10 @@ def main() -> None:
     except DecimalException:
         print_error('Error: Invalid decimal operation')
 
-    if not args.exponent:
-        result = remove_exponent(result)
-
-    # Display the result
-    commas = ',' if args.comma else ''
-    precision = f'.{precision}f' if precision is not None else ''
-    print(f'{value:{commas}} {args.source} = {result:{commas}{precision}} {args.dest}')
+    # Display result
+    value = format_decimal(value, commas=args.commas)
+    result = format_decimal(result, args.exponent, args.precision, args.commas)
+    print(f'{value} {args.source} = {result} {args.dest}')
 
 
 if __name__ == '__main__':

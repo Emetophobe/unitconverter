@@ -1,0 +1,227 @@
+{
+  "quectoamperes": {
+    "scale": "1e-30",
+    "aliases": [
+      "quectoampere",
+      "quectoamps",
+      "quectoamp",
+      "qA"
+    ]
+  },
+  "rontoamperes": {
+    "scale": "1e-27",
+    "aliases": [
+      "rontoampere",
+      "rontoamps",
+      "rontoamp",
+      "rA"
+    ]
+  },
+  "yoctoamperes": {
+    "scale": "1e-24",
+    "aliases": [
+      "yoctoampere",
+      "yoctoamps",
+      "yoctoamp",
+      "yA"
+    ]
+  },
+  "zeptoamperes": {
+    "scale": "1e-21",
+    "aliases": [
+      "zeptoampere",
+      "zeptoamps",
+      "zeptoamp",
+      "zA"
+    ]
+  },
+  "attoamperes": {
+    "scale": "1e-18",
+    "aliases": [
+      "attoampere",
+      "attoamps",
+      "attoamp",
+      "aA"
+    ]
+  },
+  "femtoamperes": {
+    "scale": "1e-15",
+    "aliases": [
+      "femtoampere",
+      "femtoamps",
+      "femtoamp",
+      "fA"
+    ]
+  },
+  "picoamperes": {
+    "scale": "1e-12",
+    "aliases": [
+      "picoampere",
+      "picoamps",
+      "picoamp",
+      "pA"
+    ]
+  },
+  "nanoamperes": {
+    "scale": "1e-9",
+    "aliases": [
+      "nanoampere",
+      "nanoamps",
+      "nanoamp",
+      "nA"
+    ]
+  },
+  "microamperes": {
+    "scale": "1e-6",
+    "aliases": [
+      "microampere",
+      "microamps",
+      "microamp",
+      "\u00b5A"
+    ]
+  },
+  "milliamperes": {
+    "scale": "1e-3",
+    "aliases": [
+      "milliampere",
+      "milliamps",
+      "milliamp",
+      "mA"
+    ]
+  },
+  "centiamperes": {
+    "scale": "1e-2",
+    "aliases": [
+      "centiampere",
+      "centiamps",
+      "centiamp",
+      "cA"
+    ]
+  },
+  "deciamperes": {
+    "scale": "1e-1",
+    "aliases": [
+      "deciampere",
+      "deciamps",
+      "deciamp",
+      "dA"
+    ]
+  },
+  "decaamperes": {
+    "scale": "1e1",
+    "aliases": [
+      "decaampere",
+      "decaamps",
+      "decaamp",
+      "daA"
+    ]
+  },
+  "amperes": {
+    "scale": "1",
+    "aliases": [
+      "ampere",
+      "amps",
+      "amp",
+      "A"
+    ]
+  },
+  "hectoamperes": {
+    "scale": "1e2",
+    "aliases": [
+      "hectoampere",
+      "hectoamps",
+      "hectoamp",
+      "hA"
+    ]
+  },
+  "kiloamperes": {
+    "scale": "1e3",
+    "aliases": [
+      "kiloampere",
+      "kiloamps",
+      "kiloamp",
+      "kA"
+    ]
+  },
+  "megaamperes": {
+    "scale": "1e6",
+    "aliases": [
+      "megaampere",
+      "megaamps",
+      "megaamp",
+      "MA"
+    ]
+  },
+  "gigaamperes": {
+    "scale": "1e9",
+    "aliases": [
+      "gigaampere",
+      "gigaamps",
+      "gigaamp",
+      "GA"
+    ]
+  },
+  "teraamperes": {
+    "scale": "1e12",
+    "aliases": [
+      "teraampere",
+      "teraamps",
+      "teraamp",
+      "TA"
+    ]
+  },
+  "petaamperes": {
+    "scale": "1e15",
+    "aliases": [
+      "petaampere",
+      "petaamps",
+      "petaamp",
+      "PA"
+    ]
+  },
+  "exaamperes": {
+    "scale": "1e18",
+    "aliases": [
+      "exaampere",
+      "exaamps",
+      "exaamp",
+      "EA"
+    ]
+  },
+  "zettaamperes": {
+    "scale": "1e21",
+    "aliases": [
+      "zettaampere",
+      "zettaamps",
+      "zettaamp",
+      "ZA"
+    ]
+  },
+  "yottaamperes": {
+    "scale": "1e24",
+    "aliases": [
+      "yottaampere",
+      "yottaamps",
+      "yottaamp",
+      "YA"
+    ]
+  },
+  "ronnaamperes": {
+    "scale": "1e27",
+    "aliases": [
+      "ronnaampere",
+      "ronnaamps",
+      "ronnaamp",
+      "RA"
+    ]
+  },
+  "quettaamperes": {
+    "scale": "1e30",
+    "aliases": [
+      "quettaampere",
+      "quettaamps",
+      "quettaamp",
+      "QA"
+    ]
+  }
+}

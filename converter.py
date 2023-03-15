@@ -111,7 +111,8 @@ class Converter:
         for path in Path('./data/').glob('*.json'):
             with open(path, 'r', encoding='utf-8') as infile:
                 data = json.load(infile)
-                self.units[path.stem] = data
+                category = path.stem.replace('_', ' ')
+                self.units[category] = data
 
     def list_units(self, category: str = None) -> None:
         """ List available units.
@@ -194,6 +195,12 @@ def main() -> None:
     )
 
     parser.add_argument(
+        '-e', '--exponent',
+        help='show E notation when possible (default: False)',
+        action='store_true'
+    )
+
+    parser.add_argument(
         '-l', '--list',
         help='list unit categories and exit',
         action='store_true')
@@ -240,6 +247,9 @@ def main() -> None:
         print_error(e)
     except DecimalException:
         print_error('Error: Invalid decimal operation')
+
+    if not args.exponent:
+        result = remove_exponent(result)
 
     # Display the result
     commas = ',' if args.comma else ''

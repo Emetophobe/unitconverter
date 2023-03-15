@@ -54,11 +54,11 @@ The following unit categories are currently supported:
 
 #### Unit names can be symbols or shortforms
 
-    $ python3 converter.py 10 centimeters meters
-    10 centimeters = 0.1 meters
-
     $ python3 converter.py 10 cm m
     10 cm = 0.1 m
+
+    $ python3 converter.py 10 amps kA
+    10 amps = 0.01 kA
 
 #### Set rounding precision with `-p`/`--precision`
 

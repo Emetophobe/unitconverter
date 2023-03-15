@@ -1,4 +1,13 @@
 {
+  "amperes": {
+    "scale": "1",
+    "aliases": [
+      "ampere",
+      "amps",
+      "amp",
+      "A"
+    ]
+  },
   "quectoamperes": {
     "scale": "1e-30",
     "aliases": [
@@ -114,15 +123,6 @@
       "decaamps",
       "decaamp",
       "daA"
-    ]
-  },
-  "amperes": {
-    "scale": "1",
-    "aliases": [
-      "ampere",
-      "amps",
-      "amp",
-      "A"
     ]
   },
   "hectoamperes": {

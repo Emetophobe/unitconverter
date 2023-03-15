@@ -1,4 +1,11 @@
 {
+  "volts": {
+    "scale": "1",
+    "aliases": [
+      "volt",
+      "V"
+    ]
+  },
   "quectovolts": {
     "scale": "1e-30",
     "aliases": [
@@ -88,13 +95,6 @@
     "aliases": [
       "decavolt",
       "daV"
-    ]
-  },
-  "volts": {
-    "scale": "1",
-    "aliases": [
-      "volt",
-      "V"
     ]
   },
   "hectovolts": {

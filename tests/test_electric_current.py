@@ -7,9 +7,8 @@ class TestElectricCurrent(AbstractTestCase):
 
     def setUp(self):
         super().setUp()
-        self.category = 'electric current'
         self.base_unit = self.converter.find_unit('amperes')
-        self.units = self.converter.units[self.category]
+        self.units = self.converter.units['electric current']
 
     def test_amperes(self):
         """ Test ampere conversions. """

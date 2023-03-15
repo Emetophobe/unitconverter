@@ -1,9 +1,11 @@
+#!/usr/bin/env python
 # Copyright (c) 2022-2023 Mike Cunningham
 
 import json
 
 
 METRIC_TABLE = [
+    ('1', '', ''),  # base unit
     ('1e-30', 'q', 'quecto'),
     ('1e-27', 'r', 'ronto'),
     ('1e-24', 'y', 'yocto'),
@@ -17,7 +19,6 @@ METRIC_TABLE = [
     ('1e-2', 'c', 'centi'),
     ('1e-1', 'd', 'deci'),
     ('1e1', 'da', 'deca'),
-    ('1', '', ''),  # base unit
     ('1e2', 'h', 'hecto'),
     ('1e3', 'k', 'kilo'),
     ('1e6', 'M', 'mega'),

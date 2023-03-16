@@ -1,28 +1,195 @@
 {
   "kelvin": {
-    "scale": null,
+    "scale": "1",
     "aliases": [
       "kelvins",
-      "K",
-      "k"
+      "K"
+    ]
+  },
+  "quectokelvin": {
+    "scale": "1e-30",
+    "aliases": [
+      "quectokelvins",
+      "qK"
+    ]
+  },
+  "rontokelvin": {
+    "scale": "1e-27",
+    "aliases": [
+      "rontokelvins",
+      "rK"
+    ]
+  },
+  "yoctokelvin": {
+    "scale": "1e-24",
+    "aliases": [
+      "yoctokelvins",
+      "yK"
+    ]
+  },
+  "zeptokelvin": {
+    "scale": "1e-21",
+    "aliases": [
+      "zeptokelvins",
+      "zK"
+    ]
+  },
+  "attokelvin": {
+    "scale": "1e-18",
+    "aliases": [
+      "attokelvins",
+      "aK"
+    ]
+  },
+  "femtokelvin": {
+    "scale": "1e-15",
+    "aliases": [
+      "femtokelvins",
+      "fK"
+    ]
+  },
+  "picokelvin": {
+    "scale": "1e-12",
+    "aliases": [
+      "picokelvins",
+      "pK"
+    ]
+  },
+  "nanokelvin": {
+    "scale": "1e-9",
+    "aliases": [
+      "nanokelvins",
+      "nK"
+    ]
+  },
+  "microkelvin": {
+    "scale": "1e-6",
+    "aliases": [
+      "microkelvins",
+      "\u00b5K"
+    ]
+  },
+  "millikelvin": {
+    "scale": "1e-3",
+    "aliases": [
+      "millikelvins",
+      "mK"
+    ]
+  },
+  "centikelvin": {
+    "scale": "1e-2",
+    "aliases": [
+      "centikelvins",
+      "cK"
+    ]
+  },
+  "decikelvin": {
+    "scale": "1e-1",
+    "aliases": [
+      "decikelvins",
+      "dK"
+    ]
+  },
+  "decakelvin": {
+    "scale": "1e+1",
+    "aliases": [
+      "decakelvins",
+      "daK"
+    ]
+  },
+  "hectokelvin": {
+    "scale": "1e+2",
+    "aliases": [
+      "hectokelvins",
+      "hK"
+    ]
+  },
+  "kilokelvin": {
+    "scale": "1e+3",
+    "aliases": [
+      "kilokelvins",
+      "kK"
+    ]
+  },
+  "megakelvin": {
+    "scale": "1e+6",
+    "aliases": [
+      "megakelvins",
+      "MK"
+    ]
+  },
+  "gigakelvin": {
+    "scale": "1e+9",
+    "aliases": [
+      "gigakelvins",
+      "GK"
+    ]
+  },
+  "terakelvin": {
+    "scale": "1e+12",
+    "aliases": [
+      "terakelvins",
+      "TK"
+    ]
+  },
+  "petakelvin": {
+    "scale": "1e+15",
+    "aliases": [
+      "petakelvins",
+      "PK"
+    ]
+  },
+  "exakelvin": {
+    "scale": "1e+18",
+    "aliases": [
+      "exakelvins",
+      "EK"
+    ]
+  },
+  "zettakelvin": {
+    "scale": "1e+21",
+    "aliases": [
+      "zettakelvins",
+      "ZK"
+    ]
+  },
+  "yottakelvin": {
+    "scale": "1e+24",
+    "aliases": [
+      "yottakelvins",
+      "YK"
+    ]
+  },
+  "ronnakelvin": {
+    "scale": "1e+27",
+    "aliases": [
+      "ronnakelvins",
+      "RK"
+    ]
+  },
+  "quettakelvin": {
+    "scale": "1e+30",
+    "aliases": [
+      "quettakelvins",
+      "QK"
     ]
   },
   "celsius": {
-    "scale": null,
+    "scale": "274.15",
     "aliases": [
       "\u00b0C",
       "c"
     ]
   },
   "fahrenheit": {
-    "scale": null,
+    "scale": "255.9277777777777777777777778",
     "aliases": [
       "\u00b0F",
       "f"
     ]
   },
   "rankine": {
-    "scale": null,
+    "scale": "0.5555555555555555555555556",
     "aliases": [
       "\u00b0R",
       "\u00b0Ra",

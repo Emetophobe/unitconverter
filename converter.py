@@ -67,8 +67,8 @@ class Converter:
             return (value + Decimal('459.67')) * five_ninths
         elif source.name == 'rankine':
             return value * five_ninths
-        elif source.name == 'kelvin':
-            return value
+        elif source.name.endswith('kelvin'):
+            return value * (Decimal(source.scale) / Decimal('1'))
         else:
             raise ValueError(f'Invalid unit name: {source.name}')
 
@@ -81,8 +81,8 @@ class Converter:
             return value * nine_fifths - Decimal('459.67')
         elif dest.name == 'rankine':
             return value * nine_fifths
-        elif dest.name == 'kelvin':
-            return value
+        elif dest.name.endswith('kelvin'):
+            return value * (Decimal('1') / Decimal(dest.scale))
         else:
             raise ValueError(f'Invalid unit name: {dest.name}')
 

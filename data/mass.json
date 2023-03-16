@@ -146,14 +146,6 @@
       "Yg"
     ]
   },
-  "carats": {
-    "scale": "0.2",
-    "aliases": [
-      "carat",
-      "car",
-      "ct"
-    ]
-  },
   "ounces": {
     "scale": "28.34952",
     "aliases": [
@@ -200,6 +192,50 @@
       "metric ton",
       "metric tons",
       "t"
+    ]
+  },
+  "carats": {
+    "scale": "0.2",
+    "aliases": [
+      "carat",
+      "car",
+      "ct"
+    ]
+  },
+  "grains": {
+    "scale": "0.0647989",
+    "aliases": [
+      "grain",
+      "gr"
+    ]
+  },
+  "drachms": {
+    "scale": "1.77185",
+    "aliases": [
+      "drachm",
+      "drams",
+      "dram",
+      "dr"
+    ]
+  },
+  "pennyweights": {
+    "scale": "1.55517384",
+    "aliases": [
+      "pennyweight",
+      "dwt"
+    ]
+  },
+  "troy ounces": {
+    "scale": "31.1035",
+    "aliases": [
+      "troy ounce",
+      "ozt"
+    ]
+  },
+  "troy pounds": {
+    "scale": "373.242",
+    "aliases": [
+      "troy pound"
     ]
   }
 }

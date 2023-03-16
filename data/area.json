@@ -6,6 +6,7 @@
       "square metre",
       "square metres",
       "sq m",
+      "sqm",
       "m^2",
       "m2"
     ]
@@ -17,6 +18,7 @@
       "square yoctometre",
       "square yoctometres",
       "sq ym",
+      "sqym",
       "ym^2",
       "ym2"
     ]
@@ -28,6 +30,7 @@
       "square zeptometre",
       "square zeptometres",
       "sq zm",
+      "sqzm",
       "zm^2",
       "zm2"
     ]
@@ -39,6 +42,7 @@
       "square attometre",
       "square attometres",
       "sq am",
+      "sqam",
       "am^2",
       "am2"
     ]
@@ -50,6 +54,7 @@
       "square femtometre",
       "square femtometres",
       "sq fm",
+      "sqfm",
       "fm^2",
       "fm2"
     ]
@@ -61,6 +66,7 @@
       "square picometre",
       "square picometres",
       "sq pm",
+      "sqpm",
       "pm^2",
       "pm2"
     ]
@@ -72,6 +78,7 @@
       "square nanometre",
       "square nanometres",
       "sq nm",
+      "sqnm",
       "nm^2",
       "nm2"
     ]
@@ -82,6 +89,7 @@
       "square micrometer",
       "square micrometre",
       "square micrometres",
+      "sq\u03bcm",
       "sq \u03bcm",
       "\u03bcm^2",
       "\u03bcm2"
@@ -93,6 +101,7 @@
       "square millimeter",
       "square millimetre",
       "square millimetres",
+      "sqmm",
       "sq mm",
       "mm^2",
       "mm2"
@@ -104,6 +113,7 @@
       "square centimeter",
       "square centimetre",
       "square centimetres",
+      "sqcm",
       "sq cm",
       "cm^2",
       "cm2"
@@ -115,6 +125,7 @@
       "square decimeter",
       "square decimetre",
       "square decimetres",
+      "sqdm",
       "sq dm",
       "dm^2",
       "dm2"
@@ -126,6 +137,7 @@
       "square decameter",
       "square decametre",
       "square decametres",
+      "sqdam",
       "sq dam",
       "dam^2",
       "dam2"
@@ -137,6 +149,7 @@
       "square hectometer",
       "square hectometre",
       "square hectometres",
+      "sqhm",
       "sq hm",
       "hm^2",
       "hm2"
@@ -148,6 +161,7 @@
       "square kilometer",
       "square kilometre",
       "square kilometres",
+      "sqkm",
       "sq km",
       "km^2",
       "km2"
@@ -159,6 +173,7 @@
       "square megameter",
       "square megametre",
       "square megametres",
+      "sqMm",
       "sq Mm",
       "Mm^2",
       "Mm2"
@@ -170,6 +185,7 @@
       "square gigameter",
       "square gigametre",
       "square gigametres",
+      "sqGm",
       "sq Gm",
       "Gm^2",
       "Gm2"
@@ -181,6 +197,7 @@
       "square terameter",
       "square terametre",
       "square terametres",
+      "sqTm",
       "sq Tm",
       "Tm^2",
       "Tm2"
@@ -192,6 +209,7 @@
       "square petameter",
       "square petametre",
       "square petametres",
+      "sqPm",
       "sq Pm",
       "Pm^2",
       "Pm2"
@@ -203,6 +221,7 @@
       "square exameter",
       "square exametre",
       "square exametres",
+      "sqEm",
       "sq Em",
       "Em^2",
       "Em2"
@@ -214,6 +233,7 @@
       "square zettameter",
       "square zettametre",
       "square zettametres",
+      "sqZm",
       "sq Zm",
       "Zm^2",
       "Zm2"
@@ -225,6 +245,7 @@
       "square yottalmeter",
       "square yottalmetre",
       "square yottalmetres",
+      "sqYm",
       "sq Ym",
       "Ym^2",
       "Ym2"
@@ -270,11 +291,24 @@
       "rood"
     ]
   },
+  "square inches": {
+    "scale": "0.00064516",
+    "aliases": [
+      "square inch",
+      "sq in",
+      "sqi",
+      "in^2",
+      "in2"
+    ]
+  },
   "square feet": {
     "scale": "0.09290304",
     "aliases": [
       "square foot",
-      "sq ft"
+      "sq ft",
+      "sqft",
+      "ft^2",
+      "ft2"
     ]
   },
   "square feet (US)": {
@@ -284,32 +318,45 @@
       "sq ft (US)"
     ]
   },
-  "square inches": {
-    "scale": "0.00064516",
-    "aliases": [
-      "square inch",
-      "sq in"
-    ]
-  },
   "square miles": {
     "scale": "2589988.110336",
     "aliases": [
       "square mile",
-      "sq mi"
+      "sq mi",
+      "sqmi",
+      "mi^2",
+      "mi2"
+    ]
+  },
+  "square nautical miles": {
+    "scale": "3.43e+6",
+    "aliases": [
+      "square nautical mile",
+      "square nmi",
+      "sq nmi",
+      "sqnmi",
+      "nmi^2",
+      "nmi2"
     ]
   },
   "square rods (poles)": {
     "scale": "25.29285264",
     "aliases": [
       "square rod",
-      "sq rod"
+      "sq rod",
+      "sqrod",
+      "rod^2",
+      "rod2"
     ]
   },
   "square yards": {
     "scale": "0.83612736",
     "aliases": [
       "square yard",
-      "sq yd"
+      "sq yd",
+      "sqyd",
+      "yd^2",
+      "yd2"
     ]
   },
   "squares": {

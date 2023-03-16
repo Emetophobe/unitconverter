@@ -169,7 +169,7 @@ def main() -> None:
     parser.add_argument(
         '-p', '--precision',
         help='set rounding precision (default: %(default)s)',
-        metavar='size',
+        metavar='ndigits',
         default=None,
         type=int)
 

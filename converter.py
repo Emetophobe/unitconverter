@@ -114,31 +114,6 @@ class Converter:
                 category = path.stem.replace('_', ' ')
                 self.units[category] = data
 
-    def list_units(self, category: str = None) -> None:
-        """ List available units.
-
-        Args:
-            category (str, optional): name of the category,
-            or None to show all categories. Defaults to None.
-
-        Raises:
-            ValueError: if the category name is invalid.
-        """
-        if category and category not in self.units.keys():
-            raise ValueError(f'Invalid category: {category}')
-
-        columns = "{:>20} {:>20}   {}"
-        for name, units in self.units.items():
-            if not category or name == category:
-                print('Category:', name)
-                print()
-                print(columns.format('scale', 'name', 'aliases or symbols'))
-                for unit, properties in units.items():
-                    scale = properties['scale']
-                    aliases = properties['aliases']
-                    print(columns.format(scale, unit, ', '.join(aliases)))
-                print()
-
 
 def format_decimal(value: Decimal,
                    exponent: bool = False,
@@ -193,7 +168,7 @@ def main() -> None:
 
     parser.add_argument(
         '-p', '--precision',
-        help='rounding precision (default: %(default)s)',
+        help='set rounding precision (default: %(default)s)',
         metavar='size',
         default=None,
         type=int)
@@ -201,18 +176,11 @@ def main() -> None:
     parser.add_argument(
         '-c', '--commas',
         help='show thousands separator (default: False)',
-        action='store_true'
-    )
+        action='store_true')
 
     parser.add_argument(
         '-e', '--exponent',
         help='show E notation when possible (default: False)',
-        action='store_true'
-    )
-
-    parser.add_argument(
-        '-l', '--list',
-        help='list unit categories and exit',
         action='store_true')
 
     args = parser.parse_args()
@@ -222,10 +190,6 @@ def main() -> None:
         converter = Converter()
     except OSError as e:
         print(f'Error reading unit file: {e.filename} ({e.strerror})')
-
-    if args.list:
-        converter.list_units()
-        return
 
     # Convert user value to a Decimal
     try:

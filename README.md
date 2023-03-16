@@ -49,7 +49,7 @@ The following unit categories are currently supported:
 
 ## Usage
 
-    usage: converter.py [-h] [-p size] [-c] [-e] [-l] value source dest
+    usage: converter.py [-h] [-p size] [-c] [-e] value source dest
 
     A simple unit converter.
 
@@ -61,10 +61,9 @@ The following unit categories are currently supported:
     options:
     -h, --help            show this help message and exit
     -p size, --precision size
-                            rounding precision (default: None)
+                          set rounding precision (default: None)
     -c, --commas          show thousands separator (default: False)
     -e, --exponent        show E notation when possible (default: False)
-    -l, --list            list unit categories and exit
 
 ## Examples
 

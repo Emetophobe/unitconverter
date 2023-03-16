@@ -173,5 +173,69 @@
       "quettajoule",
       "QJ"
     ]
+  },
+  "watt hours": {
+    "scale": "3.6e+3",
+    "aliases": [
+      "watt hour",
+      "watt-hours",
+      "watt-hour",
+      "Wh"
+    ]
+  },
+  "microwatt hours": {
+    "scale": "3.6e-3",
+    "aliases": [
+      "microwatt hour",
+      "microwatt-hours",
+      "microwatt-hour",
+      "uWh",
+      "\u03bcWh"
+    ]
+  },
+  "milliwatt hours": {
+    "scale": "3.6",
+    "aliases": [
+      "milliwatt hour",
+      "milliwatt-hours",
+      "milliwatt-hour",
+      "mWh"
+    ]
+  },
+  "kilowatt hours": {
+    "scale": "3.6e+6",
+    "aliases": [
+      "kilowatt hour",
+      "kilowatt-hours",
+      "kilowatt-hour",
+      "kWh"
+    ]
+  },
+  "megawatt hours": {
+    "scale": "3.6e+9",
+    "aliases": [
+      "megawatt hour",
+      "megawatt-hours",
+      "megawatt-hour",
+      "MWh"
+    ]
+  },
+  "gigawatt hours": {
+    "scale": "3.6e+12",
+    "aliases": [
+      "gigawatt hour",
+      "gigawatt-hours",
+      "gigawatt-hour",
+      "GWh"
+    ]
+  },
+  "terawatt hours": {
+    "scale": "3.6e+15",
+    "aliases": [
+      "terawatt hour",
+      "terawatt-hours",
+      "terawatt-hour",
+      "TWh"
+    ]
   }
 }

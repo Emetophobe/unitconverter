@@ -38,6 +38,13 @@ class TestEnergy(AbstractTestCase):
             "yottajoules": "1E-24",
             "ronnajoules": "1E-27",
             "quettajoules": "1E-30",
+            "watt hours": "0.0002777777777777777777777777778",
+            "microwatt hours": "277.7777777777777777777777778",
+            "milliwatt hours": "0.2777777777777777777777777778",
+            "kilowatt hours": "2.777777777777777777777777778E-7",
+            "megawatt hours": "2.777777777777777777777777778E-10",
+            "gigawatt hours": "2.777777777777777777777777778E-13",
+            "terawatt hours": "2.777777777777777777777777778E-16",
         }
 
         # Test all joule conversions

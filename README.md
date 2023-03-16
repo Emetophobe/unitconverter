@@ -22,7 +22,7 @@ The following unit categories are currently supported:
 * Electrical conductance (siemens)
 * Electrical inductance (henry)
 * Electrical resistance (ohm)
-* Energy (joules)
+* Energy (joules, watt hours)
 * Force (newtons, dynes, poundals, etc..)
 * Frequency (hertz)
 * Illuminance (lux)

@@ -10,8 +10,8 @@ class TestElectricalInductance(AbstractTestCase):
         self.base_unit = self.converter.find_unit('henry')
         self.units = self.converter.units['electrical inductance']
 
-    def test_volts(self):
-        """ Test volt conversions. """
+    def test_henry(self):
+        """ Test henry conversions. """
         expected_values = {
             "henry": "1",
             "quectohenry": "1E+30",
@@ -40,5 +40,5 @@ class TestElectricalInductance(AbstractTestCase):
             "quettahenry": "1E-30",
         }
 
-        # Test all volt conversions
+        # Test all henry conversions
         self.check_units(self.base_unit, self.units, expected_values)

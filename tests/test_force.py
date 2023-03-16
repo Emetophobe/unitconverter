@@ -10,7 +10,7 @@ class TestForce(AbstractTestCase):
         self.base_unit = self.converter.find_unit('newtons')
         self.units = self.converter.units['force']
 
-    def test_force(self):
+    def test_newtons(self):
         """ Test newton conversions. """
         expected_values = {
             "newtons": "1",

@@ -1,231 +1,259 @@
 {
-  "seconds": {
+  "second": {
     "scale": "1",
     "aliases": [
-      "second",
+      "seconds",
       "s"
     ]
   },
-  "yoctoseconds": {
+  "quectosecond": {
+    "scale": "1e-30",
+    "aliases": [
+      "quectoseconds",
+      "qs"
+    ]
+  },
+  "rontosecond": {
+    "scale": "1e-27",
+    "aliases": [
+      "rontoseconds",
+      "rs"
+    ]
+  },
+  "yoctosecond": {
     "scale": "1e-24",
     "aliases": [
-      "yoctosecond",
+      "yoctoseconds",
       "ys"
     ]
   },
-  "zeptoseconds": {
+  "zeptosecond": {
     "scale": "1e-21",
     "aliases": [
-      "zeptosecond",
+      "zeptoseconds",
       "zs"
     ]
   },
-  "attoseconds": {
+  "attosecond": {
     "scale": "1e-18",
     "aliases": [
-      "attosecond",
+      "attoseconds",
       "as"
     ]
   },
-  "femtoseconds": {
+  "femtosecond": {
     "scale": "1e-15",
     "aliases": [
-      "femtosecond",
+      "femtoseconds",
       "fs"
     ]
   },
-  "picoseconds": {
+  "picosecond": {
     "scale": "1e-12",
     "aliases": [
-      "picosecond",
+      "picoseconds",
       "ps"
     ]
   },
-  "nanoseconds": {
+  "nanosecond": {
     "scale": "1e-9",
     "aliases": [
-      "nanosecond",
+      "nanoseconds",
       "ns"
     ]
   },
-  "microseconds": {
+  "microsecond": {
     "scale": "1e-6",
     "aliases": [
-      "microsecond",
-      "\u03bcs"
+      "microseconds",
+      "\u00b5s"
     ]
   },
-  "milliseconds": {
+  "millisecond": {
     "scale": "1e-3",
     "aliases": [
-      "millisecond",
+      "milliseconds",
       "ms"
     ]
   },
-  "centiseconds": {
+  "centisecond": {
     "scale": "1e-2",
     "aliases": [
-      "centisecond",
+      "centiseconds",
       "cs"
     ]
   },
-  "deciseconds": {
+  "decisecond": {
     "scale": "1e-1",
     "aliases": [
-      "decisecond",
+      "deciseconds",
       "ds"
     ]
   },
-  "decaseconds": {
-    "scale": "1e1",
+  "decasecond": {
+    "scale": "1e+1",
     "aliases": [
-      "decasecond",
+      "decaseconds",
       "das"
     ]
   },
-  "hectoseconds": {
-    "scale": "1e2",
+  "hectosecond": {
+    "scale": "1e+2",
     "aliases": [
-      "hectosecond",
+      "hectoseconds",
       "hs"
     ]
   },
-  "kiloseconds": {
-    "scale": "1e3",
+  "kilosecond": {
+    "scale": "1e+3",
     "aliases": [
-      "kilosecond",
+      "kiloseconds",
       "ks"
     ]
   },
-  "megaseconds": {
-    "scale": "1e6",
+  "megasecond": {
+    "scale": "1e+6",
     "aliases": [
-      "megasecond",
+      "megaseconds",
       "Ms"
     ]
   },
-  "gigaseconds": {
-    "scale": "1e9",
+  "gigasecond": {
+    "scale": "1e+9",
     "aliases": [
-      "gigasecond",
+      "gigaseconds",
       "Gs"
     ]
   },
-  "teraseconds": {
-    "scale": "1e12",
+  "terasecond": {
+    "scale": "1e+12",
     "aliases": [
-      "terasecond",
+      "teraseconds",
       "Ts"
     ]
   },
-  "petaseconds": {
-    "scale": "1e15",
+  "petasecond": {
+    "scale": "1e+15",
     "aliases": [
-      "petasecond",
+      "petaseconds",
       "Ps"
     ]
   },
-  "exaseconds": {
-    "scale": "1e18",
+  "exasecond": {
+    "scale": "1e+18",
     "aliases": [
-      "exasecond",
+      "exaseconds",
       "Es"
     ]
   },
-  "zettaseconds": {
-    "scale": "1e21",
+  "zettasecond": {
+    "scale": "1e+21",
     "aliases": [
-      "zettasecond",
+      "zettaseconds",
       "Zs"
     ]
   },
-  "yottalseconds": {
-    "scale": "1e24",
+  "yottasecond": {
+    "scale": "1e+24",
     "aliases": [
-      "yottalsecond",
+      "yottaseconds",
       "Ys"
     ]
   },
-  "minutes": {
+  "ronnasecond": {
+    "scale": "1e+27",
+    "aliases": [
+      "ronnaseconds",
+      "Rs"
+    ]
+  },
+  "quettasecond": {
+    "scale": "1e+30",
+    "aliases": [
+      "quettaseconds",
+      "Qs"
+    ]
+  },
+  "minute": {
     "scale": "60",
     "aliases": [
-      "minute",
+      "minutes",
       "min"
     ]
   },
-  "hours": {
+  "hour": {
     "scale": "3600",
     "aliases": [
-      "hour",
+      "hours",
       "hr"
     ]
   },
-  "days": {
+  "day": {
     "scale": "86400",
     "aliases": [
-      "day"
+      "days"
     ]
   },
-  "weeks": {
+  "week": {
     "scale": "604800",
     "aliases": [
-      "week"
+      "weeks"
     ]
   },
-  "fortnights": {
+  "fortnight": {
     "scale": "1209600",
     "aliases": [
-      "fortnight"
+      "fortnights"
     ]
   },
-  "months": {
+  "month": {
     "scale": "2.628E+6",
     "aliases": [
-      "month"
+      "months"
     ]
   },
-  "years": {
+  "year": {
     "scale": "3.1536E+7",
     "aliases": [
-      "year"
+      "years"
     ]
   },
-  "years (gregorian)": {
+  "year (gregorian)": {
     "scale": "31556952",
     "aliases": [
-      "year (gregorian)"
+      "years (gregorian)"
     ]
   },
-  "years (julian)": {
+  "year (julian)": {
     "scale": "31557600",
     "aliases": [
-      "year (julian)"
+      "years (julian)"
     ]
   },
-  "years (leap)": {
+  "year (leap)": {
     "scale": "31622400",
     "aliases": [
-      "year (leap)"
+      "years (leap)"
     ]
   },
-  "decades": {
+  "decade": {
     "scale": "3.1536E+8",
     "aliases": [
-      "decade"
+      "decades"
     ]
   },
-  "centuries": {
+  "century": {
     "scale": "3.1536E+9",
     "aliases": [
-      "century"
+      "centuries"
     ]
   },
   "millennia": {
     "scale": "3.1536E+10",
     "aliases": [
       "millennias",
-      "millennium",
-      "millenniums"
+      "millenniums",
+      "millennium"
     ]
   }
 }

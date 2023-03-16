@@ -1,8 +1,8 @@
 {
-  "square meters": {
+  "square meter": {
     "scale": "1",
     "aliases": [
-      "square meter",
+      "square meters",
       "square metre",
       "square metres",
       "sq m",
@@ -11,10 +11,10 @@
       "m2"
     ]
   },
-  "square yoctometers": {
+  "square yoctometer": {
     "scale": "1e-48",
     "aliases": [
-      "square yoctometer",
+      "square yoctometers",
       "square yoctometre",
       "square yoctometres",
       "sq ym",
@@ -23,10 +23,10 @@
       "ym2"
     ]
   },
-  "square zeptometers": {
+  "square zeptometer": {
     "scale": "1e-42",
     "aliases": [
-      "square zeptometer",
+      "square zeptometers",
       "square zeptometre",
       "square zeptometres",
       "sq zm",
@@ -35,10 +35,10 @@
       "zm2"
     ]
   },
-  "square attometers": {
+  "square attometer": {
     "scale": "1e-36",
     "aliases": [
-      "square attometer",
+      "square attometers",
       "square attometre",
       "square attometres",
       "sq am",
@@ -47,10 +47,10 @@
       "am2"
     ]
   },
-  "square femtometers": {
+  "square femtometer": {
     "scale": "1e-30",
     "aliases": [
-      "square femtometer",
+      "square femtometers",
       "square femtometre",
       "square femtometres",
       "sq fm",
@@ -59,10 +59,10 @@
       "fm2"
     ]
   },
-  "square picometers": {
+  "square picometer": {
     "scale": "1e-24",
     "aliases": [
-      "square picometer",
+      "square picometers",
       "square picometre",
       "square picometres",
       "sq pm",
@@ -71,10 +71,10 @@
       "pm2"
     ]
   },
-  "square nanometers": {
+  "square nanometer": {
     "scale": "1e-18",
     "aliases": [
-      "square nanometer",
+      "square nanometers",
       "square nanometre",
       "square nanometres",
       "sq nm",
@@ -83,10 +83,10 @@
       "nm2"
     ]
   },
-  "square micrometers": {
+  "square micrometer": {
     "scale": "1e-12",
     "aliases": [
-      "square micrometer",
+      "square micrometers",
       "square micrometre",
       "square micrometres",
       "sq\u03bcm",
@@ -95,10 +95,10 @@
       "\u03bcm2"
     ]
   },
-  "square millimeters": {
+  "square millimeter": {
     "scale": "1e-6",
     "aliases": [
-      "square millimeter",
+      "square millimeters",
       "square millimetre",
       "square millimetres",
       "sqmm",
@@ -107,10 +107,10 @@
       "mm2"
     ]
   },
-  "square centimeters": {
+  "square centimeter": {
     "scale": "1e-4",
     "aliases": [
-      "square centimeter",
+      "square centimeters",
       "square centimetre",
       "square centimetres",
       "sqcm",
@@ -119,10 +119,10 @@
       "cm2"
     ]
   },
-  "square decimeters": {
+  "square decimeter": {
     "scale": "1e-2",
     "aliases": [
-      "square decimeter",
+      "square decimeters",
       "square decimetre",
       "square decimetres",
       "sqdm",
@@ -131,10 +131,10 @@
       "dm2"
     ]
   },
-  "square decameters": {
-    "scale": "1e2",
+  "square decameter": {
+    "scale": "1e+2",
     "aliases": [
-      "square decameter",
+      "square decameters",
       "square decametre",
       "square decametres",
       "sqdam",
@@ -143,10 +143,10 @@
       "dam2"
     ]
   },
-  "square hectometers": {
-    "scale": "1e4",
+  "square hectometer": {
+    "scale": "1e+4",
     "aliases": [
-      "square hectometer",
+      "square hectometers",
       "square hectometre",
       "square hectometres",
       "sqhm",
@@ -155,10 +155,10 @@
       "hm2"
     ]
   },
-  "square kilometers": {
-    "scale": "1e6",
+  "square kilometer": {
+    "scale": "1e+6",
     "aliases": [
-      "square kilometer",
+      "square kilometers",
       "square kilometre",
       "square kilometres",
       "sqkm",
@@ -167,10 +167,10 @@
       "km2"
     ]
   },
-  "square megameters": {
-    "scale": "1e12",
+  "square megameter": {
+    "scale": "1e+12",
     "aliases": [
-      "square megameter",
+      "square megameters",
       "square megametre",
       "square megametres",
       "sqMm",
@@ -179,10 +179,10 @@
       "Mm2"
     ]
   },
-  "square gigameters": {
-    "scale": "1e18",
+  "square gigameter": {
+    "scale": "1e+18",
     "aliases": [
-      "square gigameter",
+      "square gigameters",
       "square gigametre",
       "square gigametres",
       "sqGm",
@@ -191,10 +191,10 @@
       "Gm2"
     ]
   },
-  "square terameters": {
-    "scale": "1e24",
+  "square terameter": {
+    "scale": "1e+24",
     "aliases": [
-      "square terameter",
+      "square terameters",
       "square terametre",
       "square terametres",
       "sqTm",
@@ -203,10 +203,10 @@
       "Tm2"
     ]
   },
-  "square petameters": {
-    "scale": "1e30",
+  "square petameter": {
+    "scale": "1e+30",
     "aliases": [
-      "square petameter",
+      "square petameters",
       "square petametre",
       "square petametres",
       "sqPm",
@@ -215,10 +215,10 @@
       "Pm2"
     ]
   },
-  "square exameters": {
-    "scale": "1e36",
+  "square exameter": {
+    "scale": "1e+36",
     "aliases": [
-      "square exameter",
+      "square exameters",
       "square exametre",
       "square exametres",
       "sqEm",
@@ -227,10 +227,10 @@
       "Em2"
     ]
   },
-  "square zettameters": {
-    "scale": "1e42",
+  "square zettameter": {
+    "scale": "1e+42",
     "aliases": [
-      "square zettameter",
+      "square zettameters",
       "square zettametre",
       "square zettametres",
       "sqZm",
@@ -239,10 +239,10 @@
       "Zm2"
     ]
   },
-  "square yottalmeters": {
-    "scale": "1e48",
+  "square yottalmeter": {
+    "scale": "1e+48",
     "aliases": [
-      "square yottalmeter",
+      "square yottalmeters",
       "square yottalmetre",
       "square yottalmetres",
       "sqYm",
@@ -251,87 +251,87 @@
       "Ym2"
     ]
   },
-  "acres": {
+  "acre": {
     "scale": "4046.8564224",
     "aliases": [
-      "acre",
+      "acres",
       "ac"
     ]
   },
-  "ares": {
+  "are": {
     "scale": "100.0",
     "aliases": [
-      "are",
+      "ares",
       "a"
     ]
   },
-  "circular inches": {
+  "circular inch": {
     "scale": "0.000506707479",
     "aliases": [
-      "circular inch",
+      "circular inches",
       "c in"
     ]
   },
-  "hectares": {
+  "hectare": {
     "scale": "10000.0",
     "aliases": [
-      "hectare",
+      "hectares",
       "ha"
     ]
   },
-  "hides": {
+  "hide": {
     "scale": "485000.0",
     "aliases": [
-      "hide"
+      "hides"
     ]
   },
-  "roods": {
+  "rood": {
     "scale": "1011.7141056",
     "aliases": [
-      "rood"
+      "roods"
     ]
   },
-  "square inches": {
+  "square inch": {
     "scale": "0.00064516",
     "aliases": [
-      "square inch",
+      "square inches",
       "sq in",
       "sqi",
       "in^2",
       "in2"
     ]
   },
-  "square feet": {
+  "square foot": {
     "scale": "0.09290304",
     "aliases": [
-      "square foot",
+      "square feet",
       "sq ft",
       "sqft",
       "ft^2",
       "ft2"
     ]
   },
-  "square feet (US)": {
+  "square foot (US)": {
     "scale": "0.092903411613",
     "aliases": [
-      "square foot (US)",
+      "square feet (US)",
       "sq ft (US)"
     ]
   },
-  "square miles": {
+  "square mile": {
     "scale": "2589988.110336",
     "aliases": [
-      "square mile",
+      "square miles",
       "sq mi",
       "sqmi",
       "mi^2",
       "mi2"
     ]
   },
-  "square nautical miles": {
+  "square nautical mile": {
     "scale": "3.43e+6",
     "aliases": [
-      "square nautical mile",
+      "square nautical miles",
       "square nmi",
       "sq nmi",
       "sqnmi",
@@ -339,36 +339,36 @@
       "nmi2"
     ]
   },
-  "square rods (poles)": {
+  "square rod (pole)": {
     "scale": "25.29285264",
     "aliases": [
-      "square rod",
+      "square rods",
       "sq rod",
       "sqrod",
       "rod^2",
       "rod2"
     ]
   },
-  "square yards": {
+  "square yard": {
     "scale": "0.83612736",
     "aliases": [
-      "square yard",
+      "square yards",
       "sq yd",
       "sqyd",
       "yd^2",
       "yd2"
     ]
   },
-  "squares": {
+  "square": {
     "scale": "9.290304",
     "aliases": [
-      "square"
+      "squares"
     ]
   },
-  "townships": {
+  "township": {
     "scale": "93239571.972",
     "aliases": [
-      "township"
+      "townships"
     ]
   }
 }

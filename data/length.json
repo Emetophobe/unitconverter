@@ -1,193 +1,227 @@
 {
-  "meters": {
+  "meter": {
     "scale": "1",
     "aliases": [
-      "meter",
-      "metre",
+      "meters",
       "metres",
+      "metre",
       "m"
     ]
   },
-  "yoctometers": {
+  "quectometer": {
+    "scale": "1e-30",
+    "aliases": [
+      "quectometers",
+      "quectometres",
+      "quectometre",
+      "qm"
+    ]
+  },
+  "rontometer": {
+    "scale": "1e-27",
+    "aliases": [
+      "rontometers",
+      "rontometres",
+      "rontometre",
+      "rm"
+    ]
+  },
+  "yoctometer": {
     "scale": "1e-24",
     "aliases": [
-      "yoctometer",
-      "yoctometre",
+      "yoctometers",
       "yoctometres",
+      "yoctometre",
       "ym"
     ]
   },
-  "zeptometers": {
+  "zeptometer": {
     "scale": "1e-21",
     "aliases": [
-      "zeptometer",
-      "zeptometre",
+      "zeptometers",
       "zeptometres",
+      "zeptometre",
       "zm"
     ]
   },
-  "attometers": {
+  "attometer": {
     "scale": "1e-18",
     "aliases": [
-      "attometer",
-      "attometre",
+      "attometers",
       "attometres",
+      "attometre",
       "am"
     ]
   },
-  "femtometers": {
+  "femtometer": {
     "scale": "1e-15",
     "aliases": [
-      "femtometer",
-      "femtometre",
+      "femtometers",
       "femtometres",
-      "fermi",
+      "femtometre",
       "fm"
     ]
   },
-  "picometers": {
+  "picometer": {
     "scale": "1e-12",
     "aliases": [
-      "picometer",
-      "picometre",
+      "picometers",
       "picometres",
+      "picometre",
       "pm"
     ]
   },
-  "nanometers": {
+  "nanometer": {
     "scale": "1e-9",
     "aliases": [
-      "nanometer",
-      "nanometre",
+      "nanometers",
       "nanometres",
+      "nanometre",
       "nm"
     ]
   },
-  "micrometers": {
+  "micrometer": {
     "scale": "1e-6",
     "aliases": [
-      "micrometer",
-      "micrometre",
+      "micrometers",
       "micrometres",
-      "micron",
-      "\u03bcm"
+      "micrometre",
+      "\u00b5m"
     ]
   },
-  "millimeters": {
+  "millimeter": {
     "scale": "1e-3",
     "aliases": [
-      "millimeter",
-      "millimetre",
+      "millimeters",
       "millimetres",
+      "millimetre",
       "mm"
     ]
   },
-  "centimeters": {
+  "centimeter": {
     "scale": "1e-2",
     "aliases": [
-      "centimeter",
-      "centimetre",
+      "centimeters",
       "centimetres",
+      "centimetre",
       "cm"
     ]
   },
-  "decimeters": {
+  "decimeter": {
     "scale": "1e-1",
     "aliases": [
-      "decimeter",
-      "decimetre",
+      "decimeters",
       "decimetres",
+      "decimetre",
       "dm"
     ]
   },
-  "decameters": {
-    "scale": "1e1",
+  "decameter": {
+    "scale": "1e+1",
     "aliases": [
-      "decameter",
-      "decametre",
+      "decameters",
       "decametres",
+      "decametre",
       "dam"
     ]
   },
-  "hectometers": {
-    "scale": "1e2",
+  "hectometer": {
+    "scale": "1e+2",
     "aliases": [
-      "hectometer",
-      "hectometre",
+      "hectometers",
       "hectometres",
+      "hectometre",
       "hm"
     ]
   },
-  "kilometers": {
-    "scale": "1e3",
+  "kilometer": {
+    "scale": "1e+3",
     "aliases": [
-      "kilometer",
-      "kilometre",
+      "kilometers",
       "kilometres",
+      "kilometre",
       "km"
     ]
   },
-  "megameters": {
-    "scale": "1e6",
+  "megameter": {
+    "scale": "1e+6",
     "aliases": [
-      "megameter",
-      "megametre",
+      "megameters",
       "megametres",
+      "megametre",
       "Mm"
     ]
   },
-  "gigameters": {
-    "scale": "1e9",
+  "gigameter": {
+    "scale": "1e+9",
     "aliases": [
-      "gigameter",
-      "gigametre",
+      "gigameters",
       "gigametres",
+      "gigametre",
       "Gm"
     ]
   },
-  "terameters": {
-    "scale": "1e12",
+  "terameter": {
+    "scale": "1e+12",
     "aliases": [
-      "terameter",
-      "terametre",
+      "terameters",
       "terametres",
+      "terametre",
       "Tm"
     ]
   },
-  "petameters": {
-    "scale": "1e15",
+  "petameter": {
+    "scale": "1e+15",
     "aliases": [
-      "petameter",
-      "petametre",
+      "petameters",
       "petametres",
+      "petametre",
       "Pm"
     ]
   },
-  "exameters": {
-    "scale": "1e18",
+  "exameter": {
+    "scale": "1e+18",
     "aliases": [
-      "exameter",
-      "exametre",
+      "exameters",
       "exametres",
+      "exametre",
       "Em"
     ]
   },
-  "zettameters": {
-    "scale": "1e21",
+  "zettameter": {
+    "scale": "1e+21",
     "aliases": [
-      "zettameter",
-      "zettametre",
+      "zettameters",
       "zettametres",
+      "zettametre",
       "Zm"
     ]
   },
-  "yottalmeters": {
-    "scale": "1e24",
+  "yottameter": {
+    "scale": "1e+24",
     "aliases": [
-      "yottalmeter",
-      "yottalmetre",
-      "yottalmetres",
+      "yottameters",
+      "yottametres",
+      "yottametre",
       "Ym"
+    ]
+  },
+  "ronnameter": {
+    "scale": "1e+27",
+    "aliases": [
+      "ronnameters",
+      "ronnametres",
+      "ronnametre",
+      "Rm"
+    ]
+  },
+  "quettameter": {
+    "scale": "1e+30",
+    "aliases": [
+      "quettameters",
+      "quettametres",
+      "quettametre",
+      "Qm"
     ]
   },
   "angstrom": {
@@ -196,31 +230,31 @@
       "\u00c5"
     ]
   },
-  "feet": {
+  "foot": {
     "scale": "0.3048",
     "aliases": [
-      "foot",
+      "feet",
       "ft"
     ]
   },
-  "inches": {
+  "inch": {
     "scale": "0.0254",
     "aliases": [
-      "inch",
+      "inches",
       "in"
     ]
   },
-  "yards": {
+  "yard": {
     "scale": "0.9144",
     "aliases": [
-      "yard",
+      "yards",
       "yd"
     ]
   },
-  "miles": {
+  "mile": {
     "scale": "1609.344",
     "aliases": [
-      "mile",
+      "miles",
       "mi"
     ]
   },
@@ -243,18 +277,18 @@
       "mil"
     ]
   },
-  "rods": {
+  "rod": {
     "scale": "5.0292",
     "aliases": [
-      "rod",
+      "rods",
       "perch",
       "pole"
     ]
   },
-  "nautical miles": {
+  "nautical mile": {
     "scale": "1852",
     "aliases": [
-      "nautical mile",
+      "nautical miles",
       "nmi"
     ]
   },
@@ -265,22 +299,24 @@
   "astronomical unit": {
     "scale": "1.495978707e+11",
     "aliases": [
+      "astronomical units",
       "AU",
       "au"
     ]
   },
-  "light years": {
+  "light year": {
     "scale": "9.4607e+15",
     "aliases": [
-      "light year",
+      "light years",
+      "light-years",
       "light-year",
       "ly"
     ]
   },
-  "parsecs": {
+  "parsec": {
     "scale": "3.0857e+16",
     "aliases": [
-      "parsec",
+      "parsecs",
       "pc"
     ]
   }

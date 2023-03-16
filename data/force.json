@@ -1,183 +1,183 @@
 {
-  "newtons": {
+  "newton": {
     "scale": "1",
     "aliases": [
-      "newton",
+      "newtons",
       "N"
     ]
   },
-  "quectonewtons": {
+  "quectonewton": {
     "scale": "1e-30",
     "aliases": [
-      "quectonewton",
+      "quectonewtons",
       "qN"
     ]
   },
-  "rontonewtons": {
+  "rontonewton": {
     "scale": "1e-27",
     "aliases": [
-      "rontonewton",
+      "rontonewtons",
       "rN"
     ]
   },
-  "yoctonewtons": {
+  "yoctonewton": {
     "scale": "1e-24",
     "aliases": [
-      "yoctonewton",
+      "yoctonewtons",
       "yN"
     ]
   },
-  "zeptonewtons": {
+  "zeptonewton": {
     "scale": "1e-21",
     "aliases": [
-      "zeptonewton",
+      "zeptonewtons",
       "zN"
     ]
   },
-  "attonewtons": {
+  "attonewton": {
     "scale": "1e-18",
     "aliases": [
-      "attonewton",
+      "attonewtons",
       "aN"
     ]
   },
-  "femtonewtons": {
+  "femtonewton": {
     "scale": "1e-15",
     "aliases": [
-      "femtonewton",
+      "femtonewtons",
       "fN"
     ]
   },
-  "piconewtons": {
+  "piconewton": {
     "scale": "1e-12",
     "aliases": [
-      "piconewton",
+      "piconewtons",
       "pN"
     ]
   },
-  "nanonewtons": {
+  "nanonewton": {
     "scale": "1e-9",
     "aliases": [
-      "nanonewton",
+      "nanonewtons",
       "nN"
     ]
   },
-  "micronewtons": {
+  "micronewton": {
     "scale": "1e-6",
     "aliases": [
-      "micronewton",
+      "micronewtons",
       "\u00b5N"
     ]
   },
-  "millinewtons": {
+  "millinewton": {
     "scale": "1e-3",
     "aliases": [
-      "millinewton",
+      "millinewtons",
       "mN"
     ]
   },
-  "centinewtons": {
+  "centinewton": {
     "scale": "1e-2",
     "aliases": [
-      "centinewton",
+      "centinewtons",
       "cN"
     ]
   },
-  "decinewtons": {
+  "decinewton": {
     "scale": "1e-1",
     "aliases": [
-      "decinewton",
+      "decinewtons",
       "dN"
     ]
   },
-  "decanewtons": {
-    "scale": "1e1",
+  "decanewton": {
+    "scale": "1e+1",
     "aliases": [
-      "decanewton",
+      "decanewtons",
       "daN"
     ]
   },
-  "hectonewtons": {
-    "scale": "1e2",
+  "hectonewton": {
+    "scale": "1e+2",
     "aliases": [
-      "hectonewton",
+      "hectonewtons",
       "hN"
     ]
   },
-  "kilonewtons": {
-    "scale": "1e3",
+  "kilonewton": {
+    "scale": "1e+3",
     "aliases": [
-      "kilonewton",
+      "kilonewtons",
       "kN"
     ]
   },
-  "meganewtons": {
-    "scale": "1e6",
+  "meganewton": {
+    "scale": "1e+6",
     "aliases": [
-      "meganewton",
+      "meganewtons",
       "MN"
     ]
   },
-  "giganewtons": {
-    "scale": "1e9",
+  "giganewton": {
+    "scale": "1e+9",
     "aliases": [
-      "giganewton",
+      "giganewtons",
       "GN"
     ]
   },
-  "teranewtons": {
-    "scale": "1e12",
+  "teranewton": {
+    "scale": "1e+12",
     "aliases": [
-      "teranewton",
+      "teranewtons",
       "TN"
     ]
   },
-  "petanewtons": {
-    "scale": "1e15",
+  "petanewton": {
+    "scale": "1e+15",
     "aliases": [
-      "petanewton",
+      "petanewtons",
       "PN"
     ]
   },
-  "exanewtons": {
-    "scale": "1e18",
+  "exanewton": {
+    "scale": "1e+18",
     "aliases": [
-      "exanewton",
+      "exanewtons",
       "EN"
     ]
   },
-  "zettanewtons": {
-    "scale": "1e21",
+  "zettanewton": {
+    "scale": "1e+21",
     "aliases": [
-      "zettanewton",
+      "zettanewtons",
       "ZN"
     ]
   },
-  "yottanewtons": {
-    "scale": "1e24",
+  "yottanewton": {
+    "scale": "1e+24",
     "aliases": [
-      "yottanewton",
+      "yottanewtons",
       "YN"
     ]
   },
-  "ronnanewtons": {
-    "scale": "1e27",
+  "ronnanewton": {
+    "scale": "1e+27",
     "aliases": [
-      "ronnanewton",
+      "ronnanewtons",
       "RN"
     ]
   },
-  "quettanewtons": {
-    "scale": "1e30",
+  "quettanewton": {
+    "scale": "1e+30",
     "aliases": [
-      "quettanewton",
+      "quettanewtons",
       "QN"
     ]
   },
-  "dynes": {
+  "dyne": {
     "scale": "1e-5",
     "aliases": [
-      "dyne",
+      "dynes",
       "dyn"
     ]
   },
@@ -197,10 +197,10 @@
       "lbf"
     ]
   },
-  "poundals": {
+  "poundal": {
     "scale": "0.138254954376",
     "aliases": [
-      "poundal",
+      "poundals",
       "pdl"
     ]
   }

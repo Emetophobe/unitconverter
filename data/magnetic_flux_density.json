@@ -2,150 +2,175 @@
   "tesla": {
     "scale": "1",
     "aliases": [
+      "teslas",
       "T"
     ]
   },
   "quectotesla": {
     "scale": "1e-30",
     "aliases": [
+      "quectoteslas",
       "qT"
     ]
   },
   "rontotesla": {
     "scale": "1e-27",
     "aliases": [
+      "rontoteslas",
       "rT"
     ]
   },
   "yoctotesla": {
     "scale": "1e-24",
     "aliases": [
+      "yoctoteslas",
       "yT"
     ]
   },
   "zeptotesla": {
     "scale": "1e-21",
     "aliases": [
+      "zeptoteslas",
       "zT"
     ]
   },
   "attotesla": {
     "scale": "1e-18",
     "aliases": [
+      "attoteslas",
       "aT"
     ]
   },
   "femtotesla": {
     "scale": "1e-15",
     "aliases": [
+      "femtoteslas",
       "fT"
     ]
   },
   "picotesla": {
     "scale": "1e-12",
     "aliases": [
+      "picoteslas",
       "pT"
     ]
   },
   "nanotesla": {
     "scale": "1e-9",
     "aliases": [
+      "nanoteslas",
       "nT"
     ]
   },
   "microtesla": {
     "scale": "1e-6",
     "aliases": [
+      "microteslas",
       "\u00b5T"
     ]
   },
   "millitesla": {
     "scale": "1e-3",
     "aliases": [
+      "milliteslas",
       "mT"
     ]
   },
   "centitesla": {
     "scale": "1e-2",
     "aliases": [
+      "centiteslas",
       "cT"
     ]
   },
   "decitesla": {
     "scale": "1e-1",
     "aliases": [
+      "deciteslas",
       "dT"
     ]
   },
   "decatesla": {
-    "scale": "1e1",
+    "scale": "1e+1",
     "aliases": [
+      "decateslas",
       "daT"
     ]
   },
   "hectotesla": {
-    "scale": "1e2",
+    "scale": "1e+2",
     "aliases": [
+      "hectoteslas",
       "hT"
     ]
   },
   "kilotesla": {
-    "scale": "1e3",
+    "scale": "1e+3",
     "aliases": [
+      "kiloteslas",
       "kT"
     ]
   },
   "megatesla": {
-    "scale": "1e6",
+    "scale": "1e+6",
     "aliases": [
+      "megateslas",
       "MT"
     ]
   },
   "gigatesla": {
-    "scale": "1e9",
+    "scale": "1e+9",
     "aliases": [
+      "gigateslas",
       "GT"
     ]
   },
   "teratesla": {
-    "scale": "1e12",
+    "scale": "1e+12",
     "aliases": [
+      "terateslas",
       "TT"
     ]
   },
   "petatesla": {
-    "scale": "1e15",
+    "scale": "1e+15",
     "aliases": [
+      "petateslas",
       "PT"
     ]
   },
   "exatesla": {
-    "scale": "1e18",
+    "scale": "1e+18",
     "aliases": [
+      "exateslas",
       "ET"
     ]
   },
   "zettatesla": {
-    "scale": "1e21",
+    "scale": "1e+21",
     "aliases": [
+      "zettateslas",
       "ZT"
     ]
   },
   "yottatesla": {
-    "scale": "1e24",
+    "scale": "1e+24",
     "aliases": [
+      "yottateslas",
       "YT"
     ]
   },
   "ronnatesla": {
-    "scale": "1e27",
+    "scale": "1e+27",
     "aliases": [
+      "ronnateslas",
       "RT"
     ]
   },
   "quettatesla": {
-    "scale": "1e30",
+    "scale": "1e+30",
     "aliases": [
+      "quettateslas",
       "QT"
     ]
   },

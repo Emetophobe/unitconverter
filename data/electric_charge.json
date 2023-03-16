@@ -2,150 +2,175 @@
   "coulomb": {
     "scale": "1",
     "aliases": [
+      "coulombs",
       "C"
     ]
   },
   "quectocoulomb": {
     "scale": "1e-30",
     "aliases": [
+      "quectocoulombs",
       "qC"
     ]
   },
   "rontocoulomb": {
     "scale": "1e-27",
     "aliases": [
+      "rontocoulombs",
       "rC"
     ]
   },
   "yoctocoulomb": {
     "scale": "1e-24",
     "aliases": [
+      "yoctocoulombs",
       "yC"
     ]
   },
   "zeptocoulomb": {
     "scale": "1e-21",
     "aliases": [
+      "zeptocoulombs",
       "zC"
     ]
   },
   "attocoulomb": {
     "scale": "1e-18",
     "aliases": [
+      "attocoulombs",
       "aC"
     ]
   },
   "femtocoulomb": {
     "scale": "1e-15",
     "aliases": [
+      "femtocoulombs",
       "fC"
     ]
   },
   "picocoulomb": {
     "scale": "1e-12",
     "aliases": [
+      "picocoulombs",
       "pC"
     ]
   },
   "nanocoulomb": {
     "scale": "1e-9",
     "aliases": [
+      "nanocoulombs",
       "nC"
     ]
   },
   "microcoulomb": {
     "scale": "1e-6",
     "aliases": [
+      "microcoulombs",
       "\u00b5C"
     ]
   },
   "millicoulomb": {
     "scale": "1e-3",
     "aliases": [
+      "millicoulombs",
       "mC"
     ]
   },
   "centicoulomb": {
     "scale": "1e-2",
     "aliases": [
+      "centicoulombs",
       "cC"
     ]
   },
   "decicoulomb": {
     "scale": "1e-1",
     "aliases": [
+      "decicoulombs",
       "dC"
     ]
   },
   "decacoulomb": {
-    "scale": "1e1",
+    "scale": "1e+1",
     "aliases": [
+      "decacoulombs",
       "daC"
     ]
   },
   "hectocoulomb": {
-    "scale": "1e2",
+    "scale": "1e+2",
     "aliases": [
+      "hectocoulombs",
       "hC"
     ]
   },
   "kilocoulomb": {
-    "scale": "1e3",
+    "scale": "1e+3",
     "aliases": [
+      "kilocoulombs",
       "kC"
     ]
   },
   "megacoulomb": {
-    "scale": "1e6",
+    "scale": "1e+6",
     "aliases": [
+      "megacoulombs",
       "MC"
     ]
   },
   "gigacoulomb": {
-    "scale": "1e9",
+    "scale": "1e+9",
     "aliases": [
+      "gigacoulombs",
       "GC"
     ]
   },
   "teracoulomb": {
-    "scale": "1e12",
+    "scale": "1e+12",
     "aliases": [
+      "teracoulombs",
       "TC"
     ]
   },
   "petacoulomb": {
-    "scale": "1e15",
+    "scale": "1e+15",
     "aliases": [
+      "petacoulombs",
       "PC"
     ]
   },
   "exacoulomb": {
-    "scale": "1e18",
+    "scale": "1e+18",
     "aliases": [
+      "exacoulombs",
       "EC"
     ]
   },
   "zettacoulomb": {
-    "scale": "1e21",
+    "scale": "1e+21",
     "aliases": [
+      "zettacoulombs",
       "ZC"
     ]
   },
   "yottacoulomb": {
-    "scale": "1e24",
+    "scale": "1e+24",
     "aliases": [
+      "yottacoulombs",
       "YC"
     ]
   },
   "ronnacoulomb": {
-    "scale": "1e27",
+    "scale": "1e+27",
     "aliases": [
+      "ronnacoulombs",
       "RC"
     ]
   },
   "quettacoulomb": {
-    "scale": "1e30",
+    "scale": "1e+30",
     "aliases": [
+      "quettacoulombs",
       "QC"
     ]
   }

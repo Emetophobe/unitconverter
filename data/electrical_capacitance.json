@@ -2,150 +2,175 @@
   "farad": {
     "scale": "1",
     "aliases": [
+      "farads",
       "F"
     ]
   },
   "quectofarad": {
     "scale": "1e-30",
     "aliases": [
+      "quectofarads",
       "qF"
     ]
   },
   "rontofarad": {
     "scale": "1e-27",
     "aliases": [
+      "rontofarads",
       "rF"
     ]
   },
   "yoctofarad": {
     "scale": "1e-24",
     "aliases": [
+      "yoctofarads",
       "yF"
     ]
   },
   "zeptofarad": {
     "scale": "1e-21",
     "aliases": [
+      "zeptofarads",
       "zF"
     ]
   },
   "attofarad": {
     "scale": "1e-18",
     "aliases": [
+      "attofarads",
       "aF"
     ]
   },
   "femtofarad": {
     "scale": "1e-15",
     "aliases": [
+      "femtofarads",
       "fF"
     ]
   },
   "picofarad": {
     "scale": "1e-12",
     "aliases": [
+      "picofarads",
       "pF"
     ]
   },
   "nanofarad": {
     "scale": "1e-9",
     "aliases": [
+      "nanofarads",
       "nF"
     ]
   },
   "microfarad": {
     "scale": "1e-6",
     "aliases": [
+      "microfarads",
       "\u00b5F"
     ]
   },
   "millifarad": {
     "scale": "1e-3",
     "aliases": [
+      "millifarads",
       "mF"
     ]
   },
   "centifarad": {
     "scale": "1e-2",
     "aliases": [
+      "centifarads",
       "cF"
     ]
   },
   "decifarad": {
     "scale": "1e-1",
     "aliases": [
+      "decifarads",
       "dF"
     ]
   },
   "decafarad": {
-    "scale": "1e1",
+    "scale": "1e+1",
     "aliases": [
+      "decafarads",
       "daF"
     ]
   },
   "hectofarad": {
-    "scale": "1e2",
+    "scale": "1e+2",
     "aliases": [
+      "hectofarads",
       "hF"
     ]
   },
   "kilofarad": {
-    "scale": "1e3",
+    "scale": "1e+3",
     "aliases": [
+      "kilofarads",
       "kF"
     ]
   },
   "megafarad": {
-    "scale": "1e6",
+    "scale": "1e+6",
     "aliases": [
+      "megafarads",
       "MF"
     ]
   },
   "gigafarad": {
-    "scale": "1e9",
+    "scale": "1e+9",
     "aliases": [
+      "gigafarads",
       "GF"
     ]
   },
   "terafarad": {
-    "scale": "1e12",
+    "scale": "1e+12",
     "aliases": [
+      "terafarads",
       "TF"
     ]
   },
   "petafarad": {
-    "scale": "1e15",
+    "scale": "1e+15",
     "aliases": [
+      "petafarads",
       "PF"
     ]
   },
   "exafarad": {
-    "scale": "1e18",
+    "scale": "1e+18",
     "aliases": [
+      "exafarads",
       "EF"
     ]
   },
   "zettafarad": {
-    "scale": "1e21",
+    "scale": "1e+21",
     "aliases": [
+      "zettafarads",
       "ZF"
     ]
   },
   "yottafarad": {
-    "scale": "1e24",
+    "scale": "1e+24",
     "aliases": [
+      "yottafarads",
       "YF"
     ]
   },
   "ronnafarad": {
-    "scale": "1e27",
+    "scale": "1e+27",
     "aliases": [
+      "ronnafarads",
       "RF"
     ]
   },
   "quettafarad": {
-    "scale": "1e30",
+    "scale": "1e+30",
     "aliases": [
+      "quettafarads",
       "QF"
     ]
   }

@@ -2,150 +2,175 @@
   "steradian": {
     "scale": "1",
     "aliases": [
+      "steradians",
       "sr"
     ]
   },
   "quectosteradian": {
     "scale": "1e-30",
     "aliases": [
+      "quectosteradians",
       "qsr"
     ]
   },
   "rontosteradian": {
     "scale": "1e-27",
     "aliases": [
+      "rontosteradians",
       "rsr"
     ]
   },
   "yoctosteradian": {
     "scale": "1e-24",
     "aliases": [
+      "yoctosteradians",
       "ysr"
     ]
   },
   "zeptosteradian": {
     "scale": "1e-21",
     "aliases": [
+      "zeptosteradians",
       "zsr"
     ]
   },
   "attosteradian": {
     "scale": "1e-18",
     "aliases": [
+      "attosteradians",
       "asr"
     ]
   },
   "femtosteradian": {
     "scale": "1e-15",
     "aliases": [
+      "femtosteradians",
       "fsr"
     ]
   },
   "picosteradian": {
     "scale": "1e-12",
     "aliases": [
+      "picosteradians",
       "psr"
     ]
   },
   "nanosteradian": {
     "scale": "1e-9",
     "aliases": [
+      "nanosteradians",
       "nsr"
     ]
   },
   "microsteradian": {
     "scale": "1e-6",
     "aliases": [
+      "microsteradians",
       "\u00b5sr"
     ]
   },
   "millisteradian": {
     "scale": "1e-3",
     "aliases": [
+      "millisteradians",
       "msr"
     ]
   },
   "centisteradian": {
     "scale": "1e-2",
     "aliases": [
+      "centisteradians",
       "csr"
     ]
   },
   "decisteradian": {
     "scale": "1e-1",
     "aliases": [
+      "decisteradians",
       "dsr"
     ]
   },
   "decasteradian": {
-    "scale": "1e1",
+    "scale": "1e+1",
     "aliases": [
+      "decasteradians",
       "dasr"
     ]
   },
   "hectosteradian": {
-    "scale": "1e2",
+    "scale": "1e+2",
     "aliases": [
+      "hectosteradians",
       "hsr"
     ]
   },
   "kilosteradian": {
-    "scale": "1e3",
+    "scale": "1e+3",
     "aliases": [
+      "kilosteradians",
       "ksr"
     ]
   },
   "megasteradian": {
-    "scale": "1e6",
+    "scale": "1e+6",
     "aliases": [
+      "megasteradians",
       "Msr"
     ]
   },
   "gigasteradian": {
-    "scale": "1e9",
+    "scale": "1e+9",
     "aliases": [
+      "gigasteradians",
       "Gsr"
     ]
   },
   "terasteradian": {
-    "scale": "1e12",
+    "scale": "1e+12",
     "aliases": [
+      "terasteradians",
       "Tsr"
     ]
   },
   "petasteradian": {
-    "scale": "1e15",
+    "scale": "1e+15",
     "aliases": [
+      "petasteradians",
       "Psr"
     ]
   },
   "exasteradian": {
-    "scale": "1e18",
+    "scale": "1e+18",
     "aliases": [
+      "exasteradians",
       "Esr"
     ]
   },
   "zettasteradian": {
-    "scale": "1e21",
+    "scale": "1e+21",
     "aliases": [
+      "zettasteradians",
       "Zsr"
     ]
   },
   "yottasteradian": {
-    "scale": "1e24",
+    "scale": "1e+24",
     "aliases": [
+      "yottasteradians",
       "Ysr"
     ]
   },
   "ronnasteradian": {
-    "scale": "1e27",
+    "scale": "1e+27",
     "aliases": [
+      "ronnasteradians",
       "Rsr"
     ]
   },
   "quettasteradian": {
-    "scale": "1e30",
+    "scale": "1e+30",
     "aliases": [
+      "quettasteradians",
       "Qsr"
     ]
   }

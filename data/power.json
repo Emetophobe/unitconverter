@@ -1,176 +1,176 @@
 {
-  "watts": {
+  "watt": {
     "scale": "1",
     "aliases": [
-      "watt",
+      "watts",
       "W"
     ]
   },
-  "quectowatts": {
+  "quectowatt": {
     "scale": "1e-30",
     "aliases": [
-      "quectowatt",
+      "quectowatts",
       "qW"
     ]
   },
-  "rontowatts": {
+  "rontowatt": {
     "scale": "1e-27",
     "aliases": [
-      "rontowatt",
+      "rontowatts",
       "rW"
     ]
   },
-  "yoctowatts": {
+  "yoctowatt": {
     "scale": "1e-24",
     "aliases": [
-      "yoctowatt",
+      "yoctowatts",
       "yW"
     ]
   },
-  "zeptowatts": {
+  "zeptowatt": {
     "scale": "1e-21",
     "aliases": [
-      "zeptowatt",
+      "zeptowatts",
       "zW"
     ]
   },
-  "attowatts": {
+  "attowatt": {
     "scale": "1e-18",
     "aliases": [
-      "attowatt",
+      "attowatts",
       "aW"
     ]
   },
-  "femtowatts": {
+  "femtowatt": {
     "scale": "1e-15",
     "aliases": [
-      "femtowatt",
+      "femtowatts",
       "fW"
     ]
   },
-  "picowatts": {
+  "picowatt": {
     "scale": "1e-12",
     "aliases": [
-      "picowatt",
+      "picowatts",
       "pW"
     ]
   },
-  "nanowatts": {
+  "nanowatt": {
     "scale": "1e-9",
     "aliases": [
-      "nanowatt",
+      "nanowatts",
       "nW"
     ]
   },
-  "microwatts": {
+  "microwatt": {
     "scale": "1e-6",
     "aliases": [
-      "microwatt",
+      "microwatts",
       "\u00b5W"
     ]
   },
-  "milliwatts": {
+  "milliwatt": {
     "scale": "1e-3",
     "aliases": [
-      "milliwatt",
+      "milliwatts",
       "mW"
     ]
   },
-  "centiwatts": {
+  "centiwatt": {
     "scale": "1e-2",
     "aliases": [
-      "centiwatt",
+      "centiwatts",
       "cW"
     ]
   },
-  "deciwatts": {
+  "deciwatt": {
     "scale": "1e-1",
     "aliases": [
-      "deciwatt",
+      "deciwatts",
       "dW"
     ]
   },
-  "decawatts": {
-    "scale": "1e1",
+  "decawatt": {
+    "scale": "1e+1",
     "aliases": [
-      "decawatt",
+      "decawatts",
       "daW"
     ]
   },
-  "hectowatts": {
-    "scale": "1e2",
+  "hectowatt": {
+    "scale": "1e+2",
     "aliases": [
-      "hectowatt",
+      "hectowatts",
       "hW"
     ]
   },
-  "kilowatts": {
-    "scale": "1e3",
+  "kilowatt": {
+    "scale": "1e+3",
     "aliases": [
-      "kilowatt",
+      "kilowatts",
       "kW"
     ]
   },
-  "megawatts": {
-    "scale": "1e6",
+  "megawatt": {
+    "scale": "1e+6",
     "aliases": [
-      "megawatt",
+      "megawatts",
       "MW"
     ]
   },
-  "gigawatts": {
-    "scale": "1e9",
+  "gigawatt": {
+    "scale": "1e+9",
     "aliases": [
-      "gigawatt",
+      "gigawatts",
       "GW"
     ]
   },
-  "terawatts": {
-    "scale": "1e12",
+  "terawatt": {
+    "scale": "1e+12",
     "aliases": [
-      "terawatt",
+      "terawatts",
       "TW"
     ]
   },
-  "petawatts": {
-    "scale": "1e15",
+  "petawatt": {
+    "scale": "1e+15",
     "aliases": [
-      "petawatt",
+      "petawatts",
       "PW"
     ]
   },
-  "exawatts": {
-    "scale": "1e18",
+  "exawatt": {
+    "scale": "1e+18",
     "aliases": [
-      "exawatt",
+      "exawatts",
       "EW"
     ]
   },
-  "zettawatts": {
-    "scale": "1e21",
+  "zettawatt": {
+    "scale": "1e+21",
     "aliases": [
-      "zettawatt",
+      "zettawatts",
       "ZW"
     ]
   },
-  "yottawatts": {
-    "scale": "1e24",
+  "yottawatt": {
+    "scale": "1e+24",
     "aliases": [
-      "yottawatt",
+      "yottawatts",
       "YW"
     ]
   },
-  "ronnawatts": {
-    "scale": "1e27",
+  "ronnawatt": {
+    "scale": "1e+27",
     "aliases": [
-      "ronnawatt",
+      "ronnawatts",
       "RW"
     ]
   },
-  "quettawatts": {
-    "scale": "1e30",
+  "quettawatt": {
+    "scale": "1e+30",
     "aliases": [
-      "quettawatt",
+      "quettawatts",
       "QW"
     ]
   },

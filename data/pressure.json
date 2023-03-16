@@ -2,150 +2,175 @@
   "pascal": {
     "scale": "1",
     "aliases": [
+      "pascals",
       "Pa"
     ]
   },
   "quectopascal": {
     "scale": "1e-30",
     "aliases": [
+      "quectopascals",
       "qPa"
     ]
   },
   "rontopascal": {
     "scale": "1e-27",
     "aliases": [
+      "rontopascals",
       "rPa"
     ]
   },
   "yoctopascal": {
     "scale": "1e-24",
     "aliases": [
+      "yoctopascals",
       "yPa"
     ]
   },
   "zeptopascal": {
     "scale": "1e-21",
     "aliases": [
+      "zeptopascals",
       "zPa"
     ]
   },
   "attopascal": {
     "scale": "1e-18",
     "aliases": [
+      "attopascals",
       "aPa"
     ]
   },
   "femtopascal": {
     "scale": "1e-15",
     "aliases": [
+      "femtopascals",
       "fPa"
     ]
   },
   "picopascal": {
     "scale": "1e-12",
     "aliases": [
+      "picopascals",
       "pPa"
     ]
   },
   "nanopascal": {
     "scale": "1e-9",
     "aliases": [
+      "nanopascals",
       "nPa"
     ]
   },
   "micropascal": {
     "scale": "1e-6",
     "aliases": [
+      "micropascals",
       "\u00b5Pa"
     ]
   },
   "millipascal": {
     "scale": "1e-3",
     "aliases": [
+      "millipascals",
       "mPa"
     ]
   },
   "centipascal": {
     "scale": "1e-2",
     "aliases": [
+      "centipascals",
       "cPa"
     ]
   },
   "decipascal": {
     "scale": "1e-1",
     "aliases": [
+      "decipascals",
       "dPa"
     ]
   },
   "decapascal": {
-    "scale": "1e1",
+    "scale": "1e+1",
     "aliases": [
+      "decapascals",
       "daPa"
     ]
   },
   "hectopascal": {
-    "scale": "1e2",
+    "scale": "1e+2",
     "aliases": [
+      "hectopascals",
       "hPa"
     ]
   },
   "kilopascal": {
-    "scale": "1e3",
+    "scale": "1e+3",
     "aliases": [
+      "kilopascals",
       "kPa"
     ]
   },
   "megapascal": {
-    "scale": "1e6",
+    "scale": "1e+6",
     "aliases": [
+      "megapascals",
       "MPa"
     ]
   },
   "gigapascal": {
-    "scale": "1e9",
+    "scale": "1e+9",
     "aliases": [
+      "gigapascals",
       "GPa"
     ]
   },
   "terapascal": {
-    "scale": "1e12",
+    "scale": "1e+12",
     "aliases": [
+      "terapascals",
       "TPa"
     ]
   },
   "petapascal": {
-    "scale": "1e15",
+    "scale": "1e+15",
     "aliases": [
+      "petapascals",
       "PPa"
     ]
   },
   "exapascal": {
-    "scale": "1e18",
+    "scale": "1e+18",
     "aliases": [
+      "exapascals",
       "EPa"
     ]
   },
   "zettapascal": {
-    "scale": "1e21",
+    "scale": "1e+21",
     "aliases": [
+      "zettapascals",
       "ZPa"
     ]
   },
   "yottapascal": {
-    "scale": "1e24",
+    "scale": "1e+24",
     "aliases": [
+      "yottapascals",
       "YPa"
     ]
   },
   "ronnapascal": {
-    "scale": "1e27",
+    "scale": "1e+27",
     "aliases": [
+      "ronnapascals",
       "RPa"
     ]
   },
   "quettapascal": {
-    "scale": "1e30",
+    "scale": "1e+30",
     "aliases": [
+      "quettapascals",
       "QPa"
     ]
   },

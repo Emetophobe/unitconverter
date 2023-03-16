@@ -2,150 +2,175 @@
   "candela": {
     "scale": "1",
     "aliases": [
+      "candelas",
       "cd"
     ]
   },
   "quectocandela": {
     "scale": "1e-30",
     "aliases": [
+      "quectocandelas",
       "qcd"
     ]
   },
   "rontocandela": {
     "scale": "1e-27",
     "aliases": [
+      "rontocandelas",
       "rcd"
     ]
   },
   "yoctocandela": {
     "scale": "1e-24",
     "aliases": [
+      "yoctocandelas",
       "ycd"
     ]
   },
   "zeptocandela": {
     "scale": "1e-21",
     "aliases": [
+      "zeptocandelas",
       "zcd"
     ]
   },
   "attocandela": {
     "scale": "1e-18",
     "aliases": [
+      "attocandelas",
       "acd"
     ]
   },
   "femtocandela": {
     "scale": "1e-15",
     "aliases": [
+      "femtocandelas",
       "fcd"
     ]
   },
   "picocandela": {
     "scale": "1e-12",
     "aliases": [
+      "picocandelas",
       "pcd"
     ]
   },
   "nanocandela": {
     "scale": "1e-9",
     "aliases": [
+      "nanocandelas",
       "ncd"
     ]
   },
   "microcandela": {
     "scale": "1e-6",
     "aliases": [
+      "microcandelas",
       "\u00b5cd"
     ]
   },
   "millicandela": {
     "scale": "1e-3",
     "aliases": [
+      "millicandelas",
       "mcd"
     ]
   },
   "centicandela": {
     "scale": "1e-2",
     "aliases": [
+      "centicandelas",
       "ccd"
     ]
   },
   "decicandela": {
     "scale": "1e-1",
     "aliases": [
+      "decicandelas",
       "dcd"
     ]
   },
   "decacandela": {
-    "scale": "1e1",
+    "scale": "1e+1",
     "aliases": [
+      "decacandelas",
       "dacd"
     ]
   },
   "hectocandela": {
-    "scale": "1e2",
+    "scale": "1e+2",
     "aliases": [
+      "hectocandelas",
       "hcd"
     ]
   },
   "kilocandela": {
-    "scale": "1e3",
+    "scale": "1e+3",
     "aliases": [
+      "kilocandelas",
       "kcd"
     ]
   },
   "megacandela": {
-    "scale": "1e6",
+    "scale": "1e+6",
     "aliases": [
+      "megacandelas",
       "Mcd"
     ]
   },
   "gigacandela": {
-    "scale": "1e9",
+    "scale": "1e+9",
     "aliases": [
+      "gigacandelas",
       "Gcd"
     ]
   },
   "teracandela": {
-    "scale": "1e12",
+    "scale": "1e+12",
     "aliases": [
+      "teracandelas",
       "Tcd"
     ]
   },
   "petacandela": {
-    "scale": "1e15",
+    "scale": "1e+15",
     "aliases": [
+      "petacandelas",
       "Pcd"
     ]
   },
   "exacandela": {
-    "scale": "1e18",
+    "scale": "1e+18",
     "aliases": [
+      "exacandelas",
       "Ecd"
     ]
   },
   "zettacandela": {
-    "scale": "1e21",
+    "scale": "1e+21",
     "aliases": [
+      "zettacandelas",
       "Zcd"
     ]
   },
   "yottacandela": {
-    "scale": "1e24",
+    "scale": "1e+24",
     "aliases": [
+      "yottacandelas",
       "Ycd"
     ]
   },
   "ronnacandela": {
-    "scale": "1e27",
+    "scale": "1e+27",
     "aliases": [
+      "ronnacandelas",
       "Rcd"
     ]
   },
   "quettacandela": {
-    "scale": "1e30",
+    "scale": "1e+30",
     "aliases": [
+      "quettacandelas",
       "Qcd"
     ]
   }

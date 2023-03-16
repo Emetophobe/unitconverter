@@ -40,6 +40,7 @@ class TestRadioactivity(AbstractTestCase):
             "quettabecquerel": "1E-30",
             "rutherford": "1E-6",
             "curie": "2.702702702702702702702702703E-11",
+            "picocurie": "2.702702702702702702702702703E+1"
         }
 
         # Test all becquerel conversions

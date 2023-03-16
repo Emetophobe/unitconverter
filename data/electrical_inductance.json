@@ -2,150 +2,175 @@
   "henry": {
     "scale": "1",
     "aliases": [
+      "henries",
       "H"
     ]
   },
   "quectohenry": {
     "scale": "1e-30",
     "aliases": [
+      "quectohenries",
       "qH"
     ]
   },
   "rontohenry": {
     "scale": "1e-27",
     "aliases": [
+      "rontohenries",
       "rH"
     ]
   },
   "yoctohenry": {
     "scale": "1e-24",
     "aliases": [
+      "yoctohenries",
       "yH"
     ]
   },
   "zeptohenry": {
     "scale": "1e-21",
     "aliases": [
+      "zeptohenries",
       "zH"
     ]
   },
   "attohenry": {
     "scale": "1e-18",
     "aliases": [
+      "attohenries",
       "aH"
     ]
   },
   "femtohenry": {
     "scale": "1e-15",
     "aliases": [
+      "femtohenries",
       "fH"
     ]
   },
   "picohenry": {
     "scale": "1e-12",
     "aliases": [
+      "picohenries",
       "pH"
     ]
   },
   "nanohenry": {
     "scale": "1e-9",
     "aliases": [
+      "nanohenries",
       "nH"
     ]
   },
   "microhenry": {
     "scale": "1e-6",
     "aliases": [
+      "microhenries",
       "\u00b5H"
     ]
   },
   "millihenry": {
     "scale": "1e-3",
     "aliases": [
+      "millihenries",
       "mH"
     ]
   },
   "centihenry": {
     "scale": "1e-2",
     "aliases": [
+      "centihenries",
       "cH"
     ]
   },
   "decihenry": {
     "scale": "1e-1",
     "aliases": [
+      "decihenries",
       "dH"
     ]
   },
   "decahenry": {
-    "scale": "1e1",
+    "scale": "1e+1",
     "aliases": [
+      "decahenries",
       "daH"
     ]
   },
   "hectohenry": {
-    "scale": "1e2",
+    "scale": "1e+2",
     "aliases": [
+      "hectohenries",
       "hH"
     ]
   },
   "kilohenry": {
-    "scale": "1e3",
+    "scale": "1e+3",
     "aliases": [
+      "kilohenries",
       "kH"
     ]
   },
   "megahenry": {
-    "scale": "1e6",
+    "scale": "1e+6",
     "aliases": [
+      "megahenries",
       "MH"
     ]
   },
   "gigahenry": {
-    "scale": "1e9",
+    "scale": "1e+9",
     "aliases": [
+      "gigahenries",
       "GH"
     ]
   },
   "terahenry": {
-    "scale": "1e12",
+    "scale": "1e+12",
     "aliases": [
+      "terahenries",
       "TH"
     ]
   },
   "petahenry": {
-    "scale": "1e15",
+    "scale": "1e+15",
     "aliases": [
+      "petahenries",
       "PH"
     ]
   },
   "exahenry": {
-    "scale": "1e18",
+    "scale": "1e+18",
     "aliases": [
+      "exahenries",
       "EH"
     ]
   },
   "zettahenry": {
-    "scale": "1e21",
+    "scale": "1e+21",
     "aliases": [
+      "zettahenries",
       "ZH"
     ]
   },
   "yottahenry": {
-    "scale": "1e24",
+    "scale": "1e+24",
     "aliases": [
+      "yottahenries",
       "YH"
     ]
   },
   "ronnahenry": {
-    "scale": "1e27",
+    "scale": "1e+27",
     "aliases": [
+      "ronnahenries",
       "RH"
     ]
   },
   "quettahenry": {
-    "scale": "1e30",
+    "scale": "1e+30",
     "aliases": [
+      "quettahenries",
       "QH"
     ]
   }

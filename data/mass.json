@@ -1,241 +1,269 @@
 {
-  "grams": {
+  "gram": {
     "scale": "1",
     "aliases": [
-      "gram",
+      "grams",
       "g"
     ]
   },
-  "yoctograms": {
+  "quectogram": {
+    "scale": "1e-30",
+    "aliases": [
+      "quectograms",
+      "qg"
+    ]
+  },
+  "rontogram": {
+    "scale": "1e-27",
+    "aliases": [
+      "rontograms",
+      "rg"
+    ]
+  },
+  "yoctogram": {
     "scale": "1e-24",
     "aliases": [
-      "yoctogram",
+      "yoctograms",
       "yg"
     ]
   },
-  "zeptograms": {
+  "zeptogram": {
     "scale": "1e-21",
     "aliases": [
-      "zeptogram",
+      "zeptograms",
       "zg"
     ]
   },
-  "attograms": {
+  "attogram": {
     "scale": "1e-18",
     "aliases": [
-      "attogram",
+      "attograms",
       "ag"
     ]
   },
-  "femtograms": {
+  "femtogram": {
     "scale": "1e-15",
     "aliases": [
-      "femtogram",
+      "femtograms",
       "fg"
     ]
   },
-  "picograms": {
+  "picogram": {
     "scale": "1e-12",
     "aliases": [
-      "picogram",
+      "picograms",
       "pg"
     ]
   },
-  "nanograms": {
+  "nanogram": {
     "scale": "1e-9",
     "aliases": [
-      "nanogram",
+      "nanograms",
       "ng"
     ]
   },
-  "micrograms": {
+  "microgram": {
     "scale": "1e-6",
     "aliases": [
-      "microgram",
-      "\u03bcg"
+      "micrograms",
+      "\u00b5g"
     ]
   },
-  "milligrams": {
+  "milligram": {
     "scale": "1e-3",
     "aliases": [
-      "milligram",
+      "milligrams",
       "mg"
     ]
   },
-  "centigrams": {
+  "centigram": {
     "scale": "1e-2",
     "aliases": [
-      "centigram",
+      "centigrams",
       "cg"
     ]
   },
-  "decigrams": {
+  "decigram": {
     "scale": "1e-1",
     "aliases": [
-      "decigram",
+      "decigrams",
       "dg"
     ]
   },
-  "decagrams": {
-    "scale": "1e1",
+  "decagram": {
+    "scale": "1e+1",
     "aliases": [
-      "decagram",
+      "decagrams",
       "dag"
     ]
   },
-  "hectograms": {
-    "scale": "1e2",
+  "hectogram": {
+    "scale": "1e+2",
     "aliases": [
-      "hectogram",
+      "hectograms",
       "hg"
     ]
   },
-  "kilograms": {
-    "scale": "1e3",
+  "kilogram": {
+    "scale": "1e+3",
     "aliases": [
-      "kilogram",
+      "kilograms",
       "kg"
     ]
   },
-  "megagrams": {
-    "scale": "1e6",
+  "megagram": {
+    "scale": "1e+6",
     "aliases": [
-      "megagram",
+      "megagrams",
       "Mg"
     ]
   },
-  "gigagrams": {
-    "scale": "1e9",
+  "gigagram": {
+    "scale": "1e+9",
     "aliases": [
-      "gigagram",
+      "gigagrams",
       "Gg"
     ]
   },
-  "teragrams": {
-    "scale": "1e12",
+  "teragram": {
+    "scale": "1e+12",
     "aliases": [
-      "teragram",
+      "teragrams",
       "Tg"
     ]
   },
-  "petagrams": {
-    "scale": "1e15",
+  "petagram": {
+    "scale": "1e+15",
     "aliases": [
-      "petagram",
+      "petagrams",
       "Pg"
     ]
   },
-  "exagrams": {
-    "scale": "1e18",
+  "exagram": {
+    "scale": "1e+18",
     "aliases": [
-      "exagram",
+      "exagrams",
       "Eg"
     ]
   },
-  "zettagrams": {
-    "scale": "1e21",
+  "zettagram": {
+    "scale": "1e+21",
     "aliases": [
-      "zettagram",
+      "zettagrams",
       "Zg"
     ]
   },
-  "yottalgrams": {
-    "scale": "1e24",
+  "yottagram": {
+    "scale": "1e+24",
     "aliases": [
-      "yottalgram",
+      "yottagrams",
       "Yg"
     ]
   },
-  "ounces": {
+  "ronnagram": {
+    "scale": "1e+27",
+    "aliases": [
+      "ronnagrams",
+      "Rg"
+    ]
+  },
+  "quettagram": {
+    "scale": "1e+30",
+    "aliases": [
+      "quettagrams",
+      "Qg"
+    ]
+  },
+  "ounce": {
     "scale": "28.34952",
     "aliases": [
-      "ounce",
+      "ounces",
       "oz"
     ]
   },
-  "pounds": {
+  "pound": {
     "scale": "453.592",
     "aliases": [
-      "pound",
+      "pounds",
       "lbs"
     ]
   },
-  "stones": {
+  "stone": {
     "scale": "6350.29",
     "aliases": [
-      "stone",
+      "stones",
       "st"
     ]
   },
-  "tons (UK)": {
+  "ton (UK)": {
     "scale": "1016046.9",
     "aliases": [
-      "ton (UK)",
-      "long ton",
+      "tons (UK)",
       "long tons",
+      "long ton",
       "LT"
     ]
   },
-  "tons (US)": {
+  "ton (US)": {
     "scale": "907184.74",
     "aliases": [
-      "ton (US)",
-      "short ton",
+      "tons (US)",
       "short tons",
+      "short ton",
       "ST"
     ]
   },
-  "tonnes": {
+  "tonne": {
     "scale": "1e6",
     "aliases": [
-      "tonne",
+      "tonnes",
       "metric ton",
       "metric tons",
       "t"
     ]
   },
-  "carats": {
+  "carat": {
     "scale": "0.2",
     "aliases": [
-      "carat",
+      "carats",
       "car",
       "ct"
     ]
   },
-  "grains": {
+  "grain": {
     "scale": "0.0647989",
     "aliases": [
-      "grain",
+      "grains",
       "gr"
     ]
   },
-  "drachms": {
+  "drachm": {
     "scale": "1.77185",
     "aliases": [
-      "drachm",
+      "drachms",
       "drams",
       "dram",
       "dr"
     ]
   },
-  "pennyweights": {
+  "pennyweight": {
     "scale": "1.55517384",
     "aliases": [
-      "pennyweight",
+      "pennyweights",
       "dwt"
     ]
   },
-  "troy ounces": {
+  "troy ounce": {
     "scale": "31.1035",
     "aliases": [
-      "troy ounce",
+      "troy ounces",
       "ozt"
     ]
   },
-  "troy pounds": {
+  "troy pound": {
     "scale": "373.242",
     "aliases": [
-      "troy pound"
+      "troy pounds"
     ]
   }
 }

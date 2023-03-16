@@ -7,44 +7,44 @@ class TestEnergy(AbstractTestCase):
 
     def setUp(self):
         super().setUp()
-        self.base_unit = self.converter.find_unit('joules')
+        self.base_unit = self.converter.find_unit('joule')
         self.units = self.converter.units['energy']
 
-    def test_joules(self):
+    def test_joule(self):
         """ Test joule conversions. """
         expected_values = {
-            "joules": "1",
-            "quectojoules": "1E+30",
-            "rontojoules": "1E+27",
-            "yoctojoules": "1E+24",
-            "zeptojoules": "1E+21",
-            "attojoules": "1E+18",
-            "femtojoules": "1E+15",
-            "picojoules": "1E+12",
-            "nanojoules": "1E+9",
-            "microjoules": "1E+6",
-            "millijoules": "1E+3",
-            "centijoules": "1E+2",
-            "decijoules": "1E+1",
-            "decajoules": "1E-1",
-            "hectojoules": "1E-2",
-            "kilojoules": "1E-3",
-            "megajoules": "1E-6",
-            "gigajoules": "1E-9",
-            "terajoules": "1E-12",
-            "petajoules": "1E-15",
-            "exajoules": "1E-18",
-            "zettajoules": "1E-21",
-            "yottajoules": "1E-24",
-            "ronnajoules": "1E-27",
-            "quettajoules": "1E-30",
-            "watt hours": "0.0002777777777777777777777777778",
-            "microwatt hours": "277.7777777777777777777777778",
-            "milliwatt hours": "0.2777777777777777777777777778",
-            "kilowatt hours": "2.777777777777777777777777778E-7",
-            "megawatt hours": "2.777777777777777777777777778E-10",
-            "gigawatt hours": "2.777777777777777777777777778E-13",
-            "terawatt hours": "2.777777777777777777777777778E-16",
+            "joule": "1",
+            "quectojoule": "1E+30",
+            "rontojoule": "1E+27",
+            "yoctojoule": "1E+24",
+            "zeptojoule": "1E+21",
+            "attojoule": "1E+18",
+            "femtojoule": "1E+15",
+            "picojoule": "1E+12",
+            "nanojoule": "1E+9",
+            "microjoule": "1E+6",
+            "millijoule": "1E+3",
+            "centijoule": "1E+2",
+            "decijoule": "1E+1",
+            "decajoule": "1E-1",
+            "hectojoule": "1E-2",
+            "kilojoule": "1E-3",
+            "megajoule": "1E-6",
+            "gigajoule": "1E-9",
+            "terajoule": "1E-12",
+            "petajoule": "1E-15",
+            "exajoule": "1E-18",
+            "zettajoule": "1E-21",
+            "yottajoule": "1E-24",
+            "ronnajoule": "1E-27",
+            "quettajoule": "1E-30",
+            "watt hour": "0.0002777777777777777777777777778",
+            "microwatt hour": "277.7777777777777777777777778",
+            "milliwatt hour": "0.2777777777777777777777777778",
+            "kilowatt hour": "2.777777777777777777777777778E-7",
+            "megawatt hour": "2.777777777777777777777777778E-10",
+            "gigawatt hour": "2.777777777777777777777777778E-13",
+            "terawatt hour": "2.777777777777777777777777778E-16",
         }
 
         # Test all joule conversions

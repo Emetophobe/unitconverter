@@ -2,150 +2,175 @@
   "sievert": {
     "scale": "1",
     "aliases": [
+      "sieverts",
       "Sv"
     ]
   },
   "quectosievert": {
     "scale": "1e-30",
     "aliases": [
+      "quectosieverts",
       "qSv"
     ]
   },
   "rontosievert": {
     "scale": "1e-27",
     "aliases": [
+      "rontosieverts",
       "rSv"
     ]
   },
   "yoctosievert": {
     "scale": "1e-24",
     "aliases": [
+      "yoctosieverts",
       "ySv"
     ]
   },
   "zeptosievert": {
     "scale": "1e-21",
     "aliases": [
+      "zeptosieverts",
       "zSv"
     ]
   },
   "attosievert": {
     "scale": "1e-18",
     "aliases": [
+      "attosieverts",
       "aSv"
     ]
   },
   "femtosievert": {
     "scale": "1e-15",
     "aliases": [
+      "femtosieverts",
       "fSv"
     ]
   },
   "picosievert": {
     "scale": "1e-12",
     "aliases": [
+      "picosieverts",
       "pSv"
     ]
   },
   "nanosievert": {
     "scale": "1e-9",
     "aliases": [
+      "nanosieverts",
       "nSv"
     ]
   },
   "microsievert": {
     "scale": "1e-6",
     "aliases": [
+      "microsieverts",
       "\u00b5Sv"
     ]
   },
   "millisievert": {
     "scale": "1e-3",
     "aliases": [
+      "millisieverts",
       "mSv"
     ]
   },
   "centisievert": {
     "scale": "1e-2",
     "aliases": [
+      "centisieverts",
       "cSv"
     ]
   },
   "decisievert": {
     "scale": "1e-1",
     "aliases": [
+      "decisieverts",
       "dSv"
     ]
   },
   "decasievert": {
-    "scale": "1e1",
+    "scale": "1e+1",
     "aliases": [
+      "decasieverts",
       "daSv"
     ]
   },
   "hectosievert": {
-    "scale": "1e2",
+    "scale": "1e+2",
     "aliases": [
+      "hectosieverts",
       "hSv"
     ]
   },
   "kilosievert": {
-    "scale": "1e3",
+    "scale": "1e+3",
     "aliases": [
+      "kilosieverts",
       "kSv"
     ]
   },
   "megasievert": {
-    "scale": "1e6",
+    "scale": "1e+6",
     "aliases": [
+      "megasieverts",
       "MSv"
     ]
   },
   "gigasievert": {
-    "scale": "1e9",
+    "scale": "1e+9",
     "aliases": [
+      "gigasieverts",
       "GSv"
     ]
   },
   "terasievert": {
-    "scale": "1e12",
+    "scale": "1e+12",
     "aliases": [
+      "terasieverts",
       "TSv"
     ]
   },
   "petasievert": {
-    "scale": "1e15",
+    "scale": "1e+15",
     "aliases": [
+      "petasieverts",
       "PSv"
     ]
   },
   "exasievert": {
-    "scale": "1e18",
+    "scale": "1e+18",
     "aliases": [
+      "exasieverts",
       "ESv"
     ]
   },
   "zettasievert": {
-    "scale": "1e21",
+    "scale": "1e+21",
     "aliases": [
+      "zettasieverts",
       "ZSv"
     ]
   },
   "yottasievert": {
-    "scale": "1e24",
+    "scale": "1e+24",
     "aliases": [
+      "yottasieverts",
       "YSv"
     ]
   },
   "ronnasievert": {
-    "scale": "1e27",
+    "scale": "1e+27",
     "aliases": [
+      "ronnasieverts",
       "RSv"
     ]
   },
   "quettasievert": {
-    "scale": "1e30",
+    "scale": "1e+30",
     "aliases": [
+      "quettasieverts",
       "QSv"
     ]
   },

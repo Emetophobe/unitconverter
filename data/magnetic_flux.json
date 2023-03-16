@@ -2,150 +2,175 @@
   "weber": {
     "scale": "1",
     "aliases": [
+      "webers",
       "Wb"
     ]
   },
   "quectoweber": {
     "scale": "1e-30",
     "aliases": [
+      "quectowebers",
       "qWb"
     ]
   },
   "rontoweber": {
     "scale": "1e-27",
     "aliases": [
+      "rontowebers",
       "rWb"
     ]
   },
   "yoctoweber": {
     "scale": "1e-24",
     "aliases": [
+      "yoctowebers",
       "yWb"
     ]
   },
   "zeptoweber": {
     "scale": "1e-21",
     "aliases": [
+      "zeptowebers",
       "zWb"
     ]
   },
   "attoweber": {
     "scale": "1e-18",
     "aliases": [
+      "attowebers",
       "aWb"
     ]
   },
   "femtoweber": {
     "scale": "1e-15",
     "aliases": [
+      "femtowebers",
       "fWb"
     ]
   },
   "picoweber": {
     "scale": "1e-12",
     "aliases": [
+      "picowebers",
       "pWb"
     ]
   },
   "nanoweber": {
     "scale": "1e-9",
     "aliases": [
+      "nanowebers",
       "nWb"
     ]
   },
   "microweber": {
     "scale": "1e-6",
     "aliases": [
+      "microwebers",
       "\u00b5Wb"
     ]
   },
   "milliweber": {
     "scale": "1e-3",
     "aliases": [
+      "milliwebers",
       "mWb"
     ]
   },
   "centiweber": {
     "scale": "1e-2",
     "aliases": [
+      "centiwebers",
       "cWb"
     ]
   },
   "deciweber": {
     "scale": "1e-1",
     "aliases": [
+      "deciwebers",
       "dWb"
     ]
   },
   "decaweber": {
-    "scale": "1e1",
+    "scale": "1e+1",
     "aliases": [
+      "decawebers",
       "daWb"
     ]
   },
   "hectoweber": {
-    "scale": "1e2",
+    "scale": "1e+2",
     "aliases": [
+      "hectowebers",
       "hWb"
     ]
   },
   "kiloweber": {
-    "scale": "1e3",
+    "scale": "1e+3",
     "aliases": [
+      "kilowebers",
       "kWb"
     ]
   },
   "megaweber": {
-    "scale": "1e6",
+    "scale": "1e+6",
     "aliases": [
+      "megawebers",
       "MWb"
     ]
   },
   "gigaweber": {
-    "scale": "1e9",
+    "scale": "1e+9",
     "aliases": [
+      "gigawebers",
       "GWb"
     ]
   },
   "teraweber": {
-    "scale": "1e12",
+    "scale": "1e+12",
     "aliases": [
+      "terawebers",
       "TWb"
     ]
   },
   "petaweber": {
-    "scale": "1e15",
+    "scale": "1e+15",
     "aliases": [
+      "petawebers",
       "PWb"
     ]
   },
   "exaweber": {
-    "scale": "1e18",
+    "scale": "1e+18",
     "aliases": [
+      "exawebers",
       "EWb"
     ]
   },
   "zettaweber": {
-    "scale": "1e21",
+    "scale": "1e+21",
     "aliases": [
+      "zettawebers",
       "ZWb"
     ]
   },
   "yottaweber": {
-    "scale": "1e24",
+    "scale": "1e+24",
     "aliases": [
+      "yottawebers",
       "YWb"
     ]
   },
   "ronnaweber": {
-    "scale": "1e27",
+    "scale": "1e+27",
     "aliases": [
+      "ronnawebers",
       "RWb"
     ]
   },
   "quettaweber": {
-    "scale": "1e30",
+    "scale": "1e+30",
     "aliases": [
+      "quettawebers",
       "QWb"
     ]
   },

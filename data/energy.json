@@ -1,238 +1,238 @@
 {
-  "joules": {
+  "joule": {
     "scale": "1",
     "aliases": [
-      "joule",
+      "joules",
       "J"
     ]
   },
-  "quectojoules": {
+  "quectojoule": {
     "scale": "1e-30",
     "aliases": [
-      "quectojoule",
+      "quectojoules",
       "qJ"
     ]
   },
-  "rontojoules": {
+  "rontojoule": {
     "scale": "1e-27",
     "aliases": [
-      "rontojoule",
+      "rontojoules",
       "rJ"
     ]
   },
-  "yoctojoules": {
+  "yoctojoule": {
     "scale": "1e-24",
     "aliases": [
-      "yoctojoule",
+      "yoctojoules",
       "yJ"
     ]
   },
-  "zeptojoules": {
+  "zeptojoule": {
     "scale": "1e-21",
     "aliases": [
-      "zeptojoule",
+      "zeptojoules",
       "zJ"
     ]
   },
-  "attojoules": {
+  "attojoule": {
     "scale": "1e-18",
     "aliases": [
-      "attojoule",
+      "attojoules",
       "aJ"
     ]
   },
-  "femtojoules": {
+  "femtojoule": {
     "scale": "1e-15",
     "aliases": [
-      "femtojoule",
+      "femtojoules",
       "fJ"
     ]
   },
-  "picojoules": {
+  "picojoule": {
     "scale": "1e-12",
     "aliases": [
-      "picojoule",
+      "picojoules",
       "pJ"
     ]
   },
-  "nanojoules": {
+  "nanojoule": {
     "scale": "1e-9",
     "aliases": [
-      "nanojoule",
+      "nanojoules",
       "nJ"
     ]
   },
-  "microjoules": {
+  "microjoule": {
     "scale": "1e-6",
     "aliases": [
-      "microjoule",
+      "microjoules",
       "\u00b5J"
     ]
   },
-  "millijoules": {
+  "millijoule": {
     "scale": "1e-3",
     "aliases": [
-      "millijoule",
+      "millijoules",
       "mJ"
     ]
   },
-  "centijoules": {
+  "centijoule": {
     "scale": "1e-2",
     "aliases": [
-      "centijoule",
+      "centijoules",
       "cJ"
     ]
   },
-  "decijoules": {
+  "decijoule": {
     "scale": "1e-1",
     "aliases": [
-      "decijoule",
+      "decijoules",
       "dJ"
     ]
   },
-  "decajoules": {
-    "scale": "1e1",
+  "decajoule": {
+    "scale": "1e+1",
     "aliases": [
-      "decajoule",
+      "decajoules",
       "daJ"
     ]
   },
-  "hectojoules": {
-    "scale": "1e2",
+  "hectojoule": {
+    "scale": "1e+2",
     "aliases": [
-      "hectojoule",
+      "hectojoules",
       "hJ"
     ]
   },
-  "kilojoules": {
-    "scale": "1e3",
+  "kilojoule": {
+    "scale": "1e+3",
     "aliases": [
-      "kilojoule",
+      "kilojoules",
       "kJ"
     ]
   },
-  "megajoules": {
-    "scale": "1e6",
+  "megajoule": {
+    "scale": "1e+6",
     "aliases": [
-      "megajoule",
+      "megajoules",
       "MJ"
     ]
   },
-  "gigajoules": {
-    "scale": "1e9",
+  "gigajoule": {
+    "scale": "1e+9",
     "aliases": [
-      "gigajoule",
+      "gigajoules",
       "GJ"
     ]
   },
-  "terajoules": {
-    "scale": "1e12",
+  "terajoule": {
+    "scale": "1e+12",
     "aliases": [
-      "terajoule",
+      "terajoules",
       "TJ"
     ]
   },
-  "petajoules": {
-    "scale": "1e15",
+  "petajoule": {
+    "scale": "1e+15",
     "aliases": [
-      "petajoule",
+      "petajoules",
       "PJ"
     ]
   },
-  "exajoules": {
-    "scale": "1e18",
+  "exajoule": {
+    "scale": "1e+18",
     "aliases": [
-      "exajoule",
+      "exajoules",
       "EJ"
     ]
   },
-  "zettajoules": {
-    "scale": "1e21",
+  "zettajoule": {
+    "scale": "1e+21",
     "aliases": [
-      "zettajoule",
+      "zettajoules",
       "ZJ"
     ]
   },
-  "yottajoules": {
-    "scale": "1e24",
+  "yottajoule": {
+    "scale": "1e+24",
     "aliases": [
-      "yottajoule",
+      "yottajoules",
       "YJ"
     ]
   },
-  "ronnajoules": {
-    "scale": "1e27",
+  "ronnajoule": {
+    "scale": "1e+27",
     "aliases": [
-      "ronnajoule",
+      "ronnajoules",
       "RJ"
     ]
   },
-  "quettajoules": {
-    "scale": "1e30",
+  "quettajoule": {
+    "scale": "1e+30",
     "aliases": [
-      "quettajoule",
+      "quettajoules",
       "QJ"
     ]
   },
-  "watt hours": {
+  "watt hour": {
     "scale": "3.6e+3",
     "aliases": [
-      "watt hour",
+      "watt hours",
       "watt-hours",
       "watt-hour",
       "Wh"
     ]
   },
-  "microwatt hours": {
+  "microwatt hour": {
     "scale": "3.6e-3",
     "aliases": [
-      "microwatt hour",
+      "microwatt hours",
       "microwatt-hours",
       "microwatt-hour",
       "uWh",
       "\u03bcWh"
     ]
   },
-  "milliwatt hours": {
+  "milliwatt hour": {
     "scale": "3.6",
     "aliases": [
-      "milliwatt hour",
+      "milliwatt hours",
       "milliwatt-hours",
       "milliwatt-hour",
       "mWh"
     ]
   },
-  "kilowatt hours": {
+  "kilowatt hour": {
     "scale": "3.6e+6",
     "aliases": [
-      "kilowatt hour",
+      "kilowatt hours",
       "kilowatt-hours",
       "kilowatt-hour",
       "kWh"
     ]
   },
-  "megawatt hours": {
+  "megawatt hour": {
     "scale": "3.6e+9",
     "aliases": [
-      "megawatt hour",
+      "megawatt hours",
       "megawatt-hours",
       "megawatt-hour",
       "MWh"
     ]
   },
-  "gigawatt hours": {
+  "gigawatt hour": {
     "scale": "3.6e+12",
     "aliases": [
-      "gigawatt hour",
+      "gigawatt hours",
       "gigawatt-hours",
       "gigawatt-hour",
       "GWh"
     ]
   },
-  "terawatt hours": {
+  "terawatt hour": {
     "scale": "3.6e+15",
     "aliases": [
-      "terawatt hour",
+      "terawatt hours",
       "terawatt-hours",
       "terawatt-hour",
       "TWh"

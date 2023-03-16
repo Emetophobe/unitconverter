@@ -1,211 +1,211 @@
 {
-  "bytes": {
+  "byte": {
     "scale": "1",
     "aliases": [
-      "byte",
+      "bytes",
       "B"
     ]
   },
-  "bits": {
+  "bit": {
     "scale": "0.125",
     "aliases": [
-      "bit",
+      "bits",
       "b"
     ]
   },
-  "kilobytes": {
+  "kilobyte": {
     "scale": "1000",
     "aliases": [
-      "kilobyte",
+      "kilobytes",
       "kB"
     ]
   },
-  "kibibytes": {
+  "kibibyte": {
     "scale": "1024",
     "aliases": [
-      "kibibyte",
+      "kibibytes",
       "KiB"
     ]
   },
-  "kilobits": {
+  "kilobit": {
     "scale": "125",
     "aliases": [
-      "kilobit",
+      "kilobits",
       "kb"
     ]
   },
-  "megabytes": {
+  "megabyte": {
     "scale": "1e+6",
     "aliases": [
-      "megabyte",
+      "megabytes",
       "MB"
     ]
   },
-  "mebibytes": {
+  "mebibyte": {
     "scale": "1.049e+6",
     "aliases": [
-      "mebibyte",
+      "mebibytes",
       "MiB"
     ]
   },
-  "megabits": {
+  "megabit": {
     "scale": "125000",
     "aliases": [
-      "megabit",
+      "megabits",
       "mb"
     ]
   },
-  "gigabytes": {
+  "gigabyte": {
     "scale": "1e+9",
     "aliases": [
-      "gigabyte",
+      "gigabytes",
       "GB"
     ]
   },
-  "gibibytes": {
+  "gibibyte": {
     "scale": "1.074e+9",
     "aliases": [
-      "gibibyte",
+      "gibibytes",
       "GiB"
     ]
   },
-  "gigabits": {
+  "gigabit": {
     "scale": "1.25e+8",
     "aliases": [
-      "gigabit",
+      "gigabits",
       "gb"
     ]
   },
-  "terabytes": {
+  "terabyte": {
     "scale": "1e+12",
     "aliases": [
-      "terabyte",
+      "terabytes",
       "TB"
     ]
   },
-  "tebibytes": {
+  "tebibyte": {
     "scale": "1.1e+12",
     "aliases": [
-      "tebibyte",
+      "tebibytes",
       "TiB"
     ]
   },
-  "terabits": {
+  "terabit": {
     "scale": "1.25e+11",
     "aliases": [
-      "terabit",
+      "terabits",
       "tb"
     ]
   },
-  "petabytes": {
+  "petabyte": {
     "scale": "1e+15",
     "aliases": [
-      "petabyte",
+      "petabytes",
       "PB"
     ]
   },
-  "pebibytes": {
+  "pebibyte": {
     "scale": "1.126e+15",
     "aliases": [
-      "pebibyte",
+      "pebibytes",
       "PiB"
     ]
   },
-  "petabits": {
+  "petabit": {
     "scale": "1.25e+14",
     "aliases": [
-      "petabit",
+      "petabits",
       "pb"
     ]
   },
-  "exabytes": {
+  "exabyte": {
     "scale": "1e+18",
     "aliases": [
-      "exabyte",
+      "exabytes",
       "EB"
     ]
   },
-  "exbibytes": {
+  "exbibyte": {
     "scale": "1.153e+18",
     "aliases": [
-      "exbibyte",
+      "exbibytes",
       "EiB"
     ]
   },
-  "exabits": {
+  "exabit": {
     "scale": "1.25e+17",
     "aliases": [
-      "exabit",
+      "exabits",
       "eb"
     ]
   },
-  "zettabytes": {
+  "zettabyte": {
     "scale": "1e+21",
     "aliases": [
-      "zettabyte",
+      "zettabytes",
       "ZB"
     ]
   },
-  "zebibytes": {
+  "zebibyte": {
     "scale": "1.181e+21",
     "aliases": [
-      "zebibyte",
+      "zebibytes",
       "ZiB"
     ]
   },
-  "zettabits": {
+  "zettabit": {
     "scale": "1.25e+20",
     "aliases": [
-      "zettabit",
+      "zettabits",
       "zb"
     ]
   },
-  "yottabytes": {
+  "yottabyte": {
     "scale": "1e+24",
     "aliases": [
-      "yottabyte",
+      "yottabytes",
       "YB"
     ]
   },
-  "yobibytes": {
+  "yobibyte": {
     "scale": "1.209e+24",
     "aliases": [
-      "yobibyte",
+      "yobibytes",
       "YiB"
     ]
   },
-  "yottabits": {
+  "yottabit": {
     "scale": "1.25e+23",
     "aliases": [
-      "yottabit",
+      "yottabits",
       "yb"
     ]
   },
-  "ronnabytes": {
+  "ronnabyte": {
     "scale": "1e+27",
     "aliases": [
-      "ronnabyte",
+      "ronnabytes",
       "RB"
     ]
   },
-  "ronnabits": {
+  "ronnabit": {
     "scale": "1.25e+26",
     "aliases": [
-      "ronnabit",
+      "ronnabits",
       "rb"
     ]
   },
-  "quettabytes": {
+  "quettabyte": {
     "scale": "1e+30",
     "aliases": [
-      "quettabyte",
+      "quettabytes",
       "QB"
     ]
   },
-  "quettabits": {
+  "quettabit": {
     "scale": "1.25e+29",
     "aliases": [
-      "quettabit",
+      "quettabits",
       "qb"
     ]
   }

@@ -1,176 +1,176 @@
 {
-  "lumens": {
+  "lumen": {
     "scale": "1",
     "aliases": [
-      "lumen",
+      "lumens",
       "lm"
     ]
   },
-  "quectolumens": {
+  "quectolumen": {
     "scale": "1e-30",
     "aliases": [
-      "quectolumen",
+      "quectolumens",
       "qlm"
     ]
   },
-  "rontolumens": {
+  "rontolumen": {
     "scale": "1e-27",
     "aliases": [
-      "rontolumen",
+      "rontolumens",
       "rlm"
     ]
   },
-  "yoctolumens": {
+  "yoctolumen": {
     "scale": "1e-24",
     "aliases": [
-      "yoctolumen",
+      "yoctolumens",
       "ylm"
     ]
   },
-  "zeptolumens": {
+  "zeptolumen": {
     "scale": "1e-21",
     "aliases": [
-      "zeptolumen",
+      "zeptolumens",
       "zlm"
     ]
   },
-  "attolumens": {
+  "attolumen": {
     "scale": "1e-18",
     "aliases": [
-      "attolumen",
+      "attolumens",
       "alm"
     ]
   },
-  "femtolumens": {
+  "femtolumen": {
     "scale": "1e-15",
     "aliases": [
-      "femtolumen",
+      "femtolumens",
       "flm"
     ]
   },
-  "picolumens": {
+  "picolumen": {
     "scale": "1e-12",
     "aliases": [
-      "picolumen",
+      "picolumens",
       "plm"
     ]
   },
-  "nanolumens": {
+  "nanolumen": {
     "scale": "1e-9",
     "aliases": [
-      "nanolumen",
+      "nanolumens",
       "nlm"
     ]
   },
-  "microlumens": {
+  "microlumen": {
     "scale": "1e-6",
     "aliases": [
-      "microlumen",
+      "microlumens",
       "\u00b5lm"
     ]
   },
-  "millilumens": {
+  "millilumen": {
     "scale": "1e-3",
     "aliases": [
-      "millilumen",
+      "millilumens",
       "mlm"
     ]
   },
-  "centilumens": {
+  "centilumen": {
     "scale": "1e-2",
     "aliases": [
-      "centilumen",
+      "centilumens",
       "clm"
     ]
   },
-  "decilumens": {
+  "decilumen": {
     "scale": "1e-1",
     "aliases": [
-      "decilumen",
+      "decilumens",
       "dlm"
     ]
   },
-  "decalumens": {
-    "scale": "1e1",
+  "decalumen": {
+    "scale": "1e+1",
     "aliases": [
-      "decalumen",
+      "decalumens",
       "dalm"
     ]
   },
-  "hectolumens": {
-    "scale": "1e2",
+  "hectolumen": {
+    "scale": "1e+2",
     "aliases": [
-      "hectolumen",
+      "hectolumens",
       "hlm"
     ]
   },
-  "kilolumens": {
-    "scale": "1e3",
+  "kilolumen": {
+    "scale": "1e+3",
     "aliases": [
-      "kilolumen",
+      "kilolumens",
       "klm"
     ]
   },
-  "megalumens": {
-    "scale": "1e6",
+  "megalumen": {
+    "scale": "1e+6",
     "aliases": [
-      "megalumen",
+      "megalumens",
       "Mlm"
     ]
   },
-  "gigalumens": {
-    "scale": "1e9",
+  "gigalumen": {
+    "scale": "1e+9",
     "aliases": [
-      "gigalumen",
+      "gigalumens",
       "Glm"
     ]
   },
-  "teralumens": {
-    "scale": "1e12",
+  "teralumen": {
+    "scale": "1e+12",
     "aliases": [
-      "teralumen",
+      "teralumens",
       "Tlm"
     ]
   },
-  "petalumens": {
-    "scale": "1e15",
+  "petalumen": {
+    "scale": "1e+15",
     "aliases": [
-      "petalumen",
+      "petalumens",
       "Plm"
     ]
   },
-  "exalumens": {
-    "scale": "1e18",
+  "exalumen": {
+    "scale": "1e+18",
     "aliases": [
-      "exalumen",
+      "exalumens",
       "Elm"
     ]
   },
-  "zettalumens": {
-    "scale": "1e21",
+  "zettalumen": {
+    "scale": "1e+21",
     "aliases": [
-      "zettalumen",
+      "zettalumens",
       "Zlm"
     ]
   },
-  "yottalumens": {
-    "scale": "1e24",
+  "yottalumen": {
+    "scale": "1e+24",
     "aliases": [
-      "yottalumen",
+      "yottalumens",
       "Ylm"
     ]
   },
-  "ronnalumens": {
-    "scale": "1e27",
+  "ronnalumen": {
+    "scale": "1e+27",
     "aliases": [
-      "ronnalumen",
+      "ronnalumens",
       "Rlm"
     ]
   },
-  "quettalumens": {
-    "scale": "1e30",
+  "quettalumen": {
+    "scale": "1e+30",
     "aliases": [
-      "quettalumen",
+      "quettalumens",
       "Qlm"
     ]
   }

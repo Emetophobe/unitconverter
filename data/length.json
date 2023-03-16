@@ -41,6 +41,7 @@
       "femtometer",
       "femtometre",
       "femtometres",
+      "fermi",
       "fm"
     ]
   },
@@ -68,6 +69,7 @@
       "micrometer",
       "micrometre",
       "micrometres",
+      "micron",
       "\u03bcm"
     ]
   },
@@ -188,6 +190,12 @@
       "Ym"
     ]
   },
+  "angstrom": {
+    "scale": "1e-10",
+    "aliases": [
+      "\u00c5"
+    ]
+  },
   "feet": {
     "scale": "0.3048",
     "aliases": [
@@ -202,6 +210,13 @@
       "in"
     ]
   },
+  "yards": {
+    "scale": "0.9144",
+    "aliases": [
+      "yard",
+      "yd"
+    ]
+  },
   "miles": {
     "scale": "1609.344",
     "aliases": [
@@ -209,11 +224,64 @@
       "mi"
     ]
   },
-  "yards": {
-    "scale": "0.9144",
+  "chain": {
+    "scale": "20.1168",
+    "aliases": []
+  },
+  "fathom": {
+    "scale": "1.8288",
+    "aliases": []
+  },
+  "furlong": {
+    "scale": "201.168",
+    "aliases": []
+  },
+  "thou": {
+    "scale": "2.54e-5",
     "aliases": [
-      "yard",
-      "yd"
+      "mils",
+      "mil"
+    ]
+  },
+  "rods": {
+    "scale": "5.0292",
+    "aliases": [
+      "rod",
+      "perch",
+      "pole"
+    ]
+  },
+  "nautical miles": {
+    "scale": "1852",
+    "aliases": [
+      "nautical mile",
+      "nmi"
+    ]
+  },
+  "planck length": {
+    "scale": "1.61605e-35",
+    "aliases": []
+  },
+  "astronomical unit": {
+    "scale": "1.495978707e+11",
+    "aliases": [
+      "AU",
+      "au"
+    ]
+  },
+  "light years": {
+    "scale": "9.4607e+15",
+    "aliases": [
+      "light year",
+      "light-year",
+      "ly"
+    ]
+  },
+  "parsecs": {
+    "scale": "3.0857e+16",
+    "aliases": [
+      "parsec",
+      "pc"
     ]
   }
 }

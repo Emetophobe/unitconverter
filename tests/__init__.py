@@ -2,7 +2,7 @@
 
 from unittest import TestCase
 from decimal import Decimal
-from converter import Converter, Unit
+from converter import Converter, Unit, format_decimal
 
 
 class AbstractTestCase(TestCase):
@@ -44,13 +44,10 @@ class AbstractTestCase(TestCase):
             result = self.converter.convert(self.base_value, base_unit, dest)
             print(f'"{dest.name}": "{result}",')
 
-    def decimal_to_str(self, value: Decimal, precision: int = 5) -> None:
-        """ Convert Decimal to a string with rounded precision. """
-        return f"{value:.{precision}f}"
-
 
 __all__ = [
     'AbstractTestCase',
     'Converter',
-    'Unit'
+    'Unit',
+    'format_decimal'
 ]

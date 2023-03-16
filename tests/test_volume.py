@@ -1,6 +1,6 @@
 # Copyright (c) 2022-2023 Mike Cunningham
 
-from tests import AbstractTestCase
+from tests import AbstractTestCase, format_decimal
 
 
 class TestVolume(AbstractTestCase):
@@ -89,10 +89,8 @@ class TestVolume(AbstractTestCase):
             "teaspoons (US)": "202884.11949",
         }
 
-        for unitname, expected_value in expected_values.items():
-            dest_unit = self.converter.find_unit(unitname)
-
+        for name, expected in expected_values.items():
+            dest_unit = self.converter.find_unit(name)
             result = self.converter.convert(self.base_value, self.base_unit, dest_unit)
-            result = self.decimal_to_str(result, precision=5)
-
-            self.assertEqual(result, expected_value, 'Value mismatch')
+            rounded = format_decimal(result, precision=5)
+            self.assertEqual(rounded, expected, 'Value mismatch')

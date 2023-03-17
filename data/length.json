@@ -227,14 +227,16 @@
   "angstrom": {
     "scale": "1e-10",
     "aliases": [
+      "\u00e5ngstr\u00f6m",
       "\u00c5"
     ]
   },
-  "foot": {
-    "scale": "0.3048",
+  "thousandth of an inch": {
+    "scale": "2.54e-5",
     "aliases": [
-      "feet",
-      "ft"
+      "thou",
+      "mils",
+      "mil"
     ]
   },
   "inch": {
@@ -242,6 +244,13 @@
     "aliases": [
       "inches",
       "in"
+    ]
+  },
+  "foot": {
+    "scale": "0.3048",
+    "aliases": [
+      "feet",
+      "ft"
     ]
   },
   "yard": {
@@ -260,21 +269,14 @@
   },
   "chain": {
     "scale": "20.1168",
-    "aliases": []
-  },
-  "fathom": {
-    "scale": "1.8288",
-    "aliases": []
+    "aliases": [
+      "chains"
+    ]
   },
   "furlong": {
     "scale": "201.168",
-    "aliases": []
-  },
-  "thou": {
-    "scale": "2.54e-5",
     "aliases": [
-      "mils",
-      "mil"
+      "furlongs"
     ]
   },
   "rod": {
@@ -282,13 +284,59 @@
     "aliases": [
       "rods",
       "perch",
-      "pole"
+      "pole",
+      "lug"
+    ]
+  },
+  "fathom": {
+    "scale": "1.8288",
+    "aliases": [
+      "fathoms",
+      "ftm"
+    ]
+  },
+  "cable length": {
+    "scale": "185.2",
+    "aliases": [
+      "international cables",
+      "international cable",
+      "intcable",
+      "cables",
+      "cable",
+      "intcb",
+      "cb"
+    ]
+  },
+  "imperial cable length": {
+    "scale": "185.32",
+    "aliases": [
+      "imperial cables",
+      "imperial cable",
+      "impcable",
+      "impcb"
+    ]
+  },
+  "US cable length": {
+    "scale": "219.5",
+    "aliases": [
+      "us cables",
+      "US cable",
+      "us cable",
+      "uscable",
+      "uscb"
+    ]
+  },
+  "league": {
+    "scale": "4828.03",
+    "aliases": [
+      "leagues"
     ]
   },
   "nautical mile": {
     "scale": "1852",
     "aliases": [
       "nautical miles",
+      "NM",
       "nmi"
     ]
   },

@@ -251,13 +251,6 @@
       "Ym2"
     ]
   },
-  "acre": {
-    "scale": "4046.8564224",
-    "aliases": [
-      "acres",
-      "ac"
-    ]
-  },
   "are": {
     "scale": "100.0",
     "aliases": [
@@ -265,30 +258,11 @@
       "a"
     ]
   },
-  "circular inch": {
-    "scale": "0.000506707479",
-    "aliases": [
-      "circular inches",
-      "c in"
-    ]
-  },
   "hectare": {
     "scale": "10000.0",
     "aliases": [
       "hectares",
       "ha"
-    ]
-  },
-  "hide": {
-    "scale": "485000.0",
-    "aliases": [
-      "hides"
-    ]
-  },
-  "rood": {
-    "scale": "1011.7141056",
-    "aliases": [
-      "roods"
     ]
   },
   "square inch": {
@@ -311,11 +285,25 @@
       "ft2"
     ]
   },
-  "square foot (US)": {
+  "square foot (US survey)": {
     "scale": "0.092903411613",
     "aliases": [
-      "square feet (US)",
-      "sq ft (US)"
+      "square feet (US survey)",
+      "sq ft (US)",
+      "us sqft",
+      "ussqft",
+      "usft^2",
+      "usft2"
+    ]
+  },
+  "square yard": {
+    "scale": "0.83612736",
+    "aliases": [
+      "square yards",
+      "sq yd",
+      "sqyd",
+      "yd^2",
+      "yd2"
     ]
   },
   "square mile": {
@@ -339,24 +327,56 @@
       "nmi2"
     ]
   },
-  "square rod (pole)": {
+  "square rod": {
     "scale": "25.29285264",
     "aliases": [
       "square rods",
+      "square poles",
+      "square pole",
       "sq rod",
       "sqrod",
       "rod^2",
-      "rod2"
+      "rod2",
+      "pole^2",
+      "pole2"
     ]
   },
-  "square yard": {
-    "scale": "0.83612736",
+  "circular inch": {
+    "scale": "0.000506707479",
     "aliases": [
-      "square yards",
-      "sq yd",
-      "sqyd",
-      "yd^2",
-      "yd2"
+      "circular inches",
+      "c in"
+    ]
+  },
+  "imperial acre": {
+    "scale": "4046.8564224",
+    "aliases": [
+      "imperial acres",
+      "acres",
+      "ac"
+    ]
+  },
+  "US survey acre": {
+    "scale": "4046.87",
+    "aliases": [
+      "US survey acres",
+      "survey acres",
+      "survey acre",
+      "us acres",
+      "us acre",
+      "usac"
+    ]
+  },
+  "hide": {
+    "scale": "485000.0",
+    "aliases": [
+      "hides"
+    ]
+  },
+  "rood": {
+    "scale": "1011.7141056",
+    "aliases": [
+      "roods"
     ]
   },
   "square": {
@@ -365,10 +385,12 @@
       "squares"
     ]
   },
-  "township": {
+  "survey township": {
     "scale": "93239571.972",
     "aliases": [
-      "townships"
+      "survey townships",
+      "townships",
+      "township"
     ]
   }
 }

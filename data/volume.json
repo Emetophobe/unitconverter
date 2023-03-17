@@ -236,7 +236,248 @@
       "liters",
       "litres",
       "litre",
+      "L",
       "l"
+    ]
+  },
+  "quectoliter": {
+    "scale": "1E-33",
+    "aliases": [
+      "quectoliters",
+      "quectolitres",
+      "quectolitre",
+      "qL",
+      "ql"
+    ]
+  },
+  "rontoliter": {
+    "scale": "1E-30",
+    "aliases": [
+      "rontoliters",
+      "rontolitres",
+      "rontolitre",
+      "rL",
+      "rl"
+    ]
+  },
+  "yoctoliter": {
+    "scale": "1E-27",
+    "aliases": [
+      "yoctoliters",
+      "yoctolitres",
+      "yoctolitre",
+      "yL",
+      "yl"
+    ]
+  },
+  "zeptoliter": {
+    "scale": "1E-24",
+    "aliases": [
+      "zeptoliters",
+      "zeptolitres",
+      "zeptolitre",
+      "zL",
+      "zl"
+    ]
+  },
+  "attoliter": {
+    "scale": "1E-21",
+    "aliases": [
+      "attoliters",
+      "attolitres",
+      "attolitre",
+      "aL",
+      "al"
+    ]
+  },
+  "femtoliter": {
+    "scale": "1E-18",
+    "aliases": [
+      "femtoliters",
+      "femtolitres",
+      "femtolitre",
+      "fL",
+      "fl"
+    ]
+  },
+  "picoliter": {
+    "scale": "1E-15",
+    "aliases": [
+      "picoliters",
+      "picolitres",
+      "picolitre",
+      "pL",
+      "pl"
+    ]
+  },
+  "nanoliter": {
+    "scale": "1E-12",
+    "aliases": [
+      "nanoliters",
+      "nanolitres",
+      "nanolitre",
+      "nL",
+      "nl"
+    ]
+  },
+  "microliter": {
+    "scale": "1E-9",
+    "aliases": [
+      "microliters",
+      "microlitres",
+      "microlitre",
+      "\u00b5L",
+      "\u00b5l"
+    ]
+  },
+  "milliliter": {
+    "scale": "0.000001",
+    "aliases": [
+      "milliliters",
+      "millilitres",
+      "millilitre",
+      "mL",
+      "ml"
+    ]
+  },
+  "centiliter": {
+    "scale": "0.00001",
+    "aliases": [
+      "centiliters",
+      "centilitres",
+      "centilitre",
+      "cL",
+      "cl"
+    ]
+  },
+  "deciliter": {
+    "scale": "0.0001",
+    "aliases": [
+      "deciliters",
+      "decilitres",
+      "decilitre",
+      "dL",
+      "dl"
+    ]
+  },
+  "decaliter": {
+    "scale": "0.01",
+    "aliases": [
+      "decaliters",
+      "decalitres",
+      "decalitre",
+      "daL",
+      "dal"
+    ]
+  },
+  "hectoliter": {
+    "scale": "0.1",
+    "aliases": [
+      "hectoliters",
+      "hectolitres",
+      "hectolitre",
+      "hL",
+      "hl"
+    ]
+  },
+  "kiloliter": {
+    "scale": "1",
+    "aliases": [
+      "kiloliters",
+      "kilolitres",
+      "kilolitre",
+      "kL",
+      "kl"
+    ]
+  },
+  "megaliter": {
+    "scale": "1E+3",
+    "aliases": [
+      "megaliters",
+      "megalitres",
+      "megalitre",
+      "ML",
+      "Ml"
+    ]
+  },
+  "gigaliter": {
+    "scale": "1E+6",
+    "aliases": [
+      "gigaliters",
+      "gigalitres",
+      "gigalitre",
+      "GL",
+      "Gl"
+    ]
+  },
+  "teraliter": {
+    "scale": "1E+9",
+    "aliases": [
+      "teraliters",
+      "teralitres",
+      "teralitre",
+      "TL",
+      "Tl"
+    ]
+  },
+  "petaliter": {
+    "scale": "1E+12",
+    "aliases": [
+      "petaliters",
+      "petalitres",
+      "petalitre",
+      "PL",
+      "Pl"
+    ]
+  },
+  "exaliter": {
+    "scale": "1E+15",
+    "aliases": [
+      "exaliters",
+      "exalitres",
+      "exalitre",
+      "EL",
+      "El"
+    ]
+  },
+  "zettaliter": {
+    "scale": "1E+18",
+    "aliases": [
+      "zettaliters",
+      "zettalitres",
+      "zettalitre",
+      "ZL",
+      "Zl"
+    ]
+  },
+  "yottaliter": {
+    "scale": "1E+21",
+    "aliases": [
+      "yottaliters",
+      "yottalitres",
+      "yottalitre",
+      "YL",
+      "Yl"
+    ]
+  },
+  "ronnaliter": {
+    "scale": "1E+24",
+    "aliases": [
+      "ronnaliters",
+      "ronnalitres",
+      "ronnalitre",
+      "RL",
+      "Rl"
+    ]
+  },
+  "quettaliter": {
+    "scale": "1E+27",
+    "aliases": [
+      "quettaliters",
+      "quettalitres",
+      "quettalitre",
+      "QL",
+      "Ql"
     ]
   },
   "cubic inch": {

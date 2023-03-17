@@ -1,41 +1,14 @@
 # Copyright (c) 2022-2023 Mike Cunningham
 
-from tests import AbstractTestCase, format_decimal
+from decimal import Decimal
+from tests import METRIC_TABLE, AbstractTestCase
 
 
 class TestVolume(AbstractTestCase):
 
-    def setUp(self) -> None:
-        super().setUp()
-        self.base_unit = self.converter.find_unit('cubic meter')
-        self.units = self.converter.units['volume']
-
     def test_cubic_meter(self) -> None:
         """ Test cubic meter conversions. """
         expected_values = {
-            "cubic meter": "1",
-            "cubic yoctometer": "1E+72",
-            "cubic zeptometer": "1E+63",
-            "cubic attometer": "1E+54",
-            "cubic femtometer": "1E+45",
-            "cubic picometer": "1E+36",
-            "cubic nanometer": "1E+27",
-            "cubic micrometer": "1E+18",
-            "cubic millimeter": "1E+9",
-            "cubic centimeter": "1E+6",
-            "cubic decimeter": "1E+3",
-            "cubic decameter": "1E-3",
-            "cubic hectometer": "1E-6",
-            "cubic kilometer": "1E-9",
-            "cubic megameter": "1E-18",
-            "cubic gigameter": "1E-27",
-            "cubic terameter": "1E-36",
-            "cubic petameter": "1E-45",
-            "cubic exameter": "1E-54",
-            "cubic zettameter": "1E-63",
-            "cubic yottalmeter": "1E-72",
-
-            "liter": "1E+3",
             "quectoliter": "1E+33",
             "rontoliter": "1E+30",
             "yoctoliter": "1E+27",
@@ -48,6 +21,7 @@ class TestVolume(AbstractTestCase):
             "milliliter": "1E+6",
             "centiliter": "1E+5",
             "deciliter": "1E+4",
+            "liter": "1E+3",
             "decaliter": "1E+2",
             "hectoliter": "1E+1",
             "kiloliter": "1",
@@ -60,6 +34,8 @@ class TestVolume(AbstractTestCase):
             "yottaliter": "1E-21",
             "ronnaliter": "1E-24",
             "quettaliter": "1E-27",
+
+            "stere": "1",
 
             "cubic inch": "61023.61003472243410975706501",
             "cubic foot": "35.31472482766414284099898294",
@@ -100,8 +76,8 @@ class TestVolume(AbstractTestCase):
             "US teaspoon": "202884.1353535182602415581444"
         }
 
-        # Test all cubic meter conversions
-        self.check_units(self.base_unit, self.units, expected_values)
+        self.assert_metric_scale('cubic meter')
+        self.assert_units('cubic meter', expected_values)
 
     def test_rounding(self) -> None:
         """ Test rounding volume units. """
@@ -143,7 +119,12 @@ class TestVolume(AbstractTestCase):
         }
 
         for name, expected in expected_values.items():
-            dest_unit = self.converter.find_unit(name)
-            result = self.converter.convert(self.base_value, self.base_unit, dest_unit)
-            rounded = format_decimal(result, exponent=True, precision=5)
-            self.assertEqual(rounded, expected, f'Incorrect unit: {dest_unit.name!r}')
+            self.assert_unit('cubic meter', name, expected, exponent=True, precision=5)
+
+    def assert_metric_scale(self, unit: str) -> None:
+        """ Overloaded metric scale to handle cubic meters. """
+        for scale, _, prefix in METRIC_TABLE:
+
+            name = unit.replace('meter', prefix + 'meter')
+            expected = Decimal(scale) ** 3
+            self.assert_unit(name, unit, expected)

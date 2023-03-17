@@ -7,19 +7,21 @@ class TestUnits(AbstractTestCase):
 
     def test_duplicates(self) -> None:
         """ Search for duplicate names, symbols or aliases. """
-        msg = 'Duplicate name or alias: {}'
+        msg = 'Duplicate name or alias: {} (original: {})'
         aliases = {}
 
         for unit in self.yield_units():
-            self.assertFalse(unit.name in aliases.keys(), msg.format(unit.name))
+            self.assertFalse(unit.name in aliases.keys(), msg.format(unit.name,
+                             aliases.get(unit.name)))
             aliases[unit.name] = unit
 
             for alias in unit.aliases:
-                self.assertFalse(alias in aliases.keys(), msg.format(alias))
+                self.assertFalse(alias in aliases.keys(), msg.format(alias,
+                                 aliases.get(alias)))
                 aliases[alias] = unit
 
     def yield_units(self) -> Unit:
         """ Iterate over the unit categories and yield Units. """
-        for category, units in self.all_units.items():
+        for category, units in self.converter.units.items():
             for unitname, properties in units.items():
                 yield Unit(unitname, category, **properties)

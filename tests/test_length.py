@@ -13,31 +13,6 @@ class TestLength(AbstractTestCase):
     def test_meter(self):
         """ Test meter conversions. """
         expected_values = {
-            "meter": "1",
-            "quectometer": "1E+30",
-            "rontometer": "1E+27",
-            "yoctometer": "1E+24",
-            "zeptometer": "1E+21",
-            "attometer": "1E+18",
-            "femtometer": "1E+15",
-            "picometer": "1E+12",
-            "nanometer": "1E+9",
-            "micrometer": "1E+6",
-            "millimeter": "1E+3",
-            "centimeter": "1E+2",
-            "decimeter": "1E+1",
-            "decameter": "1E-1",
-            "hectometer": "1E-2",
-            "kilometer": "1E-3",
-            "megameter": "1E-6",
-            "gigameter": "1E-9",
-            "terameter": "1E-12",
-            "petameter": "1E-15",
-            "exameter": "1E-18",
-            "zettameter": "1E-21",
-            "yottameter": "1E-24",
-            "ronnameter": "1E-27",
-            "quettameter": "1E-30",
             "angstrom": "1E+10",
 
             "thousandth of an inch": "39370.07874015748031496062992",
@@ -65,5 +40,5 @@ class TestLength(AbstractTestCase):
             "parsec": "3.240755744239556664614188029E-17",
         }
 
-        # Test all meter conversions
-        self.check_units(self.base_unit, self.units, expected_values)
+        self.assert_metric_scale('meter')
+        self.assert_units('meter', expected_values)

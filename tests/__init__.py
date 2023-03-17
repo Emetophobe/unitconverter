@@ -2,50 +2,163 @@
 
 from unittest import TestCase
 from decimal import Decimal
+from typing import Optional, Union
 from converter import Converter, Unit, format_decimal
+
+
+METRIC_TABLE = [
+    ('1', '', ''),  # base unit
+    ('1e-30', 'q', 'quecto'),
+    ('1e-27', 'r', 'ronto'),
+    ('1e-24', 'y', 'yocto'),
+    ('1e-21', 'z', 'zepto'),
+    ('1e-18', 'a', 'atto'),
+    ('1e-15', 'f', 'femto'),
+    ('1e-12', 'p', 'pico'),
+    ('1e-9', 'n', 'nano'),
+    ('1e-6', 'µ', 'micro'),
+    ('1e-3', 'm', 'milli'),
+    ('1e-2', 'c', 'centi'),
+    ('1e-1', 'd', 'deci'),
+    ('1e+1', 'da', 'deca'),
+    ('1e+2', 'h', 'hecto'),
+    ('1e+3', 'k', 'kilo'),
+    ('1e+6', 'M', 'mega'),
+    ('1e+9', 'G', 'giga'),
+    ('1e+12', 'T', 'tera'),
+    ('1e+15', 'P', 'peta'),
+    ('1e+18', 'E', 'exa'),
+    ('1e+21', 'Z', 'zetta'),
+    ('1e+24', 'Y', 'yotta'),
+    ('1e+27', 'R', 'ronna'),
+    ('1e+30', 'Q', 'quetta'),
+]
 
 
 class AbstractTestCase(TestCase):
 
     def setUp(self) -> None:
+        """ Initialize converter. """
         self.converter = Converter()
-        self.all_units = self.converter.units
         self.base_value = Decimal('1')
 
-    def check_units(self, base_unit: Unit, units: dict, expected_values: dict) -> None:
-        for unitname in units.keys():
-            self.assertTrue(unitname in expected_values.keys(),
-                            f'Missing key: {unitname}')
+    def parse_unit(self, unit: Union[str, Unit]) -> Unit:
+        """ Parse unit input. Accepts either a string or a Unit.
 
-            dest_unit = self.converter.find_unit(unitname)
-            result = self.converter.convert(self.base_value, base_unit, dest_unit)
-            expected = Decimal(expected_values[unitname])
+        Args:
+            unit (str, Unit): a unit name or instance.
 
-            self.assertEqual(result, expected, f'Incorrect unit: {dest_unit.name!r}')
+        Raises:
+            TypeError: if the unit is an invalid type.
+
+        Returns:
+            Unit: the unit instance.
+        """
+        if isinstance(unit, str):
+            return self.converter.find_unit(unit)
+        elif isinstance(unit, Unit):
+            return unit
+        else:
+            raise TypeError(f'Expected a str or Unit, not a {type(unit).__name__}')
 
     def get_units(self, category: str) -> list[Unit]:
-        """ Get the list of Units for a specific category. """
+        """ Get a list of units for the specified category.
+
+        Args:
+            category (str): the category name.
+
+        Raises:
+            KeyError: if the category is invalid.
+
+        Returns:
+            list[Unit]: the list of Units.
+        """
         units = []
         for name, properties in self.all_units[category].items():
             units.append(Unit(name, category, **properties))
 
         return units
 
-    def print_conversions(self, base_unit: Unit = None, units: dict = None) -> None:
-        """ Print unit conversion table. """
-        if not base_unit:
-            base_unit = self.base_unit
+    def assert_unit(self,
+                    source: Union[str, Unit],
+                    dest: Union[str, Unit],
+                    expected: Union[str, Decimal],
+                    value: Union[str, Decimal] = '1',
+                    exponent: bool = False,
+                    precision: Optional[int] = None,
+                    commas: bool = False
+                    ) -> None:
+        """ Assert that a unit conversion gives the expected result.
 
-        if not units:
-            units = self.units
+        Args:
+            source (str, Unit):
+                source name or unit.
 
-        for name, properties in units.items():
-            dest = Unit(name, base_unit.category, **properties)
-            result = self.converter.convert(self.base_value, base_unit, dest)
-            print(f'"{dest.name}": "{result}",')
+            dest (str, Unit):
+                destination name or unit.
+
+            expected (str, Decimal):
+                expected value.
+
+            value (str, Decimal):
+                value to convert. Defaults to '1'.
+
+            exponent (bool, optional):
+                convert result to E notation. Defaults to False.
+
+            precision (int, optional):
+                round to ndigits. Defaults to None.
+
+            commas (bool, optional):
+                use thousands separators. Defaults to False.
+        """
+        source = self.parse_unit(source)
+        dest = self.parse_unit(dest)
+
+        expected = Decimal(expected)
+        value = Decimal(value)
+
+        result = self.converter.convert(value, source, dest)
+        result = format_decimal(result, exponent, precision, commas)
+        expected = format_decimal(expected, exponent, precision, commas)
+
+        self.assertEqual(result, expected, f'Incorrect unit: {dest.name!r}')
+
+    def assert_units(self, source: Union[str, Unit], expected: dict) -> None:
+        """ Assert that a dictionary of units converts to the expected values.
+
+        Args:
+            source (str, Unit): source unit.
+            expected (dict): dictionary of expected values.
+        """
+        for dest, value in expected.items():
+            self.assert_unit(source, dest, value)
+
+    def assert_metric_scale(self, unit: str) -> None:
+        """ Assert that unit has a valid metric conversion table.
+
+        Args:
+            unit (str): the unit name.
+        """
+        for scale, _, prefix in METRIC_TABLE:
+            self.assert_unit(prefix + unit, unit, Decimal(scale))
+
+    def print_conversions(self, base_unit: Union[str, Unit]) -> None:
+        """ Print unit conversion table.
+
+        Args:
+            base_unit (str, Unit): base unit.
+        """
+        base_unit = self.parse_unit(base_unit)
+        units = self.get_units(base_unit.category)
+
+        for unit in units:
+            result = self.converter.convert(self.base_value, base_unit, unit)
+            print(f'"{unit.name}": "{result}",')
 
 
 __all__ = [
+    'METRIC_TABLE',
     'AbstractTestCase',
     'Converter',
     'Unit',

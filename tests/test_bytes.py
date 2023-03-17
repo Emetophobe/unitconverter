@@ -5,11 +5,6 @@ from tests import AbstractTestCase
 
 class TestBytes(AbstractTestCase):
 
-    def setUp(self) -> None:
-        super().setUp()
-        self.base_unit = self.converter.find_unit('byte')
-        self.units = self.converter.units['bytes']
-
     def test_byte(self):
         """ Test byte conversions. """
         expected_values = {
@@ -45,5 +40,4 @@ class TestBytes(AbstractTestCase):
             "quettabit": "8E-30",
         }
 
-        # Test all byte conversions
-        self.check_units(self.base_unit, self.units, expected_values)
+        self.assert_units('byte', expected_values)

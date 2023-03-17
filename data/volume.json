@@ -516,6 +516,25 @@
       "mi3"
     ]
   },
+  "imperial gill": {
+    "scale": "0.0001420653",
+    "aliases": [
+      "imperial gills",
+      "impgill",
+      "impgi",
+      "gills",
+      "gill",
+      "gi"
+    ]
+  },
+  "US gill": {
+    "scale": "0.0001182941",
+    "aliases": [
+      "US gills",
+      "usgill",
+      "usgi"
+    ]
+  },
   "metric cup": {
     "scale": "0.00025",
     "aliases": [

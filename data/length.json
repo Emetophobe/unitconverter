@@ -9,7 +9,7 @@
     ]
   },
   "quectometer": {
-    "scale": "1e-30",
+    "scale": "1E-30",
     "aliases": [
       "quectometers",
       "quectometres",
@@ -18,7 +18,7 @@
     ]
   },
   "rontometer": {
-    "scale": "1e-27",
+    "scale": "1E-27",
     "aliases": [
       "rontometers",
       "rontometres",
@@ -27,7 +27,7 @@
     ]
   },
   "yoctometer": {
-    "scale": "1e-24",
+    "scale": "1E-24",
     "aliases": [
       "yoctometers",
       "yoctometres",
@@ -36,7 +36,7 @@
     ]
   },
   "zeptometer": {
-    "scale": "1e-21",
+    "scale": "1E-21",
     "aliases": [
       "zeptometers",
       "zeptometres",
@@ -45,7 +45,7 @@
     ]
   },
   "attometer": {
-    "scale": "1e-18",
+    "scale": "1E-18",
     "aliases": [
       "attometers",
       "attometres",
@@ -54,7 +54,7 @@
     ]
   },
   "femtometer": {
-    "scale": "1e-15",
+    "scale": "1E-15",
     "aliases": [
       "femtometers",
       "femtometres",
@@ -65,7 +65,7 @@
     ]
   },
   "picometer": {
-    "scale": "1e-12",
+    "scale": "1E-12",
     "aliases": [
       "picometers",
       "picometres",
@@ -74,7 +74,7 @@
     ]
   },
   "nanometer": {
-    "scale": "1e-9",
+    "scale": "1E-9",
     "aliases": [
       "nanometers",
       "nanometres",
@@ -83,7 +83,7 @@
     ]
   },
   "micrometer": {
-    "scale": "1e-6",
+    "scale": "1E-6",
     "aliases": [
       "micrometers",
       "micrometres",
@@ -94,7 +94,7 @@
     ]
   },
   "millimeter": {
-    "scale": "1e-3",
+    "scale": "1E-3",
     "aliases": [
       "millimeters",
       "millimetres",
@@ -103,7 +103,7 @@
     ]
   },
   "centimeter": {
-    "scale": "1e-2",
+    "scale": "1E-2",
     "aliases": [
       "centimeters",
       "centimetres",
@@ -112,7 +112,7 @@
     ]
   },
   "decimeter": {
-    "scale": "1e-1",
+    "scale": "1E-1",
     "aliases": [
       "decimeters",
       "decimetres",
@@ -121,7 +121,7 @@
     ]
   },
   "decameter": {
-    "scale": "1e+1",
+    "scale": "1E+1",
     "aliases": [
       "decameters",
       "decametres",
@@ -130,7 +130,7 @@
     ]
   },
   "hectometer": {
-    "scale": "1e+2",
+    "scale": "1E+2",
     "aliases": [
       "hectometers",
       "hectometres",
@@ -139,7 +139,7 @@
     ]
   },
   "kilometer": {
-    "scale": "1e+3",
+    "scale": "1E+3",
     "aliases": [
       "kilometers",
       "kilometres",
@@ -148,7 +148,7 @@
     ]
   },
   "megameter": {
-    "scale": "1e+6",
+    "scale": "1E+6",
     "aliases": [
       "megameters",
       "megametres",
@@ -157,7 +157,7 @@
     ]
   },
   "gigameter": {
-    "scale": "1e+9",
+    "scale": "1E+9",
     "aliases": [
       "gigameters",
       "gigametres",
@@ -166,7 +166,7 @@
     ]
   },
   "terameter": {
-    "scale": "1e+12",
+    "scale": "1E+12",
     "aliases": [
       "terameters",
       "terametres",
@@ -175,7 +175,7 @@
     ]
   },
   "petameter": {
-    "scale": "1e+15",
+    "scale": "1E+15",
     "aliases": [
       "petameters",
       "petametres",
@@ -184,7 +184,7 @@
     ]
   },
   "exameter": {
-    "scale": "1e+18",
+    "scale": "1E+18",
     "aliases": [
       "exameters",
       "exametres",
@@ -193,7 +193,7 @@
     ]
   },
   "zettameter": {
-    "scale": "1e+21",
+    "scale": "1E+21",
     "aliases": [
       "zettameters",
       "zettametres",
@@ -202,7 +202,7 @@
     ]
   },
   "yottameter": {
-    "scale": "1e+24",
+    "scale": "1E+24",
     "aliases": [
       "yottameters",
       "yottametres",
@@ -211,7 +211,7 @@
     ]
   },
   "ronnameter": {
-    "scale": "1e+27",
+    "scale": "1E+27",
     "aliases": [
       "ronnameters",
       "ronnametres",
@@ -220,7 +220,7 @@
     ]
   },
   "quettameter": {
-    "scale": "1e+30",
+    "scale": "1E+30",
     "aliases": [
       "quettameters",
       "quettametres",
@@ -229,7 +229,7 @@
     ]
   },
   "angstrom": {
-    "scale": "1e-10",
+    "scale": "1E-10",
     "aliases": [
       "\u00e5ngstr\u00f6m",
       "\u00c5"
@@ -253,12 +253,12 @@
       "calibre"
     ]
   },
-  "thousandth of an inch": {
-    "scale": "2.54e-5",
+  "mil": {
+    "scale": "2.54E-5",
     "aliases": [
+      "thousandth of an inch",
       "thou",
-      "mils",
-      "mil"
+      "mils"
     ]
   },
   "inch": {
@@ -292,6 +292,7 @@
   "mile": {
     "scale": "1609.344",
     "aliases": [
+      "miles (US)",
       "miles",
       "mi"
     ]
@@ -303,10 +304,35 @@
       "li"
     ]
   },
+  "link (US survey)": {
+    "scale": "0.2011684023",
+    "aliases": [
+      "links (US survey)",
+      "US survey links",
+      "US survey link",
+      "US links",
+      "US link",
+      "uslinks",
+      "uslink",
+      "usli"
+    ]
+  },
   "chain": {
     "scale": "20.1168",
     "aliases": [
-      "chains"
+      "chains",
+      "ch"
+    ]
+  },
+  "chain (US survey)": {
+    "scale": "20.116840234",
+    "aliases": [
+      "chains (US survey)",
+      "US survey chains",
+      "US chains",
+      "USchains",
+      "uschains",
+      "uschain"
     ]
   },
   "rod": {
@@ -318,36 +344,10 @@
       "lug"
     ]
   },
-  "furlong": {
-    "scale": "201.168",
-    "aliases": [
-      "furlongs"
-    ]
-  },
-  "US survey link": {
-    "scale": "0.2011684023",
-    "aliases": [
-      "US survey links",
-      "US links",
-      "US link",
-      "uslinks",
-      "uslink",
-      "usli"
-    ]
-  },
-  "US survey chain": {
-    "scale": "20.116840234",
-    "aliases": [
-      "US survey chains",
-      "US chains",
-      "USchains",
-      "uschains",
-      "uschain"
-    ]
-  },
-  "US survey rod": {
+  "rod (US survey)": {
     "scale": "5.0292100584",
     "aliases": [
+      "rods (US survey)",
       "US survey rods",
       "us survey rod",
       "us rod",
@@ -357,25 +357,24 @@
       "uslug"
     ]
   },
-  "US survey furlong": {
+  "furlong": {
+    "scale": "201.168",
+    "aliases": [
+      "furlongs",
+      "fur"
+    ]
+  },
+  "furlong (US survey)": {
     "scale": "201.16840234",
     "aliases": [
+      "furlongs (US survey)",
       "US survey furlongs",
+      "US survey furlong",
       "US furlongs",
       "US furlong",
       "USfurlong",
-      "usfurlong"
-    ]
-  },
-  "US survey fathom": {
-    "scale": "1.8288036576",
-    "aliases": [
-      "US survey fathoms",
-      "US fathoms",
-      "us fathoms",
-      "us fathom",
-      "usfathom",
-      "usftm"
+      "usfurlong",
+      "usfur"
     ]
   },
   "fathom": {
@@ -385,9 +384,22 @@
       "ftm"
     ]
   },
+  "fathom (US survey)": {
+    "scale": "1.8288036576",
+    "aliases": [
+      "fathoms (US survey)",
+      "US survey fathoms",
+      "US fathoms",
+      "US fathom",
+      "usfathom",
+      "usftm"
+    ]
+  },
   "cable length": {
     "scale": "185.2",
     "aliases": [
+      "cable length (international)",
+      "cable length (int.)",
       "international cables",
       "international cable",
       "intcable",
@@ -397,7 +409,7 @@
       "cb"
     ]
   },
-  "imperial cable length": {
+  "cable length (imperial)": {
     "scale": "185.32",
     "aliases": [
       "imperial cables",
@@ -406,7 +418,7 @@
       "impcb"
     ]
   },
-  "US cable length": {
+  "cable length (US)": {
     "scale": "219.5",
     "aliases": [
       "us cables",
@@ -427,37 +439,55 @@
     "scale": "1852",
     "aliases": [
       "nautical miles",
-      "international nautical miles",
-      "international nautical mile",
+      "nautical mile (international)",
+      "nautical mile (int.)",
       "NM",
       "nmi"
     ]
   },
-  "UK nautical mile": {
+  "nautical mile (UK)": {
     "scale": "1853.184",
     "aliases": [
+      "nautical miles (UK)",
       "UK nautical miles",
-      "NM (UK)",
+      "UK nautical mile",
       "UKNM",
-      "nmi (UK)",
+      "UK nmi",
       "uk nmi",
       "uknmi"
     ]
   },
   "planck length": {
-    "scale": "1.61605e-35",
+    "scale": "1.61605E-35",
     "aliases": []
   },
   "astronomical unit": {
-    "scale": "1.495978707e+11",
+    "scale": "1.495978707E+11",
     "aliases": [
       "astronomical units",
       "AU",
       "au"
     ]
   },
+  "light second": {
+    "scale": "299792458",
+    "aliases": [
+        "light seconds",
+        "light-seconds",
+        "light-second",
+        "ls"
+    ]
+  },
+  "light minute": {
+    "scale": "2.59020683712E+13",
+    "aliases": [
+        "light minutes",
+        "light-minutes",
+        "light-minute"
+    ]
+  },
   "light year": {
-    "scale": "9.4607e+15",
+    "scale": "9.4607E+15",
     "aliases": [
       "light years",
       "light-years",
@@ -466,10 +496,31 @@
     ]
   },
   "parsec": {
-    "scale": "3.0857e+16",
+    "scale": "3.0857E+16",
     "aliases": [
       "parsecs",
       "pc"
+    ]
+  },
+  "kiloparsec": {
+    "scale": "3.0856775812799586E+19",
+    "aliases": [
+      "kiloparsecs",
+      "kpc"
+    ]
+  },
+  "megaparsec": {
+    "scale": "3.0856775812799586E+22",
+    "aliases": [
+      "megaparsecs",
+      "Mpc"
+    ]
+  },
+  "gigaparsec": {
+    "scale": "3.0856775812799586E+25",
+    "aliases": [
+      "gigaparsecs",
+      "Gpc"
     ]
   }
 }

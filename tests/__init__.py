@@ -74,7 +74,7 @@ class AbstractTestCase(TestCase):
             list[Unit]: the list of Units.
         """
         units = []
-        for name, properties in self.all_units[category].items():
+        for name, properties in self.converter.units[category].items():
             units.append(Unit(name, category, **properties))
 
         return units

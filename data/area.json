@@ -306,11 +306,59 @@
       "a"
     ]
   },
+  "barn": {
+    "scale": "1.E-28",
+    "aliases": [
+      "barns"
+    ]
+  },
   "hectare": {
     "scale": "10000.0",
     "aliases": [
       "hectares",
       "ha"
+    ]
+  },
+  "acre (imperial)": {
+    "scale": "4046.8564224",
+    "aliases": [
+      "acres (imperial)",
+      "imperial acres",
+      "imperial acre",
+      "acres",
+      "acre",
+      "ac"
+    ]
+  },
+  "circular mil": {
+    "scale": "5.06707479E-10",
+    "aliases": [
+      "circular mils",
+      "circular thousands of an inch",
+      "circular thou",
+      "c mil",
+      "c thou"
+    ]
+  },
+  "square mil": {
+    "scale": "6.4516E-10",
+    "aliases": [
+      "square mils",
+      "square thousands of an inch",
+      "square thou",
+      "sq mil",
+      "sq thou",
+      "mil^2",
+      "mil2",
+      "thou^2",
+      "thou2"
+    ]
+  },
+  "circular inch": {
+    "scale": "0.000506707479",
+    "aliases": [
+      "circular inches",
+      "c in"
     ]
   },
   "square inch": {
@@ -331,17 +379,6 @@
       "sqft",
       "ft^2",
       "ft2"
-    ]
-  },
-  "square foot (US survey)": {
-    "scale": "0.092903411613",
-    "aliases": [
-      "square feet (US survey)",
-      "sq ft (US)",
-      "us sqft",
-      "ussqft",
-      "usft^2",
-      "usft2"
     ]
   },
   "square yard": {
@@ -375,12 +412,26 @@
       "nmi2"
     ]
   },
+  "square chain": {
+    "scale": "404.68564224",
+    "aliases": [
+      "square chains",
+      "sq chain",
+      "sq chains",
+      "sqchain",
+      "chain^2",
+      "chain2",
+      "ch^2",
+      "ch2"
+    ]
+  },
   "square rod": {
     "scale": "25.29285264",
     "aliases": [
       "square rods",
       "square poles",
       "square pole",
+      "square perch",
       "sq rod",
       "sqrod",
       "rod^2",
@@ -389,30 +440,59 @@
       "pole2"
     ]
   },
-  "circular inch": {
-    "scale": "0.000506707479",
-    "aliases": [
-      "circular inches",
-      "c in"
-    ]
-  },
-  "imperial acre": {
-    "scale": "4046.8564224",
-    "aliases": [
-      "imperial acres",
-      "acres",
-      "ac"
-    ]
-  },
-  "US survey acre": {
+  "acre (US survey)": {
     "scale": "4046.87",
     "aliases": [
+      "acres (US survey)",
       "US survey acres",
       "survey acres",
       "survey acre",
       "us acres",
       "us acre",
       "usac"
+    ]
+  },
+  "square foot (US survey)": {
+    "scale": "0.092903411613",
+    "aliases": [
+      "square feet (US survey)",
+      "sq ft (US)",
+      "us sqft",
+      "ussqft",
+      "usft^2",
+      "usft2"
+    ]
+  },
+  "square mile (US survey)": {
+    "scale": "2589998.4703",
+    "aliases": [
+      "square miles (US survey)",
+      "sq mi (US)",
+      "us sqmi",
+      "ussqmi",
+      "usmi^2",
+      "usmi2"
+    ]
+  },
+  "square rod (US survey)": {
+    "scale": "25.29285264",
+    "aliases": [
+      "square rods (US survey)",
+      "square poles (US survey)",
+      "square pole (US survey)",
+      "square perch (US survey)",
+      "US sq rod",
+      "US sqrod",
+      "usrod^2",
+      "usrod2",
+      "uspole^2",
+      "uspole2"
+    ]
+  },
+  "arpent": {
+    "scale": "3418.8929237",
+    "aliases": [
+      "arpents"
     ]
   },
   "hide": {
@@ -433,12 +513,28 @@
       "squares"
     ]
   },
-  "survey township": {
+  "township": {
     "scale": "93239571.972",
     "aliases": [
-      "survey townships",
       "townships",
-      "township"
+      "survey townships",
+      "survey township"
+    ]
+  },
+  "homestead": {
+    "scale": "647497.02758",
+    "aliases": [
+      "homesteads",
+      "survey homesteads",
+      "survey homestead"
+    ]
+  },
+  "section": {
+    "scale": "2589988.1103",
+    "aliases": [
+      "sections",
+      "survey sections",
+      "survey section"
     ]
   }
 }

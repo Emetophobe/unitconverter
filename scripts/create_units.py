@@ -2,6 +2,7 @@
 # Copyright (c) 2022-2023 Mike Cunningham
 
 import json
+from decimal import Decimal, DecimalException
 
 
 METRIC_TABLE = [
@@ -33,28 +34,64 @@ METRIC_TABLE = [
 ]
 
 
-def create_units(name: str, symbol: str, aliases: list[str] = None) -> dict:
+def create_units(name: str,
+                 symbols: list[str],
+                 aliases: list[str] = None,
+                 factor: Decimal = None
+                 ) -> dict:
     """ Create a dictionary of metric units. """
+    if not symbols:
+        raise ValueError("Error: missing symbol(s)")
+
+    aliases = aliases or []
+    factor = Decimal(factor) if factor else Decimal('1')
+
     units = {}
+
     for row in METRIC_TABLE:
         metric_scale, metric_symbol, metric_name = row
 
         unit_aliases = []
         for alias in aliases:
             unit_aliases.append(metric_name + alias)
-        unit_aliases.append(metric_symbol + symbol)
+
+        for symbol in symbols:
+            unit_aliases.append(metric_symbol + symbol)
 
         units[metric_name + name] = {
-            'scale': metric_scale,
+            'scale': Decimal(metric_scale) * factor,
             'aliases': unit_aliases
         }
     return units
 
 
+def update_units(source: str,
+                 name: str,
+                 symbols: list[str],
+                 aliases: list[str] = None,
+                 factor: Decimal = None,
+                 indent: int = 2
+                 ) -> None:
+    """ Update an existing unit table with new metric units. """
+    with open(source, 'r', encoding='utf-8') as infile:
+        units = json.load(infile)
+
+    units.update(create_units(name, symbols, aliases, factor))
+    return units
+
+
 def save_file(units: dict, filename: str, indent=2) -> None:
     """ Save dictionary to json file. """
+    class DecimalEncoder(json.JSONEncoder):
+        def default(self, o):
+            if isinstance(o, Decimal):
+                return str(o)
+            return super(DecimalEncoder, self).default(o)
+
     with open(filename, 'w', encoding='utf-8') as outfile:
-        json.dump(units, outfile, indent=indent)
+        json.dump(units, outfile, indent=indent, cls=DecimalEncoder)
+
+    print(f'Saved {len(units)} units to {filename}')
 
 
 if __name__ == '__main__':
@@ -66,13 +103,19 @@ if __name__ == '__main__':
         help='unit name')
 
     parser.add_argument(
-        'symbol',
-        help='unit symbol')
+        '-s', '--symbols',
+        help='list of unit symbols',
+        nargs='+')
 
     parser.add_argument(
-        'aliases',
-        help='optional list of aliases or shortforms',
+        '-a', '--aliases',
+        help='list of unit aliases',
         nargs='*')
+
+    parser.add_argument(
+        '-f', '--factor',
+        help='multiply metric table by a decimal factor (default: %(default)s)',
+        default=None)
 
     parser.add_argument(
         '-i', '--indent',
@@ -81,16 +124,31 @@ if __name__ == '__main__':
         type=int)
 
     parser.add_argument(
-        '-f', '--filename',
-        help='json target file (default: use unit name)',
+        '-u', '--update',
+        help='update an existing json file',
+        default=None)
+
+    parser.add_argument(
+        '-o', '--output',
+        help='output file (default: generate filename based on unit name)',
         default=None)
 
     args = parser.parse_args()
 
-    if not args.filename:
-        args.filename = args.name + '.json'
+    try:
+        if args.update:
+            units = update_units(args.update, args.name, args.symbols, args.aliases,
+                                 args.factor)
+        else:
+            units = create_units(args.name, args.symbols, args.aliases, args.factor)
 
-    units = create_units(args.name, args.symbol, args.aliases)
+        if not args.output:
+            args.output = args.name + '.json'
 
-    save_file(units, args.filename, args.indent)
-    print(f'Saved {len(units)} {args.name} units to {args.filename}')
+        save_file(units, args.output, args.indent)
+    except DecimalException:
+        print('Error: factor is not a valid decimal')
+    except ValueError as e:
+        print('Error:', e)
+    except OSError as e:
+        print(f'{e.strerror}: {e.filename}')

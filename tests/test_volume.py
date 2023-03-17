@@ -35,6 +35,7 @@ class TestVolume(AbstractTestCase):
             "ronnaliter": "1E-24",
             "quettaliter": "1E-27",
 
+            "drop": "2E+7",
             "stere": "1",
 
             "cubic inch": "61023.61003472243410975706501",
@@ -42,38 +43,42 @@ class TestVolume(AbstractTestCase):
             "cubic yard": "1.307950376362720798372909732",
             "cubic mile": "2.399232245681381957773512476E-10",
 
-            "imperial gill": "7039.016564917682220781570165",
-            "US gill": "8453.506979638037738145858500",
+            "acre-inch": "0.009728558325380519841239388180",
+            "acre-foot": "0.0008107131938211453397261716876",
+            "acre-foot (US survey)": "0.0008107083294995443124005820015",
 
-            "metric cup": "4E+3",
-            "imperial cup": "3519.508282458841110390785083",
-            "US cup": "4226.757062911052124368099819",
+            "gill (imperial)": "7039.016564917682220781570165",
+            "gill (US)": "8453.506979638037738145858500",
 
-            "imperial bushel": "27.49617115816622535311957810",
-            "US bushel": "28.37756923417453907733171392",
+            "cup (metric)": "4E+3",
+            "cup (imperial)": "3519.508282458841110390785083",
+            "cup (US)": "4226.757062911052124368099819",
 
-            "imperial fluid ounce": "35195.07972785404600436858927",
-            "US fluid ounce": "33814.05650328841699494479855",
+            "bushel (imperial)": "27.49617115816622535311957810",
+            "bushel (US)": "28.37756923417453907733171392",
 
-            "imperial gallon": "219.9692482990877875273036829",
-            "US liquid gallon": "264.1720523581484153798999216",
-            "US dry gallon": "227.0209404115435607780461670",
+            "fluid ounce (imperial)": "35195.07972785404600436858927",
+            "fluid ounce (US)": "33814.05650328841699494479855",
 
-            "imperial pint": "1759.754760576566049755306101",
-            "US liquid pint": "2113.378531455526062184049910",
-            "US dry pint": "1816.165956523075591687571872",
+            "gallon (imperial)": "219.9692482990877875273036829",
+            "gallon (US liquid)": "264.1720523581484153798999216",
+            "gallon (US dry)": "227.0209404115435607780461670",
 
-            "imperial quart": "879.8769931963511501092147318",
-            "US liquid quart": "1056.688149136738616562741387",
-            "US dry quart": "908.0829370308048974728959945",
+            "pint (imperial)": "1759.754760576566049755306101",
+            "pint (US liquid)": "2113.378531455526062184049910",
+            "pint (US dry)": "1816.165956523075591687571872",
 
-            "metric tablespoon": "66666.66666666666666666666667",
-            "imperial tablespoon": "56312.01360498248696376885045",
-            "US tablespoon": "67627.88432926664322233343252",
+            "quart (imperial)": "879.8769931963511501092147318",
+            "quart (US liquid)": "1056.688149136738616562741387",
+            "quart (US dry)": "908.0829370308048974728959945",
 
-            "metric teaspoon": "2E+5",
-            "imperial teaspoon": "168936.3832882723686975748169",
-            "US teaspoon": "202884.1353535182602415581444"
+            "tablespoon (metric)": "66666.66666666666666666666667",
+            "tablespoon (imperial)": "56312.01360498248696376885045",
+            "tablespoon (US)": "67627.88432926664322233343252",
+
+            "teaspoon (metric)": "2E+5",
+            "teaspoon (imperial)": "168936.3832882723686975748169",
+            "teaspoon (US)": "202884.1353535182602415581444"
         }
 
         self.assert_metric_scale('cubic meter')
@@ -82,49 +87,56 @@ class TestVolume(AbstractTestCase):
     def test_rounding(self) -> None:
         """ Test rounding volume units. """
         expected_values = {
+            "drop": "2.00000E+7",
+
             "cubic foot": "3.53147E+1",
             "cubic inch": "6.10236E+4",
             "cubic yard": "1.30795E+0",
             "cubic mile": "2.39923E-10",
 
-            "imperial gill": "7.03902E+3",
-            "US gill": "8.45351E+3",
+            "acre-inch": "0.009728558325380519841239388180",
+            "acre-foot": "0.0008107131938211453397261716876",
+            "acre-foot (US survey)": "0.0008107083294995443124005820015",
 
-            "metric cup": "4.00000E+3",
-            "imperial cup": "3.51951E+3",
-            "US cup": "4.22676E+3",
+            "cup (metric)": "4.00000E+3",
+            "cup (imperial)": "3.51951E+3",
+            "cup (US)": "4.22676E+3",
 
-            "imperial fluid ounce": "3.51951E+4",
-            "US fluid ounce": "3.38141E+4",
+            "gill (imperial)": "7.03902E+3",
+            "gill (US)": "8.45351E+3",
 
-            "imperial gallon": "2.19969E+2",
-            "US liquid gallon": "2.64172E+2",
-            "US dry gallon": "2.27021E+2",
+            "bushel (imperial)": "2.74962E+1",
+            "bushel (US)": "2.83776E+1",
 
-            "imperial pint": "1.75975E+3",
-            "US liquid pint": "2.11338E+3",
-            "US dry pint": "1.81617E+3",
+            "fluid ounce (imperial)": "3.51951E+4",
+            "fluid ounce (US)": "3.38141E+4",
 
-            "imperial quart": "8.79877E+2",
-            "US liquid quart": "1.05669E+3",
-            "US dry quart": "9.08083E+2",
+            "gallon (imperial)": "2.19969E+2",
+            "gallon (US liquid)": "2.64172E+2",
+            "gallon (US dry)": "2.27021E+2",
 
-            "metric tablespoon": "6.66667E+4",
-            "imperial tablespoon": "5.63120E+4",
-            "US tablespoon": "6.76279E+4",
+            "pint (imperial)": "1.75975E+3",
+            "pint (US liquid)": "2.11338E+3",
+            "pint (US dry)": "1.81617E+3",
 
-            "metric teaspoon": "2.00000E+5",
-            "imperial teaspoon": "1.68936E+5",
-            "US teaspoon": "2.02884E+5",
+            "quart (imperial)": "8.79877E+2",
+            "quart (US liquid)": "1.05669E+3",
+            "quart (US dry)": "9.08083E+2",
+
+            "tablespoon (metric)": "6.66667E+4",
+            "tablespoon (imperial)": "5.63120E+4",
+            "tablespoon (US)": "6.76279E+4",
+
+            "teaspoon (metric)": "2.00000E+5",
+            "teaspoon (imperial)": "1.68936E+5",
+            "teaspoon (US)": "2.02884E+5",
         }
 
         for name, expected in expected_values.items():
             self.assert_unit('cubic meter', name, expected, exponent=True, precision=5)
 
     def assert_metric_scale(self, unit: str) -> None:
-        """ Overloaded metric scale to handle cubic meters. """
+        """ Test the metric scale for cubic meters. """
         for scale, _, prefix in METRIC_TABLE:
-
             name = unit.replace('meter', prefix + 'meter')
-            expected = Decimal(scale) ** 3
-            self.assert_unit(name, unit, expected)
+            self.assert_unit(name, unit, Decimal(scale) ** 3)

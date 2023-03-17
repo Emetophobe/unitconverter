@@ -549,6 +549,12 @@
       "Ql"
     ]
   },
+  "drop": {
+    "scale": "5E-8",
+    "aliases": [
+      "drops"
+    ]
+  },
   "stere": {
     "scale": "1",
     "aliases": [
@@ -597,10 +603,41 @@
       "mi3"
     ]
   },
-  "imperial gill": {
+  "acre-inch": {
+    "scale": "102.79015313",
+    "aliases": [
+      "acre-inches",
+      "acre-in",
+      "ac*in",
+      "acin"
+    ]
+  },
+  "acre-foot": {
+    "scale": "1233.4818375",
+    "aliases": [
+      "acre-feet",
+      "ac*ft",
+      "acft"
+    ]
+  },
+  "acre-foot (US survey)": {
+    "scale": "1233.4892385",
+    "aliases": [
+      "acre-feet (US survey)",
+      "acre-feet (US)",
+      "US acre-foot",
+      "US acre-feet",
+      "us ac*ft",
+      "us acft",
+      "usacft"
+    ]
+  },
+  "gill (imperial)": {
     "scale": "0.0001420653",
     "aliases": [
+      "gills (imperial)",
       "imperial gills",
+      "imperial gill",
       "impgill",
       "impgi",
       "gills",
@@ -608,42 +645,52 @@
       "gi"
     ]
   },
-  "US gill": {
+  "gill (US)": {
     "scale": "0.0001182941",
     "aliases": [
+      "gills (US)",
       "US gills",
+      "US gill",
       "usgill",
       "usgi"
     ]
   },
-  "metric cup": {
+  "cup (metric)": {
     "scale": "0.00025",
     "aliases": [
+      "cups (metric)",
       "metric cups",
+      "metric cup",
       "cups",
       "cup"
     ]
   },
-  "imperial cup": {
+  "cup (imperial)": {
     "scale": "0.0002841306",
     "aliases": [
+      "cups (imperial)",
       "imperial cups",
+      "imperial cup",
       "imp cup",
       "impcup"
     ]
   },
-  "US cup": {
+  "cup (US)": {
     "scale": "0.000236588",
     "aliases": [
+      "cups (US)",
       "US cups",
+      "US cup",
       "UScup",
       "uscup"
     ]
   },
-  "imperial bushel": {
+  "bushel (imperial)": {
     "scale": "0.0363687",
     "aliases": [
+      "bushels (imperial)",
       "imperial bushels",
+      "imperial bushel",
       "bushels",
       "bushel",
       "imp bsh",
@@ -654,10 +701,12 @@
       "bu"
     ]
   },
-  "US bushel": {
+  "bushel (US)": {
     "scale": "0.0352391",
     "aliases": [
+      "bushels (US)",
       "US bushels",
+      "US bushel",
       "US bsh",
       "US bu",
       "USbsh",
@@ -666,10 +715,12 @@
       "usbu"
     ]
   },
-  "imperial fluid ounce": {
+  "fluid ounce (imperial)": {
     "scale": "2.84130625E-5",
     "aliases": [
+      "fluid ounces (imperial)",
       "imperial fluid ounces",
+      "imperial fluid ounce",
       "fluid ounces",
       "fluid ounce",
       "imp fl oz",
@@ -678,10 +729,13 @@
       "floz"
     ]
   },
-  "US fluid ounce": {
+  "fluid ounce (US)": {
     "scale": "2.95735E-5",
     "aliases": [
+      "fluid ounces (US)",
+      "fl oz (US)",
       "US fluid ounces",
+      "US fluid ounce",
       "US fl oz",
       "USfloz",
       "usfloz",
@@ -689,10 +743,12 @@
       "usoz"
     ]
   },
-  "imperial gallon": {
+  "gallon (imperial)": {
     "scale": "0.00454609",
     "aliases": [
+      "gallons (imperial)",
       "imperial gallons",
+      "imperial gallon",
       "imp gal",
       "impgal",
       "gallons",
@@ -700,10 +756,12 @@
       "gal"
     ]
   },
-  "US liquid gallon": {
+  "gallon (US liquid)": {
     "scale": "0.003785411784",
     "aliases": [
+      "gallons (US liquid)",
       "US liquid gallons",
+      "US liquid gallon",
       "US liquid gal",
       "US gallons",
       "US gal",
@@ -711,20 +769,23 @@
       "usgal"
     ]
   },
-  "US dry gallon": {
+  "gallon (US dry)": {
     "scale": "0.00440488",
     "aliases": [
+      "gallons (US dry)",
       "US dry gallons",
+      "US dry gallon",
       "US dry gal",
       "USdrygal",
       "usdrygal",
       "drygal"
     ]
   },
-  "imperial pint": {
+  "pint (imperial)": {
     "scale": "0.000568261",
     "aliases": [
       "imperial pints",
+      "imperial pint",
       "imppint",
       "imppt",
       "pints",
@@ -732,10 +793,11 @@
       "pt"
     ]
   },
-  "US liquid pint": {
+  "pint (US liquid)": {
     "scale": "0.000473176",
     "aliases": [
       "US liquid pints",
+      "US liquid pint",
       "US liquid pt",
       "US pints",
       "US pt",
@@ -743,20 +805,23 @@
       "uspt"
     ]
   },
-  "US dry pint": {
+  "pint (US dry)": {
     "scale": "0.000550610475",
     "aliases": [
       "US dry pints",
+      "US dry pint",
       "US dry pt",
       "USdrypt",
       "usdrypt",
       "drypt"
     ]
   },
-  "imperial quart": {
+  "quart (imperial)": {
     "scale": "0.0011365225",
     "aliases": [
+      "quarts (imperial)",
       "imperial quarts",
+      "imperial quart",
       "imp quart",
       "imp qt",
       "impqt",
@@ -765,77 +830,94 @@
       "qt"
     ]
   },
-  "US liquid quart": {
+  "quart (US liquid)": {
     "scale": "0.000946353",
     "aliases": [
+      "quarts (US liquid)",
       "US liquid quarts",
+      "US liquid quart",
       "US liquid qt",
       "US quarts",
+      "US quart",
       "US qt",
       "USqt",
       "usqt"
     ]
   },
-  "US dry quart": {
+  "quart (US dry)": {
     "scale": "0.001101221",
     "aliases": [
+      "quarts (US dry)",
       "US dry quarts",
+      "US dry quart",
       "US dry qt",
       "USdryqt",
       "usdryqt",
       "dryqt"
     ]
   },
-  "metric tablespoon": {
+  "tablespoon (metric)": {
     "scale": "1.5E-5",
     "aliases": [
+      "tablespoons (metric)",
       "metric tablespoons",
+      "metric tablespoon",
       "tablespoons",
       "tablespoon",
       "tbsp"
     ]
   },
-  "imperial tablespoon": {
+  "tablespoon (imperial)": {
     "scale": "1.77582E-5",
     "aliases": [
+      "tablespoons (imperial)",
       "imperial tablespoons",
+      "imperial tablespoon",
       "UK tablespoons",
       "UK tablespoon",
       "imptbsp",
       "uktbsp"
     ]
   },
-  "US tablespoon": {
+  "tablespoon (US)": {
     "scale": "1.47868E-5",
     "aliases": [
+      "tablespoons (US)",
       "US tablespoons",
+      "US tablespoon",
       "US tbsp",
       "ustbsp"
     ]
   },
-  "metric teaspoon": {
+  "teaspoon (metric)": {
     "scale": "5E-6",
     "aliases": [
+      "teaspoons (metric)",
       "metric teaspoons",
+      "metric teaspoon",
       "teaspoons",
       "teaspoon",
       "tsp"
     ]
   },
-  "imperial teaspoon": {
+  "teaspoon (imperial)": {
     "scale": "5.919388E-6",
     "aliases": [
+      "teaspoons (imperial)",
       "imperial teaspoons",
+      "imperial teaspoon",
       "UK teaspoons",
       "UK teaspoon",
       "imptsp",
       "uktsp"
     ]
   },
-  "US teaspoon": {
+  "teaspoon (US)": {
     "scale": "4.9289216145833E-6",
     "aliases": [
+      "teaspoons (US)",
       "US teaspoons",
+      "US teaspoon",
       "US tsp",
       "ustsp"
     ]

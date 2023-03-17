@@ -59,6 +59,8 @@
       "femtometers",
       "femtometres",
       "femtometre",
+      "fermis",
+      "fermi",
       "fm"
     ]
   },
@@ -86,6 +88,8 @@
       "micrometers",
       "micrometres",
       "micrometre",
+      "microns",
+      "micron",
       "\u00b5m"
     ]
   },
@@ -231,6 +235,24 @@
       "\u00c5"
     ]
   },
+  "twip": {
+    "scale": "0.0000176389",
+    "aliases": [
+      "twips"
+    ]
+  },
+  "point": {
+    "scale": "0.0003527778",
+    "aliases": [
+      "points"
+    ]
+  },
+  "caliber": {
+    "scale": "0.000254",
+    "aliases": [
+      "calibre"
+    ]
+  },
   "thousandth of an inch": {
     "scale": "2.54e-5",
     "aliases": [
@@ -253,6 +275,13 @@
       "ft"
     ]
   },
+  "hand": {
+    "scale": "0.1016",
+    "aliases": [
+      "hands",
+      "hh"
+    ]
+  },
   "yard": {
     "scale": "0.9144",
     "aliases": [
@@ -267,16 +296,17 @@
       "mi"
     ]
   },
+  "link": {
+    "scale": "0.201168",
+    "aliases": [
+      "links",
+      "li"
+    ]
+  },
   "chain": {
     "scale": "20.1168",
     "aliases": [
       "chains"
-    ]
-  },
-  "furlong": {
-    "scale": "201.168",
-    "aliases": [
-      "furlongs"
     ]
   },
   "rod": {
@@ -286,6 +316,66 @@
       "perch",
       "pole",
       "lug"
+    ]
+  },
+  "furlong": {
+    "scale": "201.168",
+    "aliases": [
+      "furlongs"
+    ]
+  },
+  "US survey link": {
+    "scale": "0.2011684023",
+    "aliases": [
+      "US survey links",
+      "US links",
+      "US link",
+      "uslinks",
+      "uslink",
+      "usli"
+    ]
+  },
+  "US survey chain": {
+    "scale": "20.116840234",
+    "aliases": [
+      "US survey chains",
+      "US chains",
+      "USchains",
+      "uschains",
+      "uschain"
+    ]
+  },
+  "US survey rod": {
+    "scale": "5.0292100584",
+    "aliases": [
+      "US survey rods",
+      "us survey rod",
+      "us rod",
+      "usrod",
+      "usperch",
+      "uspole",
+      "uslug"
+    ]
+  },
+  "US survey furlong": {
+    "scale": "201.16840234",
+    "aliases": [
+      "US survey furlongs",
+      "US furlongs",
+      "US furlong",
+      "USfurlong",
+      "usfurlong"
+    ]
+  },
+  "US survey fathom": {
+    "scale": "1.8288036576",
+    "aliases": [
+      "US survey fathoms",
+      "US fathoms",
+      "us fathoms",
+      "us fathom",
+      "usfathom",
+      "usftm"
     ]
   },
   "fathom": {
@@ -329,15 +419,29 @@
   "league": {
     "scale": "4828.03",
     "aliases": [
-      "leagues"
+      "leagues",
+      "lea"
     ]
   },
   "nautical mile": {
     "scale": "1852",
     "aliases": [
       "nautical miles",
+      "international nautical miles",
+      "international nautical mile",
       "NM",
       "nmi"
+    ]
+  },
+  "UK nautical mile": {
+    "scale": "1853.184",
+    "aliases": [
+      "UK nautical miles",
+      "NM (UK)",
+      "UKNM",
+      "nmi (UK)",
+      "uk nmi",
+      "uknmi"
     ]
   },
   "planck length": {

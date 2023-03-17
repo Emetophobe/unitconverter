@@ -15,13 +15,13 @@ class AbstractTestCase(TestCase):
     def check_units(self, base_unit: Unit, units: dict, expected_values: dict) -> None:
         for unitname in units.keys():
             self.assertTrue(unitname in expected_values.keys(),
-                            f"Missing key: {unitname}")
+                            f'Missing key: {unitname}')
 
             dest_unit = self.converter.find_unit(unitname)
             result = self.converter.convert(self.base_value, base_unit, dest_unit)
             expected = Decimal(expected_values[unitname])
 
-            self.assertEqual(result, expected, 'Value mismatch')
+            self.assertEqual(result, expected, f'Incorrect unit: {dest_unit.name!r}')
 
     def get_units(self, category: str) -> list[Unit]:
         """ Get the list of Units for a specific category. """

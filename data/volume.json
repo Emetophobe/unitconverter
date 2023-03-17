@@ -6,8 +6,33 @@
       "cubic metres",
       "cubic metre",
       "cu m",
+      "cum",
       "m^3",
       "m3"
+    ]
+  },
+  "cubic quectometer": {
+    "scale": "1e-90",
+    "aliases": [
+      "cubic quectometers",
+      "cubic quectometre",
+      "cubic quectometres",
+      "cu qm",
+      "cuqm",
+      "qm^3",
+      "qm3"
+    ]
+  },
+  "cubic rontometer": {
+    "scale": "1e-81",
+    "aliases": [
+      "cubic rontometers",
+      "cubic rontometre",
+      "cubic rontometres",
+      "cu rm",
+      "curm",
+      "rm^3",
+      "rm3"
     ]
   },
   "cubic yoctometer": {
@@ -17,6 +42,7 @@
       "cubic yoctometres",
       "cubic yoctometre",
       "cu ym",
+      "cuym",
       "ym^3",
       "ym3"
     ]
@@ -28,6 +54,7 @@
       "cubic zeptometres",
       "cubic zeptometre",
       "cu zm",
+      "cuzm",
       "zm^3",
       "zm3"
     ]
@@ -39,6 +66,7 @@
       "cubic attometres",
       "cubic attometre",
       "cu am",
+      "cuam",
       "am^3",
       "am3"
     ]
@@ -50,6 +78,7 @@
       "cubic femtometres",
       "cubic femtometre",
       "cu fm",
+      "cufm",
       "fm^3",
       "fm3"
     ]
@@ -61,6 +90,7 @@
       "cubic picometres",
       "cubic picometre",
       "cu pm",
+      "cupm",
       "pm^3",
       "pm3"
     ]
@@ -72,6 +102,7 @@
       "cubic nanometres",
       "cubic nanometre",
       "cu nm",
+      "cunm",
       "nm^3",
       "nm3"
     ]
@@ -83,6 +114,7 @@
       "cubic micrometres",
       "cubic micrometre",
       "cu \u03bcm",
+      "cu\u03bcm",
       "\u03bcm^3",
       "\u03bcm3"
     ]
@@ -94,6 +126,7 @@
       "cubic millimetres",
       "cubic millimetre",
       "cu mm",
+      "cumm",
       "mm^3",
       "mm3"
     ]
@@ -105,6 +138,7 @@
       "cubic centimetres",
       "cubic centimetre",
       "cu cm",
+      "cucm",
       "cm^3",
       "cm3"
     ]
@@ -116,6 +150,7 @@
       "cubic decimetres",
       "cubic decimetre",
       "cu dm",
+      "cudm",
       "dm^3",
       "dm3"
     ]
@@ -127,6 +162,7 @@
       "cubic decametres",
       "cubic decametre",
       "cu dam",
+      "cudam",
       "dam^3",
       "dam3"
     ]
@@ -138,6 +174,7 @@
       "cubic hectometres",
       "cubic hectometre",
       "cu hm",
+      "cuhm",
       "hm^3",
       "hm3"
     ]
@@ -149,6 +186,7 @@
       "cubic kilometres",
       "cubic kilometre",
       "cu km",
+      "cukm",
       "km^3",
       "km3"
     ]
@@ -160,6 +198,7 @@
       "cubic megametres",
       "cubic megametre",
       "cu Mm",
+      "cuMm",
       "Mm^3",
       "Mm3"
     ]
@@ -171,6 +210,7 @@
       "cubic gigametres",
       "cubic gigametre",
       "cu Gm",
+      "cuGm",
       "Gm^3",
       "Gm3"
     ]
@@ -182,6 +222,7 @@
       "cubic terametres",
       "cubic terametre",
       "cu Tm",
+      "cuTm",
       "Tm^3",
       "Tm3"
     ]
@@ -193,6 +234,7 @@
       "cubic petametres",
       "cubic petametre",
       "cu Pm",
+      "cuPm",
       "Pm^3",
       "Pm3"
     ]
@@ -204,6 +246,7 @@
       "cubic exametres",
       "cubic exametre",
       "cu Em",
+      "cuEm",
       "Em^3",
       "Em3"
     ]
@@ -215,29 +258,45 @@
       "cubic zettametres",
       "cubic zettametre",
       "cu Zm",
+      "cuZm",
       "Zm^3",
       "Zm3"
     ]
   },
-  "cubic yottalmeter": {
+  "cubic yottameter": {
     "scale": "1e72",
     "aliases": [
-      "cubic yottalmeters",
-      "cubic yottalmetres",
-      "cubic yottalmetre",
+      "cubic yottameters",
+      "cubic yottametres",
+      "cubic yottametre",
       "cu Ym",
+      "cuYm",
       "Ym^3",
       "Ym3"
     ]
   },
-  "liter": {
-    "scale": "0.001",
+  "cubic ronnameter": {
+    "scale": "1e+81",
     "aliases": [
-      "liters",
-      "litres",
-      "litre",
-      "L",
-      "l"
+      "cubic ronnameters",
+      "cubic ronnametre",
+      "cubic ronnametres",
+      "cu Rm",
+      "cuRm",
+      "Rm^3",
+      "Rm3"
+    ]
+  },
+  "cubic quettameter": {
+    "scale": "1e+90",
+    "aliases": [
+      "cubic quettameters",
+      "cubic quettametre",
+      "cubic quettametres",
+      "cu Qm",
+      "cuQm",
+      "Qm^3",
+      "Qm3"
     ]
   },
   "quectoliter": {
@@ -331,7 +390,7 @@
     ]
   },
   "milliliter": {
-    "scale": "0.000001",
+    "scale": "1E-6",
     "aliases": [
       "milliliters",
       "millilitres",
@@ -341,7 +400,7 @@
     ]
   },
   "centiliter": {
-    "scale": "0.00001",
+    "scale": "1E-5",
     "aliases": [
       "centiliters",
       "centilitres",
@@ -351,7 +410,7 @@
     ]
   },
   "deciliter": {
-    "scale": "0.0001",
+    "scale": "1E-4",
     "aliases": [
       "deciliters",
       "decilitres",
@@ -360,8 +419,18 @@
       "dl"
     ]
   },
+  "liter": {
+    "scale": "1E-3",
+    "aliases": [
+      "liters",
+      "litres",
+      "litre",
+      "L",
+      "l"
+    ]
+  },
   "decaliter": {
-    "scale": "0.01",
+    "scale": "1E-2",
     "aliases": [
       "decaliters",
       "decalitres",
@@ -371,7 +440,7 @@
     ]
   },
   "hectoliter": {
-    "scale": "0.1",
+    "scale": "1E-1",
     "aliases": [
       "hectoliters",
       "hectolitres",
@@ -493,6 +562,7 @@
     "aliases": [
       "cubic inches",
       "cu in",
+      "cuin",
       "in^3",
       "in3"
     ]
@@ -502,6 +572,7 @@
     "aliases": [
       "cubic feet",
       "cu ft",
+      "cuft",
       "ft^3",
       "ft3"
     ]
@@ -511,6 +582,7 @@
     "aliases": [
       "cubic yards",
       "cu yd",
+      "cuyd",
       "yd^3",
       "yd3"
     ]
@@ -520,6 +592,7 @@
     "aliases": [
       "cubic miles",
       "cu mi",
+      "cumi",
       "mi^3",
       "mi3"
     ]
@@ -588,8 +661,8 @@
       "US bsh",
       "US bu",
       "USbsh",
-      "USbu",
       "usbsh",
+      "USbu",
       "usbu"
     ]
   },

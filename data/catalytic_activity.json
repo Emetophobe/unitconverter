@@ -7,168 +7,168 @@
     ]
   },
   "quectokatal": {
-    "scale": "1e-30",
+    "scale": "1E-30",
     "aliases": [
       "quectokatals",
       "qkat"
     ]
   },
   "rontokatal": {
-    "scale": "1e-27",
+    "scale": "1E-27",
     "aliases": [
       "rontokatals",
       "rkat"
     ]
   },
   "yoctokatal": {
-    "scale": "1e-24",
+    "scale": "1E-24",
     "aliases": [
       "yoctokatals",
       "ykat"
     ]
   },
   "zeptokatal": {
-    "scale": "1e-21",
+    "scale": "1E-21",
     "aliases": [
       "zeptokatals",
       "zkat"
     ]
   },
   "attokatal": {
-    "scale": "1e-18",
+    "scale": "1E-18",
     "aliases": [
       "attokatals",
       "akat"
     ]
   },
   "femtokatal": {
-    "scale": "1e-15",
+    "scale": "1E-15",
     "aliases": [
       "femtokatals",
       "fkat"
     ]
   },
   "picokatal": {
-    "scale": "1e-12",
+    "scale": "1E-12",
     "aliases": [
       "picokatals",
       "pkat"
     ]
   },
   "nanokatal": {
-    "scale": "1e-9",
+    "scale": "1E-9",
     "aliases": [
       "nanokatals",
       "nkat"
     ]
   },
   "microkatal": {
-    "scale": "1e-6",
+    "scale": "1E-6",
     "aliases": [
       "microkatals",
       "\u00b5kat"
     ]
   },
   "millikatal": {
-    "scale": "1e-3",
+    "scale": "1E-3",
     "aliases": [
       "millikatals",
       "mkat"
     ]
   },
   "centikatal": {
-    "scale": "1e-2",
+    "scale": "1E-2",
     "aliases": [
       "centikatals",
       "ckat"
     ]
   },
   "decikatal": {
-    "scale": "1e-1",
+    "scale": "1E-1",
     "aliases": [
       "decikatals",
       "dkat"
     ]
   },
   "decakatal": {
-    "scale": "1e+1",
+    "scale": "1E+1",
     "aliases": [
       "decakatals",
       "dakat"
     ]
   },
   "hectokatal": {
-    "scale": "1e+2",
+    "scale": "1E+2",
     "aliases": [
       "hectokatals",
       "hkat"
     ]
   },
   "kilokatal": {
-    "scale": "1e+3",
+    "scale": "1E+3",
     "aliases": [
       "kilokatals",
       "kkat"
     ]
   },
   "megakatal": {
-    "scale": "1e+6",
+    "scale": "1E+6",
     "aliases": [
       "megakatals",
       "Mkat"
     ]
   },
   "gigakatal": {
-    "scale": "1e+9",
+    "scale": "1E+9",
     "aliases": [
       "gigakatals",
       "Gkat"
     ]
   },
   "terakatal": {
-    "scale": "1e+12",
+    "scale": "1E+12",
     "aliases": [
       "terakatals",
       "Tkat"
     ]
   },
   "petakatal": {
-    "scale": "1e+15",
+    "scale": "1E+15",
     "aliases": [
       "petakatals",
       "Pkat"
     ]
   },
   "exakatal": {
-    "scale": "1e+18",
+    "scale": "1E+18",
     "aliases": [
       "exakatals",
       "Ekat"
     ]
   },
   "zettakatal": {
-    "scale": "1e+21",
+    "scale": "1E+21",
     "aliases": [
       "zettakatals",
       "Zkat"
     ]
   },
   "yottakatal": {
-    "scale": "1e+24",
+    "scale": "1E+24",
     "aliases": [
       "yottakatals",
       "Ykat"
     ]
   },
   "ronnakatal": {
-    "scale": "1e+27",
+    "scale": "1E+27",
     "aliases": [
       "ronnakatals",
       "Rkat"
     ]
   },
   "quettakatal": {
-    "scale": "1e+30",
+    "scale": "1E+30",
     "aliases": [
       "quettakatals",
       "Qkat"

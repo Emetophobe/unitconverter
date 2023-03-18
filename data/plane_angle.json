@@ -7,168 +7,168 @@
     ]
   },
   "quectoradian": {
-    "scale": "1e-30",
+    "scale": "1E-30",
     "aliases": [
       "quectoradians",
       "qrad"
     ]
   },
   "rontoradian": {
-    "scale": "1e-27",
+    "scale": "1E-27",
     "aliases": [
       "rontoradians",
       "rrad"
     ]
   },
   "yoctoradian": {
-    "scale": "1e-24",
+    "scale": "1E-24",
     "aliases": [
       "yoctoradians",
       "yrad"
     ]
   },
   "zeptoradian": {
-    "scale": "1e-21",
+    "scale": "1E-21",
     "aliases": [
       "zeptoradians",
       "zrad"
     ]
   },
   "attoradian": {
-    "scale": "1e-18",
+    "scale": "1E-18",
     "aliases": [
       "attoradians",
       "arad"
     ]
   },
   "femtoradian": {
-    "scale": "1e-15",
+    "scale": "1E-15",
     "aliases": [
       "femtoradians",
       "frad"
     ]
   },
   "picoradian": {
-    "scale": "1e-12",
+    "scale": "1E-12",
     "aliases": [
       "picoradians",
       "prad"
     ]
   },
   "nanoradian": {
-    "scale": "1e-9",
+    "scale": "1E-9",
     "aliases": [
       "nanoradians",
       "nrad"
     ]
   },
   "microradian": {
-    "scale": "1e-6",
+    "scale": "1E-6",
     "aliases": [
       "microradians",
       "\u00b5rad"
     ]
   },
   "milliradian": {
-    "scale": "1e-3",
+    "scale": "1E-3",
     "aliases": [
       "milliradians",
       "mrad"
     ]
   },
   "centiradian": {
-    "scale": "1e-2",
+    "scale": "1E-2",
     "aliases": [
       "centiradians",
       "crad"
     ]
   },
   "deciradian": {
-    "scale": "1e-1",
+    "scale": "1E-1",
     "aliases": [
       "deciradians",
       "drad"
     ]
   },
   "decaradian": {
-    "scale": "1e+1",
+    "scale": "1E+1",
     "aliases": [
       "decaradians",
       "darad"
     ]
   },
   "hectoradian": {
-    "scale": "1e+2",
+    "scale": "1E+2",
     "aliases": [
       "hectoradians",
       "hrad"
     ]
   },
   "kiloradian": {
-    "scale": "1e+3",
+    "scale": "1E+3",
     "aliases": [
       "kiloradians",
       "krad"
     ]
   },
   "megaradian": {
-    "scale": "1e+6",
+    "scale": "1E+6",
     "aliases": [
       "megaradians",
       "Mrad"
     ]
   },
   "gigaradian": {
-    "scale": "1e+9",
+    "scale": "1E+9",
     "aliases": [
       "gigaradians",
       "Grad"
     ]
   },
   "teraradian": {
-    "scale": "1e+12",
+    "scale": "1E+12",
     "aliases": [
       "teraradians",
       "Trad"
     ]
   },
   "petaradian": {
-    "scale": "1e+15",
+    "scale": "1E+15",
     "aliases": [
       "petaradians",
       "Prad"
     ]
   },
   "exaradian": {
-    "scale": "1e+18",
+    "scale": "1E+18",
     "aliases": [
       "exaradians",
       "Erad"
     ]
   },
   "zettaradian": {
-    "scale": "1e+21",
+    "scale": "1E+21",
     "aliases": [
       "zettaradians",
       "Zrad"
     ]
   },
   "yottaradian": {
-    "scale": "1e+24",
+    "scale": "1E+24",
     "aliases": [
       "yottaradians",
       "Yrad"
     ]
   },
   "ronnaradian": {
-    "scale": "1e+27",
+    "scale": "1E+27",
     "aliases": [
       "ronnaradians",
       "Rrad"
     ]
   },
   "quettaradian": {
-    "scale": "1e+30",
+    "scale": "1E+30",
     "aliases": [
       "quettaradians",
       "Qrad"

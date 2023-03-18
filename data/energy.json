@@ -7,175 +7,175 @@
     ]
   },
   "quectojoule": {
-    "scale": "1e-30",
+    "scale": "1E-30",
     "aliases": [
       "quectojoules",
       "qJ"
     ]
   },
   "rontojoule": {
-    "scale": "1e-27",
+    "scale": "1E-27",
     "aliases": [
       "rontojoules",
       "rJ"
     ]
   },
   "yoctojoule": {
-    "scale": "1e-24",
+    "scale": "1E-24",
     "aliases": [
       "yoctojoules",
       "yJ"
     ]
   },
   "zeptojoule": {
-    "scale": "1e-21",
+    "scale": "1E-21",
     "aliases": [
       "zeptojoules",
       "zJ"
     ]
   },
   "attojoule": {
-    "scale": "1e-18",
+    "scale": "1E-18",
     "aliases": [
       "attojoules",
       "aJ"
     ]
   },
   "femtojoule": {
-    "scale": "1e-15",
+    "scale": "1E-15",
     "aliases": [
       "femtojoules",
       "fJ"
     ]
   },
   "picojoule": {
-    "scale": "1e-12",
+    "scale": "1E-12",
     "aliases": [
       "picojoules",
       "pJ"
     ]
   },
   "nanojoule": {
-    "scale": "1e-9",
+    "scale": "1E-9",
     "aliases": [
       "nanojoules",
       "nJ"
     ]
   },
   "microjoule": {
-    "scale": "1e-6",
+    "scale": "1E-6",
     "aliases": [
       "microjoules",
       "\u00b5J"
     ]
   },
   "millijoule": {
-    "scale": "1e-3",
+    "scale": "1E-3",
     "aliases": [
       "millijoules",
       "mJ"
     ]
   },
   "centijoule": {
-    "scale": "1e-2",
+    "scale": "1E-2",
     "aliases": [
       "centijoules",
       "cJ"
     ]
   },
   "decijoule": {
-    "scale": "1e-1",
+    "scale": "1E-1",
     "aliases": [
       "decijoules",
       "dJ"
     ]
   },
   "decajoule": {
-    "scale": "1e+1",
+    "scale": "1E+1",
     "aliases": [
       "decajoules",
       "daJ"
     ]
   },
   "hectojoule": {
-    "scale": "1e+2",
+    "scale": "1E+2",
     "aliases": [
       "hectojoules",
       "hJ"
     ]
   },
   "kilojoule": {
-    "scale": "1e+3",
+    "scale": "1E+3",
     "aliases": [
       "kilojoules",
       "kJ"
     ]
   },
   "megajoule": {
-    "scale": "1e+6",
+    "scale": "1E+6",
     "aliases": [
       "megajoules",
       "MJ"
     ]
   },
   "gigajoule": {
-    "scale": "1e+9",
+    "scale": "1E+9",
     "aliases": [
       "gigajoules",
       "GJ"
     ]
   },
   "terajoule": {
-    "scale": "1e+12",
+    "scale": "1E+12",
     "aliases": [
       "terajoules",
       "TJ"
     ]
   },
   "petajoule": {
-    "scale": "1e+15",
+    "scale": "1E+15",
     "aliases": [
       "petajoules",
       "PJ"
     ]
   },
   "exajoule": {
-    "scale": "1e+18",
+    "scale": "1E+18",
     "aliases": [
       "exajoules",
       "EJ"
     ]
   },
   "zettajoule": {
-    "scale": "1e+21",
+    "scale": "1E+21",
     "aliases": [
       "zettajoules",
       "ZJ"
     ]
   },
   "yottajoule": {
-    "scale": "1e+24",
+    "scale": "1E+24",
     "aliases": [
       "yottajoules",
       "YJ"
     ]
   },
   "ronnajoule": {
-    "scale": "1e+27",
+    "scale": "1E+27",
     "aliases": [
       "ronnajoules",
       "RJ"
     ]
   },
   "quettajoule": {
-    "scale": "1e+30",
+    "scale": "1E+30",
     "aliases": [
       "quettajoules",
       "QJ"
     ]
   },
   "watt hour": {
-    "scale": "3.6e+3",
+    "scale": "3.6E+3",
     "aliases": [
       "watt hours",
       "watt-hours",
@@ -184,7 +184,7 @@
     ]
   },
   "microwatt hour": {
-    "scale": "3.6e-3",
+    "scale": "3.6E-3",
     "aliases": [
       "microwatt hours",
       "microwatt-hours",
@@ -203,7 +203,7 @@
     ]
   },
   "kilowatt hour": {
-    "scale": "3.6e+6",
+    "scale": "3.6E+6",
     "aliases": [
       "kilowatt hours",
       "kilowatt-hours",
@@ -212,7 +212,7 @@
     ]
   },
   "megawatt hour": {
-    "scale": "3.6e+9",
+    "scale": "3.6E+9",
     "aliases": [
       "megawatt hours",
       "megawatt-hours",
@@ -221,7 +221,7 @@
     ]
   },
   "gigawatt hour": {
-    "scale": "3.6e+12",
+    "scale": "3.6E+12",
     "aliases": [
       "gigawatt hours",
       "gigawatt-hours",
@@ -230,7 +230,7 @@
     ]
   },
   "terawatt hour": {
-    "scale": "3.6e+15",
+    "scale": "3.6E+15",
     "aliases": [
       "terawatt hours",
       "terawatt-hours",

@@ -9,7 +9,7 @@
     ]
   },
   "quectoampere": {
-    "scale": "1e-30",
+    "scale": "1E-30",
     "aliases": [
       "quectoamperes",
       "quectoamps",
@@ -18,7 +18,7 @@
     ]
   },
   "rontoampere": {
-    "scale": "1e-27",
+    "scale": "1E-27",
     "aliases": [
       "rontoamperes",
       "rontoamps",
@@ -27,7 +27,7 @@
     ]
   },
   "yoctoampere": {
-    "scale": "1e-24",
+    "scale": "1E-24",
     "aliases": [
       "yoctoamperes",
       "yoctoamps",
@@ -36,7 +36,7 @@
     ]
   },
   "zeptoampere": {
-    "scale": "1e-21",
+    "scale": "1E-21",
     "aliases": [
       "zeptoamperes",
       "zeptoamps",
@@ -45,7 +45,7 @@
     ]
   },
   "attoampere": {
-    "scale": "1e-18",
+    "scale": "1E-18",
     "aliases": [
       "attoamperes",
       "attoamps",
@@ -54,7 +54,7 @@
     ]
   },
   "femtoampere": {
-    "scale": "1e-15",
+    "scale": "1E-15",
     "aliases": [
       "femtoamperes",
       "femtoamps",
@@ -63,7 +63,7 @@
     ]
   },
   "picoampere": {
-    "scale": "1e-12",
+    "scale": "1E-12",
     "aliases": [
       "picoamperes",
       "picoamps",
@@ -72,7 +72,7 @@
     ]
   },
   "nanoampere": {
-    "scale": "1e-9",
+    "scale": "1E-9",
     "aliases": [
       "nanoamperes",
       "nanoamps",
@@ -81,7 +81,7 @@
     ]
   },
   "microampere": {
-    "scale": "1e-6",
+    "scale": "1E-6",
     "aliases": [
       "microamperes",
       "microamps",
@@ -90,7 +90,7 @@
     ]
   },
   "milliampere": {
-    "scale": "1e-3",
+    "scale": "1E-3",
     "aliases": [
       "milliamperes",
       "milliamps",
@@ -99,7 +99,7 @@
     ]
   },
   "centiampere": {
-    "scale": "1e-2",
+    "scale": "1E-2",
     "aliases": [
       "centiamperes",
       "centiamps",
@@ -108,7 +108,7 @@
     ]
   },
   "deciampere": {
-    "scale": "1e-1",
+    "scale": "1E-1",
     "aliases": [
       "deciamperes",
       "deciamps",
@@ -117,7 +117,7 @@
     ]
   },
   "decaampere": {
-    "scale": "1e+1",
+    "scale": "1E+1",
     "aliases": [
       "decaamperes",
       "decaamps",
@@ -126,7 +126,7 @@
     ]
   },
   "hectoampere": {
-    "scale": "1e+2",
+    "scale": "1E+2",
     "aliases": [
       "hectoamperes",
       "hectoamps",
@@ -135,7 +135,7 @@
     ]
   },
   "kiloampere": {
-    "scale": "1e+3",
+    "scale": "1E+3",
     "aliases": [
       "kiloamperes",
       "kiloamps",
@@ -144,7 +144,7 @@
     ]
   },
   "megaampere": {
-    "scale": "1e+6",
+    "scale": "1E+6",
     "aliases": [
       "megaamperes",
       "megaamps",
@@ -153,7 +153,7 @@
     ]
   },
   "gigaampere": {
-    "scale": "1e+9",
+    "scale": "1E+9",
     "aliases": [
       "gigaamperes",
       "gigaamps",
@@ -162,7 +162,7 @@
     ]
   },
   "teraampere": {
-    "scale": "1e+12",
+    "scale": "1E+12",
     "aliases": [
       "teraamperes",
       "teraamps",
@@ -171,7 +171,7 @@
     ]
   },
   "petaampere": {
-    "scale": "1e+15",
+    "scale": "1E+15",
     "aliases": [
       "petaamperes",
       "petaamps",
@@ -180,7 +180,7 @@
     ]
   },
   "exaampere": {
-    "scale": "1e+18",
+    "scale": "1E+18",
     "aliases": [
       "exaamperes",
       "exaamps",
@@ -189,7 +189,7 @@
     ]
   },
   "zettaampere": {
-    "scale": "1e+21",
+    "scale": "1E+21",
     "aliases": [
       "zettaamperes",
       "zettaamps",
@@ -198,7 +198,7 @@
     ]
   },
   "yottaampere": {
-    "scale": "1e+24",
+    "scale": "1E+24",
     "aliases": [
       "yottaamperes",
       "yottaamps",
@@ -207,7 +207,7 @@
     ]
   },
   "ronnaampere": {
-    "scale": "1e+27",
+    "scale": "1E+27",
     "aliases": [
       "ronnaamperes",
       "ronnaamps",
@@ -216,7 +216,7 @@
     ]
   },
   "quettaampere": {
-    "scale": "1e+30",
+    "scale": "1E+30",
     "aliases": [
       "quettaamperes",
       "quettaamps",

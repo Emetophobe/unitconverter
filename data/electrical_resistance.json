@@ -7,168 +7,168 @@
     ]
   },
   "quectoohm": {
-    "scale": "1e-30",
+    "scale": "1E-30",
     "aliases": [
       "quectoohms",
       "q\u03a9"
     ]
   },
   "rontoohm": {
-    "scale": "1e-27",
+    "scale": "1E-27",
     "aliases": [
       "rontoohms",
       "r\u03a9"
     ]
   },
   "yoctoohm": {
-    "scale": "1e-24",
+    "scale": "1E-24",
     "aliases": [
       "yoctoohms",
       "y\u03a9"
     ]
   },
   "zeptoohm": {
-    "scale": "1e-21",
+    "scale": "1E-21",
     "aliases": [
       "zeptoohms",
       "z\u03a9"
     ]
   },
   "attoohm": {
-    "scale": "1e-18",
+    "scale": "1E-18",
     "aliases": [
       "attoohms",
       "a\u03a9"
     ]
   },
   "femtoohm": {
-    "scale": "1e-15",
+    "scale": "1E-15",
     "aliases": [
       "femtoohms",
       "f\u03a9"
     ]
   },
   "picoohm": {
-    "scale": "1e-12",
+    "scale": "1E-12",
     "aliases": [
       "picoohms",
       "p\u03a9"
     ]
   },
   "nanoohm": {
-    "scale": "1e-9",
+    "scale": "1E-9",
     "aliases": [
       "nanoohms",
       "n\u03a9"
     ]
   },
   "microohm": {
-    "scale": "1e-6",
+    "scale": "1E-6",
     "aliases": [
       "microohms",
       "\u00b5\u03a9"
     ]
   },
   "milliohm": {
-    "scale": "1e-3",
+    "scale": "1E-3",
     "aliases": [
       "milliohms",
       "m\u03a9"
     ]
   },
   "centiohm": {
-    "scale": "1e-2",
+    "scale": "1E-2",
     "aliases": [
       "centiohms",
       "c\u03a9"
     ]
   },
   "deciohm": {
-    "scale": "1e-1",
+    "scale": "1E-1",
     "aliases": [
       "deciohms",
       "d\u03a9"
     ]
   },
   "decaohm": {
-    "scale": "1e+1",
+    "scale": "1E+1",
     "aliases": [
       "decaohms",
       "da\u03a9"
     ]
   },
   "hectoohm": {
-    "scale": "1e+2",
+    "scale": "1E+2",
     "aliases": [
       "hectoohms",
       "h\u03a9"
     ]
   },
   "kiloohm": {
-    "scale": "1e+3",
+    "scale": "1E+3",
     "aliases": [
       "kiloohms",
       "k\u03a9"
     ]
   },
   "megaohm": {
-    "scale": "1e+6",
+    "scale": "1E+6",
     "aliases": [
       "megaohms",
       "M\u03a9"
     ]
   },
   "gigaohm": {
-    "scale": "1e+9",
+    "scale": "1E+9",
     "aliases": [
       "gigaohms",
       "G\u03a9"
     ]
   },
   "teraohm": {
-    "scale": "1e+12",
+    "scale": "1E+12",
     "aliases": [
       "teraohms",
       "T\u03a9"
     ]
   },
   "petaohm": {
-    "scale": "1e+15",
+    "scale": "1E+15",
     "aliases": [
       "petaohms",
       "P\u03a9"
     ]
   },
   "exaohm": {
-    "scale": "1e+18",
+    "scale": "1E+18",
     "aliases": [
       "exaohms",
       "E\u03a9"
     ]
   },
   "zettaohm": {
-    "scale": "1e+21",
+    "scale": "1E+21",
     "aliases": [
       "zettaohms",
       "Z\u03a9"
     ]
   },
   "yottaohm": {
-    "scale": "1e+24",
+    "scale": "1E+24",
     "aliases": [
       "yottaohms",
       "Y\u03a9"
     ]
   },
   "ronnaohm": {
-    "scale": "1e+27",
+    "scale": "1E+27",
     "aliases": [
       "ronnaohms",
       "R\u03a9"
     ]
   },
   "quettaohm": {
-    "scale": "1e+30",
+    "scale": "1E+30",
     "aliases": [
       "quettaohms",
       "Q\u03a9"

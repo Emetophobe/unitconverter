@@ -6,145 +6,145 @@
     ]
   },
   "quectogray": {
-    "scale": "1e-30",
+    "scale": "1E-30",
     "aliases": [
       "qGy"
     ]
   },
   "rontogray": {
-    "scale": "1e-27",
+    "scale": "1E-27",
     "aliases": [
       "rGy"
     ]
   },
   "yoctogray": {
-    "scale": "1e-24",
+    "scale": "1E-24",
     "aliases": [
       "yGy"
     ]
   },
   "zeptogray": {
-    "scale": "1e-21",
+    "scale": "1E-21",
     "aliases": [
       "zGy"
     ]
   },
   "attogray": {
-    "scale": "1e-18",
+    "scale": "1E-18",
     "aliases": [
       "aGy"
     ]
   },
   "femtogray": {
-    "scale": "1e-15",
+    "scale": "1E-15",
     "aliases": [
       "fGy"
     ]
   },
   "picogray": {
-    "scale": "1e-12",
+    "scale": "1E-12",
     "aliases": [
       "pGy"
     ]
   },
   "nanogray": {
-    "scale": "1e-9",
+    "scale": "1E-9",
     "aliases": [
       "nGy"
     ]
   },
   "microgray": {
-    "scale": "1e-6",
+    "scale": "1E-6",
     "aliases": [
       "\u00b5Gy"
     ]
   },
   "milligray": {
-    "scale": "1e-3",
+    "scale": "1E-3",
     "aliases": [
       "mGy"
     ]
   },
   "centigray": {
-    "scale": "1e-2",
+    "scale": "1E-2",
     "aliases": [
       "cGy"
     ]
   },
   "decigray": {
-    "scale": "1e-1",
+    "scale": "1E-1",
     "aliases": [
       "dGy"
     ]
   },
   "decagray": {
-    "scale": "1e+1",
+    "scale": "1E+1",
     "aliases": [
       "daGy"
     ]
   },
   "hectogray": {
-    "scale": "1e+2",
+    "scale": "1E+2",
     "aliases": [
       "hGy"
     ]
   },
   "kilogray": {
-    "scale": "1e+3",
+    "scale": "1E+3",
     "aliases": [
       "kGy"
     ]
   },
   "megagray": {
-    "scale": "1e+6",
+    "scale": "1E+6",
     "aliases": [
       "MGy"
     ]
   },
   "gigagray": {
-    "scale": "1e+9",
+    "scale": "1E+9",
     "aliases": [
       "GGy"
     ]
   },
   "teragray": {
-    "scale": "1e+12",
+    "scale": "1E+12",
     "aliases": [
       "TGy"
     ]
   },
   "petagray": {
-    "scale": "1e+15",
+    "scale": "1E+15",
     "aliases": [
       "PGy"
     ]
   },
   "exagray": {
-    "scale": "1e+18",
+    "scale": "1E+18",
     "aliases": [
       "EGy"
     ]
   },
   "zettagray": {
-    "scale": "1e+21",
+    "scale": "1E+21",
     "aliases": [
       "ZGy"
     ]
   },
   "yottagray": {
-    "scale": "1e+24",
+    "scale": "1E+24",
     "aliases": [
       "YGy"
     ]
   },
   "ronnagray": {
-    "scale": "1e+27",
+    "scale": "1E+27",
     "aliases": [
       "RGy"
     ]
   },
   "quettagray": {
-    "scale": "1e+30",
+    "scale": "1E+30",
     "aliases": [
       "QGy"
     ]

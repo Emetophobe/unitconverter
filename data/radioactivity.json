@@ -7,189 +7,189 @@
     ]
   },
   "quectobecquerel": {
-    "scale": "1e-30",
+    "scale": "1E-30",
     "aliases": [
       "quectobecquerels",
       "qBq"
     ]
   },
   "rontobecquerel": {
-    "scale": "1e-27",
+    "scale": "1E-27",
     "aliases": [
       "rontobecquerels",
       "rBq"
     ]
   },
   "yoctobecquerel": {
-    "scale": "1e-24",
+    "scale": "1E-24",
     "aliases": [
       "yoctobecquerels",
       "yBq"
     ]
   },
   "zeptobecquerel": {
-    "scale": "1e-21",
+    "scale": "1E-21",
     "aliases": [
       "zeptobecquerels",
       "zBq"
     ]
   },
   "attobecquerel": {
-    "scale": "1e-18",
+    "scale": "1E-18",
     "aliases": [
       "attobecquerels",
       "aBq"
     ]
   },
   "femtobecquerel": {
-    "scale": "1e-15",
+    "scale": "1E-15",
     "aliases": [
       "femtobecquerels",
       "fBq"
     ]
   },
   "picobecquerel": {
-    "scale": "1e-12",
+    "scale": "1E-12",
     "aliases": [
       "picobecquerels",
       "pBq"
     ]
   },
   "nanobecquerel": {
-    "scale": "1e-9",
+    "scale": "1E-9",
     "aliases": [
       "nanobecquerels",
       "nBq"
     ]
   },
   "microbecquerel": {
-    "scale": "1e-6",
+    "scale": "1E-6",
     "aliases": [
       "microbecquerels",
       "\u00b5Bq"
     ]
   },
   "millibecquerel": {
-    "scale": "1e-3",
+    "scale": "1E-3",
     "aliases": [
       "millibecquerels",
       "mBq"
     ]
   },
   "centibecquerel": {
-    "scale": "1e-2",
+    "scale": "1E-2",
     "aliases": [
       "centibecquerels",
       "cBq"
     ]
   },
   "decibecquerel": {
-    "scale": "1e-1",
+    "scale": "1E-1",
     "aliases": [
       "decibecquerels",
       "dBq"
     ]
   },
   "decabecquerel": {
-    "scale": "1e+1",
+    "scale": "1E+1",
     "aliases": [
       "decabecquerels",
       "daBq"
     ]
   },
   "hectobecquerel": {
-    "scale": "1e+2",
+    "scale": "1E+2",
     "aliases": [
       "hectobecquerels",
       "hBq"
     ]
   },
   "kilobecquerel": {
-    "scale": "1e+3",
+    "scale": "1E+3",
     "aliases": [
       "kilobecquerels",
       "kBq"
     ]
   },
   "megabecquerel": {
-    "scale": "1e+6",
+    "scale": "1E+6",
     "aliases": [
       "megabecquerels",
       "MBq"
     ]
   },
   "gigabecquerel": {
-    "scale": "1e+9",
+    "scale": "1E+9",
     "aliases": [
       "gigabecquerels",
       "GBq"
     ]
   },
   "terabecquerel": {
-    "scale": "1e+12",
+    "scale": "1E+12",
     "aliases": [
       "terabecquerels",
       "TBq"
     ]
   },
   "petabecquerel": {
-    "scale": "1e+15",
+    "scale": "1E+15",
     "aliases": [
       "petabecquerels",
       "PBq"
     ]
   },
   "exabecquerel": {
-    "scale": "1e+18",
+    "scale": "1E+18",
     "aliases": [
       "exabecquerels",
       "EBq"
     ]
   },
   "zettabecquerel": {
-    "scale": "1e+21",
+    "scale": "1E+21",
     "aliases": [
       "zettabecquerels",
       "ZBq"
     ]
   },
   "yottabecquerel": {
-    "scale": "1e+24",
+    "scale": "1E+24",
     "aliases": [
       "yottabecquerels",
       "YBq"
     ]
   },
   "ronnabecquerel": {
-    "scale": "1e+27",
+    "scale": "1E+27",
     "aliases": [
       "ronnabecquerels",
       "RBq"
     ]
   },
   "quettabecquerel": {
-    "scale": "1e+30",
+    "scale": "1E+30",
     "aliases": [
       "quettabecquerels",
       "QBq"
     ]
   },
   "rutherford": {
-    "scale": "1e6",
+    "scale": "1E+6",
     "aliases": [
       "rutherfords",
       "Rd"
     ]
   },
   "curie": {
-    "scale": "3.7e+10",
+    "scale": "3.7E+10",
     "aliases": [
       "curies",
       "Ci"
     ]
   },
   "picocurie": {
-    "scale": "3.7e-2",
+    "scale": "3.7E-2",
     "aliases": [
       "picocuries",
       "pCi"

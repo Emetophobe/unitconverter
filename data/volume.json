@@ -12,7 +12,7 @@
     ]
   },
   "cubic quectometer": {
-    "scale": "1e-90",
+    "scale": "1E-90",
     "aliases": [
       "cubic quectometers",
       "cubic quectometre",
@@ -24,7 +24,7 @@
     ]
   },
   "cubic rontometer": {
-    "scale": "1e-81",
+    "scale": "1E-81",
     "aliases": [
       "cubic rontometers",
       "cubic rontometre",
@@ -36,7 +36,7 @@
     ]
   },
   "cubic yoctometer": {
-    "scale": "1e-72",
+    "scale": "1E-72",
     "aliases": [
       "cubic yoctometers",
       "cubic yoctometres",
@@ -48,7 +48,7 @@
     ]
   },
   "cubic zeptometer": {
-    "scale": "1e-63",
+    "scale": "1E-63",
     "aliases": [
       "cubic zeptometers",
       "cubic zeptometres",
@@ -60,7 +60,7 @@
     ]
   },
   "cubic attometer": {
-    "scale": "1e-54",
+    "scale": "1E-54",
     "aliases": [
       "cubic attometers",
       "cubic attometres",
@@ -72,7 +72,7 @@
     ]
   },
   "cubic femtometer": {
-    "scale": "1e-45",
+    "scale": "1E-45",
     "aliases": [
       "cubic femtometers",
       "cubic femtometres",
@@ -84,7 +84,7 @@
     ]
   },
   "cubic picometer": {
-    "scale": "1e-36",
+    "scale": "1E-36",
     "aliases": [
       "cubic picometers",
       "cubic picometres",
@@ -96,7 +96,7 @@
     ]
   },
   "cubic nanometer": {
-    "scale": "1e-27",
+    "scale": "1E-27",
     "aliases": [
       "cubic nanometers",
       "cubic nanometres",
@@ -108,7 +108,7 @@
     ]
   },
   "cubic micrometer": {
-    "scale": "1e-18",
+    "scale": "1E-18",
     "aliases": [
       "cubic micrometers",
       "cubic micrometres",
@@ -120,7 +120,7 @@
     ]
   },
   "cubic millimeter": {
-    "scale": "1e-9",
+    "scale": "1E-9",
     "aliases": [
       "cubic millimeters",
       "cubic millimetres",
@@ -132,7 +132,7 @@
     ]
   },
   "cubic centimeter": {
-    "scale": "1e-6",
+    "scale": "1E-6",
     "aliases": [
       "cubic centimeters",
       "cubic centimetres",
@@ -144,7 +144,7 @@
     ]
   },
   "cubic decimeter": {
-    "scale": "1e-3",
+    "scale": "1E-3",
     "aliases": [
       "cubic decimeters",
       "cubic decimetres",
@@ -156,7 +156,7 @@
     ]
   },
   "cubic decameter": {
-    "scale": "1e3",
+    "scale": "1E+3",
     "aliases": [
       "cubic decameters",
       "cubic decametres",
@@ -168,7 +168,7 @@
     ]
   },
   "cubic hectometer": {
-    "scale": "1e6",
+    "scale": "1E+6",
     "aliases": [
       "cubic hectometers",
       "cubic hectometres",
@@ -180,7 +180,7 @@
     ]
   },
   "cubic kilometer": {
-    "scale": "1e9",
+    "scale": "1E+9",
     "aliases": [
       "cubic kilometers",
       "cubic kilometres",
@@ -192,7 +192,7 @@
     ]
   },
   "cubic megameter": {
-    "scale": "1e18",
+    "scale": "1E+18",
     "aliases": [
       "cubic megameters",
       "cubic megametres",
@@ -204,7 +204,7 @@
     ]
   },
   "cubic gigameter": {
-    "scale": "1e27",
+    "scale": "1E+27",
     "aliases": [
       "cubic gigameters",
       "cubic gigametres",
@@ -216,7 +216,7 @@
     ]
   },
   "cubic terameter": {
-    "scale": "1e36",
+    "scale": "1E+36",
     "aliases": [
       "cubic terameters",
       "cubic terametres",
@@ -228,7 +228,7 @@
     ]
   },
   "cubic petameter": {
-    "scale": "1e45",
+    "scale": "1E+45",
     "aliases": [
       "cubic petameters",
       "cubic petametres",
@@ -240,7 +240,7 @@
     ]
   },
   "cubic exameter": {
-    "scale": "1e54",
+    "scale": "1E+54",
     "aliases": [
       "cubic exameters",
       "cubic exametres",
@@ -252,7 +252,7 @@
     ]
   },
   "cubic zettameter": {
-    "scale": "1e63",
+    "scale": "1E+63",
     "aliases": [
       "cubic zettameters",
       "cubic zettametres",
@@ -264,7 +264,7 @@
     ]
   },
   "cubic yottameter": {
-    "scale": "1e72",
+    "scale": "1E+72",
     "aliases": [
       "cubic yottameters",
       "cubic yottametres",
@@ -276,7 +276,7 @@
     ]
   },
   "cubic ronnameter": {
-    "scale": "1e+81",
+    "scale": "1E+81",
     "aliases": [
       "cubic ronnameters",
       "cubic ronnametre",
@@ -288,7 +288,7 @@
     ]
   },
   "cubic quettameter": {
-    "scale": "1e+90",
+    "scale": "1E+90",
     "aliases": [
       "cubic quettameters",
       "cubic quettametre",
@@ -564,7 +564,7 @@
     ]
   },
   "cubic inch": {
-    "scale": "1.63871e-5",
+    "scale": "1.63871E-5",
     "aliases": [
       "cubic inches",
       "cu in",
@@ -594,7 +594,7 @@
     ]
   },
   "cubic mile": {
-    "scale": "4.168e+9",
+    "scale": "4.168E+9",
     "aliases": [
       "cubic miles",
       "cu mi",

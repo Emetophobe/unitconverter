@@ -7,175 +7,175 @@
     ]
   },
   "quectonewton": {
-    "scale": "1e-30",
+    "scale": "1E-30",
     "aliases": [
       "quectonewtons",
       "qN"
     ]
   },
   "rontonewton": {
-    "scale": "1e-27",
+    "scale": "1E-27",
     "aliases": [
       "rontonewtons",
       "rN"
     ]
   },
   "yoctonewton": {
-    "scale": "1e-24",
+    "scale": "1E-24",
     "aliases": [
       "yoctonewtons",
       "yN"
     ]
   },
   "zeptonewton": {
-    "scale": "1e-21",
+    "scale": "1E-21",
     "aliases": [
       "zeptonewtons",
       "zN"
     ]
   },
   "attonewton": {
-    "scale": "1e-18",
+    "scale": "1E-18",
     "aliases": [
       "attonewtons",
       "aN"
     ]
   },
   "femtonewton": {
-    "scale": "1e-15",
+    "scale": "1E-15",
     "aliases": [
       "femtonewtons",
       "fN"
     ]
   },
   "piconewton": {
-    "scale": "1e-12",
+    "scale": "1E-12",
     "aliases": [
       "piconewtons",
       "pN"
     ]
   },
   "nanonewton": {
-    "scale": "1e-9",
+    "scale": "1E-9",
     "aliases": [
       "nanonewtons",
       "nN"
     ]
   },
   "micronewton": {
-    "scale": "1e-6",
+    "scale": "1E-6",
     "aliases": [
       "micronewtons",
       "\u00b5N"
     ]
   },
   "millinewton": {
-    "scale": "1e-3",
+    "scale": "1E-3",
     "aliases": [
       "millinewtons",
       "mN"
     ]
   },
   "centinewton": {
-    "scale": "1e-2",
+    "scale": "1E-2",
     "aliases": [
       "centinewtons",
       "cN"
     ]
   },
   "decinewton": {
-    "scale": "1e-1",
+    "scale": "1E-1",
     "aliases": [
       "decinewtons",
       "dN"
     ]
   },
   "decanewton": {
-    "scale": "1e+1",
+    "scale": "1E+1",
     "aliases": [
       "decanewtons",
       "daN"
     ]
   },
   "hectonewton": {
-    "scale": "1e+2",
+    "scale": "1E+2",
     "aliases": [
       "hectonewtons",
       "hN"
     ]
   },
   "kilonewton": {
-    "scale": "1e+3",
+    "scale": "1E+3",
     "aliases": [
       "kilonewtons",
       "kN"
     ]
   },
   "meganewton": {
-    "scale": "1e+6",
+    "scale": "1E+6",
     "aliases": [
       "meganewtons",
       "MN"
     ]
   },
   "giganewton": {
-    "scale": "1e+9",
+    "scale": "1E+9",
     "aliases": [
       "giganewtons",
       "GN"
     ]
   },
   "teranewton": {
-    "scale": "1e+12",
+    "scale": "1E+12",
     "aliases": [
       "teranewtons",
       "TN"
     ]
   },
   "petanewton": {
-    "scale": "1e+15",
+    "scale": "1E+15",
     "aliases": [
       "petanewtons",
       "PN"
     ]
   },
   "exanewton": {
-    "scale": "1e+18",
+    "scale": "1E+18",
     "aliases": [
       "exanewtons",
       "EN"
     ]
   },
   "zettanewton": {
-    "scale": "1e+21",
+    "scale": "1E+21",
     "aliases": [
       "zettanewtons",
       "ZN"
     ]
   },
   "yottanewton": {
-    "scale": "1e+24",
+    "scale": "1E+24",
     "aliases": [
       "yottanewtons",
       "YN"
     ]
   },
   "ronnanewton": {
-    "scale": "1e+27",
+    "scale": "1E+27",
     "aliases": [
       "ronnanewtons",
       "RN"
     ]
   },
   "quettanewton": {
-    "scale": "1e+30",
+    "scale": "1E+30",
     "aliases": [
       "quettanewtons",
       "QN"
     ]
   },
   "dyne": {
-    "scale": "1e-5",
+    "scale": "1E-5",
     "aliases": [
       "dynes",
       "dyn"
@@ -189,7 +189,7 @@
     ]
   },
   "gram-force": {
-    "scale": "9.80665e-3",
+    "scale": "9.80665E-3",
     "aliases": [
       "pond",
       "gf",

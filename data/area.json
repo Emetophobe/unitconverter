@@ -12,7 +12,7 @@
     ]
   },
   "square quectometer": {
-    "scale": "1e-60",
+    "scale": "1E-60",
     "aliases": [
       "square quectometers",
       "square quectometre",
@@ -24,7 +24,7 @@
     ]
   },
   "square rontometer": {
-    "scale": "1e-54",
+    "scale": "1E-54",
     "aliases": [
       "square rontometers",
       "square rontometre",
@@ -36,7 +36,7 @@
     ]
   },
   "square yoctometer": {
-    "scale": "1e-48",
+    "scale": "1E-48",
     "aliases": [
       "square yoctometers",
       "square yoctometre",
@@ -48,7 +48,7 @@
     ]
   },
   "square zeptometer": {
-    "scale": "1e-42",
+    "scale": "1E-42",
     "aliases": [
       "square zeptometers",
       "square zeptometre",
@@ -60,7 +60,7 @@
     ]
   },
   "square attometer": {
-    "scale": "1e-36",
+    "scale": "1E-36",
     "aliases": [
       "square attometers",
       "square attometre",
@@ -72,7 +72,7 @@
     ]
   },
   "square femtometer": {
-    "scale": "1e-30",
+    "scale": "1E-30",
     "aliases": [
       "square femtometers",
       "square femtometre",
@@ -84,7 +84,7 @@
     ]
   },
   "square picometer": {
-    "scale": "1e-24",
+    "scale": "1E-24",
     "aliases": [
       "square picometers",
       "square picometre",
@@ -96,7 +96,7 @@
     ]
   },
   "square nanometer": {
-    "scale": "1e-18",
+    "scale": "1E-18",
     "aliases": [
       "square nanometers",
       "square nanometre",
@@ -108,7 +108,7 @@
     ]
   },
   "square micrometer": {
-    "scale": "1e-12",
+    "scale": "1E-12",
     "aliases": [
       "square micrometers",
       "square micrometre",
@@ -120,7 +120,7 @@
     ]
   },
   "square millimeter": {
-    "scale": "1e-6",
+    "scale": "1E-6",
     "aliases": [
       "square millimeters",
       "square millimetre",
@@ -132,7 +132,7 @@
     ]
   },
   "square centimeter": {
-    "scale": "1e-4",
+    "scale": "1E-4",
     "aliases": [
       "square centimeters",
       "square centimetre",
@@ -144,7 +144,7 @@
     ]
   },
   "square decimeter": {
-    "scale": "1e-2",
+    "scale": "1E-2",
     "aliases": [
       "square decimeters",
       "square decimetre",
@@ -156,7 +156,7 @@
     ]
   },
   "square decameter": {
-    "scale": "1e+2",
+    "scale": "1E+2",
     "aliases": [
       "square decameters",
       "square decametre",
@@ -168,7 +168,7 @@
     ]
   },
   "square hectometer": {
-    "scale": "1e+4",
+    "scale": "1E+4",
     "aliases": [
       "square hectometers",
       "square hectometre",
@@ -180,7 +180,7 @@
     ]
   },
   "square kilometer": {
-    "scale": "1e+6",
+    "scale": "1E+6",
     "aliases": [
       "square kilometers",
       "square kilometre",
@@ -192,7 +192,7 @@
     ]
   },
   "square megameter": {
-    "scale": "1e+12",
+    "scale": "1E+12",
     "aliases": [
       "square megameters",
       "square megametre",
@@ -204,7 +204,7 @@
     ]
   },
   "square gigameter": {
-    "scale": "1e+18",
+    "scale": "1E+18",
     "aliases": [
       "square gigameters",
       "square gigametre",
@@ -216,7 +216,7 @@
     ]
   },
   "square terameter": {
-    "scale": "1e+24",
+    "scale": "1E+24",
     "aliases": [
       "square terameters",
       "square terametre",
@@ -228,7 +228,7 @@
     ]
   },
   "square petameter": {
-    "scale": "1e+30",
+    "scale": "1E+30",
     "aliases": [
       "square petameters",
       "square petametre",
@@ -240,7 +240,7 @@
     ]
   },
   "square exameter": {
-    "scale": "1e+36",
+    "scale": "1E+36",
     "aliases": [
       "square exameters",
       "square exametre",
@@ -252,7 +252,7 @@
     ]
   },
   "square zettameter": {
-    "scale": "1e+42",
+    "scale": "1E+42",
     "aliases": [
       "square zettameters",
       "square zettametre",
@@ -264,7 +264,7 @@
     ]
   },
   "square yottameter": {
-    "scale": "1e+48",
+    "scale": "1E+48",
     "aliases": [
       "square yottameters",
       "square yottametre",
@@ -276,7 +276,7 @@
     ]
   },
   "square ronnameter": {
-    "scale": "1e+54",
+    "scale": "1E+54",
     "aliases": [
       "square ronnameters",
       "square ronnametre",
@@ -288,7 +288,7 @@
     ]
   },
   "square quettameter": {
-    "scale": "1e+60",
+    "scale": "1E+60",
     "aliases": [
       "square quettameters",
       "square quettametre",
@@ -402,7 +402,7 @@
     ]
   },
   "square nautical mile": {
-    "scale": "3.43e+6",
+    "scale": "3.43E+6",
     "aliases": [
       "square nautical miles",
       "square nmi",

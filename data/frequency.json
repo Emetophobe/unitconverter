@@ -6,145 +6,145 @@
     ]
   },
   "quectohertz": {
-    "scale": "1e-30",
+    "scale": "1E-30",
     "aliases": [
       "qHz"
     ]
   },
   "rontohertz": {
-    "scale": "1e-27",
+    "scale": "1E-27",
     "aliases": [
       "rHz"
     ]
   },
   "yoctohertz": {
-    "scale": "1e-24",
+    "scale": "1E-24",
     "aliases": [
       "yHz"
     ]
   },
   "zeptohertz": {
-    "scale": "1e-21",
+    "scale": "1E-21",
     "aliases": [
       "zHz"
     ]
   },
   "attohertz": {
-    "scale": "1e-18",
+    "scale": "1E-18",
     "aliases": [
       "aHz"
     ]
   },
   "femtohertz": {
-    "scale": "1e-15",
+    "scale": "1E-15",
     "aliases": [
       "fHz"
     ]
   },
   "picohertz": {
-    "scale": "1e-12",
+    "scale": "1E-12",
     "aliases": [
       "pHz"
     ]
   },
   "nanohertz": {
-    "scale": "1e-9",
+    "scale": "1E-9",
     "aliases": [
       "nHz"
     ]
   },
   "microhertz": {
-    "scale": "1e-6",
+    "scale": "1E-6",
     "aliases": [
       "\u00b5Hz"
     ]
   },
   "millihertz": {
-    "scale": "1e-3",
+    "scale": "1E-3",
     "aliases": [
       "mHz"
     ]
   },
   "centihertz": {
-    "scale": "1e-2",
+    "scale": "1E-2",
     "aliases": [
       "cHz"
     ]
   },
   "decihertz": {
-    "scale": "1e-1",
+    "scale": "1E-1",
     "aliases": [
       "dHz"
     ]
   },
   "decahertz": {
-    "scale": "1e1",
+    "scale": "1E+1",
     "aliases": [
       "daHz"
     ]
   },
   "hectohertz": {
-    "scale": "1e2",
+    "scale": "1E+2",
     "aliases": [
       "hHz"
     ]
   },
   "kilohertz": {
-    "scale": "1e3",
+    "scale": "1E+3",
     "aliases": [
       "kHz"
     ]
   },
   "megahertz": {
-    "scale": "1e6",
+    "scale": "1E+6",
     "aliases": [
       "MHz"
     ]
   },
   "gigahertz": {
-    "scale": "1e9",
+    "scale": "1E+9",
     "aliases": [
       "GHz"
     ]
   },
   "terahertz": {
-    "scale": "1e12",
+    "scale": "1E+12",
     "aliases": [
       "THz"
     ]
   },
   "petahertz": {
-    "scale": "1e15",
+    "scale": "1E+15",
     "aliases": [
       "PHz"
     ]
   },
   "exahertz": {
-    "scale": "1e18",
+    "scale": "1E+18",
     "aliases": [
       "EHz"
     ]
   },
   "zettahertz": {
-    "scale": "1e21",
+    "scale": "1E+21",
     "aliases": [
       "ZHz"
     ]
   },
   "yottahertz": {
-    "scale": "1e24",
+    "scale": "1E+24",
     "aliases": [
       "YHz"
     ]
   },
   "ronnahertz": {
-    "scale": "1e27",
+    "scale": "1E+27",
     "aliases": [
       "RHz"
     ]
   },
   "quettahertz": {
-    "scale": "1e30",
+    "scale": "1E+30",
     "aliases": [
       "QHz"
     ]

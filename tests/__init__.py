@@ -3,7 +3,7 @@
 from unittest import TestCase
 from decimal import Decimal
 from typing import Optional, Union
-from converter import Converter, Unit, format_decimal
+from convert import Converter, Unit, format_decimal
 
 
 METRIC_TABLE = [

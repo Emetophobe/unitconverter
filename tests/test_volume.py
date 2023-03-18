@@ -94,9 +94,9 @@ class TestVolume(AbstractTestCase):
             "cubic yard": "1.30795E+0",
             "cubic mile": "2.39923E-10",
 
-            "acre-inch": "0.009728558325380519841239388180",
-            "acre-foot": "0.0008107131938211453397261716876",
-            "acre-foot (US survey)": "0.0008107083294995443124005820015",
+            "acre-inch": "9.72856E-3",
+            "acre-foot": "8.10713E-4",
+            "acre-foot (US survey)": "8.10708E-4",
 
             "cup (metric)": "4.00000E+3",
             "cup (imperial)": "3.51951E+3",
@@ -132,8 +132,9 @@ class TestVolume(AbstractTestCase):
             "teaspoon (US)": "2.02884E+5",
         }
 
-        for name, expected in expected_values.items():
-            self.assert_unit('cubic meter', name, expected, exponent=True, precision=5)
+        for dest, expected in expected_values.items():
+            self.assert_rounded('cubic meters', dest, expected, exponent=True,
+                                precision=5)
 
     def assert_metric_scale(self, unit: str) -> None:
         """ Test the metric scale for cubic meters. """

@@ -43,7 +43,7 @@ class AbstractTestCase(TestCase):
         self.base_value = Decimal('1')
 
     def parse_unit(self, unit: Union[str, Unit]) -> Unit:
-        """ Parse unit input. Accepts either a string or a Unit.
+        """ Parse unit. Accepts either a string or a Unit.
 
         Args:
             unit (str, Unit): a unit name or instance.
@@ -83,10 +83,7 @@ class AbstractTestCase(TestCase):
                     source: Union[str, Unit],
                     dest: Union[str, Unit],
                     expected: Union[str, Decimal],
-                    value: Union[str, Decimal] = '1',
-                    exponent: bool = False,
-                    precision: Optional[int] = None,
-                    commas: bool = False
+                    value: Union[str, Decimal] = '1'
                     ) -> None:
         """ Assert that a unit conversion gives the expected result.
 
@@ -102,27 +99,58 @@ class AbstractTestCase(TestCase):
 
             value (str, Decimal):
                 value to convert. Defaults to '1'.
+        """
+        source = self.parse_unit(source)
+        dest = self.parse_unit(dest)
+        self.assertEqual(source.category, dest.category, 'Invalid category')
 
-            exponent (bool, optional):
-                convert result to E notation. Defaults to False.
+        expected = Decimal(expected)
+        result = self.converter.convert(value, source, dest)
+        self.assertEqual(result, expected, f'Incorrect unit: {dest.name!r}'
+                                           f' category: {dest.category!r}')
+
+    def assert_rounded(self,
+                       source: Union[str, Unit],
+                       dest: Union[str, Unit],
+                       expected: str,
+                       value: Union[str, Decimal] = '1',
+                       precision: Optional[int] = None,
+                       exponent: bool = False,
+                       commas: bool = False
+                       ) -> None:
+        """ Assert that a unit conversion gives the expected rounded result.
+
+        Args:
+            source (str, Unit):
+                source name or unit.
+
+            dest (str, Unit):
+                destination name or unit.
+
+            expected (str):
+                expected value.
+
+            value (str, Decimal):
+                value to convert. Defaults to '1'.
 
             precision (int, optional):
                 round to ndigits. Defaults to None.
+
+            exponent (bool, optional):
+                convert result to E notation. Defaults to False.
 
             commas (bool, optional):
                 use thousands separators. Defaults to False.
         """
         source = self.parse_unit(source)
         dest = self.parse_unit(dest)
-
-        expected = Decimal(expected)
-        value = Decimal(value)
+        self.assertEqual(source.category, dest.category, 'Invalid category')
 
         result = self.converter.convert(value, source, dest)
         result = format_decimal(result, exponent, precision, commas)
-        expected = format_decimal(expected, exponent, precision, commas)
 
-        self.assertEqual(result, expected, f'Incorrect unit: {dest.name!r}')
+        self.assertEqual(result, expected, f'Incorrect unit: {dest.name!r}'
+                                           f' category: {dest.category!r}')
 
     def assert_units(self, source: Union[str, Unit], expected: dict) -> None:
         """ Assert that a dictionary of units converts to the expected values.
@@ -131,8 +159,8 @@ class AbstractTestCase(TestCase):
             source (str, Unit): source unit.
             expected (dict): dictionary of expected values.
         """
-        for dest, value in expected.items():
-            self.assert_unit(source, dest, value)
+        for dest, expected in expected.items():
+            self.assert_unit(source, dest, expected)
 
     def assert_metric_scale(self, unit: str) -> None:
         """ Assert that unit has a valid metric conversion table.
@@ -141,7 +169,7 @@ class AbstractTestCase(TestCase):
             unit (str): the unit name.
         """
         for scale, _, prefix in METRIC_TABLE:
-            self.assert_unit(prefix + unit, unit, Decimal(scale))
+            self.assert_unit(prefix + unit, unit, scale)
 
     def print_conversions(self, base_unit: Union[str, Unit]) -> None:
         """ Print unit conversion table.

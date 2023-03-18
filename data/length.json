@@ -472,18 +472,18 @@
   "light second": {
     "scale": "299792458",
     "aliases": [
-        "light seconds",
-        "light-seconds",
-        "light-second",
-        "ls"
+      "light seconds",
+      "light-seconds",
+      "light-second",
+      "ls"
     ]
   },
   "light minute": {
     "scale": "2.59020683712E+13",
     "aliases": [
-        "light minutes",
-        "light-minutes",
-        "light-minute"
+      "light minutes",
+      "light-minutes",
+      "light-minute"
     ]
   },
   "light year": {

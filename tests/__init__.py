@@ -41,6 +41,8 @@ class AbstractTestCase(TestCase):
         """ Initialize converter. """
         self.converter = Converter()
         self.base_value = Decimal('1')
+        self.tested = set()
+        self.category = None
 
     def parse_unit(self, unit: Union[str, Unit]) -> Unit:
         """ Parse unit. Accepts either a string or a Unit.
@@ -102,12 +104,15 @@ class AbstractTestCase(TestCase):
         """
         source = self.parse_unit(source)
         dest = self.parse_unit(dest)
+
         self.assertEqual(source.category, dest.category, 'Invalid category')
 
         expected = Decimal(expected)
         result = self.converter.convert(value, source, dest)
         self.assertEqual(result, expected, f'Incorrect unit: {dest.name!r}'
                                            f' category: {dest.category!r}')
+
+        self.update_tested(source, dest)
 
     def assert_rounded(self,
                        source: Union[str, Unit],
@@ -144,6 +149,7 @@ class AbstractTestCase(TestCase):
         """
         source = self.parse_unit(source)
         dest = self.parse_unit(dest)
+
         self.assertEqual(source.category, dest.category, 'Invalid category')
 
         result = self.converter.convert(value, source, dest)
@@ -151,6 +157,8 @@ class AbstractTestCase(TestCase):
 
         self.assertEqual(result, expected, f'Incorrect unit: {dest.name!r}'
                                            f' category: {dest.category!r}')
+
+        self.update_tested(source, dest)
 
     def assert_units(self, source: Union[str, Unit], expected: dict) -> None:
         """ Assert that a dictionary of units converts to the expected values.
@@ -162,26 +170,45 @@ class AbstractTestCase(TestCase):
         for dest, expected in expected.items():
             self.assert_unit(source, dest, expected)
 
-    def assert_metric_scale(self, unit: str) -> None:
+    def assert_metric_scale(self, name: str) -> None:
         """ Assert that unit has a valid metric conversion table.
 
         Args:
-            unit (str): the unit name.
+            name (str): the unit name.
         """
         for scale, _, prefix in METRIC_TABLE:
-            self.assert_unit(prefix + unit, unit, scale)
+            self.assert_unit(prefix + name, name, scale)
 
-    def print_conversions(self, base_unit: Union[str, Unit]) -> None:
-        """ Print unit conversion table.
+    def assert_all_tested(self):
+        """ Assert that all units were tested. """
+        self.assertTrue(self.category in self.converter.units.keys(), 'Invalid category')
+
+        for name in self.converter.units[self.category].keys():
+            self.assertTrue(name in self.tested, f'Missing {self.category} test:'
+                                                 f' {name!r}')
+
+    def update_tested(self, source: Unit, dest: Unit) -> None:
+        """ Track which units were tested (or not).
 
         Args:
-            base_unit (str, Unit): base unit.
+            source (Unit): source unit.
+            dest (Unit): destination unit.
         """
-        base_unit = self.parse_unit(base_unit)
-        units = self.get_units(base_unit.category)
+        self.category = source.category
+        self.tested.add(source.name)
+        self.tested.add(dest.name)
+
+    def print_conversions(self, source: Union[str, Unit]) -> None:
+        """ Convenience method to print the unit conversion table.
+
+        Args:
+            source (str, Unit): source name or unit.
+        """
+        source = self.parse_unit(source)
+        units = self.get_units(source.category)
 
         for unit in units:
-            result = self.converter.convert(self.base_value, base_unit, unit)
+            result = self.converter.convert(self.base_value, source, unit)
             print(f'"{unit.name}": "{result}",')
 
 

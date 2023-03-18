@@ -25,3 +25,4 @@ class TestTime(AbstractTestCase):
 
         self.assert_metric_scale('second')
         self.assert_units('second', expected_values)
+        self.assert_all_tested()

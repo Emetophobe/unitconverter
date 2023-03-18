@@ -8,3 +8,4 @@ class TestLuminousIntensity(AbstractTestCase):
     def test_candela(self):
         """ Test candela conversions. """
         self.assert_metric_scale('candela')
+        self.assert_all_tested()

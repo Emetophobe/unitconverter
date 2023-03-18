@@ -15,3 +15,4 @@ class TestMagneticFluxDensity(AbstractTestCase):
         # Test all tesla conversions
         self.assert_metric_scale('tesla')
         self.assert_units('tesla', expected_values)
+        self.assert_all_tested()

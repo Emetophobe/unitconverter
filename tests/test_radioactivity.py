@@ -15,3 +15,4 @@ class TestRadioactivity(AbstractTestCase):
 
         self.assert_metric_scale('becquerel')
         self.assert_units('becquerel', expected_values)
+        self.assert_all_tested()

@@ -9,3 +9,4 @@ class TestPower(AbstractTestCase):
         """ Test watt conversions. """
         self.assert_metric_scale('watt')
         self.assert_unit('watt', 'joules per second', '1')
+        self.assert_all_tested()

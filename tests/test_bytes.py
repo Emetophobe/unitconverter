@@ -41,3 +41,4 @@ class TestBytes(AbstractTestCase):
         }
 
         self.assert_units('byte', expected_values)
+        self.assert_all_tested()

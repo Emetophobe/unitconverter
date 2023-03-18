@@ -83,6 +83,7 @@ class TestVolume(AbstractTestCase):
 
         self.assert_metric_scale('cubic meter')
         self.assert_units('cubic meter', expected_values)
+        self.assert_all_tested()
 
     def test_rounding(self) -> None:
         """ Test rounding volume units. """

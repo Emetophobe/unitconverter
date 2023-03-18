@@ -5,11 +5,6 @@ from tests import AbstractTestCase
 
 class TestEnergy(AbstractTestCase):
 
-    def setUp(self):
-        super().setUp()
-        self.base_unit = self.converter.find_unit('joule')
-        self.units = self.converter.units['energy']
-
     def test_joule(self):
         """ Test joule conversions. """
         expected_values = {
@@ -24,3 +19,4 @@ class TestEnergy(AbstractTestCase):
 
         self.assert_metric_scale('joule')
         self.assert_units('joule', expected_values)
+        self.assert_all_tested()

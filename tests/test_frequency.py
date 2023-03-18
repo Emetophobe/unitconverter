@@ -8,3 +8,4 @@ class TestFrequency(AbstractTestCase):
     def test_hertz(self):
         """ Test hertz conversions. """
         self.assert_metric_scale('hertz')
+        self.assert_all_tested()

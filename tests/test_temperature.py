@@ -15,3 +15,4 @@ class TestTemperature(AbstractTestCase):
 
         self.assert_metric_scale('kelvin')
         self.assert_units('kelvin', expected_values)
+        self.assert_all_tested()

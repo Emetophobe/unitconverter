@@ -9,3 +9,4 @@ class TestAmountSubstance(AbstractTestCase):
         """ Test mole conversions. """
         self.assert_metric_scale('mole')
         self.assert_unit('mole', 'atom', "602214150000004428050534.2425")
+        self.assert_all_tested()

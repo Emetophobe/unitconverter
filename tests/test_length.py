@@ -60,3 +60,4 @@ class TestLength(AbstractTestCase):
 
         self.assert_metric_scale('meter')
         self.assert_units('meter', expected_values)
+        self.assert_all_tested()

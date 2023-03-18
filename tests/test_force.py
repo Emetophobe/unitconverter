@@ -22,6 +22,7 @@ class TestForce(AbstractTestCase):
 
         self.assert_metric_scale('newton')
         self.assert_units('newton', expected_values)
+        self.assert_all_tested()
 
     def test_rounding(self) -> None:
         """ Test rounding force units. """

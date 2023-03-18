@@ -8,3 +8,4 @@ class TestElectricalResistance(AbstractTestCase):
     def test_ohm(self):
         """ Test ohm conversions. """
         self.assert_metric_scale('ohm')
+        self.assert_all_tested()

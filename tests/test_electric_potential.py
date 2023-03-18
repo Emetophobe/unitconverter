@@ -8,3 +8,4 @@ class TestElectricPotential(AbstractTestCase):
     def test_volt(self):
         """ Test volt conversions. """
         self.assert_metric_scale('volt')
+        self.assert_all_tested()

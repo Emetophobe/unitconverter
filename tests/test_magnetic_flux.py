@@ -9,3 +9,4 @@ class TestMagneticFlux(AbstractTestCase):
         """ Test weber conversions. """
         self.assert_metric_scale('weber')
         self.assert_unit('weber', 'maxwell', '1E+8')
+        self.assert_all_tested()

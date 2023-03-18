@@ -8,3 +8,4 @@ class TestSteradian(AbstractTestCase):
     def test_steradian(self):
         """ Test steradian conversions. """
         self.assert_metric_scale('steradian')
+        self.assert_all_tested()

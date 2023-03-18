@@ -38,6 +38,7 @@ class TestArea(AbstractTestCase):
 
         self.assert_metric_scale('square meter')
         self.assert_units('square meter', expected_values)
+        self.assert_all_tested()
 
     def assert_metric_scale(self, unit: str) -> None:
         """ Test the metric scale for square meters. """

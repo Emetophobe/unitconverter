@@ -9,3 +9,4 @@ class TestDoseEquivalent(AbstractTestCase):
         """ Test sievert conversions. """
         self.assert_metric_scale('sievert')
         self.assert_unit('sievert', 'roentgen equivalent man', '1E-2')
+        self.assert_all_tested()

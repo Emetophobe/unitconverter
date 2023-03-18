@@ -8,3 +8,4 @@ class TestAbsorbedDose(AbstractTestCase):
     def test_gray(self):
         """ Test gray metric scale. """
         self.assert_metric_scale('gray')
+        self.assert_all_tested()

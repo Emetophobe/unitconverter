@@ -8,3 +8,4 @@ class TestElectricalInductance(AbstractTestCase):
     def test_henry(self):
         """ Test henry conversions. """
         self.assert_metric_scale('henry')
+        self.assert_all_tested()

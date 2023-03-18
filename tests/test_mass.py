@@ -26,3 +26,4 @@ class TestMass(AbstractTestCase):
         # I use grams because it makes sense.
         self.assert_metric_scale('gram')
         self.assert_units('gram', expected_values)
+        self.assert_all_tested()

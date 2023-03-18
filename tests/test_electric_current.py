@@ -8,3 +8,4 @@ class TestElectricCurrent(AbstractTestCase):
     def test_ampere(self):
         """ Test ampere conversions. """
         self.assert_metric_scale('ampere')
+        self.assert_all_tested()

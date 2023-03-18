@@ -9,3 +9,4 @@ class TestCatalyticActivity(AbstractTestCase):
         """ Test katal conversions. """
         self.assert_metric_scale('katal')
         self.assert_unit('katal', 'mole per second', '1')
+        self.assert_all_tested()

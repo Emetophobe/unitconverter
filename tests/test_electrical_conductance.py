@@ -8,3 +8,4 @@ class TestElectricalConductance(AbstractTestCase):
     def test_siemens(self):
         """ Test siemens conversions. """
         self.assert_metric_scale('siemens')
+        self.assert_all_tested()

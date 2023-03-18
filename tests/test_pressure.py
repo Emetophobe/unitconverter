@@ -15,3 +15,4 @@ class TestPressure(AbstractTestCase):
 
         self.assert_metric_scale('pascal')
         self.assert_units('pascal', expected_values)
+        self.assert_all_tested()

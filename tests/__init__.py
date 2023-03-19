@@ -13,25 +13,6 @@ class AbstractTestCase(TestCase):
         self.converter = Converter()
         self.base_value = Decimal('1')
 
-    def parse_unit(self, unit: Union[str, Unit]) -> Unit:
-        """ Parse unit. Accepts either a string or a Unit.
-
-        Args:
-            unit (str, Unit): a unit name or instance.
-
-        Raises:
-            TypeError: if the unit is an invalid type.
-
-        Returns:
-            Unit: the unit instance.
-        """
-        if isinstance(unit, str):
-            return self.converter.find_unit(unit)
-        elif isinstance(unit, Unit):
-            return unit
-        else:
-            raise TypeError(f'Expected a str or Unit, not a {type(unit).__name__}')
-
     def get_units(self, category: str) -> list[Unit]:
         """ Get a list of units for the specified category.
 
@@ -71,8 +52,8 @@ class AbstractTestCase(TestCase):
             value (str, Decimal):
                 value to convert. Defaults to '1'.
         """
-        source = self.parse_unit(source)
-        dest = self.parse_unit(dest)
+        source = self.converter.parse_unit(source)
+        dest = self.converter.parse_unit(dest)
 
         self.assertEqual(source.category, dest.category, 'Invalid category')
 

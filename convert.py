@@ -7,6 +7,36 @@ import argparse
 import json
 from pathlib import Path
 from decimal import Decimal, DecimalException
+from typing import Optional
+
+
+METRIC_TABLE = [
+    ('1', '', ''),  # base unit
+    ('1E-30', 'q', 'quecto'),
+    ('1E-27', 'r', 'ronto'),
+    ('1E-24', 'y', 'yocto'),
+    ('1E-21', 'z', 'zepto'),
+    ('1E-18', 'a', 'atto'),
+    ('1E-15', 'f', 'femto'),
+    ('1E-12', 'p', 'pico'),
+    ('1E-9', 'n', 'nano'),
+    ('1E-6', 'µ', 'micro'),
+    ('1E-3', 'm', 'milli'),
+    ('1E-2', 'c', 'centi'),
+    ('1E-1', 'd', 'deci'),
+    ('1E+1', 'da', 'deca'),
+    ('1E+2', 'h', 'hecto'),
+    ('1E+3', 'k', 'kilo'),
+    ('1E+6', 'M', 'mega'),
+    ('1E+9', 'G', 'giga'),
+    ('1E+12', 'T', 'tera'),
+    ('1E+15', 'P', 'peta'),
+    ('1E+18', 'E', 'exa'),
+    ('1E+21', 'Z', 'zetta'),
+    ('1E+24', 'Y', 'yotta'),
+    ('1E+27', 'R', 'ronna'),
+    ('1E+30', 'Q', 'quetta'),
+]
 
 
 class Unit:
@@ -86,24 +116,48 @@ class Converter:
         else:
             raise ValueError(f'Invalid unit name: {dest.name}')
 
-    def find_unit(self, name: str) -> Unit:
-        """ Find a unit matching the specified name or alias.
+    def parse_unit(self, name: str) -> Unit:
+        """ Parse a unit string and return a Unit instance.
 
         Args:
-            name (str): the name of the unit (i.e "meters").
+            name (str): unit name, symbol, or alias.
+
+        Raises:
+            ValueError: if the unit name is invalid.
 
         Returns:
             Unit: the unit instance.
+        """
 
-        Raises:
-            ValueError: if name was not found.
+        # Check if we can find the unit right away
+        if unit:= self.find_unit(name):
+            return unit
+
+        # Otherwise check the metric scale for a matching symbol or name.
+        for scale, symbol, prefix in METRIC_TABLE[1:]:
+            for start in (symbol, prefix):
+                if name.startswith(start):
+                    if unit := self.find_unit(name.removeprefix(start)):
+                        unit.name = prefix + unit.name
+                        unit.scale = (Decimal(scale) * Decimal(unit.scale))
+                        return unit
+
+        raise ValueError(f'Unit not found: {name}')
+
+    def find_unit(self, name: str) -> Optional[Unit]:
+        """ Find a unit matching the specified name or alias.
+
+        Args:
+            name (str): the name of the unit; i.e "meters".
+
+        Returns:
+            Unit: the unit instance, or None if not found.
         """
         for category, units in self.units.items():
             for unitname, properties in units.items():
                 if name == unitname or name in properties['aliases']:
                     return Unit(unitname, category, **properties)
-
-        raise ValueError(f'Invalid unit name: {name}')
+        return None
 
     def load_units(self) -> None:
         """ Load unit categories from json files. """
@@ -203,8 +257,8 @@ def main() -> None:
 
     # Get the source and dest units
     try:
-        source = converter.find_unit(args.source)
-        dest = converter.find_unit(args.dest)
+        source = converter.parse_unit(args.source)
+        dest = converter.parse_unit(args.dest)
     except ValueError as e:
         print_error(e)
 

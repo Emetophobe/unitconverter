@@ -20,6 +20,7 @@ def format_json(filename, indent=2, sort_keys=False):
 
     with open(filename, 'w', encoding='utf-8') as outfile:
         json.dump(data, outfile, indent=indent, sort_keys=sort_keys)
+        outfile.write('\n')  # add trailing newline
 
     new_checksum = file_checksum(filename)
     if old_checksum != new_checksum:

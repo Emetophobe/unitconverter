@@ -7,10 +7,22 @@ from tests import AbstractTestCase, format_decimal
 
 
 class TestConverter(AbstractTestCase):
-    """ Test unit converter. """
+    """ Test converter """
 
-    def test_converter(self) -> None:
-        """ Test all unit conversions. """
+    def test_parse_unit(self) -> None:
+        """ Test unit parsing. """
+
+        unit = self.converter.parse_unit('microinch')
+        self.assertEqual(unit.name, 'microinch')
+
+        unit = self.converter.parse_unit('ml')
+        self.assertEqual(unit.name, 'milliliter')
+
+        with self.assertRaises(ValueError):
+            self.converter.parse_unit('invalid_unit')
+
+    def test_convert(self) -> None:
+        """ Test unit conversions. """
         for category, units in self.converter.units.items():
             # Assert that the unit category exists
             self.assertTrue(category in self.converter.units.keys(),
@@ -34,7 +46,7 @@ class TestConverter(AbstractTestCase):
             self.assert_units(base_unit, expected_values)
 
     def test_format_decimal(self):
-        """ Test format_decimal(). """
+        """ Test formatting decimals. """
         value = Decimal('1785137.3268163479138125')
 
         # Assert decimal to string

@@ -36,6 +36,11 @@ The following unit categories are currently supported:
 * Solid angle (steradian)
 * Plane angle (radian)
 
+Features:
+
+* Automatically parse unit names and apply a metric scaling factor. This even works with imperial units, i.e; "kiloinch" or "µin" for short.
+
+
 ### This script is a work in progress. Bug reports or suggestions are welcome.
 
 

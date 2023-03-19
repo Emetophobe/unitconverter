@@ -1,10 +1,10 @@
 # Copyright (c) 2022-2023 Mike Cunningham
 
-from decimal import Decimal, DecimalException
 from tests import AbstractTestCase, Unit
 
 
 class TestUnits(AbstractTestCase):
+    """ Test unit data. """
 
     VALID_CHARS = '+-.0123456789E'
 

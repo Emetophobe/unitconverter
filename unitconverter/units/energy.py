@@ -27,7 +27,6 @@ btu = Unit(
 # A quad is a quadrillion btus or 1.05506E+18 joules
 quad = Unit(
 	name='quad',
-	symbols='',
 	aliases=['quadrillion btus', 'quadrillion btu'],
 	prefix_scaling='none',  # disable unit scaling
 	factor='1.05506E+18')
@@ -63,7 +62,6 @@ electron_volt = Unit(
 # 1 erg = 1E-7 joules
 erg = Unit(
 	name='erg',
-	symbols='',
 	aliases='ergs',
 	factor='1E-7')
 

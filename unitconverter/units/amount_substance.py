@@ -12,6 +12,5 @@ mole = Unit(
 
 atom = Unit(
 	name='atom',
-	symbols='',
 	aliases='atoms',
 	factor='1.660538863127E-24')

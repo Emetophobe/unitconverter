@@ -19,7 +19,6 @@ phot = Unit(
 # 1 nox is exactly 0.001 lux
 nox = Unit(
 	name='nox',
-	symbols='',
 	factor='0.001')
 
 # 1 watt/m^2 is exactly 683 lux

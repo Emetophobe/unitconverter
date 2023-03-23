@@ -18,13 +18,11 @@ angstrom = Unit(
 
 thou = Unit(
 	name='thou',
-	symbols='',
 	aliases=['thousandth of an inch', 'mils', 'mil'],
 	factor='2.54E-5')
 
 barleycorn = Unit(
 	name='barleycorn',
-	symbols='',
 	aliases='barleycorns',
 	factor='0.0084667')
 
@@ -80,7 +78,6 @@ link = Unit(
 
 rod = Unit(
 	name='rod',
-	symbols='',
 	aliases=['rods', 'perch', 'perches', 'poles', 'pole', 'lugs', 'lug'],
 	factor='5.0292')
 
@@ -164,7 +161,6 @@ imperial_nautical_mile = Unit(
 
 planck_length = Unit(
 	name='planck length',
-	symbols='',
 	factor='1.61605E-35')
 
 astronomical_unit = Unit(
@@ -181,7 +177,6 @@ light_second = Unit(
 
 light_minute = Unit(
 	name='light minute',
-	symbols='',
 	aliases=['light minutes', 'light-minutes', 'light-minute'],
 	factor='2.59020683712E+13')
 
@@ -201,13 +196,11 @@ parsec = Unit(
 
 twip = Unit(
 	name='twip',
-	symbols='',
 	aliases='twips',
 	factor='0.0000176389')
 
 point = Unit(
 	name='point',
-	symbols='',
 	aliases='points',
 	factor='0.0003527778')
 
@@ -215,6 +208,5 @@ point = Unit(
 
 caliber = Unit(
 	name='caliber',
-	symbols='',
 	aliases='calibre',
 	factor='0.000254')

@@ -13,7 +13,6 @@ square_meter = Unit(
 
 are = Unit(
 	name='are',
-	symbols='',
 	aliases='ares',
 	factor='100.0')
 
@@ -25,7 +24,6 @@ acre = Unit(
 
 barn = Unit(
 	name='barn',
-	symbols='',
 	aliases='barns',
 	factor='1.E-28')
 
@@ -125,25 +123,21 @@ us_survey_square_rod = Unit(
 
 arpent = Unit(
 	name='arpent',
-	symbols='',
 	aliases='arpents',
 	factor='3418.8929237')
 
 hide = Unit(
 	name='hide',
-	symbols='',
 	aliases='hides',
 	factor='485000.0')
 
 rood = Unit(
 	name='rood',
-	symbols='',
 	aliases='roods',
 	factor='1011.7141056')
 
 square = Unit(
 	name='square',
-	symbols='',
 	aliases='Squares',
 	factor='9.290304')
 
@@ -155,12 +149,10 @@ township = Unit(
 
 homestead = Unit(
 	name='homestead',
-	symbols='',
 	aliases=['survey homesteads', 'survey homestead'],
 	factor='647497.02758')
 
 section = Unit(
 	name='section',
-	symbols='',
 	aliases=['survey sections', 'survey section'],
 	factor='2589988.1103')

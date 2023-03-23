@@ -84,13 +84,11 @@ foot_per_hour = Unit(
 # The knot is equal to one nautical mile per hour (~0.514 m/s)
 knot = Unit(
 	name='knot',
-	symbols='',
 	aliases='knots',
 	factor='0.5144444444')
 
 imperial_knot = Unit(
 	name='imperial knot',
-	symbols='',
 	aliases='imperial knots',
 	factor='0.5147733333')
 

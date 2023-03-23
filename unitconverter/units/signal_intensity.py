@@ -11,7 +11,6 @@ decibel = Unit(
 
 bel = Unit(
 	name='bel',
-	symbols='',
 	aliases='bels',
 	factor='10')
 

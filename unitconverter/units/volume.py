@@ -55,7 +55,6 @@ acre_foot = Unit(
 
 cup = Unit(
 	name='cup',
-	symbols='',
 	aliases=['cups', 'metric cups', 'metric cup'],
 	factor='0.00025')
 
@@ -73,7 +72,6 @@ teaspoon = Unit(
 
 stere = Unit(
 	name='stere',
-	symbols='',
 	aliases=['steres', 'stères', 'stère'],
 	factor='1')
 
@@ -93,7 +91,6 @@ imperial_gill = Unit(
 
 imperial_cup = Unit(
 	name='imperial cup',
-	symbols='',
 	aliases=['imperial cups', 'impcups', 'impcup'],
 	factor='0.0002841306')
 

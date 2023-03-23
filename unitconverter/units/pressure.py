@@ -12,7 +12,6 @@ pascal = Unit(
 
 bar = Unit(
 	name='bar',
-	symbols='',
 	aliases='bars',
 	factor='1E+5')
 

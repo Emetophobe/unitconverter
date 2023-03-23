@@ -1,24 +1,20 @@
-# Unit Converter
+# Unit Converter (work in progress)
 
 A basic unit converter written in Python.
 
-The following unit categories are currently supported:
 
-* Absorbed dose (gray)
+The following categories are currently supported:
+
+
 * Amount of substance (moles, atoms)
+* Angle (steradian, radian, square degrees)
 * Area (square meters, square miles, acres, hectares, etc..)
 * Bytes (bits, bytes, kilobytes, kibibytes, etc..)
 * Catalytic activity (katal, mol/sec)
-* Dose equivalent (sievert)
-* Electric charge (coulomb)
-* Electric current (amperes)
-* Electric potential (volts)
-* Electrical capacitance (farad)
-* Electrical conductance (siemens)
-* Electrical inductance (henry)
-* Electrical resistance (ohm)
-* Energy (joules, watt hours)
-* Force (newtons, dynes, poundals, etc..)
+* Electrical (ampere, volt, ohm, coulomb, farad, henry, siemens)
+* Energy (joule, calorie, btu, therm, watt seconds, watt hours, etc..)
+* Force (newtons, dynes, poundals, gram force, ton force, etc..)
+* Fuel consumption (mpg, liters/100km, etc..)
 * Frequency (hertz)
 * Illuminance (lux)
 * Length (meters, feet, inches, etc...)
@@ -27,23 +23,30 @@ The following unit categories are currently supported:
 * Magnetic flux (weber, maxwell)
 * Magnetic flux density (tesla, guass, gamma)
 * Mass (grams, pounds, ounces, etc...)
-* Plane angle (radian)
-* Power (watts, joules/second)
+* Power (watts, horsepower, joules/second)
 * Pressure (pascal, bar, psi)
-* Radioactivity (becqueral, curie, rutherford)
+* Radiation (becqueral, curie, rutherford, gray, sievert)
 * Signal intensity (decibel, bel, neper)
-* Solid angle (steradian)
-* Temperature (celsius, fahrenheit, kelvin, and rankine)
+* Temperature (kelvin, celsius, fahrenheit, and rankine)
 * Time (seconds, minutes, hours, days, etc...)
 * Viscosity (poise, pascal-second)
 * Volume (cubic meters, liters, quarts, gallons, cups, etc...)
 
-Features:
+## Features
 
-* Automatically parse unit names and apply a metric scaling factor. This even works with imperial units, i.e; "kiloinch" or "µin" for short.
+Units are automatically scaled based on a scaling option. This even works with imperial units like inches; i.e "kiloinch".
 
+The following unit scaling options are supported:
 
-### This script is a work in progress. Bug reports or suggestions are welcome.
+    si          - use SI prefix table (default option)
+    decimal     - use decimal prefix table
+    binary      - use binary prefix table
+    all         - use SI and binary tables
+    both        - use decimal and binary tables
+    none        - unit doesn't support prefix scaling
+
+Certain units override the default scaling behaviour. For example bytes uses "both" to
+generate decimal prefixes like "kilobytes" and also binary prefixes like "kibibytes".
 
 
 ## Requirements
@@ -117,3 +120,7 @@ Features:
 
     $ python3 convert.py 1 m^3 liters
     1 m^3 = 1000 liters
+
+
+#
+### Note: This script is a work in progress. Bug reports or suggestions are welcome.

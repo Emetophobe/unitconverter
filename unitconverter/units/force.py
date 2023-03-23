@@ -5,10 +5,10 @@ from unitconverter.unit import Unit
 
 # SI unit of force is the Newton
 newton = Unit(
-    name='newton',
-    symbols='N',
-    aliases='newtons',
-    factor='1')
+	name='newton',
+	symbols='N',
+	aliases='newtons',
+	factor='1')
 
 dyne = Unit(
 	name='dyne',

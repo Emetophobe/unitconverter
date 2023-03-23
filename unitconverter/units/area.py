@@ -8,8 +8,8 @@ square_meter = Unit(
 	name='square meter',
 	symbols=['sqm', 'm^2', 'm2'],
 	aliases=['square meters', 'square metres', 'square metre', 'meter^2', 'meter2'],
-    factor='1',
-    power=2)
+	factor='1',
+	power=2)
 
 are = Unit(
 	name='are',

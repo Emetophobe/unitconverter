@@ -8,8 +8,8 @@ cubic_meter = Unit(
 	name='cubic meter',
 	symbols=['m^3', 'm3'],
 	aliases=['cubic meters', 'cubic metres', 'cubic metre', 'meter^3', 'meter3'],
-    factor='1',
-    power=3)
+	factor='1',
+	power=3)
 
 liter = Unit(
 	name='liter',
@@ -104,10 +104,10 @@ imperial_bushel = Unit(
 	factor='0.0363687')
 
 imperial_fluid_ounce = Unit(
-    name='imperial fluid ounce',
-    symbols=['fl oz', 'imp fl oz', 'impfloz'],
-    aliases=['fluid ounces', 'fluid ounce', 'imperial fluid ounces'],
-    factor='2.84131E-5')
+	name='imperial fluid ounce',
+	symbols=['fl oz', 'imp fl oz', 'impfloz'],
+	aliases=['fluid ounces', 'fluid ounce', 'imperial fluid ounces'],
+	factor='2.84131E-5')
 
 imperial_gallon = Unit(
 	name='imperial gallon',

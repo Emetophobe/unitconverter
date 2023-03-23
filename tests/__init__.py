@@ -6,58 +6,58 @@ from unitconverter import Unit, Converter, format_decimal
 
 class AbstractTestCase(TestCase):
 
-    def setUp(self) -> None:
-        """ Initialize converter """
-        self.converter = Converter()
+	def setUp(self) -> None:
+		""" Initialize converter """
+		self.converter = Converter()
 
-    def assert_unit(self,
-                    source: str,
-                    dest: str,
-                    expected: str,
-                    value: str = '1'
-                    ) -> None:
-        """ Assert that a unit conversion gives the expected result.
+	def assert_unit(self,
+					source: str,
+					dest: str,
+					expected: str,
+					value: str = '1'
+					) -> None:
+		""" Assert that a unit conversion gives the expected result.
 
-        Args:
-            source (str):
-                source unit name.
+		Args:
+			source (str):
+				source unit name.
 
-            dest (str):
-                destination unit name.
+			dest (str):
+				destination unit name.
 
-            expected (str, Decimal):
-                expected value.
+			expected (str, Decimal):
+				expected value.
 
-            value (str, Decimal):
-                value to convert. Defaults to '1'.
-        """
-        source: Unit = self.converter.parse_unit(source)
-        dest = self.converter.parse_unit(dest)
+			value (str, Decimal):
+				value to convert. Defaults to '1'.
+		"""
+		source: Unit = self.converter.parse_unit(source)
+		dest = self.converter.parse_unit(dest)
 
-        self.assertEqual(source.category, dest.category, 'Categories are different')
+		self.assertEqual(source.category, dest.category, 'Categories are different')
 
-        expected = Decimal(expected)
-        result = self.converter.convert(value, source, dest)
-        self.assertEqual(expected, result, f'Incorrect conversion for: {dest.name!r}')
+		expected = Decimal(expected)
+		result = self.converter.convert(value, source, dest)
+		self.assertEqual(expected, result, f'Incorrect conversion for: {dest.name!r}')
 
-    def assert_units(self, test_data: dict) -> None:
-        """ Assert that test data converts to the expected values.
+	def assert_units(self, test_data: dict) -> None:
+		""" Assert that test data converts to the expected values.
 
-        Args:
-            source (str):
-                source unit name.
+		Args:
+			source (str):
+				source unit name.
 
-            test_data (dict):
-                dictionary of source units, destination units, and expected values.
-        """
-        for source, items in test_data.items():
-            for dest in items:
-                self.assert_unit(source, **dest)
+			test_data (dict):
+				dictionary of source units, destination units, and expected values.
+		"""
+		for source, items in test_data.items():
+			for dest in items:
+				self.assert_unit(source, **dest)
 
 
 __all__ = [
-    'AbstractTestCase',
-    'Converter',
-    'Unit',
-    'format_decimal'
+	'AbstractTestCase',
+	'Converter',
+	'Unit',
+	'format_decimal'
 ]

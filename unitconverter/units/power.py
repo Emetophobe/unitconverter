@@ -5,10 +5,10 @@ from unitconverter.unit import Unit
 
 # SI unit
 watt = Unit(
-    name='watt',
-    symbols='W',
-    aliases='watts',
-    factor='1')
+	name='watt',
+	symbols='W',
+	aliases='watts',
+	factor='1')
 
 horsepower = Unit(
 	name='horsepower',

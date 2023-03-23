@@ -5,10 +5,10 @@ from unitconverter.unit import Unit
 
 # SI unit of energy is the Joule
 joule = Unit(
-    name='joule',
-    symbols='J',
-    aliases='joules',
-    factor='1')
+	name='joule',
+	symbols='J',
+	aliases='joules',
+	factor='1')
 
 calorie = Unit(
 	name='calorie',
@@ -24,10 +24,10 @@ british_thermal_unit = Unit(
 
 # A quad is a quadrillion btus
 quad = Unit(
-    name='quad',
-    symbols='',
-    aliases='',
-    factor='1E+15')
+	name='quad',
+	symbols='',
+	aliases='',
+	factor='1E+15')
 
 watt_second = Unit(
 	name='watt-second',
@@ -36,10 +36,10 @@ watt_second = Unit(
 	factor='1')
 
 watt_minute = Unit(
-    name='watt-minute',
-    symbols='Wm',
-    aliases=['watt-minutes', 'wattminutes', 'wattminute'],
-    factor='3600')
+	name='watt-minute',
+	symbols='Wm',
+	aliases=['watt-minutes', 'wattminutes', 'wattminute'],
+	factor='3600')
 
 watt_hour = Unit(
 	name='watt-hour',
@@ -54,10 +54,10 @@ therm = Unit(
 	factor='105506000.00')
 
 erg = Unit(
-    name='erg',
-    symbols='',
-    aliases='ergs',
-    factor='1E-7')
+	name='erg',
+	symbols='',
+	aliases='ergs',
+	factor='1E-7')
 
 gram_of_TNT = Unit(
 	name='gram of TNT',

@@ -5,10 +5,10 @@ from unitconverter.unit import Unit
 
 # SI base unit
 second = Unit(
-    name='second',
-    symbols='s',
-    aliases='seconds',
-    factor='1')
+	name='second',
+	symbols='s',
+	aliases='seconds',
+	factor='1')
 
 minute = Unit(
 	name='minute',

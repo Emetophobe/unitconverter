@@ -5,10 +5,10 @@ from unitconverter.unit import Unit
 
 # SI unit of pressure is the Pascal
 pascal = Unit(
-    name='pascal',
-    symbols='Pa',
-    aliases='pascals',
-    factor='1')
+	name='pascal',
+	symbols='Pa',
+	aliases='pascals',
+	factor='1')
 
 bar = Unit(
 	name='bar',
@@ -29,32 +29,31 @@ psi = Unit(
 	factor='6894.76')
 
 torr = Unit(
-    name='torr',
-    symbols='Torr',
-    aliases='torrs',
-    factor='133.3224')
+	name='torr',
+	symbols='Torr',
+	aliases='torrs',
+	factor='133.3224')
 
 meter_of_mercury = Unit(
-    name='meter of mercury',
-    symbols=['mm Hg', 'mmHg'],
-    aliases='meters of mercury',
-    factor='133322.4')
+	name='meter of mercury',
+	symbols=['mm Hg', 'mmHg'],
+	aliases='meters of mercury',
+	factor='133322.4')
 
 inch_of_mercury = Unit(
-    name='inch of mercury',
-    symbols=['in Hg', 'inHg'],
-    aliases='inches of mercury',
-    factor='3386.389')
+	name='inch of mercury',
+	symbols=['in Hg', 'inHg'],
+	aliases='inches of mercury',
+	factor='3386.389')
 
-#  Approximately equal to Earth's average atmospheric pressure at sea level
 standard_atmosphere = Unit(
-    name='standard atmosphere',
-    symbols = ['atm'],
-    aliases=['standard atmospheres'],
-    factor='9.86923E-6')
+	name='standard atmosphere',
+	symbols = ['atm'],
+	aliases=['standard atmospheres'],
+	factor='9.86923E-6')
 
 technical_atmosphere = Unit(
-    name='technical atmosphere',
-    symbols = ['kgf/cm^2', 'kg/cm^2', 'kg/cm2'],
-    aliases=['technical atmospheres', 'kilogram per square centimeter'],
-    factor='1.01972E-5')
+	name='technical atmosphere',
+	symbols = ['kgf/cm^2', 'kg/cm^2', 'kg/cm2'],
+	aliases=['technical atmospheres', 'kilogram per square centimeter'],
+	factor='1.01972E-5')

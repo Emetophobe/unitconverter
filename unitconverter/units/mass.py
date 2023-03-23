@@ -1,17 +1,15 @@
 # Copyright (c) 2022-2023 Mike Cunningham
 
-import sys
 from unitconverter.unit import Unit
-
 
 
 # SI base unit for mass is the kilogram
 # I use gram for convenience
 gram = Unit(
-    name='gram',
-    symbols='g',
-    aliases='grams',
-    factor='1')
+	name='gram',
+	symbols='g',
+	aliases='grams',
+	factor='1')
 
 ounce = Unit(
 	name='ounce',

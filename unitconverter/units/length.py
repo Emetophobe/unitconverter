@@ -5,10 +5,10 @@ from unitconverter.unit import Unit
 
 # SI base unit
 meter = Unit(
-    name='meter',
-    symbols='m',
-    aliases=['meters', 'metres', 'metre'],
-    factor='1')
+	name='meter',
+	symbols='m',
+	aliases=['meters', 'metres', 'metre'],
+	factor='1')
 
 angstrom = Unit(
 	name='angstrom',
@@ -23,10 +23,10 @@ thou = Unit(
 	factor='2.54E-5')
 
 barleycorn = Unit(
-    name='barleycorn',
-    symbols='',
-    aliases='barleycorns',
-    factor='0.0084667')
+	name='barleycorn',
+	symbols='',
+	aliases='barleycorns',
+	factor='0.0084667')
 
 inch = Unit(
 	name='inch',

@@ -5,6 +5,6 @@ from unitconverter.unit import Unit
 
 # SI unit of frequency
 hertz = Unit(
-    name='hertz',
-    symbols='Hz',
-    factor='1')
+	name='hertz',
+	symbols='Hz',
+	factor='1')

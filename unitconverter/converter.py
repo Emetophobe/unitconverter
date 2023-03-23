@@ -4,7 +4,7 @@ from decimal import Decimal
 from typing import Optional
 from unitconverter.unit import Unit
 from unitconverter.units import get_units
-from unitconverter.prefix import get_prefix_table
+from unitconverter.prefix import get_prefixes
 
 
 class Converter:
@@ -50,28 +50,20 @@ class Converter:
             Unit: the unit instance.
         """
 
+        # Check if the unit is in the list
         if unit := self.find_unit(name):
             return unit
 
+        # Check supported prefixes for a matching unit
         for unit in self.units:
-            # Get prefix table based on unit prefix scaling option
-            prefixes = get_prefix_table(unit.scaling)
+            # Get prefix table based on unit scaling option
+            prefixes = get_prefixes(unit.scaling)
 
-            # Check metric prefixes for a matching symbol or name
+            # Generate prefixes and check for a matching unit
             for factor, symbol, prefix in prefixes:
-                # Check symbol
-                if name.startswith(symbol):
-                    if name.removeprefix(symbol) in unit.symbols:
-                        return unit.new_unit(factor, symbol, prefix)
-
-                # Add prefix to last part of name
-                split = name.rsplit(' ', maxsplit=1)
-                split[-1] = split[-1].removeprefix(prefix)
-                base_name = ' '.join(split)
-
-                # Check name and aliases
-                if base_name == unit.name or base_name in unit.aliases:
-                    return unit.new_unit(factor, symbol, prefix)
+                prefix_unit = unit.add_prefix(factor, symbol, prefix)
+                if name in prefix_unit:
+                    return prefix_unit
 
         raise ValueError(f'Invalid unit name: {name}')
 

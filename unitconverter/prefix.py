@@ -1,15 +1,6 @@
 # Copyright (c) 2022-2023 Mike Cunningham
 
-
-# A unit supports one of the following prefix options:
-PREFIX_OPTIONS = [
-    'none',     # don't generate any prefixes
-    'binary',   # generate binary prefixes
-    'decimal',  # generate decimal prefixes
-    'both',     # generate decimal prefixes and binary prefixes
-    'all',      # generate SI prefixes and binary prefixes
-    'si'        # generate SI prefixes [default]
-]
+from unitconverter.units import Unit
 
 
 # SI prefixes
@@ -54,31 +45,78 @@ DECIMAL_PREFIXES = [
     ('1E+30', 'Q', 'quetta'),
 ]
 
-# binary prefixes
+# binary prefixes (i.e kibibyte to yobibyte)
 BINARY_PREFIXES = [
-    ('2E+10', 'Ki', 'kibi'),
-    ('2E+20', 'Mi', 'mebi'),
-    ('2E+30', 'Gi', 'gibi'),
-    ('2E+40', 'Ti', 'tebi'),
-    ('2E+50', 'Pi', 'pebi'),
-    ('2E+60', 'Ei', 'exbi'),
-    ('2E+70', 'Zi', 'zebi'),
-    ('2E+80', 'Yi', 'yobi'),
+    (2 ** 10, 'Ki', 'kibi'),
+    (2 ** 20, 'Mi', 'mebi'),
+    (2 ** 30, 'Gi', 'gibi'),
+    (2 ** 40, 'Ti', 'tebi'),
+    (2 ** 50, 'Pi', 'pebi'),
+    (2 ** 60, 'Ei', 'exbi'),
+    (2 ** 70, 'Zi', 'zebi'),
+    (2 ** 80, 'Yi', 'yobi'),
 ]
 
+# A Unit supports one of the following prefix options:
+PREFIX_OPTIONS = [
+    'si'        # generate SI prefixes (default)
+    'all',      # generate SI prefixes and binary prefixes
+    'binary',   # generate binary prefixes
+    'decimal',  # generate decimal prefixes
+    'both',     # generate decimal prefixes and binary prefixes
+    'none',     # don't generate any prefixes
+]
 
-def get_prefix_table(prefix_option: str) -> list[tuple[str, str, str]]:
-    if not prefix_option:
-        return []
-    elif prefix_option == 'all':
-        return SI_PREFIXES + BINARY_PREFIXES
-    elif prefix_option == 'both':
-        return DECIMAL_PREFIXES + BINARY_PREFIXES
-    elif prefix_option == 'binary':
-        return BINARY_PREFIXES
-    elif prefix_option == 'decimal':
-        return DECIMAL_PREFIXES
-    elif prefix_option == 'si':
-        return SI_PREFIXES
+# Prefix options and their associated prefix tables
+PREFIX_MAP = {
+    'si':       SI_PREFIXES,
+    'all':      SI_PREFIXES + BINARY_PREFIXES,
+    'binary':   BINARY_PREFIXES,
+    'decimal':  DECIMAL_PREFIXES,
+    'both':     DECIMAL_PREFIXES + BINARY_PREFIXES,
+    'none':     None,
+}
+
+
+def get_prefixes(prefix_option: str) -> list[tuple]:
+    """ Get a list of prefixes based on the prefix option (see `PREFIX_OPTIONS`).
+
+    Args:
+        prefix_option (str): the prefix option.
+
+    Raises:
+        ValueError: if the prefix_option is invalid.
+
+    Returns:
+        list[tuple]: a list of prefixes.
+    """
+    if prefixes := PREFIX_MAP.get(prefix_option, None):
+        return prefixes
     else:
         raise ValueError(f'Unsupported prefix option: {prefix_option}')
+
+
+def apply_prefix(prefix: str, unit: Unit) -> Unit:
+    """ Apply prefix to a unit and return a new unit.
+
+    Args:
+        prefix (str): The prefix name or symbol.
+        unit (Unit): the base unit.
+
+    Raises:
+        ValueError: if an argument is invalid.
+
+    Returns:
+        Unit: a new prefixed unit.
+    """
+    # Get prefix table from unit scaling option
+    prefixes = get_prefixes(unit.scaling)
+    if not prefixes:
+        raise ValueError(f'Unit {unit.name!r} does not support prefix scaling.')
+
+    # Create a new unit from prefix
+    for factor, symbol, name in prefixes:
+        if prefix in (symbol, name):
+            return unit.add_prefix(factor, symbol, name)
+
+    raise ValueError(f'Unit {unit.name!r} does not support prefix {name!r}.')

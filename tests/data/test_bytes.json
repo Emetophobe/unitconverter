@@ -1,32 +1,120 @@
 {
-  "byte": "1",
-  "bit": "8",
-  "kilobyte": "1E-3",
-  "kibibyte": "9.765625E-4",
-  "kilobit": "0.008",
-  "megabyte": "1E-6",
-  "mebibyte": "9.532888465204957102001906578E-7",
-  "megabit": "0.000008",
-  "gigabyte": "1E-9",
-  "gibibyte": "9.310986964618249534450651769E-10",
-  "gigabit": "8E-9",
-  "terabyte": "1E-12",
-  "tebibyte": "9.090909090909090909090909091E-13",
-  "terabit": "8E-12",
-  "petabyte": "1E-15",
-  "pebibyte": "8.880994671403197158081705151E-16",
-  "petabit": "8E-15",
-  "exabyte": "1E-18",
-  "exbibyte": "8.673026886383347788378143972E-19",
-  "exabit": "8E-18",
-  "zettabyte": "1E-21",
-  "zebibyte": "8.467400508044030482641828959E-22",
-  "zettabit": "8E-21",
-  "yottabyte": "1E-24",
-  "yobibyte": "8.271298593879239040529363110E-25",
-  "yottabit": "8E-24",
-  "ronnabyte": "1E-27",
-  "ronnabit": "8E-27",
-  "quettabyte": "1E-30",
-  "quettabit": "8E-30"
+  "byte": [
+    {
+      "dest": "bit",
+      "expected": "8"
+    },
+    {
+      "dest": "kilobyte",
+      "expected": "1E-3"
+    },
+    {
+      "dest": "kibibyte",
+      "expected": "9.765625E-4"
+    },
+    {
+      "dest": "kilobit",
+      "expected": "0.008"
+    },
+    {
+      "dest": "megabyte",
+      "expected": "1E-6"
+    },
+    {
+      "dest": "mebibyte",
+      "expected": "9.532888465204957102001906578E-7"
+    },
+    {
+      "dest": "megabit",
+      "expected": "0.000008"
+    },
+    {
+      "dest": "gigabyte",
+      "expected": "1E-9"
+    },
+    {
+      "dest": "gibibyte",
+      "expected": "9.310986964618249534450651769E-10"
+    },
+    {
+      "dest": "gigabit",
+      "expected": "8E-9"
+    },
+    {
+      "dest": "terabyte",
+      "expected": "1E-12"
+    },
+    {
+      "dest": "tebibyte",
+      "expected": "9.090909090909090909090909091E-13"
+    },
+    {
+      "dest": "terabit",
+      "expected": "8E-12"
+    },
+    {
+      "dest": "petabyte",
+      "expected": "1E-15"
+    },
+    {
+      "dest": "pebibyte",
+      "expected": "8.880994671403197158081705151E-16"
+    },
+    {
+      "dest": "petabit",
+      "expected": "8E-15"
+    },
+    {
+      "dest": "exabyte",
+      "expected": "1E-18"
+    },
+    {
+      "dest": "exbibyte",
+      "expected": "8.673026886383347788378143972E-19"
+    },
+    {
+      "dest": "exabit",
+      "expected": "8E-18"
+    },
+    {
+      "dest": "zettabyte",
+      "expected": "1E-21"
+    },
+    {
+      "dest": "zebibyte",
+      "expected": "8.467400508044030482641828959E-22"
+    },
+    {
+      "dest": "zettabit",
+      "expected": "8E-21"
+    },
+    {
+      "dest": "yottabyte",
+      "expected": "1E-24"
+    },
+    {
+      "dest": "yobibyte",
+      "expected": "8.271298593879239040529363110E-25"
+    },
+    {
+      "dest": "yottabit",
+      "expected": "8E-24"
+    },
+    {
+      "dest": "ronnabyte",
+      "expected": "1E-27"
+    },
+    {
+      "dest": "ronnabit",
+      "expected": "8E-27"
+    },
+    {
+      "dest": "quettabyte",
+      "expected": "1E-30"
+    },
+    {
+      "dest": "quettabit",
+      "expected": "8E-30"
+    }
+  ]
 }

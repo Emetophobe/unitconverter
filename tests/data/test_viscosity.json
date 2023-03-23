@@ -1,0 +1,8 @@
+{
+  "poise": [
+    {
+      "dest": "pascal-second",
+      "expected": "10"
+    }
+  ]
+}

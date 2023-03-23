@@ -1,0 +1,32 @@
+{
+  "meter per liter": [
+    {
+      "dest": "liter per 100km",
+      "expected": "0.00001"
+    },
+    {
+      "dest": "meter per UK gallon",
+      "expected": "4.546099293920496959062811375"
+    },
+    {
+      "dest": "meter per US gallon",
+      "expected": "3.785411783400294315160493488"
+    },
+    {
+      "dest": "mile per UK gallon",
+      "expected": "0.002824809362796735277425516204"
+    },
+    {
+      "dest": "mile per US gallon",
+      "expected": "0.002352145832947556915210840796"
+    },
+    {
+      "dest": "UK gallon per mile",
+      "expected": "0.002824809362796735277425516204"
+    },
+    {
+      "dest": "US gallon per mile",
+      "expected": "0.002352145832947556915210840796"
+    }
+  ]
+}

@@ -4,15 +4,10 @@ A basic unit converter written in Python.
 
 The following unit categories are currently supported:
 
-* Area (square meters, square miles, acres, hectares, etc..)
-* Bytes (bits, bytes, kilobytes, kibibytes, etc..)
-* Length (meters, feet, inches, etc...)
-* Mass (grams, pounds, ounces, etc...)
-* Temperature (celsius, fahrenheit, kelvin, and rankine)
-* Time (seconds, minutes, hours, days, etc...)
-* Volume (cubic meters, liters, quarts, gallons, cups, etc...)
 * Absorbed dose (gray)
 * Amount of substance (moles, atoms)
+* Area (square meters, square miles, acres, hectares, etc..)
+* Bytes (bits, bytes, kilobytes, kibibytes, etc..)
 * Catalytic activity (katal, mol/sec)
 * Dose equivalent (sievert)
 * Electric charge (coulomb)
@@ -26,15 +21,22 @@ The following unit categories are currently supported:
 * Force (newtons, dynes, poundals, etc..)
 * Frequency (hertz)
 * Illuminance (lux)
+* Length (meters, feet, inches, etc...)
 * Luminous flux (lumens)
 * Luminous intensity (candela)
 * Magnetic flux (weber, maxwell)
 * Magnetic flux density (tesla, guass, gamma)
-* Power (watts, joules per second)
+* Mass (grams, pounds, ounces, etc...)
+* Plane angle (radian)
+* Power (watts, joules/second)
 * Pressure (pascal, bar, psi)
 * Radioactivity (becqueral, curie, rutherford)
+* Signal intensity (decibel, bel, neper)
 * Solid angle (steradian)
-* Plane angle (radian)
+* Temperature (celsius, fahrenheit, kelvin, and rankine)
+* Time (seconds, minutes, hours, days, etc...)
+* Viscosity (poise, pascal-second)
+* Volume (cubic meters, liters, quarts, gallons, cups, etc...)
 
 Features:
 

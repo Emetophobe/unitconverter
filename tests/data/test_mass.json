@@ -1,39 +1,52 @@
 {
-  "gram": "1",
-  "quectogram": "1E+30",
-  "rontogram": "1E+27",
-  "yoctogram": "1E+24",
-  "zeptogram": "1E+21",
-  "attogram": "1E+18",
-  "femtogram": "1E+15",
-  "picogram": "1E+12",
-  "nanogram": "1E+9",
-  "microgram": "1E+6",
-  "milligram": "1E+3",
-  "centigram": "1E+2",
-  "decigram": "1E+1",
-  "decagram": "1E-1",
-  "hectogram": "1E-2",
-  "kilogram": "1E-3",
-  "megagram": "1E-6",
-  "gigagram": "1E-9",
-  "teragram": "1E-12",
-  "petagram": "1E-15",
-  "exagram": "1E-18",
-  "zettagram": "1E-21",
-  "yottagram": "1E-24",
-  "ronnagram": "1E-27",
-  "quettagram": "1E-30",
-  "ounce": "0.03527396583786956534008335944",
-  "pound": "0.002204624420183777491666519692",
-  "stone": "0.0001574731232746850931217314485",
-  "ton (UK)": "9.842065361352906051876148631E-7",
-  "ton (US)": "0.000001102311310924387903614869007",
-  "tonne": "0.000001",
-  "carat": "5",
-  "grain": "15.43236073451864152014926179",
-  "drachm": "0.5643818607669949487823461354",
-  "pennyweight": "0.6430149313725596104420069206",
-  "troy ounce": "0.03215072258749015384120758114",
-  "troy pound": "0.002679226882290846153433965095"
+  "gram": [
+    {
+      "dest": "ounce",
+      "expected": "0.03527396583786956534008335944"
+    },
+    {
+      "dest": "pound",
+      "expected": "0.002204624420183777491666519692"
+    },
+    {
+      "dest": "stone",
+      "expected": "0.0001574731232746850931217314485"
+    },
+    {
+      "dest": "imperial ton",
+      "expected": "9.842065361352906051876148631E-7"
+    },
+    {
+      "dest": "US ton",
+      "expected": "0.000001102311310924387903614869007"
+    },
+    {
+      "dest": "tonne",
+      "expected": "0.000001"
+    },
+    {
+      "dest": "carat",
+      "expected": "5"
+    },
+    {
+      "dest": "grain",
+      "expected": "15.43236073451864152014926179"
+    },
+    {
+      "dest": "drachm",
+      "expected": "0.5643818607669949487823461354"
+    },
+    {
+      "dest": "pennyweight",
+      "expected": "0.6430149313725596104420069206"
+    },
+    {
+      "dest": "troy ounce",
+      "expected": "0.03215072258749015384120758114"
+    },
+    {
+      "dest": "troy pound",
+      "expected": "0.002679226882290846153433965095"
+    }
+  ]
 }

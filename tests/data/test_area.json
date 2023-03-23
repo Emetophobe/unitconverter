@@ -1,52 +1,112 @@
 {
-  "square meter": "1",
-  "square quectometer": "1E+60",
-  "square rontometer": "1E+54",
-  "square yoctometer": "1E+48",
-  "square zeptometer": "1E+42",
-  "square attometer": "1E+36",
-  "square femtometer": "1E+30",
-  "square picometer": "1E+24",
-  "square nanometer": "1E+18",
-  "square micrometer": "1E+12",
-  "square millimeter": "1E+6",
-  "square centimeter": "1E+4",
-  "square decimeter": "1E+2",
-  "square decameter": "1E-2",
-  "square hectometer": "1E-4",
-  "square kilometer": "1E-6",
-  "square megameter": "1E-12",
-  "square gigameter": "1E-18",
-  "square terameter": "1E-24",
-  "square petameter": "1E-30",
-  "square exameter": "1E-36",
-  "square zettameter": "1E-42",
-  "square yottameter": "1E-48",
-  "square ronnameter": "1E-54",
-  "square quettameter": "1E-60",
-  "are": "1E-2",
-  "barn": "1E+28",
-  "hectare": "1E-4",
-  "acre (imperial)": "0.0002471053814671653422482439292",
-  "circular mil": "1973525241.769719368993170121",
-  "square mil": "1550003100.006200012400024800",
-  "circular inch": "1973.525241769719368993170121",
-  "square inch": "1550.003100006200012400024800",
-  "square foot": "10.76391041670972230833350556",
-  "square yard": "1.195990046301080256481500617",
-  "square mile": "3.861021585424458472628811394E-7",
-  "square nautical mile": "2.915451895043731778425655977E-7",
-  "square chain": "0.002471053814671653422482439292",
-  "square rod": "0.03953686103474645475971902867",
-  "acre (US survey)": "0.0002471045524071689972744367869",
-  "square foot (US survey)": "10.76386736114295424114588269",
-  "square mile (US survey)": "3.861006141382661958709651829E-7",
-  "square rod (US survey)": "0.03953686103474645475971902867",
-  "arpent": "0.0002924923424971666947558226624",
-  "hide": "0.000002061855670103092783505154639",
-  "rood": "0.0009884215258686613689929757168",
-  "square": "0.1076391041670972230833350556",
-  "township": "1.072505995952342722966012717E-8",
-  "homestead": "0.000001544408634179324181168776200",
-  "section": "3.861021585478125428288766303E-7"
+  "square meter": [
+    {
+      "dest": "quectometer^2",
+      "expected": "1E+60"
+    },
+    {
+      "dest": "quettameter^2",
+      "expected": "1E-60"
+    },
+    {
+      "dest": "are",
+      "expected": "1E-2"
+    },
+    {
+      "dest": "barn",
+      "expected": "1E+28"
+    },
+    {
+      "dest": "hectare",
+      "expected": "1E-4"
+    },
+    {
+      "dest": "imperial acre",
+      "expected": "0.0002471053814671653422482439292"
+    },
+    {
+      "dest": "circular mil",
+      "expected": "1973525241.769719368993170121"
+    },
+    {
+      "dest": "square mil",
+      "expected": "1550003100.006200012400024800"
+    },
+    {
+      "dest": "circular inch",
+      "expected": "1973.525241769719368993170121"
+    },
+    {
+      "dest": "square inch",
+      "expected": "1550.003100006200012400024800"
+    },
+    {
+      "dest": "square foot",
+      "expected": "10.76391041670972230833350556"
+    },
+    {
+      "dest": "square yard",
+      "expected": "1.195990046301080256481500617"
+    },
+    {
+      "dest": "square mile",
+      "expected": "3.861021585424458472628811394E-7"
+    },
+    {
+      "dest": "square nautical mile",
+      "expected": "2.915451895043731778425655977E-7"
+    },
+    {
+      "dest": "square chain",
+      "expected": "0.002471053814671653422482439292"
+    },
+    {
+      "dest": "square rod",
+      "expected": "0.03953686103474645475971902867"
+    },
+    {
+      "dest": "US survey acre",
+      "expected": "0.0002471045524071689972744367869"
+    },
+    {
+      "dest": "US survey square foot",
+      "expected": "10.76386736114295424114588269"
+    },
+    {
+      "dest": "US survey square mile",
+      "expected": "3.861006141382661958709651829E-7"
+    },
+    {
+      "dest": "US survey square rod",
+      "expected": "0.03953686103474645475971902867"
+    },
+    {
+      "dest": "arpent",
+      "expected": "0.0002924923424971666947558226624"
+    },
+    {
+      "dest": "hide",
+      "expected": "0.000002061855670103092783505154639"
+    },
+    {
+      "dest": "rood",
+      "expected": "0.0009884215258686613689929757168"
+    },
+    {
+      "dest": "square",
+      "expected": "0.1076391041670972230833350556"
+    },
+    {
+      "dest": "township",
+      "expected": "1.072505995952342722966012717E-8"
+    },
+    {
+      "dest": "homestead",
+      "expected": "0.000001544408634179324181168776200"
+    },
+    {
+      "dest": "section",
+      "expected": "3.861021585478125428288766303E-7"
+    }
+  ]
 }

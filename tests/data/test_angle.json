@@ -1,0 +1,22 @@
+{
+  "steradian": [
+    {
+      "dest": "square degree",
+      "expected": "3282.810873982738980424598758"
+    },
+    {
+      "dest": "spat",
+      "expected": "0.07957747154568912759441270677"
+    }
+  ],
+  "radian": [
+    {
+      "dest": "quectoradian",
+      "expected": "1E+30"
+    },
+    {
+      "dest": "quettaradian",
+      "expected": "1E-30"
+    }
+  ]
+}

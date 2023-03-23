@@ -18,9 +18,16 @@ calorie = Unit(
 
 british_thermal_unit = Unit(
 	name='british thermal unit',
-	symbols=['btus', 'btu'],
+	symbols=['btu', 'btus'],
 	aliases='british thermal units',
 	factor='1055.06')
+
+# A quad is a quadrillion btus
+quad = Unit(
+    name='quad',
+    symbols='',
+    aliases='',
+    factor='1E+15')
 
 watt_second = Unit(
 	name='watt-second',

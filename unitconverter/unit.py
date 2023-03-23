@@ -135,7 +135,7 @@ def string_to_list(argument: Optional[Union[str, list[str]]]) -> list[str]:
 	""" Parse argument and return a list of strings.
 
 	Args:
-		argument (str | list[str], optional): a string, list of strings, or None.
+		argument (str | list[str], optional): a str, list of str, or None.
 
 	Raises:
 		TypeError: if the argument is an invalid type.

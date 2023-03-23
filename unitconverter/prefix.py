@@ -57,7 +57,7 @@ BINARY_PREFIXES = [
 	(2 ** 80, 'Yi', 'yobi'),
 ]
 
-# A Unit supports one of the following prefix options:
+# A Unit has one of the following prefix options:
 PREFIX_OPTIONS = [
 	'si'        # generate SI prefixes (default)
 	'all',      # generate SI prefixes and binary prefixes
@@ -66,16 +66,6 @@ PREFIX_OPTIONS = [
 	'both',     # generate decimal prefixes and binary prefixes
 	'none',     # don't generate any prefixes
 ]
-
-# Prefix options and their associated prefix tables
-PREFIX_MAP = {
-	'si':       SI_PREFIXES,
-	'all':      SI_PREFIXES + BINARY_PREFIXES,
-	'binary':   BINARY_PREFIXES,
-	'decimal':  DECIMAL_PREFIXES,
-	'both':     DECIMAL_PREFIXES + BINARY_PREFIXES,
-	'none':     None,
-}
 
 
 def get_prefixes(prefix_option: str) -> list[tuple]:
@@ -90,8 +80,18 @@ def get_prefixes(prefix_option: str) -> list[tuple]:
 	Returns:
 		list[tuple]: a list of prefixes.
 	"""
-	if prefixes := PREFIX_MAP.get(prefix_option, None):
-		return prefixes
+	if prefix_option is None or prefix_option == 'none':
+		return []
+	elif prefix_option == 'si':
+		return SI_PREFIXES
+	elif prefix_option == 'all':
+		return SI_PREFIXES + BINARY_PREFIXES
+	elif prefix_option == 'both':
+		return DECIMAL_PREFIXES + BINARY_PREFIXES
+	elif prefix_option == 'binary':
+		return BINARY_PREFIXES
+	elif prefix_option == 'decimal':
+		return DECIMAL_PREFIXES
 	else:
 		raise ValueError(f'Unsupported prefix option: {prefix_option}')
 

@@ -1,0 +1,56 @@
+{
+  "meter per second": [
+    {
+      "dest": "meter per minute",
+      "expected": "59.99999988000000023999999952"
+    },
+    {
+      "dest": "meter per hour",
+      "expected": "3599.999712000023039998156800"
+    },
+    {
+      "dest": "kilometer per hour",
+      "expected": "3.599999999712000000023040000"
+    },
+    {
+      "dest": "mile per hour",
+      "expected": "2.236936292054402290622763064"
+    },
+    {
+      "dest": "inch per second",
+      "expected": "39.37007874015748031496062992"
+    },
+    {
+      "dest": "inch per minute",
+      "expected": "2362.206584414633397349131771"
+    },
+    {
+      "dest": "inch per hour",
+      "expected": "141732.1941844446082238688354"
+    },
+    {
+      "dest": "foot per second",
+      "expected": "3.280839895013123359580052493"
+    },
+    {
+      "dest": "foot per minute",
+      "expected": "196.8503937007874015748031496"
+    },
+    {
+      "dest": "foot per hour",
+      "expected": "11811.01897203977478749024115"
+    },
+    {
+      "dest": "knot",
+      "expected": "1.943844492608539481002897579"
+    },
+    {
+      "dest": "imperial knot",
+      "expected": "1.942602569541455305217924737"
+    },
+    {
+      "dest": "mach",
+      "expected": "0.003389297412203639834276913733"
+    }
+  ]
+}

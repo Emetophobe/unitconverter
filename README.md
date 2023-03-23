@@ -27,6 +27,7 @@ The following categories are currently supported:
 * Pressure (pascal, bar, psi)
 * Radiation (becqueral, curie, rutherford, gray, sievert)
 * Signal intensity (decibel, bel, neper)
+* Speed (km/hour, miles/hour, meters/second, inches/second, etc...)
 * Temperature (kelvin, celsius, fahrenheit, and rankine)
 * Time (seconds, minutes, hours, days, etc...)
 * Viscosity (poise, pascal-second)

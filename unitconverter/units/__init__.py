@@ -23,6 +23,7 @@ from unitconverter.units import pressure
 from unitconverter.units import radiation
 from unitconverter.units import si_units
 from unitconverter.units import signal_intensity
+from unitconverter.units import speed
 from unitconverter.units import temperature
 from unitconverter.units import time
 from unitconverter.units import viscosity
@@ -52,6 +53,7 @@ modules = {
 	'radiation': radiation,
 	'SI units': si_units,
 	'signal intensity': signal_intensity,
+	'speed': speed,
 	'temperature': temperature,
 	'time': time,
 	'viscosity': viscosity,
@@ -109,5 +111,6 @@ all_units = find_dupes(get_units())
 
 
 __all__ = [
-	'get_units'
-].extend(modules.keys())
+	'get_units',
+	'find_dupes'
+]

@@ -16,7 +16,7 @@ calorie = Unit(
 	aliases='calories',
 	factor='4.184')
 
-british_thermal_unit = Unit(
+btu = Unit(
 	name='british thermal unit',
 	symbols=['btu', 'btus'],
 	aliases='british thermal units',

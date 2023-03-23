@@ -5,7 +5,7 @@ from unitconverter.units import amount_substance
 from unitconverter.units import angle
 from unitconverter.units import area
 from unitconverter.units import catalytic_activity
-from unitconverter.units import digital
+from unitconverter.units import data_storage
 from unitconverter.units import electrical
 from unitconverter.units import energy
 from unitconverter.units import force
@@ -35,7 +35,7 @@ modules = {
 	'angle': angle,
 	'area': area,
 	'catalytic activity': catalytic_activity,
-	'digital': digital,
+	'data storage': data_storage,
 	'electrical': electrical,
 	'energy': energy,
 	'force': force,

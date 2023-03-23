@@ -21,8 +21,8 @@ square_degree = Unit(
 	symbols=['deg^2', 'deg2'],
 	aliases='square degrees',
 	category='solid angle',
-	factor='3.04617E-4',
-	prefix_scaling='none')
+	prefix_scaling='none',	# disable prefix scaling
+	factor='3.04617E-4')
 
 spat = Unit(
 	name='spat',
@@ -47,7 +47,6 @@ degree = Unit(
 	name='degree',
 	symbols='°',
 	aliases='degrees',
-	factor='0.0174532925',
 	category='plane angle',
-	prefix_scaling='none',
-)
+	prefix_scaling='none',	# disable prefix scaling
+	factor='0.0174532925')

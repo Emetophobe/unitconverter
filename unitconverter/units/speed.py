@@ -30,7 +30,7 @@ kilometer_per_hour = Unit(
 	symbols=['kph', 'km/hr'],
 	aliases=['kilometers per hour', 'km/hour'],
 	factor='0.2777777778',
-	scaling='none')
+	prefix_scaling='none')
 
 # 1 mph = 0.44704 m/s
 mile_per_hour = Unit(
@@ -94,7 +94,7 @@ imperial_knot = Unit(
 	aliases='imperial knots',
 	factor='0.5147733333')
 
-# Mach 1
+# Mach 1 (speed of sound)
 mach = Unit(
 	name='mach',
 	symbols='Ma',

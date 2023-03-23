@@ -57,7 +57,7 @@ class Converter:
 		# Check supported prefixes for a matching unit
 		for unit in self.units:
 			# Get prefix table based on unit scaling option
-			prefixes = get_prefixes(unit.scaling)
+			prefixes = get_prefixes(unit.prefix_scaling)
 
 			# Generate prefixes and check for a matching unit
 			for factor, symbol, prefix in prefixes:

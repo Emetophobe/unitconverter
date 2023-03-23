@@ -110,7 +110,7 @@ def apply_prefix(prefix: str, unit: Unit) -> Unit:
 		Unit: a new prefixed unit.
 	"""
 	# Get prefix table from unit scaling option
-	prefixes = get_prefixes(unit.scaling)
+	prefixes = get_prefixes(unit.prefix_scaling)
 	if not prefixes:
 		raise ValueError(f'Unit {unit.name!r} does not support prefix scaling.')
 

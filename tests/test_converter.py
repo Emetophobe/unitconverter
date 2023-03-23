@@ -61,5 +61,9 @@ class TestConverter(AbstractTestCase):
         unit = self.converter.parse_unit('ml')
         self.assertEqual(unit.name, 'milliliter')
 
+        unit = self.converter.parse_unit('cubic kilometer')
+        self.assertEqual(unit.name, 'cubic kilometer')
+        self.assertTrue('km^3' in unit.symbols)
+
         with self.assertRaises(ValueError):
             self.converter.parse_unit('invalid_unit')

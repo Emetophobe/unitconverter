@@ -16,7 +16,7 @@ The following categories are currently supported:
 * Force (newtons, dynes, poundals, gram force, ton force, etc..)
 * Fuel consumption (mpg, liters/100km, etc..)
 * Frequency (hertz)
-* Illuminance (lux)
+* Illuminance (lux, nox, phot, watt/m^2, meter candle, foot candle)
 * Length (meters, feet, inches, etc...)
 * Luminous flux (lumens)
 * Luminous intensity (candela)

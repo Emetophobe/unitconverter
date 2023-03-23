@@ -13,5 +13,6 @@ katal = Unit(
 mole_per_second = Unit(
 	name='mole per second',
 	symbols='mol/s',
-	aliases='moles per second',
+	aliases=['moles per second', 'moles/s', 'mole/s'],
+	prefix_index=0,	 # prefix first word
 	factor='1')

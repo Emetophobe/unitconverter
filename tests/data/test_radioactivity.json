@@ -13,6 +13,12 @@
       "expected": "27.02702702702702702702702703"
     }
   ],
+  "gray": [
+    {
+      "dest": "US rad",
+      "expected": "100"
+    }
+  ],
   "sievert": [
     {
       "dest": "quectosievert",

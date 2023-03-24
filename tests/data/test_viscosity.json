@@ -1,7 +1,7 @@
 {
   "poise": [
     {
-      "dest": "pascal-second",
+      "dest": "pascal second",
       "expected": "10"
     }
   ]

@@ -14,29 +14,14 @@ def file_checksum(filename, algorithm='sha256'):
 		return hashlib.file_digest(infile, algorithm).hexdigest()
 
 
-def format_files(paths: list[str], indent: int = 2, sort_keys: bool = False):
-	""" Format json files in the specified path(s).
+def format_files(indent: int = 2, sort_keys: bool = False):
+	""" Format json test files.
 
 	Args:
-		paths (list[str]): list of json files or directories.
 		indent (int, optional): json indent level. Defaults to 2.
 		sort_keys (bool, optional): sort json keys. Defaults to False.
 	"""
-
-	# Get unique json files from paths
-	uniques = set()
-	for path in paths:
-		path = Path(path)
-		if path.is_file() and path.name.endswith('.json'):
-			uniques.add(path.resolve())
-		elif path.is_dir():
-			for path in path.rglob('*.json'):
-				uniques.add(path.resolve())
-		else:
-			raise FileNotFoundError(path)
-
-	# Format all selected json files
-	for path in uniques:
+	for path in Path('tests/data').glob('*.json'):
 		# Load json
 		old_checksum = file_checksum(path)
 		with open(path, 'r', encoding='utf-8') as infile:
@@ -58,11 +43,6 @@ if __name__ == '__main__':
 	parser = argparse.ArgumentParser()
 
 	parser.add_argument(
-		'paths',
-		help='file or directory paths',
-		nargs='+')
-
-	parser.add_argument(
 		'-i', '--indent',
 		help='specify an indent level (default: %(default)s)',
 		default=2,
@@ -79,4 +59,4 @@ if __name__ == '__main__':
 	try:
 		format_files(**vars(args))
 	except OSError as e:
-		print('Error:', e)
+		print('Invalid path:', e)

@@ -28,7 +28,7 @@ meter_per_hour = Unit(
 kilometer_per_hour = Unit(
 	name='kilometer per hour',
 	symbols=['kph', 'km/hr'],
-	aliases=['kilometers per hour', 'km/hour'],
+	aliases=['kilometers per hour', 'kilometres per hour', 'kilometre per hour'],
 	factor='0.2777777778',
 	prefix_scaling='none')
 

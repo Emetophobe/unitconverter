@@ -1,0 +1,30 @@
+{
+  "byte": [
+    {
+      "dest": "bit",
+      "expected": "8"
+    },
+    {
+      "dest": "kilobyte",
+      "expected": "0.001"
+    }
+  ],
+  "bit": [
+    {
+      "dest": "byte",
+      "expected": "0.125"
+    }
+  ],
+  "kilobyte": [
+    {
+      "dest": "byte",
+      "expected": "1000"
+    }
+  ],
+  "kibibyte": [
+    {
+      "dest": "byte",
+      "expected": "1024"
+    }
+  ]
+}

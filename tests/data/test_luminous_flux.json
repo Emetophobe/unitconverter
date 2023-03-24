@@ -7,6 +7,10 @@
     {
       "dest": "quettalumen",
       "expected": "1E-30"
+    },
+    {
+      "dest": "candela-steradian",
+      "expected": "1"
     }
   ]
 }

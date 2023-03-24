@@ -18,7 +18,7 @@ The following categories are currently supported:
 * Frequency (hertz)
 * Illuminance (lux, nox, phot, watt/m^2, meter candle, foot candle)
 * Length (meters, feet, inches, etc...)
-* Luminous flux (lumens)
+* Luminous flux (lumens, candela-steradian)
 * Luminous intensity (candela)
 * Magnetic flux (weber, maxwell)
 * Magnetic flux density (tesla, guass, gamma)

@@ -3,7 +3,7 @@
 from unitconverter.unit import Unit
 
 
-# Base unit
+# byte is the base unit for data storage
 byte = Unit(
 	name='byte',
 	symbols='B',
@@ -11,6 +11,7 @@ byte = Unit(
 	factor='1',
 	prefix_scaling='both')     # Scale bytes by decimal and binary prefixes
 
+# 1 bit = 0.125 bytes
 bit = Unit(
 	name='bit',
 	symbols='b',

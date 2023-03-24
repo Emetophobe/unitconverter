@@ -4,20 +4,22 @@ from decimal import Decimal
 from unitconverter.unit import Unit
 
 
-# SI base unit
+# The kelvin is the SI base unit of temperature
 kelvin = Unit(
 	name='kelvin',
 	symbols='K',
 	aliases='kelvins',
 	factor='1')
 
-# SI derived unit
+# Celsius is a SI derived unit of temperature
+# 1 celsius = 274.15 kelvin
 celsius = Unit(
 	name='celsius',
 	symbols='°C', offset='273.15',
 	factor='1')
 
 # Formula for °F to K: (32°F − 32) × 5/9 + 273.15 = 273.15K
+# 1 fahrenheit = roughly 255.928 kelvin
 fahrenheit = Unit(
 	name='fahrenheit',
 	symbols=['°F', 'f'],
@@ -25,6 +27,7 @@ fahrenheit = Unit(
 	offset=Decimal('273.15') - Decimal('32') / Decimal('1.8'))
 
 # Formula for °R to K: 1°R × 5/9
+# 1 rankine = roughly 0.555556 kelvin
 rankine = Unit(
 	name='rankine',
 	symbols=['°R', '°Ra', 'R', 'r'],

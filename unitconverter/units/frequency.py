@@ -3,7 +3,8 @@
 from unitconverter.unit import Unit
 
 
-# SI unit of frequency
+# The hertz is the SI unit of frequency
+# 1 hertz is equal to 1 cycle/second
 hertz = Unit(
 	name='hertz',
 	symbols='Hz',

@@ -80,7 +80,6 @@ class Unit:
 		Returns:
 			Unit: a new unit instance.
 		"""
-
 		# Update names and factor
 		name = self._add_prefix(prefix, self.name)
 		symbols = [self._add_prefix(symbol, name) for name in self.symbols]

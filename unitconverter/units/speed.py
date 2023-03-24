@@ -87,6 +87,7 @@ knot = Unit(
 	aliases='knots',
 	factor='0.5144444444')
 
+# 1 imperial knot = 0.5147733333 m/s
 imperial_knot = Unit(
 	name='imperial knot',
 	aliases='imperial knots',

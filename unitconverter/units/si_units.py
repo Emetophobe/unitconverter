@@ -2,7 +2,6 @@
 
 """
 	SI base units and derived units are aliased here for convenience.
-
 """
 
 import sys

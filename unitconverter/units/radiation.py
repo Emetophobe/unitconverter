@@ -3,10 +3,10 @@
 from unitconverter.unit import Unit
 
 
-### Radioactivity units (becquerel, curie, rutherford)
+### Radioactivity (becquerel, curie, rutherford)
 
 
-# SI unit
+# The becquerel is the SI unit of radioactivity
 becquerel = Unit(
 	name='becquerel',
 	symbols='Bq',
@@ -14,6 +14,7 @@ becquerel = Unit(
 	category='radioactivity',
 	factor='1')
 
+# 1 curie = 3.7E+10 becquerel
 curie = Unit(
 	name='curie',
 	symbols='Ci',
@@ -21,17 +22,19 @@ curie = Unit(
 	category='radioactivity',
 	factor='3.7E+10')
 
+# 1 rutherford = 1E+6 becquerel
 rutherford = Unit(
 	name='rutherford',
 	symbols='Rd',
 	aliases='rutherfords',
 	category='radioactivity',
-	factor='1E+6',)
+	factor='1E+6')
 
 
-### Absorbed dose units (gray, rad)
+### Absorbed dose (gray, rad)
 
-# SI unit
+
+# The gray is the SI unit of absorbed dose
 gray = Unit(
 	name='gray',
 	symbols='Gy',
@@ -39,6 +42,7 @@ gray = Unit(
 	category='absorbed dose',
 	factor='1')
 
+# 1 rad = 0.01 gray
 us_rad = Unit(
 	name='US rad',
 	symbols='usrad',  # rad is used by radian
@@ -47,9 +51,10 @@ us_rad = Unit(
 	factor='0.01')
 
 
-### Effective dose units (sievert, roentgen)
+### Effective dose (sievert, roentgen)
 
-# SI unit
+
+# The sivert is the SI unit of effective dose
 sievert = Unit(
 	name='sievert',
 	symbols='Sv',
@@ -57,6 +62,7 @@ sievert = Unit(
 	category='effective dose',
 	factor='1')
 
+# 1 roentgen = 0.01 sievert
 roentgen = Unit(
 	name='roentgen',
 	symbols='rem',

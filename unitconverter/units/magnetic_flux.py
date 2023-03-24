@@ -3,13 +3,14 @@
 from unitconverter.unit import Unit
 
 
-# SI unit of magnetic flux
+# Weber is the SI unit of magnetic flux
 weber = Unit(
 	name='weber',
 	symbols='Wb',
 	aliases='webers',
 	factor='1')
 
+# 1 maxwell = 1E-8 webers
 maxwell = Unit(
 	name='maxwell',
 	symbols='Mx',

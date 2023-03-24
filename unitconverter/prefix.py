@@ -59,7 +59,7 @@ BINARY_PREFIXES = [
 
 # A Unit has one of the following prefix options:
 PREFIX_OPTIONS = [
-	'si'        # generate SI prefixes (default)
+	'si',       # generate SI prefixes (default)
 	'all',      # generate SI prefixes and binary prefixes
 	'binary',   # generate binary prefixes
 	'decimal',  # generate decimal prefixes

@@ -31,33 +31,33 @@ from unitconverter.units import volume
 
 
 modules = {
-	'amount of substance': amount_substance,
-	'angle': angle,
-	'area': area,
-	'catalytic activity': catalytic_activity,
-	'data storage': data_storage,
-	'electrical': electrical,
-	'energy': energy,
-	'force': force,
-	'frequency': frequency,
-	'fuel consumption': fuel_consumption,
-	'illuminance': illuminance,
-	'length': length,
-	'luminous flux': luminous_flux,
-	'luminous intensity': luminous_intensity,
-	'magnetic flux': magnetic_flux,
-	'magnetic flux density': magnetic_flux_density,
-	'mass': mass,
-	'power': power,
-	'pressure': pressure,
-	'radiation': radiation,
-	'SI units': si_units,
-	'signal intensity': signal_intensity,
-	'speed': speed,
-	'temperature': temperature,
-	'time': time,
-	'viscosity': viscosity,
-	'volume': volume,
+    'amount of substance': amount_substance,
+    'angle': angle,
+    'area': area,
+    'catalytic activity': catalytic_activity,
+    'data storage': data_storage,
+    'electrical': electrical,
+    'energy': energy,
+    'force': force,
+    'frequency': frequency,
+    'fuel consumption': fuel_consumption,
+    'illuminance': illuminance,
+    'length': length,
+    'luminous flux': luminous_flux,
+    'luminous intensity': luminous_intensity,
+    'magnetic flux': magnetic_flux,
+    'magnetic flux density': magnetic_flux_density,
+    'mass': mass,
+    'power': power,
+    'pressure': pressure,
+    'radiation': radiation,
+    'SI units': si_units,
+    'signal intensity': signal_intensity,
+    'speed': speed,
+    'temperature': temperature,
+    'time': time,
+    'viscosity': viscosity,
+    'volume': volume,
 }
 
 
@@ -65,45 +65,45 @@ all_units = []
 
 
 def get_units() -> list[Unit]:
-	""" Get all defined units.
+    """ Get all defined units.
 
-	Automatically assigns unit categories based on the unit module name.
+    Automatically assigns unit categories based on the unit module name.
 
-	Returns:
-		list[Unit]: a list of units.
-	"""
-	# Return internal copy if already loaded
-	if all_units:
-		return all_units
+    Returns:
+        list[Unit]: a list of units.
+    """
+    # Return internal copy if already loaded
+    if all_units:
+        return all_units
 
-	units = set()
-	for category, module in modules.items():
-		# ignore aliased units
-		if category == 'SI units':
-			continue
+    units = set()
+    for category, module in modules.items():
+        # ignore aliased units
+        if category == 'SI units':
+            continue
 
-		# Search module for units
-		for item in dir(module):
-			if not item.startswith('_'):
-				unit = getattr(module, item)
-				if isinstance(unit, Unit):
-					# Set default category
-					if not unit.category:
-						unit.category = category
-					units.add(unit)
-	return list(units)
+        # Search module for units
+        for item in dir(module):
+            if not item.startswith('_'):
+                unit = getattr(module, item)
+                if isinstance(unit, Unit):
+                    # Set default category
+                    if not unit.category:
+                        unit.category = category
+                    units.add(unit)
+    return list(units)
 
 
 def find_dupes(units: list[Unit]) -> list[Unit]:
-	""" Find duplicate names, symbols, and aliases. """
-	aliases = {}
-	for unit in units:
-		for name in [unit.name] + unit.symbols + unit.aliases:
-			if name in aliases.keys():
-				raise ValueError(f'Found a duplicate alias: {name}'
-								 f' (Original unit: {aliases[name]})')
-			aliases[name] = unit
-	return units
+    """ Find duplicate names, symbols, and aliases. """
+    aliases = {}
+    for unit in units:
+        for name in [unit.name] + unit.symbols + unit.aliases:
+            if name in aliases.keys():
+                raise ValueError(f'Found a duplicate alias: {name}'
+                                 f' (Original unit: {aliases[name]})')
+            aliases[name] = unit
+    return units
 
 
 # Load modules internally and test for duplicates
@@ -111,6 +111,6 @@ all_units = find_dupes(get_units())
 
 
 __all__ = [
-	'get_units',
-	'find_dupes'
+    'get_units',
+    'find_dupes'
 ]

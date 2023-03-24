@@ -1,7 +1,7 @@
 # Copyright (c) 2022-2023 Mike Cunningham
 
 """
-	SI base units and derived units are aliased here for convenience.
+    SI base units and derived units are aliased here for convenience.
 """
 
 import sys
@@ -9,7 +9,7 @@ from unitconverter.units.amount_substance import mole
 from unitconverter.units.angle import steradian, radian
 from unitconverter.units.catalytic_activity import katal
 from unitconverter.units.electrical import (coulomb, ampere, volt, farad,
-											siemens, henry, ohm)
+                                            siemens, henry, ohm)
 from unitconverter.units.energy import joule
 from unitconverter.units.frequency import hertz
 from unitconverter.units.force import newton

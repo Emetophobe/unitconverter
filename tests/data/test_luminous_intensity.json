@@ -7,6 +7,14 @@
     {
       "dest": "quettacandela",
       "expected": "1E-30"
+    },
+    {
+      "dest": "candlepower",
+      "expected": "1"
+    },
+    {
+      "dest": "historic candlepower",
+      "expected": "1.019367991845056065239551478"
     }
   ]
 }

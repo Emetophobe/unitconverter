@@ -5,6 +5,10 @@
       "expected": "0.00001"
     },
     {
+      "dest": "liter per meter",
+      "expected": "1"
+    },
+    {
       "dest": "meter per UK gallon",
       "expected": "4.546099293920496959062811375"
     },

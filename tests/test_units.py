@@ -1,5 +1,6 @@
 # Copyright (c) 2022-2023 Mike Cunningham
 
+from decimal import Decimal
 from tests import AbstractTestCase, Unit
 
 
@@ -16,22 +17,16 @@ class TestUnits(AbstractTestCase):
 		for unit in self.converter.units:
 			self.assert_valid_unit(unit)
 
-	def assert_duplicates(self, name: str) -> None:
-		""" Assert that name isn't a duplicate name, symbol, or alias.
-
-		Args:
-			name (str): the name or alias.
-		"""
-		self.assertFalse(name in self.aliases, f'Duplicate name or alias: {name!r}')
-		self.aliases.add(name)
-
 	def assert_valid_unit(self, unit: Unit):
-		""" Assert that unit has a valid name and factor. """
+		""" Assert that a unit is correctly formed. """
 		self.assertTrue(unit.name, f'{unit} has an empty unit name.')
 		self.assertTrue(unit.factor, f'{unit.name} has an empty unit factor.')
 		self.assertTrue(unit.category, f'{unit.name} has an empty category.')
 
-		# Assert that unit factor contains valid decimal characters
+		self.assertIsInstance(unit.factor, (str, Decimal),
+							  f'{unit.name} has an invalid factor {unit.factor!r}')
+
+		# Assert that the conversion factor contains valid decimal characters
 		if isinstance(unit.factor, str):
 			for char in unit.factor:
 				self.assertIn(char, self.valid_chars,

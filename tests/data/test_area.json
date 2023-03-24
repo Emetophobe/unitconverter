@@ -21,6 +21,10 @@
       "expected": "1E-4"
     },
     {
+      "dest": "acre",
+      "expected": "0.0002471053814671653422482439292"
+    },
+    {
       "dest": "imperial acre",
       "expected": "0.0002471053814671653422482439292"
     },
@@ -54,11 +58,19 @@
     },
     {
       "dest": "square nautical mile",
-      "expected": "2.915451895043731778425655977E-7"
+      "expected": "2.915533495981228629139474458E-7"
     },
     {
       "dest": "square chain",
       "expected": "0.002471053814671653422482439292"
+    },
+    {
+      "dest": "square furlong",
+      "expected": "0.00002471053814671653422482439292"
+    },
+    {
+      "dest": "square link",
+      "expected": "24.71053814671653422482439292"
     },
     {
       "dest": "square rod",
@@ -66,19 +78,19 @@
     },
     {
       "dest": "US survey acre",
-      "expected": "0.0002471045524071689972744367869"
+      "expected": "0.0002471043930466432827802496737"
     },
     {
       "dest": "US survey square foot",
-      "expected": "10.76386736114295424114588269"
+      "expected": "10.76386736112659314033219263"
     },
     {
       "dest": "US survey square mile",
-      "expected": "3.861006141382661958709651829E-7"
+      "expected": "3.861006141355659551974817432E-7"
     },
     {
       "dest": "US survey square rod",
-      "expected": "0.03953686103474645475971902867"
+      "expected": "0.03953670289406588812551914084"
     },
     {
       "dest": "arpent",

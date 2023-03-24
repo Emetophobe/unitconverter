@@ -26,8 +26,9 @@ pound = Unit(
 # 1 kilopound (kip) = 1000 lbs or 453592.37 grams
 kilopound = Unit(
 	name='kilopound',
-	symbols='kip',
-	aliases='kilopounds',
+	symbols=['kip', 'klbs'],
+	aliases=['kilopounds', 'imperial kilopounds', 'imperial kilopound'],
+	prefix_scaling='none',
 	factor='453592.37')
 
 # 1 stone = 14 lbs or 6350.29 grams
@@ -65,30 +66,35 @@ carat = Unit(
 	aliases='carats',
 	factor='0.2')
 
+# 1 grain = roughly 0.0647989 grams
 grain = Unit(
 	name='grain',
 	symbols='gr',
 	aliases='grains',
 	factor='0.0647989')
 
+# 1 drachm = roughly 1.77185 grams
 drachm = Unit(
 	name='drachm',
 	symbols='dr',
 	aliases=['drachms', 'drams', 'dram'],
 	factor='1.77185')
 
+# 1 pennyweight = roughly 1.55517384 grams
 pennyweight = Unit(
 	name='pennyweight',
 	symbols='dwt',
 	aliases='pennyweights',
 	factor='1.55517384')
 
+# 1 troy ounce = roughly 31.1035 grams
 troy_ounce = Unit(
 	name='troy ounce',
 	symbols='ozt',
 	aliases='troy ounces',
 	factor='31.1035')
 
+# 1 troy pound = roughly 373.242 grams
 troy_pound = Unit(
 	name='troy pound',
 	symbols='lbt',

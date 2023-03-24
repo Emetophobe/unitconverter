@@ -9,9 +9,9 @@ class Unit:
 
 	def __init__(self,
 				 name,
+				 factor,
 				 symbols=None,
 				 aliases=None,
-				 factor='1',
 				 power='1',
 				 offset='0',
 				 category=None,
@@ -23,14 +23,14 @@ class Unit:
 			name (str):
 				unit name.
 
+			factor (str | Decimal):
+				unit conversion factor.
+
 			symbols (str | list, optional):
 				unit symbol or list of symbols. Defaults to None.
 
 			aliases (str | list, optional):
 				unit alias or list of aliases. Defaults to None.
-
-			factor (str | Decimal, optional):
-				conversion factor. Defaults to '1'.
 
 			power (str | Decimal, optional):
 				optional power. Defaults to '1'.
@@ -86,16 +86,19 @@ class Unit:
 		aliases = [self._add_prefix(prefix, name) for name in self.aliases]
 		factor = Decimal(factor) * Decimal(self.factor)
 
+		# Don't allow prefixed units to be prefixed again
+		prefix_scaling = 'none'
+
 		# Create new unit
 		return Unit(name,
+					factor=Decimal(factor) ** self.power,
 					symbols=symbols,
 					aliases=aliases,
-					factor=Decimal(factor) ** self.power,
 					power=self.power,
 					offset=self.offset,
 					category=self.category,
 					prefix_index=self.prefix_index,
-					prefix_scaling=self.prefix_scaling)
+					prefix_scaling=prefix_scaling)
 
 	def _add_prefix(self, prefix: str, name: str) -> str:
 		""" Add a prefix to a string; i.e "kilo" + "meter"

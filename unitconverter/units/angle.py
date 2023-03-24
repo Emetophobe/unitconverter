@@ -7,7 +7,7 @@ from unitconverter.unit import Unit
 # Solid angle
 
 # SI unit
-# 1 steradian is (180/pi)^2 square degrees or about 3282.8 square degrees
+# 1 steradian =  (180/pi)^2 or roughly 3282.8 square degrees
 steradian = Unit(
 	name='steradian',
 	symbols='sr',
@@ -15,7 +15,7 @@ steradian = Unit(
 	category='solid angle',
 	factor='1')
 
-# 1 square degree is (pi*180)^2 or 0.000304617419786 steradians
+# 1 square degree = (pi*180)^2 or roughly 0.000304617419786 steradians
 square_degree = Unit(
 	name='square degree',
 	symbols=['deg^2', 'deg2'],
@@ -34,7 +34,7 @@ spat = Unit(
 # Plane angle
 
 # SI unit
-# 1 radian is 57.295779513 degrees (180/pi)
+# 1 radian = 180/pi degrees or roughly 57.295779513 degrees
 radian = Unit(
 	name='radian',
 	symbols='rad',
@@ -42,7 +42,7 @@ radian = Unit(
 	category='plane angle',
 	factor='1')
 
-# 1 degree is 0.0174532925 radians (pi/180)
+# 1 degree = pi/180 radians or roughly 0.0174532925 radians
 degree = Unit(
 	name='degree',
 	symbols='°',
@@ -50,3 +50,11 @@ degree = Unit(
 	category='plane angle',
 	prefix_scaling='none',	# disable prefix scaling
 	factor='0.0174532925')
+
+# 1 gradian = pi/200 radians or roughly 0.015708 radians
+gradian = Unit(
+	name='gradian',
+	symbols='gon',
+	aliases=['gradians', 'grade', 'grad'],
+	prefix_scaling='none',	# disable prefix scaling
+	factor='0.015708')

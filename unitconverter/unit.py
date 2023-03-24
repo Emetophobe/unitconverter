@@ -56,7 +56,7 @@ class Unit:
 		self.category = category
 
 		# Check if prefix index is valid
-		items = name.rsplit(' ', maxsplit=1)
+		items = name.split(' ')
 		if prefix_index < -1 or prefix_index > len(items)-1:
 			raise ValueError(f'prefix index must be between -1 and {len(items)-1}')
 
@@ -117,7 +117,7 @@ class Unit:
 			raise TypeError('name must be a string.')
 
 		# Add prefix to the word at prefix index
-		split = name.rsplit(' ', maxsplit=1)
+		split = name.split(' ')
 		split[self.prefix_index] = prefix + split[self.prefix_index]
 		return ' '.join(split)
 

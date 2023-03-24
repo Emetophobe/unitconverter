@@ -21,7 +21,7 @@ square_degree = Unit(
 	symbols=['deg^2', 'deg2'],
 	aliases='square degrees',
 	category='solid angle',
-	prefix_scaling='none',	# disable prefix scaling
+	prefix_scaling='none',
 	factor='3.04617E-4')
 
 spat = Unit(
@@ -48,7 +48,7 @@ degree = Unit(
 	symbols='°',
 	aliases='degrees',
 	category='plane angle',
-	prefix_scaling='none',	# disable prefix scaling
+	prefix_scaling='none',
 	factor='0.0174532925')
 
 # 1 gradian = pi/200 radians or roughly 0.015708 radians
@@ -56,5 +56,6 @@ gradian = Unit(
 	name='gradian',
 	symbols='gon',
 	aliases=['gradians', 'grade', 'grad'],
-	prefix_scaling='none',	# disable prefix scaling
+	category='plane angle',
+	prefix_scaling='none',
 	factor='0.015708')

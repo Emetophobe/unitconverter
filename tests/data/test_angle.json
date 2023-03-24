@@ -11,12 +11,12 @@
   ],
   "radian": [
     {
-      "dest": "quectoradian",
-      "expected": "1E+30"
+      "dest": "degree",
+      "expected": "57.29577957855229894302178228"
     },
     {
-      "dest": "quettaradian",
-      "expected": "1E-30"
+      "dest": "gradian",
+      "expected": "63.66182836771072065189712249"
     }
   ]
 }

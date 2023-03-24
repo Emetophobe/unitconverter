@@ -31,9 +31,10 @@ watt_per_square_meter = Unit(
 
 # 1 meter candle is equal to 1 lux
 meter_candle = Unit(
-	name='meter candle',
+	name='meter-candle',
 	symbols='m*c',
-	aliases='metre candle',
+	aliases=['metre-candle', 'meter candle', 'metre candle'],
+	prefix_index=0,
 	factor='1')
 
 # 1 foot candle is roughly 10.76391 lux
@@ -41,4 +42,5 @@ foot_candle = Unit(
 	name='foot-candle',
 	symbols=['ft*c', 'fc'],
 	aliases='foot candle',
+	prefix_index=0,
 	factor='10.76391')

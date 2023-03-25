@@ -2,9 +2,8 @@
 
 from decimal import Decimal
 from typing import Optional
-from unitconverter.unit import Unit
+from unitconverter.unit import Unit, get_prefixes
 from unitconverter.units import get_units
-from unitconverter.prefix import get_prefixes
 
 
 class Converter:

@@ -1,7 +1,7 @@
 # Copyright (c) 2022-2023 Mike Cunningham
 
 from decimal import Decimal
-from unitconverter.prefix import PREFIX_OPTIONS
+from unitconverter.unit import PREFIX_OPTIONS
 from tests import AbstractTestCase, Unit
 
 

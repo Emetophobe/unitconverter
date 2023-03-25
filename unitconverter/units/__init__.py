@@ -61,39 +61,6 @@ modules = {
 }
 
 
-all_units = []
-
-
-def get_units() -> list[Unit]:
-    """ Get all defined units.
-
-    Automatically assigns unit categories based on the unit module name.
-
-    Returns:
-        list[Unit]: a list of units.
-    """
-    # Return internal copy if already loaded
-    if all_units:
-        return all_units
-
-    units = set()
-    for category, module in modules.items():
-        # ignore aliased units
-        if category == 'SI units':
-            continue
-
-        # Search module for units
-        for item in dir(module):
-            if not item.startswith('_'):
-                unit = getattr(module, item)
-                if isinstance(unit, Unit):
-                    # Set default category
-                    if not unit.category:
-                        unit.category = category
-                    units.add(unit)
-    return list(units)
-
-
 def find_dupes(units: list[Unit]) -> list[Unit]:
     """ Find duplicate names, symbols, and aliases. """
     aliases = {}
@@ -103,14 +70,40 @@ def find_dupes(units: list[Unit]) -> list[Unit]:
                 raise ValueError(f'Found a duplicate alias: {name}'
                                  f' (Original unit: {aliases[name]})')
             aliases[name] = unit
-    return units
+
+
+def load_units() -> list[Unit]:
+    """ Load all predefined units. """
+    units = set()
+    for category, module in modules.items():
+        # ignore aliased units
+        if category == 'SI units':
+            continue
+
+        # Search each module for units
+        for item in dir(module):
+            if not item.startswith('_'):
+                unit = getattr(module, item)
+                if isinstance(unit, Unit):
+                    # Set default category
+                    if not unit.category:
+                        unit.category = category
+                    units.add(unit)
+
+    return list(units)
 
 
 # Load modules internally and test for duplicates
-all_units = find_dupes(get_units())
+all_units = load_units()
+find_dupes(all_units)
+
+
+def get_units() -> list[Unit]:
+    """ Get all defined units. """
+    return all_units
 
 
 __all__ = [
-    'get_units',
-    'find_dupes'
+    'load_units',
+    'get_units'
 ]

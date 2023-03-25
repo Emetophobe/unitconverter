@@ -9,9 +9,14 @@ cubic_metre = Unit(
     name='cubic metre',
     factor='1',
     symbols=['m^3', 'm3'],
-    aliases=['cubic metres', 'cubic meters', 'cubic meter', 'metre^3', 'metre3'],
+    aliases=['cubic metres', 'cubic meters', 'cubic meter', 'metre^3',
+             'metre3', 'meter^3', 'meter3'],
     power=3,
     prefix_scaling='si')
+
+# Create alias for American spelling of meter
+cubic_meter = cubic_metre
+
 
 # 1 litre = 0.001 m^3 (1000 litres = 1 m^3)
 litre = Unit(
@@ -20,6 +25,10 @@ litre = Unit(
     symbols=['L', 'l'],
     aliases=['litres', 'liters', 'liter'],
     prefix_scaling='si')
+
+# Create alias for American spelling of liter
+liter = litre
+
 
 # 1 metric cup = 0.00025 m^3
 cup = Unit(
@@ -131,35 +140,35 @@ imperial_fluid_ounce = Unit(
 imperial_gallon = Unit(
     name='imperial gallon',
     factor='0.00454609',
-    symbols='gal',
+    symbols=['gal', 'ukgal'],
     aliases=['gallons', 'gallon', 'imperial gallons'])
 
 # 1 imperial pint = roughly 0.0005682615 m^3
 imperial_pint = Unit(
     name='imperial pint',
     factor='0.0005682615',
-    symbols='pt',
+    symbols=['pt', 'ukpt'],
     aliases=['pints', 'pint', 'imperial pints'])
 
 # 1 imperial quart = roughly 0.0011365225 m^3
 imperial_quart = Unit(
     name='imperial quart',
     factor='0.0011365225',
-    symbols='qt',
+    symbols=['qt', 'ukqt'],
     aliases=['quarts', 'quart', 'imperial quarts'])
 
 # 1 imperial tablespoon = 1.77582E-5 m^3
 imperial_tablespoon = Unit(
     name='imperial tablespoon',
     factor='1.77582E-5',
-    symbols=['tbsp-imp', 'tbsp-uk'],
+    symbols='uktbsp',
     aliases=['imperial tablespoons', 'imperial tbsp'])
 
 # 1 imperial teaspoon = 5.919388E-6 m^3
 imperial_teaspoon = Unit(
     name='imperial teaspoon',
     factor='5.919388E-6',
-    symbols=['tsp-imp', 'tsp-uk'],
+    symbols='uktsp',
     aliases=['imperial teaspoons', 'imperial tsp'])
 
 
@@ -170,7 +179,7 @@ imperial_teaspoon = Unit(
 us_gill = Unit(
     name='US gill',
     factor='0.0001182941',
-    symbols='gi-us',
+    symbols='usgi',
     aliases=['US gills', 'usgills', 'usgill'])
 
 # 1 US cup = roughly 0.000236588 m^3
@@ -197,42 +206,42 @@ us_fluid_ounce = Unit(
 us_liquid_gallon = Unit(
     name='US liquid gallon',
     factor='0.003785411784',
-    symbols=['usliquidgal', 'liquidgal', 'usgal'],
-    aliases=['US liquid gallons', 'US liquid gal', 'US gal'])
+    symbols=['usgal', 'usliquidgal'],
+    aliases=['US liquid gallons', 'US gallons', 'US gallon', 'US gal'])
 
 # 1 US dry gallon = roughly 0.00440488 m^3
 us_dry_gallon = Unit(
     name='US dry gallon',
     factor='0.00440488',
-    symbols=['usdrygal', 'drygal'],
+    symbols='usdrygal',
     aliases=['US dry gallons', 'US dry gal'])
 
 # 1 US liquid pint = roughly 0.00473176 m^3
 us_liquid_pint = Unit(
     name='US liquid pint',
     factor='0.000473176',
-    symbols=['usliquidpt', 'liquidpt', 'uspt'],
-    aliases=['US liquid pints', 'US pints', 'US pt'])
+    symbols=['uspt', 'usliquidpt'],
+    aliases=['US liquid pints', 'US pints', 'US pint', 'US pt'])
 
 # 1 US dry pint = roughly 0.000550610475 m^3
 us_dry_pint = Unit(
     name='US dry pint',
     factor='0.000550610475',
-    symbols=['usdrypt', 'drypt'],
+    symbols='usdrypt',
     aliases=['US dry pints', 'US dry pt'])
 
 # 1 US liquid quart = roughly 0.000946353 m^3
 us_liquid_quart = Unit(
     name='US liquid quart',
     factor='0.000946353',
-    symbols=['usliquidqt', 'liquidqt', 'usqt'],
-    aliases=['US liquid quarts', 'US liquid qt', 'US quarts', 'US quart'])
+    symbols=['usqt', 'usliquidqt'],
+    aliases=['US liquid quarts', 'US liquid qt', 'US quarts', 'US quart', 'US qt'])
 
 # 1 US dry quart = roughly 0.0011012107 m^3
 us_dry_quart = Unit(
     name='US dry quart',
     factor='0.0011012107',
-    symbols=['usdryqt', 'dryqt'],
+    symbols='usdryqt',
     aliases=['US dry quarts', 'US dry qt'])
 
 # 1 US tablespoon = roughly 1.47868E-5 m^3

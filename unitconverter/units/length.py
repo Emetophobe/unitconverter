@@ -11,6 +11,11 @@ metre = Unit(
     aliases=['metres', 'meters', 'meter'],
     prefix_scaling='si')
 
+
+# Create alias for American spelling of meter
+meter = metre
+
+
 # 1 angstrom = 1E-10 metres (0.1 nanometers)
 angstrom = Unit(
     name='angstrom',

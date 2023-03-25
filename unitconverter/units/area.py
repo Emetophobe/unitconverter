@@ -9,9 +9,14 @@ square_metre = Unit(
     name='square metre',
     factor='1',
     symbols=['m^2', 'm2'],
-    aliases=['square metres', 'square meters', 'square meter', 'metre^2', 'metre2'],
+    aliases=['square metres', 'square meters', 'square meter', 'metre^2', 'metre2',
+             'meter^2', 'meter2'],
     power=2,
     prefix_scaling='si')
+
+# Create alias for American spelling of meter
+square_meter = square_metre
+
 
 # 1 are = 100 m^2
 are = Unit(

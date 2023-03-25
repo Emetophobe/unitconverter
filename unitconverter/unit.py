@@ -15,22 +15,21 @@ class Unit:
                  power='1',
                  offset='0',
                  category=None,
-                 prefix_index=-1,
-                 prefix_scaling='none'):
+                 prefix_scaling='none',
+                 prefix_index=-1):
         """ Initialize unit.
 
         Args:
-            name (str):
-                unit name.
+            name (str): unit name.
 
             factor (str | Decimal):
                 unit conversion factor.
 
             symbols (str | list, optional):
-                unit symbol or list of symbols. Defaults to None.
+                unit symbols. Defaults to None.
 
             aliases (str | list, optional):
-                unit alias or list of aliases. Defaults to None.
+                unit aliases. Defaults to None.
 
             power (str | Decimal, optional):
                 optional power. Defaults to '1'.
@@ -39,13 +38,14 @@ class Unit:
                 optional offset. Defaults to '0'.
 
             category (str, optional):
-                _description_. Defaults to None.
-
-            prefix_index (int, optional):
-                index of word in a multi-word argument. Defaults to -1 (last word).
+                unit category. Defaults to None. This is set automatically the
+                first time get_units() is called.
 
             prefix_scaling (str, optional):
-                type of prefix scaling that the unit supports. Defaults to 'none'.
+                prefix scaling option. Defaults to 'none'.
+
+            prefix_index (int, optional): i
+                index of word to prefix. Defaults to -1 (last word).
         """
         self.name = name
         self.symbols = self._parse_string_list(symbols)
@@ -56,13 +56,13 @@ class Unit:
         self.category = category
 
         # Check if prefix index is valid
-        items = name.split(' ')
-        if prefix_index < -1 or prefix_index > len(items)-1:
-            raise ValueError(f'prefix index must be between -1 and {len(items)-1}')
+        last_index = len(name.split(' ')) - 1
+        if prefix_index < -1 or prefix_index > last_index:
+            raise ValueError(f'prefix index must be between -1 and {last_index}')
 
         # Prefix scaling options
-        self.prefix_index = prefix_index
         self.prefix_scaling = prefix_scaling
+        self.prefix_index = prefix_index
 
     def add_prefix(self, factor: str, symbol: str, prefix: str):
         """ Create a new unit from an existing unit by applying a prefix.
@@ -97,8 +97,8 @@ class Unit:
                     power=self.power,
                     offset=self.offset,
                     category=self.category,
-                    prefix_index=self.prefix_index,
-                    prefix_scaling=prefix_scaling)
+                    prefix_scaling=prefix_scaling,
+                    prefix_index=self.prefix_index)
 
     def _add_prefix(self, prefix: str, name: str) -> str:
         """ Add a prefix to a string; i.e "kilo" + "metre"

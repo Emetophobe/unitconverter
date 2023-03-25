@@ -27,7 +27,7 @@ metre_per_minute = Unit(
 metre_per_hour = Unit(
     name='metre per hour',
     factor='0.0002777778',
-    symbols='m/hr',
+    symbols=['m/hr', 'm/h'],
     aliases=['metres per hour', 'meters per hour', 'meter per hour',
              'metres/hour', 'metre/hour', 'meters/hour', 'meter/hour'],
     prefix_scaling='si',
@@ -38,7 +38,7 @@ metre_per_hour = Unit(
 kilometre_per_hour = Unit(
     name='kilometre per hour',
     factor='0.2777777778',
-    symbols=['kph', 'km/hr'],
+    symbols=['kph', 'km/hr', 'km/h'],
     aliases=['kilometres per hour', 'kilometers per hour', 'kilometer per hour',
              'kilometres/hour', 'kilometre/hour', 'kilometer/hours', 'kilometer/hour'],
     prefix_scaling='none')  # Use meter_per_hour if you want to scale meters
@@ -55,7 +55,7 @@ kilometer_per_hour = kilometre_per_hour
 mile_per_hour = Unit(
     name='mile per hour',
     factor='0.44704',
-    symbols=['mph', 'mi/hr'],
+    symbols=['mph', 'mi/hr', 'mi/h'],
     aliases=['miles per hour', 'miles/hour', 'mile/hour'])
 
 # 1 inch/second = 0.0254 m/s
@@ -76,7 +76,7 @@ inch_per_minute = Unit(
 inch_per_hour = Unit(
     name='inch per hour',
     factor='7.05556e-6',
-    symbols='in/hr',
+    symbols=['in/hr', 'in/h'],
     aliases=['inches per hour', 'inches/hour', 'inch/hour', 'inch/hr'])
 
 # 1 foot/second = 0.3048 m/s
@@ -97,7 +97,7 @@ foot_per_minute = Unit(
 foot_per_hour = Unit(
     name='foot per hour',
     factor='0.0000846667',
-    symbols='ft/hr',
+    symbols=['ft/hr', 'ft/h'],
     aliases=['feet per hour', 'foot/hour', 'feet/hour', 'feet/hr', 'foot/hr'])
 
 # The knot is equal to one nautical mile per hour (~0.514 m/s)

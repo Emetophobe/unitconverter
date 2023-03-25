@@ -22,7 +22,7 @@ minute = Unit(
 hour = Unit(
     name='hour',
     factor='3600',
-    symbols=['hrs', 'hr'],
+    symbols=['hrs', 'hr', 'h'],
     aliases='hours')
 
 # 1 day = 86400 seconds

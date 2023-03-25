@@ -16,6 +16,7 @@ mole_per_second = Unit(
     name='mole per second',
     factor='1',
     symbols='mol/s',
-    aliases=['moles per second', 'moles/s', 'mole/s'],
+    aliases=['moles per second', 'moles/second', 'mole/second', 'moles/sec',
+             'mole/sec', 'moles/s', 'mole/s'],
     prefix_scaling='si',
     prefix_index=0)

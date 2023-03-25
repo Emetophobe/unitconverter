@@ -24,40 +24,44 @@ cubic_inch = Unit(
     name='cubic inch',
     symbols=['cu in', 'in^3', 'in3'],
     aliases='cubic inches',
-    factor=length.inch.factor ** 3)
+    factor=length.inch.factor ** 3,
+    prefix_scaling='none')
 
 # 1 cubic foot is roughly 0.028316846592 m^3
 cubic_foot = Unit(
     name='cubic foot',
     symbols=['cu ft', 'ft^3', 'ft3'],
     aliases='cubic feet',
-    factor=length.foot.factor ** 3)
+    factor=length.foot.factor ** 3,
+    prefix_scaling='none')
 
 # 1 cubic yard is roughly 0.764554857984 m^3
 cubic_yard = Unit(
     name='cubic yard',
     symbols=['cu yd', 'yd^3', 'yd3'],
     aliases='cubic yards',
-    factor=length.yard.factor ** 3)
+    factor=length.yard.factor ** 3,
+    prefix_scaling='none')
 
 # 1 cubic mile is roughly 4,168,181,825.440579584 m^3
 cubic_mile = Unit(
     name='cubic mile',
     symbols=['cu mi', 'mi^3', 'mi3'],
     aliases='cubic miles',
-    factor=length.mile.factor ** 3)
+    factor=length.mile.factor ** 3,
+    prefix_scaling='none')
 
 # 1 acre inch = 1 acre × 1 inch or 102.79015312896 m^3
 acre_inch = Unit(
     name='acre-inch',
-    symbols=['ac*in', 'ac-in', 'acin'],
+    symbols=['ac*in', 'ac-in', 'ac⋅in'],
     aliases=['acre-inches', 'acre-in'],
     factor=area.acre.factor * length.inch.factor)
 
 # 1 acre foot = 1 acre × 1 foot or 1233.48183754752 m^3
 acre_foot = Unit(
     name='acre-foot',
-    symbols=['ac*ft', 'acft'],
+    symbols=['ac*ft', 'ac-ft' 'ac⋅ft'],
     aliases='acre-feet',
     factor=area.acre.factor * length.foot.factor)
 
@@ -103,62 +107,71 @@ imperial_gill = Unit(
     name='imperial gill',
     symbols='gi',
     aliases=['gills', 'gill', 'imperial gills'],
-    factor='0.0001420653')
+    factor='0.0001420653',
+    prefix_scaling='none')
 
 # 1 imperial cup = roughly 0.0002841306 m^3
 imperial_cup = Unit(
     name='imperial cup',
     aliases=['imperial cups', 'impcups', 'impcup'],
-    factor='0.0002841306')
+    factor='0.0002841306',
+    prefix_scaling='none')
 
 # 1 imperial bushel = roughly 0.03636872 m^3
 imperial_bushel = Unit(
     name='imperial bushel',
     symbols=['bsh', 'bu'],
     aliases=['bushels', 'bushel', 'imperial bushels'],
-    factor='0.03636872')
+    factor='0.03636872',
+    prefix_scaling='none')
 
 # 1 imperial fluid ounce = roughly 2.84130625E-5 m^3
 imperial_fluid_ounce = Unit(
     name='imperial fluid ounce',
     symbols=['fl oz', 'imp fl oz', 'impfloz'],
     aliases=['fluid ounces', 'fluid ounce', 'imperial fluid ounces'],
-    factor='2.84130625E-5')
+    factor='2.84130625E-5',
+    prefix_scaling='none')
 
 # 1 imperial gallon = roughly 0.00454609 m^3
 imperial_gallon = Unit(
     name='imperial gallon',
     symbols='gal',
     aliases=['gallons', 'gallon', 'imperial gallons'],
-    factor='0.00454609')
+    factor='0.00454609',
+    prefix_scaling='none')
 
 # 1 imperial pint = roughly 0.0005682615 m^3
 imperial_pint = Unit(
     name='imperial pint',
     symbols=['pt'],
     aliases=['pints', 'pint', 'imperial pints'],
-    factor='0.0005682615')
+    factor='0.0005682615',
+    prefix_scaling='none')
 
 # 1 imperial quart = roughly 0.0011365225 m^3
 imperial_quart = Unit(
     name='imperial quart',
     symbols='qt',
     aliases=['quarts', 'quart', 'imperial quarts'],
-    factor='0.0011365225')
+    factor='0.0011365225',
+    prefix_scaling='none')
 
 # 1 imperial tablespoon = 1.77582E-5 m^3
 imperial_tablespoon = Unit(
     name='imperial tablespoon',
     symbols=['tbsp-imp', 'tbsp-uk'],
     aliases=['imperial tablespoons', 'imperial tbsp'],
-    factor='1.77582E-5')
+    factor='1.77582E-5',
+    prefix_scaling='none')
 
 # 1 imperial teaspoon = 5.919388E-6 m^3
 imperial_teaspoon = Unit(
     name='imperial teaspoon',
     symbols=['tsp-imp', 'tsp-uk'],
     aliases=['imperial teaspoons', 'imperial tsp'],
-    factor='5.919388E-6')
+    factor='5.919388E-6',
+    prefix_scaling='none')
 
 
 # US customary and survey units
@@ -169,87 +182,99 @@ us_gill = Unit(
     name='US gill',
     symbols='gi-us',
     aliases=['US gills', 'usgills', 'usgill'],
-    factor='0.0001182941')
+    factor='0.0001182941',
+    prefix_scaling='none')
 
 # 1 US cup = roughly 0.000236588 m^3
 us_cup = Unit(
     name='US cup',
     aliases=['US cups', 'uscups', 'uscup'],
-    factor='0.000236588')
+    factor='0.000236588',
+    prefix_scaling='none')
 
 # 1 US bushel = roughly 0.0352391 m^3
 us_bushel = Unit(
     name='US bushel',
     symbols=['usbsh', 'usbu'],
     aliases='US bushels',
-    factor='0.0352391')
+    factor='0.0352391',
+    prefix_scaling='none')
 
 # 1 US fluid ounce = roughly 2.95735E-5 m^3
 us_fluid_ounce = Unit(
     name='US fluid ounce',
     symbols=['us fl. oz', 'us fl oz', 'usfloz'],
     aliases='US fluid ounces',
-    factor='2.95735E-5')
+    factor='2.95735E-5',
+    prefix_scaling='none')
 
 # 1 US liquid gallon = roughly 0.003785411784 m^3
 us_liquid_gallon = Unit(
     name='US liquid gallon',
     symbols=['usliquidgal', 'liquidgal', 'usgal'],
     aliases=['US liquid gallons', 'US liquid gal', 'US gal'],
-    factor='0.003785411784')
+    factor='0.003785411784',
+    prefix_scaling='none')
 
 # 1 US dry gallon = roughly 0.00440488 m^3
 us_dry_gallon = Unit(
     name='US dry gallon',
     symbols=['usdrygal', 'drygal'],
     aliases=['US dry gallons', 'US dry gal'],
-    factor='0.00440488')
+    factor='0.00440488',
+    prefix_scaling='none')
 
 # 1 US liquid pint = roughly 0.00473176 m^3
 us_liquid_pint = Unit(
     name='US liquid pint',
     symbols=['usliquidpt', 'liquidpt', 'uspt'],
     aliases=['US liquid pints', 'US pints', 'US pt'],
-    factor='0.000473176')
+    factor='0.000473176',
+    prefix_scaling='none')
 
 # 1 US dry pint = roughly 0.000550610475 m^3
 us_dry_pint = Unit(
     name='US dry pint',
     symbols=['usdrypt', 'drypt'],
     aliases=['US dry pints', 'US dry pt'],
-    factor='0.000550610475')
+    factor='0.000550610475',
+    prefix_scaling='none')
 
 # 1 US liquid quart = roughly 0.000946353 m^3
 us_liquid_quart = Unit(
     name='US liquid quart',
     symbols=['usliquidqt', 'liquidqt', 'usqt'],
     aliases=['US liquid quarts', 'US liquid qt', 'US quarts', 'US quart'],
-    factor='0.000946353')
+    factor='0.000946353',
+    prefix_scaling='none')
 
 # 1 US dry quart = roughly 0.0011012107 m^3
 us_dry_quart = Unit(
     name='US dry quart',
     symbols=['usdryqt', 'dryqt'],
     aliases=['US dry quarts', 'US dry qt'],
-    factor='0.0011012107')
+    factor='0.0011012107',
+    prefix_scaling='none')
 
 # 1 US tablespoon = roughly 1.47868E-5 m^3
 us_tablespoon = Unit(
     name='US tablespoon',
     symbols='ustbsp',
     aliases=['US tablespoons', 'US tbsp'],
-    factor='1.47868E-5')
+    factor='1.47868E-5',
+    prefix_scaling='none')
 
 # 1 US teaspoon = roughly 4.92892E-6 m^3
 us_teaspoon = Unit(
     name='US teaspoon',
     symbols='ustsp',
     aliases=['US teaspoons', 'US tsp'],
-    factor='4.92892E-6')
+    factor='4.92892E-6',
+    prefix_scaling='none')
 
 # 1 US survey acre-foot = roughly 1233.489238468149 m^3
 us_survey_acre_foot = Unit(
     name='US survey acre-foot',
     symbols=['us ac*ft', 'usft3', 'usft^3'],
-    aliases=['US survey acre-feet', 'US acre-foot', 'US acre-feet'],
+    aliases='US survey acre-feet',
     factor=area.us_survey_acre.factor * length.us_survey_foot.factor)

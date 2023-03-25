@@ -118,8 +118,8 @@ square_link = Unit(
 # 1 square rod = 25.29285264 m^2
 square_rod = Unit(
     name='square rod',
-    symbols=['sqrod', 'pole^2', 'pole2', 'rod^2', 'rod2'],
-    aliases=['square rods', 'square poles', 'square pole', 'square perch', 'sq rod'],
+    symbols=['rod^2', 'rod2', 'pole^2', 'pole2', 'perch^2', 'perch2'],
+    aliases=['square rods', 'square poles', 'square pole', 'square perch'],
     factor=length.rod.factor ** 2)
 
 

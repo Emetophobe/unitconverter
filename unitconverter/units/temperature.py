@@ -18,8 +18,8 @@ celsius = Unit(
     name='celsius',
     factor='1',
     symbols='°C',
-	aliases='Celsius',
-	offset='273.15')
+    aliases='Celsius',
+    offset='273.15')
 
 # Formula for °F to K: (32°F − 32) × 5/9 + 273.15 = 273.15K
 # 1 fahrenheit = roughly 255.928 kelvin

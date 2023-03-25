@@ -4,6 +4,7 @@ from decimal import Decimal
 from unittest import TestCase
 from unitconverter import Unit, Converter, format_decimal
 
+
 class AbstractTestCase(TestCase):
 
     def setUp(self) -> None:
@@ -34,11 +35,13 @@ class AbstractTestCase(TestCase):
         source: Unit = self.converter.parse_unit(source)
         dest = self.converter.parse_unit(dest)
 
-        self.assertEqual(source.category, dest.category, 'Categories are different')
+        msg = f'{source.name!r} and {dest.name!r} have different categories'
+        self.assertEqual(source.category, dest.category, msg)
 
-        expected = Decimal(expected)
         result = self.converter.convert(value, source, dest)
-        self.assertEqual(expected, result, f'Incorrect conversion for: {dest.name!r}')
+
+        msg = f'Incorrect conversion from {source.name!r} to {dest.name!r}'
+        self.assertEqual(Decimal(expected), result, msg)
 
     def assert_units(self, test_data: dict) -> None:
         """ Assert that test data converts to the expected values.

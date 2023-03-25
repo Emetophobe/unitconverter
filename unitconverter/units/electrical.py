@@ -9,7 +9,8 @@ ampere = Unit(
     symbols='A',
     aliases=['amperes', 'amps', 'amp'],
     factor='1',
-    category='electric current')
+    category='electric current',
+    prefix_scaling='si')
 
 # Electric charge
 coulomb = Unit(
@@ -17,7 +18,8 @@ coulomb = Unit(
     symbols='C',
     aliases='coulombs',
     factor='1',
-    category='electric charge')
+    category='electric charge',
+    prefix_scaling='si')
 
 # Electric potential
 volt = Unit(
@@ -25,7 +27,8 @@ volt = Unit(
     symbols='V',
     aliases='volts',
     factor='1',
-    category='electric potential')
+    category='electric potential',
+    prefix_scaling='si')
 
 # Electrical capacitance
 farad = Unit(
@@ -33,14 +36,16 @@ farad = Unit(
     symbols='F',
     aliases='farads',
     factor='1',
-    category='electrical capacitance')
+    category='electrical capacitance',
+    prefix_scaling='si')
 
 # Electrical conductance
 siemens = Unit(
     name='siemens',
     symbols='S',
     factor='1',
-    category='electrical conductance')
+    category='electrical conductance',
+    prefix_scaling='si')
 
 # Electrical inductance
 henry = Unit(
@@ -48,7 +53,8 @@ henry = Unit(
     symbols='H',
     aliases='henries',
     factor='1',
-    category='electrical inductance')
+    category='electrical inductance',
+    prefix_scaling='si')
 
 # Electrical resistance
 ohm = Unit(
@@ -56,4 +62,5 @@ ohm = Unit(
     symbols='Ω',
     aliases='ohms',
     factor='1',
-    category='electrical resistance')
+    category='electrical resistance',
+    prefix_scaling='si')

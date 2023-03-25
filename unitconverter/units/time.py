@@ -6,89 +6,90 @@ from unitconverter.unit import Unit
 # The second is the SI base unit of time
 second = Unit(
     name='second',
+    factor='1',
     symbols='s',
-    aliases='seconds',
-    factor='1')
+    aliases=['seconds', 'sec'],
+    prefix_scaling='si')
 
 # 1 minute = 60 seconds
 minute = Unit(
     name='minute',
+    factor='60',
     symbols='min',
-    aliases='minutes',
-    factor='60')
+    aliases='minutes')
 
 # 1 hour = 3600 seconds
 hour = Unit(
     name='hour',
+    factor='3600',
     symbols=['hrs', 'hr'],
-    aliases='hours',
-    factor='3600')
+    aliases='hours')
 
 # 1 day = 86400 seconds
 day = Unit(
     name='day',
-    aliases='days',
-    factor='86400')
+    factor='86400',
+    aliases='days')
 
 # 1 week = 604800 seconds
 week = Unit(
     name='week',
+    factor='604800',
     symbols=['wks', 'wk'],
-    aliases='weeks',
-    factor='604800')
+    aliases='weeks')
 
 # 1 fortnight = roughly 1209600 seconds
 fortnight = Unit(
     name='fortnight',
-    aliases='fortnights',
-    factor='1209600')
+    factor='1209600',
+    aliases='fortnights')
 
 # 1 month = roughly 2.628E+6 seconds
 month = Unit(
     name='month',
+    factor='2.628E+6',
     symbols=['mos', 'mo'],
-    aliases='months',
-    factor='2.628E+6')
+    aliases='months')
 
 # 1 year = roughly 3.1536E+7 seconds
 year = Unit(
     name='year',
+    factor='3.1536E+7',
     symbols=['yrs', 'yr'],
-    aliases='years',
-    factor='3.1536E+7')
+    aliases='years')
 
 # 1 gregorian year = roughly 31556952 seconds
 gregorian_year = Unit(
     name='gregorian year',
-    aliases='gregorian years',
-    factor='31556952')
+    factor='31556952',
+    aliases='gregorian years')
 
 # 1 julian year = roughly 31557600 seconds
 julian_year = Unit(
     name='julian year',
-    aliases='julian years',
-    factor='31557600')
+    factor='31557600',
+    aliases='julian years')
 
 # 1 leap year = roughly 31622400 seconds
 leap_year = Unit(
     name='leap year',
-    aliases='leap years',
-    factor='31622400')
+    factor='31622400',
+    aliases='leap years')
 
 # 1 decade = roughly 3.1536E+8 seconds
 decade = Unit(
     name='decade',
-    aliases='decades',
-    factor='3.1536E+8')
+    factor='3.1536E+8',
+    aliases='decades')
 
 # 1 century = roughly 3.1536E+9 seconds
 century = Unit(
     name='century',
-    aliases='centuries',
-    factor='3.1536E+9')
+    factor='3.1536E+9',
+    aliases='centuries')
 
 # 1 millennia = roughly 3.1536E+10 seconds
 millennia = Unit(
     name='millennia',
-    aliases=['millennias', 'millenniums', 'millennium'],
-    factor='3.1536E+10')
+    factor='3.1536E+10',
+    aliases=['millennias', 'millenniums', 'millennium'])

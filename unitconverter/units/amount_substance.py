@@ -6,12 +6,14 @@ from unitconverter.unit import Unit
 # The SI base unit for amount of substance is the mole.
 mole = Unit(
     name='mole',
+    factor='1',
     symbols='mol',
     aliases='moles',
-    factor='1')
+    prefix_scaling='si')
 
 # 1 atom is roughly 1.660538863127E-24 moles
 atom = Unit(
     name='atom',
+    factor='1.660538863127E-24',
     aliases='atoms',
-    factor='1.660538863127E-24')
+    prefix_scaling='si')

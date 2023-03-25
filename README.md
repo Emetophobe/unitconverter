@@ -39,15 +39,14 @@ Units are automatically scaled based on a scaling option. This even works with i
 
 The following unit scaling options are supported:
 
-    si          - use SI prefix table (default option)
+    none        - don't use prefix scaling (default)
+    si          - use SI prefix table
     decimal     - use decimal prefix table
     binary      - use binary prefix table
     all         - use SI and binary tables
     both        - use decimal and binary tables
-    none        - unit doesn't support prefix scaling
 
-Certain units override the default scaling behaviour. For example bytes uses "both" to
-generate decimal prefixes like "kilobytes" and also binary prefixes like "kibibytes".
+Units can override the default scaling behaviour as needed. SI units for example use the "si" scaling option. Another example is bytes which uses "both" to generate decimal prefixes like "kilobytes" and also binary prefixes like "kibibytes".
 
 
 ## Requirements

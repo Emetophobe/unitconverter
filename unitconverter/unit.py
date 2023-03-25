@@ -16,7 +16,7 @@ class Unit:
                  offset='0',
                  category=None,
                  prefix_index=-1,
-                 prefix_scaling='si'):
+                 prefix_scaling='none'):
         """ Initialize unit.
 
         Args:
@@ -45,7 +45,7 @@ class Unit:
                 index of word in a multi-word argument. Defaults to -1 (last word).
 
             prefix_scaling (str, optional):
-                type of prefix scaling that the unit supports. Defaults to 'si'.
+                type of prefix scaling that the unit supports. Defaults to 'none'.
         """
         self.name = name
         self.symbols = self._parse_string_list(symbols)

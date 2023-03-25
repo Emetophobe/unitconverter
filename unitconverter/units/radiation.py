@@ -12,7 +12,8 @@ becquerel = Unit(
     factor='1',
     symbols='Bq',
     aliases='becquerels',
-    category='radioactivity')
+    category='radioactivity',
+    prefix_scaling='si')
 
 # 1 curie = 3.7E+10 becquerel
 curie = Unit(
@@ -20,9 +21,10 @@ curie = Unit(
     factor='3.7E+10',
     symbols='Ci',
     aliases='curies',
-    category='radioactivity')
+    category='radioactivity',
+    prefix_scaling='si')
 
-# 1 rutherford = 1E+6 becquerel
+# 1 rutherford = 1 MBq or 1E+6 becquerel
 rutherford = Unit(
     name='rutherford',
     factor='1E+6',
@@ -40,7 +42,8 @@ gray = Unit(
     factor='1',
     symbols='Gy',
     aliases='grays',
-    category='absorbed dose')
+    category='absorbed dose',
+    prefix_scaling='si')
 
 # 1 rad = 0.01 gray
 us_rad = Unit(
@@ -60,7 +63,8 @@ sievert = Unit(
     factor='1',
     symbols='Sv',
     aliases='sieverts',
-    category='effective dose')
+    category='effective dose',
+    prefix_scaling='si')
 
 # 1 roentgen = 0.01 sievert
 roentgen = Unit(

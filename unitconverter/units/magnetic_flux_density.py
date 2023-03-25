@@ -6,9 +6,10 @@ from unitconverter.unit import Unit
 # Tesla is the SI unit of magnetic flux density
 tesla = Unit(
     name='tesla',
+    factor='1',
     symbols='T',
     aliases='teslas',
-    factor='1')
+    prefix_scaling='si')
 
 # 1 gamma = 1E-9 teslas
 gamma = Unit(

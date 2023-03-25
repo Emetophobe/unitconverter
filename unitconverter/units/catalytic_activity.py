@@ -6,14 +6,16 @@ from unitconverter.unit import Unit
 # The katal is the SI unit of catalytic activity.
 katal = Unit(
     name='katal',
+    factor='1',
     symbols='kat',
     aliases='katals',
-    factor='1')
+    prefix_scaling='si')
 
 # 1 mole/sec is equal to 1 katal
 mole_per_second = Unit(
     name='mole per second',
+    factor='1',
     symbols='mol/s',
     aliases=['moles per second', 'moles/s', 'mole/s'],
-    prefix_index=0,	 # prefix first word
-    factor='1')
+    prefix_scaling='si',
+    prefix_index=0)

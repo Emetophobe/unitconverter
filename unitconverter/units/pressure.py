@@ -6,66 +6,70 @@ from unitconverter.unit import Unit
 # The pascal is the SI unit of pressure
 pascal = Unit(
     name='pascal',
+    factor='1',
     symbols='Pa',
     aliases='pascals',
-    factor='1')
+    prefix_scaling='si')
 
 # 1 bar is exactly 100000 (1E+5) pascal
 bar = Unit(
     name='bar',
+    factor='1E+5',
     aliases='bars',
-    factor='1E+5')
+    prefix_scaling='si')
 
 # 1 barye is exactly 0.1 pascal
 barye = Unit(
     name='barye',
+    factor='0.1',
     symbols='Ba',
     aliases='baryes',
-    factor='0.1')
-
-# 1 psi is roughly 6894.757 pascal
-psi = Unit(
-    name='psi',
-    symbols=['lbf/in^2', 'lbf/in2', 'lbs/in^2', 'lbs/in2'],
-    aliases=['pounds per square inch', 'pound per square inch'],
-    prefix_index=0,
-    factor='6894.757')
-
-# 1 torr is roughly 133.322 pascal
-torr = Unit(
-    name='torr',
-    symbols='Torr',
-    aliases='torrs',
-    factor='133.322')
+    prefix_scaling='si')
 
 # 1 metre of mercury is roughly 133322.4 pascal
 metre_of_mercury = Unit(
     name='metre of mercury',
+    factor='133322.4',
     symbols=['m Hg', 'mHg'],
     aliases='metres of mercury',
-    prefix_index=0,
-    factor='133322.4')
+    prefix_scaling='si',
+    prefix_index=0)
+
+
+# Non-SI units
+
+
+# 1 psi is roughly 6894.757 pascal
+psi = Unit(
+    name='psi',
+    factor='6894.757',
+    symbols=['lbf/in^2', 'lbf/in2', 'lbs/in^2', 'lbs/in2'],
+    aliases=['pounds per square inch', 'pound per square inch'])
+
+# 1 torr is roughly 133.322 pascal
+torr = Unit(
+    name='torr',
+    factor='133.322',
+    symbols='Torr',
+    aliases='torrs')
 
 # 1 inch of mercury is roughly 3386.389 pascal
 inch_of_mercury = Unit(
     name='inch of mercury',
+    factor='3386.389',
     symbols=['in Hg', 'inHg'],
-    aliases='inches of mercury',
-    prefix_index=0,
-    factor='3386.389')
+    aliases='inches of mercury')
 
 # 1 standard atmosphere = 101325 pascal
 standard_atmosphere = Unit(
     name='standard atmosphere',
+    factor='101325',
     symbols = ['atm'],
-    aliases=['standard atmospheres'],
-    prefix_scaling='none',
-    factor='101325')
+    aliases=['standard atmospheres'])
 
 # 1 technical atmosphere = roughly 98066.5 pascal
 technical_atmosphere = Unit(
     name='technical atmosphere',
+    factor='98066.5',
     symbols = ['kgf/cm^2', 'kg/cm^2', 'kg/cm2'],
-    aliases=['technical atmospheres', 'kilogram per square centimetre'],
-    prefix_scaling='none',
-    factor='98066.5')
+    aliases=['technical atmospheres', 'kilogram per square centimetre'])

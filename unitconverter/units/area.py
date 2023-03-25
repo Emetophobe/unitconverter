@@ -4,11 +4,11 @@ import unitconverter.units.length as length
 from unitconverter.unit import Unit
 
 
-# SI unit of area is the square meter (m^2)
-square_meter = Unit(
-    name='square meter',
-    symbols=['sqm', 'm^2', 'm2'],
-    aliases=['square meters', 'square metres', 'square metre', 'meter^2', 'meter2'],
+# SI unit of area is the square metre (m^2)
+square_metre = Unit(
+    name='square metre',
+    symbols=['m^2', 'm2'],
+    aliases=['square metres', 'square meters', 'square meter', 'metre^2', 'metre2'],
     factor='1',
     power=2)
 

@@ -3,32 +3,32 @@
 from unitconverter.unit import Unit
 
 
-# 1 meter/minute (m/s) is the base unit
-meter_per_second = Unit(
-    name='meter per second',
+# 1 metre/minute (m/s) is the base unit
+metre_per_second = Unit(
+    name='metre per second',
     symbols='m/s',
-    aliases=['meter/s', 'meters/s', 'metres/s', 'metre/s'],
+    aliases=['metre/s', 'metres/s', 'meters/s', 'meter/s'],
     factor='1')
 
-# 1 meter/minute = 1/60 = 0.0166666667 m/s
-meter_per_minute = Unit(
-    name='meter per minute',
+# 1 metre/minute = 1/60 = 0.0166666667 m/s
+metre_per_minute = Unit(
+    name='metre per minute',
     symbols='m/min',
-    aliases=['meter/min', 'meters/min', 'metres/min', 'metre/min'],
+    aliases=['metre/min', 'metres/min', 'meters/min', 'meter/min'],
     factor='0.0166666667')
 
-# 1 meter/hour = 1/3600 = 0.0002777778 m/s
-meter_per_hour = Unit(
-    name='meter per hour',
+# 1 metre/hour = 1/3600 = 0.0002777778 m/s
+metre_per_hour = Unit(
+    name='metre per hour',
     symbols='m/hr',
-    aliases=['meters per hour', 'metres per hour', 'metre per hour'],
+    aliases=['metres per hour', 'meters per hour', 'meter per hour'],
     factor='0.0002777778')
 
 # 1 kph = 1000/3600 = 0.2777777778 m/s
-kilometer_per_hour = Unit(
-    name='kilometer per hour',
+kilometre_per_hour = Unit(
+    name='kilometre per hour',
     symbols=['kph', 'km/hr'],
-    aliases=['kilometers per hour', 'kilometres per hour', 'kilometre per hour'],
+    aliases=['kilometres per hour', 'kilometers per hour', 'kilometer per hour'],
     factor='0.2777777778',
     prefix_scaling='none')
 

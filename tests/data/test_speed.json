@@ -1,15 +1,15 @@
 {
-  "meter per second": [
+  "metre per second": [
     {
-      "dest": "meter per minute",
+      "dest": "metre per minute",
       "expected": "59.99999988000000023999999952"
     },
     {
-      "dest": "meter per hour",
+      "dest": "metre per hour",
       "expected": "3599.999712000023039998156800"
     },
     {
-      "dest": "kilometer per hour",
+      "dest": "kilometre per hour",
       "expected": "3.599999999712000000023040000"
     },
     {

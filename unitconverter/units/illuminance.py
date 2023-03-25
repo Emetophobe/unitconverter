@@ -23,18 +23,18 @@ nox = Unit(
     factor='0.001')
 
 # 1 watt/m^2 is exactly 683 lux
-watt_per_square_meter = Unit(
-    name='watt per square meter',
+watt_per_square_metre = Unit(
+    name='watt per square metre',
     symbols=['W/m^2', 'W/m2'],
-    aliases=['watt per square metre', 'watt/m^2', 'watt/m2'],
+    aliases=['watts per square metre', 'watt/m^2', 'watt/m2'],
     prefix_index=0,
     factor='683')
 
-# 1 meter candle is equal to 1 lux
-meter_candle = Unit(
-    name='meter-candle',
+# 1 metre candle is equal to 1 lux
+metre_candle = Unit(
+    name='metre-candle',
     symbols='m*c',
-    aliases=['metre-candle', 'meter candle', 'metre candle'],
+    aliases=['metre candle', 'meter-candle', 'meter candle'],
     prefix_index=0,
     factor='1')
 

@@ -101,11 +101,11 @@ class Unit:
                     prefix_scaling=prefix_scaling)
 
     def _add_prefix(self, prefix: str, name: str) -> str:
-        """ Add a prefix to a string; i.e "kilo" + "meter"
+        """ Add a prefix to a string; i.e "kilo" + "metre"
 
         Args:
             prefix (str): the prefix string or character.
-            name (str): the base name; i.e "meter"
+            name (str): the base name; i.e "metre"
 
         Raises:
             TypeError: if an argument is an invalid type.

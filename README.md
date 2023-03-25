@@ -8,16 +8,16 @@ The following categories are currently supported:
 
 * Amount of substance (moles, atoms)
 * Angle (steradian, radian, square degrees)
-* Area (square meters, square miles, acres, hectares, etc..)
+* Area (square metres, square miles, acres, hectares, etc..)
 * Catalytic activity (katal, mol/sec)
 * Data storage (bits, bytes, kilobytes, kibibytes, etc..)
 * Electrical (ampere, volt, ohm, coulomb, farad, henry, siemens)
 * Energy (joule, calorie, btu, therm, watt seconds, watt hours, etc..)
 * Force (newtons, dynes, poundals, gram force, ton force, etc..)
-* Fuel consumption (mpg, liters/100km, etc..)
+* Fuel consumption (mpg, litres/100km, etc..)
 * Frequency (hertz, rpm)
-* Illuminance (lux, nox, phot, watt/m^2, meter candle, foot candle)
-* Length (meters, feet, inches...)
+* Illuminance (lux, nox, phot, watt/m^2, metre candle, foot candle)
+* Length (metres, feet, inches...)
 * Luminous flux (lumens, candela-steradian)
 * Luminous intensity (candela, candlepower)
 * Magnetic flux (weber, maxwell)
@@ -27,11 +27,11 @@ The following categories are currently supported:
 * Pressure (pascal, bar, psi)
 * Radiation (becqueral, curie, rutherford, gray, sievert)
 * Signal intensity (decibel, bel, neper)
-* Speed (km/hour, miles/hour, meters/second, inches/second...)
+* Speed (km/hour, miles/hour, metres/second, inches/second...)
 * Temperature (kelvin, celsius, fahrenheit, and rankine)
 * Time (seconds, minutes, hours, days...)
 * Viscosity (poise, pascal-second)
-* Volume (cubic meters, liters, quarts, gallons, cups...)
+* Volume (cubic metres, litres, quarts, gallons, cups...)
 
 ## Features
 
@@ -96,8 +96,8 @@ generate decimal prefixes like "kilobytes" and also binary prefixes like "kibiby
 
 #### Set rounding precision with `-p`/`--precision`
 
-    $ python3 convert.py 12 meters inches -p 5
-    12 meters = 472.44094 inches
+    $ python3 convert.py 12 metres inches -p 5
+    12 metres = 472.44094 inches
 
 #### Display thousands separators with `-c`/`--comma`
 
@@ -109,18 +109,18 @@ generate decimal prefixes like "kilobytes" and also binary prefixes like "kibiby
     $ python3 convert.py 58 inches grams
     Error: unit mismatch: inches=length, grams=mass
 
-#### Multi-word unit names are also supported, but they need to be wrapped in quotes; i.e "cubic meters"
+#### Multi-word unit names are also supported, but they need to be wrapped in quotes; i.e "cubic metres"
 
-    $ python3 convert.py 1 "cubic meters" liters
-    1 cubic meters = 1000 liters
+    $ python3 convert.py 1 "cubic metres" litres
+    1 cubic metres = 1000 litres
 
 #### Instead of multi-word units you can use the shortform instead:
 
-    $ python3 convert.py 1 m3 liters
-    1 m3 = 1000 liters
+    $ python3 convert.py 1 m3 litres
+    1 m3 = 1000 litres
 
-    $ python3 convert.py 1 m^3 liters
-    1 m^3 = 1000 liters
+    $ python3 convert.py 1 m^3 litres
+    1 m^3 = 1000 litres
 
 
 #

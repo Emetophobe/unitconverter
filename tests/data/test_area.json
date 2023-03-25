@@ -1,11 +1,11 @@
 {
-  "square meter": [
+  "square metre": [
     {
-      "dest": "quectometer^2",
+      "dest": "quectometre^2",
       "expected": "1E+60"
     },
     {
-      "dest": "quettameter^2",
+      "dest": "quettametre^2",
       "expected": "1E-60"
     },
     {

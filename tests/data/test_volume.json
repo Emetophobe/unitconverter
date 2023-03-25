@@ -1,111 +1,111 @@
 {
-  "cubic meter": [
+  "cubic metre": [
     {
-      "dest": "cubic quectometer",
+      "dest": "cubic quectometre",
       "expected": "1E+90"
     },
     {
-      "dest": "cubic rontometer",
+      "dest": "cubic rontometre",
       "expected": "1E+81"
     },
     {
-      "dest": "cubic yoctometer",
+      "dest": "cubic yoctometre",
       "expected": "1E+72"
     },
     {
-      "dest": "cubic zeptometer",
+      "dest": "cubic zeptometre",
       "expected": "1E+63"
     },
     {
-      "dest": "cubic attometer",
+      "dest": "cubic attometre",
       "expected": "1E+54"
     },
     {
-      "dest": "cubic femtometer",
+      "dest": "cubic femtometre",
       "expected": "1E+45"
     },
     {
-      "dest": "cubic picometer",
+      "dest": "cubic picometre",
       "expected": "1E+36"
     },
     {
-      "dest": "cubic nanometer",
+      "dest": "cubic nanometre",
       "expected": "1E+27"
     },
     {
-      "dest": "cubic micrometer",
+      "dest": "cubic micrometre",
       "expected": "1E+18"
     },
     {
-      "dest": "cubic millimeter",
+      "dest": "cubic millimetre",
       "expected": "1E+9"
     },
     {
-      "dest": "cubic centimeter",
+      "dest": "cubic centimetre",
       "expected": "1E+6"
     },
     {
-      "dest": "cubic decimeter",
+      "dest": "cubic decimetre",
       "expected": "1E+3"
     },
     {
-      "dest": "cubic decameter",
+      "dest": "cubic decametre",
       "expected": "1E-3"
     },
     {
-      "dest": "cubic hectometer",
+      "dest": "cubic hectometre",
       "expected": "1E-6"
     },
     {
-      "dest": "cubic kilometer",
+      "dest": "cubic kilometre",
       "expected": "1E-9"
     },
     {
-      "dest": "cubic megameter",
+      "dest": "cubic megametre",
       "expected": "1E-18"
     },
     {
-      "dest": "cubic gigameter",
+      "dest": "cubic gigametre",
       "expected": "1E-27"
     },
     {
-      "dest": "cubic terameter",
+      "dest": "cubic terametre",
       "expected": "1E-36"
     },
     {
-      "dest": "cubic petameter",
+      "dest": "cubic petametre",
       "expected": "1E-45"
     },
     {
-      "dest": "cubic exameter",
+      "dest": "cubic exametre",
       "expected": "1E-54"
     },
     {
-      "dest": "cubic zettameter",
+      "dest": "cubic zettametre",
       "expected": "1E-63"
     },
     {
-      "dest": "cubic yottameter",
+      "dest": "cubic yottametre",
       "expected": "1E-72"
     },
     {
-      "dest": "cubic ronnameter",
+      "dest": "cubic ronnametre",
       "expected": "1E-81"
     },
     {
-      "dest": "cubic quettameter",
+      "dest": "cubic quettametre",
       "expected": "1E-90"
     },
     {
-      "dest": "liter",
+      "dest": "litre",
       "expected": "1E+3"
     },
     {
-      "dest": "quectoliter",
+      "dest": "quectolitre",
       "expected": "1E+33"
     },
     {
-      "dest": "quettaliter",
+      "dest": "quettalitre",
       "expected": "1E-27"
     },
     {

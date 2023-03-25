@@ -71,7 +71,7 @@ class Converter:
         """ Find a unit by name, alias, or symbol.
 
         Args:
-            name (str): the name of the unit; i.e "meters".
+            name (str): the name of the unit; i.e "metres".
 
         Returns:
             Unit: the unit instance, or None if not found.

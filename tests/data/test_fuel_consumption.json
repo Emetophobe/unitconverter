@@ -1,19 +1,19 @@
 {
-  "meter per liter": [
+  "metre per litre": [
     {
-      "dest": "liter per 100km",
+      "dest": "litre per 100km",
       "expected": "0.00001"
     },
     {
-      "dest": "liter per meter",
+      "dest": "litre per metre",
       "expected": "1"
     },
     {
-      "dest": "meter per UK gallon",
+      "dest": "metre per UK gallon",
       "expected": "4.546099293920496959062811375"
     },
     {
-      "dest": "meter per US gallon",
+      "dest": "metre per US gallon",
       "expected": "3.785411783400294315160493488"
     },
     {

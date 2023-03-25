@@ -41,7 +41,7 @@
       "expected": "0.0001124044715501205715247327796"
     },
     {
-      "dest": "joule/meter",
+      "dest": "joule/metre",
       "expected": "1"
     }
   ]

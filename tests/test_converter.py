@@ -72,20 +72,20 @@ class TestConverter(AbstractTestCase):
     def test_parse_unit(self) -> None:
         """ Test parse_unit() method. """
         # Test built-in units
-        unit = self.converter.parse_unit('meter')
-        self.assertEqual(unit.name, 'meter')
+        unit = self.converter.parse_unit('metre')
+        self.assertEqual(unit.name, 'metre')
 
         # Test prefix generated units
-        unit = self.converter.parse_unit('kiloliter')
-        self.assertEqual(unit.name, 'kiloliter')
+        unit = self.converter.parse_unit('kilolitre')
+        self.assertEqual(unit.name, 'kilolitre')
 
         # Test symbol generated units
         unit = self.converter.parse_unit('ml')
-        self.assertEqual(unit.name, 'milliliter')
+        self.assertEqual(unit.name, 'millilitre')
 
         # Test multi-word prefix generated units
-        unit = self.converter.parse_unit('cubic kilometer')
-        self.assertEqual(unit.name, 'cubic kilometer')
+        unit = self.converter.parse_unit('cubic kilometre')
+        self.assertEqual(unit.name, 'cubic kilometre')
         self.assertTrue('km^3' in unit.symbols)
 
         # Test invalid unit names

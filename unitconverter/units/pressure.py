@@ -38,11 +38,11 @@ torr = Unit(
     aliases='torrs',
     factor='133.322')
 
-# 1 meter of mercury is roughly 133322.4 pascal
-meter_of_mercury = Unit(
-    name='meter of mercury',
+# 1 metre of mercury is roughly 133322.4 pascal
+metre_of_mercury = Unit(
+    name='metre of mercury',
     symbols=['m Hg', 'mHg'],
-    aliases='meters of mercury',
+    aliases='metres of mercury',
     prefix_index=0,
     factor='133322.4')
 
@@ -66,6 +66,6 @@ standard_atmosphere = Unit(
 technical_atmosphere = Unit(
     name='technical atmosphere',
     symbols = ['kgf/cm^2', 'kg/cm^2', 'kg/cm2'],
-    aliases=['technical atmospheres', 'kilogram per square centimeter'],
+    aliases=['technical atmospheres', 'kilogram per square centimetre'],
     prefix_scaling='none',
     factor='98066.5')

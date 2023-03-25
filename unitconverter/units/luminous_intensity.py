@@ -19,6 +19,6 @@ candlepower = Unit(
 
 # 1 historic candlepower is equal to 0.981 candela
 historic_candlepower = Unit(
-    name='historic candlepower',
+	name='historic candlepower',
     symbols='cp-historic',
     factor='0.981')

@@ -17,11 +17,11 @@
       "expected": "1E+3"
     },
     {
-      "dest": "watt per square meter",
+      "dest": "watt per square metre",
       "expected": "0.001464128843338213762811127379"
     },
     {
-      "dest": "meter-candle",
+      "dest": "metre-candle",
       "expected": "1"
     },
     {

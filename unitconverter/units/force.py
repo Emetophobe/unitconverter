@@ -72,9 +72,9 @@ short_ton_force = Unit(
     aliases=['tf (short)'],
     factor='8896.4432305')
 
-# 1 joule/meter is equal to 1 newton
-joule_per_meter = Unit(
-    name='joule/meter',
+# 1 joule/metre is equal to 1 newton
+joule_per_metre = Unit(
+    name='joule/metre',
     symbols=['J/m', 'j/m'],
-    aliases='joules/meter',
+    aliases=['joules/metre', 'joules/meter', 'joule/meter'],
     factor='1')

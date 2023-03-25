@@ -4,19 +4,19 @@ from unitconverter.unit import Unit
 from unitconverter.units import length, area
 
 
-# The cubic meter (m^3) is the SI unit of volume
-cubic_meter = Unit(
-    name='cubic meter',
+# The cubic metre (m^3) is the SI unit of volume
+cubic_metre = Unit(
+    name='cubic metre',
     symbols=['m^3', 'm3'],
-    aliases=['cubic meters', 'cubic metres', 'cubic metre', 'meter^3', 'meter3'],
+    aliases=['cubic metres', 'cubic meters', 'cubic meter', 'metre^3', 'metre3'],
     factor='1',
     power=3)
 
-# 1 liter = 0.001 m^3 (1000 liters = 1 m^3)
-liter = Unit(
-    name='liter',
+# 1 litre = 0.001 m^3 (1000 litres = 1 m^3)
+litre = Unit(
+    name='litre',
     symbols=['L', 'l'],
-    aliases=['liters', 'litres', 'litre'],
+    aliases=['litres', 'liters', 'liter'],
     factor='1E-3')
 
 # 1 cubic inch is roughly 0.000016387064 m^3

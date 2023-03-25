@@ -14,7 +14,7 @@ from unitconverter.units.energy import joule
 from unitconverter.units.frequency import hertz
 from unitconverter.units.force import newton
 from unitconverter.units.illuminance import lux
-from unitconverter.units.length import meter
+from unitconverter.units.length import metre
 from unitconverter.units.luminous_flux import lumen
 from unitconverter.units.luminous_intensity import candela
 from unitconverter.units.magnetic_flux import weber
@@ -29,7 +29,7 @@ from unitconverter.units.time import second
 # Base units
 
 sys.modules['si_units.second'] = second         # Time
-sys.modules['si_units.meter'] = meter           # Length
+sys.modules['si_units.metre'] = metre           # Length
 sys.modules['si_units.gram'] = gram             # Mass (SI uses kg instead g)
 sys.modules['si_units.ampere'] = ampere         # Eletric current
 sys.modules['si_units.kelvin'] = kelvin         # Temperature

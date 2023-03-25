@@ -9,8 +9,8 @@ square_metre = Unit(
     name='square metre',
     factor='1',
     symbols=['m^2', 'm2'],
-    aliases=['square metres', 'square meters', 'square meter', 'metre^2', 'metre2',
-             'meter^2', 'meter2'],
+    aliases=['square metres', 'square meters', 'square meter', 'metre^2',
+             'metre2', 'meter^2', 'meter2'],
     power=2,
     prefix_scaling='si')
 
@@ -159,28 +159,28 @@ square_rod = Unit(
 us_survey_acre = Unit(
     name='US survey acre',
     factor='4046.872609874',
-    symbols='ac-survey',
+    symbols='survey-ac',
     aliases=['US survey acres', 'surveyacres', 'surveyacre'])
 
 # 1 US survey square foot is roughly 0.09290341161 m^2
 us_survey_square_foot = Unit(
     name='US survey square foot',
     factor=length.us_survey_foot.factor ** 2,
-    symbols=['sqft-survey', 'ft^2-survey', 'ft2-survey'],
+    symbols=['survey-sqft', 'survey-ft^2', 'survey-ft2'],
     aliases=['US survey square feet', 'surveyfoot^2', 'surveyfoot2'])
 
 # 1 US survey square mile is roughly 2589998.47032 m^2
 us_survey_square_mile = Unit(
     name='US survey square mile',
     factor=length.us_survey_mile.factor ** 2,
-    symbols=['mi^2-survey', 'mi2-survey'],
+    symbols=['survey-mi^2', 'survey-mi2'],
     aliases=['US survey square miles', 'surveymile^2', 'surveymile2'])
 
 # 1 US survey square rod = 25.292953807488363364 m^2
 us_survey_square_rod = Unit(
     name='US survey square rod',
     factor=length.us_survey_rod.factor ** 2,
-    symbols=['rd^2-survey', 'rd2-survey'],
+    symbols=['survey-rd^2', 'survey-rd2'],
     aliases=['US survey square rods', 'surveyrod^2', 'surveyrod2'])
 
 
@@ -197,13 +197,13 @@ arpent = Unit(
 homestead = Unit(
     name='homestead',
     factor='647497.02758',
-    aliases=['survey homesteads', 'survey homestead'])
+    aliases=['homesteads', 'survey homesteads', 'survey homestead'])
 
 # 1 section is roughly 2589988.1103 m^2
 section = Unit(
     name='section',
     factor='2589988.1103',
-    aliases=['survey sections', 'survey section'])
+    aliases=['sections', 'survey sections', 'survey section'])
 
 # 1 township is roughly 93239571.972 m^2
 township = Unit(

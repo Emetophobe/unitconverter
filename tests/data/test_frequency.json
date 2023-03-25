@@ -13,12 +13,12 @@
       "expected": "59.99999999999999999999999999"
     },
     {
-        "dest": "cycle per second",
-        "expected": "1"
+      "dest": "cycle per second",
+      "expected": "1"
     },
     {
-        "dest": "cycle per minute",
-        "expected": "59.99999999999999999999999999"
+      "dest": "cycle per minute",
+      "expected": "59.99999999999999999999999999"
     }
   ]
 }

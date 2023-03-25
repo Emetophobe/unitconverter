@@ -15,7 +15,7 @@ steradian = Unit(
     symbols='sr',
     aliases='steradians',
     category='solid angle',
-	prefix_scaling='si')
+    prefix_scaling='si')
 
 # 1 square degree is (pi/180)^2 steradian or roughly 3.04617E−4 steradians
 square_degree = Unit(
@@ -45,7 +45,7 @@ radian = Unit(
     symbols='rad',
     aliases='radians',
     category='plane angle',
-	prefix_scaling='si')
+    prefix_scaling='si')
 
 # 1 degree = pi/180 radians or roughly 0.0174532925 radians
 degree = Unit(
@@ -65,24 +65,24 @@ gradian = Unit(
 
 # 1 arcsecond = pi / (180 × 3600) = roughly 4.848136957929807e-06 radians
 arcsecond = Unit(
-	name='arcsecond',
-	factor='4.848136957929807e-06',
-	symbols='arcsec',
-	aliases='arc second',
-	category='plane angle',
-	prefix_scaling='si')
+    name='arcsecond',
+    factor='4.848136957929807e-06',
+    symbols='arcsec',
+    aliases='arc second',
+    category='plane angle',
+    prefix_scaling='si')
 
 # 1 arcminute = pi / (60 x 180) = roughly 0.000290888 radians
 arcminute = Unit(
-	name='arcminute',
-	factor='0.000290888',
-	symbols='arcmin',
-	aliases='arc minute',
-	category='plane angle')
+    name='arcminute',
+    factor='0.000290888',
+    symbols='arcmin',
+    aliases='arc minute',
+    category='plane angle')
 
 # 1 turn = 360 degrees = 400 gradians = 2π radians = roughly 6.283185307179586 radians
 turn = Unit(
-	name='turn',
-	factor='6.283185307179586',
-	symbols=['tr', 'pl'],
-	category='plane angle')
+    name='turn',
+    factor='6.283185307179586',
+    symbols=['tr', 'pl'],
+    category='plane angle')

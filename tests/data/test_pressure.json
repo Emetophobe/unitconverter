@@ -9,16 +9,20 @@
       "expected": "1E+1"
     },
     {
-      "dest": "psi",
+      "dest": "metre of mercury",
+      "expected": "0.000007500615050434135599119127768"
+    },
+    {
+      "dest": "pound per square inch",
       "expected": "0.0001450377438972831094699929236"
+    },
+    {
+      "dest": "kilopound per square inch",
+      "expected": "0.0000001450377438972831094699929236"
     },
     {
       "dest": "torr",
       "expected": "0.007500637554192106329037968227"
-    },
-    {
-      "dest": "metre of mercury",
-      "expected": "0.000007500615050434135599119127768"
     },
     {
       "dest": "inch of mercury",

@@ -41,10 +41,17 @@ metre_of_mercury = Unit(
 
 # 1 psi is roughly 6894.757 pascal
 psi = Unit(
-    name='psi',
+    name='pound per square inch',
     factor='6894.757',
-    symbols=['lbf/in^2', 'lbf/in2', 'lbs/in^2', 'lbs/in2'],
-    aliases=['pounds per square inch', 'pound per square inch'])
+    symbols=['psi', 'lbf/in^2', 'lbf/in2', 'lbs/in^2', 'lbs/in2'],
+    aliases='pounds per square inch')
+
+# 1 ksi = 1000 psi = 6.894757E+6 pascal
+ksi = Unit(
+	name='kilopound per square inch',
+	factor='6.894757E+6',
+	symbols=['ksi', 'klbf/in^2', 'klbf/in2', 'klbs/in^2', 'klbs/in2'],
+	aliases='kilopounds per square inch')
 
 # 1 torr is roughly 133.322 pascal
 torr = Unit(

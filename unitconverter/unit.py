@@ -111,6 +111,10 @@ class Unit:
 
             prefix_index (int, optional): i
                 index of word to prefix. Defaults to -1 (last word).
+
+        Raises:
+            TypeError: if symbols or aliases is the wrong type.
+            ValueError: if prefix_scaling or prefix_index is invalid.
         """
         self.name = name
         self.symbols = self._parse_string_list(symbols)
@@ -120,17 +124,20 @@ class Unit:
         self.offset = Decimal(offset)
         self.category = category
 
+        # Check if prefix scaling is valid
+        if prefix_scaling is not None and prefix_scaling not in PREFIX_OPTIONS:
+            raise ValueError(f'Unsupported prefix option: {prefix_scaling}')
+
         # Check if prefix index is valid
         last_index = len(name.split(' ')) - 1
         if prefix_index < -1 or prefix_index > last_index:
             raise ValueError(f'prefix index must be between -1 and {last_index}')
 
-        # Prefix scaling options
         self.prefix_scaling = prefix_scaling
         self.prefix_index = prefix_index
 
     def add_prefix(self, factor: str, symbol: str, prefix: str):
-        """ Create a new unit from an existing unit by applying a prefix.
+        """ Create a new unit by applying a prefix (scaling factor).
 
         Args:
             factor (str):

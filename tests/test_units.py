@@ -5,7 +5,6 @@ from unitconverter.unit import PREFIX_OPTIONS
 from tests import AbstractTestCase, Unit
 
 
-
 class TestUnits(AbstractTestCase):
     """ Test predefined units. """
 

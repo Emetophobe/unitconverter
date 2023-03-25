@@ -10,5 +10,5 @@ __all__ = [
     'Converter',
     'format_decimal',
     'get_prefixes',
-	'apply_prefix'
+    'apply_prefix'
 ]

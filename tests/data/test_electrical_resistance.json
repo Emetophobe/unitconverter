@@ -11,6 +11,18 @@
     {
       "dest": "reciprocal siemens",
       "expected": "1"
+    },
+    {
+      "dest": "volt per ampere",
+      "expected": "1"
+    },
+    {
+      "dest": "abohm",
+      "expected": "1E+9"
+    },
+    {
+      "dest": "statohm",
+      "expected": "1.112650029730008794385834986E-12"
     }
   ]
 }

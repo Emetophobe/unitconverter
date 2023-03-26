@@ -16,7 +16,7 @@ The following categories are currently supported:
 * Electrical capacitance (farad)
 * Electrical conductance (siemens, ampere/volt)
 * Electrical inductance (henry, weber/ampere, abhenry, stathenry)
-* Electrical resistance (ohm)
+* Electrical resistance (ohm, volt/ampere, abohm, statohm)
 * Energy (joule, calorie, btu, therm, watt-second, watt-hour, etc...)
 * Force (newton, dyne, poundal, gram-force, ton-force, etc...)
 * Fuel consumption (litres/100km, km/liter, miles per gallon, etc...)

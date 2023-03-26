@@ -4,7 +4,7 @@ from unitconverter.unit import Unit
 
 
 class Mass(Unit):
-    category = 'weight and mass'
+    category = 'mass'
 
 
 # SI unit for mass is kilograms (kg) but I use gram (g) for simplicity.

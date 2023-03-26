@@ -20,7 +20,7 @@ The following categories are currently supported:
 * Energy (joule, calorie, btu, therm, watt-second, watt-hour, etc...)
 * Force (newton, dyne, poundal, gram-force, ton-force, etc...)
 * Fuel consumption (litres/100km, km/liter, miles per gallon, etc...)
-* Frequency (hertz, rpm)
+* Frequency (hertz, rpm, cycles/minute, cycles/hour)
 * Illuminance (lux, nox, phot, watt/m^2, metre-candle, foot-candle)
 * Length (metre, inch, foot, etc...)
 * Luminous flux (lumen, candela-steradian)

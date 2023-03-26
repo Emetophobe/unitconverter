@@ -19,6 +19,10 @@
     {
       "dest": "cycle per minute",
       "expected": "59.99999999999999999999999999"
+    },
+    {
+      "dest": "cycle per hour",
+      "expected": "3600.000000000000000000000000"
     }
   ]
 }

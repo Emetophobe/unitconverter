@@ -2,7 +2,7 @@
 
 from decimal import Decimal
 from unitconverter.unit import Unit
-from unitconverter.utils import combinations, PER_SECOND, PER_MINUTE
+from unitconverter.utils import combinations, PER_SECOND, PER_MINUTE, PER_HOUR
 
 
 class Frequency(Unit):
@@ -30,6 +30,13 @@ cycle_per_minute = Frequency(
     factor=Decimal('1') / Decimal('60'),
     symbols=['cpm', 'CPM'],
     aliases=combinations(['cycle', 'cycles'], PER_MINUTE))
+
+# 1 cycle per hour is 1/3600 hertz or roughly 0.000277777778 hertz
+cycle_per_hour = Frequency(
+    name='cycle per hour',
+    factor=Decimal('1') / Decimal('3600'),
+    symbols=['cph', 'CPH'],
+    aliases=combinations(['cycle', 'cycles'], PER_HOUR))
 
 # Add rpm for convenience. 1 rpm is the same as 1 cycle/minute
 rpm = Frequency(

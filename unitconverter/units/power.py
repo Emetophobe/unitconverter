@@ -17,7 +17,16 @@ watt = Power(
     aliases='watts',
     prefix_scaling='si')
 
-# 1 joule/sec is equal to 1 watt
+# 1 volt x ampere is equivalent to 1 watt
+volt_ampere = Power(
+    name='volt ampere',
+    factor='1',
+    symbols=['V*A', 'V-A', 'V⋅A'],
+    aliases=combinations(['volt'], [' ampere', ' amperes', '-ampere', '-amperes']),
+    prefix_scaling='si',
+    prefix_index=0)
+
+# 1 joule/sec is equivalent to 1 watt
 joule_per_second = Power(
     name='joule per second',
     factor='1',

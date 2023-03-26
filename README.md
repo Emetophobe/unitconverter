@@ -29,7 +29,7 @@ The following categories are currently supported:
 * Magnetic flux density (tesla, guass, gamma)
 * Mass (gram, pound, ounce, metric ton, etc...)
 * Plane angle (radian, gradian, degree, arcsecond, arcminute, turn)
-* Power (watt, joule/second, horsepower, etc...)
+* Power (watt, volt-ampere, joule/second, horsepower, etc...)
 * Pressure (pascal, bar, psi, torr, standard atmosphere, etc..)
 * Signal intensity (decibel, bel, and neper)
 * Solid angle (steradian, square degree, spat)

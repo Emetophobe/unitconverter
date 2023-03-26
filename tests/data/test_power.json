@@ -1,12 +1,8 @@
 {
   "watt": [
     {
-      "dest": "horsepower",
-      "expected": "0.001359619306594153636981645139"
-    },
-    {
-      "dest": "mechanical horsepower",
-      "expected": "0.001341021858656296097626391310"
+      "dest": "volt ampere",
+      "expected": "1"
     },
     {
       "dest": "joule per second",
@@ -19,6 +15,14 @@
     {
       "dest": "joule per hour",
       "expected": "3600.000000000000000000000000"
+    },
+    {
+      "dest": "horsepower",
+      "expected": "0.001359619306594153636981645139"
+    },
+    {
+      "dest": "mechanical horsepower",
+      "expected": "0.001341021858656296097626391310"
     }
   ]
 }

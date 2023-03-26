@@ -1,7 +1,7 @@
 # Copyright (c) 2022-2023 Mike Cunningham
 
 from unitconverter.unit import Unit
-from unitconverter.utils import combinations
+from unitconverter.utils import combinations, PER_AMPERE
 
 
 class ElectricPotential(Unit):
@@ -17,12 +17,11 @@ volt = ElectricPotential(
     prefix_scaling='si')
 
 # 1 watt/ampere is equivalent to 1 volt
-per_ampere = [' per ampere', ' per amp', '/ampere', '/amp']
 watt_per_ampere = ElectricPotential(
     name='watt per ampere',
     factor='1',
     symbols='W/A',
-    aliases=combinations(['watt', 'watts'], per_ampere),
+    aliases=combinations(['watt', 'watts'], PER_AMPERE),
     prefix_scaling='si',
     prefix_index=0)
 
@@ -40,7 +39,3 @@ statvolt = ElectricPotential(
     factor='299.7925',
     symbols='stV',
     aliases='statvolts')
-
-
-# Cleanup
-del per_ampere

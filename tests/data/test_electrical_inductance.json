@@ -7,6 +7,18 @@
     {
       "dest": "quettahenry",
       "expected": "1E-30"
+    },
+    {
+      "dest": "weber per ampere",
+      "expected": "1"
+    },
+    {
+      "dest": "abhenry",
+      "expected": "1E+9"
+    },
+    {
+      "dest": "stathenry",
+      "expected": "1.112650029730008794385834986E-12"
     }
   ]
 }

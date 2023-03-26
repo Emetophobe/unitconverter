@@ -31,3 +31,4 @@ PER_MINUTE = (' per minute', '/minute', '/min')
 PER_HOUR = (' per hour', '/hour', '/hr')
 PER_METRE = combinations([' per ', '/'], ['metre', 'meter'])
 PER_LITRE = combinations([' per ', '/'], ['litre', 'liter'])
+PER_AMPERE = [' per ampere', ' per amp', '/ampere', '/amp']

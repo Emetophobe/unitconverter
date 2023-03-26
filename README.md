@@ -15,7 +15,7 @@ The following categories are currently supported:
 * Electric potential (volt, advolt, statvolt)
 * Electrical capacitance (farad)
 * Electrical conductance (siemens, ampere/volt)
-* Electrical inductance (henry)
+* Electrical inductance (henry, weber/ampere, abhenry, stathenry)
 * Electrical resistance (ohm)
 * Energy (joule, calorie, btu, therm, watt-second, watt-hour, etc...)
 * Force (newton, dyne, poundal, gram-force, ton-force, etc...)

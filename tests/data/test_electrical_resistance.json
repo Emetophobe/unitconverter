@@ -1,0 +1,16 @@
+{
+  "ohm": [
+    {
+      "dest": "quectoohm",
+      "expected": "1E+30"
+    },
+    {
+      "dest": "quettaohm",
+      "expected": "1E-30"
+    },
+    {
+      "dest": "reciprocal siemens",
+      "expected": "1"
+    }
+  ]
+}

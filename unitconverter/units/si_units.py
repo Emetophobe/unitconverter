@@ -8,8 +8,13 @@ import sys
 from unitconverter.units.amount_substance import mole
 from unitconverter.units.angle import steradian, radian
 from unitconverter.units.catalytic_activity import katal
-from unitconverter.units.electrical import (coulomb, ampere, volt, farad,
-                                            siemens, henry, ohm)
+from unitconverter.units.electric_charge import coulomb
+from unitconverter.units.electric_current import ampere
+from unitconverter.units.electric_potential import volt
+from unitconverter.units.electrical_capacitance import farad
+from unitconverter.units.electrical_conductance import siemens
+from unitconverter.units.electrical_inductance import henry
+from unitconverter.units.electrical_resistance import ohm
 from unitconverter.units.energy import joule
 from unitconverter.units.frequency import hertz
 from unitconverter.units.force import newton

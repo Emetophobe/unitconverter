@@ -1,0 +1,16 @@
+{
+  "siemens": [
+    {
+      "dest": "quectosiemens",
+      "expected": "1E+30"
+    },
+    {
+      "dest": "quettasiemens",
+      "expected": "1E-30"
+    },
+    {
+      "dest": "ampere per volt",
+      "expected": "1"
+    }
+  ]
+}

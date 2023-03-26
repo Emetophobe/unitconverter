@@ -6,7 +6,13 @@ from unitconverter.units import angle
 from unitconverter.units import area
 from unitconverter.units import catalytic_activity
 from unitconverter.units import data_storage
-from unitconverter.units import electrical
+from unitconverter.units import electric_charge
+from unitconverter.units import electric_current
+from unitconverter.units import electric_potential
+from unitconverter.units import electrical_capacitance
+from unitconverter.units import electrical_conductance
+from unitconverter.units import electrical_inductance
+from unitconverter.units import electrical_resistance
 from unitconverter.units import energy
 from unitconverter.units import force
 from unitconverter.units import frequency
@@ -38,7 +44,13 @@ def get_modules() -> dict:
         'area': area,
         'catalytic activity': catalytic_activity,
         'data storage': data_storage,
-        'electrical': electrical,
+        'electric charge': electric_charge,
+        'electric current': electric_current,
+        'electric potential': electric_potential,
+        'electrical capacitance': electrical_capacitance,
+        'electrical conductance': electrical_conductance,
+        'electrical inductance': electrical_inductance,
+        'electrical resistance': electrical_resistance,
         'energy': energy,
         'force': force,
         'frequency': frequency,

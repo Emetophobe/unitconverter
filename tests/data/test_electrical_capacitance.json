@@ -1,0 +1,12 @@
+{
+  "farad": [
+    {
+      "dest": "quettafarad",
+      "expected": "1E-30"
+    },
+    {
+      "dest": "quectofarad",
+      "expected": "1E+30"
+    }
+  ]
+}

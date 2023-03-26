@@ -1,0 +1,12 @@
+{
+  "ampere": [
+    {
+      "dest": "quectoampere",
+      "expected": "1E+30"
+    },
+    {
+      "dest": "quettaampere",
+      "expected": "1E-30"
+    }
+  ]
+}

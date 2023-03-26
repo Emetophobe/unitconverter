@@ -23,6 +23,7 @@ def combinations(prefixes, suffixes, excludes=None):
 # Tuples of commonly used prefixes and suffixes
 METRE_NAMES = ('metre', 'metres', 'meter', 'meters')
 LITRE_NAMES = ('litre', 'litres', 'liter', 'litres')
+AMPERE_NAMES = ('ampere', 'amperes', 'amp', 'amps')
 
 # Leading space before 'per' is intentional
 PER_SECOND = (' per second', '/second', '/sec', '/s')

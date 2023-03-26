@@ -1,5 +1,6 @@
 # Copyright (c) 2022-2023 Mike Cunningham
 
+from decimal import Decimal
 from unitconverter.unit import Unit
 
 
@@ -16,25 +17,27 @@ joule_per_second = Unit(
     name='joule per second',
     factor='1',
     symbols=['J/s', 'j/s'],
-    aliases=['joules per second', 'joules/second', 'joule/second'],
+    aliases=['joules per second', 'joules/second', 'joule/second', 'joules/sec',
+             'joule/sec', 'joules/s', 'joule/s'],
     prefix_scaling='si',
     prefix_index=0)
 
 # 1 joule/min = roughly 0.0166666667 watts
 joule_per_minute = Unit(
     name='joule per minute',
-    factor='0.0166666667',
+    factor=Decimal('1') / Decimal('60'),
     symbols=['J/min', 'j/min'],
-    aliases=['joules per minute', 'joules/minute', 'joule/minute'],
+    aliases=['joules per minute', 'joules/minute', 'joule/minute', 'joules/min',
+             'joule/min'],
     prefix_scaling='si',
     prefix_index=0)
 
 # 1 joule/hour = roughly 0.0002777778 watts
 joule_per_hour = Unit(
     name='joule per hour',
-    factor='0.0002777778',
+    factor=Decimal('1') / Decimal('3600'),
     symbols=['J/hr', 'j/hr', 'J/h', 'j/h'],
-    aliases=['joules per hour', 'joules/hour', 'joule/hour'],
+    aliases=['joules per hour', 'joules/hour', 'joule/hour', 'joules/hr', 'joule/hr'],
     prefix_scaling='si',
     prefix_index=0)
 

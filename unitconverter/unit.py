@@ -119,6 +119,8 @@ class Unit:
         self.name = name
         self.symbols = self._parse_string_list(symbols)
         self.aliases = self._parse_string_list(aliases)
+        self.aliases = [name for name in self.aliases if name != self.name]
+
         self.factor = Decimal(factor)
         self.power = Decimal(power)
         self.offset = Decimal(offset)

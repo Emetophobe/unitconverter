@@ -13,9 +13,10 @@ steradian = Unit(
     name='steradian',
     factor='1',
     symbols='sr',
-    aliases='steradians',
+    aliases=['steradians', 'square radian', 'square radians'],
     category='solid angle',
-    prefix_scaling='si')
+    prefix_scaling='si',
+    prefix_index=0)
 
 # 1 square degree is (pi/180)^2 steradian or roughly 3.04617E−4 steradians
 square_degree = Unit(

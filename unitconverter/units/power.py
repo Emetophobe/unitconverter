@@ -2,6 +2,7 @@
 
 from decimal import Decimal
 from unitconverter.unit import Unit
+from unitconverter.utils import combinations, PER_SECOND, PER_MINUTE, PER_HOUR
 
 
 # The watt is the SI unit of power
@@ -17,8 +18,7 @@ joule_per_second = Unit(
     name='joule per second',
     factor='1',
     symbols=['J/s', 'j/s'],
-    aliases=['joules per second', 'joules/second', 'joule/second', 'joules/sec',
-             'joule/sec', 'joules/s', 'joule/s'],
+    aliases=combinations(['joule', 'joules'], PER_SECOND),
     prefix_scaling='si',
     prefix_index=0)
 
@@ -27,8 +27,7 @@ joule_per_minute = Unit(
     name='joule per minute',
     factor=Decimal('1') / Decimal('60'),
     symbols=['J/min', 'j/min'],
-    aliases=['joules per minute', 'joules/minute', 'joule/minute', 'joules/min',
-             'joule/min'],
+    aliases=combinations(['joule', 'joules'], PER_MINUTE),
     prefix_scaling='si',
     prefix_index=0)
 
@@ -37,7 +36,7 @@ joule_per_hour = Unit(
     name='joule per hour',
     factor=Decimal('1') / Decimal('3600'),
     symbols=['J/hr', 'j/hr', 'J/h', 'j/h'],
-    aliases=['joules per hour', 'joules/hour', 'joule/hour', 'joules/hr', 'joule/hr'],
+    aliases=combinations(['joule', 'joules'], PER_HOUR),
     prefix_scaling='si',
     prefix_index=0)
 

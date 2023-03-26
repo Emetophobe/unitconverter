@@ -2,6 +2,7 @@
 
 from decimal import Decimal
 from unitconverter.unit import Unit
+from unitconverter.utils import combinations, PER_SECOND, PER_MINUTE
 
 
 # The hertz is the SI unit of frequency
@@ -17,21 +18,18 @@ cycle_per_second = Unit(
     name='cycle per second',
     factor='1',
     symbols=['cps', 'CPS'],
-    aliases=['cycles per second', 'cycles/second', 'cycle/second', 'cycles/sec',
-             'cycle/sec'])
+    aliases=combinations(['cycle', 'cycles'], PER_SECOND))
 
 # 1 cycle per minute is 1/60 hertz or roughly 0.016666667 hertz
 cycle_per_minute = Unit(
     name='cycle per minute',
     factor=Decimal('1') / Decimal('60'),
     symbols=['cpm', 'CPM'],
-    aliases=['cycles per minute', 'cycles/minute', 'cycle/minute', 'cycles/min',
-             'cycle/min'])
+    aliases=combinations(['cycle', 'cycles'], PER_MINUTE))
 
 # Add rpm for convenience. 1 rpm is the same as 1 cycle/minute
 rpm = Unit(
     name='revolution per minute',
     factor=Decimal('1') / Decimal('60'),
     symbols=['rpm', 'RPM'],
-    aliases=['revolutions per minute', 'revolutions/minute', 'revolution/minute',
-             'revolutions/min', 'revolution/min', 'revs/min', 'rev/min'])
+    aliases=combinations(['revolution', 'revolutions'], PER_MINUTE))

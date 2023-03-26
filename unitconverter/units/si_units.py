@@ -6,7 +6,6 @@
 
 import sys
 from unitconverter.units.amount_substance import mole
-from unitconverter.units.angle import steradian, radian
 from unitconverter.units.catalytic_activity import katal
 from unitconverter.units.electric_charge import coulomb
 from unitconverter.units.electric_current import ampere
@@ -25,9 +24,11 @@ from unitconverter.units.luminous_intensity import candela
 from unitconverter.units.magnetic_flux import weber
 from unitconverter.units.magnetic_flux_density import tesla
 from unitconverter.units.mass import gram
+from unitconverter.units.plane_angle import radian
 from unitconverter.units.power import watt
 from unitconverter.units.pressure import pascal
 from unitconverter.units.radiation import becquerel, gray, sievert
+from unitconverter.units.solid_angle import steradian
 from unitconverter.units.temperature import kelvin, celsius
 from unitconverter.units.time import second
 

@@ -2,7 +2,6 @@
 
 from unitconverter.unit import Unit
 from unitconverter.units import amount_substance
-from unitconverter.units import angle
 from unitconverter.units import area
 from unitconverter.units import catalytic_activity
 from unitconverter.units import data_storage
@@ -24,11 +23,13 @@ from unitconverter.units import luminous_intensity
 from unitconverter.units import magnetic_flux
 from unitconverter.units import magnetic_flux_density
 from unitconverter.units import mass
+from unitconverter.units import plane_angle
 from unitconverter.units import power
 from unitconverter.units import pressure
 from unitconverter.units import radiation
 from unitconverter.units import si_units
 from unitconverter.units import signal_intensity
+from unitconverter.units import solid_angle
 from unitconverter.units import speed
 from unitconverter.units import temperature
 from unitconverter.units import time
@@ -40,7 +41,6 @@ def get_modules() -> dict:
     """ Get a dictionary of module categories. """
     return {
         'amount of substance': amount_substance,
-        'angle': angle,
         'area': area,
         'catalytic activity': catalytic_activity,
         'data storage': data_storage,
@@ -62,11 +62,13 @@ def get_modules() -> dict:
         'magnetic flux': magnetic_flux,
         'magnetic flux density': magnetic_flux_density,
         'mass': mass,
+        'plane angle': plane_angle,
         'power': power,
         'pressure': pressure,
         'radiation': radiation,
         'SI units': si_units,
         'signal intensity': signal_intensity,
+        'solid angle': solid_angle,
         'speed': speed,
         'temperature': temperature,
         'time': time,
@@ -110,6 +112,12 @@ def get_units() -> list[Unit]:
     return list(find_dupes(units))
 
 
+def get_categories() -> list[str]:
+    """ Get a list of category names. """
+    return get_modules().keys()
+
+
 __all__ = [
+    'get_categories',
     'get_units'
 ]

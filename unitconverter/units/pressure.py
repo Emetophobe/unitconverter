@@ -48,10 +48,10 @@ psi = Unit(
 
 # 1 ksi = 1000 psi = 6.894757E+6 pascal
 ksi = Unit(
-	name='kilopound per square inch',
-	factor='6.894757E+6',
-	symbols=['ksi', 'klbf/in^2', 'klbf/in2', 'klbs/in^2', 'klbs/in2'],
-	aliases='kilopounds per square inch')
+    name='kilopound per square inch',
+    factor='6.894757E+6',
+    symbols=['ksi', 'klbf/in^2', 'klbf/in2', 'klbs/in^2', 'klbs/in2'],
+    aliases='kilopounds per square inch')
 
 # 1 torr is roughly 133.322 pascal
 torr = Unit(
@@ -71,12 +71,12 @@ inch_of_mercury = Unit(
 standard_atmosphere = Unit(
     name='standard atmosphere',
     factor='101325',
-    symbols = ['atm'],
-    aliases=['standard atmospheres'])
+    symbols='atm',
+    aliases='standard atmospheres')
 
 # 1 technical atmosphere = roughly 98066.5 pascal
 technical_atmosphere = Unit(
     name='technical atmosphere',
     factor='98066.5',
-    symbols = ['kgf/cm^2', 'kg/cm^2', 'kg/cm2'],
+    symbols=['kgf/cm^2', 'kg/cm^2', 'kg/cm2'],
     aliases=['technical atmospheres', 'kilogram per square centimetre'])

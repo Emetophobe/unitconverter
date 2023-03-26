@@ -12,7 +12,6 @@ hertz = Unit(
     symbols='Hz',
     prefix_scaling='si')
 
-
 # 1 cycle per second is equivalent to 1 hertz
 cycle_per_second = Unit(
     name='cycle per second',

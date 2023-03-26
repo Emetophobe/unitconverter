@@ -56,28 +56,30 @@ mile_per_hour = Unit(
     name='mile per hour',
     factor='0.44704',
     symbols=['mph', 'mi/hr', 'mi/h'],
-    aliases=['miles per hour', 'miles/hour', 'mile/hour'])
+    aliases=['miles per hour', 'miles/hour', 'mile/hour', 'mile/hr', 'miles/hr'])
 
 # 1 inch/second = 0.0254 m/s
 inch_per_second = Unit(
     name='inch per second',
     factor='0.0254',
     symbols=['in/s', 'in/sec'],
-    aliases=['inches per second', 'inches/second', 'inch/second', 'inch/sec'])
+    aliases=['inches per second', 'inch/second', 'inches/second', 'inch/sec',
+             'inches/sec'])
 
 # 1 inch/minute = 0.000423333 m/s
 inch_per_minute = Unit(
     name='inch per minute',
     factor='0.000423333',
     symbols='in/min',
-    aliases=['inches per minute', 'inches/minute', 'inch/minute', 'inch/min'])
+    aliases=['inches per minute', 'inch/minute', 'inches/minute', 'inch/min',
+             'inches/min'])
 
 # 1 inch/hour = 7.05556e-6 m/s
 inch_per_hour = Unit(
     name='inch per hour',
     factor='7.05556e-6',
     symbols=['in/hr', 'in/h'],
-    aliases=['inches per hour', 'inches/hour', 'inch/hour', 'inch/hr'])
+    aliases=['inches per hour', 'inch/hour', 'inches/hour', 'inch/hr', 'inches/hr'])
 
 # 1 foot/second = 0.3048 m/s
 foot_per_second = Unit(

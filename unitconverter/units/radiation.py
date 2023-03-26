@@ -3,7 +3,7 @@
 from unitconverter.unit import Unit
 
 
-### Radioactivity (becquerel, curie, rutherford)
+# Radioactivity (becquerel, curie, rutherford)
 
 
 # The becquerel is the SI unit of radioactivity
@@ -33,7 +33,7 @@ rutherford = Unit(
     category='radioactivity')
 
 
-### Absorbed dose (gray, rad)
+# Absorbed dose (gray, rad)
 
 
 # The gray is the SI unit of absorbed dose
@@ -54,7 +54,7 @@ us_rad = Unit(
     category='absorbed dose')
 
 
-### Effective dose (sievert, roentgen)
+# Effective dose (sievert, roentgen)
 
 
 # The sivert is the SI unit of effective dose

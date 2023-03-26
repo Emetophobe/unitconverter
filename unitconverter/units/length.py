@@ -21,7 +21,7 @@ angstrom = Unit(
     name='angstrom',
     factor='1E-10',
     symbols='Å',
-    aliases=['ångström', 'ångströms', 'angstroms'])
+    aliases=['angstroms', 'ångström', 'ångströms'])
 
 # 1 thousands of an itch = 2.54E-5 metres
 thou = Unit(

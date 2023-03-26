@@ -30,35 +30,37 @@ from unitconverter.units import viscosity
 from unitconverter.units import volume
 
 
-modules = {
-    'amount of substance': amount_substance,
-    'angle': angle,
-    'area': area,
-    'catalytic activity': catalytic_activity,
-    'data storage': data_storage,
-    'electrical': electrical,
-    'energy': energy,
-    'force': force,
-    'frequency': frequency,
-    'fuel consumption': fuel_consumption,
-    'illuminance': illuminance,
-    'length': length,
-    'luminous flux': luminous_flux,
-    'luminous intensity': luminous_intensity,
-    'magnetic flux': magnetic_flux,
-    'magnetic flux density': magnetic_flux_density,
-    'mass': mass,
-    'power': power,
-    'pressure': pressure,
-    'radiation': radiation,
-    'SI units': si_units,
-    'signal intensity': signal_intensity,
-    'speed': speed,
-    'temperature': temperature,
-    'time': time,
-    'viscosity': viscosity,
-    'volume': volume,
-}
+def get_modules() -> dict:
+    """ Get a dictionary of module categories. """
+    return {
+        'amount of substance': amount_substance,
+        'angle': angle,
+        'area': area,
+        'catalytic activity': catalytic_activity,
+        'data storage': data_storage,
+        'electrical': electrical,
+        'energy': energy,
+        'force': force,
+        'frequency': frequency,
+        'fuel consumption': fuel_consumption,
+        'illuminance': illuminance,
+        'length': length,
+        'luminous flux': luminous_flux,
+        'luminous intensity': luminous_intensity,
+        'magnetic flux': magnetic_flux,
+        'magnetic flux density': magnetic_flux_density,
+        'mass': mass,
+        'power': power,
+        'pressure': pressure,
+        'radiation': radiation,
+        'SI units': si_units,
+        'signal intensity': signal_intensity,
+        'speed': speed,
+        'temperature': temperature,
+        'time': time,
+        'viscosity': viscosity,
+        'volume': volume,
+    }
 
 
 def find_dupes(units: list[Unit]) -> list[Unit]:
@@ -71,9 +73,12 @@ def find_dupes(units: list[Unit]) -> list[Unit]:
                                  f' (Original unit: {aliases[name]})')
             aliases[name] = unit
 
+    return units
+
 
 def load_units() -> list[Unit]:
     """ Load all predefined units. """
+    modules = get_modules()
     units = set()
     for category, module in modules.items():
         # ignore aliased units
@@ -93,17 +98,11 @@ def load_units() -> list[Unit]:
     return list(units)
 
 
-# Load modules internally and test for duplicates
-all_units = load_units()
-find_dupes(all_units)
-
-
 def get_units() -> list[Unit]:
-    """ Get all defined units. """
-    return all_units
+    """ Load units and find duplicates. """
+    return find_dupes(load_units())
 
 
 __all__ = [
-    'load_units',
     'get_units'
 ]

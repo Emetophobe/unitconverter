@@ -4,8 +4,12 @@ from unitconverter.unit import Unit
 from unitconverter.utils import combinations, PER_METRE
 
 
+class Force(Unit):
+    category = 'force'
+
+
 # The newton is the SI unit of force.
-newton = Unit(
+newton = Force(
     name='newton',
     symbols='N',
     aliases='newtons',
@@ -13,7 +17,7 @@ newton = Unit(
     prefix_scaling='si')
 
 # 1 joule/metre is equal to 1 newton
-joule_per_metre = Unit(
+joule_per_metre = Force(
     name='joule per metre',
     factor='1',
     symbols=['J/m', 'j/m'],
@@ -22,7 +26,7 @@ joule_per_metre = Unit(
 
 # The dyne is a derived unit of force specified in the older CGS system of units.
 # 1 dyne is exactly 0.00001 (1E-5) newtons
-dyne = Unit(
+dyne = Force(
     name='dyne',
     factor='1E-5',
     symbols='dyn',
@@ -30,7 +34,7 @@ dyne = Unit(
     prefix_scaling='si')
 
 # 1 gram force = 0.00980665 newtons
-gram_force = Unit(
+gram_force = Force(
     name='gram-force',
     factor='0.00980665',
     symbols=['gf', 'p'],
@@ -38,7 +42,7 @@ gram_force = Unit(
     prefix_scaling='si')
 
 # 1 tonne force = 9806.65 newtons
-tonne_force = Unit(
+tonne_force = Force(
     name='tonne-force',
     factor='9806.65',
     symbols=['t-f', 'tf', 'MgF', 'mp'],
@@ -50,40 +54,40 @@ tonne_force = Unit(
 
 
 # 1 poundal = exactly 0.138254954376 newtons
-poundal = Unit(
+poundal = Force(
     name='poundal',
     factor='0.138254954376',
     symbols='pdl',
     aliases='poundals')
 
 # 1 ounce force = roughly 0.27801385 newtons
-ounce_force = Unit(
+ounce_force = Force(
     name='ounce-force',
     factor='0.27801385',
     symbols='ozf')
 
 # 1 pound force is roughly 4.448222 newtons
-pound_force = Unit(
+pound_force = Force(
     name='pound-force',
     factor='4.448222',
     symbols='lbf',
     aliases=['pounds of force', 'pound of force', 'lbs of force', 'lbs-force'])
 
 # 1 kip-force = 1000 pound force or roughly 4448.222 newtons
-kip_force = Unit(
+kip_force = Force(
     name='kip-force',
     factor='4448.222',
     symbols='kipf')
 
 # 1 long ton-force = roughly 9964.0164182 newtons
-long_ton_force = Unit(
+long_ton_force = Force(
     name='long ton-force',
     factor='9964.0164182',
     symbols='tnf',
     aliases='tf (long)')
 
 # 1 short ton-force = roughly 8896.4432305 newtons
-short_ton_force = Unit(
+short_ton_force = Force(
     name='short ton-force',
     factor='8896.4432305',
     symbols='tonf',

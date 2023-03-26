@@ -3,15 +3,19 @@
 from unitconverter.unit import Unit
 
 
+class Illuminance(Unit):
+    category = 'illuminance'
+
+
 # SI unit of illuminance
-lux = Unit(
+lux = Illuminance(
     name='lux',
     factor='1',
     symbols='lx',
     prefix_scaling='si')
 
 # 1 metre candle is equal to 1 lux
-metre_candle = Unit(
+metre_candle = Illuminance(
     name='metre-candle',
     factor='1',
     symbols=['m*c', 'm⋅s'],
@@ -20,20 +24,20 @@ metre_candle = Unit(
     prefix_index=0)
 
 # 1 phot is exactly 10000 lux
-phot = Unit(
+phot = Illuminance(
     name='phot',
     factor='10000',
     symbols='ph',
     aliases='phots')
 
 # 1 nox is exactly 0.001 lux
-nox = Unit(
+nox = Illuminance(
     name='nox',
     factor='0.001',
     symbols='nx')
 
 # 1 watt/m^2 is exactly 683 lux
-watt_per_square_metre = Unit(
+watt_per_square_metre = Illuminance(
     name='watt per square metre',
     factor='683',
     symbols=['W/m^2', 'W/m2'],
@@ -42,7 +46,7 @@ watt_per_square_metre = Unit(
     prefix_index=0)
 
 # 1 foot candle is roughly 10.76391 lux
-foot_candle = Unit(
+foot_candle = Illuminance(
     name='foot-candle',
     factor='10.76391',
     symbols=['ft*c', 'ft⋅c', 'f⋅c'],

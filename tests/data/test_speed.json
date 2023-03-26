@@ -2,15 +2,15 @@
   "metre per second": [
     {
       "dest": "metre per minute",
-      "expected": "59.99999988000000023999999952"
+      "expected": "59.99999999999999999999999999"
     },
     {
       "dest": "metre per hour",
-      "expected": "3599.999712000023039998156800"
+      "expected": "3600.000000000000000000000000"
     },
     {
       "dest": "kilometre per hour",
-      "expected": "3.599999999712000000023040000"
+      "expected": "3.600000000000000000000000000"
     },
     {
       "dest": "inch per second",
@@ -18,11 +18,11 @@
     },
     {
       "dest": "inch per minute",
-      "expected": "2362.206584414633397349131771"
+      "expected": "2362.204724409448818897637795"
     },
     {
       "dest": "inch per hour",
-      "expected": "141732.1941844446082238688354"
+      "expected": "141732.2834645669291338582677"
     },
     {
       "dest": "foot per second",
@@ -34,11 +34,11 @@
     },
     {
       "dest": "foot per hour",
-      "expected": "11811.01897203977478749024115"
+      "expected": "11811.02362204724409448818898"
     },
     {
       "dest": "mile per second",
-      "expected": "0.0006213727366498067530789019101"
+      "expected": "0.0006213711922373339696174341844"
     },
     {
       "dest": "mile per minute",
@@ -50,11 +50,11 @@
     },
     {
       "dest": "knot",
-      "expected": "1.943844492608539481002897579"
+      "expected": "1.943844492440604751619870411"
     },
     {
       "dest": "imperial knot",
-      "expected": "1.942602569541455305217924737"
+      "expected": "1.942602569415665147119767924"
     },
     {
       "dest": "mach",

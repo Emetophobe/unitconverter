@@ -3,8 +3,12 @@
 from unitconverter.unit import Unit
 
 
+class LuminousFlux(Unit):
+    category = 'luminous flux'
+
+
 # The lumen is the SI unit of luminous flux
-lumen = Unit(
+lumen = LuminousFlux(
     name='lumen',
     factor='1',
     symbols='lm',
@@ -12,7 +16,7 @@ lumen = Unit(
     prefix_scaling='si')
 
 # 1 candela steradian is equal to 1 lumen
-candela_steradian = Unit(
+candela_steradian = LuminousFlux(
     name='candela-steradian',
     factor='1',
     symbols=['cd·sr', 'cd*sr', 'cd-sr'],

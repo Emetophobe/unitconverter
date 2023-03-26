@@ -1,6 +1,6 @@
 # Copyright (c) 2022-2023 Mike Cunningham
 
-from decimal import Decimal
+from decimal import Decimal, DecimalException
 from typing import Union
 
 
@@ -71,6 +71,7 @@ PREFIX_OPTIONS = [
 
 class Unit:
     """ A unit of measurement. """
+    category = None
 
     def __init__(self,
                  name,
@@ -79,7 +80,6 @@ class Unit:
                  aliases=None,
                  power='1',
                  offset='0',
-                 category=None,
                  prefix_scaling='none',
                  prefix_index=-1):
         """ Initialize unit.
@@ -102,10 +102,6 @@ class Unit:
             offset (str | Decimal, optional):
                 optional offset. Defaults to '0'.
 
-            category (str, optional):
-                unit category. Defaults to None. This is set automatically the
-                first time get_units() is called.
-
             prefix_scaling (str, optional):
                 prefix scaling option. Defaults to 'none'.
 
@@ -121,10 +117,9 @@ class Unit:
         self.aliases = self._parse_string_list(aliases)
         self.aliases = [name for name in self.aliases if name != self.name]
 
-        self.factor = Decimal(factor)
-        self.power = Decimal(power)
-        self.offset = Decimal(offset)
-        self.category = category
+        self.factor = self._parse_decimal(factor)
+        self.power = self._parse_decimal(power)
+        self.offset = self._parse_decimal(offset)
 
         # Check if prefix scaling is valid
         if prefix_scaling is not None and prefix_scaling not in PREFIX_OPTIONS:
@@ -158,21 +153,14 @@ class Unit:
         name = self._add_prefix(prefix, self.name)
         symbols = [self._add_prefix(symbol, name) for name in self.symbols]
         aliases = [self._add_prefix(prefix, name) for name in self.aliases]
-        factor = Decimal(factor) * Decimal(self.factor)
+        factor = (Decimal(factor) * Decimal(self.factor)) ** Decimal(self.power)
 
         # Don't allow prefixed units to be prefixed again
         prefix_scaling = 'none'
 
-        # Create new unit
-        return Unit(name,
-                    factor=Decimal(factor) ** self.power,
-                    symbols=symbols,
-                    aliases=aliases,
-                    power=self.power,
-                    offset=self.offset,
-                    category=self.category,
-                    prefix_scaling=prefix_scaling,
-                    prefix_index=self.prefix_index)
+        # Create a new prefixed unit
+        return self.__class__(name, factor, symbols, aliases, self.power, self.offset,
+                              prefix_scaling, self.prefix_index)
 
     def _add_prefix(self, prefix: str, name: str) -> str:
         """ Add a prefix to a string; i.e "kilo" + "metre"
@@ -198,8 +186,15 @@ class Unit:
         split[self.prefix_index] = prefix + split[self.prefix_index]
         return ' '.join(split)
 
+    def _parse_decimal(self, argument: Union[str, Decimal]) -> Decimal:
+        """ Parse decimal argument and return a Decimal. """
+        try:
+            return Decimal(argument)
+        except DecimalException:
+            raise ValueError(f'{self.name} passed an invalid decimal: {argument!r}')
+
     def _parse_string_list(self, argument: Union[str, list[str], None]) -> list[str]:
-        """ Parse argument and return a list of strings.
+        """ Parse str or list argument and return a list of strings.
 
         Args:
             argument (str | list[str] | None): a str, list of str, or None.

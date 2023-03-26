@@ -76,11 +76,10 @@ def find_dupes(units: list[Unit]) -> list[Unit]:
     return units
 
 
-def load_units() -> list[Unit]:
+def get_units() -> list[Unit]:
     """ Load all predefined units. """
-    modules = get_modules()
     units = set()
-    for category, module in modules.items():
+    for category, module in get_modules().items():
         # ignore aliased units
         if category == 'SI units':
             continue
@@ -90,17 +89,13 @@ def load_units() -> list[Unit]:
             if not item.startswith('_'):
                 unit = getattr(module, item)
                 if isinstance(unit, Unit):
-                    # Set default category
                     if not unit.category:
-                        unit.category = category
+                        raise ValueError(f'{unit.name} is missing a category.')
+
                     units.add(unit)
 
-    return list(units)
-
-
-def get_units() -> list[Unit]:
-    """ Load units and find duplicates. """
-    return find_dupes(load_units())
+    # Find dupes and return unit list
+    return list(find_dupes(units))
 
 
 __all__ = [

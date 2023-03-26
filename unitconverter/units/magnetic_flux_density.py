@@ -3,8 +3,12 @@
 from unitconverter.unit import Unit
 
 
+class MagneticFluxDensity(Unit):
+    category = 'magnetic flux density'
+
+
 # Tesla is the SI unit of magnetic flux density
-tesla = Unit(
+tesla = MagneticFluxDensity(
     name='tesla',
     factor='1',
     symbols='T',
@@ -12,14 +16,14 @@ tesla = Unit(
     prefix_scaling='si')
 
 # 1 gamma = 1E-9 teslas
-gamma = Unit(
+gamma = MagneticFluxDensity(
     name='gamma',
     symbols='y',
     aliases='gammas',
     factor='1E-9')
 
 # 1 guass = 1E-4 teslas
-guass = Unit(
+guass = MagneticFluxDensity(
     name='guass',
     symbols='G',
     aliases='gausses',

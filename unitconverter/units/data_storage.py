@@ -3,8 +3,12 @@
 from unitconverter.unit import Unit
 
 
+class DataStorage(Unit):
+    category = 'data storage'
+
+
 # byte is the base unit for data storage
-byte = Unit(
+byte = DataStorage(
     name='byte',
     factor='1',
     symbols='B',
@@ -12,7 +16,7 @@ byte = Unit(
     prefix_scaling='both')     # Scale bytes by decimal and binary prefixes
 
 # 1 bit = 0.125 bytes
-bit = Unit(
+bit = DataStorage(
     name='bit',
     factor='0.125',
     symbols='b',

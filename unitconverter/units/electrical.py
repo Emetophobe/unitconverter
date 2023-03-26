@@ -3,64 +3,85 @@
 from unitconverter.unit import Unit
 
 
-# SI base unit for electric current
-ampere = Unit(
+class ElectricCurrent(Unit):
+    category = 'electric current'
+
+
+class ElectricCharge(Unit):
+    category = 'electric charge'
+
+
+class ElectricPotential(Unit):
+    category = 'electric potential'
+
+
+class ElectricalCapacitance(Unit):
+    category = 'electrical capacitance'
+
+
+class ElectricalConductance(Unit):
+    category = 'electrical conductance'
+
+
+class ElectricalInductance(Unit):
+    category = 'electrical inductance'
+
+
+class ElectricalResistance(Unit):
+    category = 'electrical resistance'
+
+
+# ampere is the SI unit of electric current
+ampere = ElectricCurrent(
     name='ampere',
+    factor='1',
     symbols='A',
     aliases=['amperes', 'amps', 'amp'],
-    factor='1',
-    category='electric current',
     prefix_scaling='si')
 
-# Electric charge
-coulomb = Unit(
+# coulomb is the SI unit of electric charge
+coulomb = ElectricCharge(
     name='coulomb',
+    factor='1',
     symbols='C',
     aliases='coulombs',
-    factor='1',
-    category='electric charge',
     prefix_scaling='si')
 
-# Electric potential
-volt = Unit(
+# volt is the SI unit of electric potential
+volt = ElectricPotential(
     name='volt',
+    factor='1',
     symbols='V',
     aliases='volts',
-    factor='1',
-    category='electric potential',
     prefix_scaling='si')
 
-# Electrical capacitance
-farad = Unit(
+# farad is the SI unit of electrical capacitance
+farad = ElectricalCapacitance(
     name='farad',
+    factor='1',
     symbols='F',
     aliases='farads',
-    factor='1',
-    category='electrical capacitance',
     prefix_scaling='si')
 
-# Electrical conductance
-siemens = Unit(
+# siemens is the SI unit of electrical conductance
+siemens = ElectricalConductance(
     name='siemens',
-    symbols='S',
     factor='1',
-    category='electrical conductance',
+    symbols='S',
     prefix_scaling='si')
 
-# Electrical inductance
-henry = Unit(
+# henry is the SI unit of electrical inductance
+henry = ElectricalInductance(
     name='henry',
+    factor='1',
     symbols='H',
     aliases='henries',
-    factor='1',
-    category='electrical inductance',
     prefix_scaling='si')
 
-# Electrical resistance
-ohm = Unit(
+# ohm is the SI unit of electrical resistance
+ohm = ElectricalResistance(
     name='ohm',
+    factor='1',
     symbols='Ω',
     aliases='ohms',
-    factor='1',
-    category='electrical resistance',
     prefix_scaling='si')

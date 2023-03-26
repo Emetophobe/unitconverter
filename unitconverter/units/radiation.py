@@ -4,73 +4,72 @@ from unitconverter.unit import Unit
 
 
 # Radioactivity (becquerel, curie, rutherford)
+class Radioactivity(Unit):
+    category = 'radioactivity'
 
 
 # The becquerel is the SI unit of radioactivity
-becquerel = Unit(
+becquerel = Radioactivity(
     name='becquerel',
     factor='1',
     symbols='Bq',
     aliases='becquerels',
-    category='radioactivity',
     prefix_scaling='si')
 
 # 1 curie = 3.7E+10 becquerel
-curie = Unit(
+curie = Radioactivity(
     name='curie',
     factor='3.7E+10',
     symbols='Ci',
     aliases='curies',
-    category='radioactivity',
     prefix_scaling='si')
 
 # 1 rutherford = 1 MBq or 1E+6 becquerel
-rutherford = Unit(
+rutherford = Radioactivity(
     name='rutherford',
     factor='1E+6',
     symbols='Rd',
-    aliases='rutherfords',
-    category='radioactivity')
+    aliases='rutherfords')
 
 
 # Absorbed dose (gray, rad)
+class AbsorbedDose(Unit):
+    category = 'absorbed dose'
 
 
 # The gray is the SI unit of absorbed dose
-gray = Unit(
+gray = AbsorbedDose(
     name='gray',
     factor='1',
     symbols='Gy',
     aliases='grays',
-    category='absorbed dose',
     prefix_scaling='si')
 
 # 1 rad = 0.01 gray
-us_rad = Unit(
+us_rad = AbsorbedDose(
     name='US rad',
     factor='0.01',
     symbols='usrad',  # rad is used by radian
-    aliases='US rads',
-    category='absorbed dose')
+    aliases='US rads')
 
 
 # Effective dose (sievert, roentgen)
+class EffectiveDose(Unit):
+    category = 'effective dose'
 
 
 # The sivert is the SI unit of effective dose
-sievert = Unit(
+sievert = EffectiveDose(
     name='sievert',
     factor='1',
     symbols='Sv',
     aliases='sieverts',
-    category='effective dose',
     prefix_scaling='si')
 
 # 1 roentgen = 0.01 sievert
-roentgen = Unit(
+roentgen = EffectiveDose(
     name='roentgen',
     factor='0.01',
     symbols='rem',
     aliases=['roentgens', 'roentgen equivalent man'],
-    category='effective dose',
     prefix_index=0)

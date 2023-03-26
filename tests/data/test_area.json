@@ -29,11 +29,11 @@
       "expected": "0.0002471053814671653422482439292"
     },
     {
-      "dest": "circular mil",
+      "dest": "circular thou",
       "expected": "1973525241.769719368993170121"
     },
     {
-      "dest": "square mil",
+      "dest": "square thou",
       "expected": "1550003100.006200012400024800"
     },
     {

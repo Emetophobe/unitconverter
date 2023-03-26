@@ -41,10 +41,6 @@ hectare = Area(
     symbols='ha',
     aliases='hectares')
 
-
-# Imperial units
-
-
 # 1 acre is roughly 4046.8564224 m^2
 acre = Area(
     name='acre',
@@ -58,7 +54,7 @@ hide = Area(
     factor='485000',
     aliases='hides')
 
-# 1 rood is roughly 1011.7141056 m^2
+# 1 rood = 1/4 acre = roughly 1011.7141056 m^2
 rood = Area(
     name='rood',
     factor='1011.7141056',
@@ -70,26 +66,26 @@ square = Area(
     factor='9.290304',
     aliases='Squares')
 
-# 1 circular mil (thou) is roughly 5.067075E-10 m^2
-circular_mil = Area(
-    name='circular mil',
-    factor='5.06707479E-10',
-    symbols=['c mil', 'c thou'],
-    aliases=['circular mils', 'circular thou'])
-
 # 1 circular inch is roughly 5.067075E-4 m^2
 circular_inch = Area(
     name='circular inch',
     factor='5.06707479E-4',
-    symbols='c in',
+    symbols='circ in',
     aliases='circular inches')
 
-# 1 square thou (thou) is roughly 6.4516E-10 m^2
+# 1 circular thou (mil) is roughly 5.067075E-10 m^2
+circular_thou = Area(
+    name='circular thou',
+    symbols=['circ thou', 'circ mil'],
+    factor='5.06707479E-10',
+    aliases=['circular mil', 'circular mils'])
+
+# 1 square thou (mil) is roughly 6.4516E-10 m^2
 square_thou = Area(
-    name='square mil',
+    name='square thou',
     factor=length.thou.factor ** 2,
     symbols=['thou^2', 'thou2', 'mil^2', 'mil2'],
-    aliases=['square mils', 'square thou'])
+    aliases=['square mil', 'square mils'])
 
 # 1 square inch = 0.00064516 m^2
 square_inch = Area(
@@ -163,28 +159,28 @@ square_rod = Area(
 us_survey_acre = Area(
     name='US survey acre',
     factor='4046.872609874',
-    symbols='survey-ac',
+    symbols='surveyac',
     aliases=['US survey acres', 'surveyacres', 'surveyacre'])
 
 # 1 US survey square foot is roughly 0.09290341161 m^2
 us_survey_square_foot = Area(
     name='US survey square foot',
     factor=length.us_survey_foot.factor ** 2,
-    symbols=['survey-sqft', 'survey-ft^2', 'survey-ft2'],
+    symbols=['surveysqft', 'surveyft^2', 'surveyft2'],
     aliases=['US survey square feet', 'surveyfoot^2', 'surveyfoot2'])
 
 # 1 US survey square mile is roughly 2589998.47032 m^2
 us_survey_square_mile = Area(
     name='US survey square mile',
     factor=length.us_survey_mile.factor ** 2,
-    symbols=['survey-mi^2', 'survey-mi2'],
+    symbols=['surveymi^2', 'surveymi2'],
     aliases=['US survey square miles', 'surveymile^2', 'surveymile2'])
 
 # 1 US survey square rod = 25.292953807488363364 m^2
 us_survey_square_rod = Area(
     name='US survey square rod',
     factor=length.us_survey_rod.factor ** 2,
-    symbols=['survey-rd^2', 'survey-rd2'],
+    symbols=['surveyrd^2', 'surveyrd2'],
     aliases=['US survey square rods', 'surveyrod^2', 'surveyrod2'])
 
 

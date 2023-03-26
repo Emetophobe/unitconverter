@@ -101,62 +101,63 @@ rod = Unit(
 us_survey_foot = Unit(
     name='US survey foot',
     factor='0.304800609601',
-    symbols='ft-survey',
+    symbols='survey-ft',
     aliases=['US survey feet', 'surveyfoot', 'surveyfeet'])
 
 # 1 US survey cable length = 120 fathoms or 219.456438913 metres
 us_survey_cable_length = Unit(
     name='US survey cable length',
     factor='219.456438913',
+    symbols='survey-cb',
     aliases=['US survey cable', 'surveycables', 'surveycable'])
 
 # 1 US survey chain = 20.116840234 metres
 us_survey_chain = Unit(
     name='US survey chain',
     factor='20.116840234',
-    symbols='ch-survey',
+    symbols='survey-ch',
     aliases=['US survey chains', 'surveychains', 'surveychain'])
 
 # 1 US survey fathom = 1.828803658 metres
 us_survey_fathom = Unit(
     name='US survey fathom',
     factor='1.828803658',
-    symbols='ftm-survey',
+    symbols='survey-ftm',
     aliases=['US survey fathoms', 'surveyfathoms', 'surveyfathom'])
 
 # 1 US survey furlong = 201.168402337 metres
 us_survey_furlong = Unit(
     name='US survey furlong',
     factor='201.168402337',
-    symbols='fur-survey',
+    symbols='survey-fur',
     aliases=['US survey furlongs', 'surveyfurlongs', 'surveyfurlong'])
 
 # 1 US survey league = 4828.041656083 metres
 us_survey_league = Unit(
     name='US survey league',
     factor='4828.041656083',
-    symbols='lea-survey',
+    symbols='survey-lea',
     aliases=['US survey leagues', 'surveyleagues', 'surveyleague'])
 
 # 1 US survey link = 0.201168402 metres
 us_survey_link = Unit(
     name='US survey link',
     factor='0.201168402',
-    symbols='li-survey',
+    symbols='survey-li',
     aliases=['US survey links', 'surveylinks', 'surveylink'])
 
 # 1 US survey mile = 1609.347218694 metres
 us_survey_mile = Unit(
     name='US survey mile',
     factor='1609.347218694',
-    symbols='mi-survey',
+    symbols='survey-mi',
     aliases=['US survey miles', 'surveymiles', 'surveymile'])
 
 # 1 US survey rod = 5.029210058 metres
 us_survey_rod = Unit(
     name='US survey rod',
     factor='5.029210058',
-    symbols='rod-survey',
+    symbols='survey-rd',
     aliases=['US survey rods', 'surveyrods', 'surveyrod', 'surveyperch', 'surveypole'])
 
 
@@ -174,15 +175,15 @@ cable_length = Unit(
 imperial_cable_length = Unit(
     name='imperial cable length',
     factor='185.32',
-    symbols=['cb-imp', 'cb-uk'],
+    symbols=['uk-cb', 'imp-cb'],
     aliases=['imperial cable lengths'])
 
 # 1 US cable length = 219.456 metres
 us_cable_length = Unit(
     name='US cable length',
     factor='219.456',
-    symbols='cb-us',
-    aliases=['US cable lengths'])
+    symbols='us-cb',
+    aliases='US cable lengths')
 
 # 1 fathom = 1.8288 metres
 fathom = Unit(
@@ -209,7 +210,7 @@ nautical_mile = Unit(
 imperial_nautical_mile = Unit(
     name='imperial nautical mile',
     factor='1853.184',
-    symbols=['NM-imp', 'nmi-imp'],
+    symbols=['uk-NM', 'uk-nmi', 'imp-NM', 'imp-nmi'],
     aliases='imperial nautical miles')
 
 

@@ -1,7 +1,7 @@
 {
-  "poise": [
+  "pascal second": [
     {
-      "dest": "pascal second",
+      "dest": "poise",
       "expected": "10"
     }
   ]

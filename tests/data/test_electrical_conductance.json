@@ -11,6 +11,14 @@
     {
       "dest": "ampere per volt",
       "expected": "1"
+    },
+    {
+      "dest": "absiemens",
+      "expected": "1E-9"
+    },
+    {
+      "dest": "statsiemens",
+      "expected": "899000000226.5480000570900960"
     }
   ]
 }

@@ -23,3 +23,17 @@ ampere_per_volt = ElectricalConductance(
     aliases=combinations(AMPERE_NAMES, [' per volt', '/volt', '/V']),
     prefix_scaling='si',
     prefix_index=0)
+
+# 1 absiemens (abmho) = 1E+9 siemens
+absiemens = ElectricalConductance(
+    name='absiemens',
+    factor='1E+9',
+    symbols='abS',
+    aliases='abmho')
+
+# 1 statsiemens (statmho) = 1.112347052E-12 siemens
+statsiemens = ElectricalConductance(
+    name='statsiemens',
+    factor='1.112347052E-12',
+    symbols='stS',
+    aliases='statmho')

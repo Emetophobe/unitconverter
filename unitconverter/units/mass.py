@@ -67,12 +67,13 @@ carat = Unit(
     symbols=['car', 'ct'],
     aliases='carats')
 
-# 1 grain = roughly 0.0647989 grams
-grain = Unit(
-    name='grain',
-    factor='0.0647989',
-    symbols='gr',
-    aliases='grains')
+# 1 dalton is defined as 1/12 of the mass of a free carbon-12 atom at rest.
+# 1 dalton = roughly 1.660540199E-24
+dalton = Unit(
+    name='dalton',
+    factor='1.660540199E-24',
+    symbols=['Da', 'u'],
+    aliases=['daltons', 'atomic mass unit'])
 
 # 1 drachm = roughly 1.77185 grams
 drachm = Unit(
@@ -81,12 +82,25 @@ drachm = Unit(
     symbols='dr',
     aliases=['drachms', 'drams', 'dram'])
 
+# 1 grain = 0.06479891 grams
+grain = Unit(
+    name='grain',
+    factor='0.06479891',
+    symbols='gr',
+    aliases='grains')
+
 # 1 pennyweight = roughly 1.55517384 grams
 pennyweight = Unit(
     name='pennyweight',
     factor='1.55517384',
     symbols='dwt',
     aliases='pennyweights')
+
+# 1 slug = 14593.9 grams
+slug = Unit(
+    name='slug',
+    factor='14593.9',
+    aliases='slugs')
 
 # 1 troy ounce = roughly 31.1035 grams
 troy_ounce = Unit(

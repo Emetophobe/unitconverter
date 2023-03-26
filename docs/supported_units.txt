@@ -114,6 +114,7 @@ Energy
 	gram of TNT
 	ton of TNT
 	calorie
+	kilocalorie
 	british thermal unit
 	quad
 	electron volt
@@ -231,13 +232,13 @@ Magnetic Flux Density
 Mass
 
 	gram
-	tonne
 	ounce
 	pound
 	kilopound
 	stone
-	imperial ton
-	US ton
+	tonne
+	long ton
+	short ton
 	carat
 	dalton
 	drachm

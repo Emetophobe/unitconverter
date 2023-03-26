@@ -11,7 +11,7 @@ class Energy(Unit):
 joule = Energy(
     name='joule',
     factor='1',
-    symbols='J',
+    symbols=['J', 'j'],
     aliases='joules',
     prefix_scaling='si')
 
@@ -57,16 +57,19 @@ ton_of_TNT = Energy(
     prefix_scaling='si',
     prefix_index=0)
 
-
-# Non-metric units
-
-
 # 1 calorie = 4.184 joules
 calorie = Energy(
     name='calorie',
     factor='4.184',
     symbols='cal',
-    aliases='calories')
+    aliases=['calories', 'small calorie', 'small calories'])
+
+# 1 kilocalorie = 1000 calories = 4184 joules
+kilocalorie = Energy(
+    name='kilocalorie',
+    factor='4184',
+    symbols='kcal',
+    aliases=['kilocalories', 'large calorie', 'large calories'])
 
 # 1 btu = 1055.06 joules
 btu = Energy(
@@ -80,7 +83,6 @@ quad = Energy(
     name='quad',
     factor='1.05506E+18',
     aliases=['quadrillion btus', 'quadrillion btu'])
-
 
 # 1 electron volt = 1.602176633E-19 joules
 electron_volt = Energy(

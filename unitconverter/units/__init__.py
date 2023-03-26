@@ -1,5 +1,7 @@
 # Copyright (c) 2022-2023 Mike Cunningham
 
+
+from collections import defaultdict
 from unitconverter.unit import Unit
 from unitconverter.units import amount_substance
 from unitconverter.units import area
@@ -92,29 +94,36 @@ def find_dupes(units: list[Unit]) -> list[Unit]:
 
 def get_units() -> list[Unit]:
     """ Load all predefined units. """
-    units = set()
+    units = dict()
     for category, module in get_modules().items():
-        # ignore aliased units
+        # ignore aliased SI units
         if category == 'SI units':
             continue
 
-        # Search each module for units
-        for item in dir(module):
+        # Get units from each module
+        for item in vars(module):
             if not item.startswith('_'):
                 unit = getattr(module, item)
                 if isinstance(unit, Unit):
+                    # Test for missing unit category
                     if not unit.category:
                         raise ValueError(f'{unit.name} is missing a category.')
 
-                    units.add(unit)
+                    if unit.name not in units:
+                        units[unit.name] = unit
 
     # Find dupes and return unit list
-    return list(find_dupes(units))
+    return list(find_dupes(units.values()))
 
 
-def get_categories() -> list[str]:
-    """ Get a list of category names. """
-    return get_modules().keys()
+def get_categories() -> dict[str, list[Unit]]:
+    """ Get a dictionary of unit categories. """
+    categories = defaultdict(list)
+
+    for unit in get_units():
+        categories[unit.category].append(unit)
+
+    return categories
 
 
 __all__ = [

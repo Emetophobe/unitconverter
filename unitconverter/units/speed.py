@@ -1,6 +1,8 @@
 # Copyright (c) 2022-2023 Mike Cunningham
 
 from unitconverter.unit import Unit
+from unitconverter.utils import (combinations, METRE_NAMES, PER_SECOND,
+                                 PER_MINUTE, PER_HOUR)
 
 
 # 1 metre/second (m/s) is the base unit
@@ -8,8 +10,7 @@ metre_per_second = Unit(
     name='metre per second',
     factor='1',
     symbols='m/s',
-    aliases=['metres per second', 'meters per second', 'meter per second',
-             'metre/s', 'metres/s', 'meters/s', 'meter/s'],
+    aliases=combinations(METRE_NAMES, PER_SECOND),
     prefix_scaling='si',
     prefix_index=0)
 
@@ -18,8 +19,7 @@ metre_per_minute = Unit(
     name='metre per minute',
     factor='0.0166666667',
     symbols='m/min',
-    aliases=['metres per minute', 'meters per minute', 'meter per minute',
-             'metre/min', 'metres/min', 'meters/min', 'meter/min'],
+    aliases=combinations(METRE_NAMES, PER_MINUTE),
     prefix_scaling='si',
     prefix_index=0)
 
@@ -28,8 +28,7 @@ metre_per_hour = Unit(
     name='metre per hour',
     factor='0.0002777778',
     symbols=['m/hr', 'm/h'],
-    aliases=['metres per hour', 'meters per hour', 'meter per hour',
-             'metres/hour', 'metre/hour', 'meters/hour', 'meter/hour'],
+    aliases=combinations(METRE_NAMES, PER_HOUR),
     prefix_scaling='si',
     prefix_index=0)
 
@@ -39,8 +38,7 @@ kilometre_per_hour = Unit(
     name='kilometre per hour',
     factor='0.2777777778',
     symbols=['kph', 'km/hr', 'km/h'],
-    aliases=['kilometres per hour', 'kilometers per hour', 'kilometer per hour',
-             'kilometres/hour', 'kilometre/hour', 'kilometer/hours', 'kilometer/hour'],
+    aliases=combinations(combinations(['kilo'], METRE_NAMES), PER_HOUR),
     prefix_scaling='none')  # Use meter_per_hour if you want to scale meters
 
 
@@ -51,56 +49,69 @@ meter_per_hour = metre_per_hour
 kilometer_per_hour = kilometre_per_hour
 
 
-# 1 mph = 0.44704 m/s
-mile_per_hour = Unit(
-    name='mile per hour',
-    factor='0.44704',
-    symbols=['mph', 'mi/hr', 'mi/h'],
-    aliases=['miles per hour', 'miles/hour', 'mile/hour', 'mile/hr', 'miles/hr'])
-
 # 1 inch/second = 0.0254 m/s
 inch_per_second = Unit(
     name='inch per second',
     factor='0.0254',
     symbols=['in/s', 'in/sec'],
-    aliases=['inches per second', 'inch/second', 'inches/second', 'inch/sec',
-             'inches/sec'])
+    aliases=combinations(['inch', 'inches'], PER_SECOND))
 
 # 1 inch/minute = 0.000423333 m/s
 inch_per_minute = Unit(
     name='inch per minute',
     factor='0.000423333',
     symbols='in/min',
-    aliases=['inches per minute', 'inch/minute', 'inches/minute', 'inch/min',
-             'inches/min'])
+    aliases=combinations(['inch', 'inches'], PER_MINUTE))
 
 # 1 inch/hour = 7.05556e-6 m/s
 inch_per_hour = Unit(
     name='inch per hour',
     factor='7.05556e-6',
     symbols=['in/hr', 'in/h'],
-    aliases=['inches per hour', 'inch/hour', 'inches/hour', 'inch/hr', 'inches/hr'])
+    aliases=combinations(['inch', 'inches'], PER_HOUR))
 
 # 1 foot/second = 0.3048 m/s
 foot_per_second = Unit(
     name='foot per second',
     factor='0.3048',
     symbols=['ft/s', 'ft/sec'],
-    aliases=['feet per second', 'foot/second', 'feet/second', 'foot/sec', 'feet/sec'])
+    aliases=combinations(['foot', 'feet'], PER_SECOND))
 
 # 1 foot/minute = 0.00508 m/s
 foot_per_minute = Unit(
     name='foot per minute',
     factor='0.00508',
     symbols='ft/min',
-    aliases=['feet per minute', 'foot/minute', 'feet/minute', 'foot/min', 'feet/min'])
+    aliases=combinations(['foot', 'feet'], PER_MINUTE))
 
 # 1 foot/hour = 0.0000846667 m/s
 foot_per_hour = Unit(
     name='foot per hour',
     factor='0.0000846667',
     symbols=['ft/hr', 'ft/h'],
-    aliases=['feet per hour', 'foot/hour', 'feet/hour', 'feet/hr', 'foot/hr'])
+    aliases=combinations(['foot', 'feet'], PER_HOUR))
+
+# 1 mile/second = 1609.34 m/s
+mile_per_second = Unit(
+    name='mile per second',
+    factor='1609.34',
+    symbols=['mi/sec', 'mi/s'],
+    aliases=combinations(['mile', 'miles'], PER_SECOND))
+
+# 1 mile/minute = 26.8224 m/s
+mile_per_minute = Unit(
+    name='mile per minute',
+    factor='26.8224',
+    symbols=['mi/min'],
+    aliases=combinations(['mile', 'miles'], PER_MINUTE))
+
+# 1 mile/hour (mph) = 0.44704 m/s
+mile_per_hour = Unit(
+    name='mile per hour',
+    factor='0.44704',
+    symbols=['mph', 'mi/hr', 'mi/h'],
+    aliases=combinations(['mile', 'miles'], PER_HOUR))
+
 
 # The knot is equal to one nautical mile per hour (~0.514 m/s)
 knot = Unit(

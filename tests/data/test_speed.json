@@ -13,10 +13,6 @@
       "expected": "3.599999999712000000023040000"
     },
     {
-      "dest": "mile per hour",
-      "expected": "2.236936292054402290622763064"
-    },
-    {
       "dest": "inch per second",
       "expected": "39.37007874015748031496062992"
     },
@@ -39,6 +35,18 @@
     {
       "dest": "foot per hour",
       "expected": "11811.01897203977478749024115"
+    },
+    {
+      "dest": "mile per second",
+      "expected": "0.0006213727366498067530789019101"
+    },
+    {
+      "dest": "mile per minute",
+      "expected": "0.03728227153424003817704605106"
+    },
+    {
+      "dest": "mile per hour",
+      "expected": "2.236936292054402290622763064"
     },
     {
       "dest": "knot",

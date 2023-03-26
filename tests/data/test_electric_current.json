@@ -7,6 +7,14 @@
     {
       "dest": "quettaampere",
       "expected": "1E-30"
+    },
+    {
+      "dest": "abampere",
+      "expected": "0.1"
+    },
+    {
+      "dest": "statampere",
+      "expected": "2997924536.843143491760654099"
     }
   ]
 }

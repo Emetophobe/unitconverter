@@ -11,7 +11,7 @@ The following categories are currently supported:
 * Catalytic activity (katal, mol/sec)
 * Data storage (bits, bytes, kilobytes, kibibytes, etc...)
 * Electric charge (coloumb, ampere-second, ampere-minute, ampere-hour)
-* Electric current (ampere)
+* Electric current (ampere, abampere, statampere)
 * Electric potential (volt)
 * Electrical capacitance (farad)
 * Electrical conductance (siemens, ampere/volt)

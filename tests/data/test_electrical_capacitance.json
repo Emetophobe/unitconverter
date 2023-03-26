@@ -7,6 +7,18 @@
     {
       "dest": "quectofarad",
       "expected": "1E+30"
+    },
+    {
+      "dest": "coulomb per volt",
+      "expected": "1"
+    },
+    {
+      "dest": "abfarad",
+      "expected": "1E-9"
+    },
+    {
+      "dest": "statfarad",
+      "expected": "898755178780.1285114931050702"
     }
   ]
 }

@@ -7,6 +7,18 @@
     {
       "dest": "quettavolt",
       "expected": "1E-30"
+    },
+    {
+      "dest": "watt per ampere",
+      "expected": "1"
+    },
+    {
+      "dest": "abvolt",
+      "expected": "1E+8"
+    },
+    {
+      "dest": "statvolt",
+      "expected": "0.003335640484668562422342119966"
     }
   ]
 }

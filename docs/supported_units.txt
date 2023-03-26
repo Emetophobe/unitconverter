@@ -1,0 +1,387 @@
+
+Absorbed Dose
+
+	gray
+	US rad
+
+Amount Of Substance
+
+	mole
+	atom
+
+Area
+
+	square metre
+	are
+	barn
+	hectare
+	acre
+	hide
+	rood
+	square
+	circular mil
+	circular inch
+	square mil
+	square inch
+	square foot
+	square yard
+	square mile
+	square nautical mile
+	square chain
+	square furlong
+	square link
+	square rod
+	US survey acre
+	US survey square foot
+	US survey square mile
+	US survey square rod
+	arpent
+	homestead
+	section
+	township
+
+Catalytic Activity
+
+	katal
+	mole per second
+
+Data Storage
+
+	byte
+	bit
+
+Effective Dose
+
+	sievert
+	roentgen
+
+Electric Charge
+
+	coulomb
+	ampere second
+	ampere minute
+	ampere hour
+	franklin
+
+Electric Current
+
+	ampere
+	abampere
+	statampere
+
+Electric Potential
+
+	volt
+	watt per ampere
+	abvolt
+	statvolt
+
+Electrical Capacitance
+
+	farad
+	coulomb per volt
+	abfarad
+	statfarad
+
+Electrical Conductance
+
+	siemens
+	ampere per volt
+	absiemens
+	statsiemens
+
+Electrical Inductance
+
+	henry
+	weber per ampere
+	abhenry
+	stathenry
+
+Electrical Resistance
+
+	ohm
+	reciprocal siemens
+	volt per ampere
+	abohm
+	statohm
+
+Energy
+
+	joule
+	watt-second
+	watt-minute
+	watt-hour
+	gram of TNT
+	ton of TNT
+	calorie
+	british thermal unit
+	quad
+	electron volt
+	erg
+	therm
+	inch-pound
+	foot-pound
+
+Force
+
+	newton
+	joule per metre
+	dyne
+	gram-force
+	tonne-force
+	poundal
+	ounce-force
+	pound-force
+	kip-force
+	long ton-force
+	short ton-force
+
+Frequency
+
+	hertz
+	cycle per second
+	cycle per minute
+	cycle per hour
+	revolution per minute
+
+Fuel Consumption
+
+	litre per metre
+	metre per litre
+	litre per 100km
+	foot per gallon
+	metre per gallon
+	mile per gallon
+	foot per usgallon
+	metre per usgallon
+	mile per usgallon
+
+Illuminance
+
+	lux
+	metre-candle
+	phot
+	nox
+	watt per square metre
+	foot-candle
+
+Length
+
+	metre
+	angstrom
+	thou
+	inch
+	hand
+	foot
+	yard
+	mile
+	chain
+	furlong
+	link
+	rod
+	US survey foot
+	US survey cable length
+	US survey chain
+	US survey fathom
+	US survey furlong
+	US survey league
+	US survey link
+	US survey mile
+	US survey rod
+	cable length
+	imperial cable length
+	US cable length
+	fathom
+	league
+	nautical mile
+	imperial nautical mile
+	planck length
+	astronomical unit
+	light second
+	light minute
+	light year
+	parsec
+	twip
+	point
+	barleycorn
+	caliber
+
+Luminous Flux
+
+	lumen
+	candela-steradian
+
+Luminous Intensity
+
+	candela
+	candlepower
+	historic candlepower
+
+Magnetic Flux
+
+	weber
+	maxwell
+
+Magnetic Flux Density
+
+	tesla
+	gamma
+	guass
+
+Mass
+
+	gram
+	tonne
+	ounce
+	pound
+	kilopound
+	stone
+	imperial ton
+	US ton
+	carat
+	dalton
+	drachm
+	grain
+	pennyweight
+	slug
+	troy ounce
+	troy pound
+
+Plane Angle
+
+	radian
+	degree
+	gradian
+	arcsecond
+	arcminute
+	turn
+
+Power
+
+	watt
+	volt ampere
+	joule per second
+	joule per minute
+	joule per hour
+	horsepower
+	mechanical horsepower
+
+Pressure
+
+	pascal
+	bar
+	barye
+	metre of mercury
+	pound per square inch
+	kilopound per square inch
+	torr
+	inch of mercury
+	standard atmosphere
+	technical atmosphere
+
+Radioactivity
+
+	becquerel
+	curie
+	rutherford
+
+Signal Intensity
+
+	decibel
+	bel
+	neper
+
+Solid Angle
+
+	steradian
+	square degree
+	spat
+
+Speed
+
+	metre per second
+	metre per minute
+	metre per hour
+	kilometre per hour
+	inch per second
+	inch per minute
+	inch per hour
+	foot per second
+	foot per minute
+	foot per hour
+	mile per second
+	mile per minute
+	mile per hour
+	knot
+	imperial knot
+	mach
+
+Temperature
+
+	kelvin
+	celsius
+	fahrenheit
+	rankine
+
+Time
+
+	second
+	minute
+	hour
+	day
+	week
+	fortnight
+	month
+	year
+	gregorian year
+	julian year
+	leap year
+	decade
+	century
+	millennia
+
+Viscosity
+
+	pascal second
+	poise
+	gram per foot second
+	gram per metre second
+	slug per foot second
+
+Volume
+
+	cubic metre
+	litre
+	cup
+	tablespoon
+	teaspoon
+	stere
+	drop
+	cubic inch
+	cubic foot
+	cubic yard
+	cubic mile
+	acre-inch
+	acre-foot
+	imperial gill
+	imperial cup
+	imperial bushel
+	imperial fluid ounce
+	imperial gallon
+	imperial pint
+	imperial quart
+	imperial tablespoon
+	imperial teaspoon
+	US gill
+	US cup
+	US bushel
+	US fluid ounce
+	US liquid gallon
+	US dry gallon
+	US liquid pint
+	US dry pint
+	US liquid quart
+	US dry quart
+	US tablespoon
+	US teaspoon
+	US survey acre-foot

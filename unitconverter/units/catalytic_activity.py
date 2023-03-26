@@ -8,7 +8,7 @@ class CatalyticActivity(Unit):
     category = 'catalytic activity'
 
 
-# The katal is the SI unit of catalytic activity.
+# The katal is the SI unit of catalytic activity
 katal = CatalyticActivity(
     name='katal',
     factor='1',

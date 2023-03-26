@@ -120,20 +120,19 @@ mile_per_hour = Speed(
     symbols=['mph', 'mi/hr', 'mi/h'],
     aliases=combinations(['mile', 'miles'], PER_HOUR))
 
-
-# The knot is equal to one nautical mile per hour (~0.514 m/s)
+# 1 knot = 1 nautical mile per hour = ~0.514 m/s
 knot = Speed(
     name='knot',
     factor=nautical_mile.factor / hour.factor,
     aliases='knots')
 
-# 1 imperial knot = 0.5147733333 m/s
+# 1 imperial knot = ~0.5147733333 m/s
 imperial_knot = Speed(
     name='imperial knot',
     factor=imperial_nautical_mile.factor / hour.factor,
     aliases='imperial knots')
 
-# Mach 1 (speed of sound)
+# 1 mach (speed of sound) = 295.0464 m/s
 mach = Speed(
     name='mach',
     factor='295.0464',

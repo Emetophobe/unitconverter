@@ -13,7 +13,7 @@ byte = DataStorage(
     factor='1',
     symbols='B',
     aliases='bytes',
-    prefix_scaling='both')     # Scale bytes by decimal and binary prefixes
+    prefix_scaling='both')  # Scale bytes by decimal and binary prefixes
 
 # 1 bit = 0.125 bytes
 bit = DataStorage(

@@ -3,6 +3,18 @@
     {
       "dest": "poise",
       "expected": "10"
+    },
+    {
+      "dest": "gram per foot second",
+      "expected": "304.8000000000003121152000000"
+    },
+    {
+      "dest": "gram per metre second",
+      "expected": "1000"
+    },
+    {
+      "dest": "slug per foot second",
+      "expected": "0.02088543423329662198915700184"
     }
   ]
 }

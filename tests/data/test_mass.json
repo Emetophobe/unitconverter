@@ -17,16 +17,16 @@
       "expected": "0.0001574731232746850931217314485"
     },
     {
-      "dest": "imperial ton",
+      "dest": "tonne",
+      "expected": "1E-6"
+    },
+    {
+      "dest": "long ton",
       "expected": "9.842065264486656428097399558E-7"
     },
     {
-      "dest": "US ton",
+      "dest": "short ton",
       "expected": "0.000001102311310924387903614869007"
-    },
-    {
-      "dest": "tonne",
-      "expected": "1E-6"
     },
     {
       "dest": "carat",

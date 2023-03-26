@@ -15,14 +15,6 @@ gram = Mass(
     aliases='grams',
     prefix_scaling='si')
 
-# Metric ton is 1E+6 grams (1,000,000 g)
-tonne = Mass(
-    name='tonne',
-    factor='1E+6',
-    symbols='t',
-    aliases=['tonnes', 'metric tons', 'metric ton', 'tons', 'ton'],
-    prefix_scaling='si')
-
 # 1 ounce is 28.34952 grams
 ounce = Mass(
     name='ounce',
@@ -34,7 +26,7 @@ ounce = Mass(
 pound = Mass(
     name='pound',
     factor='453.59237',
-    symbols='lbs',
+    symbols=['lb', 'lbs'],
     aliases=['pounds', 'imperial pounds', 'imperial pound'])
 
 # 1 kilopound (kip) = 1000 lbs or 453592.37 grams
@@ -51,19 +43,27 @@ stone = Mass(
     symbols='st',
     aliases=['stones', 'imperial stone'])
 
-# 1 imperial ton = 1016046.91 grams
-imperial_ton = Mass(
-    name='imperial ton',
+# 1 metric ton (tonne) = 1,000,000 grams = 1E+6 grams
+tonne = Mass(
+    name='tonne',
+    factor='1E+6',
+    symbols='t',
+    aliases=['tonnes', 'metric tons', 'metric ton'],
+    prefix_scaling='si')
+
+# 1 long ton = 1016046.91 grams
+long_ton = Mass(
+    name='long ton',
     factor='1016046.91',
     symbols='LT',
-    aliases=['imperial tons', 'long tons', 'long ton'])
+    aliases=['long tons', 'imperial ton', 'imperial tons'])
 
-# 1 US ton = 907184.74 grams
-us_ton = Mass(
-    name='US ton',
+# 1 short ton = 907184.74 grams
+short_ton = Mass(
+    name='short ton',
     factor='907184.74',
     symbols='ST',
-    aliases=['US tons', 'short tons', 'short ton'])
+    aliases=['short tons', 'US ton', 'US tons'])
 
 # 1 carat = 0.2 grams
 carat = Mass(
@@ -72,7 +72,6 @@ carat = Mass(
     symbols=['car', 'ct'],
     aliases='carats')
 
-# 1 dalton is defined as 1/12 of the mass of a free carbon-12 atom at rest.
 # 1 dalton = roughly 1.660540199E-24
 dalton = Mass(
     name='dalton',

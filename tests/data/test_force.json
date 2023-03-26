@@ -1,6 +1,10 @@
 {
   "newton": [
     {
+      "dest": "joule per metre",
+      "expected": "1"
+    },
+    {
       "dest": "dyne",
       "expected": "1E+5"
     },
@@ -39,10 +43,6 @@
     {
       "dest": "short ton-force",
       "expected": "0.0001124044715501205715247327796"
-    },
-    {
-      "dest": "joule/metre",
-      "expected": "1"
     }
   ]
 }

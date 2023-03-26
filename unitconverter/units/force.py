@@ -1,6 +1,7 @@
 # Copyright (c) 2022-2023 Mike Cunningham
 
 from unitconverter.unit import Unit
+from unitconverter.utils import combinations, PER_METRE
 
 
 # The newton is the SI unit of force.
@@ -13,10 +14,10 @@ newton = Unit(
 
 # 1 joule/metre is equal to 1 newton
 joule_per_metre = Unit(
-    name='joule/metre',
+    name='joule per metre',
     factor='1',
     symbols=['J/m', 'j/m'],
-    aliases=['joules/metre', 'joules/meter', 'joule/meter'],
+    aliases=combinations(['joule', 'joules'], PER_METRE),
     prefix_scaling='si')
 
 # The dyne is a derived unit of force specified in the older CGS system of units.

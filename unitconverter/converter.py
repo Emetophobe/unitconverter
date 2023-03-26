@@ -30,8 +30,8 @@ class Converter:
 
         if source.category != dest.category:
             raise ValueError(f'Error: unit mismatch:'
-                             f' {source.name}={source.category},'
-                             f' {dest.name}={dest.category}')
+                             f' {source.name} ({source.category}),'
+                             f' {dest.name} ({dest.category})')
 
         value = source.offset + value * source.factor
         return (-dest.offset + value) / dest.factor

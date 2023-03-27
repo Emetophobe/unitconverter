@@ -37,62 +37,61 @@ litre_per_100km = FuelConsumption(
     prefix_index=0)
 
 
-# UK gallons
+# imperial gallons
 
 
-# 1 foot per uk gallon is roughly 0.067046626881562 litres/metre
-per_uk_gallon = combinations([' per ', '/'], ['gallon', 'gal'])
-foot_per_ukgallon = FuelConsumption(
+# 1 foot per gallon is roughly 0.067046626881562 litres/metre
+per_gallon = combinations([' per ', '/'], ['imperial gallon', 'gallon', 'gal'])
+foot_per_gallon = FuelConsumption(
     name='foot per gallon',
     factor='0.067046626881562',
-    symbols=['ft/gal', 'ft/ukgal'],
-    aliases=combinations(['foot', 'feet'], per_uk_gallon))
+    symbols='ft/gal',
+    aliases=combinations(['foot', 'feet'], per_gallon))
 
-# 1 metre per uk gallon is roughly 0.2199687986 litre/metre
-metre_per_ukgallon = FuelConsumption(
+# 1 metre per gallon is roughly 0.2199687986 litre/metre
+metre_per_gallon = FuelConsumption(
     name='metre per gallon',
     factor='0.2199687986',
-    symbols=['m/gal', 'm/ukgal'],
-    aliases=combinations(METRE_NAMES, per_uk_gallon),
+    symbols='m/gal',
+    aliases=combinations(METRE_NAMES, per_gallon),
     prefix_scaling='si',
     prefix_index=0)
 
-# 1 mile per uk gallon is roughly 0.0028248108789117 litre/metre
-mile_per_ukgallon = FuelConsumption(
+# 1 mile per gallon is roughly 0.0028248108789117 litre/metre
+mile_per_gallon = FuelConsumption(
     name='mile per gallon',
     factor='0.0028248108789117',
-    symbols=['mpg', 'ukmpg', 'mi/gal'],
-    aliases=combinations(['mile', 'miles'], per_uk_gallon))
+    symbols=['mpg', 'mi/gal'],
+    aliases=combinations(['mile', 'miles'], per_gallon))
 
 
-# US gallons
+# US liquid gallons
 
 
 # 1 foot per us gallon is roughly 0.080519999871169 litres/metre
-per_us_gallon = combinations([' per ', '/'], ['usgallon', 'usgal'])
+per_gallon = combinations([' per ', '/'], ['usgallon', 'usgal'])
 foot_per_usgallon = FuelConsumption(
     name='foot per usgallon',
     factor='0.080519999871169',
     symbols='ft/usgal',
-    aliases=combinations(['foot', 'feet'], per_us_gallon))
+    aliases=combinations(['foot', 'feet'], per_gallon))
 
 # 1 metre per us gallon is roughly 0.2641720524 litre/metre
 metre_per_usgallon = FuelConsumption(
     name='metre per usgallon',
     factor='0.2641720524',
     symbols='m/usgal',
-    aliases=combinations(METRE_NAMES, per_us_gallon),
+    aliases=combinations(METRE_NAMES, per_gallon),
     prefix_scaling='si',
     prefix_index=0)
 
-# 1 mile per usgallon is roughly 0.0023521442146661 metres/liter
+# 1 mile per us gallon is roughly 0.0023521442146661 metres/liter
 mile_per_usgallon = FuelConsumption(
     name='mile per usgallon',
     factor='0.0023521442146661',
     symbols=['usmpg', 'mi/usgal'],
-    aliases=combinations(['mile', 'miles'], per_us_gallon))
+    aliases=combinations(['mile', 'miles'], per_gallon))
 
 
 # Cleanup
-del per_uk_gallon
-del per_us_gallon
+del per_gallon

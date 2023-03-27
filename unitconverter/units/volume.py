@@ -13,14 +13,10 @@ cubic_metre = Volume(
     name='cubic metre',
     factor='1',
     symbols=['m^3', 'm3'],
-    aliases=['cubic metres', 'cubic meters', 'cubic meter', 'metre^3',
-             'metre3', 'meter^3', 'meter3'],
+    aliases=['cubic metres', 'cubic meters', 'cubic meter',
+             'metre^3', 'metre3', 'meter^3', 'meter3'],
     power=3,
     prefix_scaling='si')
-
-# Create alias for American spelling of meter
-cubic_meter = cubic_metre
-
 
 # 1 litre = 0.001 m^3 (1000 litres = 1 m^3)
 litre = Volume(
@@ -30,7 +26,8 @@ litre = Volume(
     aliases=['litres', 'liters', 'liter'],
     prefix_scaling='si')
 
-# Create alias for American spelling of liter
+# Create aliases for American spelling of metre/litre
+cubic_meter = cubic_metre
 liter = litre
 
 
@@ -67,6 +64,11 @@ drop = Volume(
     symbols='gt',
     aliases='drops')
 
+# 1 fifth = 757 ml = 0.0007570823568 m^3
+fifth = Volume(
+    name='fifth',
+    factor='0.0007570823568',
+    aliases='fifths')
 
 # Imperial units
 
@@ -137,7 +139,7 @@ imperial_bushel = Volume(
 imperial_fluid_ounce = Volume(
     name='imperial fluid ounce',
     factor='2.84130625E-5',
-    symbols=['fl oz', 'imp fl oz', 'impfloz'],
+    symbols=['floz', 'ukfloz'],
     aliases=['fluid ounces', 'fluid ounce', 'imperial fluid ounces'])
 
 # 1 imperial gallon = roughly 0.00454609 m^3
@@ -145,21 +147,21 @@ imperial_gallon = Volume(
     name='imperial gallon',
     factor='0.00454609',
     symbols=['gal', 'ukgal'],
-    aliases=['gallons', 'gallon', 'imperial gallons'])
+    aliases=['gallons', 'gallon', 'imperial gallons', 'ukgallon'])
 
 # 1 imperial pint = roughly 0.0005682615 m^3
 imperial_pint = Volume(
     name='imperial pint',
     factor='0.0005682615',
     symbols=['pt', 'ukpt'],
-    aliases=['pints', 'pint', 'imperial pints'])
+    aliases=['pints', 'pint', 'imperial pints', 'ukpint'])
 
 # 1 imperial quart = roughly 0.0011365225 m^3
 imperial_quart = Volume(
     name='imperial quart',
     factor='0.0011365225',
     symbols=['qt', 'ukqt'],
-    aliases=['quarts', 'quart', 'imperial quarts'])
+    aliases=['quarts', 'quart', 'imperial quarts', 'ukquart'])
 
 # 1 imperial tablespoon = 1.77582E-5 m^3
 imperial_tablespoon = Volume(
@@ -203,50 +205,50 @@ us_bushel = Volume(
 us_fluid_ounce = Volume(
     name='US fluid ounce',
     factor='2.95735E-5',
-    symbols=['us fl. oz', 'us fl oz', 'usfloz'],
+    symbols='usfloz',
     aliases='US fluid ounces')
 
 # 1 US liquid gallon = roughly 0.003785411784 m^3
 us_liquid_gallon = Volume(
     name='US liquid gallon',
     factor='0.003785411784',
-    symbols=['usgal', 'usliquidgal'],
-    aliases=['US liquid gallons', 'US gallons', 'US gallon', 'US gal'])
+    symbols='usgal',
+    aliases=['US liquid gallons', 'US gallons', 'US gallon', 'usgallon'])
 
 # 1 US dry gallon = roughly 0.00440488 m^3
 us_dry_gallon = Volume(
     name='US dry gallon',
     factor='0.00440488',
     symbols='usdrygal',
-    aliases=['US dry gallons', 'US dry gal'])
+    aliases=['US dry gallons', 'US dry gal', 'usdrygallon'])
 
 # 1 US liquid pint = roughly 0.00473176 m^3
 us_liquid_pint = Volume(
     name='US liquid pint',
     factor='0.000473176',
-    symbols=['uspt', 'usliquidpt'],
-    aliases=['US liquid pints', 'US pints', 'US pint', 'US pt'])
+    symbols='uspt',
+    aliases=['US liquid pints', 'US pints', 'US pint', 'uspint'])
 
 # 1 US dry pint = roughly 0.000550610475 m^3
 us_dry_pint = Volume(
     name='US dry pint',
     factor='0.000550610475',
     symbols='usdrypt',
-    aliases=['US dry pints', 'US dry pt'])
+    aliases=['US dry pints', 'usdrypint'])
 
 # 1 US liquid quart = roughly 0.000946353 m^3
 us_liquid_quart = Volume(
     name='US liquid quart',
     factor='0.000946353',
-    symbols=['usqt', 'usliquidqt'],
-    aliases=['US liquid quarts', 'US liquid qt', 'US quarts', 'US quart', 'US qt'])
+    symbols='usqt',
+    aliases=['US liquid quarts', 'US quarts', 'US quart', 'usquart'])
 
 # 1 US dry quart = roughly 0.0011012107 m^3
 us_dry_quart = Volume(
     name='US dry quart',
     factor='0.0011012107',
     symbols='usdryqt',
-    aliases=['US dry quarts', 'US dry qt'])
+    aliases=['US dry quarts', 'usdryquart'])
 
 # 1 US tablespoon = roughly 1.47868E-5 m^3
 us_tablespoon = Volume(
@@ -266,5 +268,5 @@ us_teaspoon = Volume(
 us_survey_acre_foot = Volume(
     name='US survey acre-foot',
     factor=area.us_survey_acre.factor * length.us_survey_foot.factor,
-    symbols=['us ac*ft', 'usft3', 'usft^3'],
+    symbols=['usac*ft', 'usac-ft'],
     aliases='US survey acre-feet')

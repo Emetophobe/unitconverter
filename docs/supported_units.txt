@@ -19,9 +19,9 @@ Area
 	hide
 	rood
 	square
-	circular mil
 	circular inch
-	square mil
+	circular thou
+	square thou
 	square inch
 	square foot
 	square yard
@@ -358,6 +358,7 @@ Volume
 	teaspoon
 	stere
 	drop
+	fifth
 	cubic inch
 	cubic foot
 	cubic yard

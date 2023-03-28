@@ -48,7 +48,7 @@ def main() -> None:
 
     parser.add_argument(
         '-a', '--american',
-        help='use American spelling instead of British (default: False)',
+        help='use American spelling of meter/liter (default: False)',
         action='store_true')
     args = parser.parse_args()
 

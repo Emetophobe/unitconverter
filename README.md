@@ -65,21 +65,23 @@ Units can override the default scaling behaviour as needed. SI units for example
 
 ## Usage
 
-    usage: convert.py [-h] [-p size] [-c] [-e] value source dest
+    usage: convert.py [-h] [-p ndigits] [-c] [-e] [-a] value source dest
 
-    A simple unit converter.
+    A simple unit converter
 
     positional arguments:
-    value                 integer or float value to convert.
-    source                name of the source unit.
-    dest                  name of the destination unit.
+    value                 integer or decimal value.
+    source                source unit.
+    dest                  destination unit.
 
     options:
     -h, --help            show this help message and exit
-    -p size, --precision size
+    -p ndigits, --precision ndigits
                           set rounding precision (default: None)
     -c, --commas          show thousands separator (default: False)
     -e, --exponent        show E notation when possible (default: False)
+    -a, --american        use American spelling of meter/liter (default: False)
+
 
 ## Examples
 

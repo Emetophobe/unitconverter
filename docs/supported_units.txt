@@ -148,7 +148,6 @@ Frequency
 Fuel Consumption
 
 	litre per metre
-	metre per litre
 	litre per 100km
 	foot per gallon
 	metre per gallon

@@ -5,6 +5,7 @@ aliases = ['metres']
 factor = "1"
 prefix_scaling = "si"
 
+# 1 angstrom = 0.1 nanometers
 ["angstrom"]
 symbols = ['Å']
 aliases = ['angstroms', 'ångström', 'ångströms']
@@ -32,7 +33,7 @@ symbols = ['ft']
 aliases = ['feet']
 factor = "0.3048"
 
-# 1 yard = 9 hands = 3 feet
+# 1 yard = 9 hands = 3 feet = exactly 0.9144 metres
 ["yard"]
 symbols = ['yds', 'yd']
 aliases = ['yards']
@@ -62,7 +63,7 @@ symbols = ['li']
 aliases = ['links']
 factor = "0.201168"
 
-# 1 rod = 1 chain = 25 links = 5.0292 metres
+# 1 rod = 0.25 chain = 25 links = 5.0292 metres
 ["rod"]
 symbols = ['rd']
 aliases = ['rods', 'perch', 'poles', 'pole', 'lugs', 'lug']

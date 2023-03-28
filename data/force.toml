@@ -27,10 +27,10 @@ aliases = ['ponds', 'pond']
 factor = "0.00980665"
 prefix_scaling = "si"
 
-# 1 tonne force = 9806.65 newtons
+# 1 tonne force = 1 megagram-force = 9806.65 newtons
 ["tonne-force"]
-symbols = ['t-f', 'tf', 'MgF', 'mp']
-aliases = ['metric ton-force', 'megagram-force', 'megapond']
+symbols = ['t-f', 'tf']
+aliases = ['metric ton-force']
 factor = "9806.65"
 prefix_scaling = "si"
 
@@ -54,10 +54,10 @@ symbols = ['lbf']
 aliases = ['pounds of force', 'pound of force', 'lbs of force', 'lbs-force']
 factor = "4.448222"
 
-# 1 kip-force = 1000 pound force or roughly 4448.222 newtons
+# 1 kip-force = 1000 pound force = roughly 4448.222 newtons
 ["kip-force"]
-symbols = ['kipf']
-aliases = []
+symbols = ['kipf', 'klbf']
+aliases = ['kilopound-force']
 factor = "4448.222"
 
 # 1 long ton-force = roughly 9964.0164182 newtons

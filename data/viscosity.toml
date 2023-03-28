@@ -13,19 +13,19 @@ prefix_scaling = "si"
 
 ["gram per foot second"]
 symbols = ['g/[ft s]', 'g/ft s', 'g/ft-s']
-aliases = ['gram per feet second', 'gram/foot second', 'gram/feet second', 'grams per foot second', 'grams per feet second', 'grams/foot second', 'grams/feet second']
+aliases = ['grams per foot second', 'grams/foot second', 'gram/foot second', 'grams/foot-second', 'gram/foot-second']
 factor = "0.00328083989501312"
 prefix_scaling = "si"
 prefix_index = 0
 
 ["gram per metre second"]
 symbols = ['g/[m s]', 'g/m s', 'g/m-s']
-aliases = ['gram per meter second', 'gram/metre second', 'gram/meter second', 'grams per metre second', 'grams per meter second', 'grams/metre second', 'grams/meter second']
+aliases = ['grams per metre second', 'grams/metre second', 'gram/metre second', 'grams/metre-second', 'gram/metre-second']
 factor = "0.001"
 prefix_scaling = "si"
 prefix_index = 0
 
 ["slug per foot second"]
 symbols = ['slug/[ft s]', 'slug/ft s', 'slug/ft-s']
-aliases = ['slug per feet second', 'slug/foot second', 'slug/feet second', 'slugs per foot second', 'slugs per feet second', 'slugs/foot second', 'slugs/feet second']
+aliases = ['slugs per foot second', 'slugs/foot second', 'slug/foot second', 'slugs/foot-second', 'slug/foot-second']
 factor = "47.88025898"

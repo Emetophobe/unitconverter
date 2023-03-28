@@ -61,7 +61,11 @@ class Unit:
         self.power = self._parse_decimal(power)
         self.offset = self._parse_decimal(offset)
 
-        self.prefix_scaling = PrefixScaling(prefix_scaling)
+        # Check if prefix scaling is valid
+        try:
+            self.prefix_scaling = PrefixScaling(prefix_scaling)
+        except ValueError:
+            raise ValueError(f'{prefix_scaling!r} is not a valid PrefixScaling option.')
 
         # Check if prefix index is valid
         last_index = len(name.split(' ')) - 1

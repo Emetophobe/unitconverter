@@ -95,8 +95,8 @@ symbols = []
 aliases = ['imperial knots']
 factor = "0.5147733333333333333333333333"
 
-# 1 mach (aka mach 1 or the speed of sound) = 295.0464 m/s
+# 1 mach (speed of sound) = ~340.3 m/s
 ["mach"]
 symbols = ['Ma']
 aliases = []
-factor = "295.0464"
+factor = "340.3"

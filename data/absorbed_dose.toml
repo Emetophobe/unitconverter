@@ -5,8 +5,8 @@ aliases = ['grays']
 factor = "1"
 prefix_scaling = "si"
 
-# 1 rad = 0.01 gray
+# 1 US rad = 0.01 gray
 ["US rad"]
-symbols = ['usrad']
+symbols = ['usrad']     # rad is already in use by radian
 aliases = ['US rads']
 factor = "0.01"

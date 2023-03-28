@@ -5,21 +5,21 @@ aliases = ['joules']
 factor = "1"
 prefix_scaling = "si"
 
-# 1 watt second = 1 joule
+# 1 watt-second = 1 joule
 ["watt-second"]
 symbols = ['Ws']
 aliases = ['watt-seconds', 'wattseconds', 'wattsecond']
 factor = "1"
 prefix_scaling = "si"
 
-# 1 watt minute = 60 joules
+# 1 watt-minute = 60 joules
 ["watt-minute"]
 symbols = ['Wm']
 aliases = ['watt-minutes', 'wattminutes', 'wattminute']
 factor = "60"
 prefix_scaling = "si"
 
-# 1 watt hour = 3600 joules
+# 1 watt-hour = 3600 joules
 ["watt-hour"]
 symbols = ['Wh']
 aliases = ['watt-hours', 'watthours', 'watthour']
@@ -34,7 +34,7 @@ factor = "4184"
 prefix_scaling = "si"
 prefix_index = 0
 
-# 1 metric ton of TNT is approximately 4.184E+9 joules
+# 1 metric ton of TNT = roughly 4.184E+9 joules
 ["ton of TNT"]
 symbols = ['tTNT']
 aliases = ['tons of TNT', 'metric tons of TNT', 'metric ton of TNT']
@@ -82,11 +82,11 @@ aliases = ['therms']
 factor = "105506000"
 
 ["inch-pound"]
-symbols = ['in*lbf', 'in-lbf']
+symbols = ['in⋅lbf', 'in-lbf']
 aliases = []
 factor = "0.112984829"
 
 ["foot-pound"]
-symbols = ['ft*lbf', 'ft-lbf']
+symbols = ['ft⋅lbf', 'ft-lbf']
 aliases = []
 factor = "1.3558179483"

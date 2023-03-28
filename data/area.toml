@@ -55,12 +55,12 @@ factor = "0.000506707479"
 
 ["circular thou"]
 symbols = ['circ thou', 'circ mil']
-aliases = ['circular mil', 'circular mils']
+aliases = ['circular mils', 'circular mil']
 factor = "5.06707479E-10"
 
 ["square thou"]
 symbols = ['thou^2', 'thou2', 'mil^2', 'mil2']
-aliases = ['square mil', 'square mils']
+aliases = ['square mils', 'square mil']
 factor = "6.4516E-10"
 
 ["square inch"]
@@ -104,14 +104,12 @@ aliases = ['square links', 'link^2', 'link2']
 factor = "0.040468564224"
 
 ["square rod"]
-symbols = ['rod^2', 'rod2', 'pole^2', 'pole2', 'perch^2', 'perch2']
+symbols = ['rd^2', 'rd2', 'rod^2', 'rod2', 'pole^2', 'pole2', 'perch^2', 'perch2']
 aliases = ['square rods', 'square poles', 'square pole', 'square perch']
 factor = "25.29285264"
 
-
 # US survey units
 # Source: https://www.nist.gov/pml/us-surveyfoot/revised-unit-conversion-factors
-
 
 ["US survey acre"]
 symbols = ['surveyac']
@@ -133,9 +131,7 @@ symbols = ['surveyrd^2', 'surveyrd2']
 aliases = ['US survey square rods', 'surveyrod^2', 'surveyrod2']
 factor = "25.292953807488363364"
 
-
 # Misc.
-
 
 ["arpent"]
 symbols = []

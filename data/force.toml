@@ -48,7 +48,6 @@ symbols = ['ozf']
 aliases = []
 factor = "0.27801385"
 
-# 1 pound force is roughly 4.448222 newtons
 ["pound-force"]
 symbols = ['lbf']
 aliases = ['pounds of force', 'pound of force', 'lbs of force', 'lbs-force']
@@ -60,13 +59,11 @@ symbols = ['kipf', 'klbf']
 aliases = ['kilopound-force']
 factor = "4448.222"
 
-# 1 long ton-force = roughly 9964.0164182 newtons
 ["long ton-force"]
 symbols = ['tnf']
 aliases = ['tf (long)']
 factor = "9964.0164182"
 
-# 1 short ton-force = roughly 8896.4432305 newtons
 ["short ton-force"]
 symbols = ['tonf']
 aliases = ['tf (short)']

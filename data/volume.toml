@@ -1,3 +1,4 @@
+# 1 cubic metre is the SI unit of volume
 ["cubic metre"]
 symbols = ['m^3', 'm3']
 aliases = ['cubic metres', 'metre^3', 'metre3']
@@ -5,36 +6,46 @@ factor = "1"
 power = "3"
 prefix_scaling = "si"
 
+# 1 litre = 0.001 metre^3
 ["litre"]
 symbols = ['L', 'l']
 aliases = ['litres']
 factor = "0.001"
 prefix_scaling = "si"
 
+# 1 metric cup = 0.00025 metre^3
 ["cup"]
 symbols = []
 aliases = ['cups', 'metric cups', 'metric cup']
 factor = "0.00025"
 
+# 1 metric tbps = 0.000015 metre^3
 ["tablespoon"]
 symbols = ['tbsp']
 aliases = ['tablespoons', 'metric tablespoons', 'metric tablespoon']
 factor = "0.000015"
 
+# 1 metric tsp = 0.000005 metre^3
 ["teaspoon"]
 symbols = ['tsp']
 aliases = ['teaspoons', 'metric teaspoons', 'metric teaspoon']
 factor = "0.000005"
 
+# 1 drop = 0.01 teaspoon = 0.00000005 m^3
+["drop"]
+symbols = ['gt']
+aliases = ['drops']
+factor = "0.00000005"
+
+# 1 sterer = 1 metre^3
 ["stere"]
 symbols = []
 aliases = ['steres', 'stères', 'stère']
 factor = "1"
 
-["drop"]
-symbols = ['gt']
-aliases = ['drops']
-factor = "5E-8"
+
+# Imperial units
+
 
 ["fifth"]
 symbols = []
@@ -115,6 +126,10 @@ factor = "0.0000177582"
 symbols = ['uktsp']
 aliases = ['imperial teaspoons', 'imperial tsp']
 factor = "0.000005919388"
+
+
+# US customary and survey units
+
 
 ["US gill"]
 symbols = ['usgi']

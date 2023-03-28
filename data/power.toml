@@ -5,15 +5,15 @@ aliases = ['watts']
 factor = "1"
 prefix_scaling = "si"
 
-# 1 volt ampere = 1 watt
+# 1 volt ampere is equivalent to 1 watt
 ["volt ampere"]
-symbols = ['V*A', 'V-A', 'V⋅A']
+symbols = ['V-A', 'V⋅A', 'VA']
 aliases = ['volt amperes', 'volt-amperes', 'volt-ampere']
 factor = "1"
 prefix_scaling = "si"
 prefix_index = 0
 
-# 1 joule/second = 1 watt
+# 1 joule/second is equivalent to 1 watt
 ["joule per second"]
 symbols = ['J/s', 'j/s']
 aliases = ['joules per second', 'joules/second', 'joule/second', 'joules/s', 'joule/s']
@@ -21,7 +21,7 @@ factor = "1"
 prefix_scaling = "si"
 prefix_index = 0
 
-# 1 joule/minute = 1/60 or roughly 0.0166666667 watts
+# 1 joule/minute = 1/60 watts = roughly 0.0166666667 watts
 ["joule per minute"]
 symbols = ['J/min', 'j/min']
 aliases = ['joules per minute', 'joules/minute', 'joule/minute', 'joules/min', 'joule/min']
@@ -29,7 +29,7 @@ factor = "0.01666666666666666666666666667"
 prefix_scaling = "si"
 prefix_index = 0
 
-# 1 joule/hour = 1/3600 or roughly 0.0002777778 watts
+# 1 joule/hour = 1/3600 watts = roughly 0.0002777778 watts
 ["joule per hour"]
 symbols = ['J/hr', 'j/hr', 'J/h', 'j/h']
 aliases = ['joules per hour', 'joules/hour', 'joule/hour', 'joules/hr', 'joule/hr']

@@ -1,9 +1,11 @@
+# The lux is the SI unit of illuminance
 ["lux"]
 symbols = ['lx']
 aliases = []
 factor = "1"
 prefix_scaling = "si"
 
+# 1 metre-candle is equivalent to 1 lux
 ["metre-candle"]
 symbols = ['m*c', 'm⋅s']
 aliases = ['metre candle']
@@ -11,16 +13,19 @@ factor = "1"
 prefix_scaling = "si"
 prefix_index = 0
 
+# 1 phot = 10,000 lux
 ["phot"]
 symbols = ['ph']
 aliases = ['phots']
 factor = "10000"
 
+# 1 nox = 0.001 lux
 ["nox"]
 symbols = ['nx']
 aliases = []
 factor = "0.001"
 
+# 1 watt/metre^2 = 683 lux
 ["watt per square metre"]
 symbols = ['W/m^2', 'W/m2']
 aliases = ['watts per square metre', 'watts/m^2', 'watts/m2', 'watt/m^2', 'watt/m2']

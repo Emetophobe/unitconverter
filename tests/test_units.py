@@ -1,16 +1,19 @@
 # Copyright (c) 2022-2023 Mike Cunningham
 
 from decimal import Decimal
-from unitconverter.unit import PREFIX_OPTIONS
-from tests import AbstractTestCase, Unit
+from tests import PrefixScaling, TestCase, Unit, Units
 
 
-class TestUnits(AbstractTestCase):
+class TestUnits(TestCase):
     """ Test predefined units. """
+
+    def setUp(self) -> None:
+        """ Initialize units """
+        self.units = Units()
 
     def test_units(self) -> None:
         """ Test for invalid units. """
-        for unit in self.converter.units:
+        for unit in self.units:
             self.assert_valid_unit(unit)
 
     def assert_valid_unit(self, unit: Unit) -> None:
@@ -53,8 +56,7 @@ class TestUnits(AbstractTestCase):
     def assert_valid_prefix_scaling(self, unit: Unit) -> None:
         """ Assert that a unit has a valid prefix_scaling attribute. """
         msg = f'{unit.name} has an invalid prefix_scaling: {unit.prefix_scaling!r}'
-        self.assertIsInstance(unit.prefix_scaling, str, msg)
-        self.assertIn(unit.prefix_scaling, PREFIX_OPTIONS, msg)
+        self.assertIsInstance(unit.prefix_scaling, PrefixScaling, msg)
 
     def assert_valid_prefix_index(self, unit: Unit) -> None:
         """ Assert that a unit has a valid prefix_index attribute. """

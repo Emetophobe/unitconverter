@@ -1,0 +1,102 @@
+# 1 metre/second is the base unit
+["metre per second"]
+symbols = ['m/sec', 'm/s']
+aliases = ['metres per second', 'metres/second', 'metre/second', 'metres/s', 'metre/s']
+factor = "1"
+prefix_scaling = "si"
+prefix_index = 0
+
+# 1 metre/minute = 1/60 = 0.0166666667 metre/s
+["metre per minute"]
+symbols = ['m/min']
+aliases = ['metres per minute', 'metres/minute', 'metre/minute', 'metres/min', 'metre/min']
+factor = "0.01666666666666666666666666667"
+prefix_scaling = "si"
+prefix_index = 0
+
+# 1 metre/hour = 1/3600 = 0.0002777778 metre/s
+["metre per hour"]
+symbols = ['m/hr', 'm/h']
+aliases = ['metres per hour', 'metres/hour', 'metre/hour', 'm/hour']
+factor = "0.0002777777777777777777777777778"
+prefix_scaling = "si"
+prefix_index = 0
+
+# Create kilometre/hour (kph) for convenience
+# 1 kph = 1000/3600 = 0.2777777778 m/s
+["kilometre per hour"]
+symbols = ['kph', 'km/hr', 'km/h']
+aliases = ['kilometres per hour', 'kilometres/hour', 'kilometre/hour', 'km/hour']
+factor = "0.2777777777777777777777777778"
+
+# 1 inch/second = 0.0254 m/s
+["inch per second"]
+symbols = ['in/sec', 'in/s']
+aliases = ['inches per second', 'inches/second', 'inch/second', 'inches/s', 'inch/s',]
+factor = "0.0254"
+
+# 1 inch/minute = roughly 0.000423333 m/s
+["inch per minute"]
+symbols = ['in/min']
+aliases = ['inches per minute', 'inches/minute', 'inch/minute', 'inches/min', 'inch/min']
+factor = "0.0004233333333333333333333333333"
+
+# 1 inch/hour = roughly 7.05556e-6 m/s
+["inch per hour"]
+symbols = ['in/hr', 'in/h']
+aliases = ['inches per hour', 'inches/hour', 'inch/hour', 'in/hour']
+factor = "0.000007055555555555555555555555556"
+
+# 1 foot/second = 0.3048 m/s
+["foot per second"]
+symbols = ['ft/sec', 'ft/s']
+aliases = ['feet per second', 'feet/second', 'foot/second', 'feet/s', 'foot/s']
+factor = "0.3048"
+
+# 1 foot/minute = 0.00508 m/s
+["foot per minute"]
+symbols = ['ft/min']
+aliases = ['feet per minute', 'feet/minute', 'foot/minute', 'feet/min', 'foot/min']
+factor = "0.00508"
+
+# 1 foot/hour = 0.0000846667 m/s
+["foot per hour"]
+symbols = ['ft/hr', 'ft/h']
+aliases = ['feet per hour', 'feet/hour', 'foot/hour', 'feet/hr', 'foot/hr']
+factor = "0.00008466666666666666666666666667"
+
+# 1 mile/second = 1609.34 m/s
+["mile per second"]
+symbols = ['mi/sec', 'mi/s']
+aliases = ['miles per second', 'miles/second', 'mile/second', 'miles/s', 'mile/s']
+factor = "1609.344"
+
+# 1 mile/minute = 26.8224 m/s
+["mile per minute"]
+symbols = ['mi/min']
+aliases = ['miles per minute', 'miles/minute', 'mile/minute', 'miles/min', 'mile/min']
+factor = "26.8224"
+
+# 1 mile/hour (mph) = 0.44704 m/s
+["mile per hour"]
+symbols = ['mph', 'mi/hr', 'mi/h']
+aliases = ['miles per hour', 'miles/hour', 'mile/hour', 'miles/hr', 'mile/hr']
+factor = "0.44704"
+
+# 1 knot = 1 nautical mile per hour = ~0.514 m/s
+["knot"]
+symbols = []
+aliases = ['knots']
+factor = "0.5144444444444444444444444444"
+
+# 1 imperial knot = ~0.5147733333 m/s
+["imperial knot"]
+symbols = []
+aliases = ['imperial knots']
+factor = "0.5147733333333333333333333333"
+
+# 1 mach (aka mach 1 or the speed of sound) = 295.0464 m/s
+["mach"]
+symbols = ['Ma']
+aliases = []
+factor = "295.0464"

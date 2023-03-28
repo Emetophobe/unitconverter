@@ -1,14 +1,15 @@
 # Copyright (c) 2022-2023 Mike Cunningham
 
-
-from unitconverter.unit import Unit, get_prefixes, apply_prefix
 from unitconverter.converter import Converter, format_decimal
-
+from unitconverter.prefixes import PrefixScaling, get_prefixes
+from unitconverter.unit import Unit
+from unitconverter.units import Units
 
 __all__ = [
-    'Unit',
+    'PrefixScaling',
     'Converter',
+    'Units',
+    'Unit',
     'format_decimal',
-    'get_prefixes',
-    'apply_prefix'
+    'get_prefixes'
 ]

@@ -1,0 +1,73 @@
+# The newton is the SI unit of force
+["newton"]
+symbols = ['N']
+aliases = ['newtons']
+factor = "1"
+prefix_scaling = "si"
+
+# 1 joule/metre = 1 newton
+["joule per metre"]
+symbols = ['J/m', 'j/m']
+aliases = ['joules per metre', 'joules/metre', 'joule/metre']
+factor = "1"
+prefix_scaling = "si"
+
+# The dyne is a derived unit of force specified in the older CGS system of units
+# 1 dyne is exactly 0.00001 (1E-5) newtons
+["dyne"]
+symbols = ['dyn']
+aliases = ['dynes']
+factor = "0.00001"
+prefix_scaling = "si"
+
+# 1 gram force = 0.00980665 newtons
+["gram-force"]
+symbols = ['gf', 'p']
+aliases = ['ponds', 'pond']
+factor = "0.00980665"
+prefix_scaling = "si"
+
+# 1 tonne force = 9806.65 newtons
+["tonne-force"]
+symbols = ['t-f', 'tf', 'MgF', 'mp']
+aliases = ['metric ton-force', 'megagram-force', 'megapond']
+factor = "9806.65"
+prefix_scaling = "si"
+
+
+# Imperial units
+
+
+["poundal"]
+symbols = ['pdl']
+aliases = ['poundals']
+factor = "0.138254954376"
+
+["ounce-force"]
+symbols = ['ozf']
+aliases = []
+factor = "0.27801385"
+
+# 1 pound force is roughly 4.448222 newtons
+["pound-force"]
+symbols = ['lbf']
+aliases = ['pounds of force', 'pound of force', 'lbs of force', 'lbs-force']
+factor = "4.448222"
+
+# 1 kip-force = 1000 pound force or roughly 4448.222 newtons
+["kip-force"]
+symbols = ['kipf']
+aliases = []
+factor = "4448.222"
+
+# 1 long ton-force = roughly 9964.0164182 newtons
+["long ton-force"]
+symbols = ['tnf']
+aliases = ['tf (long)']
+factor = "9964.0164182"
+
+# 1 short ton-force = roughly 8896.4432305 newtons
+["short ton-force"]
+symbols = ['tonf']
+aliases = ['tf (short)']
+factor = "8896.4432305"

@@ -1,0 +1,91 @@
+# The SI unit for mass is kilograms (kg)
+# I use gram (g) with this script for simplicity
+["gram"]
+symbols = ['g']
+aliases = ['grams']
+factor = "1"
+prefix_scaling = "si"
+
+# 1 ounce is 28.34952 grams
+["ounce"]
+symbols = ['oz']
+aliases = ['ounces', 'imperial ounces', 'imperial ounce']
+factor = "28.34952"
+
+# 1 pound is 453.59237 grams
+["pound"]
+symbols = ['lb', 'lbs']
+aliases = ['pounds', 'imperial pounds', 'imperial pound']
+factor = "453.59237"
+
+# 1 kilopound (kip) = 1000 lbs or 453592.37 grams
+["kilopound"]
+symbols = ['kip', 'klbs']
+aliases = ['kilopounds', 'imperial kilopounds', 'imperial kilopound']
+factor = "453592.37"
+
+# 1 stone = 14 lbs or 6350.29 grams
+["stone"]
+symbols = ['st']
+aliases = ['stones', 'imperial stone']
+factor = "6350.29"
+
+# 1 metric ton (tonne) = 1,000,000 grams = 1E+6 grams
+["tonne"]
+symbols = ['t']
+aliases = ['tonnes', 'metric tons', 'metric ton']
+factor = "1E+6"
+prefix_scaling = "si"
+
+# 1 long ton = 1,016,046.91 grams
+["long ton"]
+symbols = ['LT']
+aliases = ['long tons', 'imperial ton', 'imperial tons']
+factor = "1016046.91"
+
+# 1 short ton = 907,184.74 grams
+["short ton"]
+symbols = ['ST']
+aliases = ['short tons', 'US ton', 'US tons']
+factor = "907184.74"
+
+# 1 carat = 0.2 grams
+["carat"]
+symbols = ['car', 'ct']
+aliases = ['carats']
+factor = "0.2"
+
+["dalton"]
+symbols = ['Da', 'u']
+aliases = ['daltons', 'atomic mass unit']
+factor = "1.660540199E-24"
+
+["drachm"]
+symbols = ['dr']
+aliases = ['drachms', 'drams', 'dram']
+factor = "1.77185"
+
+["grain"]
+symbols = ['gr']
+aliases = ['grains']
+factor = "0.06479891"
+
+["pennyweight"]
+symbols = ['dwt']
+aliases = ['pennyweights']
+factor = "1.55517384"
+
+["slug"]
+symbols = []
+aliases = ['slugs']
+factor = "14593.9"
+
+["troy ounce"]
+symbols = ['ozt']
+aliases = ['troy ounces']
+factor = "31.1035"
+
+["troy pound"]
+symbols = ['lbt']
+aliases = ['troy pounds']
+factor = "373.242"

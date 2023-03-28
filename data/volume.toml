@@ -1,0 +1,182 @@
+["cubic metre"]
+symbols = ['m^3', 'm3']
+aliases = ['cubic metres', 'cubic meters', 'cubic meter', 'metre^3', 'metre3', 'meter^3', 'meter3']
+factor = "1"
+power = "3"
+prefix_scaling = "si"
+
+["litre"]
+symbols = ['L', 'l']
+aliases = ['litres', 'liters', 'liter']
+factor = "0.001"
+prefix_scaling = "si"
+
+["cup"]
+symbols = []
+aliases = ['cups', 'metric cups', 'metric cup']
+factor = "0.00025"
+
+["tablespoon"]
+symbols = ['tbsp']
+aliases = ['tablespoons', 'metric tablespoons', 'metric tablespoon']
+factor = "0.000015"
+
+["teaspoon"]
+symbols = ['tsp']
+aliases = ['teaspoons', 'metric teaspoons', 'metric teaspoon']
+factor = "0.000005"
+
+["stere"]
+symbols = []
+aliases = ['steres', 'stères', 'stère']
+factor = "1"
+
+["drop"]
+symbols = ['gt']
+aliases = ['drops']
+factor = "5E-8"
+
+["fifth"]
+symbols = []
+aliases = ['fifths']
+factor = "0.0007570823568"
+
+["cubic inch"]
+symbols = ['cu in', 'in^3', 'in3']
+aliases = ['cubic inches']
+factor = "0.000016387064"
+
+["cubic foot"]
+symbols = ['cu ft', 'ft^3', 'ft3']
+aliases = ['cubic feet']
+factor = "0.028316846592"
+
+["cubic yard"]
+symbols = ['cu yd', 'yd^3', 'yd3']
+aliases = ['cubic yards']
+factor = "0.764554857984"
+
+["cubic mile"]
+symbols = ['cu mi', 'mi^3', 'mi3']
+aliases = ['cubic miles']
+factor = "4168181825.440579584"
+
+["acre-inch"]
+symbols = ['ac*in', 'ac-in', 'ac⋅in']
+aliases = ['acre-inches', 'acre-in']
+factor = "102.79015312896"
+
+["acre-foot"]
+symbols = ['ac*ft', 'ac-ftac⋅ft']
+aliases = ['acre-feet']
+factor = "1233.48183754752"
+
+["imperial gill"]
+symbols = ['gi']
+aliases = ['gills', 'gill', 'imperial gills']
+factor = "0.0001420653"
+
+["imperial cup"]
+symbols = []
+aliases = ['imperial cups', 'impcups', 'impcup']
+factor = "0.0002841306"
+
+["imperial bushel"]
+symbols = ['bsh', 'bu']
+aliases = ['bushels', 'bushel', 'imperial bushels']
+factor = "0.03636872"
+
+["imperial fluid ounce"]
+symbols = ['floz', 'ukfloz']
+aliases = ['fluid ounces', 'fluid ounce', 'imperial fluid ounces']
+factor = "0.0000284130625"
+
+["imperial gallon"]
+symbols = ['gal', 'ukgal']
+aliases = ['gallons', 'gallon', 'imperial gallons', 'ukgallon']
+factor = "0.00454609"
+
+["imperial pint"]
+symbols = ['pt', 'ukpt']
+aliases = ['pints', 'pint', 'imperial pints', 'ukpint']
+factor = "0.0005682615"
+
+["imperial quart"]
+symbols = ['qt', 'ukqt']
+aliases = ['quarts', 'quart', 'imperial quarts', 'ukquart']
+factor = "0.0011365225"
+
+["imperial tablespoon"]
+symbols = ['uktbsp']
+aliases = ['imperial tablespoons', 'imperial tbsp']
+factor = "0.0000177582"
+
+["imperial teaspoon"]
+symbols = ['uktsp']
+aliases = ['imperial teaspoons', 'imperial tsp']
+factor = "0.000005919388"
+
+["US gill"]
+symbols = ['usgi']
+aliases = ['US gills', 'usgills', 'usgill']
+factor = "0.0001182941"
+
+["US cup"]
+symbols = []
+aliases = ['US cups', 'uscups', 'uscup']
+factor = "0.000236588"
+
+["US bushel"]
+symbols = ['usbsh', 'usbu']
+aliases = ['US bushels']
+factor = "0.0352391"
+
+["US fluid ounce"]
+symbols = ['usfloz']
+aliases = ['US fluid ounces']
+factor = "0.0000295735"
+
+["US liquid gallon"]
+symbols = ['usgal']
+aliases = ['US liquid gallons', 'US gallons', 'US gallon', 'usgallon']
+factor = "0.003785411784"
+
+["US dry gallon"]
+symbols = ['usdrygal']
+aliases = ['US dry gallons', 'US dry gal', 'usdrygallon']
+factor = "0.00440488"
+
+["US liquid pint"]
+symbols = ['uspt']
+aliases = ['US liquid pints', 'US pints', 'US pint', 'uspint']
+factor = "0.000473176"
+
+["US dry pint"]
+symbols = ['usdrypt']
+aliases = ['US dry pints', 'usdrypint']
+factor = "0.000550610475"
+
+["US liquid quart"]
+symbols = ['usqt']
+aliases = ['US liquid quarts', 'US quarts', 'US quart', 'usquart']
+factor = "0.000946353"
+
+["US dry quart"]
+symbols = ['usdryqt']
+aliases = ['US dry quarts', 'usdryquart']
+factor = "0.0011012107"
+
+["US tablespoon"]
+symbols = ['ustbsp']
+aliases = ['US tablespoons', 'US tbsp']
+factor = "0.0000147868"
+
+["US teaspoon"]
+symbols = ['ustsp']
+aliases = ['US teaspoons', 'US tsp']
+factor = "0.00000492892"
+
+["US survey acre-foot"]
+symbols = ['usac*ft', 'usac-ft']
+aliases = ['US survey acre-feet']
+factor = "1233.489238467185051800274"

@@ -1,0 +1,92 @@
+# The joule is the SI unit of energy
+["joule"]
+symbols = ['J', 'j']
+aliases = ['joules']
+factor = "1"
+prefix_scaling = "si"
+
+# 1 watt second = 1 joule
+["watt-second"]
+symbols = ['Ws']
+aliases = ['watt-seconds', 'wattseconds', 'wattsecond']
+factor = "1"
+prefix_scaling = "si"
+
+# 1 watt minute = 60 joules
+["watt-minute"]
+symbols = ['Wm']
+aliases = ['watt-minutes', 'wattminutes', 'wattminute']
+factor = "60"
+prefix_scaling = "si"
+
+# 1 watt hour = 3600 joules
+["watt-hour"]
+symbols = ['Wh']
+aliases = ['watt-hours', 'watthours', 'watthour']
+factor = "3600"
+prefix_scaling = "si"
+
+# 1 gram of TNT = roughly 4184 joules
+["gram of TNT"]
+symbols = ['gTNT']
+aliases = ['grams of TNT']
+factor = "4184"
+prefix_scaling = "si"
+prefix_index = 0
+
+# 1 metric ton of TNT is approximately 4.184E+9 joules
+["ton of TNT"]
+symbols = ['tTNT']
+aliases = ['tons of TNT', 'metric tons of TNT', 'metric ton of TNT']
+factor = "4.184E+9"
+prefix_scaling = "si"
+prefix_index = 0
+
+# 1 calorie = 4.184 joules
+["calorie"]
+symbols = ['cal']
+aliases = ['calories', 'small calorie', 'small calories']
+factor = "4.184"
+
+# 1 kilocalorie = 1000 calories = 4184 joules
+["kilocalorie"]
+symbols = ['kcal']
+aliases = ['kilocalories', 'large calorie', 'large calories']
+factor = "4184"
+
+# 1 btu = 1055.06 joules
+["british thermal unit"]
+symbols = ['btu', 'btus']
+aliases = ['british thermal units']
+factor = "1055.06"
+
+# A quad is a quadrillion btus or 1.05506E+18 joules
+["quad"]
+symbols = []
+aliases = ['quadrillion btus', 'quadrillion btu']
+factor = "1.05506E+18"
+
+["electron volt"]
+symbols = ['eV']
+aliases = ['electron volts']
+factor = "1.602176633E-19"
+
+["erg"]
+symbols = []
+aliases = ['ergs']
+factor = "1E-7"
+
+["therm"]
+symbols = ['thm']
+aliases = ['therms']
+factor = "105506000"
+
+["inch-pound"]
+symbols = ['in*lbf', 'in-lbf']
+aliases = []
+factor = "0.112984829"
+
+["foot-pound"]
+symbols = ['ft*lbf', 'ft-lbf']
+aliases = []
+factor = "1.3558179483"

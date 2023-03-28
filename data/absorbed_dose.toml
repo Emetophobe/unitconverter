@@ -1,0 +1,12 @@
+# The gray is the SI unit of absorbed dose
+["gray"]
+symbols = ['Gy']
+aliases = ['grays']
+factor = "1"
+prefix_scaling = "si"
+
+# 1 rad = 0.01 gray
+["US rad"]
+symbols = ['usrad']
+aliases = ['US rads']
+factor = "0.01"

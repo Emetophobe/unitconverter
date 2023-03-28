@@ -1,0 +1,34 @@
+["lux"]
+symbols = ['lx']
+aliases = []
+factor = "1"
+prefix_scaling = "si"
+
+["metre-candle"]
+symbols = ['m*c', 'm⋅s']
+aliases = ['metre candle']
+factor = "1"
+prefix_scaling = "si"
+prefix_index = 0
+
+["phot"]
+symbols = ['ph']
+aliases = ['phots']
+factor = "10000"
+
+["nox"]
+symbols = ['nx']
+aliases = []
+factor = "0.001"
+
+["watt per square metre"]
+symbols = ['W/m^2', 'W/m2']
+aliases = ['watts per square metre', 'watts/m^2', 'watts/m2', 'watt/m^2', 'watt/m2']
+factor = "683"
+prefix_scaling = "si"
+prefix_index = 0
+
+["foot-candle"]
+symbols = ['ft*c', 'ft⋅c', 'f⋅c']
+aliases = ['foot candle']
+factor = "10.76391"

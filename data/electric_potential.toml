@@ -1,0 +1,26 @@
+# The volt is the SI unit of electric potential
+["volt"]
+symbols = ['V']
+aliases = ['volts']
+factor = "1"
+prefix_scaling = "si"
+
+# 1 watt/ampere = 1 volt
+["watt per ampere"]
+symbols = ['W/A']
+aliases = ['watts per ampere', 'watts/ampere', 'watt/ampere', 'watts/amp', 'watt/amp']
+factor = "1"
+prefix_scaling = "si"
+prefix_index = 0
+
+# 1 abvolt = 1E-8 volts
+["abvolt"]
+symbols = ['abV']
+aliases = ['abvolts']
+factor = "1E-8"
+
+# 1 statvolt = 299.7925 volts
+["statvolt"]
+symbols = ['stV']
+aliases = ['statvolts']
+factor = "299.7925"

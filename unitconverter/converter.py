@@ -1,16 +1,19 @@
 # Copyright (c) 2022-2023 Mike Cunningham
 
 from decimal import Decimal
-from typing import Optional
-from unitconverter.unit import Unit, get_prefixes
-from unitconverter.units import get_units
+from unitconverter.locale import Locale
+from unitconverter.unit import Unit
+from unitconverter.units import Units
+from unitconverter.prefixes import get_prefixes
+from unitconverter.exceptions import UnitError, CategoryError
 
 
 class Converter:
     """ A basic unit converter. """
 
-    def __init__(self) -> None:
-        self.units = get_units()
+    def __init__(self, locale: Locale = Locale.ENGLISH) -> None:
+        """ Initialize units. """
+        self.units = Units(locale)
 
     def convert(self, value: Decimal, source: Unit, dest: Unit) -> Decimal:
         """ Convert a number from source unit to dest unit.
@@ -20,38 +23,43 @@ class Converter:
             source (Unit): the source unit.
             dest (Unit): the destination unit.
 
-        Returns:
-            Decimal: the result of the conversion.
 
         Raises:
             ValueError: if the source or dest unit is invalid.
+
+        Returns:
+            Decimal: the result of the conversion.
         """
+
         value = Decimal(value)
+        source = self.parse_unit(source)
+        dest = self.parse_unit(dest)
 
         if source.category != dest.category:
-            raise ValueError(f'Error: unit mismatch:'
-                             f' {source.name} ({source.category}),'
-                             f' {dest.name} ({dest.category})')
+            raise CategoryError(source, dest)
 
         value = source.offset + value * source.factor
         return (-dest.offset + value) / dest.factor
 
     def parse_unit(self, name: str) -> Unit:
-        """ Parse a unit string and return a Unit instance.
+        """ Parse a string and get a Unit.
 
         Args:
             name (str): unit name, symbol, or alias.
 
         Raises:
-            ValueError: if the unit name is invalid.
+            UnitError: if name is invalid.
 
         Returns:
-            Unit: the unit instance.
+            Unit: a unit instance.
         """
+        if isinstance(name, Unit):
+            return name
 
         # Check if the unit is in the list
-        if unit := self.find_unit(name):
-            return unit
+        for unit in self.units:
+            if name in unit:
+                return unit
 
         # Check supported prefixes for a matching unit
         for unit in self.units:
@@ -64,21 +72,8 @@ class Converter:
                 if name in prefix_unit:
                     return prefix_unit
 
-        raise ValueError(f'Invalid unit name: {name}')
-
-    def find_unit(self, name: str) -> Optional[Unit]:
-        """ Find a unit by name, alias, or symbol.
-
-        Args:
-            name (str): the name of the unit; i.e "metres".
-
-        Returns:
-            Unit: the unit instance, or None if not found.
-        """
-        for unit in self.units:
-            if name in unit:
-                return unit
-        return None
+        # Invalid unit name
+        raise UnitError(name)
 
 
 def format_decimal(value: Decimal,
@@ -104,3 +99,30 @@ def format_decimal(value: Decimal,
 
     comma = ',' if commas else ''
     return f'{value:{comma}{precision}f}'
+
+
+# TODO: unused for now, find a use or remove
+def apply_prefix(prefix: str, unit: Unit) -> Unit:
+    """ Apply prefix to a unit and return a new unit.
+
+    Args:
+        prefix (str): The prefix name or symbol.
+        unit (Unit): the base unit.
+
+    Raises:
+        ValueError: if an argument is invalid.
+
+    Returns:
+        Unit: a new prefixed unit.
+    """
+    # Get prefix table from unit scaling option
+    prefixes = get_prefixes(unit.prefix_scaling)
+    if not prefixes:
+        raise ValueError(f'Unit {unit.name!r} does not support prefix scaling.')
+
+    # Create a new unit from prefix
+    for factor, symbol, name in prefixes:
+        if prefix in (symbol, name):
+            return unit.add_prefix(factor, symbol, name)
+
+    raise ValueError(f'Unit {unit.name!r} does not support prefix {prefix!r}.')

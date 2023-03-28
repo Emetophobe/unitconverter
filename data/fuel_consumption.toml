@@ -1,0 +1,53 @@
+
+# 1 litre/metre is the base unit
+["litre per metre"]
+symbols = ['L/m', 'l/m']
+aliases = ['litres per meter', 'litre/metre', 'litres/metre']
+factor = "1"
+prefix_scaling = "si"
+prefix_index = 0
+
+["litre per 100km"]
+symbols = ['L/100km', 'l/100km']
+aliases = ['litres per 100km', 'litre/100km', 'litres/100km']
+factor = "0.00001"
+prefix_scaling = "si"
+prefix_index = 0
+
+# Imperial gallons
+
+["foot per gallon"]
+symbols = ['ft/gal']
+aliases = ['feet per gallon', 'feet/gallon', 'foot/gallon', 'feet/gal', 'foot/gal']
+factor = "14.915"
+
+["metre per gallon"]
+symbols = ['m/gal']
+aliases = ['metres per gallon', 'metres/gallon', 'metre/gallon', 'metres/gal', 'metre/gal']
+factor = "4.5460992939"
+prefix_scaling = "si"
+prefix_index = 0
+
+["mile per gallon"]
+symbols = ['mpg', 'mi/gal']
+aliases = ['miles per gallon', 'miles/gallon', 'mile/gallon', 'miles/gal', 'mile/gal']
+factor = "0.0028248094"
+
+# US gallons
+
+["foot per usgallon"]
+symbols = ['ft/usgal']
+aliases = ['feet per usgallon', 'feet/usgallon', 'foot/usgallon', 'feet/usgal', 'foot/usgal']
+factor = "12.4193"
+
+["metre per usgallon"]
+symbols = ['m/usgal']
+aliases = ['metres per usgallon', 'metres/usgallon', 'metre/usgallon', 'metres/usgal', 'metre/usgal']
+factor = "3.7854117834"
+prefix_scaling = "si"
+prefix_index = 0
+
+["mile per usgallon"]
+symbols = ['usmpg', 'mi/usgal']
+aliases = ['miles per usgallon', 'miles/usgallon', 'mile/usgallon', 'miles/usgal', 'mile/usgal']
+factor = "0.0023521458"

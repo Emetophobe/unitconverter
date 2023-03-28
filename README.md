@@ -57,7 +57,7 @@ Units can override the default scaling behaviour as needed. SI units for example
 
 ## Requirements
 
-    Python 3.9 or newer
+    Python 3.11 or newer
 
 ## Installation
 

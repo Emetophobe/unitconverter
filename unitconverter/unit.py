@@ -1,72 +1,7 @@
 # Copyright (c) 2022-2023 Mike Cunningham
 
 from decimal import Decimal, DecimalException
-from typing import Union
-
-
-# SI prefixes
-SI_PREFIXES = [
-    ('1E-30', 'q', 'quecto'),
-    ('1E-27', 'r', 'ronto'),
-    ('1E-24', 'y', 'yocto'),
-    ('1E-21', 'z', 'zepto'),
-    ('1E-18', 'a', 'atto'),
-    ('1E-15', 'f', 'femto'),
-    ('1E-12', 'p', 'pico'),
-    ('1E-9', 'n', 'nano'),
-    ('1E-6', 'µ', 'micro'),
-    ('1E-3', 'm', 'milli'),
-    ('1E-2', 'c', 'centi'),
-    ('1E-1', 'd', 'deci'),
-    ('1E+1', 'da', 'deca'),
-    ('1E+2', 'h', 'hecto'),
-    ('1E+3', 'k', 'kilo'),
-    ('1E+6', 'M', 'mega'),
-    ('1E+9', 'G', 'giga'),
-    ('1E+12', 'T', 'tera'),
-    ('1E+15', 'P', 'peta'),
-    ('1E+18', 'E', 'exa'),
-    ('1E+21', 'Z', 'zetta'),
-    ('1E+24', 'Y', 'yotta'),
-    ('1E+27', 'R', 'ronna'),
-    ('1E+30', 'Q', 'quetta'),
-]
-
-# Decimal prefixes (kilo to quetta)
-DECIMAL_PREFIXES = [
-    ('1E+3', 'k', 'kilo'),
-    ('1E+6', 'M', 'mega'),
-    ('1E+9', 'G', 'giga'),
-    ('1E+12', 'T', 'tera'),
-    ('1E+15', 'P', 'peta'),
-    ('1E+18', 'E', 'exa'),
-    ('1E+21', 'Z', 'zetta'),
-    ('1E+24', 'Y', 'yotta'),
-    ('1E+27', 'R', 'ronna'),
-    ('1E+30', 'Q', 'quetta'),
-]
-
-# binary prefixes (i.e kibibyte to yobibyte)
-BINARY_PREFIXES = [
-    (2 ** 10, 'Ki', 'kibi'),
-    (2 ** 20, 'Mi', 'mebi'),
-    (2 ** 30, 'Gi', 'gibi'),
-    (2 ** 40, 'Ti', 'tebi'),
-    (2 ** 50, 'Pi', 'pebi'),
-    (2 ** 60, 'Ei', 'exbi'),
-    (2 ** 70, 'Zi', 'zebi'),
-    (2 ** 80, 'Yi', 'yobi'),
-]
-
-# A Unit has one of the following prefix options:
-PREFIX_OPTIONS = [
-    'none',     # don't generate prefixes (default)
-    'all',      # generate SI prefixes and binary prefixes
-    'si',       # generate SI prefixes
-    'binary',   # generate binary prefixes
-    'decimal',  # generate decimal prefixes (kilo to quetta)
-    'both',     # generate decimal prefixes and binary prefixes
-]
+from unitconverter.prefixes import PrefixScaling
 
 
 class Unit:
@@ -75,17 +10,22 @@ class Unit:
 
     def __init__(self,
                  name,
+                 category,
+                 symbols,
+                 aliases,
                  factor,
-                 symbols=None,
-                 aliases=None,
                  power='1',
                  offset='0',
-                 prefix_scaling='none',
+                 prefix_scaling=PrefixScaling.NONE,
                  prefix_index=-1):
         """ Initialize unit.
 
         Args:
-            name (str): unit name.
+            name (str):
+                unit name.
+
+            category (str):
+                unit category.
 
             factor (str | Decimal):
                 unit conversion factor.
@@ -113,25 +53,26 @@ class Unit:
             ValueError: if prefix_scaling or prefix_index is invalid.
         """
         self.name = name
-        self.symbols = self._parse_string_list(symbols)
-        self.aliases = self._parse_string_list(aliases)
-        self.aliases = [name for name in self.aliases if name != self.name]
+        self.category = category
+        self.symbols = symbols
+        self.aliases = aliases
 
         self.factor = self._parse_decimal(factor)
         self.power = self._parse_decimal(power)
         self.offset = self._parse_decimal(offset)
 
-        # Check if prefix scaling is valid
-        if prefix_scaling is not None and prefix_scaling not in PREFIX_OPTIONS:
-            raise ValueError(f'Unsupported prefix option: {prefix_scaling}')
+        self.prefix_scaling = PrefixScaling(prefix_scaling)
 
         # Check if prefix index is valid
         last_index = len(name.split(' ')) - 1
         if prefix_index < -1 or prefix_index > last_index:
             raise ValueError(f'prefix index must be between -1 and {last_index}')
 
-        self.prefix_scaling = prefix_scaling
         self.prefix_index = prefix_index
+
+    def get_names(self) -> list[str]:
+        """ Return a list of all unit names and symbols. """
+        return [self.name] + self.symbols + self.aliases
 
     def add_prefix(self, factor: str, symbol: str, prefix: str):
         """ Create a new unit by applying a prefix (scaling factor).
@@ -159,8 +100,8 @@ class Unit:
         prefix_scaling = 'none'
 
         # Create a new prefixed unit
-        return self.__class__(name, factor, symbols, aliases, self.power, self.offset,
-                              prefix_scaling, self.prefix_index)
+        return Unit(name, self.category, symbols, aliases, factor, self.power,
+                    self.offset, prefix_scaling, self.prefix_index)
 
     def _add_prefix(self, prefix: str, name: str) -> str:
         """ Add a prefix to a string; i.e "kilo" + "metre"
@@ -186,33 +127,12 @@ class Unit:
         split[self.prefix_index] = prefix + split[self.prefix_index]
         return ' '.join(split)
 
-    def _parse_decimal(self, argument: Union[str, Decimal]) -> Decimal:
-        """ Parse decimal argument and return a Decimal. """
+    def _parse_decimal(self, argument: Decimal | str) -> Decimal:
+        """ Parse argument and return a Decimal. """
         try:
             return Decimal(argument)
         except DecimalException:
             raise ValueError(f'{self.name} passed an invalid decimal: {argument!r}')
-
-    def _parse_string_list(self, argument: Union[str, list[str], None]) -> list[str]:
-        """ Parse str or list argument and return a list of strings.
-
-        Args:
-            argument (str | list[str] | None): a str, list of str, or None.
-
-        Raises:
-            TypeError: if the argument is an invalid type.
-
-        Returns:
-            list[str]: a list of strings, or an empty list.
-        """
-        if not argument:
-            return []
-        elif isinstance(argument, str):
-            return [argument]
-        elif isinstance(argument, list):
-            return argument
-        else:
-            raise TypeError('argument must be a str, list, or None')
 
     def __contains__(self, name: str) -> bool:
         """ Returns True if name matches one of the unit names. """
@@ -220,57 +140,3 @@ class Unit:
 
     def __str__(self) -> str:
         return f'{self.name}, {self.factor}, {self.symbols}, {self.aliases}'
-
-
-def get_prefixes(prefix_option: str) -> list[tuple]:
-    """ Get a list of prefixes based on the prefix option (see `PREFIX_OPTIONS`).
-
-    Args:
-        prefix_option (str): the prefix option.
-
-    Raises:
-        ValueError: if the prefix_option is invalid.
-
-    Returns:
-        list[tuple]: a list of prefixes.
-    """
-    if prefix_option is None or prefix_option == 'none':
-        return []
-    elif prefix_option == 'si':
-        return SI_PREFIXES
-    elif prefix_option == 'all':
-        return SI_PREFIXES + BINARY_PREFIXES
-    elif prefix_option == 'both':
-        return DECIMAL_PREFIXES + BINARY_PREFIXES
-    elif prefix_option == 'binary':
-        return BINARY_PREFIXES
-    elif prefix_option == 'decimal':
-        return DECIMAL_PREFIXES
-    else:
-        raise ValueError(f'Unsupported prefix option: {prefix_option}')
-
-
-def apply_prefix(prefix: str, unit: Unit) -> Unit:
-    """ Apply prefix to a unit and return a new unit.
-
-    Args:
-        prefix (str): The prefix name or symbol.
-        unit (Unit): the base unit.
-
-    Raises:
-        ValueError: if an argument is invalid.
-
-    Returns:
-        Unit: a new prefixed unit.
-    """
-    # Get prefix table from unit scaling option
-    prefixes = get_prefixes(unit.prefix_scaling)
-    if not prefixes:
-        raise ValueError(f'Unit {unit.name!r} does not support prefix scaling.')
-
-    # Create a new unit from prefix
-    for factor, symbol, name in prefixes:
-        if prefix in (symbol, name):
-            return unit.add_prefix(factor, symbol, name)
-
-    raise ValueError(f'Unit {unit.name!r} does not support prefix {prefix!r}.')

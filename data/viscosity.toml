@@ -1,0 +1,31 @@
+["pascal second"]
+symbols = ['Pa*s', 'Pa⋅s', 'Pa-s']
+aliases = ['pascal seconds', 'pascal-seconds', 'pascal-second']
+factor = "1"
+prefix_scaling = "si"
+prefix_index = 0
+
+["poise"]
+symbols = ['P']
+aliases = ['poises']
+factor = "0.1"
+prefix_scaling = "si"
+
+["gram per foot second"]
+symbols = ['g/[ft s]', 'g/ft s', 'g/ft-s']
+aliases = ['gram per feet second', 'gram/foot second', 'gram/feet second', 'grams per foot second', 'grams per feet second', 'grams/foot second', 'grams/feet second']
+factor = "0.00328083989501312"
+prefix_scaling = "si"
+prefix_index = 0
+
+["gram per metre second"]
+symbols = ['g/[m s]', 'g/m s', 'g/m-s']
+aliases = ['gram per meter second', 'gram/metre second', 'gram/meter second', 'grams per metre second', 'grams per meter second', 'grams/metre second', 'grams/meter second']
+factor = "0.001"
+prefix_scaling = "si"
+prefix_index = 0
+
+["slug per foot second"]
+symbols = ['slug/[ft s]', 'slug/ft s', 'slug/ft-s']
+aliases = ['slug per feet second', 'slug/foot second', 'slug/feet second', 'slugs per foot second', 'slugs per feet second', 'slugs/foot second', 'slugs/feet second']
+factor = "47.88025898"

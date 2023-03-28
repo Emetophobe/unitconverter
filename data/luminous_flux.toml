@@ -1,0 +1,14 @@
+# The lumen is the SI unit of luminous flux
+["lumen"]
+symbols = ['lm']
+aliases = ['lumens']
+factor = "1"
+prefix_scaling = "si"
+
+# 1 candela steradian = 1 lumen
+["candela-steradian"]
+symbols = ['cd·sr', 'cd-sr']
+aliases = ['candela steradian']
+factor = "1"
+prefix_scaling = "si"
+prefix_index = 0

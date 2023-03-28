@@ -1,0 +1,14 @@
+# The katal is the SI unit of catalytic activity
+["katal"]
+symbols = ['kat']
+aliases = ['katals']
+factor = "1"
+prefix_scaling = "si"
+
+# 1 mole/second = 1 katal
+["mole per second"]
+symbols = ['mol/s']
+aliases = ['moles per second', 'moles/second', 'mole/second', 'moles/sec', 'mole/sec']
+factor = "1"
+prefix_scaling = "si"
+prefix_index = 0

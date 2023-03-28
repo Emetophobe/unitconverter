@@ -1,5 +1,6 @@
 # Copyright (c) 2022-2023 Mike Cunningham
 
+
 from decimal import Decimal
 from unitconverter.locale import Locale
 from unitconverter.unit import Unit
@@ -73,7 +74,7 @@ class Converter:
                     return prefix_unit
 
         # Invalid unit name
-        raise UnitError(name)
+        raise UnitError(f'Invalid unit: {name}')
 
 
 def format_decimal(value: Decimal,
@@ -118,11 +119,11 @@ def apply_prefix(prefix: str, unit: Unit) -> Unit:
     # Get prefix table from unit scaling option
     prefixes = get_prefixes(unit.prefix_scaling)
     if not prefixes:
-        raise ValueError(f'Unit {unit.name!r} does not support prefix scaling.')
+        raise UnitError(f'Unit {unit.name!r} does not support prefix scaling.')
 
     # Create a new unit from prefix
     for factor, symbol, name in prefixes:
         if prefix in (symbol, name):
             return unit.add_prefix(factor, symbol, name)
 
-    raise ValueError(f'Unit {unit.name!r} does not support prefix {prefix!r}.')
+    raise UnitError(f'Unit {unit.name!r} does not support prefix {prefix!r}.')

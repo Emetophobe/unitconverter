@@ -12,12 +12,12 @@ class ConverterError(ValueError):
 
 
 class UnitError(ConverterError):
-
-    def __init__(self, name: str) -> None:
-        self.msg = f'Invalid unit: {name}'
+    """ Invalid unit error. """
+    pass
 
 
 class CategoryError(ConverterError):
+    """ Category mismatch error. """
 
     def __init__(self, source, dest) -> None:
         self.msg = (f'Category mismatch between {source.name} ({source.category})'

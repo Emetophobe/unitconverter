@@ -2,10 +2,12 @@
 # Copyright (c) 2022-2023 Mike Cunningham
 
 import sys
+from pathlib import Path
+from format_json import file_checksum
 sys.path.append('.')  # is there a better way?
 from unitconverter.units import Units  # noqa
 
-DEST_FILE = 'docs/supported_units.txt'
+DEST_FILE = Path('docs/supported_units.txt')
 
 
 def create_supported_units(filename):
@@ -13,6 +15,8 @@ def create_supported_units(filename):
     all_units = Units()
     categories = all_units.get_units()
     sorted_categories = sorted(categories.keys())
+
+    old_checksum = file_checksum(filename)
 
     with open(filename, 'w', encoding='utf-8') as outfile:
         for category in sorted_categories:
@@ -22,7 +26,11 @@ def create_supported_units(filename):
             for unit in units:
                 outfile.write('\t' + unit.name + '\n')
 
+    new_checksum = file_checksum(filename)
+    if old_checksum != new_checksum:
         print(f'Saved {len(all_units)} units to {DEST_FILE}')
+    else:
+        print(f'{filename.name} is already up to date.')
 
 
 if __name__ == '__main__':

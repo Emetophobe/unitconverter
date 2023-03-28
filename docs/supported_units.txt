@@ -355,8 +355,8 @@ Volume
 	cup
 	tablespoon
 	teaspoon
-	stere
 	drop
+	stere
 	fifth
 	cubic inch
 	cubic foot

@@ -1,13 +1,13 @@
 ["cubic metre"]
 symbols = ['m^3', 'm3']
-aliases = ['cubic metres', 'cubic meters', 'cubic meter', 'metre^3', 'metre3', 'meter^3', 'meter3']
+aliases = ['cubic metres', 'metre^3', 'metre3']
 factor = "1"
 power = "3"
 prefix_scaling = "si"
 
 ["litre"]
 symbols = ['L', 'l']
-aliases = ['litres', 'liters', 'liter']
+aliases = ['litres']
 factor = "0.001"
 prefix_scaling = "si"
 

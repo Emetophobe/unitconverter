@@ -1,69 +1,75 @@
 # Copyright (c) 2022-2023 Mike Cunningham
 
 from decimal import Decimal
+from typing import Any
 from tests import PrefixScaling, TestCase, Unit, Units
 
 
 class TestUnits(TestCase):
-    """ Test predefined units. """
+    """ Test Units class. """
 
     def setUp(self) -> None:
-        """ Initialize units """
+        """ Initialize units with default english locale. """
         self.units = Units()
 
     def test_units(self) -> None:
-        """ Test for invalid units. """
+        """ Test for incorrectly formed units. """
         for unit in self.units:
             self.assert_valid_unit(unit)
 
     def assert_valid_unit(self, unit: Unit) -> None:
-        """ Assert that a unit is valid """
-        self.assertIsInstance(unit, Unit, type(unit))
-        msg = f'{unit!r} ' + 'attribute {} is invalid: {!r}'
+        """ Assert that a unit is correctly formed (has the right attribute types). """
+        self.assert_type(unit, Unit, f'{unit!r} is not a valid Unit')
 
-        # Assert that the unit name is valid
-        self.assertIsInstance(unit.name, str, type(unit.name))
-        self.assertTrue(unit.name, msg.format('name', unit.name))
+        self.assert_string(unit.name, f'{unit.name} has an invalid name')
+        self.assert_string(unit.category, f'{unit.name} has an invalid category')
 
-        # Assert that the unit category is valid
-        self.assertIsInstance(unit.category, str, type(unit.category))
-        self.assertTrue(unit.category, msg.format('category', unit.category))
+        self.assert_stringlist(unit.symbols, f'{unit.name} has invalid symbols')
+        self.assert_stringlist(unit.aliases, f'{unit.name} has invalid aliases')
 
-        # Assert that symbols and aliases are valid (TODO: test values)
-        self.assertIsInstance(unit.symbols, list, type(unit.symbols))
-        self.assertIsInstance(unit.aliases, list, type(unit.aliases))
+        self.assert_decimal(unit.factor, f'{unit.name!r} has an invalid factor')
+        self.assert_decimal(unit.offset, f'{unit.name!r} has an invalid offset')
+        self.assert_decimal(unit.power, f'{unit.name!r} has an invalid power')
 
-        # Assert that all decimal attributes are valid
-        self.assert_valid_decimal(unit, unit.factor)
-        self.assert_valid_decimal(unit, unit.offset)
-        self.assert_valid_decimal(unit, unit.power)
+        self.assert_prefix_scaling(unit)
+        self.assert_prefix_index(unit)
 
-        # Assert that the prefix options are valid
-        self.assert_valid_prefix_scaling(unit)
-        self.assert_valid_prefix_index(unit)
+    def assert_type(self, obj: Any, types: Any | tuple, msg: str = None) -> None:
+        """ Assert that an object is the correct type or tuple of types. """
+        self.assertIsInstance(obj, types, msg or type(obj))
 
-    def assert_valid_decimal(self, unit: Unit, value: Decimal) -> None:
-        """ Assert that a unit has a valid Decimal value. """
-        msg = f'{unit.name!r} has an invalid decimal.'
-        self.assertIsInstance(value, Decimal, msg)
+    def assert_decimal(self, value: Decimal, msg: str) -> None:
+        """ Assert that a unit has a valid decimal (factor, power, or offset). """
+        self.assert_type(value, Decimal, msg)
 
         # Assert that all E notations are signed +/-
-        msg = f'{unit.name!r} is missing a +/- symbol: {value!r}'
+        msg = f'{value!r} is missing a +/- symbol (requirement)'
         strvalue = str(value)
         if 'E' in strvalue:
             self.assertTrue('+' in strvalue or '-' in strvalue, msg)
 
-    def assert_valid_prefix_scaling(self, unit: Unit) -> None:
-        """ Assert that a unit has a valid prefix_scaling attribute. """
+    def assert_string(self, name: str, msg: str) -> None:
+        """ Assert that name is a valid string (atleast 1 character). """
+        self.assert_type(name, str)
+        self.assertGreater(len(name), 0, msg)
+
+    def assert_stringlist(self, names: list[str], msg: str) -> None:
+        """ Assert that a list of strings is valid. """
+        self.assert_type(names, list, msg)
+        for name in names:
+            self.assert_string(name, msg)
+
+    def assert_prefix_scaling(self, unit: Unit) -> None:
+        """ Assert that prefix_scaling is a valid PrefixScaling type. """
         msg = f'{unit.name} has an invalid prefix_scaling: {unit.prefix_scaling!r}'
         self.assertIsInstance(unit.prefix_scaling, PrefixScaling, msg)
 
-    def assert_valid_prefix_index(self, unit: Unit) -> None:
-        """ Assert that a unit has a valid prefix_index attribute. """
+    def assert_prefix_index(self, unit: Unit) -> None:
+        """ Assert that prefix_index is a valid index. """
         msg = f'{unit.name} has an invalid prefix_index: {unit.prefix_index}'
-        self.assertIsInstance(unit.prefix_index, int, msg)
+        self.assert_type(unit.prefix_index, int, msg)
 
-        for name in [unit.name] + unit.symbols + unit.aliases:
+        msg = msg + ' (index is out of range)'
+        for name in unit.get_names():
             word_count = len(name.split(' '))
-            self.assertTrue(-1 <= unit.prefix_index < word_count,
-                            msg + f'(index is out of range: {name!r})')
+            self.assertTrue(-1 <= unit.prefix_index < word_count, msg)

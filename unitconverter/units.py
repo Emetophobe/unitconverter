@@ -12,6 +12,7 @@ from unitconverter.locale import Locale, translate_unit
 class Units:
 
     def __init__(self, locale: Locale = Locale.ENGLISH):
+        """ Initialize units dictionary. """
         self.load_units(locale)
 
     def add_unit(self, unit: Unit) -> None:
@@ -19,30 +20,35 @@ class Units:
         # Check for duplicate names or symbols
         unitnames = unit.get_names()
         for name in unitnames:
-            if name in self.aliases.keys():
+            if name in self._aliases.keys():
                 raise ValueError(f'{unit.name} has a duplicate name: {name}'
-                                 f' (Original unit: {self.aliases[name]})')
+                                 f' (Original unit: {self._aliases[name]})')
 
         # Add all names to alias dict
         for name in unitnames:
-            self.aliases[name] = unit
+            self._aliases[name] = unit
 
         # Add unit to units dict
-        self.units[unit.category] = unit
+        self._units[unit.category] = unit
 
     def get_units(self) -> dict[str, list[Unit]]:
         """ Get a dictionary of all categories and units. """
-        return self.units
+        return self._units
 
-    def get_unit_list(self) -> list[Unit]:
+    def get_list(self) -> list[Unit]:
         """ Get a list of all units. """
         return list(self)
 
-    def load_units(self, locale: Locale) -> None:
+    def update_locale(self, locale: Locale = Locale.ENGLISH) -> None:
+        """ Update unit locale (English vs American). """
+        if self._locale != locale:
+            self.load_units(locale)
+
+    def load_units(self, locale: Locale = Locale.ENGLISH) -> None:
         """ Load units from toml files. """
-        self.locale = locale
-        self.units = defaultdict(list)
-        self.aliases = {}
+        self._locale = locale
+        self._units = defaultdict(list)
+        self._aliases = {}
 
         # Load all toml files in the data directory
         files = Path('data').glob('*.toml')
@@ -52,31 +58,30 @@ class Units:
                 data = tomllib.load(infile)
                 for name, args in data.items():
                     unit = Unit(name, category, **args)
-                    unit = translate_unit(unit, locale)
-                    self.units[category].append(unit)
+                    if locale == locale.AMERICAN:
+                        unit = translate_unit(unit, locale)
+                    self._units[category].append(unit)
 
         # Check for duplicates before returning
-        for _, units in self.units.items():
+        for _, units in self._units.items():
             for unit in units:
                 for name in [unit.name] + unit.symbols + unit.aliases:
-                    if name in self.aliases.keys():
+                    if name in self._aliases.keys():
                         raise ValueError(f'{unit.name} has a duplicate name: {name}'
-                                         f' (Original unit: {self.aliases[name]})')
-                    self.aliases[name] = unit
-
-        return units
+                                         f' (Original unit: {self._aliases[name]})')
+                    self._aliases[name] = unit
 
     def items(self) -> ItemsView:
-        return self.units.items()
+        return self._units.items()
 
     def keys(self) -> KeysView:
-        return self.units.keys()
+        return self._units.keys()
 
     def __iter__(self) -> Unit:
         """ Iterate over all units. """
-        for _, units in self.units.items():
+        for _, units in self._units.items():
             yield from units
 
     def __len__(self):
         """ Get total number of units. """
-        return sum(len(units) for _, units in self.units.items())
+        return sum(len(units) for _, units in self._units.items())

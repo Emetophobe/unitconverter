@@ -14,8 +14,8 @@ class Unit:
                  symbols,
                  aliases,
                  factor,
-                 power='1',
-                 offset='0',
+                 power=1,
+                 offset=0,
                  prefix_scaling=PrefixScaling.NONE,
                  prefix_index=-1):
         """ Initialize unit.
@@ -25,25 +25,25 @@ class Unit:
                 unit name.
 
             category (str):
-                unit category.
+                category name.
 
-            factor (str | Decimal):
-                unit conversion factor.
+            symbols (list[str]):
+                list of symbols.
 
-            symbols (str | list, optional):
-                unit symbols. Defaults to None.
+            aliases (list[str]):
+                list of aliases.
 
-            aliases (str | list, optional):
-                unit aliases. Defaults to None.
+            factor (Decimal | int | str):
+                conversion factor.
 
-            power (str | Decimal, optional):
-                optional power. Defaults to '1'.
+            power (Decimal | int | str, optional):
+                optional power. Defaults to 1.
 
-            offset (str | Decimal, optional):
-                optional offset. Defaults to '0'.
+            offset (Decimal | int | str, optional):
+                optional offset. Defaults to 0.
 
-            prefix_scaling (str, optional):
-                prefix scaling option. Defaults to 'none'.
+            prefix_scaling (PrefixScaling, optional):
+                prefix scaling option. Defaults to PrefixScaling.NONE.
 
             prefix_index (int, optional): i
                 index of word to prefix. Defaults to -1 (last word).

@@ -3,27 +3,27 @@
 symbols = ['Pa*s', 'Pa⋅s', 'Pa-s']
 aliases = ['pascal-seconds']
 factor = "1"
-prefix_scaling = "si"
+prefix_scale = "si"
 
 # 1 poise = 0.1 pascal-second
 ["poise"]
 symbols = ['P']
 aliases = ['poises']
 factor = "0.1"
-prefix_scaling = "si"
+prefix_scale = "si"
 
 ["gram/foot-second"]
 symbols = ['g/[ft s]', 'g/ft s', 'g/ft-s']
 aliases = ['grams/foot-second', 'grams/ft-sec', 'gram/ft-sec']
 factor = "0.00328083989501312"
-prefix_scaling = "si"
+prefix_scale = "si"
 
 # 1 gram/metre-second = 0.001 pascal-second
 ["gram/metre-second"]
 symbols = ['g/[m s]', 'g/m s', 'g/m-s']
 aliases = ['grams/metre-second', 'grams/m-sec', 'gram/m-sec']
 factor = "0.001"
-prefix_scaling = "si"
+prefix_scale = "si"
 
 ["slug/foot-second"]
 symbols = ['slug/[ft s]', 'slug/ft s', 'slug/ft-s']

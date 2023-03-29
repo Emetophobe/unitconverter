@@ -20,13 +20,13 @@ class Converter:
         """ Convert a number from source unit to dest unit.
 
         Args:
-            value (Decimal): the decimal number to convert.
-            source (Unit): the source unit.
-            dest (Unit): the destination unit.
-
+            value (Decimal): a decimal, int, or str value.
+            source (Unit): a source unit.
+            dest (Unit): a destination unit.
 
         Raises:
-            ValueError: if the source or dest unit is invalid.
+            UnitError: if a unit is invalid.
+            CategoryError: if the units are incompatible.
 
         Returns:
             Decimal: the result of the conversion.
@@ -49,7 +49,7 @@ class Converter:
             name (str): unit name, symbol, or alias.
 
         Raises:
-            UnitError: if name is invalid.
+            UnitError: if the unit name is invalid.
 
         Returns:
             Unit: a unit instance.
@@ -64,12 +64,12 @@ class Converter:
 
         # Check supported prefixes for a matching unit
         for unit in self.units:
-            # Get prefix table based on unit scaling option
-            prefixes = get_prefixes(unit.prefix_scaling)
+            # Get prefix table based on unit prefix option
+            prefixes = get_prefixes(unit.prefix_scale)
 
             # Generate prefixes and check for a matching unit
             for factor, symbol, prefix in prefixes:
-                prefix_unit = unit.add_prefix(factor, symbol, prefix)
+                prefix_unit = unit.scale(factor, symbol, prefix)
                 if name in prefix_unit:
                     return prefix_unit
 
@@ -100,30 +100,3 @@ def format_decimal(value: Decimal,
 
     comma = ',' if commas else ''
     return f'{value:{comma}{precision}f}'
-
-
-# TODO: unused for now, find a use or remove
-def apply_prefix(prefix: str, unit: Unit) -> Unit:
-    """ Apply prefix to a unit and return a new unit.
-
-    Args:
-        prefix (str): The prefix name or symbol.
-        unit (Unit): the base unit.
-
-    Raises:
-        ValueError: if an argument is invalid.
-
-    Returns:
-        Unit: a new prefixed unit.
-    """
-    # Get prefix table from unit scaling option
-    prefixes = get_prefixes(unit.prefix_scaling)
-    if not prefixes:
-        raise UnitError(f'Unit {unit.name!r} does not support prefix scaling.')
-
-    # Create a new unit from prefix
-    for factor, symbol, name in prefixes:
-        if prefix in (symbol, name):
-            return unit.add_prefix(factor, symbol, name)
-
-    raise UnitError(f'Unit {unit.name!r} does not support prefix {prefix!r}.')

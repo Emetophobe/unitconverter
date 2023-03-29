@@ -3,7 +3,7 @@
 symbols = ['Gy']
 aliases = ['grays']
 factor = "1"
-prefix_scaling = "si"
+prefix_scale = "si"
 
 # 1 US rad = 0.01 gray
 ["US rad"]

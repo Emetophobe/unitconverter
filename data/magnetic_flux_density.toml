@@ -3,7 +3,7 @@
 symbols = ['T']
 aliases = ['teslas']
 factor = "1"
-prefix_scaling = "si"
+prefix_scale = "si"
 
 # 1 gamma = 1E-9 teslas
 ["gamma"]

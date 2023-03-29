@@ -3,7 +3,7 @@
 symbols = ['K']
 aliases = ['kelvins']
 factor = "1"
-prefix_scaling = "si"
+prefix_scale = "si"
 
 # Celsius is a SI derived unit of temperature
 # 1 celsius = 274.15 kelvin

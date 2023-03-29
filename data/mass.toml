@@ -4,7 +4,7 @@
 symbols = ['g']
 aliases = ['grams']
 factor = "1"
-prefix_scaling = "si"
+prefix_scale = "si"
 
 # 1 ounce is 28.34952 grams
 ["ounce"]
@@ -35,7 +35,7 @@ factor = "6350.29"
 symbols = ['t']
 aliases = ['tonnes', 'metric tons', 'metric ton']
 factor = "1E+6"
-prefix_scaling = "si"
+prefix_scale = "si"
 
 # 1 long ton = 1,016,046.91 grams
 ["long ton"]

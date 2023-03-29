@@ -4,7 +4,7 @@ symbols = ['m^2', 'm2']
 aliases = ['square metres', 'metre^2', 'metre2']
 factor = "1"
 power = "2"
-prefix_scaling = "si"
+prefix_scale = "si"
 
 # 1 are = 100 m^2
 ["are"]

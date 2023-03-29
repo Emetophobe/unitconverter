@@ -3,7 +3,7 @@
 symbols = ['Hz']
 aliases = []
 factor = "1"
-prefix_scaling = "si"
+prefix_scale = "si"
 
 # 1 cycle/second is equivalent to 1 hertz
 ["cycle/second"]

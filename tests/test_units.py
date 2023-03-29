@@ -2,7 +2,7 @@
 
 from decimal import Decimal
 from typing import Any
-from tests import PrefixScaling, TestCase, Unit, Units
+from tests import PrefixScale, TestCase, Unit, Units
 
 
 class TestUnits(TestCase):
@@ -31,7 +31,7 @@ class TestUnits(TestCase):
         self.assert_decimal(unit.offset, f'{unit.name!r} has an invalid offset')
         self.assert_decimal(unit.power, f'{unit.name!r} has an invalid power')
 
-        self.assert_prefix_scaling(unit)
+        self.assert_prefix_scale(unit)
         self.assert_prefix_index(unit)
 
     def assert_type(self, obj: Any, types: Any | tuple, msg: str = None) -> None:
@@ -59,10 +59,10 @@ class TestUnits(TestCase):
         for name in names:
             self.assert_string(name, msg)
 
-    def assert_prefix_scaling(self, unit: Unit) -> None:
-        """ Assert that prefix_scaling is a valid PrefixScaling type. """
-        msg = f'{unit.name} has an invalid prefix_scaling: {unit.prefix_scaling!r}'
-        self.assertIsInstance(unit.prefix_scaling, PrefixScaling, msg)
+    def assert_prefix_scale(self, unit: Unit) -> None:
+        """ Assert that prefix_scale is a valid PrefixScale. """
+        msg = f'{unit.name} has an invalid prefix_scale: {unit.prefix_scale!r}'
+        self.assertIsInstance(unit.prefix_scale, PrefixScale, msg)
 
     def assert_prefix_index(self, unit: Unit) -> None:
         """ Assert that prefix_index is a valid index. """

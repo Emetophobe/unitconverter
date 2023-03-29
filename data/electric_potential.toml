@@ -3,14 +3,14 @@
 symbols = ['V']
 aliases = ['volts']
 factor = "1"
-prefix_scaling = "si"
+prefix_scale = "si"
 
 # 1 watt/ampere = 1 volt
 ["watt/ampere"]
 symbols = ['W/A']
 aliases = ['watts/ampere', 'watts/amp', 'watt/amp']
 factor = "1"
-prefix_scaling = "si"
+prefix_scale = "si"
 
 # 1 abvolt = 1E-8 volts
 ["abvolt"]

@@ -3,11 +3,11 @@
 symbols = ['kat']
 aliases = ['katals']
 factor = "1"
-prefix_scaling = "si"
+prefix_scale = "si"
 
 # 1 mole/second = 1 katal
 ["mole/second"]
 symbols = ['mol/s']
 aliases = ['moles/second', 'moles/sec', 'mole/sec']
 factor = "1"
-prefix_scaling = "si"
+prefix_scale = "si"

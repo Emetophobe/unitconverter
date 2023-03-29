@@ -1,15 +1,18 @@
 # Copyright (c) 2022-2023 Mike Cunningham
 
 from unitconverter.converter import Converter, format_decimal
-from unitconverter.prefixes import PrefixScaling, get_prefixes
-from unitconverter.unit import Unit
+from unitconverter.prefixes import PrefixScale, get_prefixes
+from unitconverter.unit import Unit, apply_prefix, parse_decimal
 from unitconverter.units import Units
 
+
 __all__ = [
-    'PrefixScaling',
+    'PrefixScale',
     'Converter',
     'Units',
     'Unit',
+    'get_prefixes',
+    'apply_prefix',
+    'parse_decimal',
     'format_decimal',
-    'get_prefixes'
 ]

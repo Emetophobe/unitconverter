@@ -4,13 +4,13 @@
 symbols = ['L/m', 'l/m']
 aliases = ['litres/metre']
 factor = "1"
-prefix_scaling = "si"
+prefix_scale = "si"
 
 ["litre/100km"]
 symbols = ['L/100km', 'l/100km']
 aliases = ['litres/100km']
 factor = "0.00001"
-prefix_scaling = "si"
+prefix_scale = "si"
 
 # Imperial gallons
 
@@ -23,7 +23,7 @@ factor = "14.915"
 symbols = ['m/gal']
 aliases = ['metres/gallon', 'metres/gal', 'metre/gal']
 factor = "4.5460992939"
-prefix_scaling = "si"
+prefix_scale = "si"
 
 ["mile/gallon"]
 symbols = ['mpg', 'mi/gal']
@@ -41,7 +41,7 @@ factor = "12.4193"
 symbols = ['m/usgal']
 aliases = ['metres/usgallon', 'metres/usgal', 'metre/usgal']
 factor = "3.7854117834"
-prefix_scaling = "si"
+prefix_scale = "si"
 
 ["mile/usgallon"]
 symbols = ['usmpg', 'mi/usgal']

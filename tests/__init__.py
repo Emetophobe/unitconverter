@@ -4,12 +4,12 @@ from unittest import TestCase
 from unitconverter.unit import Unit
 from unitconverter.units import Units
 from unitconverter.converter import Converter, format_decimal
-from unitconverter.prefixes import PrefixScaling, get_prefixes
+from unitconverter.prefixes import PrefixScale, get_prefixes
 
 
 __all__ = [
     'Converter',
-    'PrefixScaling',
+    'PrefixScale',
     'TestCase',
     'Units',
     'Unit',

@@ -3,7 +3,7 @@
 symbols = ['A']
 aliases = ['amperes', 'amps', 'amp']
 factor = "1"
-prefix_scaling = "si"
+prefix_scale = "si"
 
 # 1 abampere (biot) = 10 ampere
 ["abampere"]

@@ -3,11 +3,11 @@
 symbols = ['Wb']
 aliases = ['webers']
 factor = "1"
-prefix_scaling = "si"
+prefix_scale = "si"
 
 # 1 maxwell = 1E-8 weber
 ["maxwell"]
 symbols = ['Mx']
 aliases = ['maxwells']
 factor = "1E-8"
-prefix_scaling = "si"
+prefix_scale = "si"

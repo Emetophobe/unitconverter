@@ -3,28 +3,28 @@
 symbols = ['Pa']
 aliases = ['pascals']
 factor = "1"
-prefix_scaling = "si"
+prefix_scale = "si"
 
 # 1 bar = exactly 100000 (1E+5) pascal
 ["bar"]
 symbols = []
 aliases = ['bars']
 factor = "1E+5"
-prefix_scaling = "si"
+prefix_scale = "si"
 
 # 1 barye = exactly 0.1 pascal
 ["barye"]
 symbols = ['Ba']
 aliases = ['baryes']
 factor = "0.1"
-prefix_scaling = "si"
+prefix_scale = "si"
 
 # 1 metre of mercury is roughly 133322.4 pascal
 ["metre of mercury"]
 symbols = ['m Hg', 'mHg']
 aliases = ['metres of mercury']
 factor = "133322.4"
-prefix_scaling = "si"
+prefix_scale = "si"
 prefix_index = 0
 
 

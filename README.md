@@ -41,9 +41,9 @@ The following categories are currently supported:
 
 ## Features
 
-Units are automatically scaled based on a scaling option. This even works with imperial units like inches; i.e "kiloinch".
+Units can be automatically scaled based on a prefix scaling option.
 
-The following unit scaling options are supported:
+The following prefix scaling options are supported:
 
     none        - don't use prefix scaling (default)
     si          - use SI prefix table
@@ -52,7 +52,7 @@ The following unit scaling options are supported:
     all         - use SI and binary tables
     both        - use decimal and binary tables
 
-Units can override the default scaling behaviour as needed. SI units for example use the "si" scaling option. Another example is bytes which uses "both" to generate decimal prefixes like "kilobytes" and also binary prefixes like "kibibytes".
+Units can override the default scaling behaviour as needed. SI units for example use the "si" prefix scale. Another example is bytes which uses "both" to generate both decimal prefixes like "kilobytes" and also binary prefixes like "kibibytes".
 
 
 ## Requirements

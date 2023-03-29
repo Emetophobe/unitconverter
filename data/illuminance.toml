@@ -3,28 +3,28 @@
 symbols = ['lx']
 aliases = []
 factor = "1"
-prefix_scaling = "si"
+prefix_scale = "si"
 
 # 1 metre-candle is equivalent to 1 lux
 ["metre-candle"]
 symbols = ['m*c', 'm⋅s']
 aliases = []
 factor = "1"
-prefix_scaling = "si"
+prefix_scale = "si"
 
 # 1 candela-steradian/metre^2 = 1 lux
 ["candela-steradian/metre^2"]
 symbols = ['cd-sr/m^2', 'cd-sr/m2']
 aliases = ['candela-steradians/metre^2', 'candela-steradians/metre2', 'candela-steradian/metre2']
 factor = "1"
-prefix_scaling = "si"
+prefix_scale = "si"
 
 # 1 watt/metre^2 = 683 lux
 ["watt/metre^2"]
 symbols = ['W/m²', 'W/m^2', 'W/m2']
 aliases = ['watts/metre^2', 'watts/metre2', 'watt/metre2', 'watts/m^2', 'watts/m2', 'watt/m^2', 'watt/m2']
 factor = "683"
-prefix_scaling = "si"
+prefix_scale = "si"
 
 # 1 phot = 10,000 lux
 ["phot"]

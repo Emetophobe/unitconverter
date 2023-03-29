@@ -3,35 +3,35 @@
 symbols = ['W']
 aliases = ['watts']
 factor = "1"
-prefix_scaling = "si"
+prefix_scale = "si"
 
 # 1 volt ampere is equivalent to 1 watt
 ["volt-ampere"]
 symbols = ['V-A', 'V⋅A', 'VA']
 aliases = ['volt-amperes', 'volts-amps', 'volt-amps', 'volts-amp', 'volt-amp']
 factor = "1"
-prefix_scaling = "si"
+prefix_scale = "si"
 
 # 1 joule/second is equivalent to 1 watt
 ["joule/second"]
 symbols = ['J/s', 'j/s']
 aliases = ['joules/second', 'joules/sec', 'joule/sec']
 factor = "1"
-prefix_scaling = "si"
+prefix_scale = "si"
 
 # 1 joule/minute = 1/60 watts = roughly 0.0166666667 watts
 ["joule/minute"]
 symbols = ['J/min', 'j/min']
 aliases = ['joules/minute', 'joules/min', 'joule/min']
 factor = "0.01666666666666666666666666667"
-prefix_scaling = "si"
+prefix_scale = "si"
 
 # 1 joule/hour = 1/3600 watts = roughly 0.0002777778 watts
 ["joule/hour"]
 symbols = ['J/hr', 'j/hr', 'J/h', 'j/h']
 aliases = ['joules/hour', 'joules/hr', 'joule/hr']
 factor = "0.0002777777777777777777777777778"
-prefix_scaling = "si"
+prefix_scale = "si"
 
 # 1 metric horsepower (hp) = roughly 735.5 watts
 ["horsepower"]

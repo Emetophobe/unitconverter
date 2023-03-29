@@ -3,11 +3,11 @@
 symbols = ['mol']
 aliases = ['moles']
 factor = "1"
-prefix_scaling = "si"
+prefix_scale = "si"
 
 # 1 atom is roughly 1.660538863127E-24 moles
 ["atom"]
 symbols = []
 aliases = ['atoms']
 factor = "1.660538863127E-24"
-prefix_scaling = "si"
+prefix_scale = "si"

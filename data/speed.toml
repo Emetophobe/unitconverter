@@ -3,21 +3,21 @@
 symbols = ['m/sec', 'm/s']
 aliases = ['metres/second', 'metres/sec', 'metre/sec']
 factor = "1"
-prefix_scaling = "si"
+prefix_scale = "si"
 
 # 1 metre/minute = 1/60 = 0.0166666667 metre/s
 ["metre/minute"]
 symbols = ['m/min']
 aliases = ['metres/minute', 'metres/min', 'metre/min']
 factor = "0.01666666666666666666666666667"
-prefix_scaling = "si"
+prefix_scale = "si"
 
 # 1 metre/hour = 1/3600 = 0.0002777778 metre/s
 ["metre/hour"]
 symbols = ['m/hr', 'm/h']
 aliases = ['metres/hour', 'metres/h', 'metre/h']
 factor = "0.0002777777777777777777777777778"
-prefix_scaling = "si"
+prefix_scale = "si"
 
 # Create kilometre/hour (kph) for convenience
 # 1 kph = 1000/3600 = 0.2777777778 m/s
@@ -25,7 +25,7 @@ prefix_scaling = "si"
 symbols = ['kph', 'km/hr', 'km/h']
 aliases = ['kilometres/hour', 'km/hour']
 factor = "0.2777777777777777777777777778"
-prefix_scaling = "none" # meter/hour is used instead
+prefix_scale = "none" # meter/hour is used instead
 
 # 1 inch/second = 0.0254 m/s
 ["inch/second"]

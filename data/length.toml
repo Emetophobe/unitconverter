@@ -3,7 +3,7 @@
 symbols = ['m']
 aliases = ['metres']
 factor = "1"
-prefix_scaling = "si"
+prefix_scale = "si"
 
 # 1 angstrom = 0.1 nanometers
 ["angstrom"]

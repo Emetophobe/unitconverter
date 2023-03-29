@@ -3,8 +3,10 @@
 from enum import StrEnum
 
 
-class PrefixScaling(StrEnum):
-    """ A unit supports one of the prefix scaling options. """
+class PrefixScale(StrEnum):
+    """ Prefix scale determines how individual units are scaled. The default is
+    PrefixScale.NONE but this can be overriden on a per-unit basis. """
+
     NONE = 'none'           # don't generate prefixes (default)
     ALL = 'all'             # generate SI prefixes and binary prefixes
     SI = 'si'               # generate SI prefixes
@@ -13,33 +15,33 @@ class PrefixScaling(StrEnum):
     BOTH = 'both'           # generate decimal prefixes and binary prefixes
 
 
-def get_prefixes(option: PrefixScaling) -> list[tuple]:
-    """ Get a list of prefixes based on the prefix option (see `PrefixScaling`).
+def get_prefixes(scale: PrefixScale) -> list[tuple]:
+    """ Get a list of prefixes based on the prefix scale (see `PrefixScale`).
 
     Args:
-        prefix_option (str): the prefix option.
+        scale (PrefixScaling): the prefix scale.
 
     Raises:
-        ValueError: if the prefix_option is invalid.
+        ValueError: if the prefix scale is invalid.
 
     Returns:
         list[tuple]: a list of prefixes.
     """
-    option = PrefixScaling(option)
-    if option == PrefixScaling.NONE:
+    scale = PrefixScale(scale)
+    if scale == PrefixScale.NONE:
         return []
-    elif option == PrefixScaling.SI:
+    elif scale == PrefixScale.SI:
         return SI_PREFIXES
-    elif option == PrefixScaling.ALL:
+    elif scale == PrefixScale.ALL:
         return SI_PREFIXES + BINARY_PREFIXES
-    elif option == PrefixScaling.BOTH:
+    elif scale == PrefixScale.BOTH:
         return DECIMAL_PREFIXES + BINARY_PREFIXES
-    elif option == PrefixScaling.BINARY:
+    elif scale == PrefixScale.BINARY:
         return BINARY_PREFIXES
-    elif option == PrefixScaling.DECIMAL:
+    elif scale == PrefixScale.DECIMAL:
         return DECIMAL_PREFIXES
     else:
-        raise ValueError(f'Unsupported prefix option: {option}')
+        raise ValueError(f'Unsupported prefix scale: {scale}')
 
 
 # SI prefixes

@@ -3,7 +3,7 @@
 symbols = ['Sv']
 aliases = ['sieverts']
 factor = "1"
-prefix_scaling = "si"
+prefix_scale = "si"
 
 # 1 roentgen = 0.01 sievert
 ["roentgen"]

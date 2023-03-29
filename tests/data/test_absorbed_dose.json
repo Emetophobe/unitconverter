@@ -1,0 +1,12 @@
+{
+  "gray": [
+    {
+      "dest": "joule/gram",
+      "expected": "0.001"
+    },
+    {
+      "dest": "US rad",
+      "expected": "100"
+    }
+  ]
+}

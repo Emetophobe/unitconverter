@@ -12,25 +12,5 @@
       "dest": "picocurie",
       "expected": "27.02702702702702702702702703"
     }
-  ],
-  "gray": [
-    {
-      "dest": "US rad",
-      "expected": "100"
-    }
-  ],
-  "sievert": [
-    {
-      "dest": "quectosievert",
-      "expected": "1E+30"
-    },
-    {
-      "dest": "quettasievert",
-      "expected": "1E-30"
-    },
-    {
-      "dest": "roentgen",
-      "expected": "100"
-    }
   ]
 }

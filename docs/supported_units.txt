@@ -2,6 +2,7 @@
 Absorbed Dose
 
 	gray
+	joule/gram
 	US rad
 
 Amount Of Substance

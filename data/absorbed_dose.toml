@@ -5,6 +5,13 @@ aliases = ['grays']
 factor = "1"
 prefix_scale = "si"
 
+# 1 joule/gram = 1000 gray
+["joule/gram"]
+symbols = ['J/g']
+aliases = ['joules/gram']
+factor = "1000"
+prefix_scale = "si"
+
 # 1 US rad = 0.01 gray
 ["US rad"]
 symbols = ['usrad']     # rad is already in use by radian

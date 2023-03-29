@@ -2,11 +2,13 @@
 
 
 from decimal import Decimal
+
+from unitconverter.exceptions import CategoryError, UnitError
 from unitconverter.locale import Locale
+from unitconverter.prefixes import get_prefixes
 from unitconverter.unit import Unit
 from unitconverter.units import Units
-from unitconverter.prefixes import get_prefixes
-from unitconverter.exceptions import UnitError, CategoryError
+from unitconverter.utils import parse_decimal
 
 
 class Converter:
@@ -32,7 +34,7 @@ class Converter:
             Decimal: the result of the conversion.
         """
 
-        value = Decimal(value)
+        value = parse_decimal(value)
         source = self.parse_unit(source)
         dest = self.parse_unit(dest)
 

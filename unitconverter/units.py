@@ -2,14 +2,16 @@
 
 
 import tomllib
-from pathlib import Path
 from collections import defaultdict
-from typing import KeysView, ItemsView
-from unitconverter.unit import Unit
+from pathlib import Path
+from typing import ItemsView, KeysView
+
 from unitconverter.locale import Locale, translate_unit
+from unitconverter.unit import Unit
 
 
 class Units:
+    """ Units holds the dictionary of defined units. """
 
     def __init__(self, locale: Locale = Locale.ENGLISH):
         """ Initialize units dictionary. """
@@ -24,11 +26,11 @@ class Units:
                 raise ValueError(f'{unit.name} has a duplicate name: {name}'
                                  f' (Original unit: {self._aliases[name]})')
 
-        # Add all names to alias dict
+        # Track aliases
         for name in unitnames:
             self._aliases[name] = unit
 
-        # Add unit to units dict
+        # Add unit to category
         self._units[unit.category] = unit
 
     def get_units(self) -> dict[str, list[Unit]]:
@@ -50,7 +52,7 @@ class Units:
         self._units = defaultdict(list)
         self._aliases = {}
 
-        # Load all toml files in the data directory
+        # Load all toml files
         files = Path('data').glob('*.toml')
         for filename in files:
             category = filename.stem.replace('_', ' ')

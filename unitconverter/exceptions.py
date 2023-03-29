@@ -2,7 +2,7 @@
 
 
 class ConverterError(ValueError):
-    """ Base class for all converter-related exceptions. """
+    """ Base exception class for all converter-related errors. """
 
     def __init__(self, msg: str) -> None:
         self.msg = msg
@@ -20,5 +20,6 @@ class CategoryError(ConverterError):
     """ Category mismatch error. """
 
     def __init__(self, source, dest) -> None:
-        self.msg = (f'Category mismatch between {source.name} ({source.category})'
+        self.msg = (f'Category mismatch between'
+                    f' {source.name} ({source.category})'
                     f' and {dest.name} ({dest.category})')

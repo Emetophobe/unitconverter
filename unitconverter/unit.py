@@ -1,10 +1,12 @@
 # Copyright (c) 2022-2023 Mike Cunningham
 
 
-from decimal import Decimal, DecimalException
+from decimal import Decimal
 from typing import Self
+
 from unitconverter.exceptions import UnitError
-from unitconverter.prefixes import PrefixScale, get_prefixes
+from unitconverter.prefixes import PrefixScale
+from unitconverter.utils import parse_decimal
 
 
 class Unit:
@@ -60,19 +62,21 @@ class Unit:
         self.aliases = aliases
 
         self.factor = parse_decimal(factor, f'{name!r} has an invalid factor.')
-        self.power = parse_decimal(power,  f'{name!r} has an invalid power.')
-        self.offset = parse_decimal(offset,  f'{name!r} has an invalid offset.')
+        self.power = parse_decimal(power, f'{name!r} has an invalid power.')
+        self.offset = parse_decimal(offset, f'{name!r} has an invalid offset.')
 
-        # Check if prefix scale is valid
+        # Make sure prefix scale is valid
         try:
             self.prefix_scale = PrefixScale(prefix_scale)
         except ValueError:
-            raise ValueError(f'{name!r} has an invalid prefix scale: {prefix_scale}')
+            raise UnitError(f'Unit {name!r} has an invalid prefix scale: {prefix_scale}')
 
-        # Check if prefix index is valid
-        last_index = len(name.split(' ')) - 1
-        if prefix_index < -1 or prefix_index > last_index:
-            raise ValueError(f'{name!r} has an invalid prefix index: {prefix_index}')
+        # Make sure prefix index is valid
+        for alias in self.get_names():
+            last_index = len(alias.split(' ')) - 1
+            if prefix_index < -1 or prefix_index > last_index:
+                raise UnitError(f'Unit {name!r} has an invalid prefix index:'
+                                f' {prefix_index} ({alias!r})')
 
         self.prefix_index = prefix_index
 
@@ -112,7 +116,7 @@ class Unit:
                     self.offset, prefix_scale, self.prefix_index)
 
     def _add_prefix(self, prefix: str, name: str) -> str:
-        """ Add a prefix to a string using the specified prefix_index (word index). """
+        """ Add a prefix to a string using the specified prefix index. """
         split = name.split(' ')
         split[self.prefix_index] = prefix + split[self.prefix_index]
         return ' '.join(split)
@@ -123,37 +127,3 @@ class Unit:
 
     def __str__(self) -> str:
         return f'{self.name}, ({", ".join(self.symbols)})'
-
-
-def apply_prefix(prefix: str, unit: Unit) -> Unit:
-    """ Create a new unit by applying a prefix.
-
-    Args:
-        prefix (str): prefix name or symbol.
-        unit (Unit): unit to prefix.
-
-    Raises:
-        UnitError: if unit could not be prefixed.
-
-    Returns:
-        Unit: a new prefixed unit.
-    """
-    # Get prefix table from unit prefix option
-    prefixes = get_prefixes(unit.prefix_scale)
-    if not prefixes:
-        raise UnitError(f'Unit {unit.name!r} does not support prefix scaling.')
-
-    # Create a new unit from prefix
-    for factor, symbol, name in prefixes:
-        if prefix in (symbol, name):
-            return unit.scale(factor, symbol, name)
-
-    raise UnitError(f'Unit {unit.name!r} does not support prefix {prefix!r}.')
-
-
-def parse_decimal(value: Decimal | int | str, msg: str = None) -> Decimal:
-    """ Parse value and return a Decimal. Raises ValueError if value is invalid. """
-    try:
-        return Decimal(value)
-    except DecimalException:
-        raise ValueError(msg or f'{value!r} is not a valid Decimal')

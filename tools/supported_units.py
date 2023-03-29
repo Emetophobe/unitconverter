@@ -4,8 +4,10 @@
 import sys
 from pathlib import Path
 from format_json import file_checksum
+
 sys.path.append('.')  # is there a better way?
 from unitconverter.units import Units  # noqa
+
 
 DEST_FILE = Path('docs/supported_units.txt')
 

@@ -2,8 +2,9 @@
 
 from unitconverter.converter import Converter, format_decimal
 from unitconverter.prefixes import PrefixScale, get_prefixes
-from unitconverter.unit import Unit, apply_prefix, parse_decimal
+from unitconverter.unit import Unit
 from unitconverter.units import Units
+from unitconverter.utils import parse_decimal
 
 
 __all__ = [

@@ -1,12 +1,16 @@
 # Copyright (c) 2022-2023 Mike Cunningham
 
+
 import json
+import unittest
 from decimal import Decimal
 from pathlib import Path
-from tests import TestCase, Converter, format_decimal
+
+from unitconverter.exceptions import CategoryError, UnitError
+from unitconverter.converter import Converter, format_decimal
 
 
-class TestConverter(TestCase):
+class TestConverter(unittest.TestCase):
     """ Test Converter class. """
 
     def setUp(self) -> None:
@@ -18,14 +22,14 @@ class TestConverter(TestCase):
         all_units = set(unit.name for unit in self.converter.units)
         tested_units = set()
 
-        # Load dicionaries of expected conversion values
+        # Load dicionaries of expected values
         for filename in Path('tests/data').glob('*.json'):
             with open(filename, 'r', encoding='utf-8') as infile:
                 # Test units
                 units = json.load(infile)
                 self.assert_units(units)
 
-                # Add units to tested units
+                # Update set of tested units
                 for name, conversions in units.items():
                     tested_units.add(name)
                     for conversion in conversions:
@@ -35,8 +39,43 @@ class TestConverter(TestCase):
         untested_units = all_units - tested_units
         self.assertEqual(len(untested_units), 0, self.format_untested(untested_units))
 
+    def test_parse_unit(self) -> None:
+        """ Test parse_unit() method. """
+        # Test parsing simple built-in units.
+        metre = self.converter.parse_unit('metre')
+        self.assertEqual(metre.name, 'metre')
+
+        # Test prefix generated units
+        kilolitre = self.converter.parse_unit('kilolitre')
+        self.assertEqual(kilolitre.name, 'kilolitre')
+
+        # Assert that CategoryError is raised with incompatible units
+        with self.assertRaises(CategoryError):
+            self.converter.convert(1, metre, kilolitre)
+
+        # Test symbol generated units
+        unit = self.converter.parse_unit('ml')
+        self.assertEqual(unit.name, 'millilitre')
+
+        # Test multi-word prefix generated units
+        unit = self.converter.parse_unit('cubic kilometre')
+        self.assertEqual(unit.name, 'cubic kilometre')
+        self.assertTrue('km^3' in unit.symbols)
+
+        # Test invalid unit names
+        with self.assertRaises(UnitError):
+            self.converter.parse_unit('invalid unit')
+
+        # Test invalid prefixes (units that don't support prefix scaling)
+        with self.assertRaises(UnitError):
+            self.converter.parse_unit('kilodegrees')
+
+        # Test invalid prefixes (units that don't support that type of prefix)
+        with self.assertRaises(UnitError):
+            self.converter.parse_unit('picobyte')
+
     def test_format_decimal(self):
-        """ Test format_decimal() method. """
+        """ Test format_decimal() function. """
         value = Decimal('1785137.3268163479138125')
 
         # Assert decimal to string
@@ -72,44 +111,6 @@ class TestConverter(TestCase):
         # Assert that a ValueError is raised when an incorrect precision is passed
         with self.assertRaises(ValueError):
             format_decimal(value, precision='bad precision')
-
-    def test_parse_unit(self) -> None:
-        """ Test parse_unit() method. """
-        # Test built-in units
-        unit = self.converter.parse_unit('metre')
-        self.assertEqual(unit.name, 'metre')
-
-        # Test prefix generated units
-        unit = self.converter.parse_unit('kilolitre')
-        self.assertEqual(unit.name, 'kilolitre')
-
-        # Test symbol generated units
-        unit = self.converter.parse_unit('ml')
-        self.assertEqual(unit.name, 'millilitre')
-
-        # Test multi-word prefix generated units
-        unit = self.converter.parse_unit('cubic kilometre')
-        self.assertEqual(unit.name, 'cubic kilometre')
-        self.assertTrue('km^3' in unit.symbols)
-
-        # Test invalid unit names
-        with self.assertRaises(ValueError):
-            self.converter.parse_unit('invalid_unit')
-
-        # Test invalid prefixes (units that don't support prefix scaling)
-        with self.assertRaises(ValueError):
-            self.converter.parse_unit('kilodegrees')
-
-        # Test invalid prefixes (units that don't support that type of prefix)
-        with self.assertRaises(ValueError):
-            self.converter.parse_unit('picobyte')
-
-    def format_untested(self, untested_units: set) -> str:
-        """ Create an error message with all untested units. """
-        msg = ['\n\nThe following units do not have unit tests:\n']
-        for name in sorted(list(untested_units)):
-            msg.append(name)
-        return '\n'.join(msg)
 
     def assert_unit(self,
                     source: str,
@@ -156,3 +157,10 @@ class TestConverter(TestCase):
         for source, items in test_data.items():
             for dest in items:
                 self.assert_unit(source, **dest)
+
+    def format_untested(self, untested_units: set) -> str:
+        """ Create an error message with all untested units. """
+        msg = ['\n\nThe following units do not have unit tests:\n']
+        for name in sorted(list(untested_units)):
+            msg.append(name)
+        return '\n'.join(msg)

@@ -1,11 +1,16 @@
 # Copyright (c) 2022-2023 Mike Cunningham
 
+
+import unittest
 from decimal import Decimal
 from typing import Any
-from tests import PrefixScale, TestCase, Unit, Units
+
+from unitconverter.prefixes import PrefixScale
+from unitconverter.unit import Unit
+from unitconverter.units import Units
 
 
-class TestUnits(TestCase):
+class TestUnits(unittest.TestCase):
     """ Test Units class. """
 
     def setUp(self) -> None:

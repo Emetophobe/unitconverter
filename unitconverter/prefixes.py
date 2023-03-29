@@ -1,6 +1,8 @@
 # Copyright (c) 2022-2023 Mike Cunningham
 
+
 from enum import StrEnum
+from unitconverter.exceptions import UnitError
 
 
 class PrefixScale(StrEnum):
@@ -99,3 +101,29 @@ BINARY_PREFIXES = [
     (2 ** 70, 'Zi', 'zebi'),
     (2 ** 80, 'Yi', 'yobi'),
 ]
+
+
+def apply_prefix(prefix, unit):
+    """ Create a new unit by applying a prefix.
+
+    Args:
+        prefix (str): prefix name or symbol.
+        unit (Unit): unit to prefix.
+
+    Raises:
+        UnitError: if unit could not be prefixed.
+
+    Returns:
+        Unit: a new prefixed unit.
+    """
+    # Get prefix table from unit prefix option
+    prefixes = get_prefixes(unit.prefix_scale)
+    if not prefixes:
+        raise UnitError(f'Unit {unit.name!r} does not support prefix scaling.')
+
+    # Create a new unit from prefix
+    for factor, symbol, name in prefixes:
+        if prefix in (symbol, name):
+            return unit.scale(factor, symbol, name)
+
+    raise UnitError(f'Unit {unit.name!r} does not support prefix {prefix!r}.')

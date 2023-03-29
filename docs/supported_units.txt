@@ -58,9 +58,9 @@ Effective Dose
 Electric Charge
 
 	coulomb
-	ampere second
-	ampere minute
-	ampere hour
+	ampere-second
+	ampere-minute
+	ampere-hour
 	franklin
 
 Electric Current
@@ -343,7 +343,7 @@ Time
 
 Viscosity
 
-	pascal second
+	pascal-second
 	poise
 	gram/foot-second
 	gram/metre-second

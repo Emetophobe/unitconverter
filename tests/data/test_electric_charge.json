@@ -9,15 +9,15 @@
       "expected": "1E-30"
     },
     {
-      "dest": "ampere second",
+      "dest": "ampere-second",
       "expected": "1"
     },
     {
-      "dest": "ampere minute",
+      "dest": "ampere-minute",
       "expected": "0.01666666666666666666666666667"
     },
     {
-      "dest": "ampere hour",
+      "dest": "ampere-hour",
       "expected": "0.0002777777777777777777777777778"
     },
     {

@@ -1,31 +1,31 @@
 {
-  "litre per metre": [
+  "litre/metre": [
     {
-      "dest": "litre per 100km",
+      "dest": "litre/100km",
       "expected": "1E+5"
     },
     {
-      "dest": "foot per gallon",
+      "dest": "foot/gallon",
       "expected": "0.06704659738518270197787462286"
     },
     {
-      "dest": "metre per gallon",
+      "dest": "metre/gallon",
       "expected": "0.2199687986009917714437187515"
     },
     {
-      "dest": "mile per gallon",
+      "dest": "mile/gallon",
       "expected": "354.0061853376726939523778135"
     },
     {
-      "dest": "foot per usgallon",
+      "dest": "foot/usgallon",
       "expected": "0.08051983606161377855434686335"
     },
     {
-      "dest": "metre per usgallon",
+      "dest": "metre/usgallon",
       "expected": "0.2641720524000205393348065732"
     },
     {
-      "dest": "mile per usgallon",
+      "dest": "mile/usgallon",
       "expected": "425.1437134551778210347334761"
     }
   ]

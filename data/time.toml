@@ -45,6 +45,7 @@ symbols = []
 aliases = ['gregorian years']
 factor = "31556952"
 
+# 1 julian year is exactly 8766 hours
 ["julian year"]
 symbols = []
 aliases = ['julian years']

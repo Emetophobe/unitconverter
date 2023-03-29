@@ -6,12 +6,11 @@ factor = "1"
 prefix_scaling = "si"
 
 # 1 coulomb/volt = 1 farad
-["coulomb per volt"]
+["coulomb/volt"]
 symbols = ['C/V']
-aliases = ['coulombs per volt', 'coulombs/volt', 'coulomb/volt']
+aliases = ['coulombs/volt']
 factor = "1"
 prefix_scaling = "si"
-prefix_index = 0
 
 # 1 abfarad = 1E+9 farads
 ["abfarad"]

@@ -5,7 +5,7 @@
       "expected": "1E-30"
     },
     {
-      "dest": "mole per second",
+      "dest": "mole/second",
       "expected": "1"
     }
   ]

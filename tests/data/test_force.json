@@ -1,7 +1,7 @@
 {
   "newton": [
     {
-      "dest": "joule per metre",
+      "dest": "joule/metre",
       "expected": "1"
     },
     {

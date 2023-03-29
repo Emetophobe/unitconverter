@@ -5,29 +5,26 @@ aliases = ['coulombs']
 factor = "1"
 prefix_scaling = "si"
 
-# 1 ampere second = 1 coulomb
-["ampere second"]
-symbols = ['As', 'A*s', 'A-s', 'A⋅s']
-aliases = ['ampere seconds', 'ampere-seconds', 'ampere-second']
+# 1 ampere-second = 1 coulomb
+["ampere-second"]
+symbols = ['A⋅s', 'A-s', 'As']
+aliases = ['ampere-seconds', 'amp-seconds', 'amp-second']
 factor = "1"
 prefix_scaling = "si"
-prefix_index = 0
 
-# 1 ampere minute = 60 coulomb
-["ampere minute"]
-symbols = ['A*min', 'A-min', 'A⋅min']
-aliases = ['ampere minutes', 'ampere-minutes', 'ampere-minute']
+# 1 ampere-minute = 60 coulomb
+["ampere-minute"]
+symbols = ['A⋅min', 'A-min', 'Amin']  # use min to avoid confusion with metre (m)
+aliases = ['ampere-minutes', 'amp-minutes', 'amp-minute']
 factor = "60"
 prefix_scaling = "si"
-prefix_index = 0
 
-# 1 ampere hour = 3600 coulomb
-["ampere hour"]
-symbols = ['A*hr', 'A*h', 'A-hr', 'A-h', 'A⋅hr', 'A⋅h']
-aliases = ['ampere hours', 'ampere-hour', 'ampere-hours', 'amp-hours', 'amp-hour']
+# 1 ampere-hour = 3600 coulomb
+["ampere-hour"]
+symbols = ['A⋅h', 'A-h', 'Ah']
+aliases = ['ampere-hours', 'amp-hours', 'amp-hour']
 factor = "3600"
 prefix_scaling = "si"
-prefix_index = 0
 
 # 1 franklin = roughly 3.335640951E-10 coulomb
 ["franklin"]

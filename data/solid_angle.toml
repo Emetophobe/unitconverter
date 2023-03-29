@@ -5,7 +5,6 @@ symbols = ['sr']
 aliases = ['steradians', 'square radian', 'square radians']
 factor = "1"
 prefix_scaling = "si"
-prefix_index = 0
 
 # 1 square degree is (pi/180)^2 steradian or roughly 3.04617E−4 steradians
 ["square degree"]

@@ -9,7 +9,7 @@
       "expected": "1E-30"
     },
     {
-      "dest": "ampere per volt",
+      "dest": "ampere/volt",
       "expected": "1"
     },
     {

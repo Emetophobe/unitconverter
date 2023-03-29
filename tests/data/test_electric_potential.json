@@ -9,7 +9,7 @@
       "expected": "1E-30"
     },
     {
-      "dest": "watt per ampere",
+      "dest": "watt/ampere",
       "expected": "1"
     },
     {

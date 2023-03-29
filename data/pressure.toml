@@ -31,16 +31,16 @@ prefix_index = 0
 # Non-SI units
 
 
-# 1 psi is roughly 6894.757 pascal
-["pound per square inch"]
-symbols = ['psi', 'lbf/in^2', 'lbf/in2', 'lbs/in^2', 'lbs/in2']
-aliases = ['pounds per square inch']
+# 1 psi (pound per square inch) = roughly 6894.757 pascal
+["psi"]
+symbols = ['lbf/in^2', 'lbf/in2', 'lbs/in^2', 'lbs/in2']
+aliases = ['pounds/in^2', 'pound/in^2', 'pounds/in2', 'pound/in2']
 factor = "6894.757"
 
-# 1 ksi = 1000 psi = 6.894757E+6 pascal
-["kilopound per square inch"]
-symbols = ['ksi', 'klbf/in^2', 'klbf/in2', 'klbs/in^2', 'klbs/in2']
-aliases = ['kilopounds per square inch']
+# 1 ksi (kilopound per square inch) = 1000 psi = 6.894757E+6 pascal
+["ksi"]
+symbols = ['klbf/in^2', 'klbf/in2', 'klbs/in^2', 'klbs/in2']
+aliases = ['kilopounds/in^2', 'kilopound/in^2', 'kilopounds/in2', 'kilopound/in2']
 factor = "6894757"
 
 # 1 torr is roughly 133.322 pascal
@@ -56,13 +56,13 @@ aliases = ['inches of mercury']
 factor = "3386.389"
 
 # 1 standard atmosphere = 101325 pascal
-["standard atmosphere"]
+["standard-atmosphere"]
 symbols = ['atm']
-aliases = ['standard atmospheres']
+aliases = ['standard-atmospheres']
 factor = "101325"
 
 # 1 technical atmosphere = roughly 98066.5 pascal
-["technical atmosphere"]
+["technical-atmosphere"]
 symbols = ['kgf/cm^2', 'kg/cm^2', 'kg/cm2']
-aliases = ['technical atmospheres', 'kilogram per square centimetre']
+aliases = ['technical-atmospheres', 'kilograms/cm^2', 'kilogram/cm^2']
 factor = "98066.5"

@@ -9,7 +9,7 @@
       "expected": "1E-30"
     },
     {
-      "dest": "weber per ampere",
+      "dest": "weber/ampere",
       "expected": "1"
     },
     {

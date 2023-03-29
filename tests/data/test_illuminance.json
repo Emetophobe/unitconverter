@@ -9,20 +9,24 @@
       "expected": "1E-30"
     },
     {
+      "dest": "metre-candle",
+      "expected": "1"
+    },
+    {
+      "dest": "candela-steradian/metre^2",
+      "expected": "1"
+    },
+    {
+      "dest": "watt/metre^2",
+      "expected": "0.001464128843338213762811127379"
+    },
+    {
       "dest": "phot",
       "expected": "1E-4"
     },
     {
       "dest": "nox",
       "expected": "1E+3"
-    },
-    {
-      "dest": "watt per square metre",
-      "expected": "0.001464128843338213762811127379"
-    },
-    {
-      "dest": "metre-candle",
-      "expected": "1"
     },
     {
       "dest": "foot-candle",

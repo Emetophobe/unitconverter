@@ -6,9 +6,9 @@ factor = "1"
 prefix_scaling = "si"
 
 # 1 joule/metre = 1 newton
-["joule per metre"]
+["joule/metre"]
 symbols = ['J/m', 'j/m']
-aliases = ['joules per metre', 'joules/metre', 'joule/metre']
+aliases = ['joules/metre']
 factor = "1"
 prefix_scaling = "si"
 

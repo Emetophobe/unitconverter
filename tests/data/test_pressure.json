@@ -13,11 +13,11 @@
       "expected": "0.000007500615050434135599119127768"
     },
     {
-      "dest": "pound per square inch",
+      "dest": "psi",
       "expected": "0.0001450377438972831094699929236"
     },
     {
-      "dest": "kilopound per square inch",
+      "dest": "ksi",
       "expected": "0.0000001450377438972831094699929236"
     },
     {
@@ -29,11 +29,11 @@
       "expected": "0.0002952998016471232336273239725"
     },
     {
-      "dest": "standard atmosphere",
+      "dest": "standard-atmosphere",
       "expected": "0.000009869232667160128300024673082"
     },
     {
-      "dest": "technical atmosphere",
+      "dest": "technical-atmosphere",
       "expected": "0.00001019716212977928242570092743"
     }
   ]

@@ -1,51 +1,51 @@
 {
-  "metre per second": [
+  "metre/second": [
     {
-      "dest": "metre per minute",
+      "dest": "metre/minute",
       "expected": "59.99999999999999999999999999"
     },
     {
-      "dest": "metre per hour",
+      "dest": "metre/hour",
       "expected": "3600.000000000000000000000000"
     },
     {
-      "dest": "kilometre per hour",
+      "dest": "kilometre/hour",
       "expected": "3.600000000000000000000000000"
     },
     {
-      "dest": "inch per second",
+      "dest": "inch/second",
       "expected": "39.37007874015748031496062992"
     },
     {
-      "dest": "inch per minute",
+      "dest": "inch/minute",
       "expected": "2362.204724409448818897637795"
     },
     {
-      "dest": "inch per hour",
+      "dest": "inch/hour",
       "expected": "141732.2834645669291338582677"
     },
     {
-      "dest": "foot per second",
+      "dest": "foot/second",
       "expected": "3.280839895013123359580052493"
     },
     {
-      "dest": "foot per minute",
+      "dest": "foot/minute",
       "expected": "196.8503937007874015748031496"
     },
     {
-      "dest": "foot per hour",
+      "dest": "foot/hour",
       "expected": "11811.02362204724409448818898"
     },
     {
-      "dest": "mile per second",
+      "dest": "mile/second",
       "expected": "0.0006213711922373339696174341844"
     },
     {
-      "dest": "mile per minute",
+      "dest": "mile/minute",
       "expected": "0.03728227153424003817704605106"
     },
     {
-      "dest": "mile per hour",
+      "dest": "mile/hour",
       "expected": "2.236936292054402290622763064"
     },
     {

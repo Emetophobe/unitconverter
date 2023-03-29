@@ -9,19 +9,19 @@
       "expected": "1E-30"
     },
     {
-      "dest": "revolution per minute",
+      "dest": "revolution/minute",
       "expected": "59.99999999999999999999999999"
     },
     {
-      "dest": "cycle per second",
+      "dest": "cycle/second",
       "expected": "1"
     },
     {
-      "dest": "cycle per minute",
+      "dest": "cycle/minute",
       "expected": "59.99999999999999999999999999"
     },
     {
-      "dest": "cycle per hour",
+      "dest": "cycle/hour",
       "expected": "3600.000000000000000000000000"
     }
   ]

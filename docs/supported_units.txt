@@ -43,7 +43,7 @@ Area
 Catalytic Activity
 
 	katal
-	mole per second
+	mole/second
 
 Data Storage
 
@@ -72,28 +72,28 @@ Electric Current
 Electric Potential
 
 	volt
-	watt per ampere
+	watt/ampere
 	abvolt
 	statvolt
 
 Electrical Capacitance
 
 	farad
-	coulomb per volt
+	coulomb/volt
 	abfarad
 	statfarad
 
 Electrical Conductance
 
 	siemens
-	ampere per volt
+	ampere/volt
 	absiemens
 	statsiemens
 
 Electrical Inductance
 
 	henry
-	weber per ampere
+	weber/ampere
 	abhenry
 	stathenry
 
@@ -101,7 +101,7 @@ Electrical Resistance
 
 	ohm
 	reciprocal siemens
-	volt per ampere
+	volt/ampere
 	abohm
 	statohm
 
@@ -126,7 +126,7 @@ Energy
 Force
 
 	newton
-	joule per metre
+	joule/metre
 	dyne
 	gram-force
 	tonne-force
@@ -140,29 +140,30 @@ Force
 Frequency
 
 	hertz
-	cycle per second
-	cycle per minute
-	cycle per hour
-	revolution per minute
+	cycle/second
+	cycle/minute
+	cycle/hour
+	revolution/minute
 
 Fuel Consumption
 
-	litre per metre
-	litre per 100km
-	foot per gallon
-	metre per gallon
-	mile per gallon
-	foot per usgallon
-	metre per usgallon
-	mile per usgallon
+	litre/metre
+	litre/100km
+	foot/gallon
+	metre/gallon
+	mile/gallon
+	foot/usgallon
+	metre/usgallon
+	mile/usgallon
 
 Illuminance
 
 	lux
 	metre-candle
+	candela-steradian/metre^2
+	watt/metre^2
 	phot
 	nox
-	watt per square metre
 	foot-candle
 
 Length
@@ -259,10 +260,10 @@ Plane Angle
 Power
 
 	watt
-	volt ampere
-	joule per second
-	joule per minute
-	joule per hour
+	volt-ampere
+	joule/second
+	joule/minute
+	joule/hour
 	horsepower
 	mechanical horsepower
 
@@ -272,12 +273,12 @@ Pressure
 	bar
 	barye
 	metre of mercury
-	pound per square inch
-	kilopound per square inch
+	psi
+	ksi
 	torr
 	inch of mercury
-	standard atmosphere
-	technical atmosphere
+	standard-atmosphere
+	technical-atmosphere
 
 Radioactivity
 
@@ -299,19 +300,19 @@ Solid Angle
 
 Speed
 
-	metre per second
-	metre per minute
-	metre per hour
-	kilometre per hour
-	inch per second
-	inch per minute
-	inch per hour
-	foot per second
-	foot per minute
-	foot per hour
-	mile per second
-	mile per minute
-	mile per hour
+	metre/second
+	metre/minute
+	metre/hour
+	kilometre/hour
+	inch/second
+	inch/minute
+	inch/hour
+	foot/second
+	foot/minute
+	foot/hour
+	mile/second
+	mile/minute
+	mile/hour
 	knot
 	imperial knot
 	mach
@@ -344,9 +345,9 @@ Viscosity
 
 	pascal second
 	poise
-	gram per foot second
-	gram per metre second
-	slug per foot second
+	gram/foot-second
+	gram/metre-second
+	slug/foot-second
 
 Volume
 

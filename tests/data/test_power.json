@@ -1,19 +1,19 @@
 {
   "watt": [
     {
-      "dest": "volt ampere",
+      "dest": "volt-ampere",
       "expected": "1"
     },
     {
-      "dest": "joule per second",
+      "dest": "joule/second",
       "expected": "1"
     },
     {
-      "dest": "joule per minute",
+      "dest": "joule/minute",
       "expected": "59.99999999999999999999999999"
     },
     {
-      "dest": "joule per hour",
+      "dest": "joule/hour",
       "expected": "3600.000000000000000000000000"
     },
     {

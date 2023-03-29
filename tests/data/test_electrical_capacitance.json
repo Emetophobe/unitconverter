@@ -9,7 +9,7 @@
       "expected": "1E+30"
     },
     {
-      "dest": "coulomb per volt",
+      "dest": "coulomb/volt",
       "expected": "1"
     },
     {

@@ -6,12 +6,11 @@ factor = "1"
 prefix_scaling = "si"
 
 # 1 weber/ampere = 1 henry
-["weber per ampere"]
+["weber/ampere"]
 symbols = ['Wb/A']
-aliases = ['webers per ampere', 'webers/ampere', 'weber/ampere', 'webers/amp', 'weber/amp']
+aliases = ['webers/ampere', 'webers/amp', 'weber/amp']
 factor = "1"
 prefix_scaling = "si"
-prefix_index = 0
 
 # 1 abhenry = 1E-9 henry
 ["abhenry"]

@@ -13,6 +13,18 @@
       "expected": "1"
     },
     {
+      "dest": "ampere-ohm",
+      "expected": "1"
+    },
+    {
+      "dest": "joule/coulomb",
+      "expected": "1"
+    },
+    {
+      "dest": "weber/second",
+      "expected": "1"
+    },
+    {
       "dest": "abvolt",
       "expected": "1E+8"
     },

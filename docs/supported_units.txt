@@ -45,6 +45,8 @@ Catalytic Activity
 
 	katal
 	mole/second
+	mole/minute
+	mole/hour
 
 Data Storage
 
@@ -67,6 +69,8 @@ Electric Charge
 Electric Current
 
 	ampere
+	watt/volt
+	coulomb/second
 	abampere
 	statampere
 
@@ -74,6 +78,9 @@ Electric Potential
 
 	volt
 	watt/ampere
+	ampere-ohm
+	joule/coulomb
+	weber/second
 	abvolt
 	statvolt
 
@@ -81,6 +88,10 @@ Electrical Capacitance
 
 	farad
 	coulomb/volt
+	ampere-second/volt
+	watt-second/volt2
+	joule/volt2
+	newton-metre/volt2
 	abfarad
 	statfarad
 
@@ -161,8 +172,8 @@ Illuminance
 
 	lux
 	metre-candle
-	candela-steradian/metre^2
-	watt/metre^2
+	candela-steradian/metre2
+	watt/metre2
 	phot
 	nox
 	foot-candle
@@ -347,6 +358,7 @@ Viscosity
 	pascal-second
 	poise
 	gram/foot-second
+	gram/centimetre-second
 	gram/metre-second
 	slug/foot-second
 

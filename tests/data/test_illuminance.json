@@ -13,11 +13,11 @@
       "expected": "1"
     },
     {
-      "dest": "candela-steradian/metre^2",
+      "dest": "candela-steradian/metre2",
       "expected": "1"
     },
     {
-      "dest": "watt/metre^2",
+      "dest": "watt/metre2",
       "expected": "0.001464128843338213762811127379"
     },
     {

@@ -1,46 +1,47 @@
-# 1 cubic metre is the SI unit of volume
+# 1 cubic metre (m^3) is the SI unit of volume
 ["cubic metre"]
-symbols = ['m^3', 'm3']
-aliases = ['cubic metres', 'metre^3', 'metre3']
+symbols = ["m3"]
+aliases = ["cubic metres", "metres3", "metre3"]
 factor = "1"
 power = "3"
 prefix_scale = "si"
+prefix_index = -1
 
-# 1 litre = 0.001 metre^3
+# 1 litre = 0.001 m^3
 ["litre"]
-symbols = ['L', 'l']
-aliases = ['litres']
+symbols = ["L", "l"]
+aliases = ["litres"]
 factor = "0.001"
 prefix_scale = "si"
 
-# 1 metric cup = 0.00025 metre^3
+# 1 metric cup = 0.00025 m^3
 ["cup"]
 symbols = []
-aliases = ['cups', 'metric cups', 'metric cup']
+aliases = ["cups", "metric cups", "metric cup"]
 factor = "0.00025"
 
-# 1 metric tbps = 0.000015 metre^3
+# 1 metric tbps = 0.000015 m^3
 ["tablespoon"]
-symbols = ['tbsp']
-aliases = ['tablespoons', 'metric tablespoons', 'metric tablespoon']
+symbols = ["tbsp"]
+aliases = ["tablespoons", "metric tablespoons", "metric tablespoon"]
 factor = "0.000015"
 
-# 1 metric tsp = 0.000005 metre^3
+# 1 metric tsp = 0.000005 m^3
 ["teaspoon"]
-symbols = ['tsp']
-aliases = ['teaspoons', 'metric teaspoons', 'metric teaspoon']
+symbols = ["tsp"]
+aliases = ["teaspoons", "metric teaspoons", "metric teaspoon"]
 factor = "0.000005"
 
 # 1 drop = 0.01 teaspoon = 0.00000005 m^3
 ["drop"]
-symbols = ['gt']
-aliases = ['drops']
+symbols = ["gt"]
+aliases = ["drops"]
 factor = "0.00000005"
 
-# 1 sterer = 1 metre^3
+# 1 sterer = 1 m^3
 ["stere"]
 symbols = []
-aliases = ['steres', 'stères', 'stère']
+aliases = ["steres", "stères", "stère"]
 factor = "1"
 
 
@@ -49,82 +50,82 @@ factor = "1"
 
 ["fifth"]
 symbols = []
-aliases = ['fifths']
+aliases = ["fifths"]
 factor = "0.0007570823568"
 
 ["cubic inch"]
-symbols = ['cu in', 'in^3', 'in3']
-aliases = ['cubic inches']
+symbols = ["cu in", "in3"]
+aliases = ["cubic inches", "inches3", "inch3"]
 factor = "0.000016387064"
 
 ["cubic foot"]
-symbols = ['cu ft', 'ft^3', 'ft3']
-aliases = ['cubic feet']
+symbols = ["cu ft", "ft3"]
+aliases = ["cubic feet", "feet3", "foot3"]
 factor = "0.028316846592"
 
 ["cubic yard"]
-symbols = ['cu yd', 'yd^3', 'yd3']
-aliases = ['cubic yards']
+symbols = ["cu yd", "yd3"]
+aliases = ["cubic yards", "yards3", "yard3"]
 factor = "0.764554857984"
 
 ["cubic mile"]
-symbols = ['cu mi', 'mi^3', 'mi3']
-aliases = ['cubic miles']
+symbols = ["cu mi", "mi3"]
+aliases = ["cubic miles", "miles3", "mile3"]
 factor = "4168181825.440579584"
 
 ["acre-inch"]
-symbols = ['ac*in', 'ac-in', 'ac⋅in']
-aliases = ['acre-inches', 'acre-in']
+symbols = ["ac*in", "ac-in"]
+aliases = ["acre-inches", "acre-in"]
 factor = "102.79015312896"
 
 ["acre-foot"]
-symbols = ['ac*ft', 'ac-ftac⋅ft']
-aliases = ['acre-feet']
+symbols = ["ac*ft", "ac-ft"]
+aliases = ["acre-feet"]
 factor = "1233.48183754752"
 
 ["imperial gill"]
-symbols = ['gi']
-aliases = ['gills', 'gill', 'imperial gills']
+symbols = ["gi"]
+aliases = ["gills", "gill", "imperial gills"]
 factor = "0.0001420653"
 
 ["imperial cup"]
 symbols = []
-aliases = ['imperial cups', 'impcups', 'impcup']
+aliases = ["impcups", "impcup", "imperial cups"]
 factor = "0.0002841306"
 
 ["imperial bushel"]
-symbols = ['bsh', 'bu']
-aliases = ['bushels', 'bushel', 'imperial bushels']
+symbols = ["bsh", "bu"]
+aliases = ["bushels", "bushel", "imperial bushels"]
 factor = "0.03636872"
 
 ["imperial fluid ounce"]
-symbols = ['floz', 'ukfloz']
-aliases = ['fluid ounces', 'fluid ounce', 'imperial fluid ounces']
+symbols = ["floz", "ukfloz"]
+aliases = ["fluid ounces", "fluid ounce", "imperial fluid ounces"]
 factor = "0.0000284130625"
 
 ["imperial gallon"]
-symbols = ['gal', 'ukgal']
-aliases = ['gallons', 'gallon', 'imperial gallons', 'ukgallon']
+symbols = ["gal", "ukgal"]
+aliases = ["gallons", "gallon", "imperial gallons", "ukgallon"]
 factor = "0.00454609"
 
 ["imperial pint"]
-symbols = ['pt', 'ukpt']
-aliases = ['pints', 'pint', 'imperial pints', 'ukpint']
+symbols = ["pt", "ukpt"]
+aliases = ["pints", "pint", "imperial pints", "ukpint"]
 factor = "0.0005682615"
 
 ["imperial quart"]
-symbols = ['qt', 'ukqt']
-aliases = ['quarts', 'quart', 'imperial quarts', 'ukquart']
+symbols = ["qt", "ukqt"]
+aliases = ["quarts", "quart", "imperial quarts", "ukquart"]
 factor = "0.0011365225"
 
 ["imperial tablespoon"]
-symbols = ['uktbsp']
-aliases = ['imperial tablespoons', 'imperial tbsp']
+symbols = ["uktbsp"]
+aliases = ["imperial tablespoons", "imperial tbsp"]
 factor = "0.0000177582"
 
 ["imperial teaspoon"]
-symbols = ['uktsp']
-aliases = ['imperial teaspoons', 'imperial tsp']
+symbols = ["uktsp"]
+aliases = ["imperial teaspoons", "imperial tsp"]
 factor = "0.000005919388"
 
 
@@ -132,66 +133,66 @@ factor = "0.000005919388"
 
 
 ["US gill"]
-symbols = ['usgi']
-aliases = ['US gills', 'usgills', 'usgill']
+symbols = ["usgi"]
+aliases = ["US gills", "usgills", "usgill"]
 factor = "0.0001182941"
 
 ["US cup"]
 symbols = []
-aliases = ['US cups', 'uscups', 'uscup']
+aliases = ["US cups", "uscups", "uscup"]
 factor = "0.000236588"
 
 ["US bushel"]
-symbols = ['usbsh', 'usbu']
-aliases = ['US bushels']
+symbols = ["usbsh", "usbu"]
+aliases = ["US bushels"]
 factor = "0.0352391"
 
 ["US fluid ounce"]
-symbols = ['usfloz']
-aliases = ['US fluid ounces']
+symbols = ["usfloz"]
+aliases = ["US fluid ounces"]
 factor = "0.0000295735"
 
 ["US liquid gallon"]
-symbols = ['usgal']
-aliases = ['US liquid gallons', 'US gallons', 'US gallon', 'usgallon']
+symbols = ["usgal"]
+aliases = ["US liquid gallons", "US gallons", "US gallon", "usgallon"]
 factor = "0.003785411784"
 
 ["US dry gallon"]
-symbols = ['usdrygal']
-aliases = ['US dry gallons', 'US dry gal', 'usdrygallon']
+symbols = ["usdrygal"]
+aliases = ["US dry gallons", "US dry gal", "usdrygallon"]
 factor = "0.00440488"
 
 ["US liquid pint"]
-symbols = ['uspt']
-aliases = ['US liquid pints', 'US pints', 'US pint', 'uspint']
+symbols = ["uspt"]
+aliases = ["US liquid pints", "US pints", "US pint", "uspint"]
 factor = "0.000473176"
 
 ["US dry pint"]
-symbols = ['usdrypt']
-aliases = ['US dry pints', 'usdrypint']
+symbols = ["usdrypt"]
+aliases = ["US dry pints", "usdrypint"]
 factor = "0.000550610475"
 
 ["US liquid quart"]
-symbols = ['usqt']
-aliases = ['US liquid quarts', 'US quarts', 'US quart', 'usquart']
+symbols = ["usqt"]
+aliases = ["US liquid quarts", "US quarts", "US quart", "usquart"]
 factor = "0.000946353"
 
 ["US dry quart"]
-symbols = ['usdryqt']
-aliases = ['US dry quarts', 'usdryquart']
+symbols = ["usdryqt"]
+aliases = ["US dry quarts", "usdryquart"]
 factor = "0.0011012107"
 
 ["US tablespoon"]
-symbols = ['ustbsp']
-aliases = ['US tablespoons', 'US tbsp']
+symbols = ["ustbsp"]
+aliases = ["US tablespoons", "US tbsp"]
 factor = "0.0000147868"
 
 ["US teaspoon"]
-symbols = ['ustsp']
-aliases = ['US teaspoons', 'US tsp']
+symbols = ["ustsp"]
+aliases = ["US teaspoons", "US tsp"]
 factor = "0.00000492892"
 
 ["US survey acre-foot"]
-symbols = ['usac*ft', 'usac-ft']
-aliases = ['US survey acre-feet']
+symbols = ["usac*ft", "usac-ft"]
+aliases = ["US survey acre-feet"]
 factor = "1233.489238467185051800274"

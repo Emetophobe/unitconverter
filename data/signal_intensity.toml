@@ -1,17 +1,17 @@
 # 1 decibel is the base unit
 ["decibel"]
-symbols = ['dB']
-aliases = ['decibels']
+symbols = ["dB"]
+aliases = ["decibels"]
 factor = "1"
 
 # 1 bel = 10 decibels
 ["bel"]
 symbols = []
-aliases = ['bels']
+aliases = ["bels"]
 factor = "10"
 
 # 1 neper = 8.686 decibels
 ["neper"]
-symbols = ['Np']
-aliases = ['nepers']
+symbols = ["Np"]
+aliases = ["nepers"]
 factor = "8.686"

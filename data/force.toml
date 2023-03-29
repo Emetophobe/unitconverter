@@ -1,36 +1,36 @@
 # The newton is the SI unit of force
 ["newton"]
-symbols = ['N']
-aliases = ['newtons']
+symbols = ["N"]
+aliases = ["newtons"]
 factor = "1"
 prefix_scale = "si"
 
-# 1 joule/metre = 1 newton
+# 1 joule per metre = 1 newton
 ["joule/metre"]
-symbols = ['J/m', 'j/m']
-aliases = ['joules/metre']
+symbols = ["J/m", "j/m"]
+aliases = ["joules/metre"]
 factor = "1"
 prefix_scale = "si"
 
 # The dyne is a derived unit of force specified in the older CGS system of units
 # 1 dyne is exactly 0.00001 (1E-5) newtons
 ["dyne"]
-symbols = ['dyn']
-aliases = ['dynes']
+symbols = ["dyn"]
+aliases = ["dynes"]
 factor = "0.00001"
 prefix_scale = "si"
 
 # 1 gram force = 0.00980665 newtons
 ["gram-force"]
-symbols = ['gf', 'p']
-aliases = ['ponds', 'pond']
+symbols = ["gf", "p"]
+aliases = ["ponds", "pond"]
 factor = "0.00980665"
 prefix_scale = "si"
 
 # 1 tonne force = 1 megagram-force = 9806.65 newtons
 ["tonne-force"]
-symbols = ['t-f', 'tf']
-aliases = ['metric ton-force']
+symbols = ["t-f", "tf"]
+aliases = ["metric ton-force"]
 factor = "9806.65"
 prefix_scale = "si"
 
@@ -39,32 +39,32 @@ prefix_scale = "si"
 
 
 ["poundal"]
-symbols = ['pdl']
-aliases = ['poundals']
+symbols = ["pdl"]
+aliases = ["poundals"]
 factor = "0.138254954376"
 
 ["ounce-force"]
-symbols = ['ozf']
+symbols = ["ozf"]
 aliases = []
 factor = "0.27801385"
 
 ["pound-force"]
-symbols = ['lbf']
-aliases = ['pounds of force', 'pound of force', 'lbs of force', 'lbs-force']
+symbols = ["lbf"]
+aliases = ["pounds of force", "pound of force", "lbs of force", "lbs-force"]
 factor = "4.448222"
 
 # 1 kip-force = 1000 pound force = roughly 4448.222 newtons
 ["kip-force"]
-symbols = ['kipf', 'klbf']
-aliases = ['kilopound-force']
+symbols = ["kipf", "klbf"]
+aliases = ["kilopound-force"]
 factor = "4448.222"
 
 ["long ton-force"]
-symbols = ['tnf']
-aliases = ['tf (long)']
+symbols = ["tnf"]
+aliases = ["tf (long)"]
 factor = "9964.0164182"
 
 ["short ton-force"]
-symbols = ['tonf']
-aliases = ['tf (short)']
+symbols = ["tonf"]
+aliases = ["tf (short)"]
 factor = "8896.4432305"

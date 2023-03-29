@@ -9,6 +9,14 @@
       "expected": "1E-30"
     },
     {
+      "dest": "watt/volt",
+      "expected": "1"
+    },
+    {
+      "dest": "coulomb/second",
+      "expected": "1"
+    },
+    {
       "dest": "abampere",
       "expected": "0.1"
     },

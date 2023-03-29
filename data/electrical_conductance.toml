@@ -1,25 +1,25 @@
 # The siemens is the SI unit of electrical conductance
 ["siemens"]
-symbols = ['S']
+symbols = ["S"]
 aliases = []
 factor = "1"
 prefix_scale = "si"
 
-# 1 ampere/volt is equivalent to 1 siemens
+# 1 ampere per volt = 1 siemens
 ["ampere/volt"]
-symbols = ['A/V']
-aliases = ['amperes/volt', 'amps/volt', 'amp/volt']
+symbols = ["A/V"]
+aliases = ["amperes/volt", "amps/volt", "amp/volt"]
 factor = "1"
 prefix_scale = "si"
 
 # 1 absiemens (abmho) = 1E+9 siemens
 ["absiemens"]
-symbols = ['abS']
-aliases = ['abmho']
+symbols = ["abS"]
+aliases = ["abmho"]
 factor = "1E+9"
 
 # 1 statsiemens (statmho) = 1.112347052E-12 siemens
 ["statsiemens"]
-symbols = ['stS']
-aliases = ['statmho']
+symbols = ["stS"]
+aliases = ["statmho"]
 factor = "1.112347052E-12"

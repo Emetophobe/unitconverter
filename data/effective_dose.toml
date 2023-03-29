@@ -1,12 +1,12 @@
 # The sivert is the SI unit of effective dose
 ["sievert"]
-symbols = ['Sv']
-aliases = ['sieverts']
+symbols = ["Sv"]
+aliases = ["sieverts"]
 factor = "1"
 prefix_scale = "si"
 
 # 1 roentgen = 0.01 sievert
 ["roentgen"]
-symbols = ['rem']
-aliases = ['roentgens', 'roentgen equivalent man']
+symbols = ["rem"]
+aliases = ["roentgens", "roentgen equivalent man"]
 factor = "0.01"

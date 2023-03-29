@@ -1,14 +1,14 @@
 # The candela is the SI unit of luminous intensity
 ["candela"]
-symbols = ['cd']
-aliases = ['candelas']
+symbols = ["cd"]
+aliases = ["candelas"]
 factor = "1"
 prefix_scale = "si"
 
 # 1 candlepower = 1 candela
 ["candlepower"]
-symbols = ['cp']
-aliases = ['modern candlepower']
+symbols = ["cp"]
+aliases = ["modern candlepower"]
 factor = "1"
 
 # 1 historic candlepower = 0.981 candela

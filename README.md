@@ -11,8 +11,8 @@ The following categories are currently supported:
 * Catalytic activity (katal, mol/sec)
 * Data storage (bits, bytes, kilobytes, kibibytes, etc...)
 * Electric charge (coloumb, ampere-second, ampere-minute, ampere-hour)
-* Electric current (ampere)
-* Electric potential (volt, watt/ampere)
+* Electric current (ampere, watt/volt, coulomb/second)
+* Electric potential (volt, watt/ampere, ampere-ohm, joule/coulomb, weber/second)
 * Electrical capacitance (farad, coulomb/volt)
 * Electrical conductance (siemens, ampere/volt)
 * Electrical inductance (henry, weber/ampere)
@@ -21,7 +21,7 @@ The following categories are currently supported:
 * Force (newton, dyne, poundal, gram-force, ton-force, etc...)
 * Fuel consumption (litres/100km, km/liter, miles per gallon, etc...)
 * Frequency (hertz, rpm, cycles/minute, cycles/hour)
-* Illuminance (lux, nox, phot, watt/m^2, metre-candle, foot-candle)
+* Illuminance (lux, nox, phot, watt/m², metre-candle, foot-candle)
 * Length (metre, inch, foot, etc...)
 * Luminous flux (lumen, candela-steradian)
 * Luminous intensity (candela, candlepower)
@@ -38,6 +38,8 @@ The following categories are currently supported:
 * Time (second, minute, hour, day, week, month, year, etc...)
 * Viscosity (poise and pascal-second)
 * Volume (cubic metre, litre, quart, gallon, etc...)
+
+See [supported units](docs/supported_units.txt) for a complete list.
 
 ## Features
 

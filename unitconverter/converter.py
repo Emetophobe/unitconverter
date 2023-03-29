@@ -8,7 +8,7 @@ from unitconverter.locale import Locale
 from unitconverter.prefixes import get_prefixes
 from unitconverter.unit import Unit
 from unitconverter.units import Units
-from unitconverter.utils import parse_decimal
+from unitconverter.utils import parse_decimal, simplify_unit
 
 
 class Converter:
@@ -59,12 +59,16 @@ class Converter:
         if isinstance(name, Unit):
             return name
 
-        # Check if the unit is in the list
+        # Get simplified unit name
+        original_name = name
+        name = simplify_unit(name)
+
+        # Check pre-defined list for a matching unit
         for unit in self.units:
             if name in unit:
                 return unit
 
-        # Check supported prefixes for a matching unit
+        # Check generated prefixes for a matching unit
         for unit in self.units:
             # Get prefix table based on unit prefix option
             prefixes = get_prefixes(unit.prefix_scale)
@@ -76,7 +80,7 @@ class Converter:
                     return prefix_unit
 
         # Invalid unit name
-        raise UnitError(f'Invalid unit: {name}')
+        raise UnitError(f'Invalid unit: {original_name}')
 
 
 def format_decimal(value: Decimal,

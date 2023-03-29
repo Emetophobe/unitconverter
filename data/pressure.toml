@@ -1,31 +1,30 @@
 # The pascal is the SI unit of pressure
 ["pascal"]
-symbols = ['Pa']
-aliases = ['pascals']
+symbols = ["Pa"]
+aliases = ["pascals"]
 factor = "1"
 prefix_scale = "si"
 
-# 1 bar = exactly 100000 (1E+5) pascal
+# 1 bar = exactly 100,000 (1E+5) pascal
 ["bar"]
 symbols = []
-aliases = ['bars']
+aliases = ["bars"]
 factor = "1E+5"
 prefix_scale = "si"
 
 # 1 barye = exactly 0.1 pascal
 ["barye"]
-symbols = ['Ba']
-aliases = ['baryes']
+symbols = ["Ba"]
+aliases = ["baryes"]
 factor = "0.1"
 prefix_scale = "si"
 
 # 1 metre of mercury is roughly 133322.4 pascal
 ["metre of mercury"]
-symbols = ['m Hg', 'mHg']
-aliases = ['metres of mercury']
+symbols = ["m Hg", "mHg"]
+aliases = ["metres of mercury"]
 factor = "133322.4"
 prefix_scale = "si"
-prefix_index = 0
 
 
 # Non-SI units
@@ -33,36 +32,36 @@ prefix_index = 0
 
 # 1 psi (pound per square inch) = roughly 6894.757 pascal
 ["psi"]
-symbols = ['lbf/in^2', 'lbf/in2', 'lbs/in^2', 'lbs/in2']
-aliases = ['pounds/in^2', 'pound/in^2', 'pounds/in2', 'pound/in2']
+symbols = ["lbf/in2", "lbs/in2"]
+aliases = ["pound per square inch", "pounds/in2", "pound/in2"]
 factor = "6894.757"
 
 # 1 ksi (kilopound per square inch) = 1000 psi = 6.894757E+6 pascal
 ["ksi"]
-symbols = ['klbf/in^2', 'klbf/in2', 'klbs/in^2', 'klbs/in2']
-aliases = ['kilopounds/in^2', 'kilopound/in^2', 'kilopounds/in2', 'kilopound/in2']
+symbols = ["klbf/in2", "klbs/in2"]
+aliases = ["kilopound per square inch", "kilopounds/in2", "kilopound/in2"]
 factor = "6894757"
 
 # 1 torr is roughly 133.322 pascal
 ["torr"]
-symbols = ['Torr']
-aliases = ['torrs']
+symbols = ["Torr"]
+aliases = ["torrs"]
 factor = "133.322"
 
 # 1 inch of mercury is roughly 3386.389 pascal
 ["inch of mercury"]
-symbols = ['in Hg', 'inHg']
-aliases = ['inches of mercury']
+symbols = ["in Hg", "inHg"]
+aliases = ["inches of mercury"]
 factor = "3386.389"
 
 # 1 standard atmosphere = 101325 pascal
 ["standard-atmosphere"]
-symbols = ['atm']
-aliases = ['standard-atmospheres']
+symbols = ["atm"]
+aliases = ["standard-atmospheres"]
 factor = "101325"
 
 # 1 technical atmosphere = roughly 98066.5 pascal
 ["technical-atmosphere"]
-symbols = ['kgf/cm^2', 'kg/cm^2', 'kg/cm2']
-aliases = ['technical-atmospheres', 'kilograms/cm^2', 'kilogram/cm^2']
+symbols = ["kgf/cm2", "kg/cm2"]
+aliases = ["technical-atmospheres", "kilograms/cm2", "kilogram/cm2"]
 factor = "98066.5"

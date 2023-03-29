@@ -1,44 +1,44 @@
 # The lux is the SI unit of illuminance
 ["lux"]
-symbols = ['lx']
+symbols = ["lx"]
 aliases = []
 factor = "1"
 prefix_scale = "si"
 
 # 1 metre-candle is equivalent to 1 lux
 ["metre-candle"]
-symbols = ['m-c', 'mc']
+symbols = ["m-c", "mc"]
 aliases = []
 factor = "1"
 prefix_scale = "si"
 
-# 1 candela-steradian/metre^2 = 1 lux
-["candela-steradian/metre^2"]
-symbols = ['cd-sr/m^2', 'cd-sr/m2']
-aliases = ['candela-steradian/metre2']
+# 1 candela-steradian per metre^2 = 1 lux
+["candela-steradian/metre2"]
+symbols = ["cd-sr/m2"]
+aliases = []
 factor = "1"
 prefix_scale = "si"
 
-# 1 watt/metre^2 = 683 lux
-["watt/metre^2"]
-symbols = ['W/m²', 'W/m^2', 'W/m2']
-aliases = ['watts/metre^2', 'watts/metre2', 'watt/metre2']
+# 1 watt per metre^2 = 683 lux
+["watt/metre2"]
+symbols = ["W/m2"]
+aliases = ["watts/metre2"]
 factor = "683"
 prefix_scale = "si"
 
 # 1 phot = 10,000 lux
 ["phot"]
-symbols = ['ph']
-aliases = ['phots']
+symbols = ["ph"]
+aliases = ["phots"]
 factor = "10000"
 
 # 1 nox = 0.001 lux
 ["nox"]
-symbols = ['nx']
+symbols = ["nx"]
 aliases = []
 factor = "0.001"
 
 ["foot-candle"]
-symbols = ['ft-c', 'fc']
+symbols = ["ft-c", "fc"]
 aliases = []
 factor = "10.76391"

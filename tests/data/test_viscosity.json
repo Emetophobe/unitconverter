@@ -5,12 +5,16 @@
       "expected": "10"
     },
     {
-      "dest": "gram/foot-second",
-      "expected": "304.8000000000003121152000000"
+      "dest": "gram/centimetre-second",
+      "expected": "100"
     },
     {
       "dest": "gram/metre-second",
       "expected": "1000"
+    },
+    {
+      "dest": "gram/foot-second",
+      "expected": "304.8000000000003121152000000"
     },
     {
       "dest": "slug/foot-second",

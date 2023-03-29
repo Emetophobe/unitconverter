@@ -1,154 +1,155 @@
 # The square metre (m^2) is the SI unit of area
 ["square metre"]
-symbols = ['m^2', 'm2']
-aliases = ['square metres', 'metre^2', 'metre2']
+symbols = ["m2"]
+aliases = ["square metres", "metres2", "metre2"]
 factor = "1"
 power = "2"
 prefix_scale = "si"
+prefix_index = -1
 
 # 1 are = 100 m^2
 ["are"]
 symbols = []
-aliases = ['ares']
+aliases = ["ares"]
 factor = "100.0"
 
 # 1 barn = 1E-28 m^2
 ["barn"]
 symbols = []
-aliases = ['barns']
+aliases = ["barns"]
 factor = "1E-28"
 
 # 1 hectare = 100 ares = 10000 m^2
 ["hectare"]
-symbols = ['ha']
-aliases = ['hectares']
+symbols = ["ha"]
+aliases = ["hectares"]
 factor = "10000"
 
 # 1 acre is roughly 4046.8564224 m^2
 ["acre"]
-symbols = ['ac']
-aliases = ['acres', 'imperial acres', 'imperial acre']
+symbols = ["ac"]
+aliases = ["acres", "imperial acres", "imperial acre"]
 factor = "4046.8564224"
 
 # 1 hide = 120 acres = 485000 m^2
 ["hide"]
 symbols = []
-aliases = ['hides']
+aliases = ["hides"]
 factor = "485000"
 
 # 1 rood = 1/4 acre = roughly 1011.7141056 m^2
 ["rood"]
 symbols = []
-aliases = ['roods']
+aliases = ["roods"]
 factor = "1011.7141056"
 
 # 1 square = 100 square feet or roughly 9.290304 m^2
 ["square"]
 symbols = []
-aliases = ['Squares']
+aliases = ["squares"]
 factor = "9.290304"
 
 ["circular inch"]
-symbols = ['circ in']
-aliases = ['circular inches']
+symbols = ["circ in"]
+aliases = ["circular inches"]
 factor = "0.000506707479"
 
 ["circular thou"]
-symbols = ['circ thou', 'circ mil']
-aliases = ['circular mils', 'circular mil']
+symbols = ["circ thou", "circ mil"]
+aliases = ["circular mils", "circular mil"]
 factor = "5.06707479E-10"
 
 ["square thou"]
-symbols = ['thou^2', 'thou2', 'mil^2', 'mil2']
-aliases = ['square mils', 'square mil']
+symbols = ["thou2", "mil2"]
+aliases = ["square mils", "square mil", "mils2"]
 factor = "6.4516E-10"
 
 ["square inch"]
-symbols = ['sq in', 'sqin', 'in^2', 'in2']
-aliases = ['square inches', 'inches^2', 'inch^2']
+symbols = ["sq in", "sqin", "in2"]
+aliases = ["square inches", "inches2", "inch2"]
 factor = "0.00064516"
 
 ["square foot"]
-symbols = ['sq ft', 'sqft', 'ft^2', 'ft2']
-aliases = ['square feet', 'foot^2', 'feet^2']
+symbols = ["sq ft", "sqft", "ft2"]
+aliases = ["square feet", "feet2", "foot2"]
 factor = "0.09290304"
 
 ["square yard"]
-symbols = ['sq yd', 'sqyd', 'yd^2', 'yd2']
-aliases = ['square yards', 'yards^2', 'yard^2']
+symbols = ["sq yd", "sqyd", "yd2"]
+aliases = ["square yards", "yards2", "yard2"]
 factor = "0.83612736"
 
 ["square mile"]
-symbols = ['sq mi', 'sqmi', 'mi^2', 'mi2']
-aliases = ['square miles', 'miles^2', 'mile^2']
+symbols = ["sq mi", "sqmi", "mi2"]
+aliases = ["square miles", "miles2", "mile2"]
 factor = "2589988.110336"
 
 ["square nautical mile"]
-symbols = ['sqnmi', 'nmi^2', 'nmi2']
-aliases = ['square nautical miles']
+symbols = ["sqnmi", "nmi2", "NM2"]
+aliases = ["square nautical miles"]
 factor = "3429904"
 
 ["square chain"]
-symbols = ['sqchain', 'ch^2', 'ch2']
-aliases = ['square chains', 'chain^2', 'chain2']
+symbols = ["sqchain", "ch2"]
+aliases = ["square chains", "chains2", "chain2"]
 factor = "404.68564224"
 
 ["square furlong"]
-symbols = ['sqfur', 'fur^2', 'fur2']
-aliases = ['square furlongs', 'furlong^2', 'furlong2']
+symbols = ["sqfur", "fur2"]
+aliases = ["square furlongs", "furlongs2", "furlong2"]
 factor = "40468.564224"
 
 ["square link"]
-symbols = ['sqlink', 'li^2', 'li2']
-aliases = ['square links', 'link^2', 'link2']
+symbols = ["sqlink", "li2"]
+aliases = ["square links", "links2", "link2"]
 factor = "0.040468564224"
 
 ["square rod"]
-symbols = ['rd^2', 'rd2', 'rod^2', 'rod2', 'pole^2', 'pole2', 'perch^2', 'perch2']
-aliases = ['square rods', 'square poles', 'square pole', 'square perch']
+symbols = ["rd2", "rod2", "pole2", "perch2"]
+aliases = ["square rods", "square poles", "square pole", "square perch"]
 factor = "25.29285264"
 
 # US survey units
 # Source: https://www.nist.gov/pml/us-surveyfoot/revised-unit-conversion-factors
 
 ["US survey acre"]
-symbols = ['surveyac']
-aliases = ['US survey acres', 'surveyacres', 'surveyacre']
+symbols = ["surveyac"]
+aliases = ["US survey acres", "surveyacres", "surveyacre"]
 factor = "4046.872609874"
 
 ["US survey square foot"]
-symbols = ['surveysqft', 'surveyft^2', 'surveyft2']
-aliases = ['US survey square feet', 'surveyfoot^2', 'surveyfoot2']
+symbols = ["surveysqft", "surveyft2"]
+aliases = ["US survey square feet", "surveyfeet2", "surveyfoot2"]
 factor = "0.092903411613141213379201"
 
 ["US survey square mile"]
-symbols = ['surveymi^2', 'surveymi2']
-aliases = ['US survey square miles', 'surveymile^2', 'surveymile2']
+symbols = ["surveysqmi", "surveymi2"]
+aliases = ["US survey square miles", "surveymiles2", "surveymile2"]
 factor = "2589998.470318113463065636"
 
 ["US survey square rod"]
-symbols = ['surveyrd^2', 'surveyrd2']
-aliases = ['US survey square rods', 'surveyrod^2', 'surveyrod2']
+symbols = ["surveysqrd", "surveyrd2"]
+aliases = ["US survey square rods", "surveyrods2", "surveyrod2"]
 factor = "25.292953807488363364"
 
 # Misc.
 
 ["arpent"]
 symbols = []
-aliases = ['arpents']
+aliases = ["arpents"]
 factor = "3418.8929237"
 
 ["homestead"]
 symbols = []
-aliases = ['homesteads', 'survey homesteads', 'survey homestead']
+aliases = ["homesteads", "survey homesteads", "survey homestead"]
 factor = "647497.02758"
 
 ["section"]
 symbols = []
-aliases = ['sections', 'survey sections', 'survey section']
+aliases = ["sections", "survey sections", "survey section"]
 factor = "2589988.1103"
 
 ["township"]
-symbols = ['twp']
-aliases = ['townships', 'survey townships', 'survey township']
+symbols = ["twp"]
+aliases = ["townships", "survey townships", "survey township"]
 factor = "93239571.972"

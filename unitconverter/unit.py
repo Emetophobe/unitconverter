@@ -21,7 +21,7 @@ class Unit:
                  power=1,
                  offset=0,
                  prefix_scale=PrefixScale.NONE,
-                 prefix_index=-1):
+                 prefix_index=0):
         """ Initialize unit.
 
         Args:
@@ -49,8 +49,8 @@ class Unit:
             prefix_scale (PrefixScale, optional):
                 prefix scale. Defaults to PrefixScale.NONE.
 
-            prefix_index (int, optional): i
-                index of word to prefix. Defaults to -1 (last word).
+            prefix_index (int, optional):
+                index of word to prefix. Defaults to 0 (prefix first word).
 
         Raises:
             TypeError: if an argument is the wrong type.
@@ -65,20 +65,8 @@ class Unit:
         self.power = parse_decimal(power, f'{name!r} has an invalid power.')
         self.offset = parse_decimal(offset, f'{name!r} has an invalid offset.')
 
-        # Make sure prefix scale is valid
-        try:
-            self.prefix_scale = PrefixScale(prefix_scale)
-        except ValueError:
-            raise UnitError(f'Unit {name!r} has an invalid prefix scale: {prefix_scale}')
-
-        # Make sure prefix index is valid
-        for alias in self.get_names():
-            last_index = len(alias.split(' ')) - 1
-            if prefix_index < -1 or prefix_index > last_index:
-                raise UnitError(f'Unit {name!r} has an invalid prefix index:'
-                                f' {prefix_index} ({alias!r})')
-
-        self.prefix_index = prefix_index
+        self._parse_scale(prefix_scale)
+        self._parse_index(prefix_index)
 
     def get_names(self) -> list[str]:
         """ Return a list of all unit names and symbols. """
@@ -100,26 +88,45 @@ class Unit:
         Returns:
             Unit: a new unit instance.
         """
-        # Prefix names and symbols
-        name = self._add_prefix(prefix, self.name)
-        symbols = [self._add_prefix(symbol, name) for name in self.symbols]
-        aliases = [self._add_prefix(prefix, name) for name in self.aliases]
 
-        # Scale factor
+        # Update all unit names and calculate new factor
+        symbols = [symbol + name for name in self.symbols]
+        name = self._add_prefix(prefix, self.name)
+        aliases = [self._add_prefix(prefix, name) for name in self.aliases]
         factor = (Decimal(factor) * Decimal(self.factor)) ** Decimal(self.power)
 
         # Don't allow prefixed units to be prefixed again
-        prefix_scale = 'none'
+        prefix_scale = PrefixScale.NONE
 
         # Return prefixed unit
         return Unit(name, self.category, symbols, aliases, factor, self.power,
                     self.offset, prefix_scale, self.prefix_index)
 
     def _add_prefix(self, prefix: str, name: str) -> str:
-        """ Add a prefix to a string using the specified prefix index. """
+        """ Add a prefix by splitting a string and inserting at prefix_index. """
         split = name.split(' ')
         split[self.prefix_index] = prefix + split[self.prefix_index]
         return ' '.join(split)
+
+    def _parse_scale(self, prefix_scale: PrefixScale) -> None:
+        """ Check if prefix_scale is valid or throw a UnitError. """
+        try:
+            self.prefix_scale = PrefixScale(prefix_scale)
+        except ValueError:
+            msg = f'Unit {self.name!r} has an invalid prefix scale: {prefix_scale}'
+            raise UnitError(msg)
+
+        self._prefix_scale = prefix_scale
+
+    def _parse_index(self, prefix_index: int) -> None:
+        """ Check if prefix_index is valid or throw a UnitError. """
+        for alias in [self.name] + self.aliases:  # don't check symbols
+            last_index = len(alias.split(' ')) - 1
+            if prefix_index < -1 or prefix_index > last_index:
+                raise UnitError(f'Unit {self.name!r} has an invalid prefix index:'
+                                f' {prefix_index} ({alias!r})')
+
+        self.prefix_index = prefix_index
 
     def __contains__(self, name: str) -> bool:
         """ Returns True if name matches one of the unit names. """

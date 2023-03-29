@@ -1,32 +1,32 @@
 # The ohm is the SI unit of electrical resistance
 ["ohm"]
-symbols = ['Ω']
-aliases = ['ohms']
+symbols = ["Ω"]
+aliases = ["ohms"]
 factor = "1"
 prefix_scale = "si"
 
 # 1 reciprocal siemens (1/S) = 1 ohm
 ["reciprocal siemens"]
-symbols = ['1/S']
+symbols = ["1/S"]
 aliases = []
 factor = "1"
 prefix_scale = "si"
 
-# 1 volt/ampere = 1 ohm
+# 1 volt per ampere = 1 ohm
 ["volt/ampere"]
-symbols = ['V/A']
-aliases = ['volts/ampere', 'volts/amp', 'volt/amp']
+symbols = ["V/A"]
+aliases = ["volts/ampere", "volts/amp", "volt/amp"]
 factor = "1"
 prefix_scale = "si"
 
 # 1 abohm = 1E-9 ohm
 ["abohm"]
-symbols = ['abΩ']
-aliases = ['abohms']
+symbols = ["abΩ"]
+aliases = ["abohms"]
 factor = "1E-9"
 
 # 1 statohm = 8.987552E+11 ohm
 ["statohm"]
-symbols = ['stΩ']
-aliases = ['statohms']
+symbols = ["stΩ"]
+aliases = ["statohms"]
 factor = "8.987552E+11"

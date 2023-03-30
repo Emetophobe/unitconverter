@@ -14,7 +14,7 @@ class TestUnits(unittest.TestCase):
     """ Test Units class. """
 
     def setUp(self) -> None:
-        """ Initialize units with default english locale. """
+        """ Initialize units. """
         self.units = Units()
 
     def test_units(self) -> None:

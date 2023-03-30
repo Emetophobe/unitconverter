@@ -4,7 +4,6 @@
 from decimal import Decimal
 
 from unitconverter.exceptions import CategoryError, UnitError
-from unitconverter.locale import Locale
 from unitconverter.prefixes import get_prefixes
 from unitconverter.unit import Unit
 from unitconverter.units import Units
@@ -14,9 +13,9 @@ from unitconverter.utils import parse_decimal, simplify_unit
 class Converter:
     """ A basic unit converter. """
 
-    def __init__(self, locale: Locale = Locale.ENGLISH) -> None:
+    def __init__(self) -> None:
         """ Initialize units. """
-        self.units = Units(locale)
+        self.units = Units()
 
     def convert(self, value: Decimal, source: Unit, dest: Unit) -> Decimal:
         """ Convert a number from source unit to dest unit.
@@ -60,12 +59,11 @@ class Converter:
             return name
 
         # Get simplified unit name
-        original_name = name
-        name = simplify_unit(name)
+        simple_name = simplify_unit(name)
 
         # Check pre-defined list for a matching unit
         for unit in self.units:
-            if name in unit:
+            if simple_name in unit:
                 return unit
 
         # Check generated prefixes for a matching unit
@@ -76,11 +74,11 @@ class Converter:
             # Generate prefixes and check for a matching unit
             for factor, symbol, prefix in prefixes:
                 prefix_unit = unit.scale(factor, symbol, prefix)
-                if name in prefix_unit:
+                if simple_name in prefix_unit:
                     return prefix_unit
 
         # Invalid unit name
-        raise UnitError(f'Invalid unit: {original_name}')
+        raise UnitError(f'Invalid unit: {name}')
 
 
 def format_decimal(value: Decimal,

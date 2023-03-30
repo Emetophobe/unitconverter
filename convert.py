@@ -5,7 +5,7 @@
 import sys
 import argparse
 from decimal import Decimal, DecimalException
-from unitconverter.converter import Locale, Converter, format_decimal
+from unitconverter.converter import Converter, format_decimal
 
 
 def print_error(error_msg: str, status: int = 1) -> None:
@@ -46,10 +46,6 @@ def main() -> None:
         help='show E notation when possible (default: False)',
         action='store_true')
 
-    parser.add_argument(
-        '-a', '--american',
-        help='use American spelling of meter/liter (default: False)',
-        action='store_true')
     args = parser.parse_args()
 
     # Check value argument
@@ -62,12 +58,9 @@ def main() -> None:
     if args.precision is not None and (args.precision < 0 or args.precision > 20):
         print_error('Error: precision must be between 0 and 20.')
 
-    # Get locale
-    locale = Locale.AMERICAN if args.american else Locale.ENGLISH
-
     # Perform the conversion
     try:
-        converter = Converter(locale)
+        converter = Converter()
         result = converter.convert(value, args.source, args.dest)
     except DecimalException:
         print_error('Error: Invalid decimal operation')

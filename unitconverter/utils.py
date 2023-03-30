@@ -16,23 +16,15 @@ def parse_decimal(value: Decimal | int | str, msg: str = None) -> Decimal:
 
 
 def simplify_unit(name: str) -> str:
-    """ Simplify unit name by replacing characters. """
-    for key, value in _replace_chars.items():
+    """ Simplify unit name by replacing strings/characters. """
+    for key, value in _replacements.items():
         if key in name:
             name = name.replace(key, value)
-
     return name
 
 
-# Dictionary of replacement chars for internal lookup
-_replace_chars = {
-    # simplify multiplication symbols
-    '⋅': '-',
-    '*': '-',
-
-    # simplify division
-    ' per ': '/',
-
+# Dictionary of replacements for internal lookup
+_replacements = {
     # simplify exponents
     '^': '',
     '⁰': '0',
@@ -45,4 +37,15 @@ _replace_chars = {
     '⁷': '7',
     '⁸': '8',
     '⁹': '9',
+
+    # simplify multiplication
+    '⋅': '-',
+    '*': '-',
+
+    # simplify division
+    ' per ': '/',
+
+    # regional spelling
+    'meter': 'metre',
+    'liter': 'litre',
 }

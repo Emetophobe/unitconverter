@@ -116,8 +116,6 @@ class Unit:
             msg = f'Unit {self.name!r} has an invalid prefix scale: {prefix_scale}'
             raise UnitError(msg)
 
-        self._prefix_scale = prefix_scale
-
     def _parse_index(self, prefix_index: int) -> None:
         """ Check if prefix_index is valid or throw a UnitError. """
         for alias in [self.name] + self.aliases:  # don't check symbols

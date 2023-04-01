@@ -20,6 +20,7 @@ symbols = []
 aliases = ["thousandth of an inch", "mils", "mil"]
 factor = "0.0000254"
 
+# 1 inch is exactly 0.0254 metres
 ["inch"]
 symbols = ["in"]
 aliases = ["inches"]

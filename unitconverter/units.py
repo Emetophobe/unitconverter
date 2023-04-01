@@ -30,7 +30,7 @@ class Units:
             self._aliases[name] = unit
 
         # Add unit to category
-        self._units[unit.category] = unit
+        self._units[unit.category].append(unit)
 
     def get_unit(self, name: str) -> Unit:
         """ Get a unit by name. Raises UnitError if unit doesn't exist. """
@@ -50,6 +50,12 @@ class Units:
         """ Get a list of all units. """
         return list(self)
 
+    def items(self) -> ItemsView:
+        return self._units.items()
+
+    def keys(self) -> KeysView:
+        return self._units.keys()
+
     def load_units(self) -> None:
         """ Load units from toml files. """
         self._units = defaultdict(list)
@@ -63,22 +69,7 @@ class Units:
                 data = tomllib.load(infile)
                 for name, args in data.items():
                     unit = Unit(name, category, **args)
-                    self._units[category].append(unit)
-
-        # Check for duplicates before returning
-        for _, units in self._units.items():
-            for unit in units:
-                for name in [unit.name] + unit.symbols + unit.aliases:
-                    if name in self._aliases.keys():
-                        raise ValueError(f'{unit.name} has a duplicate name: {name}'
-                                         f' (Original unit: {self._aliases[name]})')
-                    self._aliases[name] = unit
-
-    def items(self) -> ItemsView:
-        return self._units.items()
-
-    def keys(self) -> KeysView:
-        return self._units.keys()
+                    self.add_unit(unit)
 
     def __iter__(self) -> Unit:
         """ Iterate over all units. """

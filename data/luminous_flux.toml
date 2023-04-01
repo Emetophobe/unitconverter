@@ -5,9 +5,9 @@ aliases = ["lumens"]
 factor = "1"
 prefix_scale = "si"
 
-# 1 candela steradian = 1 lumen
+# 1 candela-steradian = 1 lumen
 ["candela-steradian"]
-symbols = ["cd·sr", "cd-sr"]
+symbols = ["cd-sr"]
 aliases = ["candela steradian"]
 factor = "1"
 prefix_scale = "si"

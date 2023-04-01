@@ -2,21 +2,51 @@
 
 
 from decimal import Decimal, DecimalException
+from unitconverter.exceptions import ConverterError, FloatError
 
 
 def parse_decimal(value: Decimal | int | str, msg: str = None) -> Decimal:
-    """ Parse value and return a Decimal. Raises ValueError if value is invalid. """
+    """ Convert value into a decimal.
+
+    Raises FloatError if value is a float. Use a string instead it will
+    give a more accurate decimal value. See examples below.
+
+    Examples:
+
+        This works with strings:
+
+            >>> Decimal('.1') + Decimal('.1') + Decimal('.1') == Decimal('.3')
+            True
+
+        But not with floats:
+
+            >>> Decimal(.1) + Decimal(.1) + Decimal(.1) == Decimal(.3)
+            False
+
+            >>> Decimal(.1) == Decimal('.1')
+            False
+
+        Source: https://www.laac.dev/blog/float-vs-decimal-python/
+    """
     if isinstance(value, float):
-        raise ValueError(f'{value!r} is a float which should be avoided to prevent'
-                         ' precision loss. Use a Decimal, int, or str instead.')
+        raise FloatError(value)
+
     try:
         return Decimal(value)
     except DecimalException:
-        raise ValueError(msg or f'{value!r} is not a valid Decimal')
+        raise ConverterError(msg or f'{value!r} is not a valid Decimal')
 
 
 def simplify_unit(name: str) -> str:
-    """ Simplify unit name by replacing strings/characters. """
+    """ Simplify unit name by replacing strings/characters.
+    Only used for internal lookup of unit names.
+
+    Example:
+
+        >>> simplify_unit("Nm²/volt^2)
+        "Nm2/volt2"
+
+    """
     for key, value in _replacements.items():
         if key in name:
             name = name.replace(key, value)

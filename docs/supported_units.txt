@@ -5,6 +5,10 @@ Absorbed Dose
 	joule/gram
 	US rad
 
+Acceleration
+
+	metre/second2
+
 Amount Of Substance
 
 	mole
@@ -352,6 +356,16 @@ Time
 	decade
 	century
 	millennia
+
+Torque
+
+	newton-metre
+	dyne-metre
+	gram-force metre
+	ounce-force inch
+	ounce-force foot
+	pound-force inch
+	pound-force foot
 
 Viscosity
 

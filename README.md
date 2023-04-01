@@ -6,10 +6,13 @@ A basic unit converter written in Python.
 The following categories are currently supported:
 
 
+* Absorbed dose (gray, usrad)
+* Acceleration (metre/second²)
 * Amount of substance (mole, atom)
 * Area (square metre, square mile, acre, hectare, etc...)
 * Catalytic activity (katal, mol/sec)
 * Data storage (bits, bytes, kilobytes, kibibytes, etc...)
+* Effective dose (sievert, roentgen)
 * Electric charge (coloumb, ampere-second, ampere-minute, ampere-hour)
 * Electric current (ampere, watt/volt, coulomb/second)
 * Electric potential (volt, watt/ampere, ampere-ohm, joule/coulomb, weber/second)
@@ -31,11 +34,13 @@ The following categories are currently supported:
 * Plane angle (radian, gradian, degree, arcsecond, arcminute, turn)
 * Power (watt, volt-ampere, joule/second, horsepower, etc...)
 * Pressure (pascal, bar, psi, torr, standard atmosphere, etc..)
+* Radioactivity (becquerel, curie, rutherford)
 * Signal intensity (decibel, bel, and neper)
 * Solid angle (steradian, square degree, spat)
 * Speed (km/hour, mile/hour, metre/second, inch/second, mach 1, etc...)
 * Temperature (kelvin, celsius, fahrenheit, and rankine)
 * Time (second, minute, hour, day, week, month, year, etc...)
+* Torque (newton-metre)
 * Viscosity (poise and pascal-second)
 * Volume (cubic metre, litre, quart, gallon, etc...)
 

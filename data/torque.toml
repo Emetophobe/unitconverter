@@ -1,0 +1,38 @@
+# newton-metre is the base unit
+["newton-metre"]
+symbols = ["N-m", "Nm"]
+aliases = ["newton-metres"]
+factor = "1"
+prefix_scale = "si"
+
+["dyne-metre"]
+symbols = ["dyn-m"]
+aliases = ["dyne-metres"]
+factor = "0.00001"
+prefix_scale = "si"
+
+["gram-force metre"]
+symbols = ["gf-m"]
+aliases = ["gram-force metres"]
+factor = "0.00980665"
+prefix_scale = "si"
+
+["ounce-force inch"]
+symbols = ["ozf-in"]
+aliases = ["ounce-force inches"]
+factor = "0.007061552"
+
+["ounce-force foot"]
+symbols = ["ozf-ft"]
+aliases = ["ounce-force feet"]
+factor = "0.084738624"
+
+["pound-force inch"]
+symbols = ["lbf-in"]
+aliases = ["pound-force inches"]
+factor = "0.1129848333"
+
+["pound-force foot"]
+symbols = ["lbf-ft"]
+aliases = ["pound-force feet"]
+factor = "1.355818"

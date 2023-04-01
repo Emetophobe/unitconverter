@@ -27,7 +27,7 @@ The following categories are currently supported:
 * Illuminance (lux, nox, phot, watt/m², metre-candle, foot-candle)
 * Length (metre, inch, foot, etc...)
 * Luminous flux (lumen, candela-steradian)
-* Luminous intensity (candela, candlepower)
+* Luminous intensity (candela, lumen/steradian, candlepower)
 * Magnetic flux (weber, maxwell)
 * Magnetic flux density (tesla, guass, gamma)
 * Mass (gram, pound, ounce, metric ton, etc...)

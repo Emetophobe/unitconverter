@@ -5,6 +5,13 @@ aliases = ["candelas"]
 factor = "1"
 prefix_scale = "si"
 
+# 1 lumen per steradian = 1 candela
+["lumen/steradian"]
+symbols = ["lm/sr"]
+aliases = ["lumens/steradian"]
+factor = "1"
+prefix_scale = "si"
+
 # 1 candlepower = 1 candela
 ["candlepower"]
 symbols = ["cp"]

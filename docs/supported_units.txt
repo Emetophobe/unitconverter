@@ -231,6 +231,7 @@ Luminous Flux
 Luminous Intensity
 
 	candela
+	lumen/steradian
 	candlepower
 	historic candlepower
 

@@ -9,6 +9,10 @@
       "expected": "1E-30"
     },
     {
+      "dest": "lumen/steradian",
+      "expected": "1"
+    },
+    {
       "dest": "candlepower",
       "expected": "1"
     },

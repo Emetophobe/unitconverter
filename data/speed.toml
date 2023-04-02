@@ -21,11 +21,10 @@ prefix_scale = "si"
 
 # kilometre per hour (kph) for convenience
 # 1 kph = 1000/3600 = 0.2777777778 m/s
-#["kilometre/hour"]
-#symbols = ["kph", "km/hr", "km/h"]
-#aliases = ["kilometres/hour", "kilometres/h", "kilometre/h"]
-#factor = "0.2777777777777777777777777778"
-#prefix_scale = "none"  # use meter/hour for prefix scaling
+["kilometre/hour"]
+symbols = ["kph", "km/hr", "km/h"]
+aliases = ["kilometres/hour", "kilometres/h", "kilometre/h"]
+factor = "0.2777777777777777777777777778"
 
 
 # Inches

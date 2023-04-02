@@ -24,27 +24,31 @@ class TestUnits(unittest.TestCase):
 
     def test_generated_units(self) -> None:
         """ Test generated units. """
+        defined = list(self.units)
+        aliases = self.units._aliases
+        generated = []
 
-        # Build list of all units + prefixed versions
-        new_units = []
-        for unit in self.units:
-            new_units.append(unit)
+        # Exclude units that were created for convenience that
+        # conflict with units that support prefix scaling
+        excludes = ['kilometre/hour']  # conficts with metre/hour
 
+        for unit in defined:
             # Generate prefixed versions (if supported)
             prefixes = get_prefixes(unit.prefix_scale)
             for factor, symbol, prefix in prefixes:
-                new_units.append(unit.scale(factor, symbol, prefix))
+                scaled_unit = unit.scale(factor, symbol, prefix)
+                if scaled_unit.name not in excludes:
+                    generated.append(scaled_unit)
 
         # Search for duplicates
-        aliases = {}
-        for unit in new_units:
+        for unit in generated:
             for name in unit.get_names():
                 self.assertTrue(name not in aliases, f'{unit.name} has a duplicate'
                                 f' name: {name} original: {aliases.get(name)}')
                 aliases[name] = unit
 
-        print('Total units', len(self.units))
-        print('Generated units:', len(new_units))
+        #print('Total units', len(defined))
+        #print('Generated units:', len(generated))
 
     def assert_valid_unit(self, unit: Unit) -> None:
         """ Assert that a unit is correctly formed (has the right attribute types). """

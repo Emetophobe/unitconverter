@@ -320,6 +320,7 @@ Speed
 	metre/second
 	metre/minute
 	metre/hour
+	kilometre/hour
 	inch/second
 	inch/minute
 	inch/hour

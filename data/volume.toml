@@ -84,38 +84,43 @@ aliases = ["acre-feet"]
 factor = "1233.48183754752"
 
 ["imperial gill"]
-symbols = ["gi"]
-aliases = ["gills", "gill", "imperial gills"]
+symbols = ["gi", "ukgi"]
+aliases = ["imperial gills", "gills", "gill"]
 factor = "0.0001420653"
 
 ["imperial cup"]
-symbols = []
-aliases = ["impcups", "impcup", "imperial cups"]
+symbols = ["ukcup"]
+aliases = ["imperial cups", "ukcups"]
 factor = "0.0002841306"
+
+["imperial barrel"]
+symbols = ["bbl", "ukbbl"]
+aliases = ["imperial barrels", "barrels", "barrel"]
+factor = "0.16365924"
 
 ["imperial bushel"]
 symbols = ["bsh", "bu"]
-aliases = ["bushels", "bushel", "imperial bushels"]
+aliases = ["imperial bushels", "bushels", "bushel"]
 factor = "0.03636872"
 
 ["imperial fluid ounce"]
 symbols = ["floz", "ukfloz"]
-aliases = ["fluid ounces", "fluid ounce", "imperial fluid ounces"]
+aliases = ["imperial fluid ounces", "fluid ounces", "fluid ounce"]
 factor = "0.0000284130625"
 
 ["imperial gallon"]
 symbols = ["gal", "ukgal"]
-aliases = ["gallons", "gallon", "imperial gallons", "ukgallon"]
+aliases = ["imperial gallons", "gallons", "gallon"]
 factor = "0.00454609"
 
 ["imperial pint"]
 symbols = ["pt", "ukpt"]
-aliases = ["pints", "pint", "imperial pints", "ukpint"]
+aliases = ["imperial pints", "pints", "pint"]
 factor = "0.0005682615"
 
 ["imperial quart"]
 symbols = ["qt", "ukqt"]
-aliases = ["quarts", "quart", "imperial quarts", "ukquart"]
+aliases = ["imperial quarts", "quarts", "quart"]
 factor = "0.0011365225"
 
 ["imperial tablespoon"]
@@ -138,9 +143,14 @@ aliases = ["US gills", "usgills", "usgill"]
 factor = "0.0001182941"
 
 ["US cup"]
-symbols = []
-aliases = ["US cups", "uscups", "uscup"]
+symbols = ["uscup"]
+aliases = ["US cups", "uscups"]
 factor = "0.000236588"
+
+["US barrel"]
+symbols = ["usbbl"]
+aliases = ["US barrels", "usbarrels", "usbarrel"]
+factor = "0.1192404712"
 
 ["US bushel"]
 symbols = ["usbsh", "usbu"]

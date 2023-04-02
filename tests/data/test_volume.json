@@ -109,6 +109,18 @@
       "expected": "1E-27"
     },
     {
+      "dest": "cup",
+      "expected": "4E+3"
+    },
+    {
+      "dest": "tablespoon",
+      "expected": "66666.66666666666666666666667"
+    },
+    {
+      "dest": "teaspoon",
+      "expected": "2E+5"
+    },
+    {
       "dest": "drop",
       "expected": "2E+7"
     },
@@ -145,24 +157,16 @@
       "expected": "0.0008107131937899125401845273268"
     },
     {
-      "dest": "cup",
-      "expected": "4E+3"
-    },
-    {
-      "dest": "tablespoon",
-      "expected": "66666.66666666666666666666667"
-    },
-    {
-      "dest": "teaspoon",
-      "expected": "2E+5"
-    },
-    {
       "dest": "imperial gill",
       "expected": "7039.016564917682220781570165"
     },
     {
       "dest": "imperial cup",
       "expected": "3519.508282458841110390785083"
+    },
+    {
+      "dest": "imperial barrel",
+      "expected": "6.110256897196882986869546748"
     },
     {
       "dest": "imperial bushel",
@@ -199,6 +203,10 @@
     {
       "dest": "US cup",
       "expected": "4226.757062911052124368099819"
+    },
+    {
+      "dest": "US barrel",
+      "expected": "8.386414360294812387490800187"
     },
     {
       "dest": "US bushel",

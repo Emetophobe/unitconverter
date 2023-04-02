@@ -320,7 +320,6 @@ Speed
 	metre/second
 	metre/minute
 	metre/hour
-	kilometre/hour
 	inch/second
 	inch/minute
 	inch/hour
@@ -395,6 +394,7 @@ Volume
 	acre-foot
 	imperial gill
 	imperial cup
+	imperial barrel
 	imperial bushel
 	imperial fluid ounce
 	imperial gallon
@@ -404,6 +404,7 @@ Volume
 	imperial teaspoon
 	US gill
 	US cup
+	US barrel
 	US bushel
 	US fluid ounce
 	US liquid gallon

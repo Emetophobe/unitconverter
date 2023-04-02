@@ -47,8 +47,8 @@ class TestUnits(unittest.TestCase):
                                 f' name: {name} original: {aliases.get(name)}')
                 aliases[name] = unit
 
-        #print('Total units', len(defined))
-        #print('Generated units:', len(generated))
+        #  print('Total units', len(defined))
+        #  print('Generated units:', len(generated))
 
     def assert_valid_unit(self, unit: Unit) -> None:
         """ Assert that a unit is correctly formed (has the right attribute types). """
@@ -103,6 +103,6 @@ class TestUnits(unittest.TestCase):
         self.assert_type(unit.prefix_index, int, msg)
 
         msg = msg + ' (index is out of range)'
-        for name in unit.get_names():
+        for name in [unit.name] + unit.aliases:  # don't check symbols
             word_count = len(name.split(' '))
             self.assertTrue(-1 <= unit.prefix_index < word_count, msg)

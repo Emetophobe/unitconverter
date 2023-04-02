@@ -20,8 +20,7 @@ class CategoryError(ConverterError):
     """ Category mismatch error. """
 
     def __init__(self, source, dest) -> None:
-        self.msg = (f'Category mismatch between'
-                    f' {source.name} ({source.category})'
+        self.msg = (f'Category mismatch: {source.name} ({source.category})'
                     f' and {dest.name} ({dest.category})')
 
 

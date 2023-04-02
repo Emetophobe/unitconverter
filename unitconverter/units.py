@@ -14,18 +14,21 @@ from unitconverter.unit import Unit
 class Units:
     """ Units holds the dictionary of defined units. """
 
+    _units = defaultdict(list)
+    _aliases = {}
+
     def __init__(self):
         """ Initialize units dictionary. """
-        self.load_units()
+        if not self._units:
+            self._load_units()
 
     def add_unit(self, unit: Unit) -> None:
         """ Add a unit to the dictionary. """
         # Check for duplicate names or symbols
-        unitnames = unit.get_names()
-        for name in unitnames:
+        for name in unit.get_names():
             if name in self._aliases.keys():
-                raise ValueError(f'{unit.name} has a duplicate name: {name}'
-                                 f' (Original unit: {self._aliases[name]})')
+                raise UnitError(f'{unit.name} has a duplicate name: {name}'
+                                f' (Original unit: {self._aliases[name]})')
             # Track aliases
             self._aliases[name] = unit
 
@@ -56,20 +59,15 @@ class Units:
     def keys(self) -> KeysView:
         return self._units.keys()
 
-    def load_units(self) -> None:
-        """ Load units from toml files. """
-        self._units = defaultdict(list)
-        self._aliases = {}
-
-        # Load all toml files
+    def _load_units(self) -> None:
+        """ Load pre-defined units from toml files. """
         files = Path('data').glob('*.toml')
         for filename in files:
             category = filename.stem.replace('_', ' ')
             with open(filename, 'rb') as infile:
                 data = tomllib.load(infile)
                 for name, args in data.items():
-                    unit = Unit(name, category, **args)
-                    self.add_unit(unit)
+                    self.add_unit(Unit(name, category, **args))
 
     def __iter__(self) -> Unit:
         """ Iterate over all units. """

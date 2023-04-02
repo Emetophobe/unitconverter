@@ -3,7 +3,7 @@
 
 from decimal import Decimal
 
-from unitconverter.exceptions import CategoryError, UnitError
+from unitconverter.exceptions import UnitError
 from unitconverter.prefixes import get_prefixes
 from unitconverter.unit import Unit
 from unitconverter.units import Units
@@ -17,13 +17,21 @@ class Converter:
         """ Initialize units. """
         self.units = Units()
 
-    def convert(self, value: Decimal, source: Unit, dest: Unit) -> Decimal:
-        """ Convert a number from source unit to dest unit.
+    def convert(self,
+                value: Decimal | int | str,
+                source: Unit | str,
+                dest: Unit | str) -> Decimal:
+        """ Convert value from source unit to dest unit.
 
         Args:
-            value (Decimal): a decimal, int, or str value.
-            source (Unit): a source unit.
-            dest (Unit): a destination unit.
+            value (Decimal | int | str):
+                value to convert.
+
+            source (Unit | str):
+                source unit or name.
+
+            dest (str | Unit):
+                destination unit or name.
 
         Raises:
             UnitError: if a unit is invalid.
@@ -37,14 +45,10 @@ class Converter:
         source = self.parse_unit(source)
         dest = self.parse_unit(dest)
 
-        if source.category != dest.category:
-            raise CategoryError(source, dest)
-
-        value = source.offset + value * source.factor
-        return (-dest.offset + value) / dest.factor
+        return source.convert(value, dest)
 
     def parse_unit(self, name: str) -> Unit:
-        """ Parse a string and get a Unit.
+        """ Parse unit name and return a Unit.
 
         Args:
             name (str): unit name, symbol, or alias.

@@ -2,9 +2,8 @@
 
 
 from decimal import Decimal
-from typing import Self
 
-from unitconverter.exceptions import UnitError
+from unitconverter.exceptions import CategoryError, UnitError
 from unitconverter.prefixes import PrefixScale
 from unitconverter.utils import parse_decimal
 
@@ -81,11 +80,15 @@ class Unit:
 
         self.prefix_index = prefix_index
 
-    def get_names(self) -> list[str]:
-        """ Return a list of all unit names and symbols. """
-        return [self.name] + self.symbols + self.aliases
+    def convert(self, value: Decimal, dest: 'Unit') -> Decimal:
+        """ Convert between this unit and dest unit."""
+        if self.category != dest.category:
+            raise CategoryError(self, dest)
 
-    def scale(self, factor: Decimal | int | str, symbol: str, prefix: str) -> Self:
+        value = self.offset + value * self.factor
+        return (-dest.offset + value) / dest.factor
+
+    def scale(self, factor: Decimal | int | str, symbol: str, prefix: str) -> 'Unit':
         """ Create a new unit by applying a prefix scaling factor.
 
         Args:
@@ -111,8 +114,12 @@ class Unit:
         prefix_scale = PrefixScale.NONE
 
         # Return prefixed unit
-        return Unit(name, self.category, symbols, aliases, factor, self.power,
-                    self.offset, prefix_scale, self.prefix_index)
+        return self.__class__(name, self.category, symbols, aliases, factor, self.power,
+                              self.offset, prefix_scale, self.prefix_index)
+
+    def get_names(self) -> list[str]:
+        """ Return a list of all unit names and symbols. """
+        return [self.name] + self.symbols + self.aliases
 
     def _add_prefix(self, prefix: str, name: str) -> str:
         """ Add a prefix by splitting a string and inserting at prefix_index. """

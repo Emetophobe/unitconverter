@@ -32,7 +32,7 @@ factor = "6350.29"
 
 # 1 metric ton (tonne) = 1,000,000 grams = 1E+6 grams
 ["tonne"]
-symbols = ["t"]
+symbols = ["ton"]
 aliases = ["tonnes", "metric tons", "metric ton"]
 factor = "1E+6"
 prefix_scale = "si"

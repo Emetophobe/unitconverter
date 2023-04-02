@@ -33,6 +33,6 @@ factor = "0.000290888"
 
 # 1 turn = 360 degrees = 400 gradians = 2π radians
 ["turn"]
-symbols = ["tr", "pl"]
+symbols = ["tr"]
 aliases = []
 factor = "6.283185307179586"

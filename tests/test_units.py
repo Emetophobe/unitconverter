@@ -5,7 +5,7 @@ import unittest
 from decimal import Decimal
 from typing import Any
 
-from unitconverter.prefixes import PrefixScale
+from unitconverter.prefixes import PrefixScale, get_prefixes
 from unitconverter.unit import Unit
 from unitconverter.units import Units
 
@@ -21,6 +21,30 @@ class TestUnits(unittest.TestCase):
         """ Test for incorrectly formed units. """
         for unit in self.units:
             self.assert_valid_unit(unit)
+
+    def test_generated_units(self) -> None:
+        """ Test generated units. """
+
+        # Build list of all units + prefixed versions
+        new_units = []
+        for unit in self.units:
+            new_units.append(unit)
+
+            # Generate prefixed versions (if supported)
+            prefixes = get_prefixes(unit.prefix_scale)
+            for factor, symbol, prefix in prefixes:
+                new_units.append(unit.scale(factor, symbol, prefix))
+
+        # Search for duplicates
+        aliases = {}
+        for unit in new_units:
+            for name in unit.get_names():
+                self.assertTrue(name not in aliases, f'{unit.name} has a duplicate'
+                                f' name: {name} original: {aliases.get(name)}')
+                aliases[name] = unit
+
+        print('Total units', len(self.units))
+        print('Generated units:', len(new_units))
 
     def assert_valid_unit(self, unit: Unit) -> None:
         """ Assert that a unit is correctly formed (has the right attribute types). """

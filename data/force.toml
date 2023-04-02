@@ -22,8 +22,8 @@ prefix_scale = "si"
 
 # 1 gram force = 0.00980665 newtons
 ["gram-force"]
-symbols = ["gf", "p"]
-aliases = ["ponds", "pond"]
+symbols = ["gf"]
+aliases = ["grams-force"]
 factor = "0.00980665"
 prefix_scale = "si"
 

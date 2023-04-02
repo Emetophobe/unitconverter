@@ -6,7 +6,7 @@
     },
     {
       "dest": "gram/centimetre-second",
-      "expected": "100"
+      "expected": "10"
     },
     {
       "dest": "gram/metre-second",

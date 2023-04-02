@@ -18,12 +18,12 @@ aliases = ["grams/foot-second", "grams/ft-sec", "gram/ft-sec"]
 factor = "0.00328083989501312"
 prefix_scale = "si"
 
-# gram per centimetre-second for convenience
+# gram per centimetre-second = 0.1 pascal-second
 ["gram/centimetre-second"]
 symbols = ["g/cm-s", "g/cm s"]
 aliases = ["grams/centimetre-second", "grams/cm-s", "gram/cm-s"]
-factor = "0.01"
-prefix_scale = "none"   # use gram/metre-second instead
+factor = "0.1"
+prefix_scale = "si"
 
 # 1 gram per metre-second = 0.001 pascal-second
 ["gram/metre-second"]

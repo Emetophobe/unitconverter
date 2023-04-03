@@ -106,16 +106,16 @@ class Unit:
         """
         # Create new name, symbols, aliases, and factor
         name = self._add_prefix(prefix, self.name)
-        aliases = [self._add_prefix(prefix, name) for name in self.aliases]
         symbols = [symbol + name for name in self.symbols]
+        aliases = [self._add_prefix(prefix, name) for name in self.aliases]
         factor = (Decimal(factor) * Decimal(self.factor)) ** Decimal(self.power)
 
         # Don't allow prefixed units to be prefixed again
         prefix_scale = PrefixScale.NONE
 
         # Return prefixed unit
-        return self.__class__(name, self.category, symbols, aliases, factor, self.power,
-                              self.offset, prefix_scale, self.prefix_index)
+        return Unit(name, self.category, symbols, aliases, factor, self.power,
+                    self.offset, prefix_scale, self.prefix_index)
 
     def get_names(self) -> list[str]:
         """ Return a list of all unit names and symbols. """
@@ -132,7 +132,8 @@ class Unit:
         return name == self.name or name in self.symbols or name in self.aliases
 
     def __str__(self) -> str:
-        return f'{self.name}, ({", ".join(self.symbols)})'
+        symbols = f' ({", ".join(self.symbols)})' if self.symbols else ''
+        return f'{self.name}{symbols}'
 
     def __repr__(self) -> str:
         return (f"Unit('{self.name}', '{self.category}', {self.symbols}, {self.aliases},"

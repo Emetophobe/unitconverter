@@ -4,7 +4,6 @@
 import tomllib
 from collections import defaultdict
 from pathlib import Path
-from typing import ItemsView, KeysView
 
 from unitconverter.exceptions import UnitError
 from unitconverter.utils import simplify_unit
@@ -40,8 +39,7 @@ class Units:
         simple_name = simplify_unit(name)
         for unit in self:
             if simple_name in unit:
-                if name in unit:
-                    return unit
+                return unit
 
         raise UnitError(f'Invalid unit: {name}')
 
@@ -52,12 +50,6 @@ class Units:
     def get_list(self) -> list[Unit]:
         """ Get a list of all units. """
         return list(self)
-
-    def items(self) -> ItemsView:
-        return self._units.items()
-
-    def keys(self) -> KeysView:
-        return self._units.keys()
 
     def _load_units(self) -> None:
         """ Load pre-defined units from toml files. """

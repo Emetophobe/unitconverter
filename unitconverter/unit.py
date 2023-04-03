@@ -133,3 +133,8 @@ class Unit:
 
     def __str__(self) -> str:
         return f'{self.name}, ({", ".join(self.symbols)})'
+
+    def __repr__(self) -> str:
+        return (f"Unit('{self.name}', '{self.category}', {self.symbols}, {self.aliases},"
+                f" '{self.factor}, '{self.power}', '{self.offset}',"
+                f" '{self.prefix_scale}', {self.prefix_index})")

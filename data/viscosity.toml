@@ -13,7 +13,7 @@ factor = "0.1"
 prefix_scale = "si"
 
 ["gram/foot-second"]
-symbols = ["g/[ft s]", "g/ft s", "g/ft-s"]
+symbols = ["g/ft-s", "g/ft s"]
 aliases = ["grams/foot-second", "grams/ft-sec", "gram/ft-sec"]
 factor = "0.00328083989501312"
 prefix_scale = "si"
@@ -33,6 +33,6 @@ factor = "0.001"
 prefix_scale = "si"
 
 ["slug/foot-second"]
-symbols = ["slug/[ft s]", "slug/ft s", "slug/ft-s"]
+symbols = ["slug/ft-s", "slug/ft s"]
 aliases = ["slugs/foot-second", "slugs/ft-sec", "slug/ft-sec"]
 factor = "47.88025898"

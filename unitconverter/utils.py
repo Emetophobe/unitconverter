@@ -2,26 +2,28 @@
 
 
 from decimal import Decimal, DecimalException
-from unitconverter.exceptions import ConverterError, FloatError
+from unitconverter.exceptions import ConverterError
 
 
 def parse_decimal(value: Decimal | int | str, msg: str = None) -> Decimal:
     """ Convert value into a decimal.
 
-    Raises FloatError if value is a float. Use a string instead it will
-    give a more accurate decimal value. See examples below.
+    Raises ConverterError if value is a float. Use a string instead
+    it will give a more accurate decimal value. See examples below.
 
     Examples:
 
-        This works with strings:
+        This works with str:
 
             >>> Decimal('.1') + Decimal('.1') + Decimal('.1') == Decimal('.3')
             True
 
-        But not with floats:
+        But not with float:
 
             >>> Decimal(.1) + Decimal(.1) + Decimal(.1) == Decimal(.3)
             False
+
+        A float also doesn't equal a string:
 
             >>> Decimal(.1) == Decimal('.1')
             False
@@ -29,8 +31,8 @@ def parse_decimal(value: Decimal | int | str, msg: str = None) -> Decimal:
         Source: https://www.laac.dev/blog/float-vs-decimal-python/
     """
     if isinstance(value, float):
-        raise FloatError(value)
-
+        raise ConverterError(f'{value} is a float which cannot be mixed with Decimals.'
+                             ' See docs/floating_point.txt for more details.')
     try:
         return Decimal(value)
     except DecimalException:

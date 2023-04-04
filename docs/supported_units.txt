@@ -5,10 +5,6 @@ Absorbed Dose
 	joule/gram
 	US rad
 
-Acceleration
-
-	metre/second2
-
 Amount Of Substance
 
 	mole
@@ -49,8 +45,6 @@ Catalytic Activity
 
 	katal
 	mole/second
-	mole/minute
-	mole/hour
 
 Data Storage
 

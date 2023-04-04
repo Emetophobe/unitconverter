@@ -7,7 +7,7 @@ from typing import Any
 
 from unitconverter.prefixes import PrefixScale, get_prefixes
 from unitconverter.unit import Unit
-from unitconverter.units import Units
+from unitconverter.registry import Registry
 
 
 class TestUnits(unittest.TestCase):
@@ -15,7 +15,7 @@ class TestUnits(unittest.TestCase):
 
     def setUp(self) -> None:
         """ Initialize units. """
-        self.units = Units()
+        self.units = Registry()
 
     def test_units(self) -> None:
         """ Test for incorrectly formed units. """

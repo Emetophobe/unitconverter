@@ -3,9 +3,9 @@
 
 from decimal import Decimal
 
-from unitconverter.exceptions import UnitError
-from unitconverter.registry import iter_units
+from unitconverter.exceptions import ConverterError, UnitError
 from unitconverter.prefixes import get_prefixes
+from unitconverter.registry import iter_units
 from unitconverter.unit import Unit
 from unitconverter.utils import parse_decimal, simplify_unit
 
@@ -61,9 +61,9 @@ def parse_unit(name: str) -> Unit:
         if simple_name in unit:
             return unit
 
-    # Check generated prefixes for a matching unit
+    # Check generated prefixes
     for unit in iter_units():
-        # Get prefix table based on unit prefix option
+        # Get supported prefix table based on unit prefix option
         prefixes = get_prefixes(unit.prefix_scale)
 
         # Generate prefixes and check for a matching unit

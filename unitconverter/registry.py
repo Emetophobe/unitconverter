@@ -51,6 +51,10 @@ class Registry:
         """ Get a list of all units. """
         return list(self)
 
+    def iter_units(self):
+        """ Get a units iterator. """
+        return iter(self)
+
     def _load_units(self) -> None:
         """ Load pre-defined units from toml files. """
         files = Path('data').glob('*.toml')
@@ -76,7 +80,7 @@ _registry = Registry()
 register = _registry.add_unit
 get_unit = _registry.get_unit
 get_units = _registry.get_units
-iter_units = _registry.__iter__
+iter_units = _registry.iter_units
 list_units = _registry.list_units
 
 

@@ -7,14 +7,6 @@
     {
       "dest": "mole/second",
       "expected": "1"
-    },
-    {
-      "dest": "mole/minute",
-      "expected": "59.99999999999999999999999999"
-    },
-    {
-      "dest": "mole/hour",
-      "expected": "3600"
     }
   ]
 }

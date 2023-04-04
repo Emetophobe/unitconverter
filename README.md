@@ -7,10 +7,9 @@ The following categories are currently supported:
 
 
 * Absorbed dose (gray, usrad)
-* Acceleration (metre/second²)
 * Amount of substance (mole, atom)
 * Area (square metre, square mile, acre, hectare, etc...)
-* Catalytic activity (katal, mol/sec)
+* Catalytic activity (katal, mole/sec)
 * Data storage (bits, bytes, kilobytes, kibibytes, etc...)
 * Effective dose (sievert, roentgen)
 * Electric charge (coloumb, ampere-second, ampere-minute, ampere-hour)

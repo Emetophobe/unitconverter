@@ -1,6 +1,0 @@
-# metre per second^2 is the base unit
-["metre/second2"]
-symbols = ["m/s2", "m-s-2"]
-aliases = ["metres/second2"]
-factor = "1"
-prefix_scale = "si"

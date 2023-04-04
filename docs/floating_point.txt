@@ -1,6 +1,7 @@
-A FloatError is raised when mixing floats and Decimals. Always use strings
-to store floats before passing them into the Decimal class. See below for
-examples of the problem:
+A ConverterError is raised when mixing floats and Decimals. Always use
+strings when storing floats before passing them into the Decimal class.
+
+Here are some examples of the problem:
 
 This works when a str is passed to Decimal:
 

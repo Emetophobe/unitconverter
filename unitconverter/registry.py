@@ -10,8 +10,8 @@ from unitconverter.utils import simplify_unit
 from unitconverter.unit import Unit
 
 
-class Units:
-    """ Units holds the dictionary of defined units. """
+class Registry:
+    """ Registry of pre-defined units. """
 
     _units = defaultdict(list)
     _aliases = {}
@@ -23,12 +23,12 @@ class Units:
 
     def add_unit(self, unit: Unit) -> None:
         """ Add a unit to the dictionary. """
-        # Check for duplicate names or symbols
+        # Check for duplicate names, symbols, or aliases
         for name in unit.get_names():
             if name in self._aliases.keys():
                 raise UnitError(f'{unit.name} has a duplicate name: {name}'
                                 f' (Original unit: {self._aliases[name]})')
-            # Track aliases
+            # Track all names, symbols, and aliases
             self._aliases[name] = unit
 
         # Add unit to category
@@ -44,10 +44,10 @@ class Units:
         raise UnitError(f'Invalid unit: {name}')
 
     def get_units(self) -> dict[str, list[Unit]]:
-        """ Get a dictionary of all categories and units. """
-        return self._units
+        """ Get a dictionary of unit categories. """
+        return dict(self._units)
 
-    def get_list(self) -> list[Unit]:
+    def list_units(self) -> list[Unit]:
         """ Get a list of all units. """
         return list(self)
 
@@ -69,3 +69,22 @@ class Units:
     def __len__(self):
         """ Get total number of units. """
         return sum(len(units) for _, units in self._units.items())
+
+
+_registry = Registry()
+
+register = _registry.add_unit
+get_unit = _registry.get_unit
+get_units = _registry.get_units
+iter_units = _registry.__iter__
+list_units = _registry.list_units
+
+
+__all__ = [
+    'Registry',
+    'register',
+    'get_unit',
+    'get_units',
+    'iter_units',
+    'list_units',
+]

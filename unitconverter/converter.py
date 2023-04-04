@@ -4,85 +4,76 @@
 from decimal import Decimal
 
 from unitconverter.exceptions import UnitError
+from unitconverter.registry import iter_units
 from unitconverter.prefixes import get_prefixes
 from unitconverter.unit import Unit
-from unitconverter.units import Units
 from unitconverter.utils import parse_decimal, simplify_unit
 
 
-class Converter:
-    """ A basic unit converter. """
+def convert(value: Decimal, source: Unit | str, dest: Unit | str) -> Decimal:
+    """ Convert value from source unit to destination unit.
 
-    def __init__(self) -> None:
-        """ Initialize units. """
-        self.units = Units()
+    Args:
+        value (Decimal | int | str):
+            value to convert.
 
-    def convert(self,
-                value: Decimal | int | str,
-                source: Unit | str,
-                dest: Unit | str) -> Decimal:
-        """ Convert value from source unit to dest unit.
+        source (Unit | str):
+            source unit or name.
 
-        Args:
-            value (Decimal | int | str):
-                value to convert.
+        dest (str | Unit):
+            destination unit or name.
 
-            source (Unit | str):
-                source unit or name.
+    Raises:
+        UnitError: if a unit is invalid.
+        CategoryError: if the units are incompatible.
 
-            dest (str | Unit):
-                destination unit or name.
+    Returns:
+        Decimal: the result of the conversion.
+    """
 
-        Raises:
-            UnitError: if a unit is invalid.
-            CategoryError: if the units are incompatible.
+    value = parse_decimal(value)
+    source = parse_unit(source)
+    dest = parse_unit(dest)
 
-        Returns:
-            Decimal: the result of the conversion.
-        """
+    return source.convert(value, dest)
 
-        value = parse_decimal(value)
-        source = self.parse_unit(source)
-        dest = self.parse_unit(dest)
 
-        return source.convert(value, dest)
+def parse_unit(name: str) -> Unit:
+    """ Parse unit name and return a Unit.
 
-    def parse_unit(self, name: str) -> Unit:
-        """ Parse unit name and return a Unit.
+    Args:
+        name (str): unit name, symbol, or alias.
 
-        Args:
-            name (str): unit name, symbol, or alias.
+    Raises:
+        UnitError: if the unit name is invalid.
 
-        Raises:
-            UnitError: if the unit name is invalid.
+    Returns:
+        Unit: a unit instance.
+    """
+    if isinstance(name, Unit):
+        return name
 
-        Returns:
-            Unit: a unit instance.
-        """
-        if isinstance(name, Unit):
-            return name
+    # Get simplified unit name
+    simple_name = simplify_unit(name)
 
-        # Get simplified unit name
-        simple_name = simplify_unit(name)
+    # Check pre-defined list for a matching unit
+    for unit in iter_units():
+        if simple_name in unit:
+            return unit
 
-        # Check pre-defined list for a matching unit
-        for unit in self.units:
-            if simple_name in unit:
-                return unit
+    # Check generated prefixes for a matching unit
+    for unit in iter_units():
+        # Get prefix table based on unit prefix option
+        prefixes = get_prefixes(unit.prefix_scale)
 
-        # Check generated prefixes for a matching unit
-        for unit in self.units:
-            # Get prefix table based on unit prefix option
-            prefixes = get_prefixes(unit.prefix_scale)
+        # Generate prefixes and check for a matching unit
+        for factor, symbol, prefix in prefixes:
+            prefix_unit = unit.scale(factor, symbol, prefix)
+            if simple_name in prefix_unit:
+                return prefix_unit
 
-            # Generate prefixes and check for a matching unit
-            for factor, symbol, prefix in prefixes:
-                prefix_unit = unit.scale(factor, symbol, prefix)
-                if simple_name in prefix_unit:
-                    return prefix_unit
-
-        # Invalid unit name
-        raise UnitError(f'Invalid unit: {name}')
+    # Invalid unit name
+    raise UnitError(f'Invalid unit: {name}')
 
 
 def format_decimal(value: Decimal,

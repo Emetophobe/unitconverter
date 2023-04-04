@@ -6,7 +6,7 @@ from pathlib import Path
 from format_json import file_checksum
 
 sys.path.append('.')  # is there a better way?
-from unitconverter.units import Units  # noqa
+from unitconverter.registry import Registry  # noqa
 
 
 DEST_FILE = Path('docs/supported_units.txt')
@@ -14,7 +14,7 @@ DEST_FILE = Path('docs/supported_units.txt')
 
 def create_supported_units(filename):
     """ Generate a text file of all supported units. """
-    all_units = Units()
+    all_units = Registry()
     categories = all_units.get_units()
     sorted_categories = sorted(categories.keys())
 

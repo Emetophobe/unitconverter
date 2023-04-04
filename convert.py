@@ -5,7 +5,7 @@
 import sys
 import argparse
 from decimal import Decimal, DecimalException
-from unitconverter.converter import Converter, format_decimal
+from unitconverter.converter import convert, format_decimal
 
 
 def print_error(error_msg: str, status: int = 1) -> None:
@@ -60,8 +60,7 @@ def main() -> None:
 
     # Perform the conversion
     try:
-        converter = Converter()
-        result = converter.convert(value, args.source, args.dest)
+        result = convert(value, args.source, args.dest)
     except DecimalException:
         print_error('Error: Invalid decimal operation')
     except OSError as e:

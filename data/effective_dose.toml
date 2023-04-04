@@ -10,3 +10,9 @@ prefix_scale = "si"
 symbols = ["rem"]
 aliases = ["roentgens", "roentgen equivalent man"]
 factor = "0.01"
+
+# 1 millirem = 1/1000 roetgen = 0.00001 (1E-5) sievert
+["millirem"]
+symbols = ["mrem"]
+aliases = ["millirems"]
+factor = "1E-5"

@@ -12,7 +12,7 @@ aliases = ["joules/metre"]
 factor = "1"
 prefix_scale = "si"
 
-# The dyne is a derived unit of force specified in the older CGS system of units
+# The dyne is a derived unit of force in the older CGS system
 # 1 dyne is exactly 0.00001 (1E-5) newtons
 ["dyne"]
 symbols = ["dyn"]
@@ -27,7 +27,14 @@ aliases = ["grams-force"]
 factor = "0.00980665"
 prefix_scale = "si"
 
-# 1 tonne force = 1 megagram-force = 9806.65 newtons
+# Kilopond for convenience
+# 1 kilopond = 1 kilogram-force
+["kilopond"]
+symbols = ["kp"]
+aliases = ["kiloponds"]
+factor = "9.80665"
+
+# 1 tonne force = 9806.65 newtons
 ["tonne-force"]
 symbols = ["t-f", "tf"]
 aliases = ["metric ton-force"]
@@ -50,7 +57,7 @@ factor = "0.27801385"
 
 ["pound-force"]
 symbols = ["lbf"]
-aliases = ["pounds of force", "pound of force", "lbs of force", "lbs-force"]
+aliases = ["pounds of force", "pound of force"]
 factor = "4.448222"
 
 # 1 kip-force = 1000 pound force = roughly 4448.222 newtons

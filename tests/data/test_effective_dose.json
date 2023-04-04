@@ -11,6 +11,10 @@
     {
       "dest": "roentgen",
       "expected": "100"
+    },
+    {
+      "dest": "millirem",
+      "expected": "1E+5"
     }
   ]
 }

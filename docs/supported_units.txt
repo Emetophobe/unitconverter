@@ -55,6 +55,7 @@ Effective Dose
 
 	sievert
 	roentgen
+	millirem
 
 Electric Charge
 
@@ -139,6 +140,7 @@ Force
 	joule/metre
 	dyne
 	gram-force
+	kilopond
 	tonne-force
 	poundal
 	ounce-force

@@ -80,11 +80,11 @@ aliases = ["therms"]
 factor = "105506000"
 
 ["inch-pound"]
-symbols = ["in⋅lbf", "in-lbf"]
+symbols = ["in-lbf"]
 aliases = []
 factor = "0.112984829"
 
 ["foot-pound"]
-symbols = ["ft⋅lbf", "ft-lbf"]
+symbols = ["ft-lbf"]
 aliases = []
 factor = "1.3558179483"

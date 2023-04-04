@@ -33,6 +33,6 @@ aliases = ["pound-force inches"]
 factor = "0.1129848333"
 
 ["pound-force foot"]
-symbols = ["lbf-ft"]
-aliases = ["pound-force feet"]
+symbols = ["lbf-ft", "lb-ft"]
+aliases = ["pound-force feet", "pound-foot"]
 factor = "1.355818"

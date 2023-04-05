@@ -9,7 +9,7 @@ prefix_scale = "si"
 # 1 celsius = 274.15 kelvin
 ["celsius"]
 symbols = ["°C"]
-aliases = ["Celsius"]
+aliases = ["Celsius", "centigrade"]
 factor = "1"
 offset = "273.15"
 

@@ -44,8 +44,12 @@ class Registry:
         raise UnitError(f'Invalid unit: {name}')
 
     def get_units(self) -> dict[str, list[Unit]]:
-        """ Get a dictionary of unit categories. """
+        """ Get a dictionary of categories and units. """
         return dict(self._units)
+
+    def get_aliases(self) -> dict[str, Unit]:
+        """ Get a dictionary of unit aliases. """
+        return dict(self._aliases)
 
     def list_units(self) -> list[Unit]:
         """ Get a list of all units. """

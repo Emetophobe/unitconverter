@@ -10,8 +10,8 @@ from unitconverter.unit import Unit
 from unitconverter.registry import Registry
 
 
-class TestUnits(unittest.TestCase):
-    """ Test Units class. """
+class TestRegistry(unittest.TestCase):
+    """ Test unit registry. """
 
     def setUp(self) -> None:
         """ Initialize units. """
@@ -24,31 +24,33 @@ class TestUnits(unittest.TestCase):
 
     def test_generated_units(self) -> None:
         """ Test generated units. """
-        defined = list(self.units)
-        aliases = self.units._aliases
+        aliases = self.units.get_aliases()
         generated = []
 
         # Exclude units that were created for convenience that
-        # conflict with units that support prefix scaling
+        # might conflict with units with prefix scaling enabled
         excludes = ['kilometre/hour']  # conficts with metre/hour
 
-        for unit in defined:
-            # Generate prefixed versions (if supported)
+        for unit in self.units:
+            # Create list of generated units
             prefixes = get_prefixes(unit.prefix_scale)
             for factor, symbol, prefix in prefixes:
                 scaled_unit = unit.prefix(factor, symbol, prefix)
                 if scaled_unit.name not in excludes:
                     generated.append(scaled_unit)
 
-        # Search for duplicates
         for unit in generated:
+            # Check for duplicates
             for name in unit.get_names():
                 self.assertTrue(name not in aliases, f'{unit.name} has a duplicate'
                                 f' name: {name} original: {aliases.get(name)}')
                 aliases[name] = unit
 
-        #  print('Total units', len(defined))
-        #  print('Generated units:', len(generated))
+            # Make sure the generated unit is valid
+            self.assert_valid_unit(unit)
+
+        # print('Total units', len(self.units))
+        # print('Generated units:', len(generated))
 
     def assert_valid_unit(self, unit: Unit) -> None:
         """ Assert that a unit is correctly formed (has the right attribute types). """

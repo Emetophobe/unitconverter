@@ -71,14 +71,14 @@ Units can override the default scaling behaviour as needed. SI units for example
 
 ## Usage
 
-    usage: convert.py [-h] [-p ndigits] [-c] [-e] [-a] value source dest
+    usage: convert.py [-h] [-p ndigits] [-c] [-e] value source dest [dest ...]
 
     A simple unit converter
 
     positional arguments:
-    value                 integer or decimal value.
-    source                source unit.
-    dest                  destination unit.
+    value                 integer or decimal value
+    source                the source unit
+    dest                  one or more destination units
 
     options:
     -h, --help            show this help message and exit
@@ -86,7 +86,6 @@ Units can override the default scaling behaviour as needed. SI units for example
                           set rounding precision (default: None)
     -c, --commas          show thousands separator (default: False)
     -e, --exponent        show E notation when possible (default: False)
-    -a, --american        use American spelling of meter/liter (default: False)
 
 
 ## Examples
@@ -117,10 +116,17 @@ Units can override the default scaling behaviour as needed. SI units for example
     $ python3 convert.py 5 cm nm -c
     5 cm = 50,000,000 nm
 
+### Convert multiple units at the same time (as long as they are the same category)
+
+    $ python3 convert.py 1 metre cm in ft -p 4
+    1 metre = 100.0000 cm
+            = 39.3701 in
+            = 3.2808 ft
+
 #### An error is displayed when converting between incompatible units
 
-    $ python3 convert.py 58 inches grams
-    Error: unit mismatch: inches=length, grams=mass
+    $ python3 convert.py 58 inch gram
+    Category mismatch: inch (length) and gram (mass)
 
 #### Multi-word unit names are also supported, but they need to be wrapped in quotes; i.e "cubic metres"
 

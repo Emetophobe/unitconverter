@@ -21,15 +21,16 @@ def main() -> None:
 
     parser.add_argument(
         'value',
-        help='integer or decimal value.')
+        help='integer or decimal value')
 
     parser.add_argument(
         'source',
-        help='source unit.')
+        help='the source unit')
 
     parser.add_argument(
         'dest',
-        help='destination unit.')
+        help='one or more destination units',
+        nargs='+')
 
     parser.add_argument(
         '-p', '--precision',
@@ -60,18 +61,25 @@ def main() -> None:
     if args.precision is not None and (args.precision < 0 or args.precision > 20):
         print_error('Error: precision must be between 0 and 20.')
 
-    # Perform the conversion
+    # Perform the conversion(s)
     try:
-        result = convert(value, args.source, args.dest)
+        results = [(convert(value, args.source, dest), dest) for dest in args.dest]
     except DecimalException:
         print_error('Error: Invalid decimal operation')
     except ConverterError as e:
         print_error(e)
 
-    # Display result
     value = format_decimal(value, commas=args.commas)
-    result = format_decimal(result, args.exponent, args.precision, args.commas)
-    print(f'{value} {args.source} = {result} {args.dest}')
+    padding = ' ' * len(f'{value} {args.source}')
+
+    # Display result(s)
+    for index, (result, dest) in enumerate(results):
+        result = format_decimal(result, args.exponent, args.precision, args.commas)
+
+        if index == 0:
+            print(f'{value} {args.source} = {result} {dest}')
+        else:
+            print(f'{padding} = {result} {dest}')
 
 
 if __name__ == '__main__':

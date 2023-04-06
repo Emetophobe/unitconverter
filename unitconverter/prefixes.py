@@ -17,35 +17,6 @@ class PrefixScale(StrEnum):
     BOTH = 'both'           # generate decimal prefixes and binary prefixes
 
 
-def get_prefixes(scale: PrefixScale) -> list[tuple]:
-    """ Get a list of prefixes based on the prefix scale (see `PrefixScale`).
-
-    Args:
-        scale (PrefixScaling): the prefix scale.
-
-    Raises:
-        ValueError: if the prefix scale is invalid.
-
-    Returns:
-        list[tuple]: a list of prefixes.
-    """
-    scale = PrefixScale(scale)
-    if scale == PrefixScale.NONE:
-        return []
-    elif scale == PrefixScale.SI:
-        return SI_PREFIXES
-    elif scale == PrefixScale.ALL:
-        return SI_PREFIXES + BINARY_PREFIXES
-    elif scale == PrefixScale.BOTH:
-        return DECIMAL_PREFIXES + BINARY_PREFIXES
-    elif scale == PrefixScale.BINARY:
-        return BINARY_PREFIXES
-    elif scale == PrefixScale.DECIMAL:
-        return DECIMAL_PREFIXES
-    else:
-        raise ValueError(f'Unsupported prefix scale: {scale}')
-
-
 # SI prefixes
 SI_PREFIXES = [
     ('1E-30', 'q', 'quecto'),
@@ -103,27 +74,30 @@ BINARY_PREFIXES = [
 ]
 
 
-def apply_prefix(prefix, unit):
-    """ Create a new unit by applying a prefix.
+def get_prefixes(scale: PrefixScale) -> list[tuple]:
+    """ Get a list of supported prefixes.
 
     Args:
-        prefix (str): prefix name or symbol.
-        unit (Unit): unit to prefix.
+        scale (PrefixScaling): the prefix scale.
 
     Raises:
-        UnitError: if unit could not be prefixed.
+        ValueError: if prefix scale is invalid.
 
     Returns:
-        Unit: a new prefixed unit.
+        list[tuple]: a list of prefixes, or an empty list.
     """
-    # Get prefix table from unit prefix option
-    prefixes = get_prefixes(unit.prefix_scale)
-    if not prefixes:
-        raise UnitError(f'Unit {unit.name!r} does not support prefix scaling.')
-
-    # Create a new unit from prefix
-    for factor, symbol, name in prefixes:
-        if prefix in (symbol, name):
-            return unit.scale(factor, symbol, name)
-
-    raise UnitError(f'Unit {unit.name!r} does not support prefix {prefix!r}.')
+    scale = PrefixScale(scale)
+    if scale == PrefixScale.NONE:
+        return []
+    elif scale == PrefixScale.SI:
+        return SI_PREFIXES
+    elif scale == PrefixScale.ALL:
+        return SI_PREFIXES + BINARY_PREFIXES
+    elif scale == PrefixScale.BOTH:
+        return DECIMAL_PREFIXES + BINARY_PREFIXES
+    elif scale == PrefixScale.BINARY:
+        return BINARY_PREFIXES
+    elif scale == PrefixScale.DECIMAL:
+        return DECIMAL_PREFIXES
+    else:
+        raise UnitError(f'Unsupported prefix scale: {scale}')

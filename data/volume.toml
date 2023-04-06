@@ -5,7 +5,6 @@ aliases = ["cubic metres", "metres3", "metre3"]
 factor = "1"
 power = "3"
 prefix_scale = "si"
-prefix_index = -1
 
 # 1 litre = 0.001 m^3
 ["litre"]

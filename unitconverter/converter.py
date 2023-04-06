@@ -3,7 +3,7 @@
 
 from decimal import Decimal
 
-from unitconverter.exceptions import ConverterError, UnitError
+from unitconverter.exceptions import CategoryError, UnitError
 from unitconverter.prefixes import get_prefixes
 from unitconverter.registry import iter_units
 from unitconverter.unit import Unit
@@ -30,12 +30,15 @@ def convert(value: Decimal, source: Unit | str, dest: Unit | str) -> Decimal:
     Returns:
         Decimal: the result of the conversion.
     """
-
     value = parse_decimal(value)
     source = parse_unit(source)
     dest = parse_unit(dest)
 
-    return source.convert(value, dest)
+    if source.category != dest.category:
+        raise CategoryError(source, dest)
+
+    value = source.offset + value * source.factor
+    return (-dest.offset + value) / dest.factor
 
 
 def parse_unit(name: str) -> Unit:
@@ -53,26 +56,24 @@ def parse_unit(name: str) -> Unit:
     if isinstance(name, Unit):
         return name
 
-    # Get simplified unit name
     simple_name = simplify_unit(name)
 
-    # Check pre-defined list for a matching unit
+    # Check predefined units
     for unit in iter_units():
         if simple_name in unit:
             return unit
 
-    # Check generated prefixes
+    # Check generated units
     for unit in iter_units():
-        # Get supported prefix table based on unit prefix option
+        # Get list of supported prefixes (if any)
         prefixes = get_prefixes(unit.prefix_scale)
 
         # Generate prefixes and check for a matching unit
         for factor, symbol, prefix in prefixes:
-            prefix_unit = unit.scale(factor, symbol, prefix)
+            prefix_unit = unit.prefix(factor, symbol, prefix)
             if simple_name in prefix_unit:
                 return prefix_unit
 
-    # Invalid unit name
     raise UnitError(f'Invalid unit: {name}')
 
 

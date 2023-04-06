@@ -5,7 +5,9 @@
 import sys
 import argparse
 from decimal import Decimal, DecimalException
+
 from unitconverter.converter import convert, format_decimal
+from unitconverter.exceptions import ConverterError
 
 
 def print_error(error_msg: str, status: int = 1) -> None:
@@ -63,9 +65,7 @@ def main() -> None:
         result = convert(value, args.source, args.dest)
     except DecimalException:
         print_error('Error: Invalid decimal operation')
-    except OSError as e:
-        print_error(f'Error reading {e.filename} ({e.strerror})')
-    except ValueError as e:
+    except ConverterError as e:
         print_error(e)
 
     # Display result

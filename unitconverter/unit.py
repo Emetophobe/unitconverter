@@ -3,7 +3,7 @@
 
 from decimal import Decimal
 
-from unitconverter.exceptions import CategoryError, UnitError
+from unitconverter.exceptions import UnitError
 from unitconverter.prefixes import PrefixScale
 from unitconverter.utils import parse_decimal
 
@@ -19,8 +19,7 @@ class Unit:
                  factor,
                  power=1,
                  offset=0,
-                 prefix_scale=PrefixScale.NONE,
-                 prefix_index=0):
+                 prefix_scale=PrefixScale.NONE):
         """ Initialize unit.
 
         Args:
@@ -48,9 +47,6 @@ class Unit:
             prefix_scale (PrefixScale, optional):
                 prefix scale. Defaults to PrefixScale.NONE.
 
-            prefix_index (int, optional):
-                index of word to prefix. Defaults to 0 (prefix first word).
-
         Raises:
             TypeError: if an argument is the wrong type.
             ValueError: if an argument is the wrong value.
@@ -64,32 +60,17 @@ class Unit:
         self.power = parse_decimal(power, f'{name!r} has an invalid power')
         self.offset = parse_decimal(offset, f'{name!r} has an invalid offset')
 
-        # Check prefix scale
         try:
             self.prefix_scale = PrefixScale(prefix_scale)
         except ValueError:
-            raise UnitError(f'Unit {self.name!r} has an invalid'
-                            f' prefix scale: {prefix_scale}')
+            raise UnitError(f'{self.name!r} has an invalid prefix scale: {prefix_scale}')
 
-        # Check prefix index
-        for alias in [self.name] + self.aliases:  # don't check symbols
-            last_index = len(alias.split(' ')) - 1
-            if prefix_index < -1 or prefix_index > last_index:
-                raise UnitError(f'Unit {self.name!r} has an invalid prefix index:'
-                                f' {prefix_index} ({alias!r})')
+    def prefix(self, factor: Decimal | int | str, symbol: str, prefix: str) -> 'Unit':
+        """ Create a new unit by applying a prefix.
 
-        self.prefix_index = prefix_index
+        Examples:
 
-    def convert(self, value: Decimal, dest: 'Unit') -> Decimal:
-        """ Convert between this unit and dest unit."""
-        if self.category != dest.category:
-            raise CategoryError(self, dest)
 
-        value = self.offset + value * self.factor
-        return (-dest.offset + value) / dest.factor
-
-    def scale(self, factor: Decimal | int | str, symbol: str, prefix: str) -> 'Unit':
-        """ Create a new unit by applying a prefix scaling factor.
 
         Args:
             factor (Decimal | int | str):
@@ -114,18 +95,22 @@ class Unit:
         prefix_scale = PrefixScale.NONE
 
         # Return prefixed unit
-        return Unit(name, self.category, symbols, aliases, factor, self.power,
-                    self.offset, prefix_scale, self.prefix_index)
+        return Unit(name, self.category, symbols, aliases, factor,
+                    self.power, self.offset, prefix_scale)
 
     def get_names(self) -> list[str]:
-        """ Return a list of all unit names and symbols. """
+        """ Get a list of all unit names and symbols. """
         return [self.name] + self.symbols + self.aliases
 
     def _add_prefix(self, prefix: str, name: str) -> str:
-        """ Add a prefix by splitting a string and inserting at prefix_index. """
-        split = name.split(' ')
-        split[self.prefix_index] = prefix + split[self.prefix_index]
-        return ' '.join(split)
+        """ Add a prefix at the correct position. """
+        # Special case for square and cubic unit names
+        if name.startswith('square '):
+            return name[:7] + prefix + name[7:]
+        elif name.startswith('cubic '):
+            return name[:6] + prefix + name[6:]
+        # Prefix other unitsnormally
+        return prefix + name
 
     def __contains__(self, name: str) -> bool:
         """ Returns True if name matches one of the unit names. """
@@ -136,6 +121,5 @@ class Unit:
         return f'{self.name}{symbols}'
 
     def __repr__(self) -> str:
-        return (f"Unit('{self.name}', '{self.category}', {self.symbols}, {self.aliases},"
-                f" '{self.factor}, '{self.power}', '{self.offset}',"
-                f" '{self.prefix_scale}', {self.prefix_index})")
+        args = ', '.join(repr(s) for s in self.__dict__.values())
+        return (f'Unit({args})')

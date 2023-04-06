@@ -36,7 +36,7 @@ class TestUnits(unittest.TestCase):
             # Generate prefixed versions (if supported)
             prefixes = get_prefixes(unit.prefix_scale)
             for factor, symbol, prefix in prefixes:
-                scaled_unit = unit.scale(factor, symbol, prefix)
+                scaled_unit = unit.prefix(factor, symbol, prefix)
                 if scaled_unit.name not in excludes:
                     generated.append(scaled_unit)
 
@@ -56,7 +56,6 @@ class TestUnits(unittest.TestCase):
 
         self.assert_string(unit.name, f'{unit.name} has an invalid name')
         self.assert_string(unit.category, f'{unit.name} has an invalid category')
-
         self.assert_stringlist(unit.symbols, f'{unit.name} has invalid symbols')
         self.assert_stringlist(unit.aliases, f'{unit.name} has invalid aliases')
 
@@ -64,8 +63,8 @@ class TestUnits(unittest.TestCase):
         self.assert_decimal(unit.offset, f'{unit.name!r} has an invalid offset')
         self.assert_decimal(unit.power, f'{unit.name!r} has an invalid power')
 
-        self.assert_prefix_scale(unit)
-        self.assert_prefix_index(unit)
+        msg = f'{unit.name} has an invalid prefix_scale: {unit.prefix_scale!r}'
+        self.assertIsInstance(unit.prefix_scale, PrefixScale, msg)
 
     def assert_type(self, obj: Any, types: Any | tuple, msg: str = None) -> None:
         """ Assert that an object is the correct type or tuple of types. """
@@ -91,18 +90,3 @@ class TestUnits(unittest.TestCase):
         self.assert_type(names, list, msg)
         for name in names:
             self.assert_string(name, msg)
-
-    def assert_prefix_scale(self, unit: Unit) -> None:
-        """ Assert that prefix_scale is a valid PrefixScale. """
-        msg = f'{unit.name} has an invalid prefix_scale: {unit.prefix_scale!r}'
-        self.assertIsInstance(unit.prefix_scale, PrefixScale, msg)
-
-    def assert_prefix_index(self, unit: Unit) -> None:
-        """ Assert that prefix_index is a valid index. """
-        msg = f'{unit.name} has an invalid prefix_index: {unit.prefix_index}'
-        self.assert_type(unit.prefix_index, int, msg)
-
-        msg = msg + ' (index is out of range)'
-        for name in [unit.name] + unit.aliases:  # don't check symbols
-            word_count = len(name.split(' '))
-            self.assertTrue(-1 <= unit.prefix_index < word_count, msg)

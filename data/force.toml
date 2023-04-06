@@ -36,7 +36,7 @@ factor = "9.80665"
 
 # 1 tonne force = 9806.65 newtons
 ["tonne-force"]
-symbols = ["t-f", "tf"]
+symbols = ["tf"]
 aliases = ["metric ton-force"]
 factor = "9806.65"
 prefix_scale = "si"

@@ -116,7 +116,7 @@ Units can override the default scaling behaviour as needed. SI units for example
     $ python3 convert.py 5 cm nm -c
     5 cm = 50,000,000 nm
 
-### Convert multiple units at the same time (as long as they are the same category)
+#### Convert multiple units at once
 
     $ python3 convert.py 1 metre cm in ft -p 4
     1 metre = 100.0000 cm

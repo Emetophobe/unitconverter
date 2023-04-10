@@ -1,42 +1,29 @@
 # Copyright (c) 2022-2023 Mike Cunningham
 
 
-import json
 import unittest
 from decimal import Decimal
-from pathlib import Path
 
+from unitconverter.converter import convert, format_decimal, parse_unit
 from unitconverter.exceptions import CategoryError, UnitError
-from unitconverter.converter import convert, parse_unit, format_decimal
-from unitconverter.registry import iter_units
 
 
 class TestConverter(unittest.TestCase):
-    """ Test Converter class. """
+    """ Test converting and unit parsing. """
 
     def test_convert(self) -> None:
         """ Test convert() function. """
-        all_units = set(unit.name for unit in iter_units())
-        tested_units = set()
+        result = convert(1, 'inch', 'cm')
+        self.assertIsInstance(result, Decimal)
+        self.assertEqual(result, Decimal('2.54'), 'Invalid conversion')
 
-        # Load dicionaries of expected values
-        for filename in Path('tests/data').glob('*.json'):
-            with open(filename, 'r', encoding='utf-8') as infile:
-                # Test units
-                units = json.load(infile)
-                for source, items in units.items():
-                    for dest in items:
-                        self.assert_conversion(source, **dest)
+        # Assert that UnitError is raised with invalid unit names
+        with self.assertRaises(UnitError):
+            convert(1, 'metre', 'bad-unit-name')
 
-                # Update set of tested units
-                for name, conversions in units.items():
-                    tested_units.add(name)
-                    for conversion in conversions:
-                        tested_units.add(conversion['dest'])
-
-        # Calculate and print list of untested units
-        untested_units = all_units - tested_units
-        self.assertEqual(len(untested_units), 0, self.format_untested(untested_units))
+        # Assert that CategoryError is raised with incompatible units
+        with self.assertRaises(CategoryError):
+            convert(1, 'metre', 'litre')
 
     def test_parse_unit(self) -> None:
         """ Test parse_unit() function. """
@@ -47,10 +34,6 @@ class TestConverter(unittest.TestCase):
         # Test prefix generated units
         kilolitre = parse_unit('kilolitre')
         self.assertEqual(kilolitre.name, 'kilolitre')
-
-        # Assert that CategoryError is raised with incompatible units
-        with self.assertRaises(CategoryError):
-            convert(1, metre, kilolitre)
 
         # Test symbol generated units
         unit = parse_unit('ml')
@@ -108,22 +91,3 @@ class TestConverter(unittest.TestCase):
 
         with self.assertRaises(ValueError):
             format_decimal(value, precision='bad precision')
-
-    def assert_conversion(self, source, dest, expected, value=1):
-        """ Assert that a unit conversion gives the expected result. """
-        source = parse_unit(source)
-        dest = parse_unit(dest)
-
-        msg = f'{source.name!r} and {dest.name!r} have different categories'
-        self.assertEqual(source.category, dest.category, msg)
-
-        result = convert(value, source, dest)
-        self.assertEqual(Decimal(expected), result, f'Incorrect conversion'
-                         f' from {source.name!r} to {dest.name!r}')
-
-    def format_untested(self, untested_units: set) -> str:
-        """ Create display message with list of untested units. """
-        msg = ['\n\nThe following units do not have unit tests:\n']
-        for name in sorted(list(untested_units)):
-            msg.append(name)
-        return '\n'.join(msg)

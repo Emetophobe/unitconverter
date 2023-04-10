@@ -5,6 +5,7 @@ import unittest
 from decimal import Decimal
 from typing import Any
 
+from unitconverter.exceptions import UnitError
 from unitconverter.prefixes import PrefixScale, get_prefixes
 from unitconverter.unit import Unit
 from unitconverter.registry import Registry
@@ -17,6 +18,63 @@ class TestRegistry(unittest.TestCase):
         """ Initialize units. """
         self.units = Registry()
 
+    def test_add_unit(self) -> None:
+        """ Test add_unit() method. """
+        # Add a dummy unit
+        dummy = Unit('dummy', 'length', ['d'], ['dummies'], factor=1)
+        self.units.add_unit(dummy)
+
+        # Duplicate units should raise a UnitError
+        with self.assertRaises(UnitError):
+            self.units.add_unit(dummy)
+
+    def test_get_unit(self) -> None:
+        """ Test get_unit() method. """
+        self.units.get_unit('metre')
+
+        # Dummy unit from test_add_unit() should be accessible across tests
+        self.units.get_unit('dummy')
+
+        with self.assertRaises(UnitError):
+            self.units.get_unit('bad unit')
+
+    def test_get_units(self) -> None:
+        """ Test get_units() method. """
+        units = self.units.get_units()
+        self.assertIsInstance(units, dict)
+        self.assertEqual(36, len(units), 'there should be 36 categories')
+
+    def test_get_aliases(self) -> None:
+        """ Test get_aliases() method. """
+        aliases = {}
+        for unit in self.units:
+            for name in unit.names():
+                aliases[name] = unit
+
+        self.assertEqual(self.units.get_aliases(), aliases)
+
+    def test_list_units(self) -> None:
+        """ Test list_units() method. """
+        units = [unit for unit in self.units]
+        self.assertEqual(self.units.list_units(), units)
+
+    def test_iter_units(self) -> None:
+        """ Test iter_units() method. """
+        units = [unit for unit in self.units.iter_units()]
+        self.assertEqual(len(self.units), len(units))
+
+    def test_load_units(self) -> None:
+        """ Test _load_units() method. """
+        # Load units is called internally to initialize the registry
+        # Calling it again should raise a duplicate unit exception
+        with self.assertRaises(UnitError):
+            self.units._load_units()
+
+    def test_len(self) -> None:
+        """ Test __len__ method. """
+        units = [unit for unit in self.units]
+        self.assertEqual(len(units), len(self.units))
+
     def test_units(self) -> None:
         """ Test for incorrectly formed units. """
         for unit in self.units:
@@ -25,22 +83,22 @@ class TestRegistry(unittest.TestCase):
     def test_generated_units(self) -> None:
         """ Test generated units. """
         aliases = self.units.get_aliases()
-        generated = []
 
         # Exclude units that were created for convenience that
         # might conflict with units with prefix scaling enabled
         excludes = ['kilometre/hour']  # conficts with metre/hour
 
+        # Generate list of prefixed units
+        generated = []
         for unit in self.units:
-            # Create list of generated units
             prefixes = get_prefixes(unit.prefix_scale)
             for factor, symbol, prefix in prefixes:
                 scaled_unit = unit.prefix(factor, symbol, prefix)
                 if scaled_unit.name not in excludes:
                     generated.append(scaled_unit)
 
+        # Check for duplicates
         for unit in generated:
-            # Check for duplicates
             for name in unit.names():
                 self.assertTrue(name not in aliases, f'{unit.name} has a duplicate'
                                 f' name: {name} original: {aliases.get(name)}')
@@ -48,9 +106,6 @@ class TestRegistry(unittest.TestCase):
 
             # Make sure the generated unit is valid
             self.assert_valid_unit(unit)
-
-        # print('Total units', len(self.units))
-        # print('Generated units:', len(generated))
 
     def assert_valid_unit(self, unit: Unit) -> None:
         """ Assert that a unit is correctly formed (has the right attribute types). """
@@ -61,9 +116,9 @@ class TestRegistry(unittest.TestCase):
         self.assert_stringlist(unit.symbols, f'{unit.name} has invalid symbols')
         self.assert_stringlist(unit.aliases, f'{unit.name} has invalid aliases')
 
-        self.assert_decimal(unit.factor, f'{unit.name!r} has an invalid factor')
-        self.assert_decimal(unit.offset, f'{unit.name!r} has an invalid offset')
-        self.assert_decimal(unit.power, f'{unit.name!r} has an invalid power')
+        self.assert_decimal(unit.factor, f'{unit.name} has an invalid factor')
+        self.assert_decimal(unit.offset, f'{unit.name} has an invalid offset')
+        self.assert_decimal(unit.power, f'{unit.name} has an invalid power')
 
         msg = f'{unit.name} has an invalid prefix_scale: {unit.prefix_scale!r}'
         self.assertIsInstance(unit.prefix_scale, PrefixScale, msg)

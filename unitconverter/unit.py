@@ -103,13 +103,14 @@ class Unit:
         return [self.name] + self.symbols + self.aliases
 
     def _add_prefix(self, prefix: str, name: str) -> str:
-        """ Add a prefix at the correct position. """
-        # Special case for square and cubic unit names
+        """ Add a prefix to name. """
+        # Special case for square and cubic units
         if name.startswith('square '):
             return name[:7] + prefix + name[7:]
         elif name.startswith('cubic '):
             return name[:6] + prefix + name[6:]
-        # Prefix other unitsnormally
+
+        # Prefix other units normally
         return prefix + name
 
     def __contains__(self, name: str) -> bool:

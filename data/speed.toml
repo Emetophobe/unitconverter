@@ -36,13 +36,13 @@ symbols = ["in/sec", "in/s"]
 aliases = ["inches/second"]
 factor = "0.0254"
 
-# 1 inch per minute = roughly 0.000423333 m/s
+# 1 inch per minute = ~0.000423333 m/s
 ["inch/minute"]
 symbols = ["in/min"]
 aliases = ["inches/minute"]
 factor = "0.0004233333333333333333333333333"
 
-# 1 inch per hour = roughly 7.05556e-6 m/s
+# 1 inch per hour = ~7.05556e-6 m/s
 ["inch/hour"]
 symbols = ["in/hr", "in/h"]
 aliases = ["inches/hour"]
@@ -64,7 +64,7 @@ symbols = ["ft/min"]
 aliases = ["feet/minute"]
 factor = "0.00508"
 
-# 1 foot per hour = roughly 0.000084666667 m/s
+# 1 foot per hour = ~0.000084666667 m/s
 ["foot/hour"]
 symbols = ["ft/hr", "ft/h"]
 aliases = ["feet/hour"]
@@ -74,19 +74,19 @@ factor = "0.00008466666666666666666666666667"
 # Miles
 
 
-# 1 mile/second = exactly 1609.34 m/s
+# 1 mile per second = exactly 1609.34 m/s
 ["mile/second"]
 symbols = ["mi/sec", "mi/s"]
 aliases = ["miles/second"]
 factor = "1609.344"
 
-# 1 mile/minute = 1 mile / 60 = 26.8224 m/s
+# 1 mile per minute = 1609.34 / 60 = ~26.8224 m/s
 ["mile/minute"]
 symbols = ["mi/min"]
 aliases = ["miles/minute"]
 factor = "26.8224"
 
-# 1 mile/hour (mph) = 1 mile / 3600 = 0.44704 m/s
+# 1 mile per hour (mph) = 1609.34 / 3600 = ~0.44704 m/s
 ["mile/hour"]
 symbols = ["mph", "mi/hr", "mi/h"]
 aliases = ["miles/hour"]
@@ -96,7 +96,7 @@ factor = "0.44704"
 # Other
 
 
-# 1 knot = 1 nautical mile/hour = ~0.514 m/s
+# 1 knot = 1 nautical mile per hour = ~0.514 m/s
 ["knot"]
 symbols = []
 aliases = ["knots"]

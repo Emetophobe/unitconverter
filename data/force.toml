@@ -27,7 +27,6 @@ aliases = ["grams-force"]
 factor = "0.00980665"
 prefix_scale = "si"
 
-# Kilopond for convenience
 # 1 kilopond = 1 kilogram-force
 ["kilopond"]
 symbols = ["kp"]

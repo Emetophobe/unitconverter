@@ -5,35 +5,35 @@ aliases = ["farads"]
 factor = "1"
 prefix_scale = "si"
 
-# 1 coulomb/volt = 1 farad
+# 1 coulomb per volt = 1 farad
 ["coulomb/volt"]
 symbols = ["C/V"]
 aliases = ["coulombs/volt"]
 factor = "1"
 prefix_scale = "si"
 
-# 1 ampere-second/volt = 1 farad
+# 1 ampere-second per volt = 1 farad
 ["ampere-second/volt"]
 symbols = ["A-s/V", "As/V"]
 aliases = ["ampere-seconds/volt"]
 factor = "1"
 prefix_scale = "si"
 
-# 1 watt-second/volt2 = 1 farad
+# 1 watt-second per volt^2 = 1 farad
 ["watt-second/volt2"]
 symbols = ["W-s/V2", "Ws/V2"]
 aliases = ["watt-seconds/volt2", "wattseconds/volt2", "wattsecond/volt2"]
 factor = "1"
 prefix_scale = "si"
 
-# 1 joule/volt2 = 1 farad
+# 1 joule per volt^2 = 1 farad
 ["joule/volt2"]
 symbols = ["J/V2"]
 aliases = ["joules/volt2"]
 factor = "1"
 prefix_scale = "si"
 
-# 1 newton-metre/volt2 = 1 farad
+# 1 newton-metre per volt^2 = 1 farad
 ["newton-metre/volt2"]
 symbols = ["N-m/V2", "Nm/V2"]
 aliases = ["newton-metres/volt2"]

@@ -81,7 +81,7 @@ factor = "105506000"
 
 ["inch-pound"]
 symbols = ["in-lbf"]
-aliases = ["inch-ound force"]
+aliases = ["inch-pound force"]
 factor = "0.112984829"
 
 ["foot-pound"]

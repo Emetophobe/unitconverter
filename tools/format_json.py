@@ -9,8 +9,7 @@ from pathlib import Path
 def file_checksum(filename, algorithm='sha256'):
     """ Returns a file checksum. """
     with open(filename, 'rb') as infile:
-        # file_digest() requires Python 3.11, but my converter targets 3.9
-        # TODO: write a custom file_digest?
+        # file_digest() requires Python 3.11
         return hashlib.file_digest(infile, algorithm).hexdigest()
 
 

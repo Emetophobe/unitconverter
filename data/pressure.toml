@@ -26,9 +26,11 @@ aliases = ["metres of mercury"]
 factor = "133322.4"
 prefix_scale = "si"
 
-
-# Non-SI units
-
+# 1 inch of mercury is roughly 3386.389 pascal
+["inch of mercury"]
+symbols = ["in Hg", "inHg"]
+aliases = ["inches of mercury"]
+factor = "3386.389"
 
 # 1 psi (pound per square inch) = roughly 6894.757 pascal
 ["psi"]
@@ -47,12 +49,6 @@ factor = "6894757"
 symbols = ["Torr"]
 aliases = ["torrs"]
 factor = "133.322"
-
-# 1 inch of mercury is roughly 3386.389 pascal
-["inch of mercury"]
-symbols = ["in Hg", "inHg"]
-aliases = ["inches of mercury"]
-factor = "3386.389"
 
 # 1 standard atmosphere = 101325 pascal
 ["standard-atmosphere"]

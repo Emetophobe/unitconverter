@@ -12,7 +12,7 @@ aliases = ["volts-amps", "volt-amp"]
 factor = "1"
 prefix_scale = "si"
 
-# 1 joule per = 1 watt
+# 1 joule per second = 1 watt
 ["joule/second"]
 symbols = ["J/s", "j/s"]
 aliases = ["joules/second", "joules/sec", "joule/sec"]

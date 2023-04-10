@@ -37,7 +37,7 @@ symbols = ["gt"]
 aliases = ["drops"]
 factor = "0.00000005"
 
-# 1 sterer = 1 m^3
+# 1 stere = 1 m^3
 ["stere"]
 symbols = []
 aliases = ["steres", "stères", "stère"]

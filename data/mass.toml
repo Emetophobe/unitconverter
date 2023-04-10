@@ -18,7 +18,7 @@ symbols = ["lb", "lbs"]
 aliases = ["pounds", "imperial pounds", "imperial pound"]
 factor = "453.59237"
 
-# 1 kilopound (kip) = 1000 lbs or 453592.37 grams
+# 1 kilopound (kip) = 1000 lbs or 453,592.37 grams
 ["kilopound"]
 symbols = ["kip", "klbs"]
 aliases = ["kilopounds", "imperial kilopounds", "imperial kilopound"]

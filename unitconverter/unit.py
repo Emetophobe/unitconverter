@@ -66,11 +66,7 @@ class Unit:
             raise UnitError(f'{self.name!r} has an invalid prefix scale: {prefix_scale}')
 
     def prefix(self, factor: Decimal | int | str, symbol: str, prefix: str) -> 'Unit':
-        """ Create a new unit by applying a prefix.
-
-        Examples:
-
-
+        """ Create a new unit by applying a prefix, i.e "kilo".
 
         Args:
             factor (Decimal | int | str):
@@ -98,7 +94,7 @@ class Unit:
         return Unit(name, self.category, symbols, aliases, factor,
                     self.power, self.offset, prefix_scale)
 
-    def get_names(self) -> list[str]:
+    def names(self) -> list[str]:
         """ Get a list of all unit names and symbols. """
         return [self.name] + self.symbols + self.aliases
 
@@ -115,7 +111,7 @@ class Unit:
 
     def __contains__(self, name: str) -> bool:
         """ Returns True if name matches one of the unit names. """
-        return name == self.name or name in self.symbols or name in self.aliases
+        return name in self.names()
 
     def __str__(self) -> str:
         symbols = f' ({", ".join(self.symbols)})' if self.symbols else ''

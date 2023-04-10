@@ -41,7 +41,7 @@ class TestRegistry(unittest.TestCase):
 
         for unit in generated:
             # Check for duplicates
-            for name in unit.get_names():
+            for name in unit.names():
                 self.assertTrue(name not in aliases, f'{unit.name} has a duplicate'
                                 f' name: {name} original: {aliases.get(name)}')
                 aliases[name] = unit

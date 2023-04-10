@@ -24,7 +24,7 @@ class Registry:
     def add_unit(self, unit: Unit) -> None:
         """ Add a unit to the dictionary. """
         # Check for duplicate names, symbols, or aliases
-        for name in unit.get_names():
+        for name in unit.names():
             if name in self._aliases.keys():
                 raise UnitError(f'{unit.name} has a duplicate name: {name}'
                                 f' (Original unit: {self._aliases[name]})')

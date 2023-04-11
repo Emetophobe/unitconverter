@@ -2,7 +2,6 @@
 Absorbed Dose
 
 	gray
-	joule/gram
 	US rad
 
 Amount Of Substance
@@ -286,10 +285,10 @@ Pressure
 	bar
 	barye
 	metre of mercury
+	inch of mercury
 	psi
 	ksi
 	torr
-	inch of mercury
 	standard-atmosphere
 	technical-atmosphere
 

@@ -10,11 +10,19 @@
     },
     {
       "dest": "dyne-metre",
-      "expected": "100000"
+      "expected": "1E5"
+    },
+    {
+      "dest": "dyne-centimetre",
+      "expected": "1E7"
     },
     {
       "dest": "gram-force metre",
       "expected": "101.9716212977928242570092743"
+    },
+    {
+      "dest": "gram-force centimetre",
+      "expected": "10197.16212977928242570092743"
     },
     {
       "dest": "ounce-force inch",

@@ -8,13 +8,25 @@ prefix_scale = "si"
 ["dyne-metre"]
 symbols = ["dyn-m"]
 aliases = ["dyne-metres"]
-factor = "0.00001"
+factor = "1E-5"
+prefix_scale = "si"
+
+["dyne-centimetre"]
+symbols = ["dyn-cm"]
+aliases = ["dyne-centimetres"]
+factor = "1E-7"
 prefix_scale = "si"
 
 ["gram-force metre"]
 symbols = ["gf-m"]
 aliases = ["gram-force metres"]
 factor = "0.00980665"
+prefix_scale = "si"
+
+["gram-force centimetre"]
+symbols = ["gf-cm"]
+aliases = ["gram-force centimetres"]
+factor = "0.0000980665"
 prefix_scale = "si"
 
 ["ounce-force inch"]

@@ -357,7 +357,9 @@ Torque
 
 	newton-metre
 	dyne-metre
+	dyne-centimetre
 	gram-force metre
+	gram-force centimetre
 	ounce-force inch
 	ounce-force foot
 	pound-force inch

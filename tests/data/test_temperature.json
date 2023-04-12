@@ -12,5 +12,15 @@
       "dest": "rankine",
       "expected": "1.8"
     }
+  ],
+  "fahrenheit": [
+    {
+      "dest": "celsius",
+      "expected": "-17.2222222222222222222222222"
+    },
+    {
+      "dest": "rankine",
+      "expected": "460.67"
+    }
   ]
 }

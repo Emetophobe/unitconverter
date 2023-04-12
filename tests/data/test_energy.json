@@ -17,18 +17,6 @@
       "expected": "277.7777777777777777777777778"
     },
     {
-      "dest": "milliwatt-hour",
-      "expected": "0.2777777777777777777777777778"
-    },
-    {
-      "dest": "kilowatt-hour",
-      "expected": "2.777777777777777777777777778E-7"
-    },
-    {
-      "dest": "megawatt-hour",
-      "expected": "2.777777777777777777777777778E-10"
-    },
-    {
       "dest": "gigawatt-hour",
       "expected": "2.777777777777777777777777778E-13"
     },

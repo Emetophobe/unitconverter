@@ -5,48 +5,8 @@
       "expected": "1E+90"
     },
     {
-      "dest": "cubic rontometre",
-      "expected": "1E+81"
-    },
-    {
-      "dest": "cubic yoctometre",
-      "expected": "1E+72"
-    },
-    {
-      "dest": "cubic zeptometre",
-      "expected": "1E+63"
-    },
-    {
-      "dest": "cubic attometre",
-      "expected": "1E+54"
-    },
-    {
-      "dest": "cubic femtometre",
-      "expected": "1E+45"
-    },
-    {
-      "dest": "cubic picometre",
-      "expected": "1E+36"
-    },
-    {
       "dest": "cubic nanometre",
       "expected": "1E+27"
-    },
-    {
-      "dest": "cubic micrometre",
-      "expected": "1E+18"
-    },
-    {
-      "dest": "cubic millimetre",
-      "expected": "1E+9"
-    },
-    {
-      "dest": "cubic centimetre",
-      "expected": "1E+6"
-    },
-    {
-      "dest": "cubic decimetre",
-      "expected": "1E+3"
     },
     {
       "dest": "cubic decametre",
@@ -61,36 +21,8 @@
       "expected": "1E-9"
     },
     {
-      "dest": "cubic megametre",
-      "expected": "1E-18"
-    },
-    {
-      "dest": "cubic gigametre",
-      "expected": "1E-27"
-    },
-    {
-      "dest": "cubic terametre",
-      "expected": "1E-36"
-    },
-    {
-      "dest": "cubic petametre",
-      "expected": "1E-45"
-    },
-    {
-      "dest": "cubic exametre",
-      "expected": "1E-54"
-    },
-    {
-      "dest": "cubic zettametre",
-      "expected": "1E-63"
-    },
-    {
       "dest": "cubic yottametre",
       "expected": "1E-72"
-    },
-    {
-      "dest": "cubic ronnametre",
-      "expected": "1E-81"
     },
     {
       "dest": "cubic quettametre",

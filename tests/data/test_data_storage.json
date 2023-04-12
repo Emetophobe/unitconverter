@@ -6,7 +6,11 @@
     },
     {
       "dest": "kilobyte",
-      "expected": "0.001"
+      "expected": "1E-3"
+    },
+    {
+      "dest": "gigabyte",
+      "expected": "1E-9"
     }
   ],
   "bit": [
@@ -19,6 +23,12 @@
     {
       "dest": "byte",
       "expected": "1000"
+    }
+  ],
+  "gigabyte": [
+    {
+      "dest": "byte",
+      "expected": "1E9"
     }
   ],
   "kibibyte": [

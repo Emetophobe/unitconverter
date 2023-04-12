@@ -75,9 +75,8 @@ Electric Current
 Electric Potential
 
 	volt
-	watt/ampere
-	ampere-ohm
 	joule/coulomb
+	watt/ampere
 	weber/second
 	abvolt
 	statvolt

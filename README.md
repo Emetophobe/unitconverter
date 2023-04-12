@@ -14,7 +14,7 @@ The following categories are currently supported:
 * Effective dose (sievert, roentgen)
 * Electric charge (coloumb, ampere-second, ampere-minute, ampere-hour)
 * Electric current (ampere, watt/volt, coulomb/second)
-* Electric potential (volt, watt/ampere, ampere-ohm, joule/coulomb, weber/second)
+* Electric potential (volt, joule/coulomb, watt/ampere, weber/second)
 * Electrical capacitance (farad, coulomb/volt)
 * Electrical conductance (siemens, ampere/volt)
 * Electrical inductance (henry, weber/ampere)

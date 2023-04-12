@@ -9,15 +9,11 @@
       "expected": "1E-30"
     },
     {
-      "dest": "watt/ampere",
-      "expected": "1"
-    },
-    {
-      "dest": "ampere-ohm",
-      "expected": "1"
-    },
-    {
       "dest": "joule/coulomb",
+      "expected": "1"
+    },
+    {
+      "dest": "watt/ampere",
       "expected": "1"
     },
     {

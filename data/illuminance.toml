@@ -12,14 +12,21 @@ aliases = []
 factor = "1"
 prefix_scale = "si"
 
-# 1 candela-steradian per metre^2 = 1 lux
+# 1 candela-steradian per square metre = 1 lux
 ["candela-steradian/metre2"]
 symbols = ["cd-sr/m2"]
 aliases = []
 factor = "1"
 prefix_scale = "si"
 
-# 1 watt per metre^2 = 683 lux
+# 1 lumen per square metre = 1 lux
+["lumen/metre2"]
+symbols = ["lm/m2"]
+aliases = ["lumens/metre2"]
+factor = "1"
+prefix_scale = "si"
+
+# 1 watt per square metre = 683 lux
 ["watt/metre2"]
 symbols = ["W/m2"]
 aliases = ["watts/metre2"]

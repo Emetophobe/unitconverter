@@ -17,6 +17,10 @@
       "expected": "1"
     },
     {
+      "dest": "lumen/metre2",
+      "expected": "1"
+    },
+    {
       "dest": "watt/metre2",
       "expected": "0.001464128843338213762811127379"
     },

@@ -172,6 +172,7 @@ Illuminance
 	lux
 	metre-candle
 	candela-steradian/metre2
+	lumen/metre2
 	watt/metre2
 	phot
 	nox

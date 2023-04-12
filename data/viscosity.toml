@@ -12,27 +12,27 @@ aliases = ["poises"]
 factor = "0.1"
 prefix_scale = "si"
 
-["gram/foot-second"]
-symbols = ["g/ft-s", "g/ft s"]
-aliases = ["grams/foot-second", "grams/ft-sec", "gram/ft-sec"]
-factor = "0.00328083989501312"
-prefix_scale = "si"
-
 # gram per centimetre-second = 0.1 pascal-second
 ["gram/centimetre-second"]
-symbols = ["g/cm-s", "g/cm s"]
+symbols = ["g/cm-s"]
 aliases = ["grams/centimetre-second", "grams/cm-s", "gram/cm-s"]
 factor = "0.1"
 prefix_scale = "si"
 
 # 1 gram per metre-second = 0.001 pascal-second
 ["gram/metre-second"]
-symbols = ["g/m-s", "g/m s"]
+symbols = ["g/m-s"]
 aliases = ["grams/metre-second", "grams/m-s", "gram/m-s"]
 factor = "0.001"
 prefix_scale = "si"
 
+["gram/foot-second"]
+symbols = ["g/ft-s"]
+aliases = ["grams/foot-second", "grams/ft-s", "gram/ft-s"]
+factor = "0.00328083989501312"
+prefix_scale = "si"
+
 ["slug/foot-second"]
-symbols = ["slug/ft-s", "slug/ft s"]
-aliases = ["slugs/foot-second", "slugs/ft-sec", "slug/ft-sec"]
+symbols = ["slug/ft-s"]
+aliases = ["slugs/foot-second", "slugs/ft-s"]
 factor = "47.88025898"

@@ -369,9 +369,9 @@ Viscosity
 
 	pascal-second
 	poise
-	gram/foot-second
 	gram/centimetre-second
 	gram/metre-second
+	gram/foot-second
 	slug/foot-second
 
 Volume

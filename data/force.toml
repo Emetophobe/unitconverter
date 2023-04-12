@@ -33,7 +33,7 @@ symbols = ["kp"]
 aliases = ["kiloponds"]
 factor = "9.80665"
 
-# 1 tonne force = 9806.65 newtons
+# 1 tonne force = 1000 kilogram-force = 9806.65 newtons
 ["tonne-force"]
 symbols = ["tf"]
 aliases = ["metric ton-force"]

@@ -19,13 +19,11 @@ aliases = ["coulombs/second"]
 factor = "1"
 prefix_scale = "si"
 
-# 1 abampere (biot) = 10 ampere
 ["abampere"]
 symbols = ["abA", "Bi"]
 aliases = ["abamperes", "biot", "biots"]
 factor = "10"
 
-# 1 statampere = 3.335641E-10 ampere
 ["statampere"]
 symbols = ["stA"]
 aliases = ["statamperes"]

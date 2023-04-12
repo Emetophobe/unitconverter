@@ -12,13 +12,11 @@ aliases = ["webers/ampere", "webers/amp", "weber/amp"]
 factor = "1"
 prefix_scale = "si"
 
-# 1 abhenry = 1E-9 henry
 ["abhenry"]
 symbols = ["abH"]
 aliases = ["abhenries"]
 factor = "1E-9"
 
-# 1 stathenry = 898755200000 henry
 ["stathenry"]
 symbols = ["stH"]
 aliases = ["stathenries"]

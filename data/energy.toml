@@ -12,14 +12,12 @@ aliases = ["watt-seconds", "wattseconds", "wattsecond"]
 factor = "1"
 prefix_scale = "si"
 
-# 1 watt-minute = 60 joules
 ["watt-minute"]
 symbols = ["Wm"]
 aliases = ["watt-minutes", "wattminutes", "wattminute"]
 factor = "60"
 prefix_scale = "si"
 
-# 1 watt-hour = 3600 joules
 ["watt-hour"]
 symbols = ["Wh"]
 aliases = ["watt-hours", "watthours", "watthour"]
@@ -43,13 +41,13 @@ prefix_scale = "si"
 # 1 calorie = 4.184 joules
 ["calorie"]
 symbols = ["cal"]
-aliases = ["calories", "small calorie", "small calories"]
+aliases = ["calories", "small calories", "small calorie"]
 factor = "4.184"
 
 # 1 kilocalorie = 1000 calories = 4184 joules
 ["kilocalorie"]
 symbols = ["kcal"]
-aliases = ["kilocalories", "large calorie", "large calories"]
+aliases = ["kilocalories", "large calories", "large calorie"]
 factor = "4184"
 
 # 1 btu = 1055.06 joules
@@ -58,7 +56,7 @@ symbols = ["btu", "btus"]
 aliases = ["british thermal units"]
 factor = "1055.06"
 
-# A quad is a quadrillion btus or 1.05506E+18 joules
+# A quad is a quadrillion btus
 ["quad"]
 symbols = []
 aliases = ["quadrillion btus", "quadrillion btu"]

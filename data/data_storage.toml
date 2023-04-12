@@ -1,4 +1,4 @@
-# Byte is the base unit for my converter
+# Byte is the base unit for this converter
 ["byte"]
 symbols = ["B"]
 aliases = ["bytes"]

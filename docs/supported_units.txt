@@ -105,7 +105,6 @@ Electrical Inductance
 Electrical Resistance
 
 	ohm
-	reciprocal siemens
 	volt/ampere
 	abohm
 	statohm

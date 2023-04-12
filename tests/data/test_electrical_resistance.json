@@ -9,10 +9,6 @@
       "expected": "1E-30"
     },
     {
-      "dest": "reciprocal siemens",
-      "expected": "1"
-    },
-    {
       "dest": "volt/ampere",
       "expected": "1"
     },

@@ -26,37 +26,38 @@ aliases = ["metres of mercury"]
 factor = "133322.4"
 prefix_scale = "si"
 
-# 1 inch of mercury is roughly 3386.389 pascal
 ["inch of mercury"]
 symbols = ["in Hg", "inHg"]
 aliases = ["inches of mercury"]
 factor = "3386.389"
 
-# 1 psi (pound per square inch) = roughly 6894.757 pascal
 ["psi"]
 symbols = ["lbf/in2", "lbs/in2"]
 aliases = ["pound per square inch", "pounds/in2", "pound/in2"]
 factor = "6894.757"
 
-# 1 ksi (kilopound per square inch) = 1000 psi = 6.894757E+6 pascal
+# 1 ksi = 1000 psi
 ["ksi"]
 symbols = ["klbf/in2", "klbs/in2"]
 aliases = ["kilopound per square inch", "kilopounds/in2", "kilopound/in2"]
 factor = "6894757"
 
-# 1 torr is roughly 133.322 pascal
+# 1 pièze = 1 kilopascal
+["pieze"]
+symbols = ["pz"]
+aliases = ["pièze"]
+factor = "1000"
+
 ["torr"]
 symbols = ["Torr"]
 aliases = ["torrs"]
 factor = "133.322"
 
-# 1 standard atmosphere = 101325 pascal
 ["standard-atmosphere"]
 symbols = ["atm"]
 aliases = ["standard-atmospheres"]
 factor = "101325"
 
-# 1 technical atmosphere = roughly 98066.5 pascal
 ["technical-atmosphere"]
 symbols = ["kgf/cm2", "kg/cm2"]
 aliases = ["technical-atmospheres", "kilograms/cm2", "kilogram/cm2"]

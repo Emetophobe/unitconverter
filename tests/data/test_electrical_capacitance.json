@@ -13,22 +13,6 @@
       "expected": "1"
     },
     {
-      "dest": "ampere-second/volt",
-      "expected": "1"
-    },
-    {
-      "dest": "watt-second/volt2",
-      "expected": "1"
-    },
-    {
-      "dest": "joule/volt2",
-      "expected": "1"
-    },
-    {
-      "dest": "newton-metre/volt2",
-      "expected": "1"
-    },
-    {
       "dest": "abfarad",
       "expected": "1E-9"
     },

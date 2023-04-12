@@ -85,10 +85,6 @@ Electrical Capacitance
 
 	farad
 	coulomb/volt
-	ampere-second/volt
-	watt-second/volt2
-	joule/volt2
-	newton-metre/volt2
 	abfarad
 	statfarad
 

@@ -11,6 +11,10 @@ from unitconverter.unit import Unit
 from unitconverter.registry import Registry
 
 
+# Total number of categories
+NUM_CATEGORIES = 37
+
+
 class TestRegistry(unittest.TestCase):
     """ Test unit registry. """
 
@@ -42,7 +46,8 @@ class TestRegistry(unittest.TestCase):
         """ Test get_units() method. """
         units = self.units.get_units()
         self.assertIsInstance(units, dict)
-        self.assertEqual(36, len(units), 'there should be 36 categories')
+        self.assertEqual(NUM_CATEGORIES, len(units),
+                         f'there should be {NUM_CATEGORIES} categories')
 
     def test_get_aliases(self) -> None:
         """ Test get_aliases() method. """

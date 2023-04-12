@@ -218,6 +218,20 @@ Length
 	barleycorn
 	caliber
 
+Luminance
+
+	candela/metre2
+	candela/inch2
+	candela/foot2
+	nit
+	stilb
+	apostilb
+	blondel
+	bril
+	lambert
+	foot-lambert
+	skot
+
 Luminous Flux
 
 	lumen

@@ -25,6 +25,7 @@ The following categories are currently supported:
 * Frequency (hertz, rpm, cycles/minute, cycles/hour)
 * Illuminance (lux, nox, phot, watt/m², metre-candle, foot-candle)
 * Length (metre, inch, foot, etc...)
+* Luminance (cd/m², nit, stilb, apostilb, etc..)
 * Luminous flux (lumen, candela-steradian)
 * Luminous intensity (candela, lumen/steradian, candlepower)
 * Magnetic flux (weber, maxwell)

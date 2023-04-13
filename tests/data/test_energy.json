@@ -21,6 +21,14 @@
       "expected": "2.777777777777777777777777778E-13"
     },
     {
+      "dest": "gram of TNT",
+      "expected": "0.0002390057361376673040152963671"
+    },
+    {
+      "dest": "ton of TNT",
+      "expected": "2.390057361376673040152963671E-10"
+    },
+    {
       "dest": "calorie",
       "expected": "0.2390057361376673040152963671"
     },
@@ -49,20 +57,12 @@
       "expected": "9.478133944988910583284362975E-9"
     },
     {
-      "dest": "inch-pound",
+      "dest": "inch-pound force",
       "expected": "8.850745793490557922603927648"
     },
     {
-      "dest": "foot-pound",
+      "dest": "foot-pound force",
       "expected": "0.7375621492943471162927073636"
-    },
-    {
-      "dest": "gram of TNT",
-      "expected": "0.0002390057361376673040152963671"
-    },
-    {
-      "dest": "ton of TNT",
-      "expected": "2.390057361376673040152963671E-10"
     }
   ]
 }

@@ -77,12 +77,15 @@ symbols = ["thm"]
 aliases = ["therms"]
 factor = "105506000"
 
-["inch-pound"]
+
+# source: https://en.wikipedia.org/wiki/Foot-pound_(energy)
+["inch-pound force"]
 symbols = ["in-lbf"]
-aliases = ["inch-pound force"]
+aliases = ["inch-pound-force", "inch-pound"]
 factor = "0.112984829"
 
-["foot-pound"]
+# source: https://en.wikipedia.org/wiki/Foot-pound_(energy)
+["foot-pound force"]
 symbols = ["ft-lbf"]
-aliases = ["foot-pound force"]
+aliases = ["foot-pound-force", "foot-pound"]
 factor = "1.3558179483"

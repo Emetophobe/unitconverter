@@ -5,13 +5,6 @@ aliases = []
 factor = "1"
 prefix_scale = "si"
 
-# 1 metre-candle is equivalent to 1 lux
-["metre-candle"]
-symbols = ["m-c", "mc"]
-aliases = []
-factor = "1"
-prefix_scale = "si"
-
 # 1 candela-steradian per square metre = 1 lux
 ["candela-steradian/metre2"]
 symbols = ["cd-sr/m2"]
@@ -44,6 +37,13 @@ factor = "10000"
 symbols = ["nx"]
 aliases = []
 factor = "0.001"
+
+# 1 metre-candle is equivalent to 1 lux
+["metre-candle"]
+symbols = ["m-c", "mc"]
+aliases = []
+factor = "1"
+prefix_scale = "si"
 
 ["foot-candle"]
 symbols = ["ft-c", "fc"]

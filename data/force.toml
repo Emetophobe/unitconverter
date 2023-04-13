@@ -27,22 +27,28 @@ aliases = ["grams-force"]
 factor = "0.00980665"
 prefix_scale = "si"
 
-# 1 kilopond = 1 kilogram-force
+# 1 kilopond = 1 kilogram-force = 1000 gram-force
 ["kilopond"]
 symbols = ["kp"]
 aliases = ["kiloponds"]
 factor = "9.80665"
 
-# 1 tonne force = 1000 kilogram-force = 9806.65 newtons
+# 1 tonne force = 1000 kilogram-force = 1,000,000 gram-force
 ["tonne-force"]
 symbols = ["tf"]
 aliases = ["metric ton-force"]
 factor = "9806.65"
 prefix_scale = "si"
 
+["long ton-force"]
+symbols = ["tnf"]
+aliases = ["tf (long)"]
+factor = "9964.0164182"
 
-# Imperial units
-
+["short ton-force"]
+symbols = ["tonf"]
+aliases = ["tf (short)"]
+factor = "8896.4432305"
 
 ["poundal"]
 symbols = ["pdl"]
@@ -64,13 +70,3 @@ factor = "4.448222"
 symbols = ["kipf", "klbf"]
 aliases = ["kilopound-force"]
 factor = "4448.222"
-
-["long ton-force"]
-symbols = ["tnf"]
-aliases = ["tf (long)"]
-factor = "9964.0164182"
-
-["short ton-force"]
-symbols = ["tonf"]
-aliases = ["tf (short)"]
-factor = "8896.4432305"

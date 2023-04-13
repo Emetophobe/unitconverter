@@ -124,8 +124,8 @@ Energy
 	electron volt
 	erg
 	therm
-	inch-pound
-	foot-pound
+	inch-pound force
+	foot-pound force
 
 Force
 
@@ -135,12 +135,12 @@ Force
 	gram-force
 	kilopond
 	tonne-force
+	long ton-force
+	short ton-force
 	poundal
 	ounce-force
 	pound-force
 	kip-force
-	long ton-force
-	short ton-force
 
 Frequency
 
@@ -164,12 +164,12 @@ Fuel Consumption
 Illuminance
 
 	lux
-	metre-candle
 	candela-steradian/metre2
 	lumen/metre2
 	watt/metre2
 	phot
 	nox
+	metre-candle
 	foot-candle
 
 Length

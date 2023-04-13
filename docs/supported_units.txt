@@ -117,11 +117,11 @@ Energy
 	watt-hour
 	gram of TNT
 	ton of TNT
+	electron volt
 	calorie
 	kilocalorie
 	british thermal unit
 	quad
-	electron volt
 	erg
 	therm
 	inch-pound force

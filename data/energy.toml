@@ -38,6 +38,12 @@ aliases = ["tons of TNT", "metric tons of TNT", "metric ton of TNT"]
 factor = "4.184E+9"
 prefix_scale = "si"
 
+["electron volt"]
+symbols = ["eV"]
+aliases = ["electron volts"]
+factor = "1.602176633E-19"
+prefix_scale = "si"
+
 # 1 calorie = 4.184 joules
 ["calorie"]
 symbols = ["cal"]
@@ -61,11 +67,6 @@ factor = "1055.06"
 symbols = []
 aliases = ["quadrillion btus", "quadrillion btu"]
 factor = "1.05506E+18"
-
-["electron volt"]
-symbols = ["eV"]
-aliases = ["electron volts"]
-factor = "1.602176633E-19"
 
 ["erg"]
 symbols = []

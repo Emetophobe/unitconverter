@@ -39,12 +39,16 @@ symbols = ["ozf-ft"]
 aliases = ["ounce-force feet"]
 factor = "0.084738624"
 
+# 1 pound-force-inch = ~0.112984825 newton-metre
+# source: https://en.wikipedia.org/wiki/Pound-foot
 ["pound-force inch"]
-symbols = ["lbf-in"]
+symbols = ["lbf-in", "lb-in"]
 aliases = ["pound-force inches"]
-factor = "0.1129848333"
+factor = "0.112984825"
 
+# 1 pound-force-foot = ~1.3558179 newton-metre
+# source: https://en.wikipedia.org/wiki/Pound-foot
 ["pound-force foot"]
 symbols = ["lbf-ft", "lb-ft"]
-aliases = ["pound-force feet", "pound-foot"]
-factor = "1.355818"
+aliases = ["pound-force feet"]
+factor = "1.3558179"

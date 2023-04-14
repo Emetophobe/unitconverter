@@ -110,4 +110,11 @@ def format_decimal(value: Decimal,
         return f'{value:{precision}E}'
 
     comma = ',' if commas else ''
-    return f'{value:{comma}{precision}f}'
+    number = f'{value:{comma}{precision}f}'
+
+    # Remove trailing 0s
+    if '.' in number:
+        while number[-1] == '0':
+            number = number[0:-2]
+
+    return number

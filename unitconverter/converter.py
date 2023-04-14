@@ -1,13 +1,17 @@
 # Copyright (c) 2022-2023 Mike Cunningham
 
 
-from decimal import Decimal
+from decimal import Decimal, getcontext
 
 from unitconverter.exceptions import CategoryError, UnitError
 from unitconverter.prefixes import get_prefixes
 from unitconverter.registry import iter_units
 from unitconverter.unit import Unit
 from unitconverter.utils import parse_decimal, simplify_unit
+
+
+# Set decimal precision
+getcontext().prec = 10
 
 
 def convert(value: Decimal, source: Unit | str, dest: Unit | str) -> Decimal:
@@ -37,8 +41,8 @@ def convert(value: Decimal, source: Unit | str, dest: Unit | str) -> Decimal:
     if source.category != dest.category:
         raise CategoryError(source, dest)
 
-    value = source.offset + value * source.factor
-    return (-dest.offset + value) / dest.factor
+    value = Decimal(source.offset) + value * Decimal(source.factor)
+    return (-Decimal(dest.offset) + value) / Decimal(dest.factor)
 
 
 def parse_unit(name: str) -> Unit:
@@ -69,8 +73,8 @@ def parse_unit(name: str) -> Unit:
         prefixes = get_prefixes(unit.prefix_scale)
 
         # Generate prefixes and check for a matching unit
-        for factor, symbol, prefix in prefixes:
-            prefix_unit = unit.prefix(factor, symbol, prefix)
+        for prefix in prefixes:
+            prefix_unit = unit.prefix(prefix)
             if simple_name in prefix_unit:
                 return prefix_unit
 
@@ -85,10 +89,17 @@ def format_decimal(value: Decimal,
     """ Format a decimal into a string for display.
 
     Args:
-        value (Decimal): the decimal value.
-        exponent (bool, optional): use e notation when possible. Defaults to False.
-        precision (int, optional): set rounding precision. Defaults to None.
-        commas (bool, optional): use commas for thousands separators. Defaults to False.
+        value (Decimal):
+            the decimal value.
+
+        exponent (bool, optional):
+            show E notation when possible. Defaults to False.
+
+        precision (int, optional):
+            set rounding precision. Defaults to None.
+
+        commas (bool, optional):
+            show commas (thousands) separators. Defaults to False.
 
     Returns:
         str: the formatted string.

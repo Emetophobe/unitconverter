@@ -97,10 +97,10 @@ class TestRegistry(unittest.TestCase):
         generated = []
         for unit in self.units:
             prefixes = get_prefixes(unit.prefix_scale)
-            for factor, symbol, prefix in prefixes:
-                scaled_unit = unit.prefix(factor, symbol, prefix)
-                if scaled_unit.name not in excludes:
-                    generated.append(scaled_unit)
+            for prefix in prefixes:
+                prefix_unit = unit.prefix(prefix)
+                if prefix_unit.name not in excludes:
+                    generated.append(prefix_unit)
 
         # Check for duplicates
         for unit in generated:
@@ -121,9 +121,9 @@ class TestRegistry(unittest.TestCase):
         self.assert_stringlist(unit.symbols, f'{unit.name} has invalid symbols')
         self.assert_stringlist(unit.aliases, f'{unit.name} has invalid aliases')
 
-        self.assert_decimal(unit.factor, f'{unit.name} has an invalid factor')
-        self.assert_decimal(unit.offset, f'{unit.name} has an invalid offset')
-        self.assert_decimal(unit.power, f'{unit.name} has an invalid power')
+        self.assert_number(unit.factor, f'{unit.name} has an invalid factor')
+        self.assert_number(unit.offset, f'{unit.name} has an invalid offset')
+        self.assert_number(unit.power, f'{unit.name} has an invalid power')
 
         msg = f'{unit.name} has an invalid prefix_scale: {unit.prefix_scale!r}'
         self.assertIsInstance(unit.prefix_scale, PrefixScale, msg)
@@ -132,15 +132,15 @@ class TestRegistry(unittest.TestCase):
         """ Assert that an object is the correct type or tuple of types. """
         self.assertIsInstance(obj, types, msg or type(obj))
 
-    def assert_decimal(self, value: Decimal, msg: str) -> None:
-        """ Assert that a unit has a valid decimal (factor, power, or offset). """
-        self.assert_type(value, Decimal, msg)
+    def assert_number(self, value: Decimal, msg: str) -> None:
+        """ Assert that a unit has a valid number (Decimal, int, or str). """
+        self.assert_type(value, (Decimal, int, str), msg)
 
         # Assert that all E notations are signed +/-
-        msg = f'{value!r} is missing a +/- symbol (requirement)'
         strvalue = str(value)
         if 'E' in strvalue:
-            self.assertTrue('+' in strvalue or '-' in strvalue, msg)
+            self.assertTrue('+' in strvalue or '-' in strvalue,
+                            f'{value!r} is missing a +/- symbol (requirement)')
 
     def assert_string(self, name: str, msg: str) -> None:
         """ Assert that name is a valid string (atleast 1 character). """

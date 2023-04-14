@@ -2,10 +2,13 @@
 
 
 import unittest
-from decimal import Decimal
+from decimal import Decimal, getcontext
 
 from unitconverter.converter import convert, format_decimal, parse_unit
 from unitconverter.exceptions import CategoryError, UnitError
+
+
+getcontext().prec = 28
 
 
 class TestConverter(unittest.TestCase):

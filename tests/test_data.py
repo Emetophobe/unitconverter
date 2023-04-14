@@ -37,13 +37,14 @@ class TestData(unittest.TestCase):
         untested_units = all_units - tested_units
         self.assertEqual(len(untested_units), 0, self.format_untested(untested_units))
 
-    def assert_conversion(self, source, dest, expected, value=1):
+    def assert_conversion(self, source: str, dest: str, expected: str,
+                          value: Decimal | int | str = 1):
         """ Assert that a unit conversion gives the expected result. """
         source = parse_unit(source)
         dest = parse_unit(dest)
 
-        msg = f'{source.name!r} and {dest.name!r} have different categories'
-        self.assertEqual(source.category, dest.category, msg)
+        self.assertEqual(source.category, dest.category, f'{source.name!r} and'
+                         f' {dest.name!r} have different categories')
 
         result = convert(value, source, dest)
         self.assertEqual(Decimal(expected), result, f'Incorrect conversion'

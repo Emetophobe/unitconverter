@@ -61,9 +61,9 @@ class Registry:
 
     def _load_units(self) -> None:
         """ Load pre-defined units from toml files. """
-        files = Path('data').glob('*.toml')
-        for filename in files:
+        for filename in Path('data').glob('*.toml'):
             category = filename.stem.replace('_', ' ')
+
             with open(filename, 'rb') as infile:
                 data = tomllib.load(infile)
                 for name, args in data.items():

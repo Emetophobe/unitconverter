@@ -4,22 +4,21 @@
 from decimal import Decimal
 
 from unitconverter.exceptions import UnitError
-from unitconverter.prefixes import PrefixScale
-from unitconverter.utils import parse_decimal
+from unitconverter.prefixes import PrefixScale, Prefix, get_prefixes
 
 
 class Unit:
     """ A unit of measurement. """
 
     def __init__(self,
-                 name,
-                 category,
-                 symbols,
-                 aliases,
-                 factor,
-                 power=1,
-                 offset=0,
-                 prefix_scale=PrefixScale.NONE):
+                 name: str,
+                 category: str,
+                 symbols: list[str],
+                 aliases: list[str],
+                 factor: Decimal | int | str,
+                 offset: Decimal | int | str = 0,
+                 power: Decimal | int | str = 1,
+                 prefix_scale: PrefixScale = PrefixScale.NONE):
         """ Initialize unit.
 
         Args:
@@ -30,58 +29,60 @@ class Unit:
                 category name.
 
             symbols (list[str]):
-                list of symbols.
+                list of symbols. Can be an empty list.
 
             aliases (list[str]):
-                list of aliases.
+                list of aliases. Can be an empty list.
 
             factor (Decimal | int | str):
                 conversion factor.
 
-            power (Decimal | int | str, optional):
-                optional power. Defaults to 1.
-
             offset (Decimal | int | str, optional):
-                optional offset. Defaults to 0.
+                conversion offset. Defaults to 0.
+
+            power (Decimal | int | str, optional):
+                unit power. Defaults to 1.
 
             prefix_scale (PrefixScale, optional):
-                prefix scale. Defaults to PrefixScale.NONE.
+                prefix scale option. Defaults to PrefixScale.NONE.
 
         Raises:
-            TypeError: if an argument is the wrong type.
-            ValueError: if an argument is the wrong value.
+            UnitError: if the unit is invalid.
         """
         self.name = name
         self.category = category
         self.symbols = symbols
         self.aliases = aliases
 
-        self.factor = parse_decimal(factor, f'{name!r} has an invalid factor')
-        self.power = parse_decimal(power, f'{name!r} has an invalid power')
-        self.offset = parse_decimal(offset, f'{name!r} has an invalid offset')
+        self.factor = factor
+        self.offset = offset
+        self.power = power
 
         try:
             self.prefix_scale = PrefixScale(prefix_scale)
         except ValueError:
             raise UnitError(f'{self.name!r} has an invalid prefix scale: {prefix_scale}')
 
-    def prefix(self, factor: Decimal | int | str, symbol: str, prefix: str) -> 'Unit':
-        """ Create a new unit by applying a prefix, i.e "kilo".
+    def names(self) -> list[str]:
+        """ Get a list of all unit names and symbols. """
+        return [self.name] + self.symbols + self.aliases
+
+    def prefix(self, prefix: Prefix) -> 'Unit':
+        """ Create a new prefixed unit.
 
         Args:
-            factor (Decimal | int | str):
-                multiplication factor.
+            prefix (Prefix): a prefix instance.
 
-            symbol (str):
-                prefix symbol.
-
-            prefix (str):
-                prefix name.
+        Raises:
+            UnitError: if the unit could not be prefixed.
 
         Returns:
-            Unit: a new unit instance.
+            Unit: a new prefixed unit.
         """
-        # Create new name, symbols, aliases, and factor
+        self._valid_prefix(prefix)
+        factor, symbol, prefix = prefix
+
+        # Create new unit name, symbols, aliases, and factor
         name = self._add_prefix(prefix, self.name)
         symbols = [symbol + name for name in self.symbols]
         aliases = [self._add_prefix(prefix, name) for name in self.aliases]
@@ -91,12 +92,25 @@ class Unit:
         prefix_scale = PrefixScale.NONE
 
         # Return prefixed unit
-        return Unit(name, self.category, symbols, aliases, factor,
-                    self.power, self.offset, prefix_scale)
+        return Unit(name, self.category, symbols, aliases, factor, self.offset,
+                    self.power, prefix_scale)
 
-    def names(self) -> list[str]:
-        """ Get a list of all unit names and symbols. """
-        return [self.name] + self.symbols + self.aliases
+    def _valid_prefix(self, prefix: Prefix) -> None:
+        """ Check if prefix is valid.
+
+        Args:
+            prefix (Prefix): a prefix instance.
+
+        Raises:
+            UnitError: if unit doesn't support the specified prefix.
+        """
+        prefixes = get_prefixes(self.prefix_scale)
+
+        if not prefixes:
+            raise UnitError(f"{self.name} doesn't support prefix scaling")
+
+        if prefix not in prefixes:
+            raise UnitError(f"{self.name} doesn't support {prefix.name} prefix")
 
     def _add_prefix(self, prefix: str, name: str) -> str:
         """ Add a prefix to name. """
@@ -113,10 +127,9 @@ class Unit:
         """ Returns True if name matches one of the unit names. """
         return name in self.names()
 
-    def __str__(self) -> str:
-        symbols = f' ({", ".join(self.symbols)})' if self.symbols else ''
-        return f'{self.name}{symbols}'
-
     def __repr__(self) -> str:
         args = ', '.join(repr(s) for s in self.__dict__.values())
         return (f'Unit({args})')
+
+    def __str__(self) -> str:
+        return self.name

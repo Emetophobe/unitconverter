@@ -15,7 +15,7 @@ DEST_FILE = Path('docs/supported_units.txt')
 def create_supported_units(filename):
     """ Generate a text file of all supported units. """
     all_units = Registry()
-    categories = all_units.get_units()
+    categories = all_units.get_categories()
     sorted_categories = sorted(categories.keys())
 
     old_checksum = file_checksum(filename)

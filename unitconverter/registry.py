@@ -43,17 +43,17 @@ class Registry:
 
         raise UnitError(f'Invalid unit: {name}')
 
-    def get_units(self) -> dict[str, list[Unit]]:
+    def get_units(self) -> list[Unit]:
+        """ Get a list of all units. """
+        return list(self)
+
+    def get_categories(self) -> dict[str, list[Unit]]:
         """ Get a dictionary of categories and units. """
         return dict(self._units)
 
     def get_aliases(self) -> dict[str, Unit]:
         """ Get a dictionary of unit aliases. """
         return dict(self._aliases)
-
-    def list_units(self) -> list[Unit]:
-        """ Get a list of all units. """
-        return list(self)
 
     def iter_units(self):
         """ Get a units iterator. """
@@ -84,8 +84,10 @@ _registry = Registry()
 register = _registry.add_unit
 get_unit = _registry.get_unit
 get_units = _registry.get_units
+get_categories = _registry.get_categories
+get_aliases = _registry.get_aliases
 iter_units = _registry.iter_units
-list_units = _registry.list_units
+list_units = _registry.get_units
 
 
 __all__ = [
@@ -93,6 +95,7 @@ __all__ = [
     'register',
     'get_unit',
     'get_units',
+    'get_categories',
+    'get_aliases',
     'iter_units',
-    'list_units',
 ]

@@ -44,9 +44,14 @@ class TestRegistry(unittest.TestCase):
 
     def test_get_units(self) -> None:
         """ Test get_units() method. """
-        units = self.units.get_units()
-        self.assertIsInstance(units, dict)
-        self.assertEqual(NUM_CATEGORIES, len(units),
+        units = [unit for unit in self.units]
+        self.assertEqual(self.units.get_units(), units)
+
+    def test_get_categories(self) -> None:
+        """ Test get_categories() method. """
+        categories = self.units.get_categories()
+        self.assertIsInstance(categories, dict)
+        self.assertEqual(NUM_CATEGORIES, len(categories),
                          f'there should be {NUM_CATEGORIES} categories')
 
     def test_get_aliases(self) -> None:
@@ -57,11 +62,6 @@ class TestRegistry(unittest.TestCase):
                 aliases[name] = unit
 
         self.assertEqual(self.units.get_aliases(), aliases)
-
-    def test_list_units(self) -> None:
-        """ Test list_units() method. """
-        units = [unit for unit in self.units]
-        self.assertEqual(self.units.list_units(), units)
 
     def test_iter_units(self) -> None:
         """ Test iter_units() method. """

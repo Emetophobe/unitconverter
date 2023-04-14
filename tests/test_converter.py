@@ -89,6 +89,10 @@ class TestConverter(unittest.TestCase):
         result = format_decimal(value, precision=7, commas=True)
         self.assertEqual('1,785,137.3268163', result, msg.format('rounded separated'))
 
+        # Removing trailing zeroes
+        result = format_decimal(Decimal('1.23456789000000100000'))
+        self.assertEqual('1.234567890000001', result, msg.format('trailing zeroes'))
+
         with self.assertRaises(ValueError):
             format_decimal('bad value')
 

@@ -112,9 +112,9 @@ def format_decimal(value: Decimal,
     comma = ',' if commas else ''
     number = f'{value:{comma}{precision}f}'
 
-    # Remove trailing 0s
+    # Remove trailing zeroes
     if '.' in number:
-        while number[-1] == '0':
-            number = number[0:-2]
+        while number[-1] == '0' and number[-2] != '.':
+            number = number[:-1]
 
     return number

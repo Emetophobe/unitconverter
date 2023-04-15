@@ -5,6 +5,13 @@ aliases = ["pascals"]
 factor = "1"
 prefix_scale = "si"
 
+# 1 newton per square metre = 1 pascal
+["newton/metre2"]
+symbols = ["N/m2"]
+aliases = ["newtons/metre2"]
+factor = "1"
+prefix_scale = "si"
+
 # 1 bar = exactly 100,000 (1E+5) pascal
 ["bar"]
 symbols = []
@@ -19,27 +26,15 @@ aliases = ["baryes"]
 factor = "0.1"
 prefix_scale = "si"
 
-# 1 metre of mercury is roughly 133322.4 pascal
-["metre of mercury"]
-symbols = ["m Hg", "mHg"]
-aliases = ["metres of mercury"]
-factor = "133322.4"
-prefix_scale = "si"
-
-["inch of mercury"]
-symbols = ["in Hg", "inHg"]
-aliases = ["inches of mercury"]
-factor = "3386.389"
-
 ["psi"]
 symbols = ["lbf/in2", "lbs/in2"]
-aliases = ["pound per square inch", "pounds/in2", "pound/in2"]
+aliases = ["pound per square inch"]
 factor = "6894.757"
 
 # 1 ksi = 1000 psi
 ["ksi"]
 symbols = ["klbf/in2", "klbs/in2"]
-aliases = ["kilopound per square inch", "kilopounds/in2", "kilopound/in2"]
+aliases = ["kilopound per square inch"]
 factor = "6894757"
 
 # 1 pièze = 1 kilopascal
@@ -53,12 +48,24 @@ symbols = ["Torr"]
 aliases = ["torrs"]
 factor = "133.322"
 
-["standard-atmosphere"]
+# 1 metre of mercury is roughly 133322.4 pascal
+["metre of mercury"]
+symbols = ["m Hg", "mHg"]
+aliases = ["metres of mercury"]
+factor = "133322.4"
+prefix_scale = "si"
+
+["inch of mercury"]
+symbols = ["in Hg", "inHg"]
+aliases = ["inches of mercury"]
+factor = "3386.389"
+
+["standard atmosphere"]
 symbols = ["atm"]
-aliases = ["standard-atmospheres"]
+aliases = ["standard-atmosphere"]
 factor = "101325"
 
-["technical-atmosphere"]
-symbols = ["kgf/cm2", "kg/cm2"]
-aliases = ["technical-atmospheres", "kilograms/cm2", "kilogram/cm2"]
+["technical atmosphere"]
+symbols = ["kgf/cm2", "kg/cm2"] # at conflicts with with attotonne (at)
+aliases = ["technical-atmosphere", "kilograms/cm2", "kilogram/cm2"]
 factor = "98066.5"

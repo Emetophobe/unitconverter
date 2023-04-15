@@ -291,16 +291,17 @@ Power
 Pressure
 
 	pascal
+	newton/metre2
 	bar
 	barye
-	metre of mercury
-	inch of mercury
 	psi
 	ksi
 	pieze
 	torr
-	standard-atmosphere
-	technical-atmosphere
+	metre of mercury
+	inch of mercury
+	standard atmosphere
+	technical atmosphere
 
 Radioactivity
 

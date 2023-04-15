@@ -164,9 +164,9 @@ Fuel Consumption
 Illuminance
 
 	lux
-	candela-steradian/metre2
-	lumen/metre2
-	watt/metre2
+	candela-steradian/metre²
+	lumen/metre²
+	watt/metre²
 	phot
 	nox
 	metre-candle
@@ -215,9 +215,9 @@ Length
 
 Luminance
 
-	candela/metre2
-	candela/inch2
-	candela/foot2
+	candela/metre²
+	candela/inch²
+	candela/foot²
 	nit
 	stilb
 	apostilb
@@ -291,7 +291,7 @@ Power
 Pressure
 
 	pascal
-	newton/metre2
+	newton/metre²
 	bar
 	barye
 	psi

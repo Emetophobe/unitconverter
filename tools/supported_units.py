@@ -26,13 +26,30 @@ def create_supported_units(filename):
             units = categories[category]
             outfile.write(category.title() + '\n\n')
             for unit in units:
-                outfile.write('\t' + unit.name + '\n')
+                outfile.write('\t' + format_name(unit.name) + '\n')
 
     new_checksum = file_checksum(filename)
     if old_checksum != new_checksum:
         print(f'Saved {len(all_units)} units to {DEST_FILE}')
     else:
         print(f'{filename.name} is already up to date.')
+
+
+replace_powers = {
+    '2': '²',
+    '3': '³',
+}
+
+
+def format_name(name: str) -> str:
+    #  if '/' in name:
+    #    name = name.replace('/', ' per ')
+
+    for key, value in replace_powers.items():
+        if name.endswith(key):
+            return name[:-1] + value
+
+    return name
 
 
 if __name__ == '__main__':

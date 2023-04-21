@@ -3,11 +3,11 @@
 symbols = ["B"]
 aliases = ["bytes"]
 factor = "1"
-prefix_scale = "both"     # scale bytes by decimal and binary prefix
+prefix_scale = "byte"
 
 # 1 bit is 1/8th of a byte or 0.125 bytes
 ["bit"]
 symbols = ["b"]
 aliases = ["bits"]
 factor = "0.125"
-prefix_scale = "decimal"  # scale bits by decimal prefix
+prefix_scale = "bit"

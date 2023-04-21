@@ -3,38 +3,45 @@
 
 from decimal import Decimal, getcontext
 
-from unitconverter.exceptions import CategoryError, UnitError
-from unitconverter.prefixes import get_prefixes
-from unitconverter.registry import iter_units
+from unitconverter.exceptions import CategoryError
+from unitconverter.registry import get_unit
+from unitconverter.types import Numeric
 from unitconverter.unit import Unit
-from unitconverter.utils import parse_decimal, simplify_unit
+from unitconverter.utils import parse_numeric
 
 
 # Set decimal precision
 getcontext().prec = 10
 
 
-def convert(value: Decimal, source: Unit | str, dest: Unit | str) -> Decimal:
+def convert(value: Numeric, source: Unit | str, dest: Unit | str) -> Decimal:
     """ Convert value from source unit to destination unit.
 
-    Args:
-        value (Decimal | int | str):
-            value to convert.
+    Parameters
+    ----------
+    value : Numeric
+        value to convert
 
-        source (Unit | str):
-            source unit or name.
+    source : Unit | str
+        source unit or name
 
-        dest (str | Unit):
-            destination unit or name.
+    dest : Unit | str
+        destination unit or name
 
-    Raises:
-        UnitError: if a unit is invalid.
-        CategoryError: if the units are incompatible.
+    Returns
+    -------
+    Decimal
+        result of the conversion
 
-    Returns:
-        Decimal: the result of the conversion.
+    Raises
+    ------
+    UnitError
+        the source or dest unit is invalid
+
+    CategoryError
+        the units are not compatible
     """
-    value = parse_decimal(value)
+    value = parse_numeric(value)
     source = parse_unit(source)
     dest = parse_unit(dest)
 
@@ -48,37 +55,26 @@ def convert(value: Decimal, source: Unit | str, dest: Unit | str) -> Decimal:
 def parse_unit(name: str) -> Unit:
     """ Parse unit name and return a Unit.
 
-    Args:
-        name (str): unit name, symbol, or alias.
+    Parameters
+    ----------
+    name : str
+        unit name, symbol, or alias
 
-    Raises:
-        UnitError: if the unit name is invalid.
+    Returns
+    -------
+    Unit
+        unit instance from the registry
 
-    Returns:
-        Unit: a unit instance.
+    Raises
+    ------
+    UnitError
+        invalid unit name
     """
     if isinstance(name, Unit):
         return name
 
-    simple_name = simplify_unit(name)
-
-    # Check predefined units
-    for unit in iter_units():
-        if simple_name in unit:
-            return unit
-
-    # Check generated units
-    for unit in iter_units():
-        # Get list of supported prefixes (if any)
-        prefixes = get_prefixes(unit.prefix_scale)
-
-        # Generate prefixes and check for a matching unit
-        for prefix in prefixes:
-            prefix_unit = unit.prefix(prefix)
-            if simple_name in prefix_unit:
-                return prefix_unit
-
-    raise UnitError(f'Invalid unit: {name}')
+    # Just call Registry.get_name() for now
+    return get_unit(name)
 
 
 def format_decimal(value: Decimal,
@@ -88,21 +84,24 @@ def format_decimal(value: Decimal,
                    ) -> str:
     """ Format a decimal into a string for display.
 
-    Args:
-        value (Decimal):
-            the decimal value.
+    Parameters
+    ----------
+    value : Decimal
+        the decimal value
 
-        exponent (bool, optional):
-            show E notation when possible. Defaults to False.
+    exponent : bool, optional
+        use E notation when possible, by default False
 
-        precision (int, optional):
-            set rounding precision. Defaults to None.
+    precision : int, optional
+        set rounding precision, by default None
 
-        commas (bool, optional):
-            show commas (thousands) separators. Defaults to False.
+    commas : bool, optional
+        show commas (thousands) separators, by default False
 
-    Returns:
-        str: the formatted string.
+    Returns
+    -------
+    str
+        formatted string
     """
     precision = f'.{precision}' if precision is not None else ''
 

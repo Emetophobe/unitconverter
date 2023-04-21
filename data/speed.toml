@@ -18,6 +18,7 @@ symbols = ["m/hr", "m/h"]
 aliases = ["metres/hour"]
 factor = "0.0002777777777777777777777777778"
 prefix_scale = "si"
+prefix_exclude = ["kilo"]  # see kph below
 
 # kilometre per hour (kph) for convenience
 # 1 kph = 1000/3600 = 0.2777777778 m/s

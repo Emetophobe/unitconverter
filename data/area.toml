@@ -3,8 +3,8 @@
 symbols = ["m2"]
 aliases = ["square metres", "metres2", "metre2"]
 factor = "1"
-power = "2"
 prefix_scale = "si"
+prefix_power = 2
 
 # 1 are = 100 m^2
 ["are"]

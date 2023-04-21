@@ -2,46 +2,46 @@
 ["cubic metre"]
 symbols = ["m3"]
 aliases = ["cubic metres", "metres3", "metre3"]
-factor = "1"
-power = "3"
+factor = 1
 prefix_scale = "si"
+prefix_power = 3
 
-# 1 litre = 0.001 m^3
+# 1 litre = 0.001 cubic metre
 ["litre"]
 symbols = ["L", "l"]
 aliases = ["litres"]
 factor = "0.001"
 prefix_scale = "si"
 
-# 1 metric cup = 0.00025 m^3
+# 1 metric cup = 0.00025 cubic metre
 ["cup"]
 symbols = []
 aliases = ["cups", "metric cups", "metric cup"]
 factor = "0.00025"
 
-# 1 metric tbps = 0.000015 m^3
+# 1 metric tbps = 0.000015 cubic metre
 ["tablespoon"]
 symbols = ["tbsp"]
 aliases = ["tablespoons", "metric tablespoons", "metric tablespoon"]
 factor = "0.000015"
 
-# 1 metric tsp = 0.000005 m^3
+# 1 metric tsp = 0.000005 cubic metre
 ["teaspoon"]
 symbols = ["tsp"]
 aliases = ["teaspoons", "metric teaspoons", "metric teaspoon"]
 factor = "0.000005"
 
-# 1 drop = 0.01 teaspoon = 0.00000005 m^3
+# 1 drop = 0.01 teaspoon = 0.00000005 cubic metre
 ["drop"]
 symbols = ["gt"]
 aliases = ["drops"]
 factor = "0.00000005"
 
-# 1 stere = 1 m^3
+# 1 stere = 1 cubic metre
 ["stere"]
 symbols = []
 aliases = ["steres", "stères", "stère"]
-factor = "1"
+factor = 1
 
 
 # Imperial units

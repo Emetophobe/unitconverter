@@ -5,14 +5,14 @@ from decimal import Decimal, DecimalException
 from unitconverter.exceptions import ConverterError
 
 
-def parse_decimal(value: Decimal | int | str, msg: str = None) -> Decimal:
-    """ Convert value into a decimal.
+def parse_numeric(value: Decimal | int | str, msg: str = None) -> Decimal:
+    """ Convert value into a decimal or an integer.
 
     Raises ConverterError if value is a float. Use a string instead
     it will give a more accurate decimal value. See examples below.
 
     Examples:
-
+    ---------
         This works with str:
 
             >>> Decimal('.1') + Decimal('.1') + Decimal('.1') == Decimal('.3')
@@ -80,4 +80,5 @@ _replacements = {
     # regional spelling
     'meter': 'metre',
     'liter': 'litre',
+    'caliber': 'calibre',
 }

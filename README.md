@@ -54,13 +54,12 @@ The following prefix scaling options are supported:
 
     none        - don't use prefix scaling (default)
     si          - use SI prefix table
-    decimal     - use decimal prefix table
     binary      - use binary prefix table
+    bit         - use bit prefix table (kilo to quetta)
+    byte        - use bit and binary tables
     all         - use SI and binary tables
-    both        - use decimal and binary tables
 
-Units can override the default scaling behaviour as needed. SI units for example use the "si" prefix scale. Another example is bytes which uses "both" to generate both decimal prefixes like "kilobytes" and also binary prefixes like "kibibytes".
-
+The default scaling behaviour can be changed on a per-unit basis.
 
 ## Requirements
 

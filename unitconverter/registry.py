@@ -8,6 +8,7 @@ from pathlib import Path
 from unitconverter.exceptions import UnitError
 from unitconverter.utils import simplify_unit
 from unitconverter.unit import Unit
+from unitconverter.prefixes import create_prefixed_units
 
 
 class Registry:
@@ -17,25 +18,24 @@ class Registry:
     _aliases = {}
 
     def __init__(self):
-        """ Initialize units dictionary. """
+        """ Load pre-defined units. """
         if not self._units:
             self._load_units()
 
     def add_unit(self, unit: Unit) -> None:
-        """ Add a unit to the dictionary. """
-        # Check for duplicate names, symbols, or aliases
+        """ Add a unit to the registry. """
+        # Check for duplicates
         for name in unit.names():
             if name in self._aliases.keys():
                 raise UnitError(f'{unit.name} has a duplicate name: {name}'
                                 f' (Original unit: {self._aliases[name]})')
-            # Track all names, symbols, and aliases
+            # Track all unit names, symbols, and aliases
             self._aliases[name] = unit
 
-        # Add unit to category
         self._units[unit.category].append(unit)
 
     def get_unit(self, name: str) -> Unit:
-        """ Get a unit by name. Raises UnitError if unit doesn't exist. """
+        """ Get a unit by name. """
         simple_name = simplify_unit(name)
         for unit in self:
             if simple_name in unit:
@@ -67,7 +67,14 @@ class Registry:
             with open(filename, 'rb') as infile:
                 data = tomllib.load(infile)
                 for name, args in data.items():
-                    self.add_unit(Unit(name, category, **args))
+                    # Add new unit
+                    unit = Unit(name, category, **args)
+                    self.add_unit(unit)
+
+                    # Add generated units
+                    units = create_prefixed_units(unit)
+                    for prefixed_unit in units:
+                        self.add_unit(prefixed_unit)
 
     def __iter__(self) -> Unit:
         """ Iterate over all units. """
@@ -79,20 +86,19 @@ class Registry:
         return sum(len(units) for _, units in self._units.items())
 
 
-_registry = Registry()
+REGISTRY = Registry()
 
-register = _registry.add_unit
-get_unit = _registry.get_unit
-get_units = _registry.get_units
-get_categories = _registry.get_categories
-get_aliases = _registry.get_aliases
-iter_units = _registry.iter_units
-list_units = _registry.get_units
+add_unit = REGISTRY.add_unit
+get_unit = REGISTRY.get_unit
+get_units = REGISTRY.get_units
+get_categories = REGISTRY.get_categories
+get_aliases = REGISTRY.get_aliases
+iter_units = REGISTRY.iter_units
 
 
 __all__ = [
     'Registry',
-    'register',
+    'add_unit',
     'get_unit',
     'get_units',
     'get_categories',

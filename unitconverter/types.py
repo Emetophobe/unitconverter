@@ -1,8 +1,7 @@
 # Copyright (c) 2022-2023 Mike Cunningham
 
 
-from decimal import Decimal, DecimalException
-from unitconverter.exceptions import ConverterError
+from decimal import Decimal
 
 
 # Numeric type (no floats!)

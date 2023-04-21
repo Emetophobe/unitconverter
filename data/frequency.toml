@@ -1,7 +1,6 @@
 # The hertz is the SI unit of frequency
 ["hertz"]
 symbols = ["Hz"]
-aliases = []
 factor = "1"
 prefix_scale = "si"
 

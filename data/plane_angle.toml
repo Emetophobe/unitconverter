@@ -20,7 +20,7 @@ factor = "0.015708"
 
 # 1 arcsecond = pi / (180 × 3600) radians
 ["arcsecond"]
-symbols = ["″", "arcsec"]
+symbols = ["\u2033", "arcsec"]
 aliases = ["arc second"]
 factor = "0.000004848136957929807"
 prefix_scale = "si"
@@ -34,5 +34,4 @@ factor = "0.000290888"
 # 1 turn = 360 degrees = 400 gradians = 2π radians
 ["turn"]
 symbols = ["tr"]
-aliases = []
 factor = "6.283185307179586"

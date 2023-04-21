@@ -6,7 +6,6 @@ factor = "1"
 
 # 1 bel = 10 decibels
 ["bel"]
-symbols = []
 aliases = ["bels"]
 factor = "10"
 

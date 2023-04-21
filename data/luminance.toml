@@ -33,26 +33,21 @@ factor = "0.3183098862"
 
 # 1 blondel = 1 apostilb
 ["blondel"]
-symbols = []
 aliases = ["blondels"]
 factor = "0.3183098862"
 
 ["bril"]
-symbols = []
 aliases = ["brils"]
 factor = "3.183098861E-8"
 
 ["lambert"]
-symbols = []
 aliases = ["lamberts"]
 factor = "3183.0988618"
 
 ["foot-lambert"]
-symbols = []
 aliases = ["feet-lambert"]
 factor = "3.4262590996"
 
 ["skot"]
-symbols = []
 aliases = ["skots"]
 factor = "0.0003183099"

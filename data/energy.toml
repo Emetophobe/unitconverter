@@ -64,12 +64,10 @@ factor = "1055.06"
 
 # A quad is a quadrillion btus
 ["quad"]
-symbols = []
 aliases = ["quadrillion btus", "quadrillion btu"]
 factor = "1.05506E+18"
 
 ["erg"]
-symbols = []
 aliases = ["ergs"]
 factor = "1E-7"
 

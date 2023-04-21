@@ -99,18 +99,15 @@ factor = "0.44704"
 
 # 1 knot = 1 nautical mile per hour = ~0.514 m/s
 ["knot"]
-symbols = []
 aliases = ["knots"]
 factor = "0.5144444444444444444444444444"
 
 # 1 imperial knot = ~0.5147733333 m/s
 ["imperial knot"]
-symbols = []
 aliases = ["imperial knots"]
 factor = "0.5147733333333333333333333333"
 
 # 1 mach (speed of sound) = ~340.3 m/s
 ["mach"]
 symbols = ["Ma"]
-aliases = []
 factor = "340.3"

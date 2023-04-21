@@ -16,7 +16,6 @@ factor = "1E-10"
 
 
 ["thou"]
-symbols = []
 aliases = ["thousandth of an inch", "mils", "mil"]
 factor = "0.0000254"
 
@@ -73,6 +72,10 @@ factor = "0.201168"
 symbols = ["rd"]
 aliases = ["rods", "perch", "poles", "pole", "lugs", "lug"]
 factor = "5.0292"
+
+["barleycorn"]
+aliases = ["barleycorns"]
+factor = "0.0084667"
 
 
 # US survey units
@@ -168,8 +171,6 @@ factor = "1853.184"
 
 
 ["planck length"]
-symbols = []
-aliases = []
 factor = "1.61605E-35"
 
 ["astronomical unit"]
@@ -183,7 +184,6 @@ aliases = ["light seconds", "light-seconds", "light-second"]
 factor = "299792458"
 
 ["light minute"]
-symbols = []
 aliases = ["light minutes", "light-minutes", "light-minute"]
 factor = "1.798754748E+10"
 
@@ -202,12 +202,10 @@ factor = "3.0857E+16"
 
 
 ["twip"]
-symbols = []
 aliases = ["twips"]
 factor = "0.0000176389"
 
 ["point"]
-symbols = []
 aliases = ["points"]
 factor = "0.000352778"
 
@@ -215,12 +213,5 @@ factor = "0.000352778"
 # Misc
 
 
-["barleycorn"]
-symbols = []
-aliases = ["barleycorns"]
-factor = "0.0084667"
-
-["caliber"]
-symbols = []
-aliases = ["calibre"]
+["calibre"]
 factor = "0.000254"

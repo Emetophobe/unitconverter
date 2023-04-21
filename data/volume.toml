@@ -15,7 +15,6 @@ prefix_scale = "si"
 
 # 1 metric cup = 0.00025 cubic metre
 ["cup"]
-symbols = []
 aliases = ["cups", "metric cups", "metric cup"]
 factor = "0.00025"
 
@@ -39,7 +38,6 @@ factor = "0.00000005"
 
 # 1 stere = 1 cubic metre
 ["stere"]
-symbols = []
 aliases = ["steres", "stères", "stère"]
 factor = 1
 
@@ -48,7 +46,6 @@ factor = 1
 
 
 ["fifth"]
-symbols = []
 aliases = ["fifths"]
 factor = "0.0007570823568"
 

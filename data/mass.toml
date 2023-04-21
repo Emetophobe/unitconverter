@@ -76,7 +76,6 @@ aliases = ["pennyweights"]
 factor = "1.55517384"
 
 ["slug"]
-symbols = []
 aliases = ["slugs"]
 factor = "14593.9"
 

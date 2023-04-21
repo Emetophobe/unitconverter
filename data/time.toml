@@ -16,7 +16,6 @@ aliases = ["hours"]
 factor = "3600"
 
 ["day"]
-symbols = []
 aliases = ["days"]
 factor = "86400"
 
@@ -26,7 +25,6 @@ aliases = ["weeks"]
 factor = "604800"
 
 ["fortnight"]
-symbols = []
 aliases = ["fortnights"]
 factor = "1209600"
 
@@ -41,32 +39,26 @@ aliases = ["years"]
 factor = "3.1536E+7"
 
 ["gregorian year"]
-symbols = []
 aliases = ["gregorian years"]
 factor = "31556952"
 
 # 1 julian year is exactly 8766 hours
 ["julian year"]
-symbols = []
 aliases = ["julian years"]
 factor = "31557600"
 
 ["leap year"]
-symbols = []
 aliases = ["leap years"]
 factor = "31622400"
 
 ["decade"]
-symbols = []
 aliases = ["decades"]
 factor = "3.1536E+8"
 
 ["century"]
-symbols = []
 aliases = ["centuries"]
 factor = "3.1536E+9"
 
 ["millennia"]
-symbols = []
 aliases = ["millennias", "millenniums", "millennium"]
 factor = "3.1536E+10"

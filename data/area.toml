@@ -8,13 +8,12 @@ prefix_power = 2
 
 # 1 are = 100 m^2
 ["are"]
-symbols = []
 aliases = ["ares"]
 factor = "100.0"
 
+
 # 1 barn = 1E-28 m^2
 ["barn"]
-symbols = []
 aliases = ["barns"]
 factor = "1E-28"
 
@@ -32,19 +31,20 @@ factor = "4046.8564224"
 
 # 1 hide = 120 acres = 485000 m^2
 ["hide"]
-symbols = []
 aliases = ["hides"]
 factor = "485000"
 
 # 1 rood = 1/4 acre = roughly 1011.7141056 m^2
 ["rood"]
-symbols = []
 aliases = ["roods"]
 factor = "1011.7141056"
 
+["arpent"]
+aliases = ["arpents"]
+factor = "3418.8929237"
+
 # 1 square = 100 square feet or roughly 9.290304 m^2
 ["square"]
-symbols = []
 aliases = ["squares"]
 factor = "9.290304"
 
@@ -133,18 +133,11 @@ factor = "25.292953807488363364"
 
 # Misc.
 
-["arpent"]
-symbols = []
-aliases = ["arpents"]
-factor = "3418.8929237"
-
 ["homestead"]
-symbols = []
 aliases = ["homesteads", "survey homesteads", "survey homestead"]
 factor = "647497.02758"
 
 ["section"]
-symbols = []
 aliases = ["sections", "survey sections", "survey section"]
 factor = "2589988.1103"
 

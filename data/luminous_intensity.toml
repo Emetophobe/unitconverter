@@ -20,6 +20,4 @@ factor = "1"
 
 # 1 historic candlepower = 0.981 candela
 ["historic candlepower"]
-symbols = []
-aliases = []
 factor = "0.981"

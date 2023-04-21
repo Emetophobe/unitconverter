@@ -57,7 +57,6 @@ factor = "0.138254954376"
 
 ["ounce-force"]
 symbols = ["ozf"]
-aliases = []
 factor = "0.27801385"
 
 ["pound-force"]

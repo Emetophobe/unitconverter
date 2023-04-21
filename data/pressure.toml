@@ -14,7 +14,6 @@ prefix_scale = "si"
 
 # 1 bar = exactly 100,000 (1E+5) pascal
 ["bar"]
-symbols = []
 aliases = ["bars"]
 factor = "1E+5"
 prefix_scale = "si"

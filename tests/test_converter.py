@@ -22,7 +22,7 @@ class TestConverter(unittest.TestCase):
 
         # Assert that UnitError is raised with invalid unit names
         with self.assertRaises(UnitError):
-            convert(1, 'metre', 'bad-unit-name')
+            convert(1, 'metre', 'invalid unit')
 
         # Assert that CategoryError is raised with incompatible units
         with self.assertRaises(CategoryError):

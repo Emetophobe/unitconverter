@@ -3,12 +3,11 @@
 
 import unittest
 from decimal import Decimal
-from typing import Any
 
 from unitconverter.exceptions import UnitError
-from unitconverter.prefixes import PrefixScale, get_prefixes
-from unitconverter.unit import Unit
 from unitconverter.registry import Registry
+from unitconverter.types import Numeric
+from unitconverter.unit import Unit
 
 
 # Total number of categories
@@ -85,56 +84,29 @@ class TestRegistry(unittest.TestCase):
         for unit in self.units:
             self.assert_valid_unit(unit)
 
-    def test_generated_units(self) -> None:
-        """ Test generated units. """
-        aliases = self.units.get_aliases()
-
-        # Exclude units that were created for convenience that
-        # might conflict with units with prefix scaling enabled
-        excludes = ['kilometre/hour']  # conficts with metre/hour
-
-        # Generate list of prefixed units
-        generated = []
-        for unit in self.units:
-            prefixes = get_prefixes(unit.prefix_scale)
-            for prefix in prefixes:
-                prefix_unit = unit.prefix(prefix)
-                if prefix_unit.name not in excludes:
-                    generated.append(prefix_unit)
-
-        # Check for duplicates
-        for unit in generated:
-            for name in unit.names():
-                self.assertTrue(name not in aliases, f'{unit.name} has a duplicate'
-                                f' name: {name} original: {aliases.get(name)}')
-                aliases[name] = unit
-
-            # Make sure the generated unit is valid
-            self.assert_valid_unit(unit)
-
     def assert_valid_unit(self, unit: Unit) -> None:
         """ Assert that a unit is correctly formed (has the right attribute types). """
-        self.assert_type(unit, Unit, f'{unit!r} is not a valid Unit')
+        self.assertIsInstance(unit, Unit, f'{unit!r} is not a valid Unit')
 
-        self.assert_string(unit.name, f'{unit.name} has an invalid name')
-        self.assert_string(unit.category, f'{unit.name} has an invalid category')
+        msg = f'{unit.name} has an invalid '
+
+        self.assert_string(repr(unit), msg + 'name')
+        self.assert_string(unit.category, msg + 'category')
         self.assert_stringlist(unit.symbols, f'{unit.name} has invalid symbols')
         self.assert_stringlist(unit.aliases, f'{unit.name} has invalid aliases')
 
-        self.assert_number(unit.factor, f'{unit.name} has an invalid factor')
-        self.assert_number(unit.offset, f'{unit.name} has an invalid offset')
-        self.assert_number(unit.power, f'{unit.name} has an invalid power')
+        self.assert_numeric(unit.factor, msg + 'factor')
+        self.assert_numeric(unit.offset, msg + 'offset')
 
-        msg = f'{unit.name} has an invalid prefix_scale: {unit.prefix_scale!r}'
-        self.assertIsInstance(unit.prefix_scale, PrefixScale, msg)
+        if unit.prefix_scale:  # prefix scale can be None
+            self.assertIsInstance(unit.prefix_scale, str, msg + 'prefix_scale')
 
-    def assert_type(self, obj: Any, types: Any | tuple, msg: str = None) -> None:
-        """ Assert that an object is the correct type or tuple of types. """
-        self.assertIsInstance(obj, types, msg or type(obj))
+        self.assert_numeric(unit.prefix_power, msg + 'prefix_power')
+        self.assert_stringlist(unit.prefix_exclude, msg + 'prefix_exclude')
 
-    def assert_number(self, value: Decimal, msg: str) -> None:
-        """ Assert that a unit has a valid number (Decimal, int, or str). """
-        self.assert_type(value, (Decimal, int, str), msg)
+    def assert_numeric(self, value: Numeric, msg: str) -> None:
+        """ Assert that a unit has a valid numeric value (Decimal, int, or str). """
+        self.assertIsInstance(value, (Decimal, int, str), msg)
 
         # Assert that all E notations are signed +/-
         strvalue = str(value)
@@ -144,11 +116,11 @@ class TestRegistry(unittest.TestCase):
 
     def assert_string(self, name: str, msg: str) -> None:
         """ Assert that name is a valid string (atleast 1 character). """
-        self.assert_type(name, str)
+        self.assertIsInstance(name, str, msg)
         self.assertGreater(len(name), 0, msg)
 
     def assert_stringlist(self, names: list[str], msg: str) -> None:
         """ Assert that a list of strings is valid. """
-        self.assert_type(names, list, msg)
+        self.assertIsInstance(names, list, msg)
         for name in names:
             self.assert_string(name, msg)

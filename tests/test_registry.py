@@ -96,12 +96,11 @@ class TestRegistry(unittest.TestCase):
         self.assert_stringlist(unit.aliases, f'{unit.name} has invalid aliases')
 
         self.assert_numeric(unit.factor, msg + 'factor')
-        self.assert_numeric(unit.offset, msg + 'offset')
 
         if unit.prefix_scale:  # prefix scale can be None
             self.assertIsInstance(unit.prefix_scale, str, msg + 'prefix_scale')
 
-        self.assert_numeric(unit.prefix_power, msg + 'prefix_power')
+        self.assertIsInstance(unit.prefix_power, int, msg + 'prefix_power')
         self.assert_stringlist(unit.prefix_exclude, msg + 'prefix_exclude')
 
     def assert_numeric(self, value: Numeric, msg: str) -> None:

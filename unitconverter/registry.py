@@ -7,7 +7,7 @@ from pathlib import Path
 
 from unitconverter.exceptions import UnitError
 from unitconverter.utils import simplify_unit
-from unitconverter.unit import Unit
+from unitconverter.unit import Unit, TemperatureUnit
 from unitconverter.prefixes import create_prefixed_units
 
 
@@ -67,8 +67,12 @@ class Registry:
             with open(filename, 'rb') as infile:
                 data = tomllib.load(infile)
                 for name, args in data.items():
-                    # Add new unit
-                    unit = Unit(name, category, **args)
+                    # Temperature units use a custom class
+                    if category == 'temperature':
+                        unit = TemperatureUnit(name, category, **args)
+                    else:
+                        unit = Unit(name, category, **args)
+
                     self.add_unit(unit)
 
                     # Add generated units

@@ -28,6 +28,29 @@ class TestConverter(unittest.TestCase):
         with self.assertRaises(CategoryError):
             convert(1, 'metre', 'litre')
 
+        # Test some common conversions
+        tests = {
+            'mile': {
+                'furlong': 8,
+                'chain': 80,
+                'rod': 320,
+                'foot': 5280,
+                'link': 8000,
+                'hand': 15840,
+                'inch': 63360,
+            },
+            'kelvin': {
+                'celsius': Decimal('-272.15'),
+                'fahrenheit': Decimal('-457.87'),
+                'rankine': Decimal('1.8'),
+            }
+        }
+
+        for source, test_data in tests.items():
+            for dest, expected in test_data.items():
+                result = convert(1, source, dest)
+                self.assertEqual(result, expected, f'{source} to {dest}')
+
     def test_parse_unit(self) -> None:
         """ Test parse_unit() function. """
         # Test parsing simple built-in units.

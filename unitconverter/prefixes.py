@@ -113,17 +113,17 @@ def add_prefix(prefix: Prefix, unit: Unit) -> Unit:
     name = _prefix_name(prefix.name, unit.name)
     symbols = [prefix.symbol + symbol for symbol in unit.symbols]
     aliases = [_prefix_name(prefix.name, alias) for alias in unit.aliases]
-    factor = (Decimal(unit.factor) * Decimal(prefix.factor))
+    factor = (Decimal(unit.factor) * prefix.factor)
 
     # Apply optional prefix scaling power (used by square and cubic metres)
     if unit.prefix_power != 1:
-        factor = factor ** Decimal(unit.prefix_power)
+        factor = factor ** unit.prefix_power
 
     # Don't allow prefixed units to be prefixed again
     prefix_scale = None
 
-    return Unit(name, unit.category, symbols, aliases, factor, unit.offset,
-                prefix_scale, unit.prefix_power, unit.prefix_exclude)
+    return Unit(name, unit.category, symbols, aliases, factor, prefix_scale,
+                unit.prefix_power, unit.prefix_exclude)
 
 
 def get_prefixes(unit: Unit) -> list[Prefix]:

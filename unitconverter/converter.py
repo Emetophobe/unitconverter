@@ -48,8 +48,8 @@ def convert(value: Numeric, source: Unit | str, dest: Unit | str) -> Decimal:
     if source.category != dest.category:
         raise CategoryError(source, dest)
 
-    value = Decimal(source.offset) + value * Decimal(source.factor)
-    return (-Decimal(dest.offset) + value) / Decimal(dest.factor)
+    value = source.convert_from(value)
+    return dest.convert_to(value)
 
 
 def parse_unit(name: str) -> Unit:

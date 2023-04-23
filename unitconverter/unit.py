@@ -1,6 +1,9 @@
 # Copyright (c) 2022-2023 Mike Cunningham
 
 
+from decimal import Decimal
+
+from unitconverter.exceptions import UnitError
 from unitconverter.types import Numeric
 from unitconverter.utils import parse_numeric
 
@@ -14,7 +17,6 @@ class Unit:
                  symbols: list[str] = None,
                  aliases: list[str] = None,
                  factor: Numeric = 1,
-                 offset: Numeric = 0,
                  prefix_scale: str = None,
                  prefix_power: int = 1,
                  prefix_exclude: list[str] = None):
@@ -37,9 +39,6 @@ class Unit:
         factor : Numeric, optional
             conversion factor, by default 1
 
-        offset : Numeric, optional
-            conversion offset, by default 0
-
         prefix_scale : str, optional
             prefix scale option, by default None
 
@@ -55,11 +54,16 @@ class Unit:
         self.aliases = aliases or []
 
         self.factor = parse_numeric(factor, f'{name} has an invalid factor {factor}')
-        self.offset = parse_numeric(offset, f'{name} has an invalid offset {offset}')
 
         self.prefix_scale = prefix_scale
         self.prefix_power = prefix_power
         self.prefix_exclude = prefix_exclude or []
+
+    def convert_from(self, value: Decimal) -> Decimal:
+        return value * Decimal(self.factor)
+
+    def convert_to(self, value: Decimal) -> Decimal:
+        return value / Decimal(self.factor)
 
     def names(self) -> list[str]:
         """ Get a list of all unit names and symbols. """
@@ -75,3 +79,39 @@ class Unit:
 
     def __str__(self) -> str:
         return self.name
+
+
+class TemperatureUnit(Unit):
+    """ Temperature units use a custom converter. """
+
+    def __init__(self, name, category, symbols=None, aliases=None, factor=1,
+                 prefix_scale=None, prefix_power=1, prefix_exclude=None):
+        """ Create a new temperature unit. """
+        super().__init__(name, category, symbols, aliases, factor, prefix_scale,
+                         prefix_power, prefix_exclude)
+
+    def convert_from(self, value: Decimal) -> Decimal:
+        """ Convert from value to kelvin. """
+        if self.name == 'kelvin':
+            return value
+        elif self.name == 'celsius':
+            return value + Decimal('273.15')
+        elif self.name == 'fahrenheit':
+            return (value + Decimal('459.67')) * Decimal(5) / Decimal(9)
+        elif self.name == 'rankine':
+            return value * Decimal(5) / Decimal(9)
+        else:
+            raise UnitError(f'Unsupported temperature unit: {self.name}')
+
+    def convert_to(self, value: Decimal) -> Decimal:
+        """ Convert kelvin to value. """
+        if self.name == 'kelvin':
+            return value
+        elif self.name == 'celsius':
+            return value - Decimal('273.15')
+        elif self.name == 'fahrenheit':
+            return value * Decimal(9) / Decimal(5) - Decimal('459.67')
+        elif self.name == 'rankine':
+            return value * Decimal(9) / Decimal(5)
+        else:
+            raise UnitError(f'Unsupported temperature unit: {self.name}')

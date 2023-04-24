@@ -1,6 +1,6 @@
 # 1 pascal-second is the SI unit of viscosity
 ["pascal-second"]
-symbols = ["Pa*s", "Pa⋅s", "Pa-s"]
+symbols = ["Pa-s"]
 aliases = ["pascal-seconds"]
 factor = "1"
 prefix_scale = "si"

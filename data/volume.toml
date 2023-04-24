@@ -70,12 +70,12 @@ aliases = ["cubic miles", "miles3", "mile3"]
 factor = "4168181825.440579584"
 
 ["acre-inch"]
-symbols = ["ac*in", "ac-in"]
+symbols = ["ac-in"]
 aliases = ["acre-inches", "acre-in"]
 factor = "102.79015312896"
 
 ["acre-foot"]
-symbols = ["ac*ft", "ac-ft"]
+symbols = ["ac-ft"]
 aliases = ["acre-feet"]
 factor = "1233.48183754752"
 

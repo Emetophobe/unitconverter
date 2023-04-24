@@ -6,7 +6,6 @@ from decimal import Decimal
 
 from unitconverter.exceptions import UnitError
 from unitconverter.registry import Registry
-from unitconverter.types import Numeric
 from unitconverter.unit import Unit
 
 
@@ -85,7 +84,7 @@ class TestRegistry(unittest.TestCase):
             self.assert_valid_unit(unit)
 
     def assert_valid_unit(self, unit: Unit) -> None:
-        """ Assert that a unit is correctly formed (has the right attribute types). """
+        """ Assert that a unit is correctly formed. """
         self.assertIsInstance(unit, Unit, f'{unit!r} is not a valid Unit')
 
         msg = f'{unit.name} has an invalid '
@@ -103,7 +102,7 @@ class TestRegistry(unittest.TestCase):
         self.assertIsInstance(unit.prefix_power, int, msg + 'prefix_power')
         self.assert_stringlist(unit.prefix_exclude, msg + 'prefix_exclude')
 
-    def assert_numeric(self, value: Numeric, msg: str) -> None:
+    def assert_numeric(self, value: Decimal | int | str, msg: str) -> None:
         """ Assert that a unit has a valid numeric value (Decimal, int, or str). """
         self.assertIsInstance(value, (Decimal, int, str), msg)
 

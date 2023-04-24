@@ -5,21 +5,20 @@ from decimal import Decimal, getcontext
 
 from unitconverter.exceptions import CategoryError
 from unitconverter.registry import get_unit
-from unitconverter.types import Numeric
 from unitconverter.unit import Unit
-from unitconverter.utils import parse_numeric
+from unitconverter.utils import parse_decimal
 
 
 # Set decimal precision
 getcontext().prec = 10
 
 
-def convert(value: Numeric, source: Unit | str, dest: Unit | str) -> Decimal:
+def convert(value: Decimal | int | str, source: Unit | str, dest: Unit | str) -> Decimal:
     """ Convert value from source unit to destination unit.
 
     Parameters
     ----------
-    value : Numeric
+    value : Decimal | int | str
         value to convert
 
     source : Unit | str
@@ -41,7 +40,7 @@ def convert(value: Numeric, source: Unit | str, dest: Unit | str) -> Decimal:
     CategoryError
         the units are not compatible
     """
-    value = parse_numeric(value)
+    value = parse_decimal(value)
     source = parse_unit(source)
     dest = parse_unit(dest)
 

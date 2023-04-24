@@ -4,8 +4,7 @@
 from decimal import Decimal
 
 from unitconverter.exceptions import UnitError
-from unitconverter.types import Numeric
-from unitconverter.utils import parse_numeric
+from unitconverter.utils import parse_decimal
 
 
 class Unit:
@@ -16,7 +15,7 @@ class Unit:
                  category: str,
                  symbols: list[str] = None,
                  aliases: list[str] = None,
-                 factor: Numeric = 1,
+                 factor: Decimal | int | str = 1,
                  prefix_scale: str = None,
                  prefix_power: int = 1,
                  prefix_exclude: list[str] = None):
@@ -36,7 +35,7 @@ class Unit:
         aliases : list[str], optional
             list of additional unit names or aliases, by default None
 
-        factor : Numeric, optional
+        factor : Decimal | int | str, optional
             conversion factor, by default 1
 
         prefix_scale : str, optional
@@ -53,7 +52,7 @@ class Unit:
         self.symbols = symbols or []
         self.aliases = aliases or []
 
-        self.factor = parse_numeric(factor, f'{name} has an invalid factor {factor}')
+        self.factor = parse_decimal(factor, f'{name} has an invalid factor {factor}')
 
         self.prefix_scale = prefix_scale
         self.prefix_power = prefix_power

@@ -5,8 +5,8 @@ from decimal import Decimal, DecimalException
 from unitconverter.exceptions import ConverterError
 
 
-def parse_numeric(value: Decimal | int | str, msg: str = None) -> Decimal:
-    """ Convert value into a decimal or an integer.
+def parse_decimal(value: Decimal | int | str, msg: str = None) -> Decimal:
+    """ Convert value into a decimal.
 
     Raises ConverterError if value is a float. Use a string instead
     it will give a more accurate decimal value. See examples below.

@@ -4,14 +4,13 @@
 from decimal import Decimal
 
 from unitconverter.exceptions import UnitError
-from unitconverter.types import Numeric
 from unitconverter.unit import Unit
 
 
 class Prefix:
     """ A prefix can be applied to a unit that supports prefix scaling. """
 
-    def __init__(self, name: str, symbol: str, factor: Numeric) -> None:
+    def __init__(self, name: str, symbol: str, factor: Decimal | int | str) -> None:
         self.name = name
         self.symbol = symbol
         self.factor = Decimal(factor)
@@ -113,11 +112,7 @@ def add_prefix(prefix: Prefix, unit: Unit) -> Unit:
     name = _prefix_name(prefix.name, unit.name)
     symbols = [prefix.symbol + symbol for symbol in unit.symbols]
     aliases = [_prefix_name(prefix.name, alias) for alias in unit.aliases]
-    factor = (Decimal(unit.factor) * prefix.factor)
-
-    # Apply optional prefix scaling power (used by square and cubic metres)
-    if unit.prefix_power != 1:
-        factor = factor ** unit.prefix_power
+    factor = (Decimal(unit.factor) * prefix.factor) ** unit.prefix_power
 
     # Don't allow prefixed units to be prefixed again
     prefix_scale = None

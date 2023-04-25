@@ -1,0 +1,33 @@
+# dimension = {length = 1, time = -2}
+
+# metre per second squared is the base unit of acceleration
+# https://en.wikipedia.org/wiki/Metre_per_second_squared
+["metre/second2"]
+symbols = ["m/s2"]
+aliases = ["metres/second2"]
+factor = 1
+prefix_scale = "si"
+
+["inch/second2"]
+symbols = ["in/s2"]
+aliases = ["inches/second2"]
+factor = "0.0254"
+
+["foot/second2"]
+symbols = ["ft/s2"]
+aliases = ["feet/second2"]
+factor = "0.3048"
+
+["yard/second2"]
+symbols = ["yd/s2"]
+aliases = ["yards/second2"]
+factor = "0.9144"
+
+["mile/second2"]
+symbols = ["mi/s2"]
+aliases = ["miles/second2"]
+factor = "1609.344"
+
+["galileo"]
+symbols = ["Gal"]  # not to be confused with gal (volume)
+factor = "0.01"

@@ -6,9 +6,9 @@ from collections import defaultdict
 from pathlib import Path
 
 from unitconverter.exceptions import UnitError
-from unitconverter.utils import simplify_unit
-from unitconverter.unit import Unit, TemperatureUnit
 from unitconverter.prefixes import create_prefixed_units
+from unitconverter.unit import Unit
+from unitconverter.utils import simplify_unit
 
 
 class Registry:
@@ -24,7 +24,7 @@ class Registry:
 
     def add_unit(self, unit: Unit) -> None:
         """ Add a unit to the registry. """
-        # Check for duplicates
+        # Check for duplicate names
         for name in unit.names():
             if name in self._aliases.keys():
                 raise UnitError(f'{unit.name} has a duplicate name: {name}'
@@ -32,28 +32,25 @@ class Registry:
             # Track all unit names, symbols, and aliases
             self._aliases[name] = unit
 
+        # Add unit
         self._units[unit.category].append(unit)
 
     def get_unit(self, name: str) -> Unit:
         """ Get a unit by name. """
         simple_name = simplify_unit(name)
-        for unit in self:
-            if simple_name in unit:
-                return unit
+
+        if simple_name in self._aliases:
+            return self._aliases[simple_name]
 
         raise UnitError(f'Invalid unit: {name}')
 
     def get_units(self) -> list[Unit]:
-        """ Get a list of all units. """
+        """ Get a list of pre-defined units. """
         return list(self)
 
     def get_categories(self) -> dict[str, list[Unit]]:
         """ Get a dictionary of categories and units. """
         return dict(self._units)
-
-    def get_aliases(self) -> dict[str, Unit]:
-        """ Get a dictionary of unit aliases. """
-        return dict(self._aliases)
 
     def iter_units(self):
         """ Get a units iterator. """
@@ -66,19 +63,15 @@ class Registry:
 
             with open(filename, 'rb') as infile:
                 data = tomllib.load(infile)
-                for name, args in data.items():
-                    # Temperature units use a custom class
-                    if category == 'temperature':
-                        unit = TemperatureUnit(name, category, **args)
-                    else:
-                        unit = Unit(name, category, **args)
 
+                for name, args in data.items():
+                    # Add unit
+                    unit = Unit(name, category, **args)
                     self.add_unit(unit)
 
-                    # Add generated units
-                    units = create_prefixed_units(unit)
-                    for prefixed_unit in units:
-                        self.add_unit(prefixed_unit)
+                    # Add prefixed versions
+                    for prefixed in create_prefixed_units(unit):
+                        self.add_unit(prefixed)
 
     def __iter__(self) -> Unit:
         """ Iterate over all units. """
@@ -96,7 +89,6 @@ add_unit = REGISTRY.add_unit
 get_unit = REGISTRY.get_unit
 get_units = REGISTRY.get_units
 get_categories = REGISTRY.get_categories
-get_aliases = REGISTRY.get_aliases
 iter_units = REGISTRY.iter_units
 
 
@@ -106,6 +98,5 @@ __all__ = [
     'get_unit',
     'get_units',
     'get_categories',
-    'get_aliases',
     'iter_units',
 ]

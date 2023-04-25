@@ -1,0 +1,11 @@
+["byte/second"]
+symbols = ["B/s", "Bps"]
+aliases = ["bytes/second", "bytes/sec", "byte/sec"]
+factor = "1"
+prefix_scale = "byte"
+
+["bit/second"]
+symbols = ["b/s", "bps"]
+aliases = ["bits/second", "bits/sec", "bit/sec"]
+factor = "0.125"
+prefix_scale = "bit"

@@ -3,7 +3,6 @@
 
 from decimal import Decimal
 
-from unitconverter.exceptions import UnitError
 from unitconverter.utils import parse_decimal
 
 
@@ -58,11 +57,7 @@ class Unit:
         self.prefix_power = prefix_power
         self.prefix_exclude = prefix_exclude or []
 
-    def convert_from(self, value: Decimal) -> Decimal:
-        return value * Decimal(self.factor)
-
-    def convert_to(self, value: Decimal) -> Decimal:
-        return value / Decimal(self.factor)
+        self.prefixed = False
 
     def names(self) -> list[str]:
         """ Get a list of all unit names and symbols. """
@@ -78,39 +73,3 @@ class Unit:
 
     def __str__(self) -> str:
         return self.name
-
-
-class TemperatureUnit(Unit):
-    """ Temperature units use a custom converter. """
-
-    def __init__(self, name, category, symbols=None, aliases=None, factor=1,
-                 prefix_scale=None, prefix_power=1, prefix_exclude=None):
-        """ Create a new temperature unit. """
-        super().__init__(name, category, symbols, aliases, factor, prefix_scale,
-                         prefix_power, prefix_exclude)
-
-    def convert_from(self, value: Decimal) -> Decimal:
-        """ Convert from value to kelvin. """
-        if self.name == 'kelvin':
-            return value
-        elif self.name == 'celsius':
-            return value + Decimal('273.15')
-        elif self.name == 'fahrenheit':
-            return (value + Decimal('459.67')) * Decimal(5) / Decimal(9)
-        elif self.name == 'rankine':
-            return value * Decimal(5) / Decimal(9)
-        else:
-            raise UnitError(f'Unsupported temperature unit: {self.name}')
-
-    def convert_to(self, value: Decimal) -> Decimal:
-        """ Convert kelvin to value. """
-        if self.name == 'kelvin':
-            return value
-        elif self.name == 'celsius':
-            return value - Decimal('273.15')
-        elif self.name == 'fahrenheit':
-            return value * Decimal(9) / Decimal(5) - Decimal('459.67')
-        elif self.name == 'rankine':
-            return value * Decimal(9) / Decimal(5)
-        else:
-            raise UnitError(f'Unsupported temperature unit: {self.name}')

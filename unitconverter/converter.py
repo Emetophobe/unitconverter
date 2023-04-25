@@ -3,7 +3,7 @@
 
 from decimal import Decimal, getcontext
 
-from unitconverter.exceptions import CategoryError
+from unitconverter.exceptions import CategoryError, UnitError
 from unitconverter.registry import get_unit
 from unitconverter.unit import Unit
 from unitconverter.utils import parse_decimal
@@ -44,11 +44,20 @@ def convert(value: Decimal | int | str, source: Unit | str, dest: Unit | str) ->
     source = parse_unit(source)
     dest = parse_unit(dest)
 
-    if source.category != dest.category:
+    if not compatible_units(source, dest):
         raise CategoryError(source, dest)
 
-    value = source.convert_from(value)
-    return dest.convert_to(value)
+    # Fuel conversion
+    if source.category in ('fuel consumption', 'fuel economy'):
+        return convert_fuel(value, source, dest)
+
+    # Temperature converison
+    elif source.category == 'temperature':
+        return convert_temperature(value, source, dest)
+
+    # Regular conversion
+    value = value * source.factor
+    return value / dest.factor
 
 
 def parse_unit(name: str) -> Unit:
@@ -62,7 +71,7 @@ def parse_unit(name: str) -> Unit:
     Returns
     -------
     Unit
-        unit instance from the registry
+        unit instance
 
     Raises
     ------
@@ -116,3 +125,52 @@ def format_decimal(value: Decimal,
             number = number[:-1]
 
     return number
+
+
+def convert_temperature(value: Decimal, source: Unit, dest: Unit) -> Decimal:
+    """ Convert temperature units. """
+    # Convert from source to kelvin
+    if source.name == 'kelvin':
+        pass
+    elif source.name == 'celsius':
+        value = value + Decimal('273.15')
+    elif source.name == 'fahrenheit':
+        value = (value + Decimal('459.67')) * Decimal(5) / Decimal(9)
+    elif source.name == 'rankine':
+        value = value * Decimal(5) / Decimal(9)
+    else:
+        raise UnitError(f'Unsupported temperature unit: {source.name}')
+
+    # Convert from kelvin to dest
+    if dest.name == 'kelvin':
+        return value
+    elif dest.name == 'celsius':
+        return value - Decimal('273.15')
+    elif dest.name == 'fahrenheit':
+        return value * Decimal(9) / Decimal(5) - Decimal('459.67')
+    elif dest.name == 'rankine':
+        return value * Decimal(9) / Decimal(5)
+    else:
+        raise UnitError(f'Unsupported temperature unit: {dest.name}')
+
+
+def convert_fuel(value: Decimal, source: Unit, dest: Unit) -> Decimal:
+    """ Convert fuel economy and fuel consumption. """
+    if ((source.category == 'fuel economy' and dest.category == 'fuel consumption') or
+       (source.category == 'fuel consumption' and dest.category == 'fuel economy')):
+        value = 1 / (value * source.factor)
+        return value / dest.factor
+    else:
+        value = value * source.factor
+        return value / dest.factor
+
+
+def compatible_units(source: Unit, dest: Unit) -> bool:
+    """ Returns True if the units are compatible. """
+    if source.category == dest.category:
+        return True
+    elif ((source.category == 'fuel economy' and dest.category == 'fuel consumption') or
+          (source.category == 'fuel consumption' and dest.category == 'fuel economy')):
+        return True
+
+    return False

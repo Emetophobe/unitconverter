@@ -4,6 +4,15 @@ Absorbed Dose
 	gray
 	US rad
 
+Acceleration
+
+	metre/second²
+	inch/second²
+	foot/second²
+	yard/second²
+	mile/second²
+	galileo
+
 Amount Of Substance
 
 	mole
@@ -18,6 +27,7 @@ Area
 	acre
 	hide
 	rood
+	arpent
 	square
 	circular inch
 	circular thou
@@ -35,7 +45,6 @@ Area
 	US survey square foot
 	US survey square mile
 	US survey square rod
-	arpent
 	homestead
 	section
 	township
@@ -49,6 +58,11 @@ Data Storage
 
 	byte
 	bit
+
+Data Transfer
+
+	byte/second
+	bit/second
 
 Effective Dose
 
@@ -154,6 +168,14 @@ Fuel Consumption
 
 	litre/metre
 	litre/100km
+	gallon/mile
+	usgallon/mile
+
+Fuel Economy
+
+	metre/litre
+	foot/litre
+	mile/litre
 	foot/gallon
 	metre/gallon
 	mile/gallon
@@ -167,10 +189,10 @@ Illuminance
 	candela-steradian/metre²
 	lumen/metre²
 	watt/metre²
-	phot
-	nox
 	metre-candle
 	foot-candle
+	phot
+	nox
 
 Length
 
@@ -186,6 +208,7 @@ Length
 	furlong
 	link
 	rod
+	barleycorn
 	US survey foot
 	US survey cable length
 	US survey chain
@@ -210,8 +233,7 @@ Length
 	parsec
 	twip
 	point
-	barleycorn
-	caliber
+	calibre
 
 Luminance
 

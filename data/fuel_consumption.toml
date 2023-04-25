@@ -1,3 +1,4 @@
+# dimensions = "volume/length"
 
 # 1 litre per metre is the base unit
 ["litre/metre"]
@@ -12,38 +13,12 @@ aliases = ["litres/100km"]
 factor = "0.00001"
 prefix_scale = "si"
 
-# Imperial gallons
-
-["foot/gallon"]
-symbols = ["ft/gal"]
-aliases = ["feet/gallon", "feet/gal", "foot/gal"]
-factor = "14.915"
-
-["metre/gallon"]
-symbols = ["m/gal"]
-aliases = ["metres/gallon", "metres/gal", "metre/gal"]
-factor = "4.5460992939"
-prefix_scale = "si"
-
-["mile/gallon"]
-symbols = ["mpg", "mi/gal"]
-aliases = ["miles/gallon", "miles/gal", "mile/gal"]
+["gallon/mile"]
+symbols = ["gal/mi"]
+aliases = ["gallons/mile"]
 factor = "0.0028248094"
 
-# US gallons
-
-["foot/usgallon"]
-symbols = ["ft/usgal"]
-aliases = ["feet/usgallon", "feet/usgal", "foot/usgal"]
-factor = "12.4193"
-
-["metre/usgallon"]
-symbols = ["m/usgal"]
-aliases = ["metres/usgallon", "metres/usgal", "metre/usgal"]
-factor = "3.7854117834"
-prefix_scale = "si"
-
-["mile/usgallon"]
-symbols = ["usmpg", "mi/usgal"]
-aliases = ["miles/usgallon", "miles/usgal", "mile/usgal"]
+["usgallon/mile"]
+symbols = ["usgal/mi"]
+aliases = ["usgallons/mile"]
 factor = "0.0023521458"

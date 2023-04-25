@@ -7,10 +7,12 @@ The following categories are currently supported:
 
 
 * Absorbed dose (gray, usrad)
+* Acceleration (metre/second², foot/second², mile/second²)
 * Amount of substance (mole, atom)
 * Area (square metre, square mile, acre, hectare, etc...)
 * Catalytic activity (katal, mole/sec)
 * Data storage (bits, bytes, kilobytes, kibibytes, etc...)
+* Data transfer (bits/second, bytes/second)
 * Effective dose (sievert, roentgen)
 * Electric charge (coloumb, ampere-second, ampere-minute, ampere-hour)
 * Electric current (ampere, watt/volt, coulomb/second)
@@ -21,7 +23,8 @@ The following categories are currently supported:
 * Electrical resistance (ohm, volt/ampere)
 * Energy (joule, calorie, btu, therm, watt-second, watt-hour, etc...)
 * Force (newton, dyne, poundal, gram-force, ton-force, etc...)
-* Fuel consumption (litres/100km, km/liter, miles per gallon, etc...)
+* Fuel consumption (litre/metre, litre/100km, gallon/mile)
+* Fuel economy (metre/litre, foot/gallon, mile/gallon)
 * Frequency (hertz, rpm, cycles/minute, cycles/hour)
 * Illuminance (lux, nox, phot, watt/m², metre-candle, foot-candle)
 * Length (metre, inch, foot, etc...)

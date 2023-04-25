@@ -8,7 +8,7 @@ from unitconverter.unit import Unit
 
 
 class Prefix:
-    """ A prefix can be applied to a unit that supports prefix scaling. """
+    """ A Prefix can be added to a Unit that supports prefix scaling. """
 
     def __init__(self, name: str, symbol: str, factor: Decimal | int | str) -> None:
         self.name = name
@@ -117,8 +117,12 @@ def add_prefix(prefix: Prefix, unit: Unit) -> Unit:
     # Don't allow prefixed units to be prefixed again
     prefix_scale = None
 
-    return Unit(name, unit.category, symbols, aliases, factor, prefix_scale,
+    # Create a new prefixed unit
+    unit = Unit(name, unit.category, symbols, aliases, factor, prefix_scale,
                 unit.prefix_power, unit.prefix_exclude)
+    unit.prefixed = True
+
+    return unit
 
 
 def get_prefixes(unit: Unit) -> list[Prefix]:

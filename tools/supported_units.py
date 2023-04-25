@@ -23,7 +23,7 @@ def create_supported_units(filename):
     with open(filename, 'w', encoding='utf-8') as outfile:
         for category in sorted_categories:
             outfile.write('\n')
-            units = categories[category]
+            units = get_regular_units(categories[category])
             outfile.write(category.title() + '\n\n')
             for unit in units:
                 outfile.write('\t' + format_name(unit.name) + '\n')
@@ -33,6 +33,11 @@ def create_supported_units(filename):
         print(f'Saved {len(all_units)} units to {DEST_FILE}')
     else:
         print(f'{filename.name} is already up to date.')
+
+
+def get_regular_units(units):
+    """ Get a list of non-prefixed units from a unit list. """
+    return [unit for unit in units if not unit.prefixed]
 
 
 replace_powers = {

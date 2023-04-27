@@ -51,9 +51,9 @@ See [supported units](docs/supported_units.txt) for a complete list.
 
 ## Features
 
-Units can be automatically scaled based on a prefix scaling option.
+Units are prefixed (i.e "kilo") based on a prefix scaling option. The default prefix scaling behaviour can be changed on a per-unit basis.
 
-The following prefix scaling options are supported:
+The following prefix options are currently supported:
 
     none        - don't use prefix scaling (default)
     si          - use SI prefix table
@@ -62,7 +62,21 @@ The following prefix scaling options are supported:
     byte        - use bit and binary tables
     all         - use SI and binary tables
 
-The default scaling behaviour can be changed on a per-unit basis.
+
+Units can also be combined to create composite units. You can create a composite unit from any of the defined units (excluding temperature units). Temperature units use a custom conversion function and don't work with other units for now.
+
+As an example, you can create a speed unit by dividing a `length` unit by a `time` unit:
+
+    $ python convert.py 1 metre/second inches/day -p 2
+    1 metre/second = 3401574.8 inches/day
+
+
+
+
+
+Unit composition is an experimental feature and there are still bugs to be sorted out.
+
+
 
 ## Requirements
 
@@ -131,26 +145,10 @@ The default scaling behaviour can be changed on a per-unit basis.
     $ python3 convert.py 58 inch gram
     Category mismatch: inch (length) and gram (mass)
 
-#### Multi-word unit names are also supported, but they need to be wrapped in quotes; i.e "cubic metres"
+#### Multi-word unit names are also supported but they need to be wrapped in quotes
 
     $ python3 convert.py 1 "cubic metres" litres
     1 cubic metres = 1000 litres
-
-#### Instead of multi-word units you can use the shortform instead
-
-    $ python3 convert.py 1 m3 litres
-    1 m3 = 1000 litres
-
-    $ python3 convert.py 1 m^3 litres
-    1 m^3 = 1000 litres
-
-#### Units can also be composited to create more complex units.
-
-For example you can create a speed unit by dividing any length unit by any time unit:
-
-    $ python convert.py 1 metre/second inches/week
-    1 metre/second = 23811023.62 inches/week
-
 
 #
 ### Note: This script is a work in progress. Bug reports or suggestions are welcome.

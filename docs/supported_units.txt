@@ -7,10 +7,6 @@ Absorbed Dose
 Acceleration
 
 	metre/second²
-	inch/second²
-	foot/second²
-	yard/second²
-	mile/second²
 	galileo
 
 Amount Of Substance
@@ -168,19 +164,10 @@ Fuel Consumption
 
 	litre/metre
 	litre/100km
-	gallon/mile
-	usgallon/mile
 
 Fuel Economy
 
-	metre/litre
-	foot/litre
-	mile/litre
-	foot/gallon
-	metre/gallon
 	mile/gallon
-	foot/usgallon
-	metre/usgallon
 	mile/usgallon
 
 Illuminance
@@ -346,17 +333,7 @@ Solid Angle
 Speed
 
 	metre/second
-	metre/minute
-	metre/hour
 	kilometre/hour
-	inch/second
-	inch/minute
-	inch/hour
-	foot/second
-	foot/minute
-	foot/hour
-	mile/second
-	mile/minute
 	mile/hour
 	knot
 	imperial knot

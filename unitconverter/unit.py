@@ -144,18 +144,18 @@ class CompositeUnit:
 
     def _calculate_factor(self) -> Decimal:
         """ Calculate factor by parsing numers and denoms. """
-        factor = 1
+        numer_factor = 1
         for numer in self.numers:
-            factor *= numer.factor
+            numer_factor *= numer.factor
 
-        if self.denoms:
-            denom_factor = 1
-            for denom in self.denoms:
-                denom_factor *= denom.factor
+        if not self.denoms:
+            return numer_factor
 
-            factor /= denom_factor
+        denom_factor = 1
+        for denom in self.denoms:
+            denom_factor *= denom.factor
 
-        return factor
+        return numer_factor / denom_factor
 
     def __mul__(self, other):
         if not isinstance(other, (Unit, CompositeUnit)):

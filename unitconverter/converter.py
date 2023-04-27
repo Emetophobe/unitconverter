@@ -10,7 +10,7 @@ from unitconverter.utils import parse_decimal, simplify_unit
 
 
 # Set decimal precision
-getcontext().prec = 10
+getcontext().prec = 15
 
 
 def convert(value: Decimal | int | str, source: Unit | str, dest: Unit | str) -> Decimal:

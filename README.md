@@ -136,13 +136,20 @@ The default scaling behaviour can be changed on a per-unit basis.
     $ python3 convert.py 1 "cubic metres" litres
     1 cubic metres = 1000 litres
 
-#### Instead of multi-word units you can use the shortform instead:
+#### Instead of multi-word units you can use the shortform instead
 
     $ python3 convert.py 1 m3 litres
     1 m3 = 1000 litres
 
     $ python3 convert.py 1 m^3 litres
     1 m^3 = 1000 litres
+
+#### Units can also be composited to create more complex units.
+
+For example you can create a speed unit by dividing any length unit by any time unit:
+
+    $ python convert.py 1 metre/second inches/week
+    1 metre/second = 23811023.62 inches/week
 
 
 #

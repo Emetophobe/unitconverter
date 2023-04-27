@@ -11,7 +11,7 @@ prefix_scale = "si"
 symbol = "kph"
 plural = "kilometres/hour"
 aliases = ["km/h", "kmph"]
-factor = "0.2777777778"
+factor = "0.2777777777777777777777777778"
 
 # 1 mile per hour (mph) = 1609.34 / 3600 = ~0.44704 m/s
 ["mile/hour"]
@@ -20,15 +20,16 @@ plural = "miles/hour"
 aliases = ["mi/h"]
 factor = "0.44704"
 
-# 1 knot = 1 nautical mile per hour = ~0.514 m/s
+# 1 knot = 1 nautical mile per hour = ~0.514444444444444 m/s
 ["knot"]
 plural = "knots"
-factor = "0.5144444444"
+factor = "0.514444444444444"
 
-# 1 imperial knot = ~0.5147733333 m/s
+# 1 imperial knot = ~0.514773333333333 m/s
 ["imperial knot"]
+symbol = "impknot"
 plural = "imperial knots"
-factor = "0.5147733333"
+factor = "0.514773333333333"
 
 # 1 mach (speed of sound) = ~340.3 m/s
 ["mach"]

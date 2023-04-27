@@ -3,12 +3,13 @@
 
 # work in progress
 DIMENSION_MAP = {
+    'amount of substance/time': 'catalytic activity',
+    'length/time': 'speed',
     'length/time2': 'acceleration',
     'length2': 'area',
-    'volume/length': 'fuel consumption',
-    'length/volume': 'fuel economy',
-    'length/time': 'speed',
     'length3': 'volume',
+    'length/volume': 'fuel economy',
+    'volume/length': 'fuel consumption',
 }
 
 

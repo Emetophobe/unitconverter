@@ -11,7 +11,7 @@ from unitconverter.unit import Unit
 
 # Total number of categories and units
 NUM_CATEGORIES = 42
-NUM_UNITS = 2525
+NUM_UNITS = 2550
 
 
 class TestRegistry(unittest.TestCase):

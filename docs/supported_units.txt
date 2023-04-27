@@ -49,6 +49,7 @@ Catalytic Activity
 
 	katal
 	mole/second
+	enzyme unit
 
 Data Storage
 

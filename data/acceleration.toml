@@ -1,30 +1,12 @@
-# metre per second squared is the base unit of acceleration
+# formula = length / time^2
+
+# metre per square second is the base unit of acceleration
 # https://en.wikipedia.org/wiki/Metre_per_second_squared
 ["metre/second2"]
 symbol = "m/s2"
 plural = "metres/second2"
 factor = 1
 prefix_scale = "si"
-
-["inch/second2"]
-symbol = "in/s2"
-plural = "inches/second2"
-factor = "0.0254"
-
-["foot/second2"]
-symbol = "ft/s2"
-plural = "feet/second2"
-factor = "0.3048"
-
-["yard/second2"]
-symbol = "yd/s2"
-plural = "yards/second2"
-factor = "0.9144"
-
-["mile/second2"]
-symbol = "mi/s2"
-plural = "miles/second2"
-factor = "1609.344"
 
 ["galileo"]
 symbol = "Gal"  # not to be confused with gal (volume)

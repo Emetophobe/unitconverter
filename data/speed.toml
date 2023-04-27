@@ -6,89 +6,12 @@ aliases = ["metres/sec", "metre/sec"]
 factor = "1"
 prefix_scale = "si"
 
-# 1 metre per minute = 1/60 = 0.0166666667 metre/s
-["metre/minute"]
-symbol = "m/min"
-plural = "metres/minute"
-aliases = ["metres/min", "metre/min"]
-factor = "0.01666666666666666666666666667"
-prefix_scale = "si"
-
-# 1 metre per hour = 1/3600 = 0.0002777778 metre/s
-["metre/hour"]
-symbol = "m/h"
-plural = "metres/hour"
-factor = "0.0002777777777777777777777777778"
-prefix_scale = "si"
-prefix_exclude = ["kilo"]  # see kph below
-
-# kilometre per hour (kph) for convenience
-# 1 kph = 1000/3600 = 0.2777777778 m/s
+# 1 kilometre per hour (kph) = 1000/3600 = ~0.2777777778 m/s
 ["kilometre/hour"]
 symbol = "kph"
 plural = "kilometres/hour"
 aliases = ["km/h", "kmph"]
-factor = "0.2777777777777777777777777778"
-
-
-# Inches
-
-
-# 1 inch per second = 0.0254 m/s
-["inch/second"]
-symbol = "in/s"
-plural = "inches/second"
-factor = "0.0254"
-
-# 1 inch per minute = ~0.000423333 m/s
-["inch/minute"]
-symbol = "in/min"
-plural = "inches/minute"
-factor = "0.0004233333333333333333333333333"
-
-# 1 inch per hour = ~7.05556e-6 m/s
-["inch/hour"]
-symbol = "in/h"
-plural = "inches/hour"
-factor = "0.000007055555555555555555555555556"
-
-
-# Feet
-
-
-# 1 foot per second = exactly 0.3048 m/s
-["foot/second"]
-symbol = "ft/s"
-plural = "feet/second"
-factor = "0.3048"
-
-# 1 foot per minute = exactly 0.00508 m/s
-["foot/minute"]
-symbol = "ft/min"
-plural = "feet/minute"
-factor = "0.00508"
-
-# 1 foot per hour = ~0.000084666667 m/s
-["foot/hour"]
-symbol = "ft/h"
-plural = "feet/hour"
-factor = "0.00008466666666666666666666666667"
-
-
-# Miles
-
-
-# 1 mile per second = exactly 1609.34 m/s
-["mile/second"]
-symbol = "mi/s"
-plural = "miles/second"
-factor = "1609.344"
-
-# 1 mile per minute = 1609.34 / 60 = ~26.8224 m/s
-["mile/minute"]
-symbol = "mi/min"
-plural = "miles/minute"
-factor = "26.8224"
+factor = "0.2777777778"
 
 # 1 mile per hour (mph) = 1609.34 / 3600 = ~0.44704 m/s
 ["mile/hour"]
@@ -97,19 +20,15 @@ plural = "miles/hour"
 aliases = ["mi/h"]
 factor = "0.44704"
 
-
-# Other
-
-
 # 1 knot = 1 nautical mile per hour = ~0.514 m/s
 ["knot"]
 plural = "knots"
-factor = "0.5144444444444444444444444444"
+factor = "0.5144444444"
 
 # 1 imperial knot = ~0.5147733333 m/s
 ["imperial knot"]
 plural = "imperial knots"
-factor = "0.5147733333333333333333333333"
+factor = "0.5147733333"
 
 # 1 mach (speed of sound) = ~340.3 m/s
 ["mach"]

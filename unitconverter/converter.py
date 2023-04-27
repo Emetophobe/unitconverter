@@ -6,7 +6,7 @@ from decimal import Decimal, getcontext
 from unitconverter.exceptions import CategoryError, UnitError
 from unitconverter.registry import get_unit
 from unitconverter.unit import CompositeUnit, Unit
-from unitconverter.utils import parse_decimal
+from unitconverter.utils import parse_decimal, simplify_unit
 
 
 # Set decimal precision
@@ -87,8 +87,10 @@ def parse_unit(name: str) -> Unit:
     except UnitError:
         pass
 
+    simple_name = simplify_unit(name)
+
     # Try to create a composite unit
-    names = name.split('/')
+    names = simple_name.split('/')
     if len(names) == 1:
         numers = parse_names(names[0])
         denoms = []

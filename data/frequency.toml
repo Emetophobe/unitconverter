@@ -1,29 +1,29 @@
 # The hertz is the SI unit of frequency
 ["hertz"]
-symbols = ["Hz"]
+symbol = "Hz"
 factor = "1"
 prefix_scale = "si"
 
 # 1 cycle per second is equivalent to 1 hertz
 ["cycle/second"]
-symbols = ["cps", "CPS"]
-aliases = ["cycles/second", "cycles/sec", "cycle/sec"]
+symbol = "cps"
+plural = "cycles/second"
 factor = "1"
 
 # 1 cycle per minute = 1/60 hertz = ~0.016666667 hertz
 ["cycle/minute"]
-symbols = ["cpm", "CPM"]
-aliases = ["cycles/minute", "cycles/min", "cycle/min"]
+symbol = "cpm"
+plural = "cycles/minute"
 factor = "0.01666666666666666666666666667"
 
 # 1 cycle per hour = 1/3600 hertz = ~0.000277777778 hertz
 ["cycle/hour"]
-symbols = ["cph", "CPH"]
-aliases = ["cycles/hour", "cycles/hr", "cycle/hr"]
+symbol = "cph"
+plural = "cycles/hour"
 factor = "0.0002777777777777777777777777778"
 
 # 1 rpm = 1 cycle/minute = ~0.016666667 hertz
 ["revolution/minute"]
-symbols = ["rpm", "RPM"]
-aliases = ["revs/min", "rev/min"]
+symbol = "rpm"
+plural = "revolutions/minute"
 factor = "0.01666666666666666666666666667"

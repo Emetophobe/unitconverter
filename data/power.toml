@@ -1,46 +1,49 @@
 # The watt is the SI unit of power
 ["watt"]
-symbols = ["W"]
-aliases = ["watts"]
+symbol = "W"
+plural = "watts"
 factor = "1"
 prefix_scale = "si"
 
 # 1 volt-ampere = 1 watt
 ["volt-ampere"]
-symbols = ["V-A", "VA"]
-aliases = ["volts-amps", "volt-amp"]
+symbol = "V-A"
+plural = "volt-amperes"
+aliases = ["volt-amps", "volt-amp"]
 factor = "1"
 prefix_scale = "si"
 
 # 1 joule per second = 1 watt
 ["joule/second"]
-symbols = ["J/s", "j/s"]
-aliases = ["joules/second", "joules/sec", "joule/sec"]
+symbol = "J/s"
+plural = "joules/second"
+aliases = ["joules/sec", "joule/sec"]
 factor = "1"
 prefix_scale = "si"
 
 # 1 joule per minute = 1/60 watts
 ["joule/minute"]
-symbols = ["J/min", "j/min"]
-aliases = ["joules/minute", "joules/min", "joule/min"]
+symbol = "J/min"
+plural = "joules/minute"
+aliases = ["joules/min", "joule/min"]
 factor = "0.01666666666666666666666666667"
 prefix_scale = "si"
 
 # 1 joule per hour = 1/3600 watts
 ["joule/hour"]
-symbols = ["J/hr", "j/hr", "J/h", "j/h"]
-aliases = ["joules/hour", "joules/hr", "joule/hr"]
+symbol = "J/h"
+plural = "joules/hour"
 factor = "0.0002777777777777777777777777778"
 prefix_scale = "si"
 
 # 1 metric horsepower (hp) = roughly 735.5 watts
 ["horsepower"]
-symbols = ["hp"]
+symbol = "hp"
 aliases = ["metric horsepower", "metric hp"]
 factor = "735.5"
 
 # 1 mechanical horsepower (bhp) = roughly 745.7 watts
 ["mechanical horsepower"]
-symbols = ["bhp"]
+symbol = "bhp"
 aliases = ["imperial horsepower", "mechanical hp", "imperial hp"]
 factor = "745.7"

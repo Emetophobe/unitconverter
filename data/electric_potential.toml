@@ -1,37 +1,38 @@
 # The volt is the SI unit of electric potential
 ["volt"]
-symbols = ["V"]
-aliases = ["volts"]
+symbol = "V"
+plural = "volts"
 factor = "1"
 prefix_scale = "si"
 
 # 1 joule per coulomb = 1 volt
 ["joule/coulomb"]
-symbols = ["J/C"]
-aliases = ["joules/coulomb"]
+symbol = "J/C"
+plural = "joules/coulomb"
 factor = "1"
 prefix_scale = "si"
 
 # 1 watt per ampere = 1 volt
 ["watt/ampere"]
-symbols = ["W/A"]
-aliases = ["watts/ampere", "watts/amp", "watt/amp"]
+symbol = "W/A"
+plural = "watts/ampere"
+aliases = ["watts/amps", "watts/amp"]
 factor = "1"
 prefix_scale = "si"
 
 # 1 weber per second = 1 volt
 ["weber/second"]
-symbols = ["Wb/s"]
-aliases = ["webers/second", "webers/s", "weber/s"]
+symbol = "Wb/s"
+plural = "webers/second"
 factor = "1"
 prefix_scale = "si"
 
 ["abvolt"]
-symbols = ["abV"]
-aliases = ["abvolts"]
+symbol = "abV"
+plural = "abvolts"
 factor = "1E-8"
 
 ["statvolt"]
-symbols = ["stV"]
-aliases = ["statvolts"]
+symbol = "stV"
+plural = "statvolts"
 factor = "299.7925"

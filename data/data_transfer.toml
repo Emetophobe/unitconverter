@@ -1,11 +1,13 @@
 ["byte/second"]
-symbols = ["B/s", "Bps"]
-aliases = ["bytes/second", "bytes/sec", "byte/sec"]
+symbol = "Bps"
+plural = "bytes/second"
+aliases = ["bytes/sec", "bytes/s", "byte/s"]
 factor = "1"
 prefix_scale = "byte"
 
 ["bit/second"]
-symbols = ["b/s", "bps"]
-aliases = ["bits/second", "bits/sec", "bit/sec"]
+symbol = "bps"
+plural = "bits/second"
+aliases = ["bits/sec", "bits/s", "bit/s"]
 factor = "0.125"
 prefix_scale = "bit"

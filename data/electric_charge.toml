@@ -1,33 +1,34 @@
 # The # coulomb is the SI unit of electric charge
 ["coulomb"]
-symbols = ["C"]
-aliases = ["coulombs"]
+symbol = "C"
+plural = "coulombs"
 factor = "1"
 prefix_scale = "si"
 
 # 1 ampere-second = 1 coulomb
 ["ampere-second"]
-symbols = ["A-s", "As"]
-aliases = ["ampere-seconds", "amp-seconds", "amp-second"]
+symbol = "A-s"
+plural = "ampere-seconds"
 factor = "1"
 prefix_scale = "si"
 
 # 1 ampere-minute = 60 coulomb
 ["ampere-minute"]
-symbols = ["A-min", "Amin"]  # use min to avoid confusion with metre (m)
-aliases = ["ampere-minutes", "amp-minutes", "amp-minute"]
+symbol = "A-min"
+plural = "ampere-minutes"
 factor = "60"
 prefix_scale = "si"
 
 # 1 ampere-hour = 3600 coulomb
 ["ampere-hour"]
-symbols = ["A-h", "Ah"]
-aliases = ["ampere-hours", "amp-hours", "amp-hour"]
+symbol = "A-h"
+plural = "ampere-hours"
 factor = "3600"
 prefix_scale = "si"
 
 # 1 franklin = roughly 3.335640951E-10 coulomb
 ["franklin"]
-symbols = ["fr"]
-aliases = ["franklins", "statcoulomb"]
+symbol = "fr"
+plural = "franklins"
+aliases = ["statcoulombs"]
 factor = "3.335640951E-10"

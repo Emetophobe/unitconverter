@@ -1,19 +1,19 @@
 # The becquerel is the SI unit of radioactivity
 ["becquerel"]
-symbols = ["Bq"]
-aliases = ["becquerels"]
+symbol = "Bq"
+plural = "becquerels"
 factor = "1"
 prefix_scale = "si"
 
 # 1 curie = 3.7E+10 becquerel
 ["curie"]
-symbols = ["Ci"]
-aliases = ["curies"]
+symbol = "Ci"
+plural = "curies"
 factor = "3.7E+10"
 prefix_scale = "si"
 
 # 1 rutherford = 1 MBq or 1E+6 becquerel
 ["rutherford"]
-symbols = ["Rd"]
-aliases = ["rutherfords"]
+symbol = "Rd"
+plural = "rutherfords"
 factor = "1E+6"

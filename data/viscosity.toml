@@ -1,38 +1,38 @@
 # 1 pascal-second is the SI unit of viscosity
 ["pascal-second"]
-symbols = ["Pa-s"]
-aliases = ["pascal-seconds"]
+symbol = "Pa-s"
+plural = "pascal-seconds"
 factor = "1"
 prefix_scale = "si"
 
 # 1 poise = 0.1 pascal-second
 ["poise"]
-symbols = ["P"]
-aliases = ["poises"]
+symbol = "P"
+plural = "poises"
 factor = "0.1"
 prefix_scale = "si"
 
 # gram per centimetre-second = 0.1 pascal-second
 ["gram/centimetre-second"]
-symbols = ["g/cm-s"]
-aliases = ["grams/centimetre-second", "grams/cm-s", "gram/cm-s"]
+symbol = "g/cm-s"
+plural = "grams/centimetre-second"
 factor = "0.1"
 prefix_scale = "si"
 
 # 1 gram per metre-second = 0.001 pascal-second
 ["gram/metre-second"]
-symbols = ["g/m-s"]
-aliases = ["grams/metre-second", "grams/m-s", "gram/m-s"]
+symbol = "g/m-s"
+plural = "grams/metre-second"
 factor = "0.001"
 prefix_scale = "si"
 
 ["gram/foot-second"]
-symbols = ["g/ft-s"]
-aliases = ["grams/foot-second", "grams/ft-s", "gram/ft-s"]
+symbol = "g/ft-s"
+plural = "grams/foot-second"
 factor = "0.00328083989501312"
 prefix_scale = "si"
 
 ["slug/foot-second"]
-symbols = ["slug/ft-s"]
-aliases = ["slugs/foot-second", "slugs/ft-s"]
+symbol = "slug/ft-s"
+plural = "slugs/foot-second"
 factor = "47.88025898"

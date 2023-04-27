@@ -1,46 +1,46 @@
 # The lux is the SI unit of illuminance
 ["lux"]
-symbols = ["lx"]
+symbol = "lx"
 factor = "1"
 prefix_scale = "si"
 
 # 1 candela-steradian per square metre = 1 lux
 ["candela-steradian/metre2"]
-symbols = ["cd-sr/m2"]
+symbol = "cd-sr/m2"
 factor = "1"
 prefix_scale = "si"
 
 # 1 lumen per square metre = 1 lux
 ["lumen/metre2"]
-symbols = ["lm/m2"]
-aliases = ["lumens/metre2"]
+symbol = "lm/m2"
+plural = "lumens/metre2"
 factor = "1"
 prefix_scale = "si"
 
 # 1 watt per square metre = 683 lux
 ["watt/metre2"]
-symbols = ["W/m2"]
-aliases = ["watts/metre2"]
+symbol = "W/m2"
+plural = "watts/metre2"
 factor = "683"
 prefix_scale = "si"
 
 # 1 metre-candle is equivalent to 1 lux
 ["metre-candle"]
-symbols = ["m-c", "mc"]
+symbol = "m-c"
 factor = "1"
 prefix_scale = "si"
 
 ["foot-candle"]
-symbols = ["ft-c", "fc"]
+symbol = "ft-c"
 factor = "10.76391"
 
 # 1 phot = 10,000 lux
 ["phot"]
-symbols = ["ph"]
-aliases = ["phots"]
+symbol = "ph"
+plural = "phots"
 factor = "10000"
 
 # 1 nox = 0.001 lux
 ["nox"]
-symbols = ["nx"]
+symbol = "nx"
 factor = "0.001"

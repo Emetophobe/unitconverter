@@ -1,70 +1,69 @@
 # The pascal is the SI unit of pressure
 ["pascal"]
-symbols = ["Pa"]
-aliases = ["pascals"]
+symbol = "Pa"
+plural = "pascals"
 factor = "1"
 prefix_scale = "si"
 
 # 1 newton per square metre = 1 pascal
 ["newton/metre2"]
-symbols = ["N/m2"]
-aliases = ["newtons/metre2"]
+symbol = "N/m2"
+plural = "newtons/metre2"
 factor = "1"
 prefix_scale = "si"
 
 # 1 bar = exactly 100,000 (1E+5) pascal
 ["bar"]
-aliases = ["bars"]
+plural = "bars"
 factor = "1E+5"
 prefix_scale = "si"
 
 # 1 barye = exactly 0.1 pascal
 ["barye"]
-symbols = ["Ba"]
-aliases = ["baryes"]
+symbol = "Ba"
+plural = "baryes"
 factor = "0.1"
 prefix_scale = "si"
 
-["psi"]
-symbols = ["lbf/in2", "lbs/in2"]
-aliases = ["pound per square inch"]
+["pound per square inch"]
+symbol = "psi"
+plural = "pounds per square inch"
 factor = "6894.757"
 
 # 1 ksi = 1000 psi
-["ksi"]
-symbols = ["klbf/in2", "klbs/in2"]
-aliases = ["kilopound per square inch"]
+["kilopound per square inch"]
+symbol = "ksi"
+plural = "kilopounds per square inch"
 factor = "6894757"
 
 # 1 pièze = 1 kilopascal
 ["pieze"]
-symbols = ["pz"]
-aliases = ["pièze"]
+symbol = "pz"
 factor = "1000"
 
 ["torr"]
-symbols = ["Torr"]
-aliases = ["torrs"]
+symbol = "Torr"
+plural = "torrs"
 factor = "133.322"
 
 # 1 metre of mercury is roughly 133322.4 pascal
 ["metre of mercury"]
-symbols = ["m Hg", "mHg"]
-aliases = ["metres of mercury"]
+symbol = "mHg"
+plural = "metres of mercury"
 factor = "133322.4"
 prefix_scale = "si"
 
 ["inch of mercury"]
-symbols = ["in Hg", "inHg"]
-aliases = ["inches of mercury"]
+symbol = "inHg"
+plural = "inches of mercury"
 factor = "3386.389"
 
 ["standard atmosphere"]
-symbols = ["atm"]
-aliases = ["standard-atmosphere"]
+symbol = "atm"
+plural = "standard-atmosphere"
 factor = "101325"
 
 ["technical atmosphere"]
-symbols = ["kgf/cm2", "kg/cm2"] # at conflicts with with attotonne (at)
-aliases = ["technical-atmosphere", "kilograms/cm2", "kilogram/cm2"]
+symbol = "at"
+plural = "technical-atmosphere"
 factor = "98066.5"

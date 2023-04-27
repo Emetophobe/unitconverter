@@ -67,8 +67,8 @@ class TestConverter(unittest.TestCase):
 
         # Test multi-word prefix generated units
         unit = parse_unit('cubic kilometre')
-        self.assertEqual(unit.name, 'cubic kilometre')
-        self.assertTrue('km3' in unit.symbols)
+        self.assertEqual(unit.plural, 'cubic kilometres')
+        self.assertEqual(unit.symbol, 'km3')
 
         # Test invalid unit names
         with self.assertRaises(UnitError):

@@ -2,23 +2,23 @@
 
 # 1 litre per metre is the base unit
 ["litre/metre"]
-symbols = ["L/m", "l/m"]
-aliases = ["litres/metre"]
+symbol = "l/m"
+plural = "litres/metre"
 factor = "1"
 prefix_scale = "si"
 
 ["litre/100km"]
-symbols = ["L/100km", "l/100km"]
-aliases = ["litres/100km"]
+symbol = "l/100km"
+plural = "litres/100km"
 factor = "0.00001"
 prefix_scale = "si"
 
 ["gallon/mile"]
-symbols = ["gal/mi"]
-aliases = ["gallons/mile"]
+symbol = "gal/mi"
+plural = "gallons/mile"
 factor = "0.0028248094"
 
 ["usgallon/mile"]
-symbols = ["usgal/mi"]
-aliases = ["usgallons/mile"]
+symbol = "usgal/mi"
+plural = "usgallons/mile"
 factor = "0.0023521458"

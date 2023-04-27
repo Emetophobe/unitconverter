@@ -1,12 +1,12 @@
 # The gray is the SI unit of absorbed dose
 ["gray"]
-symbols = ["Gy"]
-aliases = ["grays"]
+symbol = "Gy"
+plural = "grays"
 factor = "1"
 prefix_scale = "si"
 
 # 1 US rad = 0.01 gray
 ["US rad"]
-symbols = ["usrad"]     # rad is used by radian
-aliases = ["US rads"]
+symbol = "usrad"     # rad is used by radian
+plural = "US rads"
 factor = "0.01"

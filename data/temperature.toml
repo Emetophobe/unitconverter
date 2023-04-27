@@ -3,18 +3,19 @@
 
 # The kelvin is the SI base unit of temperature
 ["kelvin"]
-symbols = ["K"]
-aliases = ["kelvins"]
+symbol = "K"
+plural = "kelvins"
 prefix_scale = "si"
 
 ["celsius"]
-symbols = ["°C"]
-aliases = ["Celsius", "centigrade"]
+symbol = "°C"
+aliases = ["degC", "c"]
 
 ["fahrenheit"]
-symbols = ["°F", "f"]
-aliases = ["Fahrenheit"]
+symbol = "°F"
+aliases = ["degF", "f"]
 
 ["rankine"]
-symbols = ["°R", "°Ra", "R"]
-aliases = ["rankines"]
+symbol = "°R"
+plural = "rankines"
+aliases = ["R", "r"]

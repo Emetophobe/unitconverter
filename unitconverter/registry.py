@@ -44,11 +44,7 @@ class Registry:
 
         raise UnitError(f'Invalid unit: {name}')
 
-    def get_units(self) -> list[Unit]:
-        """ Get a list of pre-defined units. """
-        return list(self)
-
-    def get_categories(self) -> dict[str, list[Unit]]:
+    def get_units(self) -> dict[str, list[Unit]]:
         """ Get a dictionary of categories and units. """
         return dict(self._units)
 
@@ -65,8 +61,11 @@ class Registry:
                 data = tomllib.load(infile)
 
                 for name, args in data.items():
+                    # Unit category override or use file category
+                    unit_category = args.pop('category', category)
+
                     # Add unit
-                    unit = Unit(name, category, **args)
+                    unit = Unit(name, unit_category, **args)
                     self.add_unit(unit)
 
                     # Add prefixed versions
@@ -75,12 +74,12 @@ class Registry:
 
     def __iter__(self) -> Unit:
         """ Iterate over all units. """
-        for _, units in self._units.items():
+        for units in self._units.values():
             yield from units
 
     def __len__(self):
         """ Get total number of units. """
-        return sum(len(units) for _, units in self._units.items())
+        return sum(len(units) for units in self._units.values())
 
 
 REGISTRY = Registry()
@@ -88,15 +87,14 @@ REGISTRY = Registry()
 add_unit = REGISTRY.add_unit
 get_unit = REGISTRY.get_unit
 get_units = REGISTRY.get_units
-get_categories = REGISTRY.get_categories
 iter_units = REGISTRY.iter_units
 
 
 __all__ = [
+    'REGISTRY',
     'Registry',
     'add_unit',
     'get_unit',
     'get_units',
-    'get_categories',
-    'iter_units',
+    'iter_units'
 ]

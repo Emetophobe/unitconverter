@@ -1,64 +1,70 @@
 # The second is the SI unit of time
 ["second"]
-symbols = ["s"]
-aliases = ["seconds", "sec"]
+symbol = "s"
+plural = "seconds"
+aliases = ["sec"]
 factor = "1"
 prefix_scale = "si"
 
 ["minute"]
-symbols = ["min"]
-aliases = ["minutes"]
+symbol = "min"
+plural = "minutes"
 factor = "60"
 
 ["hour"]
-symbols = ["hrs", "hr", "h"]
-aliases = ["hours"]
+symbol = "h"
+plural = "hours"
+aliases = ["hrs", "hr"]
 factor = "3600"
 
 ["day"]
-aliases = ["days"]
+plural = "days"
 factor = "86400"
 
 ["week"]
-symbols = ["wks", "wk"]
-aliases = ["weeks"]
+symbol = "wk"
+plural = "weeks"
+aliases = ["wks"]
 factor = "604800"
 
 ["fortnight"]
-aliases = ["fortnights"]
+plural = "fortnights"
 factor = "1209600"
 
 ["month"]
-symbols = ["mos", "mo"]
-aliases = ["months"]
+symbol = "mo"
+plural = "months"
+aliases = ["mos"]
 factor = "2.628E+6"
 
 ["year"]
-symbols = ["yrs", "yr"]
-aliases = ["years"]
+symbol = "yr"
+plural = "years"
+aliases = ["yrs"]
 factor = "3.1536E+7"
 
 ["gregorian year"]
-aliases = ["gregorian years"]
+plural = "gregorian years"
 factor = "31556952"
 
 # 1 julian year is exactly 8766 hours
 ["julian year"]
-aliases = ["julian years"]
+plural = "julian years"
 factor = "31557600"
 
 ["leap year"]
-aliases = ["leap years"]
+plural = "leap years"
 factor = "31622400"
 
 ["decade"]
-aliases = ["decades"]
+plural = "decades"
 factor = "3.1536E+8"
 
 ["century"]
-aliases = ["centuries"]
+plural = "centuries"
 factor = "3.1536E+9"
 
 ["millennia"]
-aliases = ["millennias", "millenniums", "millennium"]
+plural = "millennias"
+aliases = ["millenniums", "millennium"]
 factor = "3.1536E+10"

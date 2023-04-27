@@ -2,53 +2,59 @@
 
 # metre/litre is the base unit
 ["metre/litre"]
-symbols = ["m/L", "m/l"]
-aliases = ["metres/litre"]
+symbol = "m/l"
+plural = "metres/litre"
 factor = 1
 prefix_scale = "si"
 
 ["foot/litre"]
-symbols = ["ft/L", "ft/l"]
-aliases = ["feet/litre"]
+symbol = "ft/l"
+plural = "feet/litre"
 factor = "0.3048"
 
 ["mile/litre"]
-symbols = ["mi/L", "mi/l"]
-aliases = ["miles/litre"]
+symbol = "mi/l"
+plural = "miles/litre"
 factor = "1609.344"
 
 # Imperial gallons
 
 ["foot/gallon"]
-symbols = ["ft/gal"]
-aliases = ["feet/gallon", "feet/gal", "foot/gal"]
+symbol = "ft/gal"
+plural = "feet/gallon"
+aliases = ["feet/gal", "foot/gal"]
 factor = "0.067046626881562"
 
 ["metre/gallon"]
-symbols = ["m/gal"]
-aliases = ["metres/gallon", "metres/gal", "metre/gal"]
+symbol = "m/gal"
+plural = "metres/gallon"
 factor = "0.2199687986"
+aliases = ["metres/gal", "metre/gal"]
 prefix_scale = "si"
 
 ["mile/gallon"]
-symbols = ["mpg", "mi/gal"]
-aliases = ["miles/gallon", "miles/gal", "mile/gal"]
+symbol = "mpg"
+plural = "miles/gallon"
+aliases = ["miles/gal", "mile/gal"]
 factor = "354.00619"
 
 # US gallons
 
 ["foot/usgallon"]
-symbols = ["ft/usgal"]
-aliases = ["feet/usgallon", "feet/usgal", "foot/usgal"]
+symbol = "ft/usgal"
+plural = "feet/usgallon"
+aliases = ["feet/usgal", "foot/usgal"]
 factor = "0.080519999871169"
 
 ["metre/usgallon"]
-symbols = ["m/usgal"]
-aliases = ["metres/usgallon", "metres/usgal", "metre/usgal"]
+symbol = "m/usgal"
+plural = "metres/usgallon"
+aliases = ["metres/usgal", "metre/usgal"]
 factor = "0.2641720524"
 prefix_scale = "si"
 
 ["mile/usgallon"]
-symbols = ["usmpg", "mi/usgal"]
-aliases = ["miles/usgallon", "miles/usgal", "mile/usgal"]
+symbol = "usmpg"
+plural = "miles/usgallon"
+aliases = ["miles/usgal", "mile/usgal"]
 factor = "425.1437075"

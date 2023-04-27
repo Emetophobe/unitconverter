@@ -1,0 +1,18 @@
+# Used by acceleration
+["square second"]
+category = "time2"
+symbol = "s2"
+plural = "square seconds"
+aliases = ["seconds2", "second2"]
+factor = 1
+power = 2
+prefix_scale = "si"
+
+["cubic second"]
+category = "time3"
+symbol = "s3"
+plural = "cubic seconds"
+aliases = ["seconds3", "second3"]
+factor = 1
+power = 3
+prefix_scale = "si"

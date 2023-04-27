@@ -5,7 +5,7 @@ from decimal import Decimal, getcontext
 
 from unitconverter.exceptions import CategoryError, UnitError
 from unitconverter.registry import get_unit
-from unitconverter.unit import Unit
+from unitconverter.unit import CompositeUnit, Unit
 from unitconverter.utils import parse_decimal
 
 
@@ -81,8 +81,38 @@ def parse_unit(name: str) -> Unit:
     if isinstance(name, Unit):
         return name
 
-    # Just call Registry.get_name() for now
-    return get_unit(name)
+    # Try to find the unit normally
+    try:
+        return get_unit(name)
+    except UnitError:
+        pass
+
+    # Try to create a composite unit
+    names = name.split('/')
+    if len(names) == 1:
+        numers = parse_names(names[0])
+        denoms = []
+    elif len(names) == 2:
+        numers = parse_names(names[0])
+        denoms = parse_names(names[1])
+    else:
+        raise UnitError(f'Invalid unit: {name} - This script only supports'
+                        ' one division per expression (feature still in development)')
+
+    numers = [get_unit(numer) for numer in numers]
+    denoms = [get_unit(denom) for denom in denoms]
+
+    for unit in numers + denoms:
+        if unit.category == 'temperature':
+            raise UnitError(f'Invalid unit: {name} - Cannot combine temperature'
+                            ' units (feature still in development)')
+
+    return CompositeUnit(numers, denoms)
+
+
+def parse_names(names: str) -> list[str]:
+    """ Split numerators or denominators into a list of unit names. """
+    return names.split('*')
 
 
 def format_decimal(value: Decimal,

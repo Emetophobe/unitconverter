@@ -1,90 +1,90 @@
 # The SI unit for mass is kilograms (kg)
 # I use gram (g) with this script for simplicity
 ["gram"]
-symbols = ["g"]
-aliases = ["grams"]
+symbol = "g"
+plural = "grams"
 factor = "1"
 prefix_scale = "si"
 
 # 1 ounce is 28.34952 grams
 ["ounce"]
-symbols = ["oz"]
-aliases = ["ounces", "imperial ounces", "imperial ounce"]
+symbol = "oz"
+plural = "ounces"
 factor = "28.34952"
 
 # 1 pound is 453.59237 grams
 ["pound"]
-symbols = ["lb", "lbs"]
-aliases = ["pounds", "imperial pounds", "imperial pound"]
+symbol = "lbs"
+plural = "pounds"
 factor = "453.59237"
 
 # 1 kilopound (kip) = 1000 lbs or 453,592.37 grams
 ["kilopound"]
-symbols = ["kip", "klbs"]
-aliases = ["kilopounds", "imperial kilopounds", "imperial kilopound"]
+symbol = "klbs"
+plural = "kilopounds"
 factor = "453592.37"
 
 # 1 stone = 14 lbs or 6350.29 grams
 ["stone"]
-symbols = ["st"]
-aliases = ["stones", "imperial stone"]
+symbol = "st"
+plural = "stones"
 factor = "6350.29"
 
 # 1 metric ton (tonne) = 1,000,000 grams = 1E+6 grams
 ["tonne"]
-symbols = ["ton"]
-aliases = ["tonnes", "metric tons", "metric ton"]
+symbol = "ton"
+plural = "tonnes"
 factor = "1E+6"
 prefix_scale = "si"
 
 # 1 long ton = 1,016,046.91 grams
 ["long ton"]
-symbols = ["LT"]
-aliases = ["long tons", "imperial ton", "imperial tons"]
+symbol = "LT"
+plural = "long tons"
 factor = "1016046.91"
 
 # 1 short ton = 907,184.74 grams
 ["short ton"]
-symbols = ["ST"]
-aliases = ["short tons", "US ton", "US tons"]
+symbol = "ST"
+plural = "short tons"
 factor = "907184.74"
 
 # 1 carat = 0.2 grams
 ["carat"]
-symbols = ["car", "ct"]
-aliases = ["carats"]
+symbol = "ct"
+plural = "carats"
 factor = "0.2"
 
 ["dalton"]
-symbols = ["Da", "u"]
-aliases = ["daltons", "atomic mass unit"]
+symbol = "Da"
+plural = "daltons"
 factor = "1.660540199E-24"
 
 ["drachm"]
-symbols = ["dr"]
-aliases = ["drachms", "drams", "dram"]
+symbol = "dr"
+plural = "drachms"
 factor = "1.77185"
 
 ["grain"]
-symbols = ["gr"]
-aliases = ["grains"]
+symbol = "gr"
+plural = "grains"
 factor = "0.06479891"
 
 ["pennyweight"]
-symbols = ["dwt"]
-aliases = ["pennyweights"]
+symbol = "dwt"
+plural = "pennyweights"
 factor = "1.55517384"
 
 ["slug"]
-aliases = ["slugs"]
+plural = "slugs"
 factor = "14593.9"
 
 ["troy ounce"]
-symbols = ["ozt"]
-aliases = ["troy ounces"]
+symbol = "ozt"
+plural = "troy ounces"
 factor = "31.1035"
 
 ["troy pound"]
-symbols = ["lbt"]
-aliases = ["troy pounds"]
+symbol = "lbt"
+plural = "troy pounds"
 factor = "373.242"

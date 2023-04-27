@@ -9,8 +9,9 @@ from unitconverter.registry import Registry
 from unitconverter.unit import Unit
 
 
-# Total number of categories
-NUM_CATEGORIES = 40
+# Total number of categories and units
+NUM_CATEGORIES = 42
+NUM_UNITS = 2667
 
 
 class TestRegistry(unittest.TestCase):
@@ -23,7 +24,7 @@ class TestRegistry(unittest.TestCase):
     def test_add_unit(self) -> None:
         """ Test add_unit() method. """
         # Add a dummy unit
-        dummy = Unit('dummy', 'length', ['d'], ['dummies'], factor=1)
+        dummy = Unit('dummy', 'length', 'd', 'dummies', factor=1)
         self.units.add_unit(dummy)
 
         # Duplicate units should raise a UnitError
@@ -42,15 +43,13 @@ class TestRegistry(unittest.TestCase):
 
     def test_get_units(self) -> None:
         """ Test get_units() method. """
-        units = [unit for unit in self.units]
-        self.assertEqual(self.units.get_units(), units)
-
-    def test_get_categories(self) -> None:
-        """ Test get_categories() method. """
-        categories = self.units.get_categories()
+        categories = self.units.get_units()
         self.assertIsInstance(categories, dict)
         self.assertEqual(NUM_CATEGORIES, len(categories),
                          f'there should be {NUM_CATEGORIES} categories')
+
+        total_units = sum(len(units) for units in categories.values())
+        self.assertEqual(NUM_UNITS, total_units, f'there should be {NUM_UNITS} units')
 
     def test_iter_units(self) -> None:
         """ Test iter_units() method. """
@@ -66,11 +65,10 @@ class TestRegistry(unittest.TestCase):
 
     def test_len(self) -> None:
         """ Test __len__ method. """
-        units = [unit for unit in self.units]
-        self.assertEqual(len(units), len(self.units))
+        self.assertEqual(NUM_UNITS, len(self.units), f'there should be {NUM_UNITS} units')
 
     def test_units(self) -> None:
-        """ Test for incorrectly formed units. """
+        """ Test registry for invalid units. """
         for unit in self.units:
             self.assert_valid_unit(unit)
 
@@ -80,22 +78,24 @@ class TestRegistry(unittest.TestCase):
 
         msg = f'{unit.name} has an invalid '
 
-        self.assert_string(repr(unit), msg + 'name')
+        self.assert_string(unit.name, msg + 'name')
         self.assert_string(unit.category, msg + 'category')
-        self.assert_stringlist(unit.symbols, f'{unit.name} has invalid symbols')
-        self.assert_stringlist(unit.aliases, f'{unit.name} has invalid aliases')
+        self.assert_string(unit.symbol, msg + 'symbol')
+        self.assert_string(unit.plural, msg + 'plural')
 
-        self.assert_numeric(unit.factor, msg + 'factor')
+        self.assert_factor(unit.factor, msg + 'factor')
+
+        self.assertIsInstance(unit.power, int, msg + 'power')
+        self.assertNotEqual(unit.power, 0, msg + 'power')
 
         if unit.prefix_scale:  # prefix scale can be None
             self.assertIsInstance(unit.prefix_scale, str, msg + 'prefix_scale')
 
-        self.assertIsInstance(unit.prefix_power, int, msg + 'prefix_power')
         self.assert_stringlist(unit.prefix_exclude, msg + 'prefix_exclude')
 
-    def assert_numeric(self, value: Decimal | int | str, msg: str) -> None:
-        """ Assert that a unit has a valid numeric value (Decimal, int, or str). """
-        self.assertIsInstance(value, (Decimal, int, str), msg)
+    def assert_factor(self, value: Decimal, msg: str) -> None:
+        """ Assert that a unit has a valid decimal factor. """
+        self.assertIsInstance(value, Decimal, msg)
 
         # Assert that all E notations are signed +/-
         strvalue = str(value)

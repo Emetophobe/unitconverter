@@ -1,90 +1,91 @@
 # The joule is the SI unit of energy
 ["joule"]
-symbols = ["J", "j"]
-aliases = ["joules"]
+symbol = "J"
+plural = "joules"
 factor = "1"
 prefix_scale = "si"
 
 # 1 watt-second = 1 joule
 ["watt-second"]
-symbols = ["Ws"]
-aliases = ["watt-seconds", "wattseconds", "wattsecond"]
+symbol = "Ws"
+plural = "watt-seconds"
+aliases = ["wattseconds", "wattsecond"]
 factor = "1"
 prefix_scale = "si"
 
 ["watt-minute"]
-symbols = ["Wm"]
-aliases = ["watt-minutes", "wattminutes", "wattminute"]
+symbol = "Wm"
+plural = "watt-minutes"
+aliases = ["wattminutes", "wattminute"]
 factor = "60"
 prefix_scale = "si"
 
 ["watt-hour"]
-symbols = ["Wh"]
-aliases = ["watt-hours", "watthours", "watthour"]
+symbol = "Wh"
+plural = "watt-hours"
+aliases = ["watthours", "watthour"]
 factor = "3600"
 prefix_scale = "si"
 
 # 1 gram of TNT = roughly 4184 joules
 ["gram of TNT"]
-symbols = ["gTNT"]
-aliases = ["grams of TNT"]
+symbol = "gTNT"
+plural = "grams of TNT"
 factor = "4184"
 prefix_scale = "si"
 
 # 1 metric ton of TNT = roughly 4.184E+9 joules
 ["ton of TNT"]
-symbols = ["tTNT"]
-aliases = ["tons of TNT", "metric tons of TNT", "metric ton of TNT"]
+symbol = "tTNT"
+plural = "tons of TNT"
 factor = "4.184E+9"
 prefix_scale = "si"
 
 ["electron volt"]
-symbols = ["eV"]
-aliases = ["electron volts"]
+symbol = "eV"
+plural = "electron volts"
 factor = "1.602176633E-19"
 prefix_scale = "si"
 
 # 1 calorie = 4.184 joules
 ["calorie"]
-symbols = ["cal"]
-aliases = ["calories", "small calories", "small calorie"]
+symbol = "cal"
+plural = "calories"
 factor = "4.184"
 
 # 1 kilocalorie = 1000 calories = 4184 joules
 ["kilocalorie"]
-symbols = ["kcal"]
-aliases = ["kilocalories", "large calories", "large calorie"]
+symbol = "kcal"
+plural = "kilocalories"
 factor = "4184"
 
 # 1 btu = 1055.06 joules
 ["british thermal unit"]
-symbols = ["btu", "btus"]
-aliases = ["british thermal units"]
+symbol = "btu"
+plural = "british thermal units"
 factor = "1055.06"
 
-# A quad is a quadrillion btus
-["quad"]
-aliases = ["quadrillion btus", "quadrillion btu"]
+["quadrillion btu"]
+symbol = "quad"
+plural = "quadrillion btus"
 factor = "1.05506E+18"
 
 ["erg"]
-aliases = ["ergs"]
+plural = "ergs"
 factor = "1E-7"
 
 ["therm"]
-symbols = ["thm"]
-aliases = ["therms"]
+symbol = "thm"
+plural = "therms"
 factor = "105506000"
 
 
 # source: https://en.wikipedia.org/wiki/Foot-pound_(energy)
 ["inch-pound force"]
-symbols = ["in-lbf"]
-aliases = ["inch-pound-force", "inch-pound"]
+symbol = "in-lbf"
 factor = "0.112984829"
 
 # source: https://en.wikipedia.org/wiki/Foot-pound_(energy)
 ["foot-pound force"]
-symbols = ["ft-lbf"]
-aliases = ["foot-pound-force", "foot-pound"]
+symbol = "ft-lbf"
 factor = "1.3558179483"

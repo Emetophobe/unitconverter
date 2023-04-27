@@ -16,13 +16,74 @@ class Prefix:
         self.factor = Decimal(factor)
 
     def __add__(self, unit: Unit) -> Unit:
-        return add_prefix(self, unit)
+        """ Create a new prefixed unit. """
+
+        # Get supported prefixes
+        prefixes = get_prefixes(unit.prefix_scale)
+
+        if not prefixes:
+            raise UnitError(f"Unit {unit} doesn't support prefix scaling")
+
+        if self not in prefixes:
+            raise UnitError(f"Unit {unit} doesn't support {self.name} prefix")
+
+        # Create new unit names and factor
+        name = self._add_prefix(self.name, unit.name)
+        symbol = self._add_prefix(self.symbol, unit.symbol)
+        plural = self._add_prefix(self.name, unit.plural)
+        aliases = [self._add_prefix(self.name, alias) for alias in unit.aliases]
+
+        factor = (Decimal(unit.factor) * self.factor) ** unit.power
+
+        # Create a new prefixed unit
+        return Unit(name, unit.category, symbol, plural, aliases, factor, unit.power,
+                    None, unit.prefix_exclude, True)
+
+    def _add_prefix(self, prefix: str, name: str) -> str:
+        """ Add a prefix to a unit name or alias. """
+        # Special case for square and cubic units
+        if name.startswith('square '):
+            return name[:7] + prefix + name[7:]
+        elif name.startswith('cubic '):
+            return name[:6] + prefix + name[6:]
+
+        # Prefix other units normally
+        return prefix + name
 
     def __repr__(self) -> str:
         return f'Prefix({self.name!r}, {self.symbol!r}, {self.factor!r})'
 
     def __str__(self):
         return self.name
+
+
+def get_prefixes(scale: str) -> list[Prefix]:
+    """ Get a list of supported prefixes based on the prefix scale. """
+    if not scale or scale == 'none':
+        return []
+
+    if scale == 'si':
+        return SI_PREFIXES
+    elif scale == 'binary':
+        return BINARY_PREFIXES
+    elif scale == 'bit':
+        return BIT_PREFIXES
+    elif scale == 'byte':
+        return BYTE_PREFIXES
+    elif scale == 'all':
+        return ALL_PREFIXES
+    else:
+        raise UnitError(f'Unsupported prefix scale: {scale}')
+
+
+def create_prefixed_units(unit: Unit):
+    """ Create a list of prefixed units from a source unit. """
+    units = []
+    for prefix in get_prefixes(unit.prefix_scale):
+        if prefix.name not in unit.prefix_exclude:
+            units.append(prefix + unit)
+
+    return units
 
 
 # List of valid prefix options
@@ -46,7 +107,7 @@ SI_PREFIXES = [
     Prefix('femto', 'f', '1E-15'),
     Prefix('pico', 'p', '1E-12'),
     Prefix('nano', 'n', '1E-9'),
-    Prefix('micro', 'µ', '1E-6'),
+    Prefix('micro', 'mu', '1E-6'),
     Prefix('milli', 'm', '1E-3'),
     Prefix('centi', 'c', '1E-2'),
     Prefix('deci', 'd', '1E-1'),
@@ -84,83 +145,3 @@ BYTE_PREFIXES = BIT_PREFIXES + BINARY_PREFIXES
 
 # All prefixes = SI prefixes and binary prefixes
 ALL_PREFIXES = SI_PREFIXES + BINARY_PREFIXES
-
-
-def valid_scale(scale: str) -> bool:
-    """ True if scale is a valid prefix option. """
-    return scale is None or scale in PREFIX_OPTIONS
-
-
-def add_prefix(prefix: Prefix, unit: Unit) -> Unit:
-    """ Create a new prefixed unit. """
-    if not isinstance(prefix, Prefix):
-        raise UnitError(f'{prefix} is not a valid Prefix')
-
-    if not isinstance(unit, Unit):
-        raise UnitError(f'{unit!r} is not a valid Unit')
-
-    # Get list of supported prefixes
-    prefixes = get_prefixes(unit)
-
-    if not prefixes:
-        raise UnitError(f"Unit {unit} doesn't support prefix scaling")
-
-    if prefix not in prefixes:
-        raise UnitError(f"Unit {unit} doesn't support {prefix} prefix")
-
-    # Create new unit names and factor
-    name = _prefix_name(prefix.name, unit.name)
-    symbols = [prefix.symbol + symbol for symbol in unit.symbols]
-    aliases = [_prefix_name(prefix.name, alias) for alias in unit.aliases]
-    factor = (Decimal(unit.factor) * prefix.factor) ** unit.prefix_power
-
-    # Don't allow prefixed units to be prefixed again
-    prefix_scale = None
-
-    # Create a new prefixed unit
-    unit = Unit(name, unit.category, symbols, aliases, factor, prefix_scale,
-                unit.prefix_power, unit.prefix_exclude)
-    unit.prefixed = True
-
-    return unit
-
-
-def get_prefixes(unit: Unit) -> list[Prefix]:
-    """ Get a list of supported unit prefixes. Returns an empty list if unsupported. """
-    scale = unit.prefix_scale
-
-    if not scale or scale == 'none':
-        return []
-
-    if scale == 'si':
-        prefixes = SI_PREFIXES
-    elif scale == 'binary':
-        prefixes = BINARY_PREFIXES
-    elif scale == 'bit':
-        prefixes = BIT_PREFIXES
-    elif scale == 'byte':
-        prefixes = BYTE_PREFIXES
-    elif scale == 'all':
-        prefixes = ALL_PREFIXES
-    else:
-        raise UnitError(f'Unsupported prefix scale: {scale}')
-
-    # Filter list based on unit prefix exclude list
-    return [prefix for prefix in prefixes if prefix.name not in unit.prefix_exclude]
-
-
-def create_prefixed_units(unit: Unit):
-    """ Create a list of prefixed units from a source unit. """
-    return [add_prefix(prefix, unit) for prefix in get_prefixes(unit)]
-
-
-def _prefix_name(prefix: str, name: str) -> str:
-    """ Add a prefix to a unit name or alias. """
-    # Special case for square and cubic units
-    if name.startswith('square '):
-        return name[:7] + prefix + name[7:]
-    elif name.startswith('cubic '):
-        return name[:6] + prefix + name[6:]
-
-    # Prefix other units normally
-    return prefix + name

@@ -29,8 +29,8 @@ Area
 	rood
 	arpent
 	square
-	circular inch
 	circular thou
+	circular inch
 	square thou
 	square inch
 	square foot
@@ -135,7 +135,7 @@ Energy
 	calorie
 	kilocalorie
 	british thermal unit
-	quad
+	quadrillion btu
 	erg
 	therm
 	inch-pound force
@@ -154,7 +154,7 @@ Force
 	poundal
 	ounce-force
 	pound-force
-	kip-force
+	kilopound-force
 
 Frequency
 
@@ -199,6 +199,7 @@ Length
 	metre
 	angstrom
 	thou
+	mil
 	inch
 	hand
 	foot
@@ -243,7 +244,6 @@ Luminance
 	nit
 	stilb
 	apostilb
-	blondel
 	bril
 	lambert
 	foot-lambert
@@ -316,8 +316,8 @@ Pressure
 	newton/metre²
 	bar
 	barye
-	psi
-	ksi
+	pound per square inch
+	kilopound per square inch
 	pieze
 	torr
 	metre of mercury
@@ -386,6 +386,14 @@ Time
 	century
 	millennia
 
+Time2
+
+	square second
+
+Time3
+
+	cubic second
+
 Torque
 
 	newton-metre
@@ -416,23 +424,23 @@ Volume
 	teaspoon
 	drop
 	stere
-	fifth
 	cubic inch
 	cubic foot
 	cubic yard
 	cubic mile
 	acre-inch
 	acre-foot
-	imperial gill
+	gill
+	barrel
+	bushel
+	fluid ounce
+	gallon
+	pint
+	quart
 	imperial cup
-	imperial barrel
-	imperial bushel
-	imperial fluid ounce
-	imperial gallon
-	imperial pint
-	imperial quart
 	imperial tablespoon
 	imperial teaspoon
+	fifth
 	US gill
 	US cup
 	US barrel

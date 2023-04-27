@@ -1,24 +1,14 @@
-# dimensions = "volume/length"
+# dimension = volume/length
+# base unit = meter^3/metre
 
-# 1 litre per metre is the base unit
 ["litre/metre"]
 symbol = "l/m"
 plural = "litres/metre"
-factor = "1"
+factor = "0.001"
 prefix_scale = "si"
 
 ["litre/100km"]
 symbol = "l/100km"
 plural = "litres/100km"
-factor = "0.00001"
+factor = "0.00000001"
 prefix_scale = "si"
-
-["gallon/mile"]
-symbol = "gal/mi"
-plural = "gallons/mile"
-factor = "0.0028248094"
-
-["usgallon/mile"]
-symbol = "usgal/mi"
-plural = "usgallons/mile"
-factor = "0.0023521458"

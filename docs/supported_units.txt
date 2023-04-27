@@ -364,11 +364,11 @@ Time
 	century
 	millennia
 
-Time2
+Time²
 
 	square second
 
-Time3
+Time³
 
 	cubic second
 

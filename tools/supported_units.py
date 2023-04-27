@@ -27,7 +27,7 @@ def create_supported_units(filename):
             units = get_regular_units(categories[category])
             total_units += len(units)
 
-            outfile.write(category.title() + '\n\n')
+            outfile.write(format_name(category.title()) + '\n\n')
             for unit in units:
                 outfile.write('\t' + format_name(unit.name) + '\n')
 

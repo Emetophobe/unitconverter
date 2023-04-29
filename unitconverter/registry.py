@@ -5,52 +5,94 @@ import tomllib
 from collections import defaultdict
 from pathlib import Path
 
-from unitconverter.exceptions import UnitError
-from unitconverter.prefixes import create_prefixed_units
+from unitconverter.definitions import UnitDef, create_definitions
+from unitconverter.exceptions import DefinitionError, UnitError
+from unitconverter.misc import simplify_unit, split_exponent
 from unitconverter.unit import Unit
-from unitconverter.utils import simplify_unit
 
 
 class Registry:
-    """ Registry of pre-defined units. """
 
     _units = defaultdict(list)
     _aliases = {}
 
-    def __init__(self):
-        """ Load pre-defined units. """
+    def __init__(self) -> None:
+        """ Initialize pre-defined units. """
         if not self._units:
             self._load_units()
 
-    def add_unit(self, unit: Unit) -> None:
-        """ Add a unit to the registry. """
-        # Check for duplicate names
-        for name in unit.names():
-            if name in self._aliases.keys():
-                raise UnitError(f'{unit.name} has a duplicate name: {name}'
-                                f' (Original unit: {self._aliases[name]})')
-            # Track all unit names, symbols, and aliases
-            self._aliases[name] = unit
+    def new_unit(self, unitdef: UnitDef) -> None:
+        """ Add a new unit definition. """
 
-        # Add unit
-        self._units[unit.category].append(unit)
+        if not isinstance(unitdef, UnitDef):
+            raise DefinitionError(f'{unitdef!r} is not a valid unit definition')
+
+        # Add the unit definition
+        self.add_aliases(unitdef, unitdef.names())
+        self._units[unitdef.category].append(unitdef)
+
+        # Add prefixed unit definitions (if the unit supports it)
+        for prefix_unit in create_definitions(unitdef):
+            self.add_aliases(prefix_unit, prefix_unit.names())
+            self._units[prefix_unit.category].append(prefix_unit)
+
+        #return Unit(unitdef.factor, (unit.name, unit.category))
+
+    def add_alias(self, unitdef: UnitDef | str, alias: str) -> None:
+        """ Add a unit alias. """
+
+        # Make sure the definition is valid
+        if isinstance(unitdef, str):
+            unitdef = self.get_definition(unitdef)
+        elif not isinstance(unitdef, UnitDef):
+            raise DefinitionError(f'{unitdef} is not a valid unit definition')
+
+        # Make sure the alias is valid
+        if not alias or not isinstance(alias, str):
+            raise DefinitionError(f'{unitdef} has an invalid alias: {alias!r}')
+        elif alias in self._aliases:
+            raise DefinitionError(f'{unitdef} has a duplicate alias: {alias}')
+
+        self._aliases[alias] = unitdef
+
+    def add_aliases(self, unitdef: UnitDef, aliases: set[str]):
+        """ Add multiple unit aliases. """
+        if not isinstance(aliases, (list, tuple, set)):
+            raise DefinitionError(f'{unitdef} has invalid aliases: {aliases!r}'
+                                  ' (expected a list, tuple or set)')
+        for alias in aliases:
+            self.add_alias(unitdef, alias)
 
     def get_unit(self, name: str) -> Unit:
         """ Get a unit by name. """
         simple_name = simplify_unit(name)
 
+        # Check for pre-defined unit
         if simple_name in self._aliases:
-            return self._aliases[simple_name]
+            unit = self._aliases[simple_name]
+            return Unit(unit.factor, (unit.name, unit.category))
+
+        # Check if name contains an expression
+        if '/' in name or '*' in name:
+            raise UnitError(f'Invalid unit: {name}')
+
+        # Split unit name and exponent
+        split_name, exp = split_exponent(simple_name)
+        if split_name in self._aliases:
+            unit = self._aliases[split_name]
+            return Unit(unit.factor, (unit.name, unit.category)) ** exp
 
         raise UnitError(f'Invalid unit: {name}')
 
-    def get_units(self) -> dict[str, list[Unit]]:
-        """ Get a dictionary of categories and units. """
+    def get_units(self) -> dict[str, list[UnitDef]]:
+        """ Get the dictionary of units. """
         return dict(self._units)
 
-    def iter_units(self):
-        """ Get a units iterator. """
-        return iter(self)
+    def get_definition(self, name: str) -> UnitDef:
+        if name in self._aliases:
+            return self._aliases[name]
+
+        raise DefinitionError(f'Invalid definition name: {name}')
 
     def _load_units(self) -> None:
         """ Load pre-defined units from toml files. """
@@ -59,42 +101,34 @@ class Registry:
 
             with open(filename, 'rb') as infile:
                 data = tomllib.load(infile)
+                aliases = data.pop('aliases', {})
 
+                # Add unit definitions
                 for name, args in data.items():
-                    # Unit category override or use file category
-                    unit_category = args.pop('category', category)
+                    self.new_unit(UnitDef(name, category, **args))
 
-                    # Add unit
-                    unit = Unit(name, unit_category, **args)
-                    self.add_unit(unit)
-
-                    # Add prefixed versions
-                    for prefixed in create_prefixed_units(unit):
-                        self.add_unit(prefixed)
-
-    def __iter__(self) -> Unit:
-        """ Iterate over all units. """
-        for units in self._units.values():
-            yield from units
-
-    def __len__(self):
-        """ Get total number of units. """
-        return sum(len(units) for units in self._units.values())
+                # Add extra aliases
+                for name, aliases in aliases.items():
+                    self.add_aliases(name, aliases)
 
 
 REGISTRY = Registry()
 
-add_unit = REGISTRY.add_unit
+new_unit = REGISTRY.new_unit
+add_alias = REGISTRY.add_alias
+add_aliases = REGISTRY.add_aliases
 get_unit = REGISTRY.get_unit
 get_units = REGISTRY.get_units
-iter_units = REGISTRY.iter_units
+get_definition = REGISTRY.get_definition
 
 
 __all__ = [
     'REGISTRY',
     'Registry',
-    'add_unit',
+    'new_unit',
+    'add_alias',
+    'add_aliases',
     'get_unit',
     'get_units',
-    'iter_units'
+    'get_definition',
 ]

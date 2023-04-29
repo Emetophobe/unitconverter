@@ -1,54 +1,54 @@
 # newton-metre is the base unit
 ["newton-metre"]
-symbol = "N-m"
-plural = "newton-metres"
+symbols = ["N-m", "Nm"]
+aliases = ["newton-metres"]
 factor = "1"
 prefix_scale = "si"
 
 ["dyne-metre"]
-symbol = "dyn-m"
-plural = "dyne-metres"
+symbols = ["dyn-m"]
+aliases = ["dyne-metres"]
 factor = "1E-5"
 prefix_scale = "si"
 
 ["dyne-centimetre"]
-symbol = "dyn-cm"
-plural = "dyne-centimetres"
+symbols = ["dyn-cm"]
+aliases = ["dyne-centimetres"]
 factor = "1E-7"
 prefix_scale = "si"
 
 ["gram-force metre"]
-symbol = "gf-m"
-plural = "gram-force metres"
+symbols = ["gf-m"]
+aliases = ["gram-force metres"]
 factor = "0.00980665"
 prefix_scale = "si"
 
 ["gram-force centimetre"]
-symbol = "gf-cm"
-plural = "gram-force centimetres"
+symbols = ["gf-cm"]
+aliases = ["gram-force centimetres"]
 factor = "0.0000980665"
 prefix_scale = "si"
 
 ["ounce-force inch"]
-symbol = "ozf-in"
-plural = "ounce-force inches"
+symbols = ["ozf-in"]
+aliases = ["ounce-force inches"]
 factor = "0.007061552"
 
 ["ounce-force foot"]
-symbol = "ozf-ft"
-plural = "ounce-force feet"
+symbols = ["ozf-ft"]
+aliases = ["ounce-force feet"]
 factor = "0.084738624"
 
 # 1 pound-force-inch = ~0.112984825 newton-metre
 # source: https://en.wikipedia.org/wiki/Pound-foot
 ["pound-force inch"]
-symbol = "lbf-in"
-plural = "pound-force inches"
+symbols = ["lbf-in"]
+aliases = ["pound-force inches", "pound-force-inches", "pound-force-inch"]
 factor = "0.112984825"
 
 # 1 pound-force-foot = ~1.3558179 newton-metre
 # source: https://en.wikipedia.org/wiki/Pound-foot
 ["pound-force foot"]
-symbol = "lbf-ft"
-plural = "pound-force feet"
+symbols = ["lbf-ft"]
+aliases = ["pound-force feet", "pound-force-feet", "pound-force-foot"]
 factor = "1.3558179"

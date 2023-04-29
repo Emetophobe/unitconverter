@@ -27,16 +27,6 @@ Area
 	square
 	circular thou
 	circular inch
-	square thou
-	square inch
-	square foot
-	square yard
-	square mile
-	square nautical mile
-	square chain
-	square furlong
-	square link
-	square rod
 	US survey acre
 	US survey square foot
 	US survey square mile
@@ -131,8 +121,8 @@ Energy
 	electron volt
 	calorie
 	kilocalorie
-	british thermal unit
-	quadrillion btu
+	btu
+	quad
 	erg
 	therm
 	inch-pound force
@@ -165,10 +155,19 @@ Fuel Consumption
 
 	litre/metre
 	litre/100km
+	gallon/mile
+	usgallon/mile
 
 Fuel Economy
 
+	metre/litre
+	foot/litre
+	mile/litre
+	foot/gallon
+	metre/gallon
 	mile/gallon
+	foot/usgallon
+	metre/usgallon
 	mile/usgallon
 
 Illuminance
@@ -187,7 +186,6 @@ Length
 	metre
 	angstrom
 	thou
-	mil
 	inch
 	hand
 	foot
@@ -304,8 +302,8 @@ Pressure
 	newton/metre²
 	bar
 	barye
-	pound per square inch
-	kilopound per square inch
+	psi
+	ksi
 	pieze
 	torr
 	metre of mercury
@@ -334,7 +332,7 @@ Solid Angle
 Speed
 
 	metre/second
-	kilometre/hour
+	metre/hour
 	mile/hour
 	knot
 	imperial knot
@@ -363,14 +361,6 @@ Time
 	decade
 	century
 	millennia
-
-Time²
-
-	square second
-
-Time³
-
-	cubic second
 
 Torque
 
@@ -402,12 +392,6 @@ Volume
 	teaspoon
 	drop
 	stere
-	cubic inch
-	cubic foot
-	cubic yard
-	cubic mile
-	acre-inch
-	acre-foot
 	gill
 	barrel
 	bushel
@@ -432,4 +416,3 @@ Volume
 	US dry quart
 	US tablespoon
 	US teaspoon
-	US survey acre-foot

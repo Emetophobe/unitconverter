@@ -1,14 +1,15 @@
-# dimension = length/volume
-# base unit = metre/metre^3
+# Fuel economy is the distance travelled per unit volume of fuel used
+# https://en.wikipedia.org/wiki/Fuel_efficiency#Measurement
+
+# formula = length/volume
+# 1 metre per cubic metre is the base unit
 
 ["mile/gallon"]
-symbol = "mpg"
-plural = "miles/gallon"
-aliases = ["mi/gal"]
+symbols = ["mpg", "mi/gal"]
+aliases = ["miles/gallon", "miles/gal", "mile/gal"]
 factor = "354006.1899346471363303410183"
 
 ["mile/usgallon"]
-symbol = "usmpg"
-plural = "miles/usgallon"
-aliases = ["mi/usgal"]
+symbols = ["usmpg", "mi/usgal"]
+aliases = ["miles/usgallon", "miles/usgal", "mile/usgal"]
 factor = "425143.7074302720034011496594"

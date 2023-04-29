@@ -1,225 +1,164 @@
-# 1 cubic metre (m^3) is the SI unit of volume
-["cubic metre"]
-symbol = "m3"
-plural = "cubic metres"
-aliases = ["metres3", "metre3"]
-factor = 1
-power = 3
-prefix_scale = "si"
+# cubic metre (m^3) is the SI unit of volume
 
-# 1 litre = 0.001 cubic metre
+
+# 1 litre = 0.001 metre^3
 ["litre"]
-symbol = "l"
-plural = "litres"
+symbols = ["L", "l"]
+aliases = ["litres"]
 factor = "0.001"
 prefix_scale = "si"
 
-# 1 metric cup = 0.00025 cubic metre
+# 1 stere = 1 metre^3
+["stere"]
+aliases = ["steres"]
+factor = 1
+
+# 1 metric cup = 0.00025 metre^3
 ["cup"]
-plural = "cups"
-aliases = ["metric cup"]
+aliases = ["cups", "metric cup"]
 factor = "0.00025"
 
-# 1 metric tbps = 0.000015 cubic metre
+# 1 metric tbps = 0.000015 metre^3
 ["tablespoon"]
-symbol = "tbsp"
-plural = "tablespoons"
-aliases = ["metric tbps"]
+symbols = ["tbsp"]
+aliases = ["tablespoons", "metric tbps"]
 factor = "0.000015"
 
-# 1 metric tsp = 0.000005 cubic metre
+# 1 metric tsp = 0.000005 metre^3
 ["teaspoon"]
-symbol = "tsp"
-plural = "teaspoons"
-aliases = ["metric tsp"]
+symbols = ["tsp"]
+aliases = ["teaspoons", "metric tsp"]
 factor = "0.000005"
 
-# 1 drop = 0.01 teaspoon = 0.00000005 cubic metre
+# 1 drop = 0.01 teaspoon = 0.00000005 metre^3
 ["drop"]
-symbol = "gt"
-plural = "drops"
+symbols = ["gt"]
+aliases = ["drops"]
 factor = "0.00000005"
-
-# 1 stere = 1 cubic metre
-["stere"]
-plural = "steres"
-factor = 1
 
 
 # Imperial units
 
 
-["cubic inch"]
-symbol = "in3"
-plural = "cubic inches"
-aliases = [ "inches3", "inch3"]
-factor = "0.000016387064"
-
-["cubic foot"]
-symbol = "ft3"
-plural = "cubic feet"
-aliases = ["feet3", "foot3"]
-factor = "0.028316846592"
-
-["cubic yard"]
-symbol = "yd3"
-plural = "cubic yards"
-aliases = ["yards3", "yard3"]
-factor = "0.764554857984"
-
-["cubic mile"]
-symbol = "mi3"
-plural = "cubic miles"
-aliases = ["miles3", "mile3"]
-factor = "4168181825.440579584"
-
-["acre-inch"]
-symbol = "ac-in"
-plural = "acre-inches"
-factor = "102.79015312896"
-
-["acre-foot"]
-symbol = "ac-ft"
-plural = "acre-feet"
-factor = "1233.48183754752"
-
 ["gill"]
-symbol = "gi"
-plural = "gills"
+symbols = ["gi"]
+aliases = ["gills"]
 factor = "0.0001420653"
 
 ["barrel"]
-symbol = "bbl"
-plural = "barrels"
+symbols = ["bbl"]
+aliases = ["barrels"]
 factor = "0.16365924"
 
 ["bushel"]
-symbol = "bsh"
-plural = "bushels"
+symbols = ["bsh", "bu"]
+aliases = ["bushels"]
 factor = "0.03636872"
 
 ["fluid ounce"]
-symbol = "floz"
-plural = "fluid ounces"
+symbols = ["floz"]
+aliases = ["fluid ounces"]
 factor = "0.0000284130625"
 
 ["gallon"]
-symbol = "gal"
-plural = "gallons"
+symbols = ["gal"]
+aliases = ["gallons"]
 factor = "0.00454609"
 
 ["pint"]
-symbol = "pt"
-plural = "pints"
+symbols = ["pt"]
+aliases = ["pints"]
 factor = "0.0005682615"
 
 ["quart"]
-symbol = "qt"
-plural = "quarts"
+symbols = ["qt"]
+aliases = ["quarts"]
 factor = "0.0011365225"
 
 ["imperial cup"]
-symbol = "impcup"
-plural = "imperial cups"
+symbols = ["impcup"]
+aliases = ["imperial cups"]
 factor = "0.0002841306"
 
 ["imperial tablespoon"]
-symbol = "imptbps"
-plural = "imperial tablespoons"
+symbols = ["imptbps"]
+aliases = ["imperial tablespoons"]
 factor = "0.0000177582"
 
 ["imperial teaspoon"]
-symbol = "imptsp"
-plural = "imperial teaspoons"
+symbols = ["imptsp"]
+aliases = ["imperial teaspoons"]
 factor = "0.000005919388"
 
 
 # US customary and survey units
 
 
-# https://en.wikipedia.org/wiki/Fifth_(unit)
 ["fifth"]
-plural = "fifths"
+aliases = ["fifths"]
 factor = "0.0007570823568"
 
 ["US gill"]
-symbol = "usgi"
-plural = "US gills"
-aliases = ["usgills", "usgill"]
+symbols = ["usgi"]
+aliases = ["US gills", "usgills", "usgill"]
 factor = "0.0001182941"
 
-["US cup"]
-symbol = "uscup"
-plural = "US cups"
-aliases = ["uscups"]
-factor = "0.000236588"
-
 ["US barrel"]
-symbol = "usbbl"
-plural = "US barrels"
-aliases = ["usbarrels", "usbarrel"]
+symbols = ["usbbl"]
+aliases = ["US barrels", "usbarrels", "usbarrel"]
 factor = "0.1192404712"
 
 ["US bushel"]
-symbol = "usbsh"
-plural = "US bushels"
-aliases = ["usbushels", "usbushel"]
+symbols = ["usbsh", "usbu"]
+aliases = ["US bushels", "usbushels", "usbushel"]
 factor = "0.0352391"
 
 ["US fluid ounce"]
-symbol = "usfloz"
-plural = "US fluid ounces"
-aliases = ["usfluidoz"]
+symbols = ["usfloz"]
+aliases = ["US fluid ounces"]
 factor = "0.0000295735"
 
 ["US liquid gallon"]
-symbol = "usgal"
-plural = "US liquid gallons"
-aliases = ["usgallons", "usgallon"]
+symbols = ["usgal"]
+aliases = ["US liquid gallons", "usgallons", "usgallon"]
 factor = "0.003785411784"
 
 ["US dry gallon"]
-symbol = "usdrygal"
-plural = "US dry gallons"
-aliases = ["usdrygallons", "usdrygallon"]
+symbols = ["usdrygal"]
+aliases = ["US dry gallons", "usdrygallons", "usdrygallon"]
 factor = "0.00440488"
 
 ["US liquid pint"]
-symbol = "uspt"
-plural = "US liquid pints"
-aliases = ["uspints", "uspint"]
+symbols = ["uspt"]
+aliases = ["US liquid pints", "uspints", "uspint"]
 factor = "0.000473176"
 
 ["US dry pint"]
-symbol = "usdrypt"
-plural = "US dry pints"
-aliases = ["usdrypints", "usdrypint"]
+symbols = ["usdrypt"]
+aliases = ["US dry pints", "usdrypints", "usdrypint"]
 factor = "0.000550610475"
 
 ["US liquid quart"]
-symbol = "usqt"
-plural = "US liquid quarts"
-aliases = ["usquarts", "usquart"]
+symbols = ["usqt"]
+aliases = ["US liquid quarts", "usquarts", "usquart"]
 factor = "0.000946353"
 
 ["US dry quart"]
-symbol = "usdryqt"
-plural = "US dry quarts"
-aliases = ["usdryquarts", "usdryquart"]
+symbols = ["usdryqt"]
+aliases = ["US dry quarts", "usdryquarts", "usdryquart"]
 factor = "0.0011012107"
 
+["US cup"]
+symbols = ["uscup"]
+aliases = ["US cups", "uscups"]
+factor = "0.000236588"
+
 ["US tablespoon"]
-symbol = "ustbsp"
-plural = "US tablespoons"
+symbols = ["ustbsp"]
+aliases = ["US tablespoons"]
 factor = "0.0000147868"
 
 ["US teaspoon"]
-symbol = "ustsp"
-plural = "US teaspoons"
+symbols = ["ustsp"]
+aliases = ["US teaspoons"]
 factor = "0.00000492892"
-
-["US survey acre-foot"]
-symbol = "surveyac-ft"
-plural = "US survey acre-feet"
-aliases = ["surveyacft"]
-factor = "1233.489238467185051800274"

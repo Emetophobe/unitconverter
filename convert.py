@@ -2,12 +2,13 @@
 # Copyright (c) 2022-2023 Mike Cunningham
 
 
-import sys
 import argparse
+import sys
 from decimal import Decimal, DecimalException
 
-from unitconverter.converter import convert, format_decimal
+from unitconverter.converter import convert
 from unitconverter.exceptions import ConverterError
+from unitconverter.misc import format_decimal
 
 
 def print_error(error_msg: str, status: int = 1) -> None:

@@ -1,18 +1,18 @@
 # The tesla is the SI unit of magnetic flux density
 ["tesla"]
-symbol = "T"
-plural = "teslas"
+symbols = ["T"]
+aliases = ["teslas"]
 factor = "1"
 prefix_scale = "si"
 
 # 1 gamma = 1E-9 teslas
 ["gamma"]
-symbol = "y"
-plural = "gammas"
+symbols = ["y"]
+aliases = ["gammas"]
 factor = "1E-9"
 
 # 1 guass = 1E-4 teslas
 ["guass"]
-symbol = "G"
-plural = "gausses"
+symbols = ["G"]
+aliases = ["gausses"]
 factor = "0.0001"

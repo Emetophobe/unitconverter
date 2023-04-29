@@ -2,114 +2,113 @@
 
 
 import unittest
-from decimal import Decimal
 
-from unitconverter.exceptions import UnitError
-from unitconverter.registry import Registry
-from unitconverter.unit import Unit
+from unitconverter.exceptions import UnitError, DefinitionError
+from unitconverter.registry import REGISTRY as registry
+from unitconverter.definitions import UnitDef
 
 
 # Total number of categories and units
-NUM_CATEGORIES = 42
-NUM_UNITS = 2550
+NUM_CATEGORIES = 40
+NUM_UNITS = 2428
 
 
 class TestRegistry(unittest.TestCase):
     """ Test unit registry. """
 
-    def setUp(self) -> None:
-        """ Initialize units. """
-        self.units = Registry()
+    def test_new_unit(self) -> None:
+        """ Test new_unit() method. """
 
-    def test_add_unit(self) -> None:
-        """ Test add_unit() method. """
-        # Add a dummy unit
-        dummy = Unit('dummy', 'length', 'd', 'dummies', factor=1)
-        self.units.add_unit(dummy)
+        # Add a dummy unit definition
+        dummy = UnitDef('dummy', 'length', ['dum'], ['dummy unit'])
+        registry.new_unit(dummy)
 
-        # Duplicate units should raise a UnitError
-        with self.assertRaises(UnitError):
-            self.units.add_unit(dummy)
+        # Adding duplicates should raise a DefinitionError
+        with self.assertRaises(DefinitionError):
+            registry.new_unit(dummy)
+
+    def test_add_alias(self) -> None:
+        """ Test add_alias() method. """
+
+        registry.add_alias('metre', 'metros')
+
+        # Duplicate alias
+        with self.assertRaises(DefinitionError):
+            registry.add_alias('metre', 'metre')
+
+        # Invalid alias
+        with self.assertRaises(DefinitionError):
+            registry.add_alias('metre', {'bad alias': 1})
+
+        # Invalid unitdef
+        with self.assertRaises(DefinitionError):
+            registry.add_alias(5, 'metre')
+
+    def test_add_aliases(self) -> None:
+        """ Test add_aliases method. """
+        registry.add_aliases('metre', ['metior', 'mètre'])
+
+        # Duplicate alias
+        with self.assertRaises(DefinitionError):
+            registry.add_aliases('second', ['second', 'sec'])
+
+        # Invalid aliases type
+        with self.assertRaises(DefinitionError):
+            registry.add_aliases('second', 'should be a list, tuple, or set')
+
+        # Invalid alias
+        with self.assertRaises(DefinitionError):
+            registry.add_aliases('second', ['secs', None])
+
+        # Invalid unitdef
+        with self.assertRaises(DefinitionError):
+            registry.add_aliases(None, 'invalid unit def')
 
     def test_get_unit(self) -> None:
         """ Test get_unit() method. """
-        self.units.get_unit('metre')
+        registry.get_unit('metre')
 
-        # Dummy unit from test_add_unit() should be accessible across tests
-        self.units.get_unit('dummy')
+        # Test getting units with an exponent
+        unit = registry.get_unit('second^3')
+        self.assertEqual(unit.category, 'time^3')
 
+        # Composite units should raise a unit error (parse_unit() handles this)
         with self.assertRaises(UnitError):
-            self.units.get_unit('bad unit')
+            unit = registry.get_unit('rod/minute')
+            print(unit)
+
+        # Invalid unit names
+        with self.assertRaises(UnitError):
+            registry.get_unit('bad unit')
+
+        # Invalid unit names
+        with self.assertRaises(UnitError):
+            registry.get_unit(None)
 
     def test_get_units(self) -> None:
         """ Test get_units() method. """
-        categories = self.units.get_units()
+        categories = registry.get_units()
         self.assertIsInstance(categories, dict)
-        self.assertEqual(NUM_CATEGORIES, len(categories),
-                         f'there should be {NUM_CATEGORIES} categories')
+        self.assertEqual(NUM_CATEGORIES, len(categories), 'number of categories')
 
         total_units = sum(len(units) for units in categories.values())
-        self.assertEqual(NUM_UNITS, total_units, f'there should be {NUM_UNITS} units')
+        self.assertEqual(NUM_UNITS, total_units, 'number of units')
 
-    def test_iter_units(self) -> None:
-        """ Test iter_units() method. """
-        units = [unit for unit in self.units.iter_units()]
-        self.assertEqual(len(self.units), len(units))
+    def test_get_definition(self) -> None:
+        """ Test get_definition() method. """
+
+        kelvin = registry.get_definition('kelvin')
+        self.assertEqual(kelvin.category, 'temperature')
+
+        with self.assertRaises(DefinitionError):
+            registry.get_definition('invalid unit')
+
+        with self.assertRaises(DefinitionError):
+            registry.get_definition(None)
 
     def test_load_units(self) -> None:
         """ Test _load_units() method. """
-        # Load units is called internally to initialize the registry
+        # Load units is called once to initialize the registry
         # Calling it again should raise a duplicate unit exception
-        with self.assertRaises(UnitError):
-            self.units._load_units()
-
-    def test_len(self) -> None:
-        """ Test __len__ method. """
-        self.assertEqual(NUM_UNITS, len(self.units), f'there should be {NUM_UNITS} units')
-
-    def test_units(self) -> None:
-        """ Test registry for invalid units. """
-        for unit in self.units:
-            self.assert_valid_unit(unit)
-
-    def assert_valid_unit(self, unit: Unit) -> None:
-        """ Assert that a unit is correctly formed. """
-        self.assertIsInstance(unit, Unit, f'{unit!r} is not a valid Unit')
-
-        msg = f'{unit.name} has an invalid '
-
-        self.assert_string(unit.name, msg + 'name')
-        self.assert_string(unit.category, msg + 'category')
-        self.assert_string(unit.symbol, msg + 'symbol')
-        self.assert_string(unit.plural, msg + 'plural')
-
-        self.assert_factor(unit.factor, msg + 'factor')
-
-        self.assertIsInstance(unit.power, int, msg + 'power')
-        self.assertNotEqual(unit.power, 0, msg + 'power')
-
-        if unit.prefix_scale:  # prefix scale can be None
-            self.assertIsInstance(unit.prefix_scale, str, msg + 'prefix_scale')
-
-        self.assert_stringlist(unit.prefix_exclude, msg + 'prefix_exclude')
-
-    def assert_factor(self, value: Decimal, msg: str) -> None:
-        """ Assert that a unit has a valid decimal factor. """
-        self.assertIsInstance(value, Decimal, msg)
-
-        # Assert that all E notations are signed +/-
-        strvalue = str(value)
-        if 'E' in strvalue:
-            self.assertTrue('+' in strvalue or '-' in strvalue,
-                            f'{value!r} is missing a +/- symbol (requirement)')
-
-    def assert_string(self, name: str, msg: str) -> None:
-        """ Assert that name is a valid string (atleast 1 character). """
-        self.assertIsInstance(name, str, msg)
-        self.assertGreater(len(name), 0, msg)
-
-    def assert_stringlist(self, names: list[str], msg: str) -> None:
-        """ Assert that a list of strings is valid. """
-        self.assertIsInstance(names, list, msg)
-        for name in names:
-            self.assert_string(name, msg)
+        with self.assertRaises(DefinitionError):
+            registry._load_units()

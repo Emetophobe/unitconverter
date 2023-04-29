@@ -1,23 +1,20 @@
-# dimension = "subtance/length"
-
 # The katal is the SI unit of catalytic activity
 ["katal"]
-symbol = "kat"
-plural = "katals"
+symbols = ["kat"]
+aliases = ["katals"]
 factor = "1"
 prefix_scale = "si"
 
 # 1 mole per second = 1 katal
 ["mole/second"]
-symbol = "mol/s"
-plural = "moles/second"
+symbols = ["mol/s"]
+aliases = ["moles/second", "moles/sec", "mole/sec"]
 factor = "1"
 prefix_scale = "si"
 
-# 1 enzyme unit = 1 μmol/min
+# 1 enzyme unit = 1/60 μmol/s ≈ 16.67 nmol/s = 16.67 nkat
 # https://en.wikipedia.org/wiki/Enzyme_unit
 ["enzyme unit"]
-symbol = "U"
-plural = "enzyme units"
-factor = "0.0000000166666666666667"
-prefix_scale = "si"
+symbols = ["U"]
+aliases = ["enzyme units"]
+factor = "0.00000001667"

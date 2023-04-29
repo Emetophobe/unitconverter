@@ -1,49 +1,48 @@
 # The SI unit for luminance is candela per square metre (cd/m2)
 ["candela/metre2"]
-symbol = "cd/m2"
-plural = "candelas/metre2"
+symbols = ["cd/m2"]
+aliases = ["candelas/metre2"]
 factor = "1"
 prefix_scale = "si"
 
 ["candela/inch2"]
-symbol = "cd/in2"
-plural = "candelas/inch2"
+symbols = ["cd/in2"]
+aliases = ["candelas/inch2"]
 factor = "1550.0031"
 
 ["candela/foot2"]
-symbol = "cd/ft2"
-plural = "candelas/foot2"
+symbols = ["cd/ft2"]
+aliases = ["candelas/foot2"]
 factor = "10.763910417"
 
 # 1 nit is equal to 1 cd/m2
 ["nit"]
-symbol = "nt"
-plural = "nits"
+symbols = ["nt"]
+aliases = ["nits"]
 factor = "1"
 
 ["stilb"]
-symbol = "sb"
-plural = "stilbs"
+symbols = ["sb"]
+aliases = ["stilbs"]
 factor = "10000"
 
 ["apostilb"]
-symbol = "asb"
-plural = "apostilbs"
-aliases = ["blondels", "blondel"]
+symbols = ["asb"]
+aliases = ["apostilbs", "blondels", "blondel"]
 factor = "0.3183098862"
 
 ["bril"]
-plural = "brils"
+aliases = ["brils"]
 factor = "3.183098861E-8"
 
 ["lambert"]
-plural = "lamberts"
+aliases = ["lamberts"]
 factor = "3183.0988618"
 
 ["foot-lambert"]
-plural = "feet-lambert"
+aliases = ["feet-lambert"]
 factor = "3.4262590996"
 
 ["skot"]
-plural = "skots"
+aliases = ["skots"]
 factor = "0.0003183099"

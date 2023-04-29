@@ -1,18 +1,18 @@
 # The sivert is the SI unit of effective dose
 ["sievert"]
-symbol = "Sv"
-plural = "sieverts"
+symbols = ["Sv"]
+aliases = ["sieverts"]
 factor = "1"
 prefix_scale = "si"
 
 # 1 roentgen = 0.01 sievert
 ["roentgen"]
-symbol = "rem"
-plural = "roentgens"
+symbols = ["rem"]
+aliases = ["roentgens"]
 factor = "0.01"
 
 # 1 millirem = 1/1000 roetgen = 0.00001 (1E-5) sievert
 ["millirem"]
-symbol = "mrem"
-plural = "millirems"
+symbols = ["mrem"]
+aliases = ["millirems"]
 factor = "1E-5"

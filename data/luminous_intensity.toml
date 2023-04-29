@@ -1,23 +1,23 @@
 # The candela is the SI unit of luminous intensity
 ["candela"]
-symbol = "cd"
-plural = "candelas"
+symbols = ["cd"]
+aliases = ["candelas"]
 factor = "1"
 prefix_scale = "si"
 
 # 1 lumen per steradian = 1 candela
 ["lumen/steradian"]
-symbol = "lm/sr"
-plural = "lumens/steradian"
+symbols = ["lm/sr"]
+aliases = ["lumens/steradian"]
 factor = "1"
 prefix_scale = "si"
 
 # 1 candlepower = 1 candela
 ["candlepower"]
-symbol = "cp"
+symbols = ["cp"]
 factor = "1"
 
 # 1 historic candlepower = 0.981 candela
 ["historic candlepower"]
-symbol = "hcp"
+symbols = ["hcp"]
 factor = "0.981"

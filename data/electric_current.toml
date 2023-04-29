@@ -1,32 +1,30 @@
 # The ampere is the SI unit of electric current
 ["ampere"]
-symbol = "A"
-plural = "amperes"
-aliases = ["amps", "amp"]
+symbols = ["A"]
+aliases = ["amperes", "amps", "amp"]
 factor = "1"
 prefix_scale = "si"
 
 # 1 watt per volt = 1 ampere
 ["watt/volt"]
-symbol = "W/V"
-plural = "watts/volt"
+symbols = ["W/V"]
+aliases = ["watts/volt"]
 factor = "1"
 prefix_scale = "si"
 
 # 1 coulomb per second = 1 ampere
 ["coulomb/second"]
-symbol = "C/s"
-plural = "coulombs/second"
+symbols = ["C/s"]
+aliases = ["coulombs/second"]
 factor = "1"
 prefix_scale = "si"
 
 ["abampere"]
-symbol = "abA"
-plural = "abamperes"
-aliases = ["biots", "biot", "Bi"]
+symbols = ["abA", "Bi"]
+aliases = ["abamperes", "biots", "biot"]
 factor = "10"
 
 ["statampere"]
-symbol = "stA"
-plural = "statamperes"
+symbols = ["stA"]
+aliases = ["statamperes"]
 factor = "3.335641E-10"

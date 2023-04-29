@@ -3,175 +3,143 @@
 
 
 from decimal import Decimal
+from typing import Self
 
 from unitconverter.dimensions import get_category
 from unitconverter.exceptions import UnitError
-from unitconverter.utils import parse_decimal
+from unitconverter.misc import DIV_SYMBOL, MULTI_SYMBOL, format_exponent, parse_decimal
 
 
 class Unit:
-    """ A unit of measurement. """
 
-    def __init__(self,
-                 name: str,
-                 category: str,
-                 symbol: str = None,
-                 plural: str = None,
-                 aliases: list[str] = None,
-                 factor: Decimal | int | str = 1,
-                 power: int = 1,
-                 prefix_scale: str = None,
-                 prefix_exclude: list[str] = None,
-                 is_prefixed: bool = False
-                 ) -> None:
-        """ Initialize unit.
+    """ A unit of measurement. Can be a single unit or a composition of units. """
 
-        Parameters
-        ----------
-        name : str
-            unit name
+    def __init__(self, factor: Decimal = 1, units: tuple | dict = None) -> None:
+        """ Initialize unit. """
 
-        category : str
-            unit category
+        self.factor = parse_decimal(factor)
 
-        symbol : str, optional
-            unit symbol or short form, by default None
-
-        plural : str, optional
-            unit plural form, by default None
-
-        factor : Decimal | int | str, optional
-            conversion factor, by default 1
-
-        power : int, optional
-            scale power, by default 1
-
-        prefix_scale : str, optional
-            prefix scale option, by default None
-
-        prefix_exclude : str, optional
-            list of prefixes to exclude, by default None
-
-        is_prefixed : bool, optional
-            whether the unit is prefixed, by default False
-
-        """
-        self.name = name
-        self.category = category
-        self.symbol = symbol or name
-        self.plural = plural or name
-        self.aliases = aliases or []
-
-        self.factor = parse_decimal(factor, f'{name} has an invalid factor {factor}')
-
-        self.power = power
-
-        self.prefix_scale = prefix_scale
-        self.prefix_exclude = prefix_exclude or []
-        self.prefixed = is_prefixed
-
-    def names(self) -> set[str]:
-        """ Get unique unit names and symbols. """
-        return set([self.name, self.symbol, self.plural] + self.aliases)
-
-    def __mul__(self, other):
-        if not isinstance(other, (Unit, CompositeUnit)):
-            raise UnitError(f'Cannot multiply Unit and {type(other)}')
-
-        return CompositeUnit([self, other], [], self.factor * other.factor)
-
-    def __truediv__(self, other):
-        if not isinstance(other, (Unit, CompositeUnit)):
-            raise UnitError(f'Cannot divide Unit and {type(other)}')
-
-        return CompositeUnit([self], [other], self.factor / other.factor)
-
-    def __repr__(self) -> str:
-        args = ', '.join(repr(val) for val in self.__dict__.values())
-        return f'Unit({args})'
-
-    def __str__(self) -> str:
-        return self.name
-
-
-class CompositeUnit:
-
-    def __init__(self, numers, denoms=None, name=None, category=None,
-                 symbol=None, plural=None, factor=None):
-        self.numers = numers
-
-        if denoms:
-            self.denoms = denoms
+        if not units:
+            self.units = {}
+        elif isinstance(units, tuple):
+            self.units = {units: 1}
+        elif isinstance(units, dict):
+            self.units = dict(units)
         else:
-            self.denoms = []
+            raise UnitError(f'Invalid unit: {units}')
 
-        if factor is None:
-            self.factor = self._calculate_factor()
-        else:
-            self.factor = factor
+        self._name = self.format_display_name(self.get_units())
+        self._category = self.format_display_name(self.get_dimensions())
 
-        self.name = name or self._join_names('name')
-        self.category = get_category(category or self._join_names('category'))
-        self.symbol = symbol or self._join_names('symbol')
-        self.plural = plural or self._join_plural()
+        if self.category == '1':
+            self.category == 'dimensionless'
 
-    def _join_names(self, attr: str) -> str:
-        numer = '*'.join(getattr(numer, attr) for numer in self.numers)
-        if not self.denoms:
-            return numer
+    @property
+    def name(self):
+        return self._name
 
-        denom = '*'.join(getattr(denom, attr) for denom in self.denoms)
-        return numer + '/' + denom
+    @property
+    def category(self):
+        return get_category(self._category)
 
-    def _join_plural(self) -> str:
-        """ Create a plural unit name. Only pluralizes the last numerator unit.
-            i.e "newton-metre" becomes "newton-metres"
-        """
+    def get_units(self) -> tuple:
+        return tuple((unit[0], exp) for unit, exp in self.units.items())
+
+    def get_dimensions(self) -> tuple:
+        return tuple((unit[1], exp) for unit, exp in self.units.items())
+
+    def format_name(self, units: tuple) -> str:
+        """ Format name (without divisor). Unused for now. """
         numers = []
-        for index, unit in enumerate(self.numers):
-            if index == len(self.numers) - 1:
-                numers.append(unit.plural)
+        for unit, exp in units:
+            numers.append(format_exponent(unit, exp))
+
+        return MULTI_SYMBOL.join(numers)
+
+    def format_display_name(self, units: tuple) -> str:
+        """ Format display name (with divisor). """
+        numers = []
+        denoms = []
+
+        for unit, exp in units:
+            if exp > 0:
+                numers.append(format_exponent(unit, exp))
             else:
-                numers.append(unit.name)
+                denoms.append(format_exponent(unit, -exp))
 
-        numer = '*'.join(numers)
+        if not numers:
+            return self.format_name(units)
 
-        if not self.denoms:
-            return numer
+        elif not denoms:
+            return MULTI_SYMBOL.join(numers)
 
-        denom = '*'.join(denom.name for denom in self.denoms)
-        return numer + '/' + denom
+        return MULTI_SYMBOL.join(numers) + DIV_SYMBOL + MULTI_SYMBOL.join(denoms)
 
-    def _calculate_factor(self) -> Decimal:
-        """ Calculate factor by parsing numers and denoms. """
-        numer_factor = 1
-        for numer in self.numers:
-            numer_factor *= numer.factor
+    def __pow__(self, other: int) -> Self:
+        if not isinstance(other, int):
+            raise UnitError(f'Cannot pow Unit and {type(other)})')
 
-        if not self.denoms:
-            return numer_factor
+        if other == 0:
+            raise UnitError('Cannot pow Unit by 0. Must be a positive'
+                            ' or negative integer.')
 
-        denom_factor = 1
-        for denom in self.denoms:
-            denom_factor *= denom.factor
+        # Pow just multiplies all exponents
+        units = self.units.copy()
+        for name in units.keys():
+            units[name] *= other
 
-        return numer_factor / denom_factor
+        return Unit(self.factor ** other, units)
 
-    def __mul__(self, other):
-        if not isinstance(other, (Unit, CompositeUnit)):
-            raise UnitError(f'Cannot multiply CompositeUnit and {type(other)}')
+    def __mul__(self, other: Self) -> Self:
+        if not isinstance(other, Unit):
+            raise UnitError(f'Cannot multiply Unit and {type(other)})')
 
-        return CompositeUnit([self, other], [], self.factor * other.factor)
+        # Multiply just adds exponents from both dictionaries
+        units = self.units.copy()
+        for name, exp in other.units.items():
+            units[name] = units.get(name, 0) + exp
+            if not units[name]:
+                del units[name]
 
-    def __truediv__(self, other):
-        if not isinstance(other, (Unit, CompositeUnit)):
-            raise UnitError(f'Cannot divide CompositeUnit and {type(other)}')
+        return Unit(self.factor * other.factor, units)
 
-        return CompositeUnit([self], [other], self.factor / other.factor)
+    def __truediv__(self, other: Self) -> Self:
+        if not isinstance(other, Unit):
+            raise UnitError(f'Cannot divide Unit and {type(other)})')
+
+        # Divide just subtracts exponents from both dictionaries
+        units = self.units.copy()
+        for name, exp in other.units.items():
+            units[name] = units.get(name, 0) - exp
+            if not units[name]:
+                del units[name]
+
+        return Unit(self.factor / other.factor, units)
+
+    def __iter__(self):
+        return iter(self.units)
+
+    def __len__(self) -> int:
+        return len(self.units)
+
+    def __eq__(self, other: Self) -> bool:
+        if not isinstance(other, Unit):
+            return False
+
+        return self.units == other.units
+
+    def __contains__(self, name: str) -> bool:
+        return name in self.units
 
     def __repr__(self) -> str:
-        args = ", ".join(str(s) for s in self.__dict__.values())
-        return f'CompositeUnit({args})'
+        return f'Unit({self.factor}, {self.units})'
 
     def __str__(self) -> str:
         return self.name
+
+
+def dump_unit(unit: Unit) -> None:
+    """ Helper to print a unit to stdout. """
+    print('name:     ', unit.name)
+    print('category: ', unit.category)
+    print('units:    ', unit.units)

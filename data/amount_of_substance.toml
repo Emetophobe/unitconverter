@@ -1,12 +1,12 @@
 # The mole is the SI unit of amount of substance
 ["mole"]
-symbol = "mol"
-plural = "moles"
+symbols = ["mol"]
+aliases = ["moles"]
 factor = "1"
 prefix_scale = "si"
 
 # 1 atom is roughly 1.660538863127E-24 moles
 ["atom"]
-plural = "atoms"
+aliases = ["atoms"]
 factor = "1.660538863127E-24"
 prefix_scale = "si"

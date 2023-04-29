@@ -1,37 +1,33 @@
 # 1 metre per second is the base unit
 ["metre/second"]
-symbol = "m/s"
-plural = "metres/second"
-aliases = ["metres/sec", "metre/sec"]
+symbols = ["m/s"]
+aliases = ["metres/second", "metres/sec", "metre/sec"]
 factor = "1"
 prefix_scale = "si"
 
 # 1 kilometre per hour (kph) = 1000/3600 = ~0.2777777778 m/s
 ["kilometre/hour"]
-symbol = "kph"
-plural = "kilometres/hour"
-aliases = ["km/h", "kmph"]
+symbols = ["kph", "km/h", "kmph"]
+aliases = ["kilometres/hour"]
 factor = "0.2777777777777777777777777778"
 
 # 1 mile per hour (mph) = 1609.34 / 3600 = ~0.44704 m/s
 ["mile/hour"]
-symbol = "mph"
-plural = "miles/hour"
-aliases = ["mi/h"]
+symbols = ["mph", "mi/h"]
+aliases = ["miles/hour"]
 factor = "0.44704"
 
-# 1 knot = 1 nautical mile per hour = ~0.514444444444444 m/s
+# 1 knot = 1 nautical mile per hour = ~0.514 m/s
 ["knot"]
-plural = "knots"
-factor = "0.514444444444444"
+aliases = ["knots"]
+factor = "0.5144444444444444444444444444"
 
-# 1 imperial knot = ~0.514773333333333 m/s
+# 1 imperial knot = ~0.5147733333 m/s
 ["imperial knot"]
-symbol = "impknot"
-plural = "imperial knots"
-factor = "0.514773333333333"
+aliases = ["imperial knots"]
+factor = "0.5147733333333333333333333333"
 
 # 1 mach (speed of sound) = ~340.3 m/s
 ["mach"]
-symbol = "Ma"
+symbols = ["Ma"]
 factor = "340.3"

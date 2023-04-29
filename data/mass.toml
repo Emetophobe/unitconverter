@@ -1,90 +1,90 @@
 # The SI unit for mass is kilograms (kg)
 # I use gram (g) with this script for simplicity
 ["gram"]
-symbol = "g"
-plural = "grams"
+symbols = ["g"]
+aliases = ["grams"]
 factor = "1"
 prefix_scale = "si"
 
 # 1 ounce is 28.34952 grams
 ["ounce"]
-symbol = "oz"
-plural = "ounces"
+symbols = ["oz"]
+aliases = ["ounces"]
 factor = "28.34952"
 
 # 1 pound is 453.59237 grams
 ["pound"]
-symbol = "lbs"
-plural = "pounds"
+symbols = ["lbs"]
+aliases = ["pounds"]
 factor = "453.59237"
 
 # 1 kilopound (kip) = 1000 lbs or 453,592.37 grams
 ["kilopound"]
-symbol = "klbs"
-plural = "kilopounds"
+symbols = ["klbs"]
+aliases = ["kilopounds"]
 factor = "453592.37"
 
 # 1 stone = 14 lbs or 6350.29 grams
 ["stone"]
-symbol = "st"
-plural = "stones"
+symbols = ["st"]
+aliases = ["stones"]
 factor = "6350.29"
 
 # 1 metric ton (tonne) = 1,000,000 grams = 1E+6 grams
 ["tonne"]
-symbol = "ton"
-plural = "tonnes"
+symbols = ["ton"]
+aliases = ["tonnes"]
 factor = "1E+6"
 prefix_scale = "si"
 
 # 1 long ton = 1,016,046.91 grams
 ["long ton"]
-symbol = "LT"
-plural = "long tons"
+symbols = ["LT"]
+aliases = ["long tons"]
 factor = "1016046.91"
 
 # 1 short ton = 907,184.74 grams
 ["short ton"]
-symbol = "ST"
-plural = "short tons"
+symbols = ["ST"]
+aliases = ["short tons"]
 factor = "907184.74"
 
 # 1 carat = 0.2 grams
 ["carat"]
-symbol = "ct"
-plural = "carats"
+symbols = ["ct"]
+aliases = ["carats"]
 factor = "0.2"
 
 ["dalton"]
-symbol = "Da"
-plural = "daltons"
+symbols = ["Da"]
+aliases = ["daltons"]
 factor = "1.660540199E-24"
 
 ["drachm"]
-symbol = "dr"
-plural = "drachms"
+symbols = ["dr"]
+aliases = ["drachms", "drams", "dram"]
 factor = "1.77185"
 
 ["grain"]
-symbol = "gr"
-plural = "grains"
+symbols = ["gr"]
+aliases = ["grains"]
 factor = "0.06479891"
 
 ["pennyweight"]
-symbol = "dwt"
-plural = "pennyweights"
+symbols = ["dwt"]
+aliases = ["pennyweights"]
 factor = "1.55517384"
 
 ["slug"]
-plural = "slugs"
+aliases = ["slugs"]
 factor = "14593.9"
 
 ["troy ounce"]
-symbol = "ozt"
-plural = "troy ounces"
+symbols = ["ozt"]
+aliases = ["troy ounces"]
 factor = "31.1035"
 
 ["troy pound"]
-symbol = "lbt"
-plural = "troy pounds"
+symbols = ["lbt"]
+aliases = ["troy pounds"]
 factor = "373.242"

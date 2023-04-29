@@ -1,13 +1,13 @@
 # The weber is the SI unit of magnetic flux
 ["weber"]
-symbol = "Wb"
-plural = "webers"
+symbols = ["Wb"]
+aliases = ["webers"]
 factor = "1"
 prefix_scale = "si"
 
 # 1 maxwell = 1E-8 weber
 ["maxwell"]
-symbol = "Mx"
-plural = "maxwells"
+symbols = ["Mx"]
+aliases = ["maxwells"]
 factor = "1E-8"
 prefix_scale = "si"

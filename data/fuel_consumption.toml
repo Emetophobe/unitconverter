@@ -1,14 +1,17 @@
-# dimension = volume/length
-# base unit = meter^3/metre
+# Fuel consumption is the amount of fuel used per unit distance
+# https://en.wikipedia.org/wiki/Fuel_efficiency#Measurement
+
+# formula = volume/length
+# 1 cubic metre per metre is the base unit
 
 ["litre/metre"]
-symbol = "l/m"
-plural = "litres/metre"
+symbols = ["L/m", "l/m"]
+aliases = ["litres/metre"]
 factor = "0.001"
 prefix_scale = "si"
 
 ["litre/100km"]
-symbol = "l/100km"
-plural = "litres/100km"
+symbols = ["L/100km", "l/100km"]
+aliases = ["litres/100km"]
 factor = "0.00000001"
 prefix_scale = "si"

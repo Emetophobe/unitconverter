@@ -10,7 +10,7 @@ The following categories are currently supported:
 * Acceleration (metre/second², foot/second², mile/second²)
 * Amount of substance (mole, atom)
 * Area (square metre, square mile, acre, hectare, etc...)
-* Catalytic activity (katal, mole/sec)
+* Catalytic activity (katal, mole/second, enzyme unit)
 * Data storage (bits, bytes, kilobytes, kibibytes, etc...)
 * Data transfer (bits/second, bytes/second)
 * Effective dose (sievert, roentgen)
@@ -47,7 +47,9 @@ The following categories are currently supported:
 * Viscosity (poise and pascal-second)
 * Volume (cubic metre, litre, quart, gallon, etc...)
 
-See [supported units](docs/supported_units.txt) for a complete list.
+See [supported units](docs/supported_units.txt) for a complete list. Note that composite
+units aren't included in this list, such as square inches (area) which can be generated
+from an inch (length).
 
 ## Features
 

@@ -1,83 +1,80 @@
 # The metre is the SI unit of length
 ["metre"]
-symbol = "m"
-plural = "metres"
+symbols = ["m"]
+aliases = ["metres"]
 factor = "1"
 prefix_scale = "si"
 
 # 1 angstrom = 0.1 nanometers
 ["angstrom"]
-symbol = "Å"
-plural = "angstroms"
+symbols = ["Å"]
+aliases = ["angstroms"]
 factor = "1E-10"
 
 
 # Imperial units
 
 ["thou"]
+aliases = ["mils", "mil"]
 factor = "0.0000254"
 
-# 1 mil = 1 thou for convenience
-["mil"]
-plural = "mils"
-factor = "0.0000254"
 
 # 1 inch is exactly 0.0254 metres
 ["inch"]
-symbol = "in"
-plural = "inches"
+symbols = ["in"]
+aliases = ["inches"]
 factor = "0.0254"
 
 # 1 hand = 4 inches
 ["hand"]
-symbol = "hh"
-plural = "hands"
+symbols = ["hh"]
+aliases = ["hands"]
 factor = "0.1016"
 
 # 1 foot = 3 hands = 12 inches
 ["foot"]
-symbol = "ft"
-plural = "feet"
+symbols = ["ft"]
+aliases = ["feet"]
 factor = "0.3048"
 
 # 1 yard = 9 hands = 3 feet = exactly 0.9144 metres
 ["yard"]
-symbol = "yd"
-plural = "yards"
+symbols = ["yd", "yds"]
+aliases = ["yards"]
 factor = "0.9144"
 
 # 1 mile = 80 chains = 1609.344 metres
 ["mile"]
-symbol = "mi"
-plural = "miles"
+symbols = ["mi"]
+aliases = ["miles"]
 factor = "1609.344"
 
 # 1 chain = 100 links = 4 rods = 20.1168 metres
 ["chain"]
-symbol = "ch"
-plural = "chains"
+symbols = ["ch"]
+aliases = ["chains"]
 factor = "20.1168"
 
 # 1 furlong = 10 chains = 201.168 metres
 ["furlong"]
-symbol = "fur"
-plural = "furlongs"
+symbols = ["fur"]
+aliases = ["furlongs"]
 factor = "201.168"
 
 # 1 link = 0.01 chains = 0.201168 metres
 ["link"]
-symbol = "li"
-plural = "links"
+symbols = ["li"]
+aliases = ["links"]
 factor = "0.201168"
 
 # 1 rod = 0.25 chain = 25 links = 5.0292 metres
 ["rod"]
-symbol = "rd"
-plural = "rods"
+symbols = ["rd"]
+aliases = ["rods"]
 factor = "5.0292"
 
 ["barleycorn"]
-plural = "barleycorns"
+aliases = ["barleycorns"]
 factor = "0.0084667"
 
 
@@ -86,48 +83,48 @@ factor = "0.0084667"
 
 
 ["US survey foot"]
-symbol = "surveyft"
-plural = "US survey feet"
+symbols = ["surveyft"]
+aliases = ["US survey feet", "surveyfeet", "surveyfoot"]
 factor = "0.304800609601"
 
 ["US survey cable length"]
-symbol = "surveycb"
-plural = "US survey cable"
+symbols = ["surveycb"]
+aliases = ["US survey cable", "surveycables", "surveycable"]
 factor = "219.456438913"
 
 ["US survey chain"]
-symbol = "surveych"
-plural = "US survey chains"
+symbols = ["surveych"]
+aliases = ["US survey chains", "surveychains", "surveychain"]
 factor = "20.116840234"
 
 ["US survey fathom"]
-symbol = "surveyftm"
-plural = "US survey fathoms"
+symbols = ["surveyftm"]
+aliases = ["US survey fathoms", "surveyfathoms", "surveyfathom"]
 factor = "1.828803658"
 
 ["US survey furlong"]
-symbol = "surveyfur"
-plural = "US survey furlongs"
+symbols = ["surveyfur"]
+aliases = ["US survey furlongs", "surveyfurlongs", "surveyfurlong"]
 factor = "201.168402337"
 
 ["US survey league"]
-symbol = "surveylea"
-plural = "US survey leagues"
+symbols = ["surveylea"]
+aliases = ["US survey leagues", "surveyleagues", "surveyleague"]
 factor = "4828.041656083"
 
 ["US survey link"]
-symbol = "surveyli"
-plural = "US survey links"
+symbols = ["surveyli"]
+aliases = ["US survey links", "surveylinks", "surveylink"]
 factor = "0.201168402"
 
 ["US survey mile"]
-symbol = "surveymi"
-plural = "US survey miles"
+symbols = ["surveymi"]
+aliases = ["US survey miles", "surveymiles", "surveymile"]
 factor = "1609.347218694"
 
 ["US survey rod"]
-symbol = "surveyrd"
-plural = "US survey rods"
+symbols = ["surveyrd"]
+aliases = ["US survey rods", "surveyrods", "surveyrod"]
 factor = "5.029210058"
 
 
@@ -135,38 +132,38 @@ factor = "5.029210058"
 
 
 ["cable length"]
-symbol = "cb"
-plural = "cable lengths"
+symbols = ["cb"]
+aliases = ["cable lengths"]
 factor = "185.2"
 
 ["imperial cable length"]
-symbol = "impcb"
-plural = "imperial cable lengths"
+symbols = ["impcb"]
+aliases = ["imperial cable lengths"]
 factor = "185.32"
 
 ["US cable length"]
-symbol = "uscb"
-plural = "US cable lengths"
+symbols = ["uscb"]
+aliases = ["US cable lengths"]
 factor = "219.456"
 
 ["fathom"]
-symbol = "ftm"
-plural = "fathoms"
+symbols = ["ftm"]
+aliases = ["fathoms"]
 factor = "1.8288"
 
 ["league"]
-symbol = "lea"
-plural = "leagues"
+symbols = ["lea"]
+aliases = ["leagues"]
 factor = "4828.032"
 
 ["nautical mile"]
-symbol = "nmi"
-plural = "nautical miles"
+symbols = ["nmi"]
+aliases = ["nautical miles"]
 factor = "1852"
 
 ["imperial nautical mile"]
-symbol = "impnmi"
-plural = "imperial nautical miles"
+symbols = ["impnmi"]
+aliases = ["imperial nautical miles"]
 factor = "1853.184"
 
 
@@ -177,31 +174,28 @@ factor = "1853.184"
 factor = "1.61605E-35"
 
 ["astronomical unit"]
-symbol = "au"
-plural = "astronomical units"
+symbols = ["AU", "au"]
+aliases = ["astronomical units"]
 factor = "1.495978707E+11"
 
 ["light second"]
-symbol = "ls"
-plural = "light seconds"
-aliases = ["lightseconds", "lightsecond"]
+symbols = ["ls"]
+aliases = ["light seconds", "lightseconds", "lightsecond"]
 factor = "299792458"
 
 ["light minute"]
-symbol = "lmin"
-plural = "light minutes"
-aliases = ["lightminutes", "lightminute"]
+symbols = ["lmin"]
+aliases = ["light minutes", "lightminutes", "lightminute"]
 factor = "1.798754748E+10"
 
 ["light year"]
-symbol = "ly"
-plural = "light years"
-aliases = ["lightyears", "lightyear"]
+symbols = ["ly"]
+aliases = ["light years", "lightyears", "lightyear"]
 factor = "9.46073047E+15"
 
 ["parsec"]
-symbol = "pc"
-plural = "parsecs"
+symbols = ["pc"]
+aliases = ["parsecs"]
 factor = "3.0857E+16"
 
 
@@ -209,11 +203,11 @@ factor = "3.0857E+16"
 
 
 ["twip"]
-plural = "twips"
+aliases = ["twips"]
 factor = "0.0000176389"
 
 ["point"]
-plural = "points"
+aliases = ["points"]
 factor = "0.000352778"
 
 

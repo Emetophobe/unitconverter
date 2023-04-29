@@ -4,7 +4,13 @@
 import re
 from decimal import Decimal, DecimalException
 
-from unitconverter.exceptions import ConverterError
+from unitconverter.exceptions import ConverterError, UnitError
+
+
+# Unit formatting symbols
+EXP_SYMBOL = '^'
+MULTI_SYMBOL = '*'
+DIV_SYMBOL = '/'
 
 
 def parse_decimal(value: Decimal | int | str, msg: str = None) -> Decimal:
@@ -41,6 +47,56 @@ def parse_decimal(value: Decimal | int | str, msg: str = None) -> Decimal:
         raise ConverterError(msg or f'{value!r} is not a valid Decimal')
 
 
+def format_decimal(value: Decimal,
+                   exponent: bool = False,
+                   precision: int = None,
+                   commas: bool = False
+                   ) -> str:
+    """ Format a decimal into a string for display.
+
+    Parameters
+    ----------
+    value : Decimal
+        the decimal value
+
+    exponent : bool, optional
+        use E notation when possible, by default False
+
+    precision : int, optional
+        set rounding precision, by default None
+
+    commas : bool, optional
+        show commas (thousands) separators, by default False
+
+    Returns
+    -------
+    str
+        formatted string
+    """
+    precision = f'.{precision}' if precision is not None else ''
+
+    if exponent:
+        return f'{value:{precision}E}'
+
+    comma = ',' if commas else ''
+    number = f'{value:{comma}{precision}f}'
+
+    # Remove trailing zeroes
+    if '.' in number:
+        while number[-1] == '0' and number[-2] != '.':
+            number = number[:-1]
+
+    return number
+
+
+def format_exponent(name: str, exponent: int) -> str:
+    """ Format unit name with optional exponent. """
+    if exponent == 1:
+        return name
+
+    return f'{name}{EXP_SYMBOL}{exponent}'
+
+
 def split_exponent(name: str) -> tuple[str, int]:
     """ Split a unit name and possible exponent.
 
@@ -56,16 +112,15 @@ def split_exponent(name: str) -> tuple[str, int]:
         >>> split_exponent("second-1")
         ("second", -1)
     """
-    result = _pattern.match(name)
+    try:
+        result = _pattern.match(name)
 
-    if result.group('exp'):
-        return (result.group('unit'), int(result.group('exp')))
+        if result.group('exp'):
+            return (result.group('unit'), int(result.group('exp')))
 
-    return (result.group('unit'), 1)
-
-
-# Unit name and exponent pattern
-_pattern = re.compile(r'(?P<unit>[a-zA-Z]+[\-]?[a-zA-Z]+){1}[\^]?(?P<exp>[-+]?[0-9]+)?')
+        return (result.group('unit'), 1)
+    except AttributeError:
+        raise UnitError(f'Invalid unit: {name}')
 
 
 def simplify_unit(name: str) -> str:
@@ -82,10 +137,19 @@ def simplify_unit(name: str) -> str:
         "joule/gram"
 
     """
+    if not isinstance(name, str):
+        raise UnitError(f'Invalid unit: {name}')
+
     for key, value in _replacements.items():
         if key in name:
             name = name.replace(key, value)
     return name
+
+
+# Unit name and exponent patterns
+_unit_pattern = r'(?P<unit>[a-zA-Z°Ωµ]+[\-]?[a-zA-Z°Ωµ]+|[a-zA-Z°Ωµ]+){1}'
+_exp_pattern = r'(?P<exp>[-+]?[0-9]+)?'
+_pattern = re.compile(_unit_pattern + _exp_pattern)
 
 
 # Dictionary of replacements for internal lookup
@@ -109,6 +173,11 @@ _replacements = {
 
     # simplify division
     ' per ': '/',
+
+    # simplify symbols
+    # 'µ': 'mu',
+    # '°': 'deg',
+    # 'Ω': 'ohm',
 
     # regional spelling
     'meter': 'metre',

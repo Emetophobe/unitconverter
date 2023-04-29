@@ -1,18 +1,18 @@
 # The steradian is the SI unit of solid angle
 ["steradian"]
-symbol = "sr"
-plural = "steradians"
+symbols = ["sr"]
+aliases = ["steradians"]
 factor = "1"
 prefix_scale = "si"
 
 # 1 square degree = (pi/180)^2 steradian = ~3.04617E−4 steradian
 ["square degree"]
-symbol = "deg2"
-plural = "square degrees"
+symbols = ["deg2"]
+aliases = ["square degrees"]
 factor = "0.000304617"
 
 # 1 spat = 4π steradians= = ~12.5663706144 steradian
 ["spat"]
-symbol = "sp"
-plural = "spats"
+symbols = ["sp"]
+aliases = ["spats"]
 factor = "12.5663706144"

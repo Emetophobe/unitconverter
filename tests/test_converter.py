@@ -5,10 +5,12 @@ import json
 import unittest
 from decimal import Decimal, getcontext
 
-from unitconverter.converter import convert, format_decimal, parse_unit
+from unitconverter.converter import convert, parse_unit
 from unitconverter.exceptions import CategoryError, UnitError
+from unitconverter.misc import format_decimal
 
 
+# Set decimal precision
 getcontext().prec = 15
 
 
@@ -32,7 +34,7 @@ class TestConverter(unittest.TestCase):
         with open('tests/test_data.json', 'r') as infile:
             tests = json.load(infile)
 
-        # Run all tests from the json file
+        # Run all tests from the test file
         for source, test_data in tests.items():
             for dest, expected in test_data.items():
                 result = convert(1, source, dest)
@@ -52,10 +54,10 @@ class TestConverter(unittest.TestCase):
         unit = parse_unit('ml')
         self.assertEqual(unit.name, 'millilitre')
 
-        # Test multi-word prefix generated units
-        unit = parse_unit('cubic kilometre')
-        self.assertEqual(unit.plural, 'cubic kilometres')
-        self.assertEqual(unit.symbol, 'km3')
+        # Test exponent generated units
+        unit = parse_unit('kilometre3')
+        self.assertEqual(unit.name, 'kilometre^3')
+        self.assertEqual(unit.category, 'volume')
 
         # Test invalid unit names
         with self.assertRaises(UnitError):
@@ -69,7 +71,11 @@ class TestConverter(unittest.TestCase):
         with self.assertRaises(UnitError):
             parse_unit('picobyte')
 
-    def test_format_decimal(self):
+    def test_parse_composite(self) -> None:
+        """ Test parse_composite() function. """
+        # TODO add tests
+
+    def test_format_decimal(self) -> None:
         """ Test format_decimal() function. """
         value = Decimal('1785137.3268163479138125')
 

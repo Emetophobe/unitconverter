@@ -1,13 +1,13 @@
 # Byte is the base unit for this converter
 ["byte"]
-symbol = "B"
-plural = "bytes"
+symbols = ["B"]
+aliases = ["bytes"]
 factor = "1"
 prefix_scale = "byte"
 
 # 1 bit is 1/8th of a byte or 0.125 bytes
 ["bit"]
-symbol = "b"
-plural = "bits"
+symbols = ["b"]
+aliases = ["bits"]
 factor = "0.125"
 prefix_scale = "bit"

@@ -1,23 +1,23 @@
 # The farad is the SI unit of electrical capacitance
 ["farad"]
-symbol = "F"
-plural = "farads"
+symbols = ["F"]
+aliases = ["farads"]
 factor = "1"
 prefix_scale = "si"
 
 # 1 coulomb per volt = 1 farad
 ["coulomb/volt"]
-symbol = "C/V"
-plural = "coulombs/volt"
+symbols = ["C/V"]
+aliases = ["coulombs/volt"]
 factor = "1"
 prefix_scale = "si"
 
 ["abfarad"]
-symbol = "abF"
-plural = "abfarads"
+symbols = ["abF"]
+aliases = ["abfarads"]
 factor = "1E+9"
 
 ["statfarad"]
-symbol = "stF"
-plural = "statfarads"
+symbols = ["stF"]
+aliases = ["statfarads"]
 factor = "1.112650056E-12"

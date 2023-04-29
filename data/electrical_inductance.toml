@@ -1,24 +1,23 @@
 # The henry is the SI unit of electrical inductance
 ["henry"]
-symbol = "H"
-plural = "henries"
+symbols = ["H"]
+aliases = ["henries"]
 factor = "1"
 prefix_scale = "si"
 
 # 1 weber per ampere = 1 henry
 ["weber/ampere"]
-symbol = "Wb/A"
-plural = "webers/ampere"
-aliases = ["webers/amp", "weber/amp"]
+symbols = ["Wb/A"]
+aliases = ["webers/ampere", "webers/amp", "weber/amp"]
 factor = "1"
 prefix_scale = "si"
 
 ["abhenry"]
-symbol = "abH"
-plural = "abhenries"
+symbols = ["abH"]
+aliases = ["abhenries"]
 factor = "1E-9"
 
 ["stathenry"]
-symbol = "stH"
-plural = "stathenries"
+symbols = ["stH"]
+aliases = ["stathenries"]
 factor = "898755200000"

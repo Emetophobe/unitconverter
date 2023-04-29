@@ -40,7 +40,7 @@ def create_supported_units(filename):
 
 def get_regular_units(units):
     """ Get a list of non-prefixed units from a unit list. """
-    return [unit for unit in units if not unit.prefixed]
+    return [unit for unit in units if not unit.is_prefixed]
 
 
 replace_powers = {

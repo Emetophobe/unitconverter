@@ -3,10 +3,11 @@
 
 from decimal import Decimal, getcontext
 
+from unitconverter.dimensions import fuel_categories
 from unitconverter.exceptions import CategoryError, UnitError
 from unitconverter.registry import get_unit
-from unitconverter.unit import CompositeUnit, Unit
-from unitconverter.utils import parse_decimal, simplify_unit
+from unitconverter.unit import Unit
+from unitconverter.misc import parse_decimal
 
 
 # Set decimal precision
@@ -48,7 +49,7 @@ def convert(value: Decimal | int | str, source: Unit | str, dest: Unit | str) ->
         raise CategoryError(source, dest)
 
     # Fuel conversion
-    if source.category in ('fuel consumption', 'fuel economy'):
+    if source.category in fuel_categories:
         return convert_fuel(value, source, dest)
 
     # Temperature converison
@@ -81,22 +82,25 @@ def parse_unit(name: str) -> Unit:
     if isinstance(name, Unit):
         return name
 
-    # Try to find the unit normally
+    # Try to find unit normally
     try:
         return get_unit(name)
     except UnitError:
         pass
 
-    simple_name = simplify_unit(name)
+    # Try to parse expression into a composite unit
+    return parse_composite(name)
 
-    # Try to create a composite unit
-    names = simple_name.split('/')
+
+def parse_composite(name: str) -> Unit:
+    """ Parse unit names and return a composite Unit. """
+    names = name.split('/')
     if len(names) == 1:
-        numers = parse_names(names[0])
+        numers = _parse_names(names[0])
         denoms = []
     elif len(names) == 2:
-        numers = parse_names(names[0])
-        denoms = parse_names(names[1])
+        numers = _parse_names(names[0])
+        denoms = _parse_names(names[1])
     else:
         raise UnitError(f'Invalid unit: {name} - This script only supports'
                         ' one division per expression (feature still in development)')
@@ -104,59 +108,35 @@ def parse_unit(name: str) -> Unit:
     numers = [get_unit(numer) for numer in numers]
     denoms = [get_unit(denom) for denom in denoms]
 
+    # Can't divide units from the same categories i.e metre/inch
+    if len(numers) == len(denoms) == 1:
+        if numers[0].category == denoms[0].category:
+            category = numers[0].category
+            raise UnitError(f'Invalid unit: {name} ({category}/{category})')
+
+    # Temperature units can't be composited
     for unit in numers + denoms:
         if unit.category == 'temperature':
             raise UnitError(f'Invalid unit: {name} - Cannot combine temperature'
                             ' units (feature still in development)')
 
-    return CompositeUnit(numers, denoms)
+    unit = Unit()
+
+    for numer in numers:
+        unit *= numer
+
+    for denom in denoms:
+        unit /= denom
+
+    if not unit:
+        raise UnitError(f'Invalid unit: {name}')
+
+    return unit
 
 
-def parse_names(names: str) -> list[str]:
+def _parse_names(names: str) -> list[str]:
     """ Split numerators or denominators into a list of unit names. """
     return names.split('*')
-
-
-def format_decimal(value: Decimal,
-                   exponent: bool = False,
-                   precision: int = None,
-                   commas: bool = False
-                   ) -> str:
-    """ Format a decimal into a string for display.
-
-    Parameters
-    ----------
-    value : Decimal
-        the decimal value
-
-    exponent : bool, optional
-        use E notation when possible, by default False
-
-    precision : int, optional
-        set rounding precision, by default None
-
-    commas : bool, optional
-        show commas (thousands) separators, by default False
-
-    Returns
-    -------
-    str
-        formatted string
-    """
-    precision = f'.{precision}' if precision is not None else ''
-
-    if exponent:
-        return f'{value:{precision}E}'
-
-    comma = ',' if commas else ''
-    number = f'{value:{comma}{precision}f}'
-
-    # Remove trailing zeroes
-    if '.' in number:
-        while number[-1] == '0' and number[-2] != '.':
-            number = number[:-1]
-
-    return number
 
 
 def convert_temperature(value: Decimal, source: Unit, dest: Unit) -> Decimal:
@@ -188,21 +168,27 @@ def convert_temperature(value: Decimal, source: Unit, dest: Unit) -> Decimal:
 
 def convert_fuel(value: Decimal, source: Unit, dest: Unit) -> Decimal:
     """ Convert fuel economy and fuel consumption. """
-    if ((source.category == 'fuel economy' and dest.category == 'fuel consumption') or
-       (source.category == 'fuel consumption' and dest.category == 'fuel economy')):
+    if source.category not in fuel_categories:
+        raise UnitError(f'Invalid fuel unit: {source}')
+
+    if dest.category not in fuel_categories:
+        raise UnitError(f'Invalid fuel unit: {dest}')
+
+    # Invert fuel consumption (litre/metre) and fuel economy (metre/litre)
+    if source.category != dest.category:
         value = 1 / (value * source.factor)
         return value / dest.factor
-    else:
-        value = value * source.factor
-        return value / dest.factor
+
+    # Convert fuel units normally
+    value = value * source.factor
+    return value / dest.factor
 
 
 def compatible_units(source: Unit, dest: Unit) -> bool:
     """ Returns True if the units are compatible. """
     if source.category == dest.category:
         return True
-    elif ((source.category == 'fuel economy' and dest.category == 'fuel consumption') or
-          (source.category == 'fuel consumption' and dest.category == 'fuel economy')):
+    elif source.category in fuel_categories and dest.category in fuel_categories:
         return True
 
     return False

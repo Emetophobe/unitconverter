@@ -28,12 +28,10 @@ def load_dimensions():
             dimensions[()] = category
             continue
 
-        # Add base dimension, for example ('area', 1)
+        # Add base dimension, i.e ('area', 1)
         base_dim = {category: 1}
         if base_dim not in dimen:
             dimen.insert(0, base_dim)
-
-        # TODO: calculate permutations, i.e (length, time) vs (time, length)
 
         for dim in dimen:
             dim_key = dimension_key(dim)

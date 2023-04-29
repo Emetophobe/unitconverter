@@ -11,7 +11,6 @@ from unitconverter.formatting import parse_decimal, format_display_name
 
 
 class Unit:
-
     """ A unit of measurement. Can be a single unit or a composition of units. """
 
     def __init__(self, factor: Decimal = 1, units: tuple | dict = None) -> None:

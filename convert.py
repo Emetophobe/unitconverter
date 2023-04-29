@@ -3,6 +3,7 @@
 
 
 import argparse
+import logging
 import sys
 from decimal import Decimal, DecimalException
 
@@ -50,6 +51,11 @@ def main() -> None:
         help='show E notation when possible (default: False)',
         action='store_true')
 
+    parser.add_argument(
+        '-d', '--debug',
+        help=argparse.SUPPRESS,
+        action='store_true')
+
     args = parser.parse_args()
 
     # Check value argument
@@ -61,6 +67,10 @@ def main() -> None:
     # Check precision argument
     if args.precision is not None and (args.precision < 0 or args.precision > 20):
         print_error('Error: precision must be between 0 and 20.')
+
+    # Configure debug logger
+    logging.getLogger().setLevel(logging.DEBUG if args.debug else logging.WARNING)
+    logging.basicConfig(format='%(levelname)s %(message)s')
 
     # Perform the conversion(s)
     try:

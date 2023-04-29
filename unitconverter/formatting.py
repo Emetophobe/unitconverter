@@ -1,6 +1,7 @@
 # Copyright (c) 2022-2023 Mike Cunningham
 
 
+import logging
 import re
 from decimal import Decimal, DecimalException
 
@@ -143,11 +144,20 @@ def split_exponent(name: str) -> tuple[str, int]:
     """
     try:
         result = _pattern.match(name)
-
         if result.group('exp'):
-            return (result.group('unit'), int(result.group('exp')))
+            unit, exp = result.group('unit'), int(result.group('exp'))
+        else:
+            unit, exp = result.group('unit'), 1
 
-        return (result.group('unit'), 1)
+        logging.debug(f'split_exponent({name})')
+        logging.debug(f'unit: {unit}')
+        logging.debug(f'exponent: {unit}')
+
+        if name != unit + str(exp):
+            logging.debug("re pattern didn't parse it correctly")
+            raise UnitError(f'Invalid unit: {name}')
+
+        return unit, exp
     except AttributeError:
         raise UnitError(f'Invalid unit: {name}')
 

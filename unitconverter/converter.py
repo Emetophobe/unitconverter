@@ -1,6 +1,7 @@
 # Copyright (c) 2022-2023 Mike Cunningham
 
 
+import logging
 from decimal import Decimal, getcontext
 
 from unitconverter.dimensions import FUEL_CATEGORY, dimension_name
@@ -108,6 +109,10 @@ def parse_composite(name: str) -> Unit:
     numers = [get_unit(numer) for numer in numers]
     denoms = [get_unit(denom) for denom in denoms]
 
+    logging.debug('parse_composite()')
+    logging.debug(f'numers: {numers}')
+    logging.debug(f'denoms: {denoms}')
+
     # Can't divide units from the same categories i.e metre/inch
     if len(numers) == len(denoms) == 1:
         if numers[0].category == denoms[0].category:
@@ -191,10 +196,11 @@ def compatible_units(source: Unit, dest: Unit) -> bool:
     source_dimen = dimension_name(source.get_dimensions())
     dest_dimen = dimension_name(dest.get_dimensions())
 
-    # print('source dimen =', source_dimen)
-    # print('raw source   =', source.get_dimensions())
-    # print('dest dimen   =', dest_dimen)
-    # print('raw dest     =', dest.get_dimensions())
+    logging.debug('compatible_units()')
+    logging.debug(f'source dimen = {source_dimen}')
+    logging.debug(f'raw source   = {source.get_dimensions()}')
+    logging.debug(f'dest dimen   = {dest_dimen}')
+    logging.debug(f'raw dest     = {dest.get_dimensions()}')
 
     if source_dimen == dest_dimen:
         # Compare category names if no dimension name

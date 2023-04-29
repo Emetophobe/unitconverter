@@ -7,7 +7,7 @@ from decimal import Decimal, getcontext
 
 from unitconverter.converter import convert, parse_unit
 from unitconverter.exceptions import CategoryError, UnitError
-from unitconverter.misc import format_decimal
+from unitconverter.formatting import format_decimal
 
 
 # Set decimal precision

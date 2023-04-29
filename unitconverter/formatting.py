@@ -89,6 +89,35 @@ def format_decimal(value: Decimal,
     return number
 
 
+def format_name(units: dict[str, int]) -> str:
+    """ Format unit name without divisor. """
+    numers = []
+    for unit, exp in units.items():
+        numers.append(format_exponent(unit, exp))
+
+    return MULTI_SYMBOL.join(numers)
+
+
+def format_display_name(units: dict[str, int]) -> str:
+    """ Format unit display name with divisor. """
+    numers = []
+    denoms = []
+
+    for unit, exp in units.items():
+        if exp > 0:
+            numers.append(format_exponent(unit, exp))
+        else:
+            denoms.append(format_exponent(unit, -exp))
+
+    if not numers:
+        return format_name(units)
+
+    elif not denoms:
+        return MULTI_SYMBOL.join(numers)
+
+    return MULTI_SYMBOL.join(numers) + DIV_SYMBOL + MULTI_SYMBOL.join(denoms)
+
+
 def format_exponent(name: str, exponent: int) -> str:
     """ Format unit name with optional exponent. """
     if exponent == 1:

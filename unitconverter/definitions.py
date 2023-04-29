@@ -4,7 +4,7 @@
 from decimal import Decimal
 
 from unitconverter.exceptions import DefinitionError
-from unitconverter.misc import parse_decimal
+from unitconverter.formatting import parse_decimal
 
 
 class UnitDef:

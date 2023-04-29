@@ -5,6 +5,7 @@ import json
 from typing import Optional
 
 from unitconverter.exceptions import DefinitionError
+from unitconverter.formatting import format_display_name
 
 
 def load_dimensions():
@@ -51,9 +52,19 @@ def dimension_key(dimension: dict) -> tuple:
     return tuple((key, dimension[key]) for key in sorted(dimension.keys()))
 
 
-def dimension_name(dimension: dict) -> Optional[str]:
-    """ Get dimension name from a dimension dict. Returns None if not found. """
-    return DIMENSION_MAP.get(dimension_key(dimension), None)
+def dimension_name(dimensions: dict) -> Optional[str]:
+    """ Create a dimension name from a dictionary of dimensions. """
+    # Search the dimension map for a category name
+    category = DIMENSION_MAP.get(dimension_key(dimensions), None)
+
+    # Fallback to creating the category name from the unit dimensions
+    if not category:
+        category = format_display_name(dimensions)
+
+    if not category:
+        return 'dimensionless'
+
+    return category
 
 
 # Global dimension dictionary
@@ -65,4 +76,4 @@ FUEL_CATEGORY = ('fuel economy', 'fuel consumption')
 
 
 # for key, value in DIMENSION_MAP.items():
-#    print(value, key)
+#     print(value, key)

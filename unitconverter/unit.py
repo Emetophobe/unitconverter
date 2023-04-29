@@ -7,7 +7,7 @@ from typing import Self
 
 from unitconverter.dimensions import dimension_name
 from unitconverter.exceptions import UnitError
-from unitconverter.misc import DIV_SYMBOL, MULTI_SYMBOL, format_exponent, parse_decimal
+from unitconverter.formatting import parse_decimal, format_display_name
 
 
 class Unit:
@@ -29,8 +29,8 @@ class Unit:
             raise UnitError(f'Invalid unit: {units}')
 
         # Generate unit name and category
-        self._name = self.format_display_name(self.get_units())
-        self._category = self.get_category()
+        self._name = format_display_name(self.get_units())
+        self._category = dimension_name(self.get_dimensions())
 
     @property
     def name(self):
@@ -47,47 +47,6 @@ class Unit:
     def get_dimensions(self) -> dict[str, int]:
         """ Return a tuple of the dimensions and their exponents. """
         return {unit[1]: exp for unit, exp in self.units.items()}
-
-    def get_category(self) -> str:
-        """ Get a category name from a dimension. """
-        # Try to get the dimension category normally
-        category = dimension_name(self.get_dimensions())
-
-        # Create the category name from the unit dimensions
-        if not category:
-            category = self.format_display_name(self.get_dimensions())
-
-        if not category:
-            return 'dimensionless'
-
-        return category
-
-    def format_name(self, units: dict[str, int]) -> str:
-        """ Format name (without divisor). """
-        numers = []
-        for unit, exp in units.items():
-            numers.append(format_exponent(unit, exp))
-
-        return MULTI_SYMBOL.join(numers)
-
-    def format_display_name(self, units: dict[str, int]) -> str:
-        """ Format display name (with divisor). """
-        numers = []
-        denoms = []
-
-        for unit, exp in units.items():
-            if exp > 0:
-                numers.append(format_exponent(unit, exp))
-            else:
-                denoms.append(format_exponent(unit, -exp))
-
-        if not numers:
-            return self.format_name(units)
-
-        elif not denoms:
-            return MULTI_SYMBOL.join(numers)
-
-        return MULTI_SYMBOL.join(numers) + DIV_SYMBOL + MULTI_SYMBOL.join(denoms)
 
     def __pow__(self, other: int) -> Self:
         if not isinstance(other, int):

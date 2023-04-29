@@ -5,7 +5,7 @@ from decimal import Decimal, getcontext
 
 from unitconverter.dimensions import FUEL_CATEGORY, dimension_name
 from unitconverter.exceptions import CategoryError, UnitError
-from unitconverter.misc import parse_decimal
+from unitconverter.formatting import parse_decimal
 from unitconverter.registry import get_unit
 from unitconverter.unit import Unit
 

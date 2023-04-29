@@ -7,7 +7,7 @@ from pathlib import Path
 
 from unitconverter.definitions import UnitDef, create_definitions
 from unitconverter.exceptions import DefinitionError, UnitError
-from unitconverter.misc import simplify_unit, split_exponent
+from unitconverter.formatting import simplify_unit, split_exponent
 from unitconverter.unit import Unit
 
 

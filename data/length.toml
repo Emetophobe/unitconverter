@@ -14,10 +14,11 @@ factor = "1E-10"
 
 # Imperial units
 
+
+# 1 thousands of an inch
 ["thou"]
 aliases = ["mils", "mil"]
 factor = "0.0000254"
-
 
 # 1 inch is exactly 0.0254 metres
 ["inch"]

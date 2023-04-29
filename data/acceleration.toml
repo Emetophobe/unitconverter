@@ -1,10 +1,10 @@
 # metre per second squared is the base unit of acceleration
 # https://en.wikipedia.org/wiki/Metre_per_second_squared
-["metre/second2"]
-symbols = ["m/s2"]
-aliases = ["metres/second2"]
-factor = 1
-prefix_scale = "si"
+
+
+# metre/s^2 can be generated from metre and second.
+# There's no need to define it here.
+
 
 ["galileo"]
 symbols = ["Gal"]  # not to be confused with gal (volume)

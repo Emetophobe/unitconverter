@@ -3,11 +3,11 @@
 
 from decimal import Decimal, getcontext
 
-from unitconverter.dimensions import fuel_categories
+from unitconverter.dimensions import FUEL_CATEGORY, dimension_name
 from unitconverter.exceptions import CategoryError, UnitError
+from unitconverter.misc import parse_decimal
 from unitconverter.registry import get_unit
 from unitconverter.unit import Unit
-from unitconverter.misc import parse_decimal
 
 
 # Set decimal precision
@@ -49,7 +49,7 @@ def convert(value: Decimal | int | str, source: Unit | str, dest: Unit | str) ->
         raise CategoryError(source, dest)
 
     # Fuel conversion
-    if source.category in fuel_categories:
+    if source.category in FUEL_CATEGORY:
         return convert_fuel(value, source, dest)
 
     # Temperature converison
@@ -168,10 +168,10 @@ def convert_temperature(value: Decimal, source: Unit, dest: Unit) -> Decimal:
 
 def convert_fuel(value: Decimal, source: Unit, dest: Unit) -> Decimal:
     """ Convert fuel economy and fuel consumption. """
-    if source.category not in fuel_categories:
+    if source.category not in FUEL_CATEGORY:
         raise UnitError(f'Invalid fuel unit: {source}')
 
-    if dest.category not in fuel_categories:
+    if dest.category not in FUEL_CATEGORY:
         raise UnitError(f'Invalid fuel unit: {dest}')
 
     # Invert fuel consumption (litre/metre) and fuel economy (metre/litre)
@@ -186,9 +186,22 @@ def convert_fuel(value: Decimal, source: Unit, dest: Unit) -> Decimal:
 
 def compatible_units(source: Unit, dest: Unit) -> bool:
     """ Returns True if the units are compatible. """
-    if source.category == dest.category:
+
+    # Compare dimensions
+    source_dimen = dimension_name(source.get_dimensions())
+    dest_dimen = dimension_name(dest.get_dimensions())
+
+    # print('source dimen =', source_dimen)
+    # print('raw source   =', source.get_dimensions())
+    # print('dest dimen   =', dest_dimen)
+    # print('raw dest     =', dest.get_dimensions())
+
+    if source_dimen == dest_dimen:
+        # Compare category names if no dimension name
+        if not source_dimen and source.category != dest.category:
+            return False
         return True
-    elif source.category in fuel_categories and dest.category in fuel_categories:
+    elif source_dimen in FUEL_CATEGORY and dest_dimen in FUEL_CATEGORY:
         return True
 
     return False

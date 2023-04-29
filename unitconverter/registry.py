@@ -36,8 +36,6 @@ class Registry:
             self.add_aliases(prefix_unit, prefix_unit.names())
             self._units[prefix_unit.category].append(prefix_unit)
 
-        #return Unit(unitdef.factor, (unit.name, unit.category))
-
     def add_alias(self, unitdef: UnitDef | str, alias: str) -> None:
         """ Add a unit alias. """
 

@@ -1,0 +1,112 @@
+{
+    "length": [],
+    "time": [],
+    "mass": [],
+    "temperature": [],
+    "electric current": [],
+    "amount of substance": [],
+    "luminous intensity": [],
+    "plane angle": [],
+    "solid angle": [],
+    "dimensionless": [],
+
+    "absorbed dose": [],
+    "acceleration": [
+        {"length": 1, "time": -2}
+    ],
+    "area": [
+        {"length": 2}
+    ],
+    "catalytic activity": [
+        {"amount of substance": 1, "time": -1}
+    ],
+    "data storage": [],
+    "data transfer": [
+        {"data storage": 1, "time": -1}
+    ],
+    "effective dose": [],
+    "electric charge": [
+        {"electric current": 1, "time": 1}
+    ],
+    "electric potential": [
+        {"length": 2, "mass": 1, "time": -3, "electric current": -1},
+        {"energy": 1, "electric charge": -1}
+    ],
+    "electrical capacitance": [
+        {"length": -2, "mass": -1, "time": 4, "electric current": 1},
+        {"electric charge": 1, "electric potential": -1}
+    ],
+    "electrical conductance": [
+        {"length": -2, "mass": -1, "time": 4, "electric current": 2},
+        {"electric current": 1, "electric potential": -1},
+        {"electric resistance": -1}
+    ],
+    "electrical inductance": [
+        {"length": 2, "mass": 1, "time": -2, "electric current": -2},
+        {"energy": 1, "electric current": -1}
+    ],
+    "electrical resistance": [
+        {"length": 2, "mass": 1, "time": -3, "electric current": -2},
+        {"electric potential": 1, "electric current": -1},
+        {"electric conductance": -1}
+    ],
+    "energy": [
+        {"length": 2, "mass": 1, "time": -2}
+    ],
+    "force": [
+        {"mass": 1, "length": 1, "time": -2},
+        {"mass": 1, "acceleration": 1}
+    ],
+    "frequency": [
+        {"time": -1}
+    ],
+    "fuel consumption": [
+        {"volume": 1, "length": -1}
+    ],
+    "fuel economy": [
+        {"length": 1, "volume": -1}
+    ],
+    "illuminance": [
+        {"luminous intensity": 1, "solid angle": 1, "length": -2},
+        {"luminous flux": 1, "length": -2}
+    ],
+    "luminance": [
+        {"luminous intensity": 1, "length": -2}
+    ],
+    "luminous flux": [
+        {"luminous intensity": 1, "solid angle": 1}
+    ],
+    "magnetic flux density": [
+        {"mass": 1, "time": -2, "electric current": -1},
+        {"magnetic flux": 1, "length": -2}
+    ],
+    "magnetic flux": [
+        {"length": 2, "mass": 1, "time": -2, "electric current": -1},
+        {"electric potential": 1, "time": 1}
+    ],
+    "power": [
+        {"length": 2, "mass": 1, "time": -3},
+        {"energy": 1, "time": -1}
+    ],
+    "pressure": [
+        {"length": -1, "mass": 1, "time": -2},
+        {"force": 1, "length": -2}
+    ],
+    "radioactivity": [],
+    "signal intensity": [],
+    "speed": [
+        {"length": 1, "time": -1}
+    ],
+    "torque": [
+        {"length": 2, "mass": 2, "time": -2},
+        {"force": 1, "length": 1}
+    ],
+    "viscosity": [
+        {"mass": 1, "length": -1, "time": -1},
+        {"force": 1, "time": 1, "length": -2},
+        {"pressure": 1, "time": 1}
+    ],
+    "volume": [
+        {"length": 3}
+    ]
+}

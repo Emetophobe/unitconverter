@@ -1,4 +1,5 @@
-# 1 pascal-second is the SI unit of viscosity
+# The pascal-second is the SI unit of viscosity
+# 1 pascal-second is equivalent to 1 newton-second per square metre (N-s/m^2)
 ["pascal-second"]
 symbols = ["Pa-s"]
 aliases = ["pascal-seconds"]

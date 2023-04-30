@@ -1,3 +1,5 @@
+dimensions = {"amount of substance" = 1}
+
 # The mole is the SI unit of amount of substance
 ["mole"]
 symbols = ["mol"]

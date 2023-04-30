@@ -1,3 +1,7 @@
+# This should be dimensionless, for now give it a unique dimension
+dimensions = {"solid angle" = 1}
+
+
 # The steradian is the SI unit of solid angle
 ["steradian"]
 symbols = ["sr"]

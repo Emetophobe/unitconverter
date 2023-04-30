@@ -1,3 +1,5 @@
+dimensions = {"length" = 2}
+
 # square metre (m^2) is the SI unit of area
 
 # metre^2 can be generated from metre.

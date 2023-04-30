@@ -1,21 +1,15 @@
+dimensions = {"electric current" = 1}
+
+# The following units can be composed to make an ampere:
+
+# 1 watt/volt = 1 ampere
+# 1 coulomb/second = 1 ampere
+
+
 # The ampere is the SI unit of electric current
 ["ampere"]
 symbols = ["A"]
 aliases = ["amperes", "amps", "amp"]
-factor = "1"
-prefix_scale = "si"
-
-# 1 watt per volt = 1 ampere
-["watt/volt"]
-symbols = ["W/V"]
-aliases = ["watts/volt"]
-factor = "1"
-prefix_scale = "si"
-
-# 1 coulomb per second = 1 ampere
-["coulomb/second"]
-symbols = ["C/s"]
-aliases = ["coulombs/second"]
 factor = "1"
 prefix_scale = "si"
 

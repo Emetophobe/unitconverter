@@ -1,3 +1,6 @@
+dimensions = {"luminous intensity" = 1, "length" = -2}
+
+
 # The SI unit for luminance is candela per square metre (cd/m2)
 ["candela/metre2"]
 symbols = ["cd/m2"]

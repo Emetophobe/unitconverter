@@ -7,7 +7,7 @@ from decimal import Decimal, getcontext
 
 from unitconverter.converter import convert, parse_unit
 from unitconverter.exceptions import CategoryError, UnitError
-from unitconverter.formatting import format_decimal
+from unitconverter.formatting import format_decimal, format_exponent
 
 
 # Set decimal precision
@@ -56,8 +56,8 @@ class TestConverter(unittest.TestCase):
 
         # Test exponent generated units
         unit = parse_unit('kilometre3')
-        self.assertEqual(unit.name, 'kilometre^3')
-        self.assertEqual(unit.category, 'volume')
+        self.assertEqual(unit.name, format_exponent('kilometre', 3))
+        self.assertEqual(unit.dimension, format_exponent('length', 3))
 
         # Test invalid unit names
         with self.assertRaises(UnitError):

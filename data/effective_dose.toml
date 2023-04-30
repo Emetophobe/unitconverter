@@ -1,4 +1,8 @@
-# The sivert is the SI unit of effective dose
+# Gray and sievert share the same dimension (J/kg), use a unique dimension for now
+dimensions = {"effective dose" =1}
+
+
+# The sievert is the SI unit of effective dose
 ["sievert"]
 symbols = ["Sv"]
 aliases = ["sieverts"]

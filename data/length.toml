@@ -1,3 +1,5 @@
+dimensions = {"length" = 1}
+
 # The metre is the SI unit of length
 ["metre"]
 symbols = ["m"]

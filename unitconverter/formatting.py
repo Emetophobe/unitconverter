@@ -91,7 +91,7 @@ def format_decimal(value: Decimal,
 
 
 def format_name(units: dict[str, int]) -> str:
-    """ Format unit name without divisor. """
+    """ Format unit name without divisor (i.e "metre*second^-1") """
     numers = []
     for unit, exp in units.items():
         numers.append(format_exponent(unit, exp))
@@ -100,7 +100,7 @@ def format_name(units: dict[str, int]) -> str:
 
 
 def format_display_name(units: dict[str, int]) -> str:
-    """ Format unit display name with divisor. """
+    """ Format unit display name with divisor (i.e "metre/second") """
     numers = []
     denoms = []
 

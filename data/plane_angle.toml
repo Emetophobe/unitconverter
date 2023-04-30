@@ -1,3 +1,7 @@
+# This should be dimensionless, for now give it a unique dimension
+dimensions = {"plane angle" = 1}
+
+
 # The radian is the SI unit of plane angle
 # 1 radian = 180/pi degrees
 ["radian"]

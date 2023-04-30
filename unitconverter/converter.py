@@ -4,10 +4,9 @@
 import logging
 from decimal import Decimal, getcontext
 
-from unitconverter.dimensions import FUEL_CATEGORY, dimension_name
 from unitconverter.exceptions import CategoryError, UnitError
 from unitconverter.formatting import parse_decimal
-from unitconverter.registry import get_unit
+from unitconverter.registry import get_category, get_unit
 from unitconverter.unit import Unit
 
 
@@ -46,15 +45,27 @@ def convert(value: Decimal | int | str, source: Unit | str, dest: Unit | str) ->
     source = parse_unit(source)
     dest = parse_unit(dest)
 
-    if not compatible_units(source, dest):
-        raise CategoryError(source, dest)
+    source_category = get_category(source.dimen)
+    dest_category = get_category(dest.dimen)
+
+    logging.debug('convert()')
+    logging.debug(f'source unit    : {source!r}')
+    logging.debug(f'source dimen   : {source.dimen}')
+    logging.debug(f'source category: {source_category}')
+    logging.debug(f'dest unit      : {dest!r}')
+    logging.debug(f'source dimen   : {dest.dimen}')
+    logging.debug(f'source category: {dest_category}')
+
+    if not compatible_units(source_category, dest_category):
+        raise CategoryError(f'Category mismatch: {source.name} ({source_category})'
+                            f' and {dest.name} ({dest_category})')
 
     # Fuel conversion
-    if source.category in FUEL_CATEGORY:
+    if source_category in FUEL_CATEGORY:
         return convert_fuel(value, source, dest)
 
     # Temperature converison
-    elif source.category == 'temperature':
+    elif source_category == 'temperature':
         return convert_temperature(value, source, dest)
 
     # Regular conversion
@@ -83,18 +94,13 @@ def parse_unit(name: str) -> Unit:
     if isinstance(name, Unit):
         return name
 
-    # Try to find unit normally
+    # Check if the unit is defined in the registry
     try:
         return get_unit(name)
     except UnitError:
         pass
 
-    # Try to parse expression into a composite unit
-    return parse_composite(name)
-
-
-def parse_composite(name: str) -> Unit:
-    """ Parse unit names and return a composite Unit. """
+    # Try to create a composite unit
     names = name.split('/')
     if len(names) == 1:
         numers = _parse_names(names[0])
@@ -115,23 +121,29 @@ def parse_composite(name: str) -> Unit:
 
     # Can't divide units from the same categories i.e metre/inch
     if len(numers) == len(denoms) == 1:
-        if numers[0].category == denoms[0].category:
-            category = numers[0].category
+        if numers[0].dimen == denoms[0].dimen:
+            category = numers[0].dimension
             raise UnitError(f'Invalid unit: {name} ({category}/{category})')
 
     # Temperature units can't be composited
     for unit in numers + denoms:
-        if unit.category == 'temperature':
-            raise UnitError(f'Invalid unit: {name} - Cannot combine temperature'
-                            ' units (feature still in development)')
+        if unit.dimension == 'temperature':
+            raise UnitError(f'Invalid unit: {name} - Cannot combine temperature units')
 
-    unit = Unit()
+    numer = Unit()
+    denom = Unit()
 
-    for numer in numers:
-        unit *= numer
+    for unit in numers:
+        numer *= unit
 
-    for denom in denoms:
-        unit /= denom
+    for unit in denoms:
+        denom *= unit
+
+    unit = numer / denom
+
+    logging.debug(f'numer: {numer} ({numer.dimension})')
+    logging.debug(f'denom: {denom} ({denom.dimension})')
+    logging.debug(f'unit : {unit} ({unit.dimension})')
 
     if not unit:
         raise UnitError(f'Invalid unit: {name}')
@@ -173,14 +185,14 @@ def convert_temperature(value: Decimal, source: Unit, dest: Unit) -> Decimal:
 
 def convert_fuel(value: Decimal, source: Unit, dest: Unit) -> Decimal:
     """ Convert fuel economy and fuel consumption. """
-    if source.category not in FUEL_CATEGORY:
+    if source.dimension not in FUEL_CATEGORY:
         raise UnitError(f'Invalid fuel unit: {source}')
 
-    if dest.category not in FUEL_CATEGORY:
+    if dest.dimension not in FUEL_CATEGORY:
         raise UnitError(f'Invalid fuel unit: {dest}')
 
     # Invert fuel consumption (litre/metre) and fuel economy (metre/litre)
-    if source.category != dest.category:
+    if source.dimension != dest.dimension:
         value = 1 / (value * source.factor)
         return value / dest.factor
 
@@ -189,25 +201,14 @@ def convert_fuel(value: Decimal, source: Unit, dest: Unit) -> Decimal:
     return value / dest.factor
 
 
-def compatible_units(source: Unit, dest: Unit) -> bool:
-    """ Returns True if the units are compatible. """
-
-    # Compare dimensions
-    source_dimen = dimension_name(source.get_dimensions())
-    dest_dimen = dimension_name(dest.get_dimensions())
-
-    logging.debug('compatible_units()')
-    logging.debug(f'source dimen = {source_dimen}')
-    logging.debug(f'raw source   = {source.get_dimensions()}')
-    logging.debug(f'dest dimen   = {dest_dimen}')
-    logging.debug(f'raw dest     = {dest.get_dimensions()}')
-
-    if source_dimen == dest_dimen:
-        # Compare category names if no dimension name
-        if not source_dimen and source.category != dest.category:
-            return False
+def compatible_units(source_category: str, dest_category: str) -> bool:
+    """ Returns True if the categories are compatible. """
+    if source_category == dest_category:
         return True
-    elif source_dimen in FUEL_CATEGORY and dest_dimen in FUEL_CATEGORY:
+    elif source_category in FUEL_CATEGORY and dest_category in FUEL_CATEGORY:
         return True
-
     return False
+
+
+# Compatible fuel categories
+FUEL_CATEGORY = ('fuel economy', 'fuel consumption')

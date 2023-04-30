@@ -70,7 +70,7 @@ def main() -> None:
 
     # Configure debug logger
     logging.getLogger().setLevel(logging.DEBUG if args.debug else logging.WARNING)
-    logging.basicConfig(format='%(levelname)s %(message)s')
+    logging.basicConfig(format='debugging: %(message)s')
 
     # Perform the conversion(s)
     try:

@@ -1,3 +1,7 @@
+# Hertz and becquerel share the same dimensions (T-1), use a unique dimension for now
+dimensions = {"radioactivity" = 1}
+
+
 # The becquerel is the SI unit of radioactivity
 ["becquerel"]
 symbols = ["Bq"]

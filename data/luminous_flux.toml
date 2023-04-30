@@ -1,3 +1,5 @@
+dimensions = {"luminous intensity" = 1, "solid angle" = 1}
+
 # The lumen is the SI unit of luminous flux
 ["lumen"]
 symbols = ["lm"]

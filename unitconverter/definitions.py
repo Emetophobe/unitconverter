@@ -7,7 +7,7 @@ from unitconverter.exceptions import DefinitionError
 from unitconverter.formatting import parse_decimal
 
 
-class UnitDef:
+class UnitDefinition:
     """ A unit definition is used to define a unit in the Registry.
 
         Once a definition has been added to the registry a Unit can
@@ -18,6 +18,7 @@ class UnitDef:
     def __init__(self,
                  name: str,
                  category: str,
+                 dimen: dict,
                  symbols: list[str] = None,
                  aliases: list[str] = None,
                  factor: Decimal | int | str = 1,
@@ -27,6 +28,7 @@ class UnitDef:
         """ Initialize unit definition. """
         self.name = name
         self.category = category
+        self.dimen = dimen
         self.symbols = symbols or [name]
         self.aliases = aliases or [name]
 
@@ -38,6 +40,10 @@ class UnitDef:
     def names(self) -> set[str]:
         """ Return a set of unique unit names used to identify this unit. """
         return set([self.name] + self.symbols + self.aliases)
+
+    def __repr__(self) -> str:
+        args = ', '.join(repr(val) for val in self.__dict__.items())
+        return f'UnitDefinition({args})'
 
     def __str__(self) -> str:
         return self.name
@@ -138,12 +144,12 @@ def get_prefixes(scale: str) -> list[Prefix]:
         raise DefinitionError(f'Invalid prefix scale: {scale}')
 
 
-def prefix_definition(prefix: Prefix, unitdef: UnitDef) -> UnitDef:
+def prefix_definition(prefix: Prefix, unitdef: UnitDefinition) -> UnitDefinition:
     """ Create a new prefixed unit definition. """
     if not isinstance(prefix, Prefix):
         raise DefinitionError(f'Invalid prefix: {prefix}!r')
 
-    if not isinstance(unitdef, UnitDef):
+    if not isinstance(unitdef, UnitDefinition):
         raise DefinitionError(f'Invalid definition: {unitdef!r}')
 
     # Get supported prefixes
@@ -162,10 +168,11 @@ def prefix_definition(prefix: Prefix, unitdef: UnitDef) -> UnitDef:
     factor = (Decimal(unitdef.factor) * prefix.factor)
 
     # Create a new prefixed definition
-    return UnitDef(name, unitdef.category, symbols, aliases, factor, None, True)
+    return UnitDefinition(name, unitdef.category, unitdef.dimen, symbols, aliases,
+                          factor, prefix_scale=None, is_prefixed=True)
 
 
-def create_definitions(unitdef: UnitDef) -> list[UnitDef]:
+def create_definitions(unitdef: UnitDefinition) -> list[UnitDefinition]:
     """ Create a list of prefixed definitions from a source definition. """
     unitdefs = []
 

@@ -1,3 +1,5 @@
+dimensions = {"luminous intensity" = 1}
+
 # The candela is the SI unit of luminous intensity
 ["candela"]
 symbols = ["cd"]

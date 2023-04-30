@@ -1,14 +1,12 @@
+dimensions = {"length" = -2, "mass" = -1, "time" = 4, "electric current" = 1}
+
+# 1 coulomb/
+
+
 # The farad is the SI unit of electrical capacitance
 ["farad"]
 symbols = ["F"]
 aliases = ["farads"]
-factor = "1"
-prefix_scale = "si"
-
-# 1 coulomb per volt = 1 farad
-["coulomb/volt"]
-symbols = ["C/V"]
-aliases = ["coulombs/volt"]
 factor = "1"
 prefix_scale = "si"
 

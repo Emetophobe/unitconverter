@@ -1,9 +1,13 @@
+dimensions = {"length" = 1, "time" = -2}
+
 # metre per second squared is the base unit of acceleration
 # https://en.wikipedia.org/wiki/Metre_per_second_squared
 
 
-# metre/s^2 can be generated from metre and second.
-# There's no need to define it here.
+# Example acceleration units that can be generated:
+# metre/second^2
+# ft/s^2
+# mile/s^2
 
 
 ["galileo"]

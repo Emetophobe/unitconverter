@@ -1,28 +1,16 @@
+dimensions = {"length" = 2, "mass" = 1, "time" = -3, "electric current" = -1}
+
+# The following units can be composed to make a volt:
+
+# 1 joule/coulomb = 1 volt
+# 1 watt/ampere = 1 volt
+# 1 weber/second = 1 volt
+
+
 # The volt is the SI unit of electric potential
 ["volt"]
 symbols = ["V"]
 aliases = ["volts"]
-factor = "1"
-prefix_scale = "si"
-
-# 1 joule per coulomb = 1 volt
-["joule/coulomb"]
-symbols = ["J/C"]
-aliases = ["joules/coulomb"]
-factor = "1"
-prefix_scale = "si"
-
-# 1 watt per ampere = 1 volt
-["watt/ampere"]
-symbols = ["W/A"]
-aliases = ["watts/ampere", "watts/amp", "watt/amp"]
-factor = "1"
-prefix_scale = "si"
-
-# 1 weber per second = 1 volt
-["weber/second"]
-symbols = ["Wb/s"]
-aliases = ["webers/second", "webers/sec", "weber/sec"]
 factor = "1"
 prefix_scale = "si"
 

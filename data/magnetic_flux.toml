@@ -1,3 +1,13 @@
+dimensions = {"length" = 2, "mass" = 1, "time" = -2, "electric current" = -1}
+
+# weber formula:
+# weber definition:
+
+# Examples:
+#  1 weber = 1 volt*second
+#  1 weber = 1 tesla*metre^2
+
+
 # The weber is the SI unit of magnetic flux
 ["weber"]
 symbols = ["Wb"]

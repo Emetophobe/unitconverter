@@ -18,11 +18,9 @@ class UnitError(ConverterError):
 
 class CategoryError(ConverterError):
     """ Category mismatch error. """
-
-    def __init__(self, source, dest) -> None:
-        self.msg = (f'Category mismatch: {source.name} ({source.category})'
-                    f' and {dest.name} ({dest.category})')
+    pass
 
 
 class DefinitionError(ConverterError):
     """ Invalid unit definition. """
+    pass

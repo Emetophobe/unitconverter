@@ -1,3 +1,5 @@
+dimensions = {"data storage" = 1}
+
 # Byte is the base unit for this converter
 ["byte"]
 symbols = ["B"]

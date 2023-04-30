@@ -1,9 +1,12 @@
-# 1 metre per second is the base unit
-["metre/second"]
-symbols = ["m/s"]
-aliases = ["metres/second", "metres/sec", "metre/sec"]
-factor = "1"
-prefix_scale = "si"
+dimensions = {"length" = 1, "time" = 1}
+
+
+# Speed formula: length/time
+# Examples:
+#   metre/second (base unit)
+#   mile/hour
+#   inch/day
+
 
 # 1 kilometre per hour (kph) = 1000/3600 = ~0.2777777778 m/s
 ["kilometre/hour"]

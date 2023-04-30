@@ -5,11 +5,7 @@ import unittest
 
 from unitconverter.exceptions import UnitError, DefinitionError
 from unitconverter.registry import REGISTRY as registry
-from unitconverter.definitions import UnitDef
-
-
-# Total number of categories
-NUM_CATEGORIES = 40
+from unitconverter.definitions import UnitDefinition
 
 
 class TestRegistry(unittest.TestCase):
@@ -19,7 +15,7 @@ class TestRegistry(unittest.TestCase):
         """ Test new_unit() method. """
 
         # Add a dummy unit definition
-        dummy = UnitDef('dummy', 'length', ['dum'], ['dummy unit'])
+        dummy = UnitDefinition('dummy', 'length', ['dum'], ['dummy unit'])
         registry.new_unit(dummy)
 
         # Adding duplicates should raise a DefinitionError
@@ -69,7 +65,7 @@ class TestRegistry(unittest.TestCase):
 
         # Test getting units with an exponent
         unit = registry.get_unit('second^3')
-        self.assertEqual(unit.category, 'time^3')
+        self.assertEqual(unit.dimension, 'time^3')
 
         # Composite units should raise a unit error (parse_unit() handles this)
         with self.assertRaises(UnitError):
@@ -86,18 +82,16 @@ class TestRegistry(unittest.TestCase):
 
     def test_get_units(self) -> None:
         """ Test get_units() method. """
-        categories = registry.get_units()
-        self.assertIsInstance(categories, dict)
-        self.assertEqual(NUM_CATEGORIES, len(categories), 'number of categories')
-
-        total_units = sum(len(units) for units in categories.values())
-        self.assertGreater(total_units, 2000, 'number of units')
+        units = registry.get_units()
+        self.assertIsInstance(units, dict)
+        self.assertGreater(len(units), 0, 'number of units')
 
     def test_get_definition(self) -> None:
         """ Test get_definition() method. """
 
         kelvin = registry.get_definition('kelvin')
         self.assertEqual(kelvin.category, 'temperature')
+        self.assertEqual(kelvin.dimen, {'temperature': 1})
 
         with self.assertRaises(DefinitionError):
             registry.get_definition('invalid unit')

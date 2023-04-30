@@ -1,3 +1,5 @@
+# These can be generated they may no longer be needed
+
 ["byte/second"]
 symbols = ["Bps", "B/s"]
 aliases = ["bytes/second", "bytes/sec"]

@@ -12,27 +12,6 @@ aliases = ["volt-amperes", "volt-amps", "volt-amp"]
 factor = "1"
 prefix_scale = "si"
 
-# 1 joule per second = 1 watt
-["joule/second"]
-symbols = ["J/s", "j/s"]
-aliases = ["joules/second", "joules/sec", "joule/sec"]
-factor = "1"
-prefix_scale = "si"
-
-# 1 joule per minute = 1/60 watts
-["joule/minute"]
-symbols = ["J/min", "j/min"]
-aliases = ["joules/minute", "joules/min", "joule/min"]
-factor = "0.01666666666666666666666666667"
-prefix_scale = "si"
-
-# 1 joule per hour = 1/3600 watts
-["joule/hour"]
-symbols = ["J/h", "j/h"]
-aliases = ["joules/hour"]
-factor = "0.0002777777777777777777777777778"
-prefix_scale = "si"
-
 # 1 metric horsepower (hp) = roughly 735.5 watts
 ["horsepower"]
 symbols = ["hp"]

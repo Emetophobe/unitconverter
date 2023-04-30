@@ -57,12 +57,14 @@ aliases = ["kilocalories", "large calories", "large calorie"]
 factor = "4184"
 
 # 1 btu = 1055.06 joules
-["btu"]
-aliases = ["british thermal units", "british thermal unit"]
+["british thermal unit"]
+symbols = ["btu"]
+aliases = ["british thermal units"]
 factor = "1055.06"
 
-["quad"]
-aliases = ["quadrillion btus", "quadrillion btu"]
+["quadrillion btu"]
+symbols = ["quad"]
+aliases = ["quadrillion btus"]
 factor = "1.05506E+18"
 
 ["erg"]

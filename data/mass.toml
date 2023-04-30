@@ -14,13 +14,13 @@ factor = "28.34952"
 
 # 1 pound is 453.59237 grams
 ["pound"]
-symbols = ["lbs"]
+symbols = ["lbs", "lb"]
 aliases = ["pounds"]
 factor = "453.59237"
 
 # 1 kilopound (kip) = 1000 lbs or 453,592.37 grams
 ["kilopound"]
-symbols = ["klbs"]
+symbols = ["klbs", "klb"]
 aliases = ["kilopounds"]
 factor = "453592.37"
 

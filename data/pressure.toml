@@ -5,13 +5,6 @@ aliases = ["pascals"]
 factor = "1"
 prefix_scale = "si"
 
-# 1 newton per square metre = 1 pascal
-["newton/metre2"]
-symbols = ["N/m2"]
-aliases = ["newtons/metre2"]
-factor = "1"
-prefix_scale = "si"
-
 # 1 bar = exactly 100,000 (1E+5) pascal
 ["bar"]
 aliases = ["bars"]
@@ -25,14 +18,17 @@ aliases = ["baryes"]
 factor = "0.1"
 prefix_scale = "si"
 
+# 1 psi = 1 pound of force per square inch = ~6894.7578896 pascal
 ["psi"]
-aliases = ["pounds per square inch", "pound per square inch"]
-factor = "6894.757"
+symbols = ["lbf/in2"]
+aliases = ["pound-force/inch2"]
+factor = "6894.75788951578"
 
 # 1 ksi = 1000 psi
 ["ksi"]
-aliases = ["kilopounds per square inch", "kilopound per square inch"]
-factor = "6894757"
+symbols = ["klbf/in2"]
+aliases = ["kilopound-force/inch2"]
+factor = "6894757.88951578"
 
 # 1 pièze = 1 kilopascal
 ["pieze"]

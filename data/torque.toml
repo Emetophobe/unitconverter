@@ -1,3 +1,6 @@
+# All of these units can be generated so they can be removed
+
+
 # newton-metre is the base unit
 ["newton-metre"]
 symbols = ["N-m", "Nm"]
@@ -43,12 +46,12 @@ factor = "0.084738621480"
 # source: https://en.wikipedia.org/wiki/Pound-foot
 ["pound-force inch"]
 symbols = ["lbf-in"]
-aliases = ["pound-force inches", "pound-force-inches", "pound-force-inch"]
+aliases = ["pound-force inches"]
 factor = "0.1129848388"
 
 # 1 pound-force-foot = ~1.3558180656 newton-metre
 # source: https://en.wikipedia.org/wiki/Pound-foot
 ["pound-force foot"]
 symbols = ["lbf-ft"]
-aliases = ["pound-force feet", "pound-force-feet", "pound-force-foot"]
+aliases = ["pound-force feet"]
 factor = "1.3558180656"

@@ -1,4 +1,4 @@
-# The sivert is the SI unit of effective dose
+# The sievert is the SI unit of effective dose
 ["sievert"]
 symbols = ["Sv"]
 aliases = ["sieverts"]

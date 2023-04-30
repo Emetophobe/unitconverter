@@ -149,16 +149,15 @@ def split_exponent(name: str) -> tuple[str, int]:
         else:
             unit, exp = result.group('unit'), 1
 
-        logging.debug(f'split_exponent({name})')
-        logging.debug(f'unit: {unit}')
-        logging.debug(f'exponent: {unit}')
-
         if name != unit + str(exp):
-            logging.debug("re pattern didn't parse it correctly")
+            logging.debug(f'split_exponent({name!r}) did not parse unit correctly')
+            logging.debug(f'unit: {unit!r}')
+            logging.debug(f'exponent: {exp!r}')
             raise UnitError(f'Invalid unit: {name}')
 
         return unit, exp
     except AttributeError:
+        logging.debug(f'split_exponent({name!r}) attribute error when parsing unit')
         raise UnitError(f'Invalid unit: {name}')
 
 

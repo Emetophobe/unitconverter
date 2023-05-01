@@ -2,10 +2,6 @@ dimensions = {"length" = -1, "mass" = 1, "time" = -1}
 
 
 # Viscosity formula: mass / length * time
-# Examples:
-#   kilogram/metre*second
-#   gram/cm*s
-#   gram/ft*s
 
 
 # The pascal-second is the SI unit of viscosity

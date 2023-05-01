@@ -1,6 +1,14 @@
-dimensions = {"length" = -2, "mass" = -1, "time" = 4, "electric current" = 1}
+dimensions = {"length" = -2, "mass" = -1, "time" = 4, "electric current" = 2}
 
-# 1 coulomb/
+
+# base units: s^4*A^2/m^2*kg
+# Examples:
+
+#  1 farad = 1 coulomb/volt
+#          = 1 ampere*second/volt
+#          = 1 watt*second/volt^2
+#          = 1 joule/volt^2
+#          = 1 newton*metre/volt^2
 
 
 # The farad is the SI unit of electrical capacitance

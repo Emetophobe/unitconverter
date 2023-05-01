@@ -1,5 +1,6 @@
-# Hertz and becquerel share the same dimensions (T-1), use a unique dimension for now
-dimensions = {"frequency" = 1}
+# Hertz and becquerel share the same dimensions (T-1)
+# For now becquerel uses a different dimension (radioactivity)
+dimensions = {"time" = -1}
 
 
 # The hertz is the SI unit of frequency

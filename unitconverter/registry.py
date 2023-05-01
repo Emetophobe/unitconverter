@@ -11,8 +11,9 @@ from unitconverter.formatting import simplify_unit, split_exponent
 from unitconverter.unit import Unit, UnitDict
 
 
-# Unitless unit
-# one = Unit(1, 'one')
+# 1 is used in several calculations
+# One is a unitless and dimensionless unit
+one = Unit(1)
 
 
 class Registry:
@@ -68,6 +69,10 @@ class Registry:
     def get_unit(self, name: str) -> Unit:
         """ Get a unit by name. """
         simple_name = simplify_unit(name)
+
+        # Check for unitless unit
+        if simple_name in (1, '1', 'one'):
+            return one
 
         # Check for pre-defined unit
         if simple_name in self._aliases:
@@ -128,11 +133,13 @@ class Registry:
                 dimensions = UnitDict(data.pop('dimensions'))
                 dimension_key = dimensions.as_tuple()
 
+                #print(f'{category:<26}', dict(dimensions))
+
                 # Check for duplicate dimensions
                 if dimension_key in self._dimensions:
                     original = self._dimensions[dimension_key]
-                    raise DefinitionError(f'Duplicate dimension: {dimensions}'
-                                          f' original category: {original}')
+                    raise DefinitionError(f'{category} and {original} have the'
+                                          f' same dimensions: {dimensions}')
 
                 # Save dimension/category info
                 self._dimensions[dimension_key] = category

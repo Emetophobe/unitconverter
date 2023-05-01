@@ -1,9 +1,7 @@
-dimensions = {"length" = -2, "mass" = -1, "time" = 4, "electric current" = 2}
+dimensions = {"length" = -2, "mass" = -1, "time" = 3, "electric current" = 2}
 
 
-# The following units can be composited to make a siemens:
-
-# 1 ohm^-1 = 1 siemens
+# 1 siemens = ohm^-1
 
 
 

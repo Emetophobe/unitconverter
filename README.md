@@ -1,10 +1,11 @@
-# Unit Converter (work in progress)
+# Unit Converter
 
 A basic unit converter written in Python.
 
+This script is meant to be used as a command line utility. If you're looking for a
+python library there are superior alternatives such as [pint][1] or [metrolopy][2].
 
-The following categories are currently supported:
-
+The following unit categories are currently supported:
 
 * Absorbed dose (gray, usrad)
 * Acceleration (metre/second², foot/second², mile/second²)
@@ -46,13 +47,14 @@ The following categories are currently supported:
 * Viscosity (poise and pascal-second)
 * Volume (cubic metre, litre, quart, gallon, etc...)
 
-See [supported units](docs/supported_units.txt) for a complete list. Note that composite
-units aren't included in this list, such as square inches (area) which can be generated
-from an inch (length).
+See [supported units](docs/supported_units.txt) for a complete list. Note that many
+derived units aren't included in this list. For example metre per second (speed)
+can be created from a metre (length) and second (time). See composite units below.
 
 ## Features
 
-Units are prefixed (i.e "kilo") based on a prefix scaling option. The default prefix scaling behaviour can be changed on a per-unit basis.
+Units are prefixed based on a prefix scaling option. The default prefix
+scaling behaviour can be changed on a per-unit basis.
 
 The following prefix options are currently supported:
 
@@ -64,19 +66,28 @@ The following prefix options are currently supported:
     all         - use SI and binary tables
 
 
-Units can also be combined to create composite units. You can create a composite unit from any of the defined units (excluding temperature units). Temperature units use a custom conversion function and don't work with other units for now.
+Units can also be combined to create composite units. You can create a composite unit
+from any of the defined units (excluding temperature units). Temperature units use
+a custom conversion function and don't work with other units for now.
 
 As an example, you can create a speed unit by dividing a `length` unit by a `time` unit:
 
-    $ python convert.py 1 metre/second inches/day -p 2
+    $ python3 convert.py 1 metre/second inches/day -p 2
     1 metre/second = 3401574.8 inches/day
 
+Thousands of unit combinations are possible:
 
+    $ python3 convert.py 1 watt amp*volt joule/second
+    1 watt = 1 amp*volt
+           = 1 joule/second
 
-
+    $ python3 convert.py 1 joule kg*m2*s-2 pascal*metre^3 watt*second coulomb*volt
+    1 joule = 1 kg*m2*s-2
+            = 1 pascal*metre^3
+            = 1 watt*second
+            = 1 coulomb*volt
 
 Unit composition is an experimental feature and there are still bugs to be sorted out.
-
 
 
 ## Requirements
@@ -157,4 +168,8 @@ Unit composition is an experimental feature and there are still bugs to be sorte
     1 US survey acre = 0.00404687 km^2
 
 #
-### Note: This script is a work in progress. Bug reports or suggestions are welcome.
+### Note: This script is a work in progress. Bug reports and suggestions are welcome.
+
+
+[1]: https://github.com/hgrecco/pint/tree/master/pint
+[2]: https://github.com/nrc-cnrc/MetroloPy/tree/master/metrolopy

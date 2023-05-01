@@ -43,7 +43,6 @@ The following categories are currently supported:
 * Speed (km/hour, mile/hour, metre/second, inch/second, mach 1, etc...)
 * Temperature (kelvin, celsius, fahrenheit, and rankine)
 * Time (second, minute, hour, day, week, month, year, etc...)
-* Torque (newton-metre)
 * Viscosity (poise and pascal-second)
 * Volume (cubic metre, litre, quart, gallon, etc...)
 

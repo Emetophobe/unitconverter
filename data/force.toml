@@ -1,16 +1,18 @@
 dimensions = {"mass" = 1, "length" = 1, "time" = -2}
 
+
+# formula: mass * acceleration
+# base units: kg*m/s^2
+
+# Examples:
+
+# 1 joule/metre = 1 newton
+
+
 # The newton is the SI unit of force
 ["newton"]
 symbols = ["N"]
 aliases = ["newtons"]
-factor = "1"
-prefix_scale = "si"
-
-# 1 joule per metre = 1 newton
-["joule/metre"]
-symbols = ["J/m", "j/m"]
-aliases = ["joules/metre"]
 factor = "1"
 prefix_scale = "si"
 

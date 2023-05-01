@@ -1,17 +1,23 @@
 dimensions = {"length" = 2, "mass" = 1, "time" = -3, "electric current" = -2}
 
 
+# formula:
+# base units: kg*m^2/s^3*A^2
+
+# Examples:
+#   1 ohm = 1 siemens^-1
+#         = 1 volt/amp
+#         = 1 watt/amp^2
+#         = 1 volt^2/watt
+#         = 1 henry/second
+#         = 1 joule*second/coulomb^2
+#         = 1 joule/second*amp^2
+
+
 # The ohm is the SI unit of electrical resistance
 ["ohm"]
 symbols = ["Ω"]
 aliases = ["ohms"]
-factor = "1"
-prefix_scale = "si"
-
-# 1 volt per ampere = 1 ohm
-["volt/ampere"]
-symbols = ["V/A"]
-aliases = ["volts/ampere", "volts/amp", "volt/amp"]
 factor = "1"
 prefix_scale = "si"
 

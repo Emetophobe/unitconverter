@@ -7,6 +7,8 @@ aliases = ["joules"]
 factor = "1"
 prefix_scale = "si"
 
+# Keep these units even though they can be composed
+
 # 1 watt-second = 1 joule
 ["watt-second"]
 symbols = ["Ws", "W-s"]
@@ -20,6 +22,7 @@ aliases = ["watt-minutes", "wattminutes", "wattminute"]
 factor = "60"
 prefix_scale = "si"
 
+# Keep this for the Wh symbol (i.e kWh, mWh)
 ["watt-hour"]
 symbols = ["Wh", "W-h"]
 aliases = ["watt-hours", "watthours", "watthour"]
@@ -77,14 +80,3 @@ factor = "1E-7"
 symbols = ["thm"]
 aliases = ["therms"]
 factor = "105506000"
-
-
-# source: https://en.wikipedia.org/wiki/Foot-pound_(energy)
-["inch-pound force"]
-symbols = ["in-lbf"]
-factor = "0.112984829"
-
-# source: https://en.wikipedia.org/wiki/Foot-pound_(energy)
-["foot-pound force"]
-symbols = ["ft-lbf"]
-factor = "1.3558179483"

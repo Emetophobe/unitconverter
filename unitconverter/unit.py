@@ -141,10 +141,3 @@ class Unit:
 
     def __str__(self) -> str:
         return self.name
-
-
-def dump_unit(unit: Unit) -> None:
-    """ Helper to print a unit to stdout. """
-    print('name:     ', unit.name)
-    print('category: ', unit.category)
-    print('units:    ', unit.units)

@@ -130,27 +130,27 @@ class Registry:
             with open(filename, 'rb') as infile:
                 data = tomllib.load(infile)
 
-                dimensions = UnitDict(data.pop('dimensions'))
-                dimension_key = dimensions.as_tuple()
+            dimensions = UnitDict(data.pop('dimensions'))
+            dimension_key = dimensions.as_tuple()
 
-                #print(f'{category:<26}', dict(dimensions))
+            # print(f'{category:<26}', dict(dimensions))
 
-                # Check for duplicate dimensions
-                if dimension_key in self._dimensions:
-                    original = self._dimensions[dimension_key]
-                    raise DefinitionError(f'{category} and {original} have the'
-                                          f' same dimensions: {dimensions}')
+            # Check for duplicate dimensions
+            if dimension_key in self._dimensions:
+                original = self._dimensions[dimension_key]
+                raise DefinitionError(f'{category} and {original} have the'
+                                      f' same dimensions: {dimensions}')
 
-                # Save dimension/category info
-                self._dimensions[dimension_key] = category
+            # Save dimension/category info
+            self._dimensions[dimension_key] = category
 
-                # Add unit definitions
-                for name, args in data.items():
-                    try:
-                        self.new_unit(UnitDefinition(name, category, dimensions, **args))
-                    except DefinitionError as e:
-                        raise DefinitionError(f'Invalid definition in {filename}\n'
-                                              f'Definition error: {e}')
+            # Add unit definitions
+            for name, args in data.items():
+                try:
+                    self.new_unit(UnitDefinition(name, category, dimensions, **args))
+                except DefinitionError as e:
+                    raise DefinitionError(f'Invalid definition in {filename}\n'
+                                          f'Definition error: {e}')
 
 
 # Global unit registry

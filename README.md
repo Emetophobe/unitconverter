@@ -134,6 +134,11 @@ Unit composition is an experimental feature and there are still bugs to be sorte
     $ python3 convert.py 5 cm nm -c
     5 cm = 50,000,000 nm
 
+#### Show E notation with `-e`/`--exponent`
+
+    $ python3 convert.py 5 cm nm -c
+    5 cm = 5E+7 nm
+
 #### Convert multiple units at once
 
     $ python3 convert.py 1 metre cm in ft -p 4
@@ -148,8 +153,8 @@ Unit composition is an experimental feature and there are still bugs to be sorte
 
 #### Multi-word unit names are also supported but they need to be wrapped in quotes
 
-    $ python3 convert.py 1 "cubic metres" litres
-    1 cubic metres = 1000 litres
+    $ python3 convert.py 1 "US survey acre" km^2 -p 8
+    1 US survey acre = 0.00404687 km^2
 
 #
 ### Note: This script is a work in progress. Bug reports or suggestions are welcome.

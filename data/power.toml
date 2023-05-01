@@ -1,11 +1,14 @@
 dimensions = {"length" = 2, "mass" = 1, "time" = -3}
 
 
-# watt formula: mass * length^2 / time^3
-# watt definition: 1 kg * m2 * s−3
+# formula: mass * length^2 / time^3
+# base units: 1 kg*m^2*s^−3
 
 # Examples:
-# 1 volt*amp = 1 watt
+#   1 watt = 1 volt*ampere
+#          = 1 joule/second
+#          = 1 volt^2/ohm
+#          = 1 ampere^2*ohm
 
 
 # The watt is the SI unit of power

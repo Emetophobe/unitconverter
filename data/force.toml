@@ -5,8 +5,7 @@ dimensions = {"mass" = 1, "length" = 1, "time" = -2}
 # base units: kg*m/s^2
 
 # Examples:
-
-# 1 joule/metre = 1 newton
+#   1 newton = 1 joule/metre
 
 
 # The newton is the SI unit of force

@@ -1,9 +1,9 @@
 dimensions = {"length" = 2}
 
-# square metre (m^2) is the SI unit of area
 
-# metre^2 can be generated from metre.
-# There's no need to define it here.
+# metre^2 (m^2) is the SI unit of area
+# metre^2 can be generated from metre, no need to define it here
+# All other length units can also be used to generate an area unit
 
 
 # 1 are = 100 m^2

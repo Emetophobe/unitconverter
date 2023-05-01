@@ -1,22 +1,17 @@
 dimensions = {"luminous intensity" = 1, "length" = -2}
 
 
+# formula: luminous intensity / length^2
+# base units: candela / metre^2
+
+
 # The SI unit for luminance is candela per square metre (cd/m2)
-["candela/metre2"]
-symbols = ["cd/m2"]
-aliases = ["candelas/metre2"]
-factor = "1"
-prefix_scale = "si"
+# candela/metre^2 can be generated/composited from base units
 
-["candela/inch2"]
-symbols = ["cd/in2"]
-aliases = ["candelas/inch2"]
-factor = "1550.0031"
+# Other examples:
+#   1 candela/m^2 = ~0.00064516 candela/in^2
+#                 = ~0.09290304 candela/ft^2
 
-["candela/foot2"]
-symbols = ["cd/ft2"]
-aliases = ["candelas/foot2"]
-factor = "10.763910417"
 
 # 1 nit is equal to 1 cd/m2
 ["nit"]
@@ -24,6 +19,7 @@ symbols = ["nt"]
 aliases = ["nits"]
 factor = "1"
 
+# stilb is the older CGS unit of luminance
 ["stilb"]
 symbols = ["sb"]
 aliases = ["stilbs"]

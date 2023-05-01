@@ -1,7 +1,8 @@
 dimensions = {"length" = 1, "time" = 1}
 
 
-# Speed formula: length/time
+# formula: length/time
+
 # Examples:
 #   metre/second (base unit)
 #   mile/hour

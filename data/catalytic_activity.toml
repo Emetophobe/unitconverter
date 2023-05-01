@@ -1,5 +1,6 @@
 dimensions = {"amount of substance" = 1, "time" = -1}
 
+
 # The katal is the SI unit of catalytic activity
 # 1 katal = 1 mol/s
 ["katal"]

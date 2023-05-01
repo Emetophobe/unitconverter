@@ -1,5 +1,9 @@
 dimensions = {"mass" = 1, "time" = -2, "electric current" = -1}
 
+
+# formula: weber/metre^2
+
+
 # The tesla is the SI unit of magnetic flux density
 ["tesla"]
 symbols = ["T"]

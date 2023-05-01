@@ -1,11 +1,8 @@
 dimensions = {"electric current" = 1, "time" = 1}
 
-# The following units can be composed to make a coulomb:
 
-# 1 ampere*second = 1 coulomb
-
-
-# The # coulomb is the SI unit of electric charge
+# The coulomb is the SI unit of electric charge
+# 1 coulomb = 1 ampere*second
 ["coulomb"]
 symbols = ["C"]
 aliases = ["coulombs"]

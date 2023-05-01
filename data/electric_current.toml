@@ -1,9 +1,11 @@
 dimensions = {"electric current" = 1}
 
-# The following units can be composed to make an ampere:
 
-# 1 watt/volt = 1 ampere
-# 1 coulomb/second = 1 ampere
+# Ampere is one of the 7 SI base units
+
+# Examples:
+#   1 ampere = 1 watt/volt
+#            = 1 coulomb/second
 
 
 # The ampere is the SI unit of electric current

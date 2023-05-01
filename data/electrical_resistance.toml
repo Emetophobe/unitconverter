@@ -10,8 +10,6 @@ dimensions = {"length" = 2, "mass" = 1, "time" = -3, "electric current" = -2}
 #         = 1 watt/amp^2
 #         = 1 volt^2/watt
 #         = 1 henry/second
-#         = 1 joule*second/coulomb^2
-#         = 1 joule/second*amp^2
 
 
 # The ohm is the SI unit of electrical resistance

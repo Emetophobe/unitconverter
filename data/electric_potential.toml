@@ -1,10 +1,12 @@
 dimensions = {"length" = 2, "mass" = 1, "time" = -3, "electric current" = -1}
 
-# The following units can be composed to make a volt:
 
-# 1 joule/coulomb = 1 volt
-# 1 watt/ampere = 1 volt
-# 1 weber/second = 1 volt
+# base units: kg*m^2*s^−3*A^−1
+
+# Examples:
+#   1 volt = 1 watt/ampere
+#          = 1 joule/coulomb
+#          = 1 weber/second
 
 
 # The volt is the SI unit of electric potential

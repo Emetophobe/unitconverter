@@ -1,8 +1,14 @@
 dimensions = {"length" = -1, "mass" = 1, "time" = -2}
 
 
-# Pressure formula: force / length^2
+# formula: force / length^2
+# base units: kg*m^−1*s^−2
+
 # Examples:
+#   1 pascal = 1 newton/metre^2
+#            = 1 joule/metre^3
+
+# Other pressure units:
 #   lbf/in^2 (pound-force per square inch a.k.a psi)
 #   g-f/m^2 (gram-force per square metre)
 

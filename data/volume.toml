@@ -1,10 +1,9 @@
 dimensions = {"length" = 3}
 
 
-# cubic metre (m^3) is the SI unit of volume
-
-# cubic metre can be generated from metre, no need to define it here
-# Any other length unit can also be used to make a volume unit
+# metre^3 (m^3) is the SI unit of area
+# metre^3 can be generated from metre, no need to define it here
+# All other length units can also be used to generate a volume unit
 
 
 # 1 litre = 0.001 metre^3

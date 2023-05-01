@@ -1,8 +1,11 @@
 dimensions = {"length" = -2, "mass" = -1, "time" = 3, "electric current" = 2}
 
 
-# 1 siemens = ohm^-1
+# base units: kg^−1*m^−2*s^3*A^2
 
+# Examples:
+#   1 siemens = 1 1/ohm or ohm^-1
+#             = 1 ampere/volt
 
 
 # The siemens is the SI unit of electrical conductance

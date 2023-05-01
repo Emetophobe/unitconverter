@@ -1,5 +1,15 @@
 dimensions = {"length" = 2, "mass" = 1, "time" = -2}
 
+
+# formula: mass*velocity^2
+# base units:  kg*m2*s-2
+
+# Examples:
+#   1 joule = pascal*metre^3
+#           = watt*second
+#           = coulomb*volt
+
+
 # The joule is the SI unit of energy
 ["joule"]
 symbols = ["J", "j"]
@@ -7,7 +17,8 @@ aliases = ["joules"]
 factor = "1"
 prefix_scale = "si"
 
-# Keep these units even though they can be composed
+# Keep these watt units even though they can be composed
+# Need these for the combined symbols like kHw
 
 # 1 watt-second = 1 joule
 ["watt-second"]

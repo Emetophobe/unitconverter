@@ -149,10 +149,17 @@ def split_exponent(name: str) -> tuple[str, int]:
         else:
             unit, exp = result.group('unit'), 1
 
-        if name != unit + str(exp):
-            logging.debug(f'split_exponent({name!r}) did not parse unit correctly')
-            logging.debug(f'unit: {unit!r}')
-            logging.debug(f'exponent: {exp!r}')
+        # Try rebuilding the unit name to see if it was split correctly
+        rejoined = unit
+        if name.endswith(str(exp)):
+            rejoined += str(exp)
+
+        logging.debug('split_exponent()')
+        logging.debug(f'name  : {name}')
+        logging.debug(f'joined: {rejoined}')
+
+        if name != rejoined:
+            logging.debug(f'error parsing {name!r}')
             raise UnitError(f'Invalid unit: {name}')
 
         return unit, exp

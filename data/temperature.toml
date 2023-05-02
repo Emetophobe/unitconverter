@@ -19,5 +19,5 @@ aliases = ["centigrade"]
 symbols = ["°F", "degF", "f"]
 
 ["rankine"]
-symbols = ["°R", "°RA", "R", "r"]
+symbols = ["°R", "°RA", "degR", "r"]
 aliases = ["rankines"]

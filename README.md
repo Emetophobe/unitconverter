@@ -75,7 +75,7 @@ As an example, you can create a speed unit by dividing a `length` unit by a `tim
     $ python3 convert.py 1 metre/second inches/day -p 2
     1 metre/second = 3401574.8 inches/day
 
-Thousands of unit combinations are possible:
+Many other unit combinations are possible:
 
     $ python3 convert.py 1 watt amp*volt joule/second
     1 watt = 1 amp*volt

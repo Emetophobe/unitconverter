@@ -89,12 +89,12 @@ class Unit:
 
     @property
     def name(self) -> str:
-        """ Returns a unit name. """
+        """ Return a unit name. """
         return format_display_name(self.units)
 
     @property
     def dimension(self) -> str:
-        """ Returns a dimension name. """
+        """ Return a sorted dimension name. """
         return format_display_name(self.dimen, True) or 'dimensionless'
 
     def __pow__(self, other: int) -> Self:

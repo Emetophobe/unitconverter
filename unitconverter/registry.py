@@ -106,21 +106,18 @@ class Registry:
         """ Get the dictionary of dimensions/categories. """
         return dict(self._dimensions)
 
-    def get_category(self, units: Unit | UnitDict) -> str:
-        """ Get a category name from unit dimensions. """
-        if isinstance(units, Unit):
-            dimen = units.dimen
-        elif isinstance(units, UnitDict):
-            dimen = units
-        else:
-            raise UnitError(f'{units!r} is not a valid Unit or UnitDict')
+    def get_category(self, unit: Unit) -> str:
+        """ Get a unit category name from a unit. """
+        if not isinstance(unit, Unit):
+            raise UnitError(f'{unit!r} is not a valid Unit')
 
-        # Look for a matching dimension category
-        if dimen.as_tuple() in self._dimensions:
-            return self._dimensions[dimen.as_tuple()]
+        # Look for a matching category
+        dimen = unit.dimen.as_tuple()
+        if dimen in self._dimensions:
+            return self._dimensions[dimen]
 
-        # Just use the dimension name as a fallback
-        return dimen.name
+        # Use the dimension name as a fallback
+        return unit.dimen.name
 
     def _load_units(self) -> None:
         """ Load pre-defined units from toml files. """

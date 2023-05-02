@@ -45,8 +45,8 @@ def convert(value: Decimal | int | str, source: Unit | str, dest: Unit | str) ->
     source = parse_unit(source)
     dest = parse_unit(dest)
 
-    source_category = get_category(source.dimen)
-    dest_category = get_category(dest.dimen)
+    source_category = get_category(source)
+    dest_category = get_category(dest)
 
     logging.debug('convert()')
     logging.debug(f'source unit    : {source!r}')

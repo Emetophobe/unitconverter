@@ -60,6 +60,11 @@ symbols = ["bsh", "bu"]
 aliases = ["bushels"]
 factor = "0.03636872"
 
+["peck"]
+symbols = ["pk"]
+aliases = ["pecks"]
+factor = "0.00909218"
+
 ["fluid ounce"]
 symbols = ["floz"]
 aliases = ["fluid ounces"]
@@ -73,7 +78,7 @@ factor = "0.00454609"
 ["pint"]
 symbols = ["pt"]
 aliases = ["pints"]
-factor = "0.0005682615"
+factor = "0.00056826125"
 
 ["quart"]
 symbols = ["qt"]
@@ -96,7 +101,7 @@ aliases = ["imperial teaspoons"]
 factor = "0.000005919388"
 
 
-# US customary and survey units
+# US customary units
 
 
 ["fifth"]
@@ -106,64 +111,78 @@ factor = "0.0007570823568"
 ["US gill"]
 symbols = ["usgi"]
 aliases = ["US gills", "usgills", "usgill"]
-factor = "0.0001182941"
+factor = "0.00011829411825"
 
 ["US barrel"]
 symbols = ["usbbl"]
 aliases = ["US barrels", "usbarrels", "usbarrel"]
-factor = "0.1192404712"
-
-["US bushel"]
-symbols = ["usbsh", "usbu"]
-aliases = ["US bushels", "usbushels", "usbushel"]
-factor = "0.0352391"
+factor = "0.119240471196"
 
 ["US fluid ounce"]
 symbols = ["usfloz"]
 aliases = ["US fluid ounces"]
-factor = "0.0000295735"
+factor = "0.0000295735295625"
 
 ["US liquid gallon"]
 symbols = ["usgal"]
 aliases = ["US liquid gallons", "usgallons", "usgallon"]
 factor = "0.003785411784"
 
-["US dry gallon"]
-symbols = ["usdrygal"]
-aliases = ["US dry gallons", "usdrygallons", "usdrygallon"]
-factor = "0.00440488"
+["US liquid quart"]
+symbols = ["usqt"]
+aliases = ["US liquid quarts", "usquarts", "usquart"]
+factor = "0.000946352946"
 
 ["US liquid pint"]
 symbols = ["uspt"]
 aliases = ["US liquid pints", "uspints", "uspint"]
-factor = "0.000473176"
-
-["US dry pint"]
-symbols = ["usdrypt"]
-aliases = ["US dry pints", "usdrypints", "usdrypint"]
-factor = "0.000550610475"
-
-["US liquid quart"]
-symbols = ["usqt"]
-aliases = ["US liquid quarts", "usquarts", "usquart"]
-factor = "0.000946353"
-
-["US dry quart"]
-symbols = ["usdryqt"]
-aliases = ["US dry quarts", "usdryquarts", "usdryquart"]
-factor = "0.0011012107"
+factor = "0.000473176473"
 
 ["US cup"]
 symbols = ["uscup"]
 aliases = ["US cups", "uscups"]
-factor = "0.000236588"
+factor = "0.0002365882365"
 
 ["US tablespoon"]
 symbols = ["ustbsp"]
 aliases = ["US tablespoons"]
-factor = "0.0000147868"
+factor = "0.00001478676478125"
 
 ["US teaspoon"]
 symbols = ["ustsp"]
 aliases = ["US teaspoons"]
-factor = "0.00000492892"
+factor = "0.00000492892159375"
+
+
+# US dry volume
+
+
+["US bushel"]
+symbols = ["usbsh", "usbu"]
+aliases = ["US bushels", "usbushels", "usbushel"]
+factor = "0.03523907016688"
+
+["US peck"]
+symbols = ["uspk"]
+aliases = ["US pecks", "uspecks", "uspeck"]
+factor = "0.00880976754172"
+
+["US dry barrel"]
+symbols = ["usdrybbl"]
+aliases = ["US dry barrels", "usdrybarrels", "usdrybarrel"]
+factor = "0.1156271"
+
+["US dry gallon"]
+symbols = ["usdrygal"]
+aliases = ["US dry gallons", "usdrygallons", "usdrygallon"]
+factor = "0.00440488377086"
+
+["US dry quart"]
+symbols = ["usdryqt"]
+aliases = ["US dry quarts", "usdryquarts", "usdryquart"]
+factor = "0.001101220942715"
+
+["US dry pint"]
+symbols = ["usdrypt"]
+aliases = ["US dry pints", "usdrypints", "usdrypint"]
+factor = "0.0005506104713575"

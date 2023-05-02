@@ -90,28 +90,28 @@ def format_decimal(value: Decimal,
     return number
 
 
-def format_name(units: dict[str, int]) -> str:
+def format_name(units: dict[str, int], sort_keys: bool = False) -> str:
     """ Format unit name without divisor (i.e "metre*second^-1") """
     numers = []
-    for unit, exp in units.items():
+    for unit, exp in sorted(units.items()) if sort_keys else units.items():
         numers.append(format_exponent(unit, exp))
 
     return MULTI_SYMBOL.join(numers)
 
 
-def format_display_name(units: dict[str, int]) -> str:
+def format_display_name(units: dict[str, int], sort_keys: bool = False) -> str:
     """ Format unit display name with divisor (i.e "metre/second") """
     numers = []
     denoms = []
 
-    for unit, exp in units.items():
+    for unit, exp in sorted(units.items()) if sort_keys else units.items():
         if exp > 0:
             numers.append(format_exponent(unit, exp))
         else:
             denoms.append(format_exponent(unit, -exp))
 
     if not numers:
-        return format_name(units)
+        return format_name(units, sort_keys)
 
     elif not denoms:
         return MULTI_SYMBOL.join(numers)

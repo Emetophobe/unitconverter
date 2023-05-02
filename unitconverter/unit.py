@@ -22,11 +22,6 @@ class UnitDict(dict):
             else:
                 raise UnitError(f'Invalid unit or dimension: {units}')
 
-    @property
-    def name(self):
-        """ Create name from units dictionary. """
-        return format_display_name(self)
-
     def as_tuple(self):
         """ Create a hashable tuple from the dictionary. """
         return tuple(sorted(self.items()))
@@ -76,7 +71,7 @@ class UnitDict(dict):
         return f'UnitDict({super().__repr__()})'
 
     def __str__(self) -> str:
-        return self.name
+        return format_display_name(self)
 
 
 class Unit:
@@ -93,14 +88,14 @@ class Unit:
         self.dimen = UnitDict(dimen)
 
     @property
-    def name(self):
-        return self.units.name
+    def name(self) -> str:
+        """ Returns a unit name. """
+        return format_display_name(self.units)
 
     @property
     def dimension(self) -> str:
-        if self.dimen.name:
-            return self.dimen.name
-        return 'dimensionless'
+        """ Returns a dimension name. """
+        return format_display_name(self.dimen, True) or 'dimensionless'
 
     def __pow__(self, other: int) -> Self:
         if not isinstance(other, int):

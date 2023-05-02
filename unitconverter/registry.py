@@ -117,7 +117,7 @@ class Registry:
             return self._dimensions[dimen]
 
         # Use the dimension name as a fallback
-        return unit.dimen.name
+        return unit.dimension
 
     def _load_units(self) -> None:
         """ Load pre-defined units from toml files. """

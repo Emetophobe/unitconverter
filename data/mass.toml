@@ -2,91 +2,95 @@ dimensions = {"mass" = 1}
 
 
 # kilogram (kg) is the SI unit of mass
+# Use gram for prefix scaling but adjust factor so that kilogram is the base unit
 ["gram"]
 symbols = ["g"]
 aliases = ["grams"]
-factor = "0.001"  # adjust gram factor so kilogram is the base unit (1)
+factor = "0.001"  # kg has a factor of 1
 prefix_scale = "si"
 
-# 1 ounce is 28.34952 grams
 ["ounce"]
 symbols = ["oz"]
 aliases = ["ounces"]
-factor = "28.34952"
+factor = "0.028349523125"
 
-# 1 pound is 453.59237 grams
+# 1 pound = 16 ounces
 ["pound"]
 symbols = ["lbs", "lb"]
 aliases = ["pounds"]
-factor = "453.59237"
+factor = "0.45359237"
 
-# 1 kilopound (kip) = 1000 lbs or 453,592.37 grams
+# 1 kilopound (kip) = 1000 lbs
 ["kilopound"]
 symbols = ["klbs", "klb"]
 aliases = ["kilopounds"]
-factor = "453592.37"
+factor = "453.59237"
 
-# 1 stone = 14 lbs or 6350.29 grams
+# 1 stone = 14 lbs
 ["stone"]
 symbols = ["st"]
 aliases = ["stones"]
-factor = "6350.29"
+factor = "6.35029318"
 
-# 1 metric ton (tonne) = 1,000,000 grams = 1E+6 grams
+# 1 metric ton (tonne) = 1000 kg
 ["tonne"]
 symbols = ["ton"]
 aliases = ["tonnes"]
-factor = "1E+6"
+factor = "1000"
 prefix_scale = "si"
 
-# 1 long ton = 1,016,046.91 grams
+# 1 long ton is exactly 1.2 short tons
 ["long ton"]
 symbols = ["LT"]
-aliases = ["long tons"]
-factor = "1016046.91"
+aliases = ["long tons", "imperial tons", "imperial ton"]
+factor = "1016.0469088"
 
-# 1 short ton = 907,184.74 grams
 ["short ton"]
 symbols = ["ST"]
-aliases = ["short tons"]
-factor = "907184.74"
+aliases = ["short tons", "US tons", "US ton"]
+factor = "907.18474"
 
-# 1 carat = 0.2 grams
+# 1 carat = 0.2 grams or 0.0002 kg
 ["carat"]
 symbols = ["ct"]
 aliases = ["carats"]
-factor = "0.2"
+factor = "0.0002"
 
 ["dalton"]
 symbols = ["Da"]
 aliases = ["daltons"]
-factor = "1.660540199E-24"
-
-["drachm"]
-symbols = ["dr"]
-aliases = ["drachms", "drams", "dram"]
-factor = "1.77185"
-
-["grain"]
-symbols = ["gr"]
-aliases = ["grains"]
-factor = "0.06479891"
-
-["pennyweight"]
-symbols = ["dwt"]
-aliases = ["pennyweights"]
-factor = "1.55517384"
+factor = "1.660540199E-27"
 
 ["slug"]
 aliases = ["slugs"]
-factor = "14593.9"
+factor = "14.59390"
 
+# 7000 grains = 1 pound
+["grain"]
+symbols = ["gr"]
+aliases = ["grains"]
+factor = "6.479891E-5"
+
+# 1 avoirdupois dram = roughly 27.3438 grains
+["dram"]
+symbols = ["dr"]
+aliases = ["drams", "drachms", "drachm"]
+factor = "0.00177185"
+
+# 1 pennyweight = 24 grains
+["pennyweight"]
+symbols = ["dwt"]
+aliases = ["pennyweights"]
+factor = "0.00155517384"
+
+# 1 troy ounce = 480 grains
 ["troy ounce"]
 symbols = ["ozt"]
 aliases = ["troy ounces"]
-factor = "31.1035"
+factor = "0.0311034768"
 
+# 1 troy pound = 12 troy ounces = 5760 grains
 ["troy pound"]
 symbols = ["lbt"]
 aliases = ["troy pounds"]
-factor = "373.242"
+factor = "0.3732417216"

@@ -1,13 +1,11 @@
 dimensions = {"length" = 1, "time" = -2}
 
 
-# base units: metre/second^2
-
 # metre per second squared is the base unit of acceleration
 # https://en.wikipedia.org/wiki/Metre_per_second_squared
 
 
-# Example acceleration units:
+# Example acceleration units that can be composited:
 #   metre/second^2
 #   ft/s^2
 #   mile/hour^2

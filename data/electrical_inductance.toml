@@ -4,13 +4,13 @@ dimensions = {"length" = 2, "mass" = 1, "time" = -2, "electric current" = -2}
 # base units: kg*m2/s2*A2
 
 # Examples:
-#  1 henry = 1 newton*metre/ampere^2
-#          = 1 joule/ampere^2
-#          = 1 weber/ampere
-#          = 1 volt*second/ampere
-#          = 1 second^2/farad
-#          = 1 ohm/hertz
-#          = 1 ohm*second
+#   1 henry = 1 newton*metre/ampere^2
+#           = 1 joule/ampere^2
+#           = 1 weber/ampere
+#           = 1 volt*second/ampere
+#           = 1 second^2/farad
+#           = 1 ohm/hertz
+#           = 1 ohm*second
 
 
 # The henry is the SI unit of electrical inductance

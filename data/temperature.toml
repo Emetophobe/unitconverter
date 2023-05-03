@@ -1,11 +1,11 @@
 dimensions = {"temperature" = 1}
 
 
-# Temperature units use a custom function so they
-# can't be composited with other units for now
+# Temperature units use a custom conversion function
+# they can't be composited with other units for now
 
 
-# The kelvin is the SI base unit of temperature
+# kelvin is the SI base unit of temperature
 ["kelvin"]
 symbols = ["K"]
 aliases = ["kelvins"]

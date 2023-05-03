@@ -1,7 +1,6 @@
 dimensions = {"length" = 2, "mass" = 1, "time" = -3, "electric current" = -2}
 
 
-# formula:
 # base units: kg*m^2/s^3*A^2
 
 # Examples:

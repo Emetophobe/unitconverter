@@ -154,12 +154,12 @@ def split_exponent(name: str) -> tuple[str, int]:
         if name.endswith(str(exp)):
             rejoined += str(exp)
 
-        logging.debug('split_exponent()')
-        logging.debug(f'name  : {name}')
-        logging.debug(f'joined: {rejoined}')
-
         if name != rejoined:
+            logging.debug('split_exponent()')
             logging.debug(f'error parsing {name!r}')
+            logging.debug(f'name  : {name}')
+            logging.debug(f'joined: {rejoined}')
+
             raise UnitError(f'Invalid unit: {name}')
 
         return unit, exp
@@ -192,8 +192,8 @@ def simplify_unit(name: str) -> str:
 
 
 # Unit name and exponent patterns
-_unit_pattern = r'(?P<unit>[a-zA-Z°Ωµ]+[\-]?[a-zA-Z°Ωµ]+|[a-zA-Z°Ωµ]+){1}'
-_exp_pattern = r'(?P<exp>[-+]?[0-9]+)?'
+_unit_pattern = r'(?P<unit>[a-zA-Z°Ωµ-]*[a-zA-Z°Ωµ]+){1}'
+_exp_pattern = r'[\^]?(?P<exp>[-+]?[0-9]+)?'
 _pattern = re.compile(_unit_pattern + _exp_pattern)
 
 

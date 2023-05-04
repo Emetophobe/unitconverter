@@ -48,7 +48,7 @@ factor = "0.00000005"
 ["gill"]
 symbols = ["gi"]
 aliases = ["gills"]
-factor = "0.0001420653"
+factor = "0.0001420653125"
 
 ["barrel"]
 symbols = ["bbl"]

@@ -220,7 +220,7 @@ _replacements = {
     ' per ': '/',
 
     # simplify symbols
-    # 'µ': 'mu',
+    'µ': 'mu',
     # '°': 'deg',
     # 'Ω': 'ohm',
 

@@ -14,26 +14,26 @@ prefix_scale = "si"
 ["degree"]
 symbols = ["deg"]
 aliases = ["degrees"]
-factor = "0.0174532925"
+factor = "1.745329251994329508887757483E-2"
 
 # 1 gradian = pi / 200 radians
 ["gradian"]
 symbols = ["gon", "grad"]
 aliases = ["gradians", "grade"]
-factor = "0.015708"
+factor = "1.570796326794896557998981734E-2"
 
 # 1 arcsecond = pi / (180 × 3600) radians
 ["arcsecond"]
-symbols = ["arcsec"]
+symbols = ["arcsec", "′"]
 aliases = ["arc second"]
-factor = "0.000004848136957929807"
+factor = "4.848136811095359746910437451E-6"
 prefix_scale = "si"
 
 # 1 arcminute = pi / (60 x 180) radians
 ["arcminute"]
-symbols = ["arcmin"]
+symbols = ["arcmin", "″"]
 aliases = ["arc minute"]
-factor = "0.000290888"
+factor = "2.908882086657215848146262471E-4"
 
 # 1 turn = 360 degrees = 400 gradians = 2π radians
 ["turn"]

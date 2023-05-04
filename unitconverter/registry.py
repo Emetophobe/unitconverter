@@ -5,7 +5,7 @@ from pathlib import Path
 
 import tomllib
 
-from unitconverter.definitions import UnitDefinition, create_definitions
+from unitconverter.definitions import UnitDefinition
 from unitconverter.exceptions import DefinitionError, UnitError
 from unitconverter.formatting import simplify_unit, split_exponent
 from unitconverter.unit import Unit, UnitDict
@@ -37,7 +37,7 @@ class Registry:
         self._units[unitdef.name] = unitdef
 
         # Add prefixed unit definitions if the unit supports it
-        for prefix_unit in create_definitions(unitdef):
+        for prefix_unit in unitdef.prefixes():
             self.add_aliases(prefix_unit, prefix_unit.names())
             self._units[prefix_unit.name] = prefix_unit
 

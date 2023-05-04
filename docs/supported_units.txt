@@ -6,7 +6,6 @@ Absorbed Dose
 
 Acceleration
 
-	metre/second²
 	galileo
 
 Amount Of Substance
@@ -16,7 +15,6 @@ Amount Of Substance
 
 Area
 
-	square metre
 	are
 	barn
 	hectare
@@ -28,17 +26,13 @@ Area
 	circular thou
 	circular inch
 	US survey acre
-	US survey square foot
-	US survey square mile
-	US survey square rod
-	homestead
-	section
-	township
+	US survey homestead
+	US survey section
+	US survey township
 
 Catalytic Activity
 
 	katal
-	mole/second
 	enzyme unit
 
 Data Storage
@@ -60,32 +54,23 @@ Effective Dose
 Electric Charge
 
 	coulomb
-	ampere-second
-	ampere-minute
-	ampere-hour
 	franklin
 
 Electric Current
 
 	ampere
-	watt/volt
-	coulomb/second
 	abampere
 	statampere
 
 Electric Potential
 
 	volt
-	joule/coulomb
-	watt/ampere
-	weber/second
 	abvolt
 	statvolt
 
 Electrical Capacitance
 
 	farad
-	coulomb/volt
 	abfarad
 	statfarad
 
@@ -106,7 +91,6 @@ Electrical Inductance
 Electrical Resistance
 
 	ohm
-	volt/ampere
 	abohm
 	statohm
 
@@ -121,17 +105,14 @@ Energy
 	electron volt
 	calorie
 	kilocalorie
-	btu
-	quad
+	british thermal unit
+	quadrillion btu
 	erg
 	therm
-	inch-pound force
-	foot-pound force
 
 Force
 
 	newton
-	joule/metre
 	dyne
 	gram-force
 	kilopond
@@ -155,19 +136,14 @@ Fuel Consumption
 
 	litre/metre
 	litre/100km
-	gallon/mile
-	usgallon/mile
+	gallon/metre
+	usgallon/metre
 
 Fuel Economy
 
-	metre/litre
-	foot/litre
-	mile/litre
-	foot/gallon
 	metre/gallon
-	mile/gallon
-	foot/usgallon
 	metre/usgallon
+	mile/gallon
 	mile/usgallon
 
 Illuminance
@@ -224,9 +200,6 @@ Length
 
 Luminance
 
-	candela/metre²
-	candela/inch²
-	candela/foot²
 	nit
 	stilb
 	apostilb
@@ -261,21 +234,26 @@ Magnetic Flux Density
 Mass
 
 	gram
+	tonne
+	carat
+	dalton
 	ounce
 	pound
 	kilopound
 	stone
-	tonne
+	quarter
+	hundredweight
 	long ton
-	short ton
-	carat
-	dalton
-	drachm
-	grain
-	pennyweight
 	slug
+	grain
+	dram
+	pennyweight
 	troy ounce
 	troy pound
+	US stone
+	US quarter
+	US hundredweight
+	short ton
 
 Plane Angle
 
@@ -289,17 +267,12 @@ Plane Angle
 Power
 
 	watt
-	volt-ampere
-	joule/second
-	joule/minute
-	joule/hour
 	horsepower
 	mechanical horsepower
 
 Pressure
 
 	pascal
-	newton/metre²
 	bar
 	barye
 	psi
@@ -331,8 +304,7 @@ Solid Angle
 
 Speed
 
-	metre/second
-	metre/hour
+	kilometre/hour
 	mile/hour
 	knot
 	imperial knot
@@ -362,18 +334,6 @@ Time
 	century
 	millennia
 
-Torque
-
-	newton-metre
-	dyne-metre
-	dyne-centimetre
-	gram-force metre
-	gram-force centimetre
-	ounce-force inch
-	ounce-force foot
-	pound-force inch
-	pound-force foot
-
 Viscosity
 
 	pascal-second
@@ -385,16 +345,16 @@ Viscosity
 
 Volume
 
-	cubic metre
 	litre
+	stere
 	cup
 	tablespoon
 	teaspoon
 	drop
-	stere
 	gill
 	barrel
 	bushel
+	peck
 	fluid ounce
 	gallon
 	pint
@@ -404,15 +364,17 @@ Volume
 	imperial teaspoon
 	fifth
 	US gill
-	US cup
 	US barrel
-	US bushel
 	US fluid ounce
 	US liquid gallon
-	US dry gallon
-	US liquid pint
-	US dry pint
 	US liquid quart
-	US dry quart
+	US liquid pint
+	US cup
 	US tablespoon
 	US teaspoon
+	US bushel
+	US peck
+	US dry barrel
+	US dry gallon
+	US dry quart
+	US dry pint

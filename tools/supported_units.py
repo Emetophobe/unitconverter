@@ -2,6 +2,7 @@
 # Copyright (c) 2022-2023 Mike Cunningham
 
 import sys
+from collections import defaultdict
 from pathlib import Path
 from format_json import file_checksum
 
@@ -14,7 +15,7 @@ DEST_FILE = Path('docs/supported_units.txt')
 
 def create_supported_units(filename):
     """ Generate a text file of all supported units. """
-    categories = get_units()
+    categories = get_categories(get_units())
     sorted_categories = sorted(categories.keys())
 
     old_checksum = file_checksum(filename)
@@ -24,7 +25,7 @@ def create_supported_units(filename):
         for category in sorted_categories:
             outfile.write('\n')
 
-            units = get_regular_units(categories[category])
+            units = categories[category]
             total_units += len(units)
 
             outfile.write(format_name(category.title()) + '\n\n')
@@ -38,9 +39,13 @@ def create_supported_units(filename):
         print(f'{filename.name} is already up to date.')
 
 
-def get_regular_units(units):
-    """ Get a list of non-prefixed units from a unit list. """
-    return [unit for unit in units if not unit.is_prefixed]
+def get_categories(units: dict) -> dict:
+    """ Convert units dict to a dictionary of categories and units. """
+    categories = defaultdict(list)
+    for unit in units.values():
+        if not unit.is_prefixed:
+            categories[unit.category].append(unit)
+    return categories
 
 
 replace_powers = {

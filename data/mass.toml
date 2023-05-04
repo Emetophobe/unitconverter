@@ -75,7 +75,7 @@ factor = "6.479891E-5"
 ["dram"]
 symbols = ["dr"]
 aliases = ["drams", "drachms", "drachm"]
-factor = "0.00177185"
+factor = "0.0017718451953125"
 
 # 1 pennyweight = 24 grains
 ["pennyweight"]

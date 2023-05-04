@@ -1,0 +1,16 @@
+{
+    "farad": {
+        "coulomb/volt": 1,
+        "ampere*second/volt": 1,
+        "watt*second/volt^2": 1,
+        "joule/volt^2": 1,
+        "newton*metre/volt^2": 1,
+        "coulomb^2/joule": 1,
+        "coulomb^2/newton*metre": 1,
+        "second/ohm": 1,
+        "second^2/henry": 1,
+        "1/ohm*Hz": 1,
+        "siemens/Hz": 1,
+        "kg-1*m-2*s4*A2": 1
+    }
+}

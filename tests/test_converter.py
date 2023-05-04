@@ -4,6 +4,7 @@
 import json
 import unittest
 from decimal import Decimal, getcontext
+from pathlib import Path
 
 from unitconverter.converter import convert, parse_unit
 from unitconverter.exceptions import CategoryError, UnitError
@@ -31,14 +32,17 @@ class TestConverter(unittest.TestCase):
         with self.assertRaises(CategoryError):
             convert(1, 'metre', 'litre')
 
-        with open('tests/test_data.json', 'r') as infile:
-            tests = json.load(infile)
+        # Load test data
+        test_files = Path('tests/test_data').glob('*.json')
+        for filename in test_files:
+            with open(filename, 'r') as infile:
+                tests = json.load(infile)
 
-        # Run all tests from the test file
-        for source, test_data in tests.items():
-            for dest, expected in test_data.items():
-                result = convert(1, source, dest)
-                self.assertEqual(result, Decimal(expected), f'{source} to {dest}')
+            # Test all conversions
+            for source, test_data in tests.items():
+                for dest, expected in test_data.items():
+                    result = convert(1, source, dest)
+                    self.assertEqual(result, Decimal(expected), f'{source} to {dest}')
 
     def test_parse_unit(self) -> None:
         """ Test parse_unit() function. """
@@ -70,10 +74,6 @@ class TestConverter(unittest.TestCase):
         # Test invalid prefixes (units that don't support that type of prefix)
         with self.assertRaises(UnitError):
             parse_unit('picobyte')
-
-    def test_parse_composite(self) -> None:
-        """ Test parse_composite() function. """
-        # TODO add tests
 
     def test_format_decimal(self) -> None:
         """ Test format_decimal() function. """

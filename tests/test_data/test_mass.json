@@ -1,0 +1,12 @@
+{
+    "pound": {
+        "ounce": 16,
+        "dram": 256,
+        "grains": 7000
+    },
+    "troy pound": {
+        "troy ounce": 12,
+        "pennyweight": 240,
+        "grains": 5760
+    }
+}

@@ -1,0 +1,26 @@
+{
+    "bushel": {
+        "peck": 4,
+        "gallon": 8,
+        "quart": 32,
+        "pint": 64,
+        "floz": 1280
+    },
+    "usgal": {
+        "usquart": 4,
+        "uspint": 8,
+        "usfloz": 128
+    },
+    "usbushel": {
+        "uspeck": 4,
+        "usdrygal": 8,
+        "usdryquart": 32,
+        "usdrypint": 64
+    },
+    "uscup": {
+        "usgill": 2,
+        "usfloz": 8,
+        "ustbsp": 16,
+        "ustsp": 48
+    }
+}

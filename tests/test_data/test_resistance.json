@@ -1,0 +1,13 @@
+{
+    "ohm": {
+        "1/siemens": 1,
+        "volt/amp": 1,
+        "watt/amp^2": 1,
+        "volt^2/watt": 1,
+        "second/farad": 1,
+        "henry/second": 1,
+        "joule*second/coulomb^2": 1,
+        "joule/second*amp^2": 1,
+        "kg*m2/s3*A2": 1
+    }
+}

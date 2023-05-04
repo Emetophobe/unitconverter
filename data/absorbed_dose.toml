@@ -1,5 +1,5 @@
 # Gray and sievert share the same dimension (J/kg), use a unique dimension for now
-dimensions = {"absorbed dose" =1}
+dimensions = {"absorbed dose" = 1}
 
 
 # The gray is the SI unit of absorbed dose

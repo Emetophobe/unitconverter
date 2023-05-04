@@ -9,7 +9,7 @@ dimensions = {"fuel economy" = 1}
 # formula = length/volume
 # metre per cubic metre is the base unit
 
-# This causes issues since length/volume = length/length3 = area
+# This causes issues since length/volume = length/length^3 = length^-2
 # For now use a "fuel economy" dimension but units outside of this
 # file won't be comparable, such as mile/litre
 

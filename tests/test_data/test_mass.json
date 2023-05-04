@@ -8,5 +8,13 @@
         "troy ounce": 12,
         "pennyweight": 240,
         "grains": 5760
+    },
+    "hundredweight": {
+        "quarter": 4,
+        "stone": 8
+    },
+    "US hundredweight": {
+        "US quarter": 4,
+        "US stone": 8
     }
 }

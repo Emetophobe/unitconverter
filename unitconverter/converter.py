@@ -159,9 +159,19 @@ def _parse_names(names: str) -> list[str]:
 
 def convert_temperature(value: Decimal, source: Unit, dest: Unit) -> Decimal:
     """ Convert temperature units. """
+    value = parse_decimal(value)
+    source = parse_unit(source)
+    dest = parse_unit(dest)
+
+    if source.dimension != 'temperature':
+        raise UnitError(f'Invalid temperature unit: {source.name}')
+
+    if dest.dimension != 'temperature':
+        raise UnitError(f'Invalid temperature unit: {dest.name}')
+
     # Convert from source to kelvin
-    if source.name == 'kelvin':
-        pass
+    if source.name.endswith('kelvin'):
+        value = value * source.factor
     elif source.name == 'celsius':
         value = value + Decimal('273.15')
     elif source.name == 'fahrenheit':
@@ -172,8 +182,8 @@ def convert_temperature(value: Decimal, source: Unit, dest: Unit) -> Decimal:
         raise UnitError(f'Unsupported temperature unit: {source.name}')
 
     # Convert from kelvin to dest
-    if dest.name == 'kelvin':
-        return value
+    if dest.name.endswith('kelvin'):
+        return value / dest.factor
     elif dest.name == 'celsius':
         return value - Decimal('273.15')
     elif dest.name == 'fahrenheit':
@@ -185,7 +195,11 @@ def convert_temperature(value: Decimal, source: Unit, dest: Unit) -> Decimal:
 
 
 def convert_fuel(value: Decimal, source: Unit, dest: Unit) -> Decimal:
-    """ Convert fuel economy and fuel consumption. """
+    """ Convert between fuel economy and fuel consumption units. """
+    value = parse_decimal(value)
+    source = parse_unit(source)
+    dest = parse_unit(dest)
+
     if source.dimension not in FUEL_CATEGORY:
         raise UnitError(f'Invalid fuel unit: {source}')
 

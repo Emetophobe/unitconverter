@@ -171,5 +171,5 @@ Unit composition is an experimental feature and there are still bugs to be sorte
 ### Note: This script is a work in progress. Bug reports and suggestions are welcome.
 
 
-[1]: https://github.com/hgrecco/pint/tree/master/pint
-[2]: https://github.com/nrc-cnrc/MetroloPy/tree/master/metrolopy
+[1]: https://github.com/hgrecco/pint/
+[2]: https://github.com/nrc-cnrc/MetroloPy/

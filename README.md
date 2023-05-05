@@ -147,7 +147,7 @@ Unit composition is an experimental feature and there are still bugs to be sorte
 
 #### Show E notation with `-e`/`--exponent`
 
-    $ python3 convert.py 5 cm nm -c
+    $ python3 convert.py 5 cm nm -e
     5 cm = 5E+7 nm
 
 #### Convert multiple units at once

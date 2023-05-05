@@ -125,10 +125,11 @@ def parse_unit(name: str) -> Unit:
             category = numers[0].dimension
             raise UnitError(f'Invalid unit: {name} ({category}/{category})')
 
-    # Temperature units can't be composited
+    # Check for temperature units which can't be composited
     for unit in numers + denoms:
-        if unit.dimension == 'temperature':
-            raise UnitError(f'Invalid unit: {name} - Cannot combine temperature units')
+        if unit.name in ('celsius', 'fahrenheit', 'rankine'):
+            raise UnitError(f'Invalid unit: {name} - {unit.name} cannot be composited'
+                            ' (only kelvin is supported for now)')
 
     numer = Unit()
     denom = Unit()

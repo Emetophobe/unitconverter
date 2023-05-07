@@ -48,14 +48,6 @@ def convert(value: Decimal | int | str, source: Unit | str, dest: Unit | str) ->
     source_category = get_category(source)
     dest_category = get_category(dest)
 
-    logging.debug('convert()')
-    logging.debug(f'source unit    : {source!r}')
-    logging.debug(f'source dimen   : {source.dimen}')
-    logging.debug(f'source category: {source_category}')
-    logging.debug(f'dest unit      : {dest!r}')
-    logging.debug(f'source dimen   : {dest.dimen}')
-    logging.debug(f'source category: {dest_category}')
-
     if not compatible_units(source_category, dest_category):
         raise CategoryError(f'Category mismatch: {source.name} ({source_category})'
                             f' and {dest.name} ({dest_category})')
@@ -64,7 +56,7 @@ def convert(value: Decimal | int | str, source: Unit | str, dest: Unit | str) ->
     if source_category in FUEL_CATEGORY:
         return convert_fuel(value, source, dest)
 
-    # Temperature converison
+    # Temperature conversion
     elif source_category == 'temperature':
         return convert_temperature(value, source, dest)
 
@@ -91,6 +83,9 @@ def parse_unit(name: str) -> Unit:
     UnitError
         invalid unit name
     """
+    if not name:
+        raise UnitError(f'Invalid unit: {name!r}')
+
     if isinstance(name, Unit):
         return name
 
@@ -217,7 +212,7 @@ def convert_fuel(value: Decimal, source: Unit, dest: Unit) -> Decimal:
 
 
 def compatible_units(source_category: str, dest_category: str) -> bool:
-    """ Returns True if the categories are compatible. """
+    """ Returns True if the unit categories are compatible. """
     if source_category == dest_category:
         return True
     elif source_category in FUEL_CATEGORY and dest_category in FUEL_CATEGORY:

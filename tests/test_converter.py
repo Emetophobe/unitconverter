@@ -6,7 +6,8 @@ import unittest
 from decimal import Decimal, getcontext
 from pathlib import Path
 
-from unitconverter.converter import convert, parse_unit
+from unitconverter.converter import (compatible_units, convert, convert_fuel,
+                                     convert_temperature, parse_unit)
 from unitconverter.exceptions import CategoryError, UnitError
 from unitconverter.formatting import format_decimal, format_exponent
 
@@ -114,3 +115,44 @@ class TestConverter(unittest.TestCase):
 
         with self.assertRaises(ValueError):
             format_decimal(value, precision='bad precision')
+
+    def test_convert_temperature(self):
+        """ Test convert_temperature() function. """
+        result = convert_temperature(1, 'microkelvin', 'celsius')
+        self.assertEqual(Decimal('-273.149999'), result)
+
+        result = convert_temperature(32, 'celsius', 'fahrenheit')
+        self.assertEqual(Decimal('89.6'), result)
+
+        with self.assertRaises(UnitError):
+            convert_temperature(1, 'kelvin', 'metre')
+
+        with self.assertRaises(UnitError):
+            convert_temperature(1, 'metre', 'celsius')
+
+    def test_convert_fuel(self):
+        """ Test convert_fuel() function. """
+        result = convert_fuel(10, 'mpg', 'l/100km')
+        self.assertEqual(Decimal('28.2480936331822'), result)
+
+        with self.assertRaises(UnitError):
+            convert_temperature(1, 'mpg', 'gal')
+
+        with self.assertRaises(UnitError):
+            convert_temperature(1, None, 'l/100km')
+
+    def test_compatible_units(self):
+        """ Test compatible_units() function. """
+        from unitconverter.unit import Unit
+        from unitconverter.registry import get_category
+
+        second = Unit(1, 'second', {'time': 1})
+        metre = Unit(1, 'metre', {'length': 1})
+        inch = Unit('0.0254', 'inch', {'length': 1})
+
+        second_category = get_category(second)
+        metre_category = get_category(metre)
+        inch_category = get_category(inch)
+
+        self.assertTrue(compatible_units(metre_category, inch_category))
+        self.assertFalse(compatible_units(second_category, metre_category))

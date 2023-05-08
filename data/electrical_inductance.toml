@@ -20,13 +20,6 @@ aliases = ["henries"]
 factor = "1"
 prefix_scale = "si"
 
-# 1 weber per ampere = 1 henry
-["weber/ampere"]
-symbols = ["Wb/A"]
-aliases = ["webers/ampere", "webers/amp", "weber/amp"]
-factor = "1"
-prefix_scale = "si"
-
 ["abhenry"]
 symbols = ["abH"]
 aliases = ["abhenries"]

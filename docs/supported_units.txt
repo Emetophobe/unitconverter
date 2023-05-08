@@ -84,7 +84,6 @@ Electrical Conductance
 Electrical Inductance
 
 	henry
-	weber/ampere
 	abhenry
 	stathenry
 
@@ -308,7 +307,8 @@ Speed
 	mile/hour
 	knot
 	imperial knot
-	mach
+	speed of sound
+	speed of light
 
 Temperature
 

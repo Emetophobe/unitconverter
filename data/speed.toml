@@ -31,7 +31,11 @@ factor = "0.5144444444444444444444444444"
 aliases = ["imperial knots"]
 factor = "0.5147733333333333333333333333"
 
-# 1 mach (speed of sound) = ~340.3 m/s
-["mach"]
-symbols = ["Ma"]
-factor = "340.3"
+# speed of sound (20 °C) = ~343 m/s
+["speed of sound"]
+factor = "343"
+
+# speed of light (in a vacuum) = 299,792,458 m/s
+["speed of light"]
+aliases = ["lightspeed"]
+factor = "299792458"

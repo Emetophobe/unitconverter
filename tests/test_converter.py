@@ -7,9 +7,9 @@ from decimal import Decimal, getcontext
 from pathlib import Path
 
 from unitconverter.converter import (compatible_units, convert, convert_fuel,
-                                     convert_temperature, parse_unit)
+                                     convert_temperature)
 from unitconverter.exceptions import CategoryError, UnitError
-from unitconverter.formatting import format_decimal, format_exponent
+from unitconverter.formatting import format_decimal
 
 
 # Set decimal precision
@@ -17,7 +17,7 @@ getcontext().prec = 15
 
 
 class TestConverter(unittest.TestCase):
-    """ Test converting and unit parsing. """
+    """ Test converter module. """
 
     def test_convert(self) -> None:
         """ Test convert() function. """
@@ -44,37 +44,6 @@ class TestConverter(unittest.TestCase):
                 for dest, expected in test_data.items():
                     result = convert(1, source, dest)
                     self.assertEqual(result, Decimal(expected), f'{source} to {dest}')
-
-    def test_parse_unit(self) -> None:
-        """ Test parse_unit() function. """
-        # Test parsing simple built-in units.
-        metre = parse_unit('metre')
-        self.assertEqual(metre.name, 'metre')
-
-        # Test prefix generated units
-        kilolitre = parse_unit('kilolitre')
-        self.assertEqual(kilolitre.name, 'kilolitre')
-
-        # Test symbol generated units
-        unit = parse_unit('ml')
-        self.assertEqual(unit.name, 'millilitre')
-
-        # Test exponent generated units
-        unit = parse_unit('kilometre3')
-        self.assertEqual(unit.name, format_exponent('kilometre', 3))
-        self.assertEqual(unit.dimension, format_exponent('length', 3))
-
-        # Test invalid unit names
-        with self.assertRaises(UnitError):
-            parse_unit('invalid unit')
-
-        # Test invalid prefixes (units that don't support prefix scaling)
-        with self.assertRaises(UnitError):
-            parse_unit('kilodegrees')
-
-        # Test invalid prefixes (units that don't support that type of prefix)
-        with self.assertRaises(UnitError):
-            parse_unit('picobyte')
 
     def test_format_decimal(self) -> None:
         """ Test format_decimal() function. """
@@ -143,8 +112,8 @@ class TestConverter(unittest.TestCase):
 
     def test_compatible_units(self):
         """ Test compatible_units() function. """
-        from unitconverter.unit import Unit
         from unitconverter.registry import get_category
+        from unitconverter.unit import Unit
 
         second = Unit(1, 'second', {'time': 1})
         metre = Unit(1, 'metre', {'length': 1})

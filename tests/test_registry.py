@@ -71,7 +71,6 @@ class TestRegistry(unittest.TestCase):
         # Composite units should raise a unit error (parse_unit() handles this)
         with self.assertRaises(UnitError):
             unit = registry.get_unit('rod/minute')
-            print(unit)
 
         # Invalid unit names
         with self.assertRaises(UnitError):

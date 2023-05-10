@@ -142,8 +142,11 @@ def split_exponent(name: str) -> tuple[str, int]:
         >>> split_exponent("second-1")
         ("second", -1)
     """
+
+    simple_name = simplify_unit(name)
+
     try:
-        result = _pattern.match(name)
+        result = _pattern.match(simple_name)
         if result.group('exp'):
             unit, exp = result.group('unit'), int(result.group('exp'))
         else:
@@ -151,13 +154,14 @@ def split_exponent(name: str) -> tuple[str, int]:
 
         # Try rebuilding the unit name to see if it was split correctly
         rejoined = unit
-        if name.endswith(str(exp)):
+        if simple_name.endswith(str(exp)):
             rejoined += str(exp)
 
-        if name != rejoined:
+        if simple_name != rejoined:
             logging.debug('split_exponent()')
             logging.debug(f'error parsing {name!r}')
             logging.debug(f'name  : {name}')
+            logging.debug(f'simple: {simple_name}')
             logging.debug(f'joined: {rejoined}')
 
             raise UnitError(f'Invalid unit: {name}')
@@ -175,7 +179,7 @@ def simplify_unit(name: str) -> str:
     Examples
     --------
 
-        >>> simplify_unit("Nm²/volt^2)
+        >>> simplify_unit("Nm²/volt^2")
         "Nm2/volt2"
 
         >>> simplify_unit("joule per gram")

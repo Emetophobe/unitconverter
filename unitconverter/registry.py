@@ -84,7 +84,7 @@ class Registry:
             raise UnitError(f'Invalid unit: {name}')
 
         # Split unit name and exponent
-        split_name, exp = split_exponent(simple_name)
+        split_name, exp = split_exponent(name)
         if split_name in self._aliases:
             unit = self._aliases[split_name]
             return Unit(unit.factor, unit.name, unit.dimen) ** exp

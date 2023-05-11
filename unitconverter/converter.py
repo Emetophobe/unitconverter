@@ -71,12 +71,6 @@ def convert_temperature(value: Decimal, source: Unit, dest: Unit) -> Decimal:
     source = parse_unit(source)
     dest = parse_unit(dest)
 
-    if source.dimension != 'temperature':
-        raise UnitError(f'Invalid temperature unit: {source.name}')
-
-    if dest.dimension != 'temperature':
-        raise UnitError(f'Invalid temperature unit: {dest.name}')
-
     # Convert from source to kelvin
     if source.name.endswith('kelvin'):
         value = value * source.factor
@@ -87,7 +81,7 @@ def convert_temperature(value: Decimal, source: Unit, dest: Unit) -> Decimal:
     elif source.name == 'rankine':
         value = value * Decimal(5) / Decimal(9)
     else:
-        raise UnitError(f'Unsupported temperature unit: {source.name}')
+        raise UnitError(f'Invalid temperature unit: {source.name}')
 
     # Convert from kelvin to dest
     if dest.name.endswith('kelvin'):
@@ -99,7 +93,7 @@ def convert_temperature(value: Decimal, source: Unit, dest: Unit) -> Decimal:
     elif dest.name == 'rankine':
         return value * Decimal(9) / Decimal(5)
     else:
-        raise UnitError(f'Unsupported temperature unit: {dest.name}')
+        raise UnitError(f'Invalid temperature unit: {dest.name}')
 
 
 def convert_fuel(value: Decimal, source: Unit, dest: Unit) -> Decimal:

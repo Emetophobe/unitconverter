@@ -1,0 +1,18 @@
+dimensions = {"L" = 2, "M" = 1, "T" = -3, "I" = -1}
+
+# The volt is the SI unit of electric potential
+["volt"]
+symbols = ["V"]
+aliases = ["volts"]
+factor = 1
+prefix = "si"
+
+["abvolt"]
+symbols = ["abV"]
+aliases = ["abvolts"]
+factor = 1E-8
+
+["statvolt"]
+symbols = ["stV"]
+aliases = ["statvolts"]
+factor = 299.7925

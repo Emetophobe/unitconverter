@@ -1,0 +1,21 @@
+dimensions = {"data storage" = 1}
+
+
+# bit is the base unit
+["bit"]
+symbols = ["b"]
+aliases = ["bits"]
+factor = 1
+prefix = "bit"
+
+["byte"]
+symbols = ["B"]
+aliases = ["bytes"]
+factor = 8
+prefix = "byte"
+
+["kibibyte"]
+symbols = ["KiB"]
+aliases = ["kibibytes"]
+factor = 8192
+prefix = "binary"

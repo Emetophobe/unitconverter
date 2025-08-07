@@ -1,0 +1,16 @@
+dimensions = {"L" = 1, "T" = -2}
+
+
+# metre per second squared is the base unit of acceleration
+# https://en.wikipedia.org/wiki/Metre_per_second_squared
+
+
+# Example acceleration units that can be created:
+#   metre/second^2
+#   ft/s^2
+#   mile/hour^2
+
+
+["galileo"]
+symbols = ["Gal"]  # not to be confused with gal (volume)
+factor = 0.01

@@ -1,0 +1,19 @@
+dimensions = {"L" = 2, "M" = 1, "T" = -3, "I" = -2}
+
+
+# The ohm is the SI unit of electrical resistance
+["ohm"]
+symbols = ["Ω"]
+aliases = ["ohms"]
+factor = 1
+prefix = "si"
+
+["abohm"]
+symbols = ["abΩ"]
+aliases = ["abohms"]
+factor = 1E-9
+
+["statohm"]
+symbols = ["stΩ"]
+aliases = ["statohms"]
+factor = 8.987552E+11

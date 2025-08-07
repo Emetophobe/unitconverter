@@ -1,0 +1,16 @@
+dimensions = {"L" = 2, "M" = 1, "T" = -2, "I" = -1}
+
+
+# The weber is the SI unit of magnetic flux
+["weber"]
+symbols = ["Wb"]
+aliases = ["webers"]
+factor = 1
+prefix = "si"
+
+# 1 maxwell = 1E-8 weber
+["maxwell"]
+symbols = ["Mx"]
+aliases = ["maxwells"]
+factor = 1E-8
+prefix = "si"

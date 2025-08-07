@@ -1,0 +1,21 @@
+dimensions = {"L" = 2, "M" = 1, "T" = -3}
+
+
+# The watt is the SI unit of power
+["watt"]
+symbols = ["W"]
+aliases = ["watts"]
+factor = 1
+prefix = "si"
+
+# 1 metric horsepower (hp) = roughly 735.5 watts
+["horsepower"]
+symbols = ["hp"]
+aliases = ["metric horsepower", "metric hp"]
+factor = 735.5
+
+# 1 mechanical horsepower (bhp) = roughly 745.7 watts
+["mechanical horsepower"]
+symbols = ["bhp"]
+aliases = ["imperial horsepower", "mechanical hp", "imperial hp"]
+factor = 745.7

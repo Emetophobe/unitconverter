@@ -1,0 +1,15 @@
+dimensions = {"I" = 1, "T" = 1}
+
+
+# The coulomb is the SI unit of electric charge
+["coulomb"]
+symbols = ["C"]
+aliases = ["coulombs"]
+factor = 1
+prefix = "si"
+
+# 1 franklin = roughly 3.335640951E-10 coulomb
+["franklin"]
+symbols = ["fr"]
+aliases = ["franklins", "statcoulombs"]
+factor = 3.335640951E-10

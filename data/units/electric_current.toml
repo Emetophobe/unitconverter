@@ -1,0 +1,18 @@
+dimensions = {"I" = 1}
+
+# The ampere is the SI unit of electric current
+["ampere"]
+symbols = ["A"]
+aliases = ["amperes", "amps", "amp"]
+factor = 1
+prefix = "si"
+
+["abampere"]
+symbols = ["abA", "Bi"]
+aliases = ["abamperes", "biots", "biot"]
+factor = 10
+
+["statampere"]
+symbols = ["stA"]
+aliases = ["statamperes"]
+factor = 3.335641E-10

@@ -1,0 +1,28 @@
+dimensions = {"Θ" = 1}
+
+
+# Temperature units use a custom conversion function
+# they can't be combined with other units (for now)
+# The unit factor (1) is also unused here
+
+
+# kelvin is the SI base unit of temperature
+["kelvin"]
+symbols = ["K"]
+aliases = ["kelvins"]
+prefix = "si"
+factor = 1
+
+["celsius"]
+symbols = ["°C", "degC", "c"]
+aliases = ["centigrade"]
+factor = 1
+
+["fahrenheit"]
+symbols = ["°F", "degF", "f"]
+factor = 1
+
+["rankine"]
+symbols = ["°R", "°RA", "degR", "r"]
+aliases = ["rankines"]
+factor = 1

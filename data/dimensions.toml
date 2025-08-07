@@ -1,0 +1,38 @@
+# SI base unit dimensions
+"time" = {"T" = 1}
+"length" = {"L" = 1}
+"mass" = {"M" = 1}
+"temperature" = {"Θ" = 1}
+"electric current" = {"I" = 1}
+"amount of substance" = {"N" = 1}
+"luminous intensity" = {"J" = 1}
+
+# SI derived unit dimensions
+"frequency" = {"T" = -1}
+"force" = {"M" = 1, "L" = 1, "T" = -2}
+"pressure" = {"L" = -1, "M" = 1, "T" = -2}
+"energy" = {"L" = 2, "M" = 1, "T" = -2}
+"power" = {"L" = 2, "M" = 1, "T" = -3}
+"electric charge" = {"I" = 1, "T" = 1}
+"electric potential" = {"L" = 2, "M" = 1, "T" = -3, "I" = -1}
+"electrical capacitance" = {"L" = -2, "M" = -1, "T" = 4, "I" = 2}
+"electrical conductance" = {"L" = -2, "M" = -1, "T" = 3, "I" = 2}
+"electrical resistance" = {"L" = 2, "M" = 1, "T" = -3, "I" = -2}
+"electrical inductance" = {"L" = 2, "M" = 1, "T" = -2, "I" = -2}
+"magnetic flux" = {"L" = 2, "M" = 1, "T" = -2, "I" = -1}
+"magnetic flux density" = {"M" = 1, "T" = -2, "I" = -1}
+"luminous flux" = {"J" = 1}
+"illuminance" = {"J" = 1, "L" = -2}
+"radioactivity" = {"T" = -1}
+"absorbed dose" = {"L" = 2, "T" = -2}
+"effective dose" = {"L" = 2, "T" = -2}
+"catalytic activity" = {"N" = 1, "T" = -1}
+
+# Other common dimensions
+"speed" = {"L" = 1, "T" = -1}
+"velocity" = {"L" = 1, "T" = -1}
+"acceleration" = {"L" = 1, "T" = -2}
+"torque" = {"M" = 1, "L" = 2, "T" = -2}
+"viscosity" = {"L" = -1, "M" = 1, "T" = -1}
+"density" = {"M" = 1, "L" = -3}
+"momentum" = {"M" = 1, "L" = 1, "T" = -1}

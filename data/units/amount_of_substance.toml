@@ -1,0 +1,15 @@
+dimensions = {"N" = 1}
+
+
+# The mole is the SI unit of amount of substance
+["mole"]
+symbols = ["mol"]
+aliases = ["moles"]
+factor = 1
+prefix = "si"
+
+# 1 atom is roughly 1.660538863127E-24 moles
+["atom"]
+aliases = ["atoms"]
+factor = 1.660538863127E-24
+prefix = "si"

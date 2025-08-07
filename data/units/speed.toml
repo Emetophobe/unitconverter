@@ -1,0 +1,41 @@
+dimensions = {"L" = 1, "T" = -1}
+
+
+# formula: length/time
+
+# Examples:
+#   metre/second (base unit)
+#   mile/hour
+#   inch/day
+
+
+# 1 kilometre per hour (kph) = 1000/3600 = ~0.2777777778 m/s
+["kilometre/hour"]
+symbols = ["kph", "km/h", "kmph"]
+aliases = ["kilometres/hour"]
+factor = 0.2777777777777777777777777778
+
+# 1 mile per hour (mph) = 1609.34 / 3600 = ~0.44704 m/s
+["mile/hour"]
+symbols = ["mph", "mi/h"]
+aliases = ["miles/hour"]
+factor = 0.44704
+
+# 1 knot = 1 nautical mile per hour = ~0.514 m/s
+["knot"]
+aliases = ["knots"]
+factor = 0.5144444444444444444444444444
+
+# 1 imperial knot = ~0.5147733333 m/s
+["imperial knot"]
+aliases = ["imperial knots"]
+factor = 0.5147733333333333333333333333
+
+# speed of sound (20 °C) = ~343 m/s
+["speed of sound"]
+factor = 343
+
+# speed of light (in a vacuum) = 299,792,458 m/s
+["speed of light"]
+aliases = ["lightspeed"]
+factor = 299792458

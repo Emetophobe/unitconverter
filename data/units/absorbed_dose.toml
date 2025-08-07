@@ -1,0 +1,16 @@
+# Note that Gray and Sievert share the same dimensions
+dimensions = {"L" = 2, "T" = -2}
+
+
+# The gray is the SI unit of absorbed dose
+["gray"]
+symbols = ["Gy"]
+aliases = ["grays"]
+factor = 1
+prefix = "si"
+
+# 1 US rad = 0.01 gray
+["US rad"]
+symbols = ["usrad"]     # rad is used by radian
+aliases = ["US rads"]
+factor = 0.01

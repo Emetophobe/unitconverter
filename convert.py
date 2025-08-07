@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-# Copyright (c) 2022-2023 Mike Cunningham
+# Copyright (c) 2022-2025 Mike Cunningham
 
 
 import argparse
@@ -7,7 +7,7 @@ import logging
 import sys
 from decimal import Decimal, DecimalException
 
-from unitconverter.converter import convert
+from unitconverter.converter import UnitConverter
 from unitconverter.exceptions import ConverterError
 from unitconverter.formatting import format_decimal
 
@@ -23,7 +23,8 @@ def main() -> None:
 
     parser.add_argument(
         'value',
-        help='integer or decimal value')
+        help='integer or decimal value',
+        type=Decimal)
 
     parser.add_argument(
         'source',
@@ -58,12 +59,6 @@ def main() -> None:
 
     args = parser.parse_args()
 
-    # Check value argument
-    try:
-        value = Decimal(args.value)
-    except DecimalException:
-        print_error(f'Error: {args.value} is not a valid number.')
-
     # Check precision argument
     if args.precision is not None and (args.precision < 0 or args.precision > 20):
         print_error('Error: precision must be between 0 and 20.')
@@ -72,18 +67,20 @@ def main() -> None:
     logging.getLogger().setLevel(logging.DEBUG if args.debug else logging.WARNING)
     logging.basicConfig(format='debugging: %(message)s')
 
-    # Perform the conversion(s)
+    results = []
+
+    # Perform conversions
     try:
-        results = [(convert(value, args.source, dest), dest) for dest in args.dest]
+        converter = UnitConverter()
+        results = [(converter.convert(args.value, args.source, dest), dest) for dest in args.dest]
     except DecimalException:
         print_error('Error: Invalid decimal operation')
     except ConverterError as e:
-        print_error(e)
+        print_error(str(e))
 
-    value = format_decimal(value, commas=args.commas)
+    # Display results
+    value = format_decimal(args.value, commas=args.commas)
     padding = ' ' * len(f'{value} {args.source}')
-
-    # Display result(s)
     for index, (result, dest) in enumerate(results):
         result = format_decimal(result, args.exponent, args.precision, args.commas)
 

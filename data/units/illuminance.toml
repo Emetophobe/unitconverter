@@ -1,4 +1,4 @@
-dimensions = {"J" = 1, "L" = -2}
+dimensions = {"luminous intensity" = 1, "length" = -2}
 
 
 # The lux is the SI unit of illuminance

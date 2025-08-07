@@ -1,4 +1,4 @@
-dimensions = {"L" = 2, "M" = 1, "T" = -3, "I" = -1}
+dimensions = {"length" = 2, "mass" = 1, "time" = -3, "electric current" = -1}
 
 # The volt is the SI unit of electric potential
 ["volt"]

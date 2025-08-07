@@ -1,4 +1,4 @@
-dimensions = {"Θ" = 1}
+dimensions = {"temperature" = 1}
 
 
 # Temperature units use a custom conversion function

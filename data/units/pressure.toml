@@ -1,4 +1,4 @@
-dimensions = {"L" = -1, "M" = 1, "T" = -2}
+dimensions = {"length" = -1, "mass" = 1, "time" = -2}
 
 
 # The pascal is the SI unit of pressure

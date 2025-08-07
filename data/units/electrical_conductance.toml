@@ -1,4 +1,4 @@
-dimensions = {"L" = -2, "M" = -1, "T" = 3, "I" = 2}
+dimensions = {"length" = -2, "mass" = -1, "time" = 3, "electric current" = 2}
 
 
 # base units: kg^−1*m^−2*s^3*A^2

@@ -1,5 +1,5 @@
 # Note that Hertz and Becquerel share the same dimensions (T-1)
-dimensions = {"T" = -1}
+dimensions = {"time" = -1}
 
 
 # The hertz is the SI unit of frequency

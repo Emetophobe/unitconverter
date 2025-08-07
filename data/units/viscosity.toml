@@ -1,4 +1,4 @@
-dimensions = {"L" = -1, "M" = 1, "T" = -1}
+dimensions = {"length" = -1, "mass" = 1, "time" = -1}
 
 
 # The pascal-second is the SI unit of viscosity

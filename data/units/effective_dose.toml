@@ -1,5 +1,5 @@
 # Note that Gray and Sievert share the same dimensions
-dimensions = {"L" = 2, "T" = -2}
+dimensions = {"length" = 2, "time" = -2}
 
 
 # The sievert is the SI unit of effective dose

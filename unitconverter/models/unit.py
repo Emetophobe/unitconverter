@@ -5,9 +5,9 @@
 from decimal import Decimal
 from typing import Self
 
-from unitconverter.dimension import Dimension
 from unitconverter.exceptions import UnitError
 from unitconverter.formatting import parse_decimal, format_display_name, format_type
+from unitconverter.models.dimension import Dimension
 
 
 class Unit:
@@ -27,11 +27,6 @@ class Unit:
     def name(self) -> str:
         """ Returns a formatted unit name. """
         return format_display_name(self.units)
-
-    @property
-    def dimension(self) -> str:
-        """ Returns a formatted dimension name. """
-        return format_display_name(self.dimen, True) or "dimensionless"
 
     def __pow__(self, exponent: int) -> Self:
         if not exponent or not isinstance(exponent, int):

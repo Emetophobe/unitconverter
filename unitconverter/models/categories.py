@@ -1,8 +1,8 @@
 # Copyright (c) 2022-2025 Mike Cunningham
 
 
-from unitconverter.dimension import Dimension
 from unitconverter.exceptions import DefinitionError, DimensionError
+from unitconverter.models.dimension import Dimension
 
 
 class Categories:

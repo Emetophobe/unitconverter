@@ -6,9 +6,9 @@ import tomllib
 from decimal import Decimal
 from pathlib import Path
 
-from unitconverter.dimension import Dimension
-from unitconverter.registry import Definition
 from unitconverter.exceptions import DefinitionError
+from unitconverter.models.definition import Definition
+from unitconverter.models.dimension import Dimension
 
 
 def load_dimensions() -> dict[str, Dimension]:

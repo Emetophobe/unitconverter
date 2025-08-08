@@ -2,15 +2,14 @@
 
 
 import logging
-
 from decimal import Decimal, getcontext
 
-from unitconverter.categories import Categories
 from unitconverter.exceptions import CategoryError, UnitError
 from unitconverter.formatting import parse_decimal, simplify_unit, split_exponent
 from unitconverter.parsers import load_dimensions, load_units
-from unitconverter.registry import Registry
-from unitconverter.unit import Unit
+from unitconverter.models.categories import Categories
+from unitconverter.models.registry import Registry
+from unitconverter.models.unit import Unit
 
 
 # Set decimal precision
@@ -159,9 +158,9 @@ class UnitConverter:
         # Try to create the unit
         unit = numer / denom
 
-        logging.debug(f"numer: {numer} ({numer.dimension})")
-        logging.debug(f"denom: {denom} ({denom.dimension})")
-        logging.debug(f"unit : {unit} ({unit.dimension})")
+        logging.debug(f"numer: {numer} ({numer.dimen})")
+        logging.debug(f"denom: {denom} ({denom.dimen})")
+        logging.debug(f"unit : {unit} ({unit.dimen})")
 
         if not unit:
             raise UnitError(f"{name} is not a valid unit")

@@ -3,9 +3,9 @@
 
 from decimal import Decimal
 
-from unitconverter.registry import Definition
 from unitconverter.exceptions import PrefixError
 from unitconverter.formatting import parse_decimal
+from unitconverter.models.definition import Definition
 
 
 # List of valid prefix options

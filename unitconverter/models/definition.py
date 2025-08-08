@@ -3,8 +3,8 @@
 
 from decimal import Decimal
 
-from unitconverter.dimension import Dimension
 from unitconverter.formatting import parse_decimal
+from unitconverter.models.dimension import Dimension
 
 
 class Definition:

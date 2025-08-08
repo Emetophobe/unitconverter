@@ -2,9 +2,9 @@
 
 
 from unitconverter.exceptions import DefinitionError, UnitError
-from unitconverter.prefixes import get_prefixes
-from unitconverter.registry import Definition
-from unitconverter.unit import Unit
+from unitconverter.models.definition import Definition
+from unitconverter.models.prefix import get_prefixes
+from unitconverter.models.unit import Unit
 
 
 class Registry:

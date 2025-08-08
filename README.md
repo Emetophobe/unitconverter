@@ -38,10 +38,10 @@ The following unit categories are currently supported:
 * Radioactivity (becquerel, curie, rutherford)
 * Signal intensity (decibel, bel, and neper)
 * Solid angle (steradian, square degree, spat)
-* Speed (km/hour, mile/hour, metre/second, inch/second, mach 1, etc...)
+* Speed (kilometres/hour, miles/hour, metre/second, inch/second, etc...)
 * Temperature (kelvin, celsius, fahrenheit, and rankine)
 * Time (second, minute, hour, day, week, month, year, etc...)
-* Viscosity (poise and pascal-second)
+* Viscosity (pascal-second and poise)
 * Volume (cubic metre, litre, quart, gallon, etc...)
 
 See [supported units](docs/supported_units.txt) for a complete list. Note that many
@@ -153,11 +153,6 @@ Unit composition is an experimental feature and there are still bugs to be sorte
     1 metre = 100.0000 cm
             = 39.3701 in
             = 3.2808 ft
-
-#### An error is displayed when converting between incompatible units
-
-    $ python3 convert.py 58 inch gram
-    Category mismatch: inch (length) and gram (mass)
 
 #### Multi-word unit names are also supported but they need to be wrapped in quotes
 

@@ -1,12 +1,6 @@
 # Copyright (c) 2022-2025 Mike Cunningham
 
 
-import tomllib
-
-from decimal import Decimal
-from pathlib import Path
-
-from unitconverter.dimension import Dimension
 from unitconverter.exceptions import DefinitionError, UnitError
 from unitconverter.prefixes import get_prefixes
 from unitconverter.registry import Definition
@@ -14,15 +8,18 @@ from unitconverter.unit import Unit
 
 
 class Registry:
+    """ Used to store and retrieve unit definitions. """
 
-    def __init__(self) -> None:
-        """ Initialize dimensions and units. """
-        self._dimensions: dict[str, Dimension] = {}
-        self._units: dict[str, Definition] = {}
-        self._aliases: dict[str, Definition] = {}
+    def __init__(self, units: dict[str, Definition] | None = None) -> None:
+        """ Initialize registry with optional unit definitions. """
 
-        self.load_dimensions()
-        self.load_units()
+        self._units = {}
+        self._aliases = {}
+
+        # Add each unit individually to validate them and check for duplicates
+        if units:
+            for definition in units.values():
+                self.add_definition(definition)
 
     def add_definition(self, definition: Definition) -> None:
         """ Add a unit definition to the registry. """
@@ -69,55 +66,6 @@ class Registry:
             return self._aliases[name]
         except KeyError:
             raise UnitError(f"{name} is not a valid unit")
-
-    def get_categories(self, unit: Unit) -> list[str]:
-        """ Get a list of categories matching the unit's dimensions.
-            An empty list is returned if no pre-defined categories match the unit's dimensions."""
-        if not isinstance(unit, Unit):
-            raise UnitError(f"{unit!r} is not a valid unit")
-
-        categories = []
-        for category, dimen in self._dimensions.items():
-            if dimen == unit.dimen:
-                categories.append(category)
-
-        return categories
-
-    def load_dimensions(self) -> None:
-        """ Load common dimension names. """
-        with open("data/dimensions.toml", "rb") as fp:
-            self._dimensions = tomllib.load(fp, parse_float=Decimal)
-
-    def load_units(self) -> None:
-        """ Load pre-defined units. """
-        for filename in Path("data/units").rglob("*.toml"):
-            with open(filename, "rb") as fp:
-                data = tomllib.load(fp, parse_float=Decimal)
-
-            # Make sure to pop dimension to separate it from the unit data
-            try:
-                dimension = data.pop("dimension")
-            except KeyError:
-                raise DefinitionError("Unit file is missing dimension", filename)
-
-            # Parse toml dictionary into unit definitions
-            for name, args in data.items():
-                # Required arguments
-                try:
-                    factor = args["factor"]
-                except KeyError:
-                    raise DefinitionError(f"{name} is missing a conversion factor", filename)
-
-                # Optional arguments
-                symbols = args.get("symbols", [])
-                aliases = args.get("aliases", [])
-                prefix = args.get("prefix", None)
-
-                try:
-                    definition = Definition(name, symbols, aliases, factor, dimension, prefix)
-                    self.add_definition(definition)
-                except DefinitionError as e:
-                    raise DefinitionError(e.msg, filename)
 
     def __contains__(self, unit: str) -> bool:
         """ Returns true if a unit name is in the registry. """

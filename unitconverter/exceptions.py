@@ -15,12 +15,10 @@ class ConverterError(Exception):
 
 
 class CategoryError(ConverterError):
-    """ Category mismatch errors. """
-    def __init__(self, source: str, source_category: list[str], dest: str,
-                 dest_category: list[str]) -> None:
-        s = ", ".join(source_category) if source_category else "undefined category"
-        d = ", ".join(dest_category) if dest_category else "undefined category"
-        super().__init__(f"{source} ({s}) and {dest} ({d}) are not compatible units")
+    """ Incompatible unit errors. """
+    def __init__(self, source: str, source_category: str, dest: str, dest_category: str) -> None:
+        super().__init__(f"Can't convert between {source} ({source_category})"
+                         f" and {dest} ({dest_category})")
 
 
 class DefinitionError(ConverterError):

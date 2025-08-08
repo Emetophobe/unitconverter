@@ -5,8 +5,10 @@ import logging
 
 from decimal import Decimal, getcontext
 
+from unitconverter.categories import Categories
 from unitconverter.exceptions import CategoryError, UnitError
 from unitconverter.formatting import parse_decimal, simplify_unit, split_exponent
+from unitconverter.parsers import load_dimensions, load_units
 from unitconverter.registry import Registry
 from unitconverter.unit import Unit
 
@@ -18,8 +20,9 @@ getcontext().prec = 15
 class UnitConverter:
 
     def __init__(self) -> None:
-        """ Initialize unit registry. """
-        self.registry = Registry()
+        """ Initialize pre-defined dimensions and units. """
+        self._categories = Categories(load_dimensions())
+        self._registry = Registry(load_units())
 
     def convert(self, value: Decimal | int | str, source: Unit | str, dest: Unit | str) -> Decimal:
         """ Convert value from source unit to destination unit. """
@@ -27,20 +30,20 @@ class UnitConverter:
         source = self.parse_unit(source)
         dest = self.parse_unit(dest)
 
-        # Get all categories that match the units dimensions
-        source_categories = self.registry.get_categories(source)
-        dest_categories = self.registry.get_categories(dest)
+        # Get category names matching the units dimensions
+        source_category = self._categories.get_category(source.dimen)
+        dest_category = self._categories.get_category(dest.dimen)
 
         # NOTE: Extra debugging info. This will will be removed at a future date
-        logging.debug(f"{source_categories=}")
-        logging.debug(f"{dest_categories=}")
+        logging.debug(f"{source_category=}")
+        logging.debug(f"{dest_category=}")
 
-        # Check if the units are compatible
-        if source_categories != dest_categories:
-            raise CategoryError(source.name, source_categories, dest.name, dest_categories)
+        # Make sure the units are compatible
+        if source_category != dest_category:
+            raise CategoryError(source.name, source_category, dest.name, dest_category)
 
         # Temperature conversion
-        if source_categories == ("temperature",):
+        if source_category == "temperature":
             return self._convert_temperature(value, source, dest)
 
         # Regular conversion
@@ -92,7 +95,7 @@ class UnitConverter:
         """ Parse a unit name into a Unit instance. """
         # Check if a simplified name is in the registry
         try:
-            return self.registry.get_unit(simplify_unit(name))
+            return self._registry.get_unit(simplify_unit(name))
         except UnitError:
             pass
 
@@ -102,7 +105,7 @@ class UnitConverter:
 
         # Finally, try to split the unit name and exponent
         try:
-            return self.registry.get_unit(*split_exponent(name))
+            return self._registry.get_unit(*split_exponent(name))
         except UnitError:
             raise UnitError(f"{name} is not a valid unit")
 

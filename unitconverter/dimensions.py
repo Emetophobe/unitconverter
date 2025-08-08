@@ -4,7 +4,7 @@
 from typing import Self
 
 from unitconverter.exceptions import DimensionError
-from unitconverter.formatting import format_display_name
+from unitconverter.formatting import format_display_name, format_type
 
 
 class Dimensions(dict):
@@ -18,7 +18,7 @@ class Dimensions(dict):
             elif isinstance(units, dict):
                 super().__init__(units)
             else:
-                raise DimensionError(f"Invalid dimensions: {units}")
+                raise DimensionError(f"{units} is not a valid dimension")
 
     def __pow__(self, exponent: int) -> Self:
         if not exponent or not isinstance(exponent, int):
@@ -33,7 +33,7 @@ class Dimensions(dict):
 
     def __mul__(self, other: object) -> Self:
         if not isinstance(other, dict):
-            raise DimensionError(f"Cannot multiply Dimensions and {type(other)})")
+            raise DimensionError(f"Cannot multiply Dimensions and {format_type(other)})")
 
         # Multiply just adds exponents from both dictionaries
         units = self.copy()
@@ -46,7 +46,7 @@ class Dimensions(dict):
 
     def __truediv__(self, other: object) -> Self:
         if not isinstance(other, dict):
-            raise DimensionError(f"Cannot divide Dimensions and {type(other)})")
+            raise DimensionError(f"Cannot divide Dimensions and {format_type(other)})")
 
         # Divide just subtracts exponents from both dictionaries
         units = self.copy()

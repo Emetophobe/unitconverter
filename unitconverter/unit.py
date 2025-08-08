@@ -7,7 +7,7 @@ from typing import Self
 
 from unitconverter.dimensions import Dimensions
 from unitconverter.exceptions import UnitError
-from unitconverter.formatting import parse_decimal, format_display_name
+from unitconverter.formatting import parse_decimal, format_display_name, format_type
 
 
 class Unit:
@@ -35,7 +35,7 @@ class Unit:
 
     def __pow__(self, exponent: int) -> Self:
         if not exponent or not isinstance(exponent, int):
-            raise UnitError(f"Invalid exponent: {exponent} is not a positive or negative integer")
+            raise UnitError(f"{exponent} is not a positive or negative integer")
 
         return self.__class__(self.factor ** exponent,
                               self.units ** exponent,
@@ -43,7 +43,7 @@ class Unit:
 
     def __mul__(self, other: Self) -> Self:
         if not isinstance(other, Unit):
-            raise UnitError(f"Cannot multiply Unit and {type(other)})")
+            raise UnitError(f"Cannot multiply Unit and {format_type(other)})")
 
         return self.__class__(self.factor * other.factor,
                               self.units * other.units,
@@ -51,7 +51,7 @@ class Unit:
 
     def __truediv__(self, other: Self) -> Self:
         if not isinstance(other, Unit):
-            raise UnitError(f"Cannot divide Unit and {type(other)})")
+            raise UnitError(f"Cannot divide Unit and {format_type(other)})")
 
         return self.__class__(self.factor / other.factor,
                               self.units / other.units,

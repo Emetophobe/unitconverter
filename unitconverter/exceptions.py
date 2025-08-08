@@ -4,28 +4,32 @@
 from pathlib import Path
 
 
-class ConverterError(ValueError):
+class ConverterError(Exception):
     """ Base exception class for all converter-related errors. """
 
-    def __init__(self, msg: str, filename: str | Path | None = None) -> None:
-        self.msg = msg
-        self.filename = filename
+    def __init__(self, msg: str) -> None:
+        self.msg = f"Error: {msg}"
 
     def __str__(self) -> str:
-        if self.filename:
-            return f"{self.msg} ({self.filename})"
-        else:
-            return self.msg
+        return self.msg
 
 
 class CategoryError(ConverterError):
-    """ Category errors (i.e category mismatch) """
-    pass
+    """ Category mismatch errors. """
+    def __init__(self, source: str, source_category: list[str], dest: str,
+                 dest_category: list[str]) -> None:
+        s = ", ".join(source_category) if source_category else "undefined category"
+        d = ", ".join(dest_category) if dest_category else "undefined category"
+        super().__init__(f"{source} ({s}) and {dest} ({d}) are not compatible units")
 
 
 class DefinitionError(ConverterError):
-    """ Exceptions defining units or categories. """
-    pass
+    """ Definition related errors. """
+    def __init__(self, msg: str, filename: str | Path | None = None) -> None:
+        if filename:
+            super().__init__(f"{msg} ({filename})")
+        else:
+            super().__init__(f"{msg}")
 
 
 class DimensionError(ConverterError):

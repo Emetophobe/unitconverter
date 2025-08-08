@@ -27,13 +27,17 @@ class UnitConverter:
         source = self.parse_unit(source)
         dest = self.parse_unit(dest)
 
+        # Get all dimension categories that match the units dimensions
         source_categories = self.registry.get_categories(source)
         dest_categories = self.registry.get_categories(dest)
 
+        # Extra debugging info, will be removed at a future date
+        logging.debug(f"{source_categories=}")
+        logging.debug(f"{dest_categories=}")
+
+        # Check if the units are compatible
         if source_categories != dest_categories:
-            # TODO: solve ambiguity caused by multiple categories by comparing units further
-            raise CategoryError(f"Category mismatch: {source} ({", ".join(source_categories)})"
-                                f" and {dest} ({", ".join(dest_categories)})")
+            raise CategoryError(source.name, source_categories, dest.name, dest_categories)
 
         # Temperature conversion
         if source_categories == ("temperature",):
@@ -43,39 +47,8 @@ class UnitConverter:
         value = value * source.factor
         return value / dest.factor
 
-    def _convert_temperature(self, value: Decimal, source: Unit, dest: Unit) -> Decimal:
-        """ Convert between temperature units. """
-        # Convert from source to kelvin
-        if source.name.endswith("kelvin"):
-            value = value * source.factor
-        elif source.name == "celsius":
-            value = value + Decimal("273.15")
-        elif source.name == "fahrenheit":
-            value = (value + Decimal("459.67")) * Decimal(5) / Decimal(9)
-        elif source.name == "rankine":
-            value = value * Decimal(5) / Decimal(9)
-        else:
-            raise UnitError(f"Invalid temperature unit: {source.name}")
-
-        # Convert from kelvin to dest
-        if dest.name.endswith("kelvin"):
-            return value / dest.factor
-        elif dest.name == "celsius":
-            return value - Decimal("273.15")
-        elif dest.name == "fahrenheit":
-            return value * Decimal(9) / Decimal(5) - Decimal("459.67")
-        elif dest.name == "rankine":
-            return value * Decimal(9) / Decimal(5)
-        else:
-            raise UnitError(f"Invalid temperature unit: {dest.name}")
-
-    def compatible_units(self, source: Unit, dest: Unit) -> bool:
-        """ Returns True if the units are compatible. For now just compare dimensions. """
-        return source.dimen == dest.dimen
-
     def parse_unit(self, name: Unit | str) -> Unit:
         """ Parse unit string and return a Unit object. """
-
         # Check if we already have a unit
         if isinstance(name, Unit):
             return name
@@ -89,6 +62,32 @@ class UnitConverter:
         # Try to create a composite unit
         return self._parse_composite_unit(name)
 
+    def _convert_temperature(self, value: Decimal, source: Unit, dest: Unit) -> Decimal:
+        """ Convert between temperature units. """
+        # Convert from source to kelvin
+        if source.name.endswith("kelvin"):
+            value = value * source.factor
+        elif source.name == "celsius":
+            value = value + Decimal("273.15")
+        elif source.name == "fahrenheit":
+            value = (value + Decimal("459.67")) * Decimal(5) / Decimal(9)
+        elif source.name == "rankine":
+            value = value * Decimal(5) / Decimal(9)
+        else:
+            raise UnitError(f"{source.name} is not a temperature unit")
+
+        # Convert from kelvin to dest
+        if dest.name.endswith("kelvin"):
+            return value / dest.factor
+        elif dest.name == "celsius":
+            return value - Decimal("273.15")
+        elif dest.name == "fahrenheit":
+            return value * Decimal(9) / Decimal(5) - Decimal("459.67")
+        elif dest.name == "rankine":
+            return value * Decimal(9) / Decimal(5)
+        else:
+            raise UnitError(f"{dest.name} is not a temperature unit")
+
     def _parse_unit_name(self, name: str) -> Unit:
         """ Parse a unit name into a Unit instance. """
         # Check if a simplified name is in the registry
@@ -99,7 +98,7 @@ class UnitConverter:
 
         # Check if name contains a mathematical expression (not valid here)
         if "*" in name or "/" in name:
-            raise UnitError(f"Invalid unit: {name}")
+            raise UnitError(f"{name} is not a valid unit")
 
         # Finally, try to split the unit name and exponent
         try:
@@ -118,8 +117,8 @@ class UnitConverter:
             numerators = self._parse_names(names[0])
             denominators = self._parse_names(names[1])
         else:
-            raise UnitError(f"Invalid unit: {name} - This script only supports one"
-                            " division per expression (this feature still in development)")
+            raise UnitError(f"{name} is not a valid unit (only one division"
+                            " per expression is currently supported)")
 
         numerators = [self._parse_unit_name(numer) for numer in numerators]
         denominators = [self._parse_unit_name(denom) for denom in denominators]
@@ -128,17 +127,21 @@ class UnitConverter:
         logging.debug(f"numerators: {numerators}")
         logging.debug(f"denominators: {denominators}")
 
-        # Can't divide units from the same categories for now (i.e metre / inch)
+        # Can't divide units from the same categories (i.e metre / inch)
+        # For now anyway, this might change in the future
         if len(numerators) == len(denominators) == 1:
             if numerators[0].dimen == denominators[0].dimen:
-                category = numerators[0].dimension
-                raise UnitError(f"Invalid unit: {name} ({category}/{category})")
+                if numerators != denominators:
+                    msg = f"{name} is not a valid unit (cannot divide units in the same category)"
+                else:
+                    msg = f"{name} is not a valid unit"
+                raise UnitError(msg)
 
         # Celsius, Fahrenheit, and Rankine can't be composited for now
         for unit in numerators + denominators:
             if unit.name in ("celsius", "fahrenheit", "rankine"):
-                raise UnitError(f"Invalid unit: {name} - {unit.name} cannot be composited"
-                                " (only kelvin is supported for now)")
+                raise UnitError(f"{unit.name} cannot be composited (only kelvin"
+                                " is currently supported)")
 
         # Reduce list of numerators into a single unit
         numer = Unit()
@@ -158,7 +161,7 @@ class UnitConverter:
         logging.debug(f"unit : {unit} ({unit.dimension})")
 
         if not unit:
-            raise UnitError(f"Invalid unit: {name}")
+            raise UnitError(f"{name} is not a valid unit")
 
         return unit
 

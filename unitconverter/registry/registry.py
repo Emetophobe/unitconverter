@@ -61,20 +61,20 @@ class Registry:
             unit = self._aliases[name]
             return Unit(unit.factor, unit.name, unit.dimen) ** exponent
         except KeyError:
-            raise UnitError(f"{name} is not a valid unit name")
+            raise UnitError(f"{name} is not a valid unit")
 
     def get_definition(self, name: str) -> Definition:
         """ Get a unit definition from a unit name. """
         try:
             return self._aliases[name]
         except KeyError:
-            raise UnitError(f"{name} is not a valid unit name")
+            raise UnitError(f"{name} is not a valid unit")
 
     def get_categories(self, unit: Unit) -> list[str]:
         """ Get a list of categories matching the unit's dimensions.
             An empty list is returned if no pre-defined categories match the unit's dimensions."""
         if not isinstance(unit, Unit):
-            raise UnitError(f"{unit!r} is not a valid Unit")
+            raise UnitError(f"{unit!r} is not a valid unit")
 
         categories = []
         for category, dimen in self._dimensions.items():
@@ -94,22 +94,13 @@ class Registry:
             with open(filename, "rb") as fp:
                 data = tomllib.load(fp, parse_float=Decimal)
 
-            # Retrieve dimensions from the top of the unit file
+            # Retrieve dimensions (found at the top of every unit file)
             try:
                 dimensions = data.pop("dimensions")
             except KeyError:
                 raise DefinitionError("Unit file is missing required dimensions", filename)
 
-            # NOTE: Temporary for debugging purposes. Remove this when no longer needed
-            # Check for inconsistencies between the dimensions file and the unit file
-            category = filename.stem
-            if category in self._dimensions:
-                dimen = self._dimensions[category]  # from dimensions file
-                if dimen != dimensions:
-                    raise DefinitionError(f"Found inconsistencies between dimensions.toml"
-                                          f" ({dimen}) file and {filename} ({dimensions})")
-
-            # Add unit definitions
+            # Parse toml dictionary into unit definitions
             for name, args in data.items():
                 # Required arguments
                 try:

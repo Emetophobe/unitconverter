@@ -13,27 +13,25 @@ MULTI_SYMBOL = "*"
 DIV_SYMBOL = "/"
 
 
-def parse_decimal(value: Decimal | int | str, msg: str | None = None) -> Decimal:
-    """ Convert value into a decimal.
+def parse_decimal(value: Decimal | int | str) -> Decimal:
+    """ Parse value and return a Decimal.
 
     Raises ConverterError if value is a float. Use a string instead
-    it will give a more accurate decimal value. See examples below.
+    it will give a more accurate decimal value. See examples below:
 
-    Examples:
-    ---------
         This works with str:
 
-            >>> Decimal(".1") + Decimal(".1") + Decimal(".1") == Decimal(".3")
+            >>> Decimal("0.1") + Decimal("0.1") + Decimal("0.1") == Decimal("0.3")
             True
 
         But not with float:
 
-            >>> Decimal(.1) + Decimal(.1) + Decimal(.1) == Decimal(.3)
+            >>> Decimal(0.1) + Decimal(0.1) + Decimal(0.1) == Decimal(0.3)
             False
 
         A float also doesn"t equal a string:
 
-            >>> Decimal(.1) == Decimal(".1")
+            >>> Decimal(0.1) == Decimal("0.1")
             False
 
         Source: https://www.laac.dev/blog/float-vs-decimal-python/
@@ -44,7 +42,7 @@ def parse_decimal(value: Decimal | int | str, msg: str | None = None) -> Decimal
     try:
         return Decimal(value)
     except DecimalException:
-        raise ConverterError(msg or f"{value!r} is not a valid Decimal")
+        raise ConverterError(f"{value!r} is not a valid Decimal")
 
 
 def format_decimal(value: Decimal,
@@ -89,6 +87,11 @@ def format_decimal(value: Decimal,
     return number
 
 
+def format_type(obj: object) -> str:
+    """ Get a nice string representation of an object. """
+    return type(obj).__name__
+
+
 def format_name(units: dict[str, int], sort_keys: bool = False) -> str:
     """ Format unit name without divisor (i.e "metre*second^-1") """
     numers = []
@@ -127,7 +130,7 @@ def format_exponent(name: str, exponent: int) -> str:
 
 
 def split_exponent(name: str) -> tuple[str, int]:
-    """ Split a unit name and expontent into a tuple.
+    """ Split a unit name and exponent into a tuple.
 
     Examples
     --------
@@ -144,7 +147,7 @@ def split_exponent(name: str) -> tuple[str, int]:
     result = _pattern.match(simplify_unit(name))
 
     if not result:
-        raise UnitError(f"Invalid unit: {name}")
+        raise UnitError(f"{name} is not a valid unit")
 
     if result.group("exp"):
         return (result.group("unit"), int(result.group("exp")))
@@ -166,7 +169,7 @@ def simplify_unit(name: str) -> str:
 
     """
     if not isinstance(name, str):
-        raise UnitError(f"Invalid unit: {name}")
+        raise UnitError(f"{name} is not a valid unit")
 
     for key, value in _replacements.items():
         if key in name:
@@ -210,5 +213,4 @@ _replacements = {
     # regional spelling
     "meter": "metre",
     "liter": "litre",
-    "caliber": "calibre",
 }

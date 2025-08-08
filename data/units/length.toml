@@ -202,11 +202,8 @@ aliases = ["parsecs"]
 factor = 3.0857E+16
 
 
-# Other
+# Typesetting units
 
 ["point"]
 aliases = ["points"]
 factor = 0.000352778
-
-["calibre"]
-factor = 0.000254

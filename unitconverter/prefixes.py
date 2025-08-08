@@ -80,7 +80,7 @@ SI_PREFIXES = [
 
 # Binary prefixes (i.e kibibyte to yobibyte)
 BINARY_PREFIXES = [
-    # Prefix("kibi", "Ki", 2 ** 10), Already defined
+    Prefix("kibi", "Ki", 2 ** 10),
     Prefix("mebi", "Mi", 2 ** 20),
     Prefix("gibi", "Gi", 2 ** 30),
     Prefix("tebi", "Ti", 2 ** 40),

@@ -13,9 +13,3 @@ symbols = ["B"]
 aliases = ["bytes"]
 factor = 8
 prefix = "byte"
-
-["kibibyte"]
-symbols = ["KiB"]
-aliases = ["kibibytes"]
-factor = 8192
-prefix = "binary"

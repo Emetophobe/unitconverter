@@ -1,4 +1,4 @@
-dimensions = {"length" = 3}
+dimension = {"length" = 3}
 
 
 # Metre cubed (m^3) is the SI unit of volume

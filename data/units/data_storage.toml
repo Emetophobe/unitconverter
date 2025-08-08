@@ -1,4 +1,4 @@
-dimensions = {"data storage" = 1}
+dimension = {"data storage" = 1}
 
 
 # bit is the base unit

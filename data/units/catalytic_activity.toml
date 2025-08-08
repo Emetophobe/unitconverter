@@ -1,4 +1,4 @@
-dimensions = {"amount of substance"  = 1, "time" = -1}
+dimension = {"amount of substance"  = 1, "time" = -1}
 
 
 # The katal is the SI unit of catalytic activity

@@ -7,8 +7,8 @@ from unitconverter.exceptions import DimensionError
 from unitconverter.formatting import format_display_name, format_type
 
 
-class Dimensions(dict):
-    """ Used to store units and dimensions and their exponents. """
+class Dimension(dict):
+    """ Used to store dimension names and their exponents. """
 
     def __init__(self, units: str | dict[str, int] | None = None) -> None:
         """ Initialize dictionary. """
@@ -33,7 +33,7 @@ class Dimensions(dict):
 
     def __mul__(self, other: object) -> Self:
         if not isinstance(other, dict):
-            raise DimensionError(f"Cannot multiply Dimensions and {format_type(other)})")
+            raise DimensionError(f"Cannot multiply Dimension and {format_type(other)})")
 
         # Multiply just adds exponents from both dictionaries
         units = self.copy()
@@ -46,7 +46,7 @@ class Dimensions(dict):
 
     def __truediv__(self, other: object) -> Self:
         if not isinstance(other, dict):
-            raise DimensionError(f"Cannot divide Dimensions and {format_type(other)})")
+            raise DimensionError(f"Cannot divide Dimension and {format_type(other)})")
 
         # Divide just subtracts exponents from both dictionaries
         units = self.copy()
@@ -58,7 +58,7 @@ class Dimensions(dict):
         return self.__class__(units)
 
     def __repr__(self) -> str:
-        return f"Dimensions({super().__repr__()})"
+        return f"Dimension({super().__repr__()})"
 
     def __str__(self) -> str:
         return format_display_name(self)

@@ -5,7 +5,7 @@
 from decimal import Decimal
 from typing import Self
 
-from unitconverter.dimensions import Dimensions
+from unitconverter.dimension import Dimension
 from unitconverter.exceptions import UnitError
 from unitconverter.formatting import parse_decimal, format_display_name, format_type
 
@@ -15,13 +15,13 @@ class Unit:
 
     def __init__(self,
                  factor: Decimal | int = 1,
-                 units: Dimensions | dict | str | None = None,
-                 dimen: Dimensions | dict | str | None = None
+                 units: Dimension | dict | str | None = None,
+                 dimen: Dimension | dict | str | None = None
                  ) -> None:
         """ Initialize unit. """
         self.factor = parse_decimal(factor)
-        self.units = Dimensions(units)
-        self.dimen = Dimensions(dimen)
+        self.units = Dimension(units)
+        self.dimen = Dimension(dimen)
 
     @property
     def name(self) -> str:

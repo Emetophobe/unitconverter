@@ -1,4 +1,4 @@
-dimensions = {"electric current" = 1, "time" = 1}
+dimension = {"electric current" = 1, "time" = 1}
 
 
 # The coulomb is the SI unit of electric charge

@@ -3,7 +3,7 @@
 
 from decimal import Decimal
 
-from unitconverter.dimensions import Dimensions
+from unitconverter.dimension import Dimension
 from unitconverter.formatting import parse_decimal
 
 
@@ -13,13 +13,13 @@ class Definition:
     """
 
     def __init__(self, name: str, symbols: list[str], aliases: list[str], factor: Decimal,
-                 dimensions: Dimensions | dict, prefix: str | None = None) -> None:
+                 dimension: Dimension | dict, prefix: str | None = None) -> None:
         """ Initialize unit definition. """
         self.name = name
         self.symbols = symbols
         self.aliases = aliases
         self.factor = parse_decimal(factor)
-        self.dimen = Dimensions(dimensions)
+        self.dimen = Dimension(dimension)
         self.prefix = prefix
 
     def names(self) -> list[str]:

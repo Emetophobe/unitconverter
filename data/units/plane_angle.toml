@@ -1,5 +1,5 @@
 # Dimensionless units
-dimensions = {}
+dimension = {}
 
 
 # The radian is the SI unit of plane angle

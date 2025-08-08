@@ -27,11 +27,11 @@ class UnitConverter:
         source = self.parse_unit(source)
         dest = self.parse_unit(dest)
 
-        # Get all dimension categories that match the units dimensions
+        # Get all categories that match the units dimensions
         source_categories = self.registry.get_categories(source)
         dest_categories = self.registry.get_categories(dest)
 
-        # Extra debugging info, will be removed at a future date
+        # NOTE: Extra debugging info. This will will be removed at a future date
         logging.debug(f"{source_categories=}")
         logging.debug(f"{dest_categories=}")
 

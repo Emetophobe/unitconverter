@@ -1,5 +1,5 @@
-# Note that Hertz and Becquerel share the same dimensions (T-1)
-dimensions = {"time" = -1}
+# Note that Hertz and Becquerel share the same dimension (T-1)
+dimension = {"time" = -1}
 
 
 # The becquerel is the SI unit of radioactivity

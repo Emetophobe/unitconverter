@@ -6,7 +6,7 @@ import tomllib
 from decimal import Decimal
 from pathlib import Path
 
-from unitconverter.dimensions import Dimensions
+from unitconverter.dimension import Dimension
 from unitconverter.exceptions import DefinitionError, UnitError
 from unitconverter.prefixes import get_prefixes
 from unitconverter.registry import Definition
@@ -17,7 +17,7 @@ class Registry:
 
     def __init__(self) -> None:
         """ Initialize dimensions and units. """
-        self._dimensions: dict[str, Dimensions] = {}
+        self._dimensions: dict[str, Dimension] = {}
         self._units: dict[str, Definition] = {}
         self._aliases: dict[str, Definition] = {}
 
@@ -94,11 +94,11 @@ class Registry:
             with open(filename, "rb") as fp:
                 data = tomllib.load(fp, parse_float=Decimal)
 
-            # Retrieve dimensions (found at the top of every unit file)
+            # Make sure to pop dimension to separate it from the unit data
             try:
-                dimensions = data.pop("dimensions")
+                dimension = data.pop("dimension")
             except KeyError:
-                raise DefinitionError("Unit file is missing required dimensions", filename)
+                raise DefinitionError("Unit file is missing dimension", filename)
 
             # Parse toml dictionary into unit definitions
             for name, args in data.items():
@@ -114,7 +114,7 @@ class Registry:
                 prefix = args.get("prefix", None)
 
                 try:
-                    definition = Definition(name, symbols, aliases, factor, dimensions, prefix)
+                    definition = Definition(name, symbols, aliases, factor, dimension, prefix)
                     self.add_definition(definition)
                 except DefinitionError as e:
                     raise DefinitionError(e.msg, filename)

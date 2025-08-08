@@ -1,4 +1,4 @@
-dimensions = {"mass" = 1, "length" = 1, "time" = -2}
+dimension = {"mass" = 1, "length" = 1, "time" = -2}
 
 
 # The newton is the SI unit of force

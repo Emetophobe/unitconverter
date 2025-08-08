@@ -1,4 +1,4 @@
-dimensions = {"length" = 1, "time" = -1}
+dimension = {"length" = 1, "time" = -1}
 
 
 # formula: length/time

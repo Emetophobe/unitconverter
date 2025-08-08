@@ -1,4 +1,4 @@
-dimensions = {"length" = 1, "time" = -2}
+dimension = {"length" = 1, "time" = -2}
 
 
 # metre per second squared is the base unit of acceleration

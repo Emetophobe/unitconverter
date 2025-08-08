@@ -1,5 +1,5 @@
 # Dimensionless units
-dimensions = {}
+dimension = {}
 
 
 # The steradian is the SI unit of solid angle

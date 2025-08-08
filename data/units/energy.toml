@@ -1,4 +1,4 @@
-dimensions = {"length" = 2, "mass" = 1, "time" = -2}
+dimension = {"length" = 2, "mass" = 1, "time" = -2}
 
 
 # The joule is the SI unit of energy

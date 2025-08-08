@@ -1,4 +1,4 @@
-dimensions = {"length" = 2, "mass" = 1, "time" = -2, "electric current" = -1}
+dimension = {"length" = 2, "mass" = 1, "time" = -2, "electric current" = -1}
 
 
 # The weber is the SI unit of magnetic flux

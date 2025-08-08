@@ -1,5 +1,5 @@
 # This should probably be dimensionless, for now give it a unique dimension
-dimensions = {"signal intensity" = 1}
+dimension = {"signal intensity" = 1}
 
 
 # 1 decibel is the base unit

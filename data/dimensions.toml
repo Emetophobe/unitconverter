@@ -1,4 +1,4 @@
-# SI base unit dimensions
+# SI base dimensions
 "time" = {"time" = 1}
 "length" = {"length" = 1}
 "mass" = {"mass" = 1}
@@ -7,7 +7,7 @@
 "amount of substance" = {"amount of substance"  = 1}
 "luminous intensity" = {"luminous intensity" = 1}
 
-# SI derived unit dimensions
+# SI derived dimensions
 "frequency" = {"time" = -1}
 "force" = {"mass" = 1, "length" = 1, "time" = -2}
 "pressure" = {"length" = -1, "mass" = 1, "time" = -2}
@@ -28,11 +28,15 @@
 "effective dose" = {"length" = 2, "time" = -2}
 "catalytic activity" = {"amount of substance"  = 1, "time" = -1}
 
-# Other common dimensions
+# Kinematics
 "speed" = {"length" = 1, "time" = -1}
 "velocity" = {"length" = 1, "time" = -1}
 "acceleration" = {"length" = 1, "time" = -2}
-"torque" = {"mass" = 1, "length" = 2, "time" = -2}
-"viscosity" = {"length" = -1, "mass" = 1, "time" = -1}
-"density" = {"mass" = 1, "length" = -3}
+
+# Mechanics
+"area" = {"length" = 2}
+"volume" = {"length" = 3}
 "momentum" = {"mass" = 1, "length" = 1, "time" = -1}
+"torque" = {"mass" = 1, "length" = 2, "time" = -2}
+"density" = {"mass" = 1, "length" = -3}
+"viscosity" = {"length" = -1, "mass" = 1, "time" = -1}

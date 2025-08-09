@@ -26,7 +26,7 @@ class Categories:
         """ Add a new category to the dictionary.
 
         Args:
-            category (str): The category name. Must be unique.
+            category (str): A category name. Must be unique.
             dimension (Dimension): The dimension associated with the category.
 
         Raises:
@@ -42,7 +42,7 @@ class Categories:
         """ Find all categories matching the specified dimension.
 
         Args:
-            dimension (Dimension): The dimension to
+            dimension (Dimension): A dimension instance.
 
         Raises:
             ConverterError: If the argument isn't a valid Dimension.
@@ -64,7 +64,7 @@ class Categories:
         """ Convert a Dimension and its categories into a category string.
 
         Args:
-            dimension (Dimension): The dimension instance.
+            dimension (Dimension): A dimension instance.
 
         Returns:
             str: A category name, or "unknown category" if no category is found.

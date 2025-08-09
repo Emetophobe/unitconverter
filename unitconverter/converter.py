@@ -24,16 +24,16 @@ class UnitConverter:
         self._registry = Registry(load_units())
 
     def convert(self, value: Decimal | int | str, source: Unit | str, dest: Unit | str) -> Decimal:
-        """ Converts a value or quantity from the source unit to the destination unit.
+        """ Convert a value from the source unit to the destination unit.
 
         Args:
             value (Decimal | int | str): The value to convert.
-            source (Unit | str): The source unit name or unit instance.
-            dest (Unit | str): The destination unit name or unit instance.
+            source (Unit | str): A unit name or unit instance.
+            dest (Unit | str): A unit name or unit instance.
 
         Raises:
-            CategoryError: The unit categories are incompatible.
-            ConverterError: An argument is invalid or can't be parsed.
+            CategoryError: If the unit categories are incompatible.
+            ConverterError: If an argument is invalid.
 
         Returns:
             Decimal: The conversion result.

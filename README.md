@@ -44,10 +44,6 @@ The following unit categories are currently supported:
 * Viscosity (pascal-second and poise)
 * Volume (cubic metre, litre, quart, gallon, etc...)
 
-See [supported units](docs/supported_units.txt) for a complete list. Note that many
-derived units aren't included in this list. For example metre per second (speed)
-can be created from a metre (length) and second (time). See composite units below.
-
 ## Features
 
 Units are prefixed based on a prefix scaling option. The default prefix
@@ -56,18 +52,18 @@ scaling behaviour can be changed on a per-unit basis.
 The following prefix options are currently supported:
 
     none        - don't use prefix scaling (default)
-    si          - use SI prefix table
-    binary      - use binary prefix table
+    metric      - use metric prefix table
+    binary      - use binary prefix table (kibi to yobi)
     bit         - use bit prefix table (kilo to quetta)
     byte        - use bit and binary tables
-    all         - use SI and binary tables
+    all         - use metric and binary tables
 
 
 Units can also be combined to create composite units. You can create a composite unit
 from any of the defined units (excluding temperature units). Temperature units use
 a custom conversion function and don't work with other units for now.
 
-As an example, you can create a speed unit by dividing a `length` unit by a `time` unit:
+For example you can create a speed unit by dividing any `length` unit by any `time` unit:
 
     $ python3 convert.py 1 metre/second inches/day -p 2
     1 metre/second = 3401574.8 inches/day
@@ -124,7 +120,7 @@ Unit composition is an experimental feature and there are still bugs to be sorte
     $ python3 convert.py 600 seconds minutes
     600 seconds = 10 minutes
 
-#### Unit names can be symbols or shortforms
+#### Unit names can be symbols, plural forms, or other aliases
 
     $ python3 convert.py 10 cm m
     10 cm = 0.1 m

@@ -67,9 +67,11 @@ def main() -> None:
     logging.getLogger().setLevel(logging.DEBUG if args.debug else logging.WARNING)
     logging.basicConfig(format='debugging: %(message)s')
 
-    results = []
+    # Remove "to" from dest units. This allows the user to write: "./convert.py 1 cm to inches"
+    args.dest = [unit for unit in args.dest if unit != "to"]
 
     # Perform conversions
+    results = []
     try:
         converter = UnitConverter()
         results = [(converter.convert(args.value, args.source, dest), dest) for dest in args.dest]

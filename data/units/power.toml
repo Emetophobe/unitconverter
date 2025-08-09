@@ -6,7 +6,7 @@ dimension = {"length" = 2, "mass" = 1, "time" = -3}
 symbols = ["W"]
 aliases = ["watts"]
 factor = 1
-prefix = "si"
+prefix = "metric"
 
 # 1 metric horsepower (hp) = roughly 735.5 watts
 ["horsepower"]

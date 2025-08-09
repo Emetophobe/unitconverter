@@ -6,14 +6,14 @@ dimension = {"luminous intensity" = 1}
 symbols = ["cd"]
 aliases = ["candelas"]
 factor = 1
-prefix = "si"
+prefix = "metric"
 
 # 1 lumen per steradian = 1 candela
 ["lumen/steradian"]
 symbols = ["lm/sr"]
 aliases = ["lumens/steradian"]
 factor = 1
-prefix = "si"
+prefix = "metric"
 
 # 1 candlepower = 1 candela
 ["candlepower"]

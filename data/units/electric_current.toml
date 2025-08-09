@@ -5,7 +5,7 @@ dimension = {"electric current" = 1}
 symbols = ["A"]
 aliases = ["amperes", "amps", "amp"]
 factor = 1
-prefix = "si"
+prefix = "metric"
 
 ["abampere"]
 symbols = ["abA", "Bi"]

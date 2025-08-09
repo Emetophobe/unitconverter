@@ -7,7 +7,7 @@ dimension = {}
 symbols = ["sr"]
 aliases = ["steradians"]
 factor = 1
-prefix = "si"
+prefix = "metric"
 
 # 1 square degree = (pi/180)^2 steradian = ~3.04617E−4 steradian
 ["square degree"]

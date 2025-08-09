@@ -6,11 +6,11 @@ dimension = {"length" = 2, "mass" = 1, "time" = -2, "electric current" = -1}
 symbols = ["Wb"]
 aliases = ["webers"]
 factor = 1
-prefix = "si"
+prefix = "metric"
 
 # 1 maxwell = 1E-8 weber
 ["maxwell"]
 symbols = ["Mx"]
 aliases = ["maxwells"]
 factor = 1E-8
-prefix = "si"
+prefix = "metric"

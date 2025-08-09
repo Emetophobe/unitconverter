@@ -7,7 +7,7 @@ dimension = {"length" = 2, "time" = -2}
 symbols = ["Sv"]
 aliases = ["sieverts"]
 factor = 1
-prefix = "si"
+prefix = "metric"
 
 # 1 roentgen = 0.01 sievert
 ["roentgen"]

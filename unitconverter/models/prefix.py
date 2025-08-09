@@ -67,7 +67,7 @@ class Prefix:
 
 
 # SI prefixes
-SI_PREFIXES = [
+METRIC_PREFIXES = [
     Prefix("quecto", "q", "1E-30"),
     Prefix("ronto", "r", "1E-27"),
     Prefix("yocto", "y", "1E-24"),
@@ -113,7 +113,7 @@ BIT_PREFIXES = METRIC_PREFIXES[14:]
 BYTE_PREFIXES = BIT_PREFIXES + BINARY_PREFIXES
 
 # All prefixes includes all metric and binary prefixes
-ALL_PREFIXES = SI_PREFIXES + BINARY_PREFIXES
+ALL_PREFIXES = METRIC_PREFIXES + BINARY_PREFIXES
 
 
 def get_prefixes(option: str | None) -> list[Prefix]:
@@ -130,8 +130,8 @@ def get_prefixes(option: str | None) -> list[Prefix]:
     """
     if option is None or option == "none":
         return []
-    elif option == "si":
-        return SI_PREFIXES
+    elif option == "metric":
+        return METRIC_PREFIXES
     elif option == "binary":
         return BINARY_PREFIXES
     elif option == "bit":

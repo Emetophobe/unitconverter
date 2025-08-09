@@ -5,7 +5,7 @@ dimension = {"length" = 2, "mass" = 1, "time" = -3, "electric current" = -1}
 symbols = ["V"]
 aliases = ["volts"]
 factor = 1
-prefix = "si"
+prefix = "metric"
 
 ["abvolt"]
 symbols = ["abV"]

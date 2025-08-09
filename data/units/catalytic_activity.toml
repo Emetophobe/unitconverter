@@ -7,7 +7,7 @@ dimension = {"amount of substance"  = 1, "time" = -1}
 symbols = ["kat"]
 aliases = ["katals"]
 factor = 1
-prefix = "si"
+prefix = "metric"
 
 # 1 enzyme unit = 1/60 μmol/s ≈ 16.67 nmol/s = 16.67 nkat
 # https://en.wikipedia.org/wiki/Enzyme_unit

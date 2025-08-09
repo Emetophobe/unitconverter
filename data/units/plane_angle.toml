@@ -8,7 +8,7 @@ dimension = {}
 symbols = ["rad"]
 aliases = ["radians"]
 factor = 1
-prefix = "si"
+prefix = "metric"
 
 # 1 degree = pi / 180 radians = roughly 0.0174532925 radians
 ["degree"]
@@ -21,7 +21,7 @@ factor = 1.745329251994329508887757483E-2
 symbols = ["arcsec", "′"]
 aliases = ["arcseconds"]
 factor = 4.848136811095359746910437451E-6
-prefix = "si"
+prefix = "metric"
 
 # 1 arcminute = pi / (60 x 180) radians
 ["arcminute"]

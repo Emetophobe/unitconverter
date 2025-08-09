@@ -6,7 +6,7 @@ dimension = {"time" = -1}
 ["hertz"]
 symbols = ["Hz"]
 factor = 1
-prefix = "si"
+prefix = "metric"
 
 # 1 cycle per second is equivalent to 1 hertz
 ["cycle/second"]

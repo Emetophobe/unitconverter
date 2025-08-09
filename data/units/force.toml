@@ -6,7 +6,7 @@ dimension = {"mass" = 1, "length" = 1, "time" = -2}
 symbols = ["N"]
 aliases = ["newtons"]
 factor = 1
-prefix = "si"
+prefix = "metric"
 
 # The dyne is a derived unit of force in the older CGS system
 # 1 dyne is exactly 0.00001 (1E-5) newtons
@@ -14,14 +14,14 @@ prefix = "si"
 symbols = ["dyn"]
 aliases = ["dynes"]
 factor = 0.00001
-prefix = "si"
+prefix = "metric"
 
 # 1 gram force = 0.00980665 newtons
 ["gram-force"]
 symbols = ["gf"]
 aliases = ["grams-force"]
 factor = 0.00980665
-prefix = "si"
+prefix = "metric"
 
 # 1 kilopond = 1 kilogram-force = 1000 gram-force
 ["kilopond"]
@@ -33,7 +33,7 @@ factor = 9.80665
 ["tonne-force"]
 symbols = ["tf"]
 factor = 9806.65
-prefix = "si"
+prefix = "metric"
 
 ["long ton-force"]
 symbols = ["tnf"]

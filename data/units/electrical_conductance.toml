@@ -13,14 +13,14 @@ dimension = {"length" = -2, "mass" = -1, "time" = 3, "electric current" = 2}
 symbols = ["S"]
 aliases = ["mho"]
 factor = 1
-prefix = "si"
+prefix = "metric"
 
 # 1 ampere per volt = 1 siemens
 ["ampere/volt"]
 symbols = ["A/V"]
 aliases = ["amperes/volt", "amp/volt", "amps/volt"]
 factor = 1
-prefix = "si"
+prefix = "metric"
 
 ["absiemens"]
 symbols = ["abS"]

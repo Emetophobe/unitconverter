@@ -11,7 +11,7 @@ dimension = {"length" = 3}
 symbols = ["L", "l"]
 aliases = ["litres"]
 factor = 0.001
-prefix = "si"
+prefix = "metric"
 
 # 1 stere = 1 metre^3
 ["stere"]

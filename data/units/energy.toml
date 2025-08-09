@@ -6,47 +6,47 @@ dimension = {"length" = 2, "mass" = 1, "time" = -2}
 symbols = ["J", "j"]
 aliases = ["joules"]
 factor = 1
-prefix = "si"
+prefix = "metric"
 
 # 1 watt-second = 1 joule
 ["watt-second"]
 symbols = ["Ws", "W-s"]
 aliases = ["watt-seconds", "wattseconds", "wattsecond"]
 factor = 1
-prefix = "si"
+prefix = "metric"
 
 ["watt-minute"]
 symbols = ["Wm", "W-m"]
 aliases = ["watt-minutes", "wattminutes", "wattminute"]
 factor = 60
-prefix = "si"
+prefix = "metric"
 
 # Keep this for the Wh symbol (i.e kWh, mWh)
 ["watt-hour"]
 symbols = ["Wh", "W-h"]
 aliases = ["watt-hours", "watthours", "watthour"]
 factor = 3600
-prefix = "si"
+prefix = "metric"
 
 # 1 gram of TNT = roughly 4184 joules
 ["gram of TNT"]
 symbols = ["gTNT"]
 aliases = ["grams of TNT"]
 factor = 4184
-prefix = "si"
+prefix = "metric"
 
 # 1 metric ton of TNT = roughly 4.184E+9 joules
 ["ton of TNT"]
 symbols = ["tTNT"]
 aliases = ["tons of TNT", "tonnes of TNT"]
 factor = 4.184E+9
-prefix = "si"
+prefix = "metric"
 
 ["electron volt"]
 symbols = ["eV"]
 aliases = ["electron volts"]
 factor = 1.602176633E-19
-prefix = "si"
+prefix = "metric"
 
 # 1 calorie = 4.184 joules
 ["calorie"]

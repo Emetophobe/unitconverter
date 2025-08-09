@@ -6,7 +6,7 @@ dimension = {"electric current" = 1, "time" = 1}
 symbols = ["C"]
 aliases = ["coulombs"]
 factor = 1
-prefix = "si"
+prefix = "metric"
 
 # 1 franklin = roughly 3.335640951E-10 coulomb
 ["franklin"]

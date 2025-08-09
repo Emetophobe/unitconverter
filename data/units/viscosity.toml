@@ -7,34 +7,34 @@ dimension = {"length" = -1, "mass" = 1, "time" = -1}
 symbols = ["Pa-s"]
 aliases = ["pascal-seconds"]
 factor = 1
-prefix = "si"
+prefix = "metric"
 
 # 1 poise = 0.1 pascal-second
 ["poise"]
 symbols = ["P"]
 aliases = ["poises"]
 factor = 0.1
-prefix = "si"
+prefix = "metric"
 
 # 1 gram per centimetre-second = 0.1 pascal-second
 ["gram/centimetre-second"]
 symbols = ["g/cm-s"]
 aliases = ["grams/centimetre-second"]
 factor = 0.1
-prefix = "si"
+prefix = "metric"
 
 # 1 gram per metre-second = 0.001 pascal-second
 ["gram/metre-second"]
 symbols = ["g/m-s"]
 aliases = ["grams/metre-second"]
 factor = 0.001
-prefix = "si"
+prefix = "metric"
 
 ["gram/foot-second"]
 symbols = ["g/ft-s"]
 aliases = ["grams/foot-second"]
 factor = 0.00328083989501312
-prefix = "si"
+prefix = "metric"
 
 ["slug/foot-second"]
 symbols = ["slug/ft-s"]

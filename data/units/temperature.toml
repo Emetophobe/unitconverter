@@ -10,7 +10,7 @@ dimension = {"temperature" = 1}
 ["kelvin"]
 symbols = ["K"]
 aliases = ["kelvins"]
-prefix = "si"
+prefix = "metric"
 factor = 1
 
 ["celsius"]

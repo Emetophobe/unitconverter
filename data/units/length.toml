@@ -6,7 +6,7 @@ dimension = {"length" = 1}
 symbols = ["m"]
 aliases = ["metres"]
 factor = 1
-prefix = "si"
+prefix = "metric"
 
 # 1 angstrom = 0.1 nanometers
 ["angstrom"]

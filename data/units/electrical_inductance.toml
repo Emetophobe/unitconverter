@@ -6,7 +6,7 @@ dimension = {"length" = 2, "mass" = 1, "time" = -2, "electric current" = -2}
 symbols = ["H"]
 aliases = ["henries"]
 factor = 1
-prefix = "si"
+prefix = "metric"
 
 ["abhenry"]
 symbols = ["abH"]

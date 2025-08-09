@@ -7,14 +7,14 @@ dimension = {"mass" = 1}
 symbols = ["g"]
 aliases = ["grams"]
 factor = 0.001  # kg has a factor of 1
-prefix = "si"
+prefix = "metric"
 
 # 1 metric ton (tonne) = 1000 kg
 ["tonne"]
 symbols = ["ton"]
 aliases = ["tonnes"]
 factor = 1000
-prefix = "si"
+prefix = "metric"
 
 # 1 carat = 0.2 grams or 0.0002 kg
 ["carat"]

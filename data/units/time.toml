@@ -6,7 +6,7 @@ dimension = {"time" = 1}
 symbols = ["s"]
 aliases = ["seconds", "sec"]
 factor = 1
-prefix = "si"
+prefix = "metric"
 
 ["minute"]
 symbols = ["min"]

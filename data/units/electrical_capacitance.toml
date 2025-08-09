@@ -6,7 +6,7 @@ dimension = {"length" = -2, "mass" = -1, "time" = 4, "electric current" = 2}
 symbols = ["F"]
 aliases = ["farads"]
 factor = 1
-prefix = "si"
+prefix = "metric"
 
 ["abfarad"]
 symbols = ["abF"]

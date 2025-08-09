@@ -6,20 +6,20 @@ dimension = {"length" = -1, "mass" = 1, "time" = -2}
 symbols = ["Pa"]
 aliases = ["pascals"]
 factor = 1
-prefix = "si"
+prefix = "metric"
 
 # 1 bar = exactly 100,000 (1E+5) pascal
 ["bar"]
 aliases = ["bars"]
 factor = 1E+5
-prefix = "si"
+prefix = "metric"
 
 # 1 barye = exactly 0.1 pascal
 ["barye"]
 symbols = ["Ba"]
 aliases = ["baryes"]
 factor = 0.1
-prefix = "si"
+prefix = "metric"
 
 # 1 psi = 1 pound of force per square inch = ~6894.7578896 pascal
 ["psi"]
@@ -48,7 +48,7 @@ factor = 133.322
 symbols = ["mHg", "m Hg"]
 aliases = ["metres of mercury"]
 factor = 133322.4
-prefix = "si"
+prefix = "metric"
 
 ["inch of mercury"]
 symbols = ["inHg", "in Hg"]

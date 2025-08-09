@@ -7,7 +7,7 @@ dimension = {"length" = 2, "time" = -2}
 symbols = ["Gy"]
 aliases = ["grays"]
 factor = 1
-prefix = "si"
+prefix = "metric"
 
 # 1 US rad = 0.01 gray
 ["US rad"]

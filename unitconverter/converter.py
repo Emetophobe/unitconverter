@@ -4,7 +4,7 @@
 import logging
 from decimal import Decimal, getcontext
 
-from unitconverter.exceptions import CategoryError, UnitError
+from unitconverter.exceptions import CategoryError, ConverterError
 from unitconverter.formatting import parse_decimal, simplify_unit, split_exponent
 from unitconverter.parsers import load_dimensions, load_units
 from unitconverter.models.categories import Categories
@@ -24,7 +24,20 @@ class UnitConverter:
         self._registry = Registry(load_units())
 
     def convert(self, value: Decimal | int | str, source: Unit | str, dest: Unit | str) -> Decimal:
-        """ Convert value from source unit to destination unit. """
+        """ Converts a value or quantity from the source unit to the destination unit.
+
+        Args:
+            value (Decimal | int | str): The value to convert.
+            source (Unit | str): The source unit name or unit instance.
+            dest (Unit | str): The destination unit name or unit instance.
+
+        Raises:
+            CategoryError: The unit categories are incompatible.
+            ConverterError: An argument is invalid or can't be parsed.
+
+        Returns:
+            Decimal: The conversion result.
+        """
         value = parse_decimal(value)
         source = self.parse_unit(source)
         dest = self.parse_unit(dest)
@@ -32,10 +45,6 @@ class UnitConverter:
         # Get category names matching the units dimensions
         source_category = self._categories.get_category(source.dimen)
         dest_category = self._categories.get_category(dest.dimen)
-
-        # NOTE: Extra debugging info. This will will be removed at a future date
-        logging.debug(f"{source_category=}")
-        logging.debug(f"{dest_category=}")
 
         # Make sure the units are compatible
         if source_category != dest_category:
@@ -50,7 +59,17 @@ class UnitConverter:
         return value / dest.factor
 
     def parse_unit(self, name: Unit | str) -> Unit:
-        """ Parse unit string and return a Unit object. """
+        """ Parse a unit string into a unit instance.
+
+        Args:
+            name (Unit | str): A unit name, symbol or alias. Can be a composite unit.
+
+        Raises:
+            ConverterError: If the unit is invalid or could not be parsed.
+
+        Returns:
+            Unit: A unit instance
+        """
         # Check if we already have a unit
         if isinstance(name, Unit):
             return name
@@ -58,14 +77,26 @@ class UnitConverter:
         # Try to parse the string and find a matching unit
         try:
             return self._parse_unit_name(name)
-        except UnitError:
+        except ConverterError:
             pass
 
         # Try to create a composite unit
         return self._parse_composite_unit(name)
 
     def _convert_temperature(self, value: Decimal, source: Unit, dest: Unit) -> Decimal:
-        """ Convert between temperature units. """
+        """ Convert between temperature units.
+
+        Args:
+            value (Decimal | int | str): The value to convert.
+            source (Unit | str): The source unit.
+            dest (Unit | str): The destination unit.
+
+        Raises:
+            ConverterError: If a unit is not a valid temperature unit.
+
+        Returns:
+            Decimal: The conversion result.
+        """
         # Convert from source to kelvin
         if source.name.endswith("kelvin"):
             value = value * source.factor
@@ -76,7 +107,7 @@ class UnitConverter:
         elif source.name == "rankine":
             value = value * Decimal(5) / Decimal(9)
         else:
-            raise UnitError(f"{source.name} is not a temperature unit")
+            raise ConverterError(f"{source} is not a temperature unit")
 
         # Convert from kelvin to dest
         if dest.name.endswith("kelvin"):
@@ -88,44 +119,63 @@ class UnitConverter:
         elif dest.name == "rankine":
             return value * Decimal(9) / Decimal(5)
         else:
-            raise UnitError(f"{dest.name} is not a temperature unit")
+            raise ConverterError(f"{dest} is not a temperature unit")
 
     def _parse_unit_name(self, name: str) -> Unit:
-        """ Parse a unit name into a Unit instance. """
+        """ Parse a unit string into a unit.
+
+        Args:
+            name (str): A unit name, symbol, or alias.
+
+        Raises:
+            ConverterError: If the unit can't be parsed.
+
+        Returns:
+            Unit: The new unit.
+        """
         # Check if a simplified name is in the registry
         try:
             return self._registry.get_unit(simplify_unit(name))
-        except UnitError:
+        except ConverterError:
             pass
 
         # Check if name contains a mathematical expression (not valid here)
         if "*" in name or "/" in name:
-            raise UnitError(f"{name} is not a valid unit")
+            raise ConverterError(f"{name} is not a valid unit")
 
         # Finally, try to split the unit name and exponent
         try:
             return self._registry.get_unit(*split_exponent(name))
-        except UnitError:
-            raise UnitError(f"{name} is not a valid unit")
+        except ConverterError:
+            raise ConverterError(f"{name} is not a valid unit")
 
     def _parse_composite_unit(self, name: str) -> Unit:
-        """ Parse a unit name into a composite Unit instance. """
-        # Try to create a composite unit
+        """ Parse a unit string into a composite unit.
+
+        Args:
+            name (str): A unit name, symbol, or alias.
+
+        Raises:
+            ConverterError: If the unit can't be parsed.
+
+        Returns:
+            Unit: The new unit
+        """
         names = name.split("/")
         if len(names) == 1:
-            numerators = self._parse_names(names[0])
+            numerators = self._split_units(names[0])
             denominators = []
         elif len(names) == 2:
-            numerators = self._parse_names(names[0])
-            denominators = self._parse_names(names[1])
+            numerators = self._split_units(names[0])
+            denominators = self._split_units(names[1])
         else:
-            raise UnitError(f"{name} is not a valid unit (only one division"
-                            " per expression is currently supported)")
+            raise ConverterError(f"{name} is not a valid unit (only one division"
+                                 " per unit is currently supported)")
 
         numerators = [self._parse_unit_name(numer) for numer in numerators]
         denominators = [self._parse_unit_name(denom) for denom in denominators]
 
-        logging.debug("parse_unit()")
+        logging.debug("_parse_composite_unit()")
         logging.debug(f"numerators: {numerators}")
         logging.debug(f"denominators: {denominators}")
 
@@ -137,13 +187,13 @@ class UnitConverter:
                     msg = f"{name} is not a valid unit (cannot divide units in the same category)"
                 else:
                     msg = f"{name} is not a valid unit"
-                raise UnitError(msg)
+                raise ConverterError(msg)
 
         # Celsius, Fahrenheit, and Rankine can't be composited for now
         for unit in numerators + denominators:
             if unit.name in ("celsius", "fahrenheit", "rankine"):
-                raise UnitError(f"{unit.name} cannot be composited (only kelvin"
-                                " is currently supported)")
+                raise ConverterError(f"{unit.name} cannot be composited (only kelvin"
+                                     " is currently supported)")
 
         # Reduce list of numerators into a single unit
         numer = Unit()
@@ -163,10 +213,11 @@ class UnitConverter:
         logging.debug(f"unit : {unit} ({unit.dimen})")
 
         if not unit:
-            raise UnitError(f"{name} is not a valid unit")
+            raise ConverterError(f"{name} is not a valid unit")
 
         return unit
 
-    def _parse_names(self, names: str) -> list[str]:
+    def _split_units(self, units: str) -> list[str]:
         """ Split numerators or denominators into a list of unit names. """
-        return names.split("*")
+        # For now we just split units with the multiplication symbol
+        return units.split("*")

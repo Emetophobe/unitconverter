@@ -1,18 +1,26 @@
 # Copyright (c) 2022-2025 Mike Cunningham
 
 
-from unitconverter.exceptions import DefinitionError, UnitError
+from unitconverter.exceptions import ConverterError
 from unitconverter.models.definition import Definition
 from unitconverter.models.prefix import get_prefixes
 from unitconverter.models.unit import Unit
 
 
 class Registry:
-    """ Used to store and retrieve unit definitions. """
+    """ Used to store and retrieve information about units.
+
+        Use add_definition() to define a Unit in the registry.
+        Use get_unit() to retrieve a Unit from the registry.
+     """
 
     def __init__(self, units: dict[str, Definition] | None = None) -> None:
-        """ Initialize registry with optional unit definitions. """
+        """ Create a unit registry.
 
+        Args:
+            units (dict[str, Definition] | None, optional):
+                A dictionary of pre-defined units. Defaults to None.
+        """
         self._units = {}
         self._aliases = {}
 
@@ -22,9 +30,15 @@ class Registry:
                 self.add_definition(definition)
 
     def add_definition(self, definition: Definition) -> None:
-        """ Add a unit definition to the registry. """
+        """ Add a unit definition to the registry.
 
-        # Add aliases and check for dupes
+        Args:
+            definition (Definition): The unit definition.
+
+        Raises:
+            ConverterError: If the definition is invalid or it contains a duplicate.
+        """
+        # Add unit names, symbols, and aliases
         for alias in definition.names():
             self.add_alias(definition, alias)
 
@@ -36,37 +50,59 @@ class Registry:
             self.add_definition(prefix + definition)
 
     def add_alias(self, unit: Definition | str, alias: str) -> None:
-        """ Add a unit alias. Raises a DefinitionError if an argument is invalid. """
+        """ Add a unit name, symbol, or alias to the registry.
 
-        # Make sure the definition is valid
+        Args:
+            unit (Definition | str): A unit string or unit definition.
+            alias (str): A unit name, symbol, or alias.
+
+        Raises:
+            ConverterError: If an argument is invalid or if the alias is already defined.
+        """
+        if not isinstance(unit, (Definition, str)):
+            raise ConverterError(f"{unit} is not a valid unit definition")
+
+        if not alias or not isinstance(alias, str):
+            raise ConverterError(f"{unit} has an invalid alias {alias!r}")
+
+        # Try to convert a unit string to unit definition.
         if isinstance(unit, str):
             unit = self.get_definition(unit)
-        elif not isinstance(unit, Definition):
-            raise DefinitionError(f"{unit} is not a valid Definition")
-
-        # Make sure the alias is valid
-        if not alias or not isinstance(alias, str):
-            raise DefinitionError(f"{unit} has an invalid alias {alias}")
-        elif alias in self._aliases:
-            raise DefinitionError(f"{unit} has a duplicate alias {alias}")
 
         self._aliases[alias] = unit
 
     def get_unit(self, name: str, exponent: int = 1) -> Unit:
-        """ Get a unit by name. Raises a UnitError if the name is invalid. """
+        """ Get unit by name, symbol, or alias.
+
+        Args:
+            name (str): A unit name, symbol, or alias.
+            exponent (int, optional): Unit exponent. Defaults to 1.
+
+        Raises:
+            ConverterError: If no unit could be found.
+
+        Returns:
+            Unit: The unit instance.
+        """
         try:
             unit = self._aliases[name]
             return Unit(unit.factor, unit.name, unit.dimen) ** exponent
         except KeyError:
-            raise UnitError(f"{name} is not a valid unit")
+            raise ConverterError(f"{name} is not a valid unit")
 
     def get_definition(self, name: str) -> Definition:
-        """ Get a unit definition from a unit name. """
+        """ Get a unit definition from a unit name, symbol, or alias.
+
+        Args:
+            name (str): A unit name, symbol, or alias.
+
+        Raises:
+            ConverterError: If no unit could be found.
+
+        Returns:
+            Definition: The unit definition.
+        """
         try:
             return self._aliases[name]
         except KeyError:
-            raise UnitError(f"{name} is not a valid unit")
-
-    def __contains__(self, unit: str) -> bool:
-        """ Returns true if a unit name is in the registry. """
-        return unit in self._aliases
+            raise ConverterError(f"{name} is not a valid unit")

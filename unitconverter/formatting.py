@@ -4,7 +4,7 @@
 import re
 from decimal import Decimal, DecimalException
 
-from unitconverter.exceptions import ConverterError, UnitError
+from unitconverter.exceptions import ConverterError
 
 
 # Unit formatting symbols
@@ -147,7 +147,7 @@ def split_exponent(name: str) -> tuple[str, int]:
     result = _pattern.match(simplify_unit(name))
 
     if not result:
-        raise UnitError(f"{name} is not a valid unit")
+        raise ConverterError(f"{name} is not a valid unit")
 
     if result.group("exp"):
         return (result.group("unit"), int(result.group("exp")))
@@ -169,7 +169,7 @@ def simplify_unit(name: str) -> str:
 
     """
     if not isinstance(name, str):
-        raise UnitError(f"{name} is not a valid unit")
+        raise ConverterError(f"{name} is not a valid unit")
 
     for key, value in _replacements.items():
         if key in name:

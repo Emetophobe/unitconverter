@@ -7,11 +7,21 @@ from pathlib import Path
 class ConverterError(Exception):
     """ Base exception class for all converter-related errors. """
 
-    def __init__(self, msg: str) -> None:
-        self.msg = f"Error: {msg}"
+    def __init__(self, msg: str, details: Path | str | None = None) -> None:
+        """
+
+        Args:
+            msg (str): the error message.
+            details (Path | str | None, optional): extra details. Defaults to None.
+        """
+        self.msg = msg
+        self.details = details
 
     def __str__(self) -> str:
-        return self.msg
+        if self.details:
+            return f"Error: {self.msg} {self.details}"
+        else:
+            return f"Error: {self.msg}"
 
 
 class CategoryError(ConverterError):
@@ -19,27 +29,3 @@ class CategoryError(ConverterError):
     def __init__(self, source: str, source_category: str, dest: str, dest_category: str) -> None:
         super().__init__(f"Can't convert between {source} ({source_category})"
                          f" and {dest} ({dest_category})")
-
-
-class DefinitionError(ConverterError):
-    """ Definition related errors. """
-    def __init__(self, msg: str, filename: str | Path | None = None) -> None:
-        if filename:
-            super().__init__(f"{msg} ({filename})")
-        else:
-            super().__init__(f"{msg}")
-
-
-class DimensionError(ConverterError):
-    """ Dimension related errors. """
-    pass
-
-
-class PrefixError(ConverterError):
-    """ Prefix related errors. """
-    pass
-
-
-class UnitError(ConverterError):
-    """ Unit related errors. """
-    pass

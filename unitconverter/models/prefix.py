@@ -3,7 +3,7 @@
 
 from decimal import Decimal
 
-from unitconverter.exceptions import PrefixError
+from unitconverter.exceptions import ConverterError
 from unitconverter.formatting import parse_decimal
 from unitconverter.models.definition import Definition
 
@@ -11,28 +11,44 @@ from unitconverter.models.definition import Definition
 # List of valid prefix options
 PREFIX_OPTIONS = [
     "none",         # don"t generate prefixes (default)
-    "si",           # SI prefixes
+    "metric",       # metric prefixes
     "binary",       # binary prefixes
-    "bit",          # bit prefixes "kilo" to "quetta"
+    "bit",          # bit prefixes
     "byte",         # bit prefixes and binary prefixes
     "all",          # all SI prefixes and binary prefixes
 ]
 
 
 class Prefix:
-    """ A Prefix can be added to a unit definition. """
+    """ A Prefix can be combined with a Definition to make a prefixed definition. """
 
     def __init__(self, name: str, symbol: str, factor: Decimal | int | str) -> None:
-        """ Initialize prefix. """
+        """ Create a new prefix.
+
+        Args:
+            name (str): The prefix name.
+            symbol (str): The prefix symbol.
+            factor (Decimal | int | str): The multiplication factor.
+        """
         self.name = name
         self.symbol = symbol
         self.factor = parse_decimal(factor)
 
-    def __add__(self, other: object) -> Definition:
-        """ Combine a Prefix with a Definition to create a prefixed unit definition. """
+    def __add__(self, other: Definition) -> Definition:
+        """ Add a prefix to a unit definition to create a new prefixed definition.
+
+        Args:
+            other (Definition): The unit definition to prefix.
+
+        Raises:
+            ConverterError: If the definition is invalid.
+
+        Returns:
+            Definition: A new prefixed definition.
+        """
 
         if not isinstance(other, Definition):
-            raise PrefixError(f"Prefix {self.name} can only be added to a Definition")
+            raise ConverterError(f"Prefix {self.name} can only be added to a Definition")
 
         # Create prefixed unit names and factor
         name = self.name + other.name
@@ -78,7 +94,7 @@ SI_PREFIXES = [
     Prefix("quetta", "Q", "1E+30"),
 ]
 
-# Binary prefixes (i.e kibibyte to yobibyte)
+# Binary prefixes (used by kibibyte to yobibyte)
 BINARY_PREFIXES = [
     Prefix("kibi", "Ki", 2 ** 10),
     Prefix("mebi", "Mi", 2 ** 20),
@@ -90,18 +106,28 @@ BINARY_PREFIXES = [
     Prefix("yobi", "Yi", 2 ** 80),
 ]
 
-# Bit prefixes = SI prefixes kilo to quetta (used by the bit unit)
-BIT_PREFIXES = SI_PREFIXES[14:]
+# Bit prefixes includes metric prefixes "kilo" to "quetta" (used by the bit unit)
+BIT_PREFIXES = METRIC_PREFIXES[14:]
 
-# Byte prefixes = bit prefixes and binary prefixes (used by the byte unit)
+# Byte prefixes includes bit prefixes and binary prefixes (used by the byte unit)
 BYTE_PREFIXES = BIT_PREFIXES + BINARY_PREFIXES
 
-# All prefixes = SI prefixes and binary prefixes
+# All prefixes includes all metric and binary prefixes
 ALL_PREFIXES = SI_PREFIXES + BINARY_PREFIXES
 
 
 def get_prefixes(option: str | None) -> list[Prefix]:
-    """ Get a list of supported prefixes based on the prefix option. """
+    """ Get a list of supported prefixes based on the prefix option.
+
+    Args:
+        option (str | None): The prefix setting (i.e "metric")
+
+    Raises:
+        ConverterError: If the prefix option is invalid.
+
+    Returns:
+        list[Prefix]: The list of supported prefixes, or an empty list if not supported.
+    """
     if option is None or option == "none":
         return []
     elif option == "si":
@@ -115,4 +141,4 @@ def get_prefixes(option: str | None) -> list[Prefix]:
     elif option == "all":
         return ALL_PREFIXES
     else:
-        raise PrefixError(f"{option} is not a valid prefix option")
+        raise ConverterError(f"{option} is not a valid prefix option")

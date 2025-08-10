@@ -1,17 +1,21 @@
 dimension = {"electric current" = 1}
 
+
 # The ampere is the SI unit of electric current
 ["ampere"]
 symbols = ["A"]
-aliases = ["amperes", "amps", "amp"]
-factor = 1
+aliases = ["amperes", "amp", "amps"]
 prefix = "metric"
+factor = 1
 
+
+# abampere is an older CGS unit
 ["abampere"]
 symbols = ["abA", "Bi"]
-aliases = ["abamperes", "biots", "biot"]
+aliases = ["abamperes", "biot", "biots"]
 factor = 10
 
+# statampere is an older CGS unit
 ["statampere"]
 symbols = ["stA"]
 aliases = ["statamperes"]

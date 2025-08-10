@@ -5,8 +5,8 @@ dimension = {"time" = 1}
 ["second"]
 symbols = ["s"]
 aliases = ["seconds", "sec"]
-factor = 1
 prefix = "metric"
+factor = 1
 
 ["minute"]
 symbols = ["min"]

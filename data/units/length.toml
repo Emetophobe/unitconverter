@@ -1,6 +1,5 @@
 dimension = {"length" = 1}
 
-
 # The metre is the SI unit of length
 ["metre"]
 symbols = ["m"]
@@ -14,13 +13,8 @@ symbols = ["Å"]
 aliases = ["angstroms"]
 factor = 1E-10
 
-
 # Imperial units
 
-
-["twip"]
-aliases = ["twips"]
-factor = 0.0000176389
 
 # 1 thousands of an inch
 ["thou"]
@@ -203,6 +197,10 @@ factor = 3.0857E+16
 
 
 # Typesetting units
+
+["twip"]
+aliases = ["twips"]
+factor = 0.0000176389
 
 ["point"]
 aliases = ["points"]

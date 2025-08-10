@@ -8,7 +8,7 @@ aliases = ["webers"]
 factor = 1
 prefix = "metric"
 
-# 1 maxwell = 1E-8 weber
+# The maxwell is an older CGS unit
 ["maxwell"]
 symbols = ["Mx"]
 aliases = ["maxwells"]

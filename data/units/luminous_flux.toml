@@ -5,5 +5,5 @@ dimension = {"luminous intensity" = 1}
 ["lumen"]
 symbols = ["lm"]
 aliases = ["lumens"]
-factor = 1
 prefix = "metric"
+factor = 1

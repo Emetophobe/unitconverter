@@ -5,16 +5,14 @@ dimension = {"length" = 2, "mass" = 1, "time" = -3}
 ["watt"]
 symbols = ["W"]
 aliases = ["watts"]
-factor = 1
 prefix = "metric"
+factor = 1
 
-# 1 metric horsepower (hp) = roughly 735.5 watts
 ["horsepower"]
 symbols = ["hp"]
 aliases = ["metric horsepower", "metric hp"]
 factor = 735.5
 
-# 1 mechanical horsepower (bhp) = roughly 745.7 watts
 ["mechanical horsepower"]
 symbols = ["bhp"]
 aliases = ["imperial horsepower", "mechanical hp", "imperial hp"]

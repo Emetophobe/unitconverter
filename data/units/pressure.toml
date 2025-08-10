@@ -5,21 +5,29 @@ dimension = {"length" = -1, "mass" = 1, "time" = -2}
 ["pascal"]
 symbols = ["Pa"]
 aliases = ["pascals"]
+prefix = "metric"
 factor = 1
-prefix = "metric"
 
-# 1 bar = exactly 100,000 (1E+5) pascal
-["bar"]
-aliases = ["bars"]
-factor = 1E+5
-prefix = "metric"
+
+# Non-SI metric units
+
 
 # 1 barye = exactly 0.1 pascal
 ["barye"]
 symbols = ["Ba"]
 aliases = ["baryes"]
-factor = 0.1
 prefix = "metric"
+factor = 0.1
+
+# 1 bar = exactly 100,000 pascal
+["bar"]
+aliases = ["bars"]
+prefix = "metric"
+factor = 1E+5
+
+
+# Imperial units
+
 
 # 1 psi = 1 pound of force per square inch = ~6894.7578896 pascal
 ["psi"]

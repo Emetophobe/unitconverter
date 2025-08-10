@@ -5,14 +5,16 @@ dimension = {"length" = -2, "mass" = -1, "time" = 4, "electric current" = 2}
 ["farad"]
 symbols = ["F"]
 aliases = ["farads"]
-factor = 1
 prefix = "metric"
+factor = 1
 
+# abfarad is an older CGS unit
 ["abfarad"]
 symbols = ["abF"]
 aliases = ["abfarads"]
 factor = 1E+9
 
+# statfarad is an older CGS unit
 ["statfarad"]
 symbols = ["stF"]
 aliases = ["statfarads"]

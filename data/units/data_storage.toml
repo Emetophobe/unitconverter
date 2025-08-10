@@ -5,11 +5,11 @@ dimension = {"data storage" = 1}
 ["bit"]
 symbols = ["b"]
 aliases = ["bits"]
-factor = 1
 prefix = "bit"
+factor = 1
 
 ["byte"]
 symbols = ["B"]
 aliases = ["bytes"]
-factor = 8
 prefix = "byte"
+factor = 8

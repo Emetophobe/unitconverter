@@ -9,6 +9,10 @@ aliases = ["grams"]
 factor = 0.001  # kg has a factor of 1
 prefix = "metric"
 
+
+# Non-SI metric units
+
+
 # 1 metric ton (tonne) = 1000 kg
 ["tonne"]
 symbols = ["ton"]
@@ -31,18 +35,22 @@ factor = 1.660540199E-27
 # Imperial units
 
 
+# 7000 grains = 1 pound
+["grain"]
+symbols = ["gr"]
+aliases = ["grains"]
+factor = 6.479891E-5
+
 ["ounce"]
 symbols = ["oz"]
 aliases = ["ounces"]
 factor = 0.028349523125
 
-# 1 pound = 16 ounces
 ["pound"]
 symbols = ["lbs", "lb"]
 aliases = ["pounds"]
 factor = 0.45359237
 
-# 1 kilopound (kip) = 1000 lbs
 ["kilopound"]
 symbols = ["klbs", "klb"]
 aliases = ["kilopounds"]
@@ -63,26 +71,19 @@ factor = 12.70058636
 # 1 long hundredweight = 4 quarters
 ["hundredweight"]
 symbols = ["cwt"]
-aliases = ["hundredweights", "long hundredweights", "long hundredweight"]
+aliases = ["hundredweights", "long hundredweight", "long hundredweights"]
 factor = 50.80234544
 
 # 1 long ton is exactly 1.2 short tons
 ["long ton"]
 symbols = ["LT"]
-aliases = ["long tons", "imperial tons", "imperial ton"]
+aliases = ["long tons", "imperial ton", "imperial tons"]
 factor = 1016.0469088
 
 ["slug"]
 aliases = ["slugs"]
 factor = 14.59390
 
-# 7000 grains = 1 pound
-["grain"]
-symbols = ["gr"]
-aliases = ["grains"]
-factor = 6.479891E-5
-
-# 1 dram = roughly 27.3438 grains
 ["dram"]
 symbols = ["dr"]
 aliases = ["drams", "drachms", "drachm"]
@@ -112,24 +113,24 @@ factor = 0.3732417216
 
 # 1 US stone = 12.5 lbs
 ["US stone"]
-symbols = ["usst"]
+symbols = ["usstone"]
 aliases = ["US stones"]
 factor = 5.669904625
 
 # 1 US quarter = 2 US stones = 25 lbs
 ["US quarter"]
-symbols = ["usqr"]
+symbols = ["usquarter"]
 aliases = ["US quarters"]
 factor = 11.33980925
 
 # 1 US hundredweight = 100 lbs
 ["US hundredweight"]
 symbols = ["uscwt"]
-aliases = ["US hundredweights", "short hundredweights", "short hundredweight"]
+aliases = ["US hundredweights", "short hundredweight", "short hundredweights"]
 factor = 45.359237
 
 # 1 US ton = 2000 lbs
 ["short ton"]
-symbols = ["ST", "uston"]
-aliases = ["short tons", "US tons", "US ton"]
+symbols = ["tn"]
+aliases = ["short tons", "US ton", "US tons"]
 factor = 907.18474

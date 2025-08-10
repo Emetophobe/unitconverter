@@ -6,17 +6,12 @@ dimension = {"length" = 2, "time" = -2}
 ["sievert"]
 symbols = ["Sv"]
 aliases = ["sieverts"]
-factor = 1
 prefix = "metric"
+factor = 1
 
-# 1 roentgen = 0.01 sievert
+# The roetgen is an older CGS unit
 ["roentgen"]
 symbols = ["rem"]
 aliases = ["roentgens"]
+prefix = "metric"
 factor = 0.01
-
-# 1 millirem = 1/1000 roetgen = 0.00001 (1E-5) sievert
-["millirem"]
-symbols = ["mrem"]
-aliases = ["millirems"]
-factor = 1E-5

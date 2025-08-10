@@ -5,14 +5,16 @@ dimension = {"length" = 2, "mass" = 1, "time" = -3, "electric current" = -2}
 ["ohm"]
 symbols = ["Ω"]
 aliases = ["ohms"]
-factor = 1
 prefix = "metric"
+factor = 1
 
+# abohm is an older CGS unit
 ["abohm"]
 symbols = ["abΩ"]
 aliases = ["abohms"]
 factor = 1E-9
 
+# statohm is an older CGS unit
 ["statohm"]
 symbols = ["stΩ"]
 aliases = ["statohms"]

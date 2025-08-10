@@ -2,41 +2,12 @@ dimension = {"length" = -1, "mass" = 1, "time" = -1}
 
 
 # The pascal-second is the SI unit of viscosity
-# 1 pascal-second = 1 newton-second per square metre (N-s/m^2)
-["pascal-second"]
-symbols = ["Pa-s"]
-aliases = ["pascal-seconds"]
-factor = 1
-prefix = "metric"
+# It can be created from a pascal and a second
 
-# 1 poise = 0.1 pascal-second
+
+# The poise is an older CGs unit
 ["poise"]
 symbols = ["P"]
 aliases = ["poises"]
+prefix = "metric"
 factor = 0.1
-prefix = "metric"
-
-# 1 gram per centimetre-second = 0.1 pascal-second
-["gram/centimetre-second"]
-symbols = ["g/cm-s"]
-aliases = ["grams/centimetre-second"]
-factor = 0.1
-prefix = "metric"
-
-# 1 gram per metre-second = 0.001 pascal-second
-["gram/metre-second"]
-symbols = ["g/m-s"]
-aliases = ["grams/metre-second"]
-factor = 0.001
-prefix = "metric"
-
-["gram/foot-second"]
-symbols = ["g/ft-s"]
-aliases = ["grams/foot-second"]
-factor = 0.00328083989501312
-prefix = "metric"
-
-["slug/foot-second"]
-symbols = ["slug/ft-s"]
-aliases = ["slugs/foot-second"]
-factor = 47.88025898

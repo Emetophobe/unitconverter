@@ -5,77 +5,83 @@ dimension = {"length" = 2, "mass" = 1, "time" = -2}
 ["joule"]
 symbols = ["J", "j"]
 aliases = ["joules"]
+prefix = "metric"
 factor = 1
-prefix = "metric"
 
-# 1 watt-second = 1 joule
-["watt-second"]
-symbols = ["Ws", "W-s"]
-aliases = ["watt-seconds", "wattseconds", "wattsecond"]
-factor = 1
-prefix = "metric"
 
-["watt-minute"]
-symbols = ["Wm", "W-m"]
-aliases = ["watt-minutes", "wattminutes", "wattminute"]
-factor = 60
-prefix = "metric"
+# Non-SI metric units
 
-# Keep this for the Wh symbol (i.e kWh, mWh)
-["watt-hour"]
-symbols = ["Wh", "W-h"]
-aliases = ["watt-hours", "watthours", "watthour"]
-factor = 3600
-prefix = "metric"
-
-# 1 gram of TNT = roughly 4184 joules
-["gram of TNT"]
-symbols = ["gTNT"]
-aliases = ["grams of TNT"]
-factor = 4184
-prefix = "metric"
-
-# 1 metric ton of TNT = roughly 4.184E+9 joules
-["ton of TNT"]
-symbols = ["tTNT"]
-aliases = ["tons of TNT", "tonnes of TNT"]
-factor = 4.184E+9
-prefix = "metric"
 
 ["electron volt"]
 symbols = ["eV"]
 aliases = ["electron volts"]
-factor = 1.602176633E-19
 prefix = "metric"
+factor = 1.602176633E-19
 
-# 1 calorie = 4.184 joules
 ["calorie"]
 symbols = ["cal"]
 aliases = ["calories", "small calories", "small calorie"]
 factor = 4.184
 
-# 1 kilocalorie = 1000 calories = 4184 joules
 ["kilocalorie"]
 symbols = ["kcal"]
 aliases = ["kilocalories", "large calories", "large calorie"]
 factor = 4184
 
-# 1 btu = 1055.06 joules
+["gram of TNT"]
+symbols = ["gTNT"]
+aliases = ["grams of TNT"]
+prefix = "metric"
+factor = 4184
+
+["ton of TNT"]
+symbols = ["tTNT"]
+aliases = ["tons of TNT", "tonne of TNT", "tonnes of TNT"]
+prefix = "metric"
+factor = 4.184E+9
+
+# Define here for the Ws symbol
+["watt-second"]
+symbols = ["Ws", "W-s"]
+aliases = ["watt-seconds", "wattseconds", "wattsecond"]
+prefix = "metric"
+factor = 1
+
+# Define here for the Wm symbol
+["watt-minute"]
+symbols = ["Wm", "W-m"]
+aliases = ["watt-minutes", "wattminutes", "wattminute"]
+prefix = "metric"
+factor = 60
+
+# Define here for the Wh symbol (i.e kWh)
+["watt-hour"]
+symbols = ["Wh", "W-h"]
+aliases = ["watt-hours", "watthours", "watthour"]
+prefix = "metric"
+factor = 3600
+
+# erg is an older CGS unit
+["erg"]
+aliases = ["ergs"]
+factor = 1E-7
+
+
+# Imperial units
+
+
 ["british thermal unit"]
 symbols = ["btu"]
 aliases = ["british thermal units"]
 factor = 1055.06
 
-["quadrillion btu"]
-symbols = ["quad"]
-aliases = ["quadrillion btus"]
-factor = 1.05506E+18
-
-["erg"]
-aliases = ["ergs"]
-factor = 1E-7
-
+# 1 therm = 100,000 btus
 ["therm"]
 symbols = ["thm"]
 aliases = ["therms"]
 factor = 105506000
+
+["quadrillion btu"]
+symbols = ["quad"]
+aliases = ["quadrillion btus"]
+factor = 1.05506E+18

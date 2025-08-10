@@ -1,57 +1,61 @@
 dimension = {"length" = 2}
 
-
 # The square metre (m^2) is the SI unit of area
 # Square metre can be generated from metre, no need to define it here
 # All other length units can also be used to create area units
 
 
-# 1 are = 100 m^2
+# Non-SI metric units
+
+
+# 1 are is exactly 100 square metres
 ["are"]
 aliases = ["ares"]
 factor = 100.0
 
-# 1 barn = 1E-28 m^2
-["barn"]
-aliases = ["barns"]
-factor = 1E-28
-
-# 1 hectare (hectometre^2) = 100 ares = 10000 m^2
+# 1 hectare is exactly 10,000 square metres
 ["hectare"]
 symbols = ["ha"]
 aliases = ["hectares"]
 factor = 10000
 
-# 1 acre is roughly 4046.8564224 m^2
+# 1 barn is exactly 100 square femtometres
+["barn"]
+aliases = ["barns"]
+factor = 1E-28
+
+
+# Imperial units
+
+
+# 1 square is equal to 100 square feet
+["square"]
+aliases = ["squares"]
+factor = 9.290304
+
+# 1 rood is 0.25 acres
+["rood"]
+aliases = ["roods"]
+factor = 1011.7141056
+
+# 1 acre is 4,840 square yards
 ["acre"]
 symbols = ["ac"]
 aliases = ["acres"]
 factor = 4046.8564224
 
-# 1 hide = 120 acres = 485000 m^2
+# 1 hide is 120 acres
 ["hide"]
 aliases = ["hides"]
 factor = 485000
 
-# 1 rood = 1/4 acre = roughly 1011.7141056 m^2
-["rood"]
-aliases = ["roods"]
-factor = 1011.7141056
-
-["arpent"]
-aliases = ["arpents"]
-factor = 3418.8929237
-
-# 1 square = 100 square feet or roughly 9.290304 m^2
-["square"]
-aliases = ["squares"]
-factor = 9.290304
-
+# 1 circular mil is is equal to π/4 square mils
 ["circular thou"]
 symbols = ["circ thou", "circ mil"]
-aliases = ["circular mils", "circular mil"]
+aliases = ["circular mil", "circular mils"]
 factor = 5.06707479E-10
 
+# 1 circular inch is equal to π/4 square inches
 ["circular inch"]
 symbols = ["circ in"]
 aliases = ["circular inches"]
@@ -64,18 +68,18 @@ factor = 0.000506707479
 
 ["US survey acre"]
 symbols = ["surveyac"]
-aliases = ["US survey acres", "surveyacres", "surveyacre"]
+aliases = ["US survey acres", "surveyacre", "surveyacres"]
 factor = 4046.872609874
 
 ["US survey homestead"]
-aliases = ["US survey homesteads", "homesteads", "homestead"]
+aliases = ["US survey homesteads", "homestead", "homesteads"]
 factor = 647497.02758
 
 ["US survey section"]
-aliases = ["US survey sections", "sections", "section"]
+aliases = ["US survey sections", "section", "sections"]
 factor = 2589988.1103
 
 ["US survey township"]
 symbols = ["twp"]
-aliases = ["US survey townships", "townships", "township"]
+aliases = ["US survey townships", "township", "townships"]
 factor = 93239571.972

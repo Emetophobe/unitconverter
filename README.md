@@ -7,9 +7,9 @@ python library there are superior alternatives such as [pint][1] or [metrolopy][
 
 The following unit categories are currently supported:
 
-* Absorbed dose (gray, usrad)
+* Absorbed dose (gray, Rad)
 * Acceleration (metre/second², foot/second², mile/second²)
-* Amount of substance (mole, atom)
+* Amount of substance (mole)
 * Area (square metre, square mile, acre, hectare, etc...)
 * Catalytic activity (katal, mole/second, enzyme unit)
 * Data storage (bits, bytes, kilobytes, kibibytes, etc...)
@@ -36,7 +36,6 @@ The following unit categories are currently supported:
 * Power (watt, volt-ampere, joule/second, horsepower, etc...)
 * Pressure (pascal, bar, psi, torr, standard atmosphere, etc..)
 * Radioactivity (becquerel, curie, rutherford)
-* Signal intensity (decibel, bel, and neper)
 * Solid angle (steradian, square degree, spat)
 * Speed (kilometres/hour, miles/hour, metre/second, inch/second, etc...)
 * Temperature (kelvin, celsius, fahrenheit, and rankine)

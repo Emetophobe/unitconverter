@@ -2,8 +2,7 @@ dimension = {"temperature" = 1}
 
 
 # Temperature units use a custom conversion function
-# they can't be combined with other units (for now)
-# The unit factor (1) is also unused here
+# The unit factors are ignored here
 
 
 # kelvin is the SI base unit of temperature
@@ -13,6 +12,7 @@ aliases = ["kelvins"]
 prefix = "metric"
 factor = 1
 
+# celsius is a SI derived unit of temperature
 ["celsius"]
 symbols = ["°C", "degC", "c"]
 aliases = ["centigrade"]

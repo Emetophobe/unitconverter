@@ -6,17 +6,14 @@ dimension = {"time" = -1}
 ["becquerel"]
 symbols = ["Bq"]
 aliases = ["becquerels"]
-factor = 1
 prefix = "metric"
+factor = 1
 
-# 1 curie = 3.7E+10 becquerel
 ["curie"]
 symbols = ["Ci"]
 aliases = ["curies"]
 factor = 3.7E+10
-prefix = "metric"
 
-# 1 rutherford = 1 MBq or 1E+6 becquerel
 ["rutherford"]
 symbols = ["Rd"]
 aliases = ["rutherfords"]

@@ -6,16 +6,17 @@ dimension = {}
 ["steradian"]
 symbols = ["sr"]
 aliases = ["steradians"]
-factor = 1
 prefix = "metric"
+factor = 1
 
-# 1 square degree = (pi/180)^2 steradian = ~3.04617E−4 steradian
+
+# 1 square degree = (pi/180)^2 steradian
 ["square degree"]
 symbols = ["deg2"]
 aliases = ["square degrees"]
 factor = 0.000304617
 
-# 1 spat = 4π steradians= = ~12.5663706144 steradian
+# 1 spat = 4π steradians
 ["spat"]
 symbols = ["sp"]
 aliases = ["spats"]

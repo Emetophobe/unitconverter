@@ -2,95 +2,107 @@
 # Copyright (c) 2022-2025 Mike Cunningham
 
 
-import argparse
-import logging
 import sys
-from decimal import Decimal, DecimalException
+import logging
+import argparse
+
+from decimal import DecimalException
 
 from unitconverter.converter import UnitConverter
 from unitconverter.exceptions import ConverterError
-from unitconverter.formatting import format_decimal
+from unitconverter.formatting import format_decimal, parse_decimal
 
 
-def print_error(error_msg: str, status: int = 1) -> None:
-    """ Print an error message and exit. """
-    print(error_msg, file=sys.stderr)
+def print_error(msg: str, status: int = 1) -> None:
+    """ Helper function to print an error message and exit. """
+    print(msg, file=sys.stderr)
     sys.exit(status)
 
 
 def main() -> None:
-    parser = argparse.ArgumentParser(description='A simple unit converter')
+    parser = argparse.ArgumentParser(description="A simple unit converter")
 
     parser.add_argument(
-        'value',
-        help='integer or decimal value',
-        type=Decimal)
+        "value",
+        help="an integer or decimal value")
 
     parser.add_argument(
-        'source',
-        help='the source unit')
+        "source",
+        help="the source unit")
 
     parser.add_argument(
-        'dest',
-        help='one or more destination units',
-        nargs='+')
+        "dest",
+        help="one or more destination units",
+        nargs="+")
 
     parser.add_argument(
-        '-p', '--precision',
-        help='set rounding precision (default: %(default)s)',
-        metavar='ndigits',
+        "-p", "--precision",
+        help="set rounding precision (default: %(default)s)",
+        metavar="ndigits",
         default=None,
         type=int)
 
     parser.add_argument(
-        '-c', '--commas',
-        help='show thousands separator (default: False)',
-        action='store_true')
+        "-c", "--commas",
+        help="show thousands separator (default: False)",
+        action="store_true")
 
     parser.add_argument(
-        '-e', '--exponent',
-        help='show E notation when possible (default: False)',
-        action='store_true')
+        "-e", "--exponent",
+        help="show E notation when possible (default: False)",
+        action="store_true")
 
     parser.add_argument(
-        '-d', '--debug',
+        "-d", "--debug",
         help=argparse.SUPPRESS,
-        action='store_true')
+        action="store_true")
 
     args = parser.parse_args()
 
-    # Check precision argument
+    # Try to convert value to a decimal
+    try:
+        args.value = parse_decimal(args.value)
+    except ConverterError:
+        print_error(f"Error: {args.value!r} is not a numerical value.")
+
+    # Check precision
     if args.precision is not None and (args.precision < 0 or args.precision > 20):
-        print_error('Error: precision must be between 0 and 20.')
+        print_error("Error: Precision must be between 0 and 20.")
+
+    # Allow <source> to <unit> but check for syntax errors
+    # Make sure to remove "to" from the dest units
+    if "to" in args.dest:
+        if args.dest.count("to") > 1 or args.dest[0] != "to" or len(args.dest) == 1:
+            print_error("Error: Invalid use of <source> to <dest> syntax")
+        else:
+            args.dest.remove("to")
 
     # Configure debug logger
     logging.getLogger().setLevel(logging.DEBUG if args.debug else logging.WARNING)
-    logging.basicConfig(format='debugging: %(message)s')
-
-    # Remove "to" from dest units. This allows the user to write: "./convert.py 1 cm to inches"
-    args.dest = [unit for unit in args.dest if unit != "to"]
+    logging.basicConfig(format="debugging: %(message)s")
 
     # Perform conversions
+    converter = UnitConverter()
     results = []
-    try:
-        converter = UnitConverter()
-        results = [(converter.convert(args.value, args.source, dest), dest) for dest in args.dest]
-    except DecimalException:
-        print_error('Error: Invalid decimal operation')
-    except ConverterError as e:
-        print_error(str(e))
+
+    for dest_unit in args.dest:
+        results.append((converter.convert(args.value, args.source, dest_unit), dest_unit))
 
     # Display results
     value = format_decimal(args.value, commas=args.commas)
-    padding = ' ' * len(f'{value} {args.source}')
+    padding = " " * len(f"{value} {args.source}")
     for index, (result, dest) in enumerate(results):
         result = format_decimal(result, args.exponent, args.precision, args.commas)
-
         if index == 0:
-            print(f'{value} {args.source} = {result} {dest}')
+            print(f"{value} {args.source} = {result} {dest}")
         else:
-            print(f'{padding} = {result} {dest}')
+            print(f"{padding} = {result} {dest}")
 
 
-if __name__ == '__main__':
-    main()
+if __name__ == "__main__":
+    try:
+        main()
+    except DecimalException:
+        print_error("Error: Invalid decimal operation")
+    except ConverterError as e:
+        print_error(str(e))

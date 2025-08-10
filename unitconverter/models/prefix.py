@@ -57,7 +57,7 @@ class Prefix:
         factor = self.factor * other.factor
 
         # Make sure prefix=None so that the unit can't be prefixed again
-        return Definition(name, symbols, aliases, factor, other.dimen, prefix=None)
+        return Definition(name, symbols, aliases, factor, other.category, other.dimen, prefix=None)
 
     def __repr__(self) -> str:
         return f"Prefix({self.name!r}, {self.symbol!r}, {self.factor!r})"

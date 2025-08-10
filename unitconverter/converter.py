@@ -6,10 +6,9 @@ from decimal import Decimal, getcontext
 
 from unitconverter.exceptions import CategoryError, ConverterError
 from unitconverter.formatting import parse_decimal, simplify_unit, split_exponent
-from unitconverter.parsers import load_dimensions, load_units
-from unitconverter.models.categories import Categories
-from unitconverter.models.registry import Registry
 from unitconverter.models.unit import Unit
+from unitconverter.parsers import load_dimensions, load_units
+from unitconverter.registry import Registry
 
 
 # Set decimal precision
@@ -20,8 +19,7 @@ class UnitConverter:
 
     def __init__(self) -> None:
         """ Initialize pre-defined dimensions and units. """
-        self._categories = Categories(load_dimensions())
-        self._registry = Registry(load_units())
+        self._registry = Registry(load_dimensions(), load_units())
 
     def convert(self, value: Decimal | int | str, source: Unit | str, dest: Unit | str) -> Decimal:
         """ Convert a value from the source unit to the destination unit.
@@ -42,9 +40,9 @@ class UnitConverter:
         source = self.parse_unit(source)
         dest = self.parse_unit(dest)
 
-        # Get category names matching the units dimensions
-        source_category = self._categories.get_category(source.dimen)
-        dest_category = self._categories.get_category(dest.dimen)
+        # Get the unit categories
+        source_category = self._registry.get_category(source)
+        dest_category = self._registry.get_category(dest)
 
         # Make sure the units are compatible
         if source_category != dest_category:

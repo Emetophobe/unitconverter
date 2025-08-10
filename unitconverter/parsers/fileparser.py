@@ -54,6 +54,10 @@ def load_units() -> dict[str, Definition]:
         except OSError as e:
             raise ConverterError(f"Failed to load units from {e.filename} ({e.strerror})")
 
+        # Just use the filename as the category name for now
+        # In the future the category should be part of the file data
+        category = filename.stem.replace("_", " ")
+
         # Make sure to pop dimension to separate it from the unit data
         try:
             dimensions = data.pop("dimension")
@@ -77,6 +81,6 @@ def load_units() -> dict[str, Definition]:
             prefix = args.get("prefix", None)
 
             # Create the unit definition
-            units[name] = Definition(name, symbols, aliases, factor, dimensions, prefix)
+            units[name] = Definition(name, symbols, aliases, factor, category, dimensions, prefix)
 
     return units

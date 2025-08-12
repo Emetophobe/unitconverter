@@ -1,0 +1,11 @@
+{
+	"category": "amount of substance",
+	"dimension": {"amount of substance": 1},
+
+	"mole": {
+		"symbols": ["mol"],
+		"aliases": ["moles"],
+		"prefix": "metric",
+		"factor": 1
+	}
+}

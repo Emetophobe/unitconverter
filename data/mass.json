@@ -1,0 +1,111 @@
+{
+	"category": "mass",
+	"dimension": {"mass": 1},
+
+	"gram": {
+		"symbols": ["g"],
+		"aliases": ["grams"],
+		"prefix": "metric",
+		"factor": 0.001
+	},
+	"tonne": {
+		"symbols": ["ton"],
+		"aliases": ["tonnes"],
+		"prefix": "metric",
+		"factor": 1000
+	},
+	"carat": {
+		"symbols": ["ct"],
+		"aliases": ["carats"],
+		"factor": 0.0002
+	},
+	"dalton": {
+		"symbols": ["Da"],
+		"aliases": ["daltons"],
+		"factor": 1.660540199E-27
+	},
+	"grain": {
+		"symbols": ["gr"],
+		"aliases": ["grains"],
+		"factor": 0.00006479891
+	},
+	"ounce": {
+		"symbols": ["oz"],
+		"aliases": ["ounces"],
+		"factor": 0.028349523125
+	},
+	"pound": {
+		"symbols": ["lbs", "lb"],
+		"aliases": ["pounds"],
+		"factor": 0.45359237
+	},
+	"kilopound": {
+		"symbols": ["klbs", "klb"],
+		"aliases": ["kilopounds"],
+		"factor": 453.59237
+	},
+	"stone": {
+		"symbols": ["st"],
+		"aliases": ["stones"],
+		"factor": 6.35029318
+	},
+	"quarter": {
+		"symbols": ["qr"],
+		"aliases": ["quarters"],
+		"factor": 12.70058636
+	},
+	"hundredweight": {
+		"symbols": ["cwt"],
+		"aliases": ["hundredweights", "long hundredweight", "long hundredweights"],
+		"factor": 50.80234544
+	},
+	"long ton": {
+		"symbols": ["LT"],
+		"aliases": ["long tons", "imperial ton", "imperial tons"],
+		"factor": 1016.0469088
+	},
+	"slug": {
+		"aliases": ["slugs"],
+		"factor": 14.59390
+	},
+	"dram": {
+		"symbols": ["dr"],
+		"aliases": ["drams", "drachms", "drachm"],
+		"factor": 0.0017718451953125
+	},
+	"pennyweight": {
+		"symbols": ["dwt"],
+		"aliases": ["pennyweights"],
+		"factor": 0.00155517384
+	},
+	"troy ounce": {
+		"symbols": ["ozt"],
+		"aliases": ["troy ounces"],
+		"factor": 0.0311034768
+	},
+	"troy pound": {
+		"symbols": ["lbt"],
+		"aliases": ["troy pounds"],
+		"factor": 0.3732417216
+	},
+	"US stone": {
+		"symbols": ["usstone"],
+		"aliases": ["US stones"],
+		"factor": 5.669904625
+	},
+	"US quarter": {
+		"symbols": ["usquarter"],
+		"aliases": ["US quarters"],
+		"factor": 11.33980925
+	},
+	"US hundredweight": {
+		"symbols": ["uscwt"],
+		"aliases": ["US hundredweights", "short hundredweight", "short hundredweights"],
+		"factor": 45.359237
+	},
+	"short ton": {
+		"symbols": ["tn"],
+		"aliases": ["short tons", "US ton", "US tons"],
+		"factor": 907.18474
+	}
+}

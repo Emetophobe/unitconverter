@@ -1,0 +1,10 @@
+{
+	"category": "frequency",
+	"dimension": {"time": -1},
+
+	"hertz": {
+		"symbols": ["Hz"],
+		"prefix": "metric",
+		"factor": 1
+	}
+}

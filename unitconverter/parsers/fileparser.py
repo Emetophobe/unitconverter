@@ -1,7 +1,8 @@
 # Copyright (c) 2022-2025 Mike Cunningham
+# https://www.github.com/emetophobe/unitconverter
 
 
-import tomllib
+import json
 
 from decimal import Decimal
 from pathlib import Path
@@ -11,65 +12,57 @@ from unitconverter.models.definition import Definition
 from unitconverter.models.dimension import Dimension
 
 
-def load_dimensions() -> dict[str, Dimension]:
-    """ Load pre-defined dimensions from file.
+def load_units() -> tuple[dict[str, Dimension], dict[str, Definition]]:
+    """ Load pre-defined dimensions and units from json files.
 
     Raises:
-        ConverterError: If the dimensions file could not be read.
+        ConverterError: If there was an error parsing one of the unit files.
 
     Returns:
-        dict[str, Dimension]: A dictionary of category names and their dimensions.
-    """
-    try:
-        with open("data/dimensions.toml", "rb") as fp:
-            # TODO: parse and validate the dictionary here
-            return tomllib.load(fp, parse_float=Decimal)
-    except OSError as e:
-        raise ConverterError(f"Failed to load dimensions from {e.filename} ({e.strerror})")
-
-
-def load_units() -> dict[str, Definition]:
-    """ Load pre-defined units from unit files.
-
-    Raises:
-        ConverterError: If there was an error parsing a unit file.
-
-    Returns:
-        dict[str, Definition]: A dictionary of unit names and unit definitions.
+        tuple[dict[str, Dimension], dict[str, Definition]]:
+            A tuple of the dimensions and unit definitions.
     """
 
-    path = Path("data/units")
-    files = path.rglob("*.toml")
+    path = Path("data")
+    files = path.rglob("*.json")
 
     if not files:
-        raise ConverterError(f"Missing pre-defined unit files in {path}")
+        raise ConverterError(f"{path} is missing pre-defined unit files")
 
+    categories = {}
     units = {}
 
     for filename in files:
         # Load each unit file individually
         try:
             with open(filename, "rb") as fp:
-                data = tomllib.load(fp, parse_float=Decimal)
+                data = json.load(fp, parse_float=Decimal)
         except OSError as e:
             raise ConverterError(f"Failed to load units from {e.filename} ({e.strerror})")
+        except json.JSONDecodeError as e:
+            raise ConverterError(f"Invalid json syntax in {filename} - {e}")
 
-        # Just use the filename as the category name for now
-        # In the future the category should be part of the file data
-        category = filename.stem.replace("_", " ")
-
-        # Make sure to pop dimension to separate it from the unit data
         try:
-            dimensions = data.pop("dimension")
+            dimension = data.pop("dimension")
         except KeyError:
             raise ConverterError("Unit file is missing required dimension", filename)
 
-        # Convert toml dictionary into a dictionary of unit definitions
+        try:
+            category = data.pop("category")
+        except KeyError:
+            raise ConverterError("Unit file is missing required category", filename)
+
+        if category in categories:
+            raise ConverterError(f"{category} is already defined")
+        else:
+            categories[category] = Dimension(dimension)
+
+        # Convert json dictionary to unit definitions
         for name, args in data.items():
             if name in units:
-                raise ConverterError(f"{name} is already defined (unit names must be unique)")
+                raise ConverterError(f"{name} is already defined")
 
-            # Required arguments
+            # Required argument
             try:
                 factor = args["factor"]
             except KeyError:
@@ -80,7 +73,7 @@ def load_units() -> dict[str, Definition]:
             aliases = args.get("aliases", [])
             prefix = args.get("prefix", None)
 
-            # Create the unit definition
-            units[name] = Definition(name, symbols, aliases, factor, category, dimensions, prefix)
+            # Create the definition
+            units[name] = Definition(name, symbols, aliases, factor, category, dimension, prefix)
 
-    return units
+    return (categories, units)

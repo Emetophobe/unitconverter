@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 # Copyright (c) 2022-2025 Mike Cunningham
+# https://www.github.com/emetophobe/unitconverter
 
 
 import sys
@@ -20,7 +21,7 @@ def print_error(msg: str, status: int = 1) -> None:
 
 
 def main() -> None:
-    parser = argparse.ArgumentParser(description="A simple unit converter")
+    parser = argparse.ArgumentParser(description="A unit converter written in Python")
 
     parser.add_argument(
         "value",
@@ -53,7 +54,7 @@ def main() -> None:
         action="store_true")
 
     parser.add_argument(
-        "-d", "--debug",
+        "--debug",
         help=argparse.SUPPRESS,
         action="store_true")
 

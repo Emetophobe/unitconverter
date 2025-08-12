@@ -1,0 +1,15 @@
+{
+	"category": "absorbed dose",
+	"dimension": {"length": 2, "time": -2},
+
+	"gray": {
+		"symbols": ["Gy"],
+		"aliases": ["grays"],
+		"prefix": "metric",
+		"factor": 1
+	},
+	"rad unit": {
+		"symbols": ["Rad"],
+		"factor": 0.01
+	}
+}

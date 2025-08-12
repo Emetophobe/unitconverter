@@ -1,0 +1,21 @@
+{
+	"category": "electrical capacitance",
+	"dimension": {"length": -2, "mass": -1, "time": 4, "electric current": 2},
+
+	"farad": {
+		"symbols": ["F"],
+		"aliases": ["farads"],
+		"prefix": "metric",
+		"factor": 1
+	},
+	"abfarad": {
+		"symbols": ["abF"],
+		"aliases": ["abfarads"],
+		"factor": 1E+9
+	},
+	"statfarad": {
+		"symbols": ["stF"],
+		"aliases": ["statfarads"],
+		"factor": 1.112650056E-12
+	}
+}

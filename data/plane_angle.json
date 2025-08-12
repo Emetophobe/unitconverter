@@ -1,0 +1,36 @@
+{
+	"category": "plane angle",
+	"dimension": {},
+
+	"radian": {
+		"symbols": ["rad"],
+		"aliases": ["radians"],
+		"prefix": "metric",
+		"factor": 1
+	},
+	"arcsecond": {
+		"symbols": ["arcsec", "′"],
+		"aliases": ["arcseconds"],
+		"prefix": "metric",
+		"factor": 0.000004848136811095359746910437451
+	},
+	"arcminute": {
+		"symbols": ["arcmin", "″"],
+		"aliases": ["arcminutes"],
+		"factor": 0.0002908882086657215848146262471
+	},
+	"degree": {
+		"symbols": ["deg"],
+		"aliases": ["degrees"],
+		"factor": 0.01745329251994329508887757483
+	},
+	"gradian": {
+		"symbols": ["gon", "grad"],
+		"aliases": ["gradians", "grade"],
+		"factor": 0.01570796326794896557998981734
+	},
+	"turn": {
+		"symbols": ["tr"],
+		"factor": 6.283185307179586
+	}
+}

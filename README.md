@@ -64,17 +64,17 @@ a custom conversion function and don't work with other units for now.
 
 For example you can create a speed unit by dividing any `length` unit by any `time` unit:
 
-    $ python3 convert.py 1 metre/second inches/day -p 2
+    $ python convert.py 1 metre/second inches/day -p 2
     1 metre/second = 3401574.8 inches/day
 
 Many other unit combinations are possible:
 
-    $ python3 convert.py 1 watt amp*volt joule/second
+    $ python convert.py 1 watt amp*volt joule/second
     1 watt = 1 amp*volt
            = 1 joule/second
 
-    $ python3 convert.py 1 joule kg*m2*s-2 pascal*metre^3 watt*second coulomb*volt
-    1 joule = 1 kg*m2*s-2
+    $ python convert.py 1 joule kg*m2*s^-2 pascal*metre^3 watt*second coulomb*volt
+    1 joule = 1 kg*m2*s^-2
             = 1 pascal*metre^3
             = 1 watt*second
             = 1 coulomb*volt
@@ -113,45 +113,50 @@ Unit composition is an experimental feature and there are still bugs to be sorte
 
 #### Basic usage
 
-    $ python3 convert.py 1024 bytes kibibytes
+    $ python convert.py 1024 bytes kibibytes
     1024 bytes = 1 kibibytes
 
-    $ python3 convert.py 600 seconds minutes
+    $ python convert.py 600 seconds minutes
     600 seconds = 10 minutes
 
 #### Unit names can be symbols, plural forms, or other aliases
 
-    $ python3 convert.py 10 cm m
+    $ python convert.py 10 cm m
     10 cm = 0.1 m
 
-    $ python3 convert.py 10 amps kA
+    $ python convert.py 10 amps kA
     10 amps = 0.01 kA
+
+### Unit names can also be composed of multiple units
+
+    $ python convert.py 1 joule/second volt*amp
+    1 joule/second = 1 volt*amp
 
 #### Set rounding precision with `-p`/`--precision`
 
-    $ python3 convert.py 12 metres inches -p 5
+    $ python convert.py 12 metres inches -p 5
     12 metres = 472.44094 inches
 
 #### Display thousands separators with `-c`/`--comma`
 
-    $ python3 convert.py 5 cm nm -c
+    $ python convert.py 5 cm nm -c
     5 cm = 50,000,000 nm
 
 #### Show E notation with `-e`/`--exponent`
 
-    $ python3 convert.py 5 cm nm -e
+    $ python convert.py 5 cm nm -e
     5 cm = 5E+7 nm
 
 #### Convert multiple units at once
 
-    $ python3 convert.py 1 metre cm in ft -p 4
+    $ python convert.py 1 metre cm in ft -p 4
     1 metre = 100.0000 cm
             = 39.3701 in
             = 3.2808 ft
 
 #### Multi-word unit names are also supported but they need to be wrapped in quotes
 
-    $ python3 convert.py 1 "US survey acre" km^2 -p 8
+    $ python convert.py 1 "US survey acre" km^2 -p 8
     1 US survey acre = 0.00404687 km^2
 
 #

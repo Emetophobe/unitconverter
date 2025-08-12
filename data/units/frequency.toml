@@ -1,9 +1,0 @@
-# Note that Hertz and Becquerel share the same dimension (T-1)
-dimension = {"time" = -1}
-
-
-# The hertz is the SI unit of frequency
-["hertz"]
-symbols = ["Hz"]
-prefix = "metric"
-factor = 1

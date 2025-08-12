@@ -1,9 +1,0 @@
-dimension = {"luminous intensity" = 1}
-
-
-# The lumen is the SI unit of luminous flux
-["lumen"]
-symbols = ["lm"]
-aliases = ["lumens"]
-prefix = "metric"
-factor = 1

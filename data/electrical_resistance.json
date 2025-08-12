@@ -1,0 +1,21 @@
+{
+	"category": "electrical resistance",
+	"dimension": {"length": 2, "mass": 1, "time": -3, "electric current": -2},
+
+	"ohm": {
+		"symbols": ["Ω"],
+		"aliases": ["ohms"],
+		"prefix": "metric",
+		"factor": 1
+	},
+	"abohm": {
+		"symbols": ["abΩ"],
+		"aliases": ["abohms"],
+		"factor": 1E-9
+	},
+	"statohm": {
+		"symbols": ["stΩ"],
+		"aliases": ["statohms"],
+		"factor": 8.987552E+11
+	}
+}

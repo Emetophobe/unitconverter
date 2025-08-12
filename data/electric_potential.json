@@ -1,0 +1,21 @@
+{
+	"category": "electric potential",
+	"dimension": {"length": 2, "mass": 1, "time": -3, "electric current": -1},
+
+	"volt": {
+		"symbols": ["V"],
+		"aliases": ["volts"],
+		"prefix": "metric",
+		"factor": 1
+	},
+	"abvolt": {
+		"symbols": ["abV"],
+		"aliases": ["abvolts"],
+		"factor": 1E-8
+	},
+	"statvolt": {
+		"symbols": ["stV"],
+		"aliases": ["statvolts"],
+		"factor": 299.7925
+	}
+}

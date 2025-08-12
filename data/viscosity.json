@@ -1,0 +1,11 @@
+{
+	"category": "viscosity",
+	"dimension": {"length": -1, "mass": 1, "time": -1},
+
+	"poise": {
+		"symbols": ["P"],
+		"aliases": ["poises"],
+		"prefix": "metric",
+		"factor": 0.1
+	}
+}

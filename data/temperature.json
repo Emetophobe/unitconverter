@@ -1,0 +1,25 @@
+{
+	"category": "temperature",
+	"dimension": {"temperature": 1},
+
+	"kelvin": {
+		"symbols": ["K"],
+		"aliases": ["kelvins"],
+		"prefix": "metric",
+		"factor": 1
+	},
+	"celsius": {
+		"symbols": ["°C", "degC", "c"],
+		"aliases": ["centigrade"],
+		"factor": 1
+	},
+	"fahrenheit": {
+		"symbols": ["°F", "degF", "f"],
+		"factor": 1
+	},
+	"rankine": {
+		"symbols": ["°R", "°RA", "degR", "r"],
+		"aliases": ["rankines"],
+		"factor": 1
+	}
+}

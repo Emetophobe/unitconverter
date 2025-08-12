@@ -1,0 +1,76 @@
+{
+	"category": "energy",
+	"dimension": {"length": 2, "mass": 1, "time": -2},
+
+	"joule": {
+		"symbols": ["J", "j"],
+		"aliases": ["joules"],
+		"prefix": "metric",
+		"factor": 1
+	},
+	"electron volt": {
+		"symbols": ["eV"],
+		"aliases": ["electron volts"],
+		"prefix": "metric",
+		"factor": 1.602176633E-19
+	},
+	"calorie": {
+		"symbols": ["cal"],
+		"aliases": ["calories", "small calories", "small calorie"],
+		"factor": 4.184
+	},
+	"kilocalorie": {
+		"symbols": ["kcal"],
+		"aliases": ["kilocalories", "large calories", "large calorie"],
+		"factor": 4184
+	},
+	"gram of TNT": {
+		"symbols": ["gTNT"],
+		"aliases": ["grams of TNT"],
+		"prefix": "metric",
+		"factor": 4184
+	},
+	"ton of TNT": {
+		"symbols": ["tTNT"],
+		"aliases": ["tons of TNT", "tonne of TNT", "tonnes of TNT"],
+		"prefix": "metric",
+		"factor": 4.184E+9
+	},
+	"watt-second": {
+		"symbols": ["Ws", "W-s"],
+		"aliases": ["watt-seconds", "wattseconds", "wattsecond"],
+		"prefix": "metric",
+		"factor": 1
+	},
+	"watt-minute": {
+		"symbols": ["Wm", "W-m"],
+		"aliases": ["watt-minutes", "wattminutes", "wattminute"],
+		"prefix": "metric",
+		"factor": 60
+	},
+	"watt-hour": {
+		"symbols": ["Wh", "W-h"],
+		"aliases": ["watt-hours", "watthours", "watthour"],
+		"prefix": "metric",
+		"factor": 3600
+	},
+	"erg": {
+		"aliases": ["ergs"],
+		"factor": 1E-7
+	},
+	"british thermal unit": {
+		"symbols": ["btu"],
+		"aliases": ["british thermal units"],
+		"factor": 1055.06
+	},
+	"therm": {
+		"symbols": ["thm"],
+		"aliases": ["therms"],
+		"factor": 105506000
+	},
+	"quadrillion btu": {
+		"symbols": ["quad"],
+		"aliases": ["quadrillion btus"],
+		"factor": 1.05506E+18
+	}
+}

@@ -1,0 +1,19 @@
+{
+	"category": "luminous intensity",
+	"dimension": {"luminous intensity": 1},
+
+	"candela": {
+		"symbols": ["cd"],
+		"aliases": ["candelas"],
+		"prefix": "metric",
+		"factor": 1
+	},
+	"candlepower": {
+		"symbols": ["cp"],
+		"factor": 1
+	},
+	"historic candlepower": {
+		"symbols": ["hcp"],
+		"factor": 0.981
+	}
+}

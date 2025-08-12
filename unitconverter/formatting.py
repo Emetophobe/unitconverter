@@ -1,16 +1,10 @@
 # Copyright (c) 2022-2025 Mike Cunningham
+# https://www.github.com/emetophobe/unitconverter
 
 
-import re
 from decimal import Decimal, DecimalException
 
 from unitconverter.exceptions import ConverterError
-
-
-# Unit formatting symbols
-EXP_SYMBOL = "^"
-MULTI_SYMBOL = "*"
-DIV_SYMBOL = "/"
 
 
 def parse_decimal(value: Decimal | int | str) -> Decimal:
@@ -87,18 +81,13 @@ def format_decimal(value: Decimal,
     return number
 
 
-def format_type(obj: object) -> str:
-    """ Get a nice string representation of an object. """
-    return type(obj).__name__
-
-
 def format_name(units: dict[str, int], sort_keys: bool = False) -> str:
     """ Format unit name without divisor (i.e "metre*second^-1") """
     numers = []
     for unit, exp in sorted(units.items()) if sort_keys else units.items():
         numers.append(format_exponent(unit, exp))
 
-    return MULTI_SYMBOL.join(numers)
+    return "*".join(numers)
 
 
 def format_display_name(units: dict[str, int], sort_keys: bool = False) -> str:
@@ -116,101 +105,19 @@ def format_display_name(units: dict[str, int], sort_keys: bool = False) -> str:
         return format_name(units, sort_keys)
 
     elif not denoms:
-        return MULTI_SYMBOL.join(numers)
+        return "*".join(numers)
 
-    return MULTI_SYMBOL.join(numers) + DIV_SYMBOL + MULTI_SYMBOL.join(denoms)
+    return "*".join(numers) + "/" + "*".join(denoms)
+
+
+def format_type(obj: object) -> str:
+    """ Get a nice string representation of an object. """
+    return type(obj).__name__
 
 
 def format_exponent(name: str, exponent: int) -> str:
     """ Format unit name with optional exponent. """
     if exponent == 1:
         return name
-
-    return f"{name}{EXP_SYMBOL}{exponent}"
-
-
-def split_exponent(name: str) -> tuple[str, int]:
-    """ Split a unit name and exponent into a tuple.
-
-    Examples
-    --------
-
-        >>> split_exponent("metre^2")
-        ("metre", 2)
-
-        >>> split_exponent("second")
-        ("second", 1)
-
-        >>> split_exponent("second-1")
-        ("second", -1)
-    """
-    result = _pattern.match(simplify_unit(name))
-
-    if not result:
-        raise ConverterError(f"{name} is not a valid unit")
-
-    if result.group("exp"):
-        return (result.group("unit"), int(result.group("exp")))
     else:
-        return (result.group("unit"), 1)
-
-
-def simplify_unit(name: str) -> str:
-    """ Simplify a unit name by replacing strings/characters.
-
-    Examples
-    --------
-
-        >>> simplify_unit("Nm²/volt^2")
-        "Nm2/volt2"
-
-        >>> simplify_unit("joule per gram")
-        "joule/gram"
-
-    """
-    if not isinstance(name, str):
-        raise ConverterError(f"{name} is not a valid unit")
-
-    for key, value in _replacements.items():
-        if key in name:
-            name = name.replace(key, value)
-    return name
-
-
-# Unit name and exponent patterns
-_unit_pattern = r"(?P<unit>[a-zA-Z°Ωµ-]*[a-zA-Z°Ωµ]+){1}"
-_exp_pattern = r"[\^]?(?P<exp>[-+]?[0-9]+)?"
-_pattern = re.compile(_unit_pattern + _exp_pattern)
-
-
-# Dictionary of replacements for internal lookup
-_replacements = {
-    # simplify exponents
-    "^": "",
-    "⁰": "0",
-    "¹": "1",
-    "²": "2",
-    "³": "3",
-    "⁴": "4",
-    "⁵": "5",
-    "⁶": "6",
-    "⁷": "7",
-    "⁸": "8",
-    "⁹": "9",
-
-    # simplify multiplication
-    "⋅": "-",
-    "*": "-",
-
-    # simplify division
-    " per ": "/",
-
-    # simplify symbols
-    # "µ": "mu",
-    # "°": "deg",
-    # "Ω": "ohm",
-
-    # regional spelling
-    "meter": "metre",
-    "liter": "litre",
-}
+        return f"{name}^{exponent}"

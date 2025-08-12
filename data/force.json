@@ -1,0 +1,61 @@
+{
+	"category": "force",
+	"dimension": {"mass": 1, "length": 1, "time": -2},
+
+	"newton": {
+		"symbols": ["N"],
+		"aliases": ["newtons"],
+		"prefix": "metric",
+		"factor": 1
+	},
+	"gram-force": {
+		"symbols": ["gf"],
+		"aliases": ["grams-force"],
+		"prefix": "metric",
+		"factor": 0.00980665
+	},
+	"kilopond": {
+		"symbols": ["kp"],
+		"aliases": ["kiloponds"],
+		"factor": 9.80665
+	},
+    "tonne-force": {
+		"symbols": ["tf"],
+		"prefix": "metric",
+		"factor": 9806.65
+	},
+	"dyne": {
+		"symbols": ["dyn"],
+		"aliases": ["dynes"],
+		"prefix": "metric",
+		"factor": 0.00001
+	},
+	"poundal": {
+		"symbols": ["pdl"],
+		"aliases": ["poundals"],
+		"factor": 0.138254954376
+	},
+	"ounce-force": {
+		"symbols": ["ozf"],
+		"factor": 0.27801385
+	},
+	"pound-force": {
+		"symbols": ["lbf"],
+		"factor": 4.448222
+	},
+	"kilopound-force": {
+		"symbols": ["klbf"],
+		"aliases": ["kip-force", "kipf"],
+		"factor": 4448.222
+	},
+	"long ton-force": {
+		"symbols": ["tnf"],
+		"aliases": ["imperial ton-force"],
+		"factor": 9964.0164182
+	},
+	"short ton-force": {
+		"symbols": ["tonf"],
+		"aliases": ["US ton-force"],
+		"factor": 8896.4432305
+	}
+}

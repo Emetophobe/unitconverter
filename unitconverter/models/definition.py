@@ -1,4 +1,5 @@
 # Copyright (c) 2022-2025 Mike Cunningham
+# https://www.github.com/emetophobe/unitconverter
 
 
 from decimal import Decimal
@@ -13,7 +14,8 @@ class Definition:
     """
 
     def __init__(self,
-                 name: str, symbols: list[str],
+                 name: str,
+                 symbols: list[str],
                  aliases: list[str],
                  factor: Decimal | int | str,
                  category: str,

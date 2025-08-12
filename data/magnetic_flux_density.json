@@ -1,0 +1,16 @@
+{
+	"category": "magnetic flux density",
+	"dimension": {"mass": 1, "time": -2, "electric current": -1},
+
+	"tesla": {
+		"symbols": ["T"],
+		"aliases": ["teslas"],
+		"prefix": "metric",
+		"factor": 1
+	},
+	"guass": {
+		"symbols": ["G"],
+		"aliases": ["gausses"],
+		"factor": 0.0001
+	}
+}

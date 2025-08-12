@@ -1,0 +1,17 @@
+{
+	"category": "data storage",
+	"dimension": {"data storage": 1},
+
+	"bit": {
+		"symbols": ["b"],
+		"aliases": ["bits"],
+		"prefix": "bit",
+		"factor": 1
+	},
+	"byte": {
+		"symbols": ["B"],
+		"aliases": ["bytes"],
+		"prefix": "byte",
+		"factor": 8
+	}
+}

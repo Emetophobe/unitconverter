@@ -1,0 +1,16 @@
+{
+	"category": "catalytic activity",
+	"dimension": {"amount of substance": 1, "time": -1},
+
+	"katal": {
+		"symbols": ["kat"],
+		"aliases": ["katals"],
+		"prefix": "metric",
+		"factor": 1
+	},
+	"enzyme unit": {
+		"symbols": ["U"],
+		"aliases": ["enzyme units"],
+		"factor": 1.667E-8
+	}
+}

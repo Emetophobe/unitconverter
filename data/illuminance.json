@@ -1,0 +1,28 @@
+{
+	"category": "illuminance",
+	"dimension": {"luminous intensity": 1, "length": -2},
+
+	"lux": {
+		"symbols": ["lx"],
+		"prefix": "metric",
+		"factor": 1
+	},
+	"nox": {
+		"symbols": ["nx"],
+		"factor": 0.001
+	},
+	"metre-candle": {
+		"symbols": ["m-c"],
+		"prefix": "metric",
+		"factor": 1
+	},
+	"phot": {
+		"symbols": ["ph"],
+		"aliases": ["phots"],
+		"factor": 10000
+	},
+	"foot-candle": {
+		"symbols": ["ft-c"],
+		"factor": 10.76391
+	}
+}

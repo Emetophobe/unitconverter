@@ -1,0 +1,17 @@
+{
+	"category": "effective dose",
+	"dimension": {"length": 2, "time": -2},
+
+	"sievert": {
+		"symbols": ["Sv"],
+		"aliases": ["sieverts"],
+		"prefix": "metric",
+		"factor": 1
+	},
+	"roentgen": {
+		"symbols": ["rem"],
+		"aliases": ["roentgens"],
+		"prefix": "metric",
+		"factor": 0.01
+	}
+}

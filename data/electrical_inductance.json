@@ -1,0 +1,21 @@
+{
+	"category": "electrical inductance",
+	"dimension": {"length": 2, "mass": 1, "time": -2, "electric current": -2},
+
+	"henry": {
+		"symbols": ["H"],
+		"aliases": ["henries"],
+		"prefix": "metric",
+		"factor": 1
+	},
+	"abhenry": {
+		"symbols": ["abH"],
+		"aliases": ["abhenries"],
+		"factor": 1E-9
+	},
+	"stathenry": {
+		"symbols": ["stH"],
+		"aliases": ["stathenries"],
+		"factor": 898755200000
+	}
+}

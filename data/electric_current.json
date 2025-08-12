@@ -1,0 +1,21 @@
+{
+	"category": "electric current",
+	"dimension": {"electric current": 1},
+
+	"ampere": {
+		"symbols": ["A"],
+		"aliases": ["amperes", "amp", "amps"],
+		"prefix": "metric",
+		"factor": 1
+	},
+	"abampere": {
+		"symbols": ["abA", "Bi"],
+		"aliases": ["abamperes", "biot", "biots"],
+		"factor": 10
+	},
+	"statampere": {
+		"symbols": ["stA"],
+		"aliases": ["statamperes"],
+		"factor": 3.335641E-10
+	}
+}

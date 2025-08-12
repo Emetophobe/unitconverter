@@ -1,0 +1,36 @@
+{
+	"category": "luminance",
+	"dimension": {"luminous intensity": 1, "length": -2},
+
+	"nit": {
+		"symbols": ["nt"],
+		"aliases": ["nits"],
+		"factor": 1
+	},
+	"stilb": {
+		"symbols": ["sb"],
+		"aliases": ["stilbs"],
+		"factor": 10000
+	},
+	"apostilb": {
+		"symbols": ["asb"],
+		"aliases": ["apostilbs", "blondels", "blondel"],
+		"factor": 0.3183098862
+	},
+	"bril": {
+		"aliases": ["brils"],
+		"factor": 3.183098861E-8
+	},
+	"lambert": {
+		"aliases": ["lamberts"],
+		"factor": 3183.0988618
+	},
+	"foot-lambert": {
+		"aliases": ["feet-lambert"],
+		"factor": 3.4262590996
+	},
+	"skot": {
+		"aliases": ["skots"],
+		"factor": 0.0003183099
+	}
+}

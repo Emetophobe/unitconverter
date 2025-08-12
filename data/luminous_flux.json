@@ -1,0 +1,11 @@
+{
+	"category": "luminous flux",
+	"dimension": {"luminous intensity": 1},
+
+	"lumen": {
+		"symbols": ["lm"],
+		"aliases": ["lumens"],
+		"prefix": "metric",
+		"factor": 1
+	}
+}

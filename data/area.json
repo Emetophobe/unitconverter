@@ -1,0 +1,63 @@
+{
+	"category": "area",
+	"dimension": {"length": 2},
+
+	"are": {
+		"aliases": ["ares"],
+		"factor": 100.0
+	},
+	"hectare": {
+		"symbols": ["ha"],
+		"aliases": ["hectares"],
+		"factor": 10000
+	},
+	"barn": {
+		"aliases": ["barns"],
+		"factor": 1E-28
+	},
+	"square": {
+		"aliases": ["squares"],
+		"factor": 9.290304
+	},
+	"rood": {
+		"aliases": ["roods"],
+		"factor": 1011.7141056
+	},
+	"acre": {
+		"symbols": ["ac"],
+		"aliases": ["acres"],
+		"factor": 4046.8564224
+	},
+	"hide": {
+		"aliases": ["hides"],
+		"factor": 485000
+	},
+	"circular thou": {
+		"symbols": ["circ thou", "circ mil"],
+		"aliases": ["circular mil", "circular mils"],
+		"factor": 5.06707479E-10
+	},
+	"circular inch": {
+		"symbols": ["circ in"],
+		"aliases": ["circular inches"],
+		"factor": 0.000506707479
+	},
+	"US survey acre": {
+		"symbols": ["surveyac"],
+		"aliases": ["US survey acres", "surveyacre", "surveyacres"],
+		"factor": 4046.872609874
+	},
+	"US survey homestead": {
+		"aliases": ["US survey homesteads", "homestead", "homesteads"],
+		"factor": 647497.02758
+	},
+	"US survey section": {
+		"aliases": ["US survey sections", "section", "sections"],
+		"factor": 2589988.1103
+	},
+	"US survey township": {
+		"symbols": ["twp"],
+		"aliases": ["US survey townships", "township", "townships"],
+		"factor": 93239571.972
+	}
+}

@@ -1,4 +1,5 @@
 # Copyright (c) 2022-2025 Mike Cunningham
+# https://www.github.com/emetophobe/unitconverter
 
 
 from typing import Self

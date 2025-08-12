@@ -1,0 +1,17 @@
+{
+	"category": "magnetic flux",
+	"dimension": {"length": 2, "mass": 1, "time": -2, "electric current": -1},
+
+	"weber": {
+		"symbols": ["Wb"],
+		"aliases": ["webers"],
+		"prefix": "metric",
+		"factor": 1
+	},
+	"maxwell": {
+		"symbols": ["Mx"],
+		"aliases": ["maxwells"],
+		"prefix": "metric",
+		"factor": 1E-8
+	}
+}

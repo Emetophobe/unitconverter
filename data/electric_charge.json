@@ -1,0 +1,21 @@
+{
+	"category": "electric charge",
+	"dimension": {"electric current": 1, "time": 1},
+
+	"coulomb": {
+		"symbols": ["C"],
+		"aliases": ["coulombs"],
+		"prefix": "metric",
+		"factor": 1
+	},
+	"abcoulomb": {
+		"symbols": ["abC"],
+		"aliases": ["abcoulombs"],
+		"factor": 10
+	},
+	"statcoulomb": {
+		"symbols": ["fr"],
+		"aliases": ["statcoulombs", "franklin", "franklins"],
+		"factor": 3.335640951E-10
+	}
+}

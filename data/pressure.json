@@ -1,0 +1,62 @@
+{
+	"category": "pressure",
+	"dimension": {"length": -1, "mass": 1, "time": -2},
+
+	"pascal": {
+		"symbols": ["Pa"],
+		"aliases": ["pascals"],
+		"prefix": "metric",
+		"factor": 1
+	},
+	"barye": {
+		"symbols": ["Ba"],
+		"aliases": ["baryes"],
+		"prefix": "metric",
+		"factor": 0.1
+	},
+	"bar": {
+		"aliases": ["bars"],
+		"prefix": "metric",
+		"factor": 1E+5
+	},
+	"psi": {
+		"symbols": ["lbf/in2"],
+		"aliases": ["pound-force/inch2"],
+		"factor": 6894.75788951578
+	},
+	"ksi": {
+		"symbols": ["klbf/in2"],
+		"aliases": ["kilopound-force/inch2"],
+		"factor": 6894757.88951578
+	},
+	"pieze": {
+		"symbols": ["pz"],
+		"factor": 1000
+	},
+	"torr": {
+		"symbols": ["Torr"],
+		"aliases": ["torrs"],
+		"factor": 133.322
+	},
+	"metre of mercury": {
+		"symbols": ["mHg", "m Hg"],
+		"aliases": ["metres of mercury"],
+		"prefix": "metric",
+		"factor": 133322.4
+	},
+	"inch of mercury": {
+		"symbols": ["inHg", "in Hg"],
+		"aliases": ["inches of mercury"],
+		"factor": 3386.389
+	},
+	"standard atmosphere": {
+		"symbols": ["atm"],
+		"aliases": ["standard-atmosphere"],
+		"factor": 101325
+	},
+	"technical atmosphere": {
+		"symbols": ["at"],
+		"aliases": ["technical-atmosphere"],
+		"factor": 98066.5
+	}
+}

@@ -5,13 +5,13 @@
 	"bit": {
 		"symbols": ["b"],
 		"aliases": ["bits"],
-		"prefix": "bit",
+		"prefix": "binary",
 		"factor": 1
 	},
 	"byte": {
 		"symbols": ["B"],
 		"aliases": ["bytes"],
-		"prefix": "byte",
+		"prefix": "binary",
 		"factor": 8
 	}
 }

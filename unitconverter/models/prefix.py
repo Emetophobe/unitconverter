@@ -13,10 +13,7 @@ from unitconverter.models.definition import Definition
 PREFIX_OPTIONS = [
     "none",         # don"t generate prefixes (default)
     "metric",       # metric prefixes
-    "binary",       # binary prefixes
-    "bit",          # bit prefixes
-    "byte",         # bit prefixes and binary prefixes
-    "all",          # all SI prefixes and binary prefixes
+    "binary",       # binary prefixes (kilo, kibi, etc..)
 ]
 
 
@@ -95,8 +92,16 @@ METRIC_PREFIXES = [
     Prefix("quetta", "Q", "1E+30"),
 ]
 
-# Binary prefixes (used by kibibyte to yobibyte)
+# Binary prefixes (used by bit and byte units)
 BINARY_PREFIXES = [
+    Prefix("kilo", "k", "1E+3"),
+    Prefix("mega", "M", "1E+6"),
+    Prefix("giga", "G", "1E+9"),
+    Prefix("tera", "T", "1E+12"),
+    Prefix("peta", "P", "1E+15"),
+    Prefix("exa", "E", "1E+18"),
+    Prefix("zetta", "Z", "1E+21"),
+    Prefix("yotta", "Y", "1E+24"),
     Prefix("kibi", "Ki", 2 ** 10),
     Prefix("mebi", "Mi", 2 ** 20),
     Prefix("gibi", "Gi", 2 ** 30),
@@ -107,21 +112,12 @@ BINARY_PREFIXES = [
     Prefix("yobi", "Yi", 2 ** 80),
 ]
 
-# Bit prefixes includes metric prefixes "kilo" to "quetta" (used by the bit unit)
-BIT_PREFIXES = METRIC_PREFIXES[14:]
-
-# Byte prefixes includes bit prefixes and binary prefixes (used by the byte unit)
-BYTE_PREFIXES = BIT_PREFIXES + BINARY_PREFIXES
-
-# All prefixes includes all metric and binary prefixes
-ALL_PREFIXES = METRIC_PREFIXES + BINARY_PREFIXES
-
 
 def get_prefixes(option: str | None) -> list[Prefix]:
     """ Get a list of supported prefixes based on the prefix option.
 
     Args:
-        option (str | None): The prefix setting (i.e "metric")
+        option (str | None): The prefix setting ("none", "metric", or "binary")
 
     Raises:
         ConverterError: If the prefix option is invalid.
@@ -135,11 +131,5 @@ def get_prefixes(option: str | None) -> list[Prefix]:
         return METRIC_PREFIXES
     elif option == "binary":
         return BINARY_PREFIXES
-    elif option == "bit":
-        return BIT_PREFIXES
-    elif option == "byte":
-        return BYTE_PREFIXES
-    elif option == "all":
-        return ALL_PREFIXES
     else:
         raise ConverterError(f"{option} is not a valid prefix option")

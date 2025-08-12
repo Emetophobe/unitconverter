@@ -2,7 +2,7 @@
 # https://www.github.com/emetophobe/unitconverter
 
 
-from decimal import Decimal, DecimalException
+from decimal import Decimal, DecimalException, ROUND_HALF_UP
 
 from unitconverter.exceptions import ConverterError
 
@@ -65,20 +65,14 @@ def format_decimal(value: Decimal,
     str
         formatted string
     """
-    precision_format = f".{precision}" if precision is not None else ""
+    if precision is not None:
+        value = value.quantize(Decimal('10') ** -precision, rounding=ROUND_HALF_UP)
 
     if exponent:
-        return f"{value:{precision_format}E}"
+        return f"{value:E}"
 
-    comma = "," if commas else ""
-    number = f"{value:{comma}{precision_format}f}"
-
-    # Remove trailing zeroes
-    if "." in number:
-        while number[-1] == "0" and number[-2] != ".":
-            number = number[:-1]
-
-    return number
+    add_comma = "," if commas else ""
+    return f"{value:{add_comma}f}"
 
 
 def format_name(units: dict[str, int], sort_keys: bool = False) -> str:

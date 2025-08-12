@@ -17,20 +17,24 @@
 	},
 	"square": {
 		"aliases": ["squares"],
+        "comment": "1 square = 100 square feet",
 		"factor": 9.290304
 	},
 	"rood": {
 		"aliases": ["roods"],
+        "comment": "1 rood = 0.25 acres",
 		"factor": 1011.7141056
 	},
 	"acre": {
 		"symbols": ["ac"],
 		"aliases": ["acres"],
+        "comment": "1 acre =  10 square chains",
 		"factor": 4046.8564224
 	},
 	"hide": {
 		"aliases": ["hides"],
-		"factor": 485000
+        "comment": "1 hide = 120 acres",
+		"factor": 485622.770688
 	},
 	"circular thou": {
 		"symbols": ["circ thou", "circ mil"],

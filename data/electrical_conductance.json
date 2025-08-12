@@ -14,8 +14,9 @@
 		"factor": 1E+9
 	},
 	"statsiemens": {
-		"symbols": ["stS"],
+		"symbols": ["statS"],
 		"aliases": ["statmho"],
-		"factor": 1.112347052E-12
+        "comment": "1 statsiemens is roughly 1.11265 picosiemens",
+        "factor": 1.112650E-12
 	}
 }

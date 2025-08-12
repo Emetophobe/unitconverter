@@ -5,7 +5,7 @@
 	"kilometre/hour": {
 		"symbols": ["kph", "kmph", "km/h"],
 		"aliases": ["kilometres/hour"],
-		"factor": 0.277778
+		"factor": 0.277777777777778
 	},
 	"mile/hour": {
 		"symbols": ["mph", "mi/h"],

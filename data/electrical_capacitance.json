@@ -14,8 +14,9 @@
 		"factor": 1E+9
 	},
 	"statfarad": {
-		"symbols": ["stF"],
+		"symbols": ["statF"],
 		"aliases": ["statfarads"],
-		"factor": 1.112650056E-12
+        "comment": "1 statfarad is roughly 1.11265 picofarad",
+		"factor": 1.112650E-12
 	}
 }

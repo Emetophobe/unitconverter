@@ -12,7 +12,8 @@
 		"symbols": ["eV"],
 		"aliases": ["electron volts"],
 		"prefix": "metric",
-		"factor": 1.602176633E-19
+        "comment": "1 eV is equal to 1.602176634E-19 joule (2019 SI revision)",
+		"factor": 1.602176634E-19
 	},
 	"calorie": {
 		"symbols": ["cal"],

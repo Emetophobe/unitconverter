@@ -42,37 +42,31 @@ def parse_decimal(value: Decimal | int | str) -> Decimal:
 def format_decimal(value: Decimal,
                    exponent: bool = False,
                    precision: int | None = None,
-                   commas: bool = False
+                   separators: bool = False
                    ) -> str:
-    """ Format a decimal into a string for display.
+    """ Format a decimal for display. Setting exponent to True overrides the other two settings.
 
-    Parameters
-    ----------
-    value : Decimal
-        the decimal value
+    Args:
+        value (Decimal): The decimal to format.
+        exponent (bool, optional): Show E notation if possible. Defaults to False.
+        precision (int | None, optional): Set rounding precision. Defaults to None.
+        separators (bool, optional): Show thouands separators (i.e 1,000,000). Defaults to False.
 
-    exponent : bool, optional
-        use E notation when possible, by default False
-
-    precision : int, optional
-        set rounding precision, by default None
-
-    commas : bool, optional
-        show commas (thousands) separators, by default False
-
-    Returns
-    -------
-    str
-        formatted string
+    Returns:
+        str: The decimal formatted for output.
     """
     if precision is not None:
-        value = value.quantize(Decimal('10') ** -precision, rounding=ROUND_HALF_UP)
+        try:
+            value = value.quantize(Decimal('10') ** -precision, rounding=ROUND_HALF_UP)
+        except DecimalException:
+            # Precision is too small for the result. Just show it without rounding
+            pass
 
     if exponent:
         return f"{value:E}"
 
-    add_comma = "," if commas else ""
-    return f"{value:{add_comma}f}"
+    comma = "," if separators else ""
+    return f"{value:{comma}f}"
 
 
 def format_name(units: dict[str, int], sort_keys: bool = False) -> str:

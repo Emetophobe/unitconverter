@@ -44,7 +44,7 @@ def main() -> None:
         type=int)
 
     parser.add_argument(
-        "-c", "--commas",
+        "-s", "--separators",
         help="show thousands separator (default: False)",
         action="store_true")
 
@@ -90,10 +90,10 @@ def main() -> None:
         results.append((converter.convert(args.value, args.source, dest_unit), dest_unit))
 
     # Display results
-    value = format_decimal(args.value, commas=args.commas)
+    value = format_decimal(args.value, separators=args.separators)
     padding = " " * len(f"{value} {args.source}")
     for index, (result, dest) in enumerate(results):
-        result = format_decimal(result, args.exponent, args.precision, args.commas)
+        result = format_decimal(result, args.exponent, args.precision, args.separators)
         if index == 0:
             print(f"{value} {args.source} = {result} {dest}")
         else:

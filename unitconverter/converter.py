@@ -49,7 +49,8 @@ class UnitConverter:
         # Compare unit dimensions if a unit has no pre-defined category
         if source_category is None or dest_category is None:
             if source.dimen != dest.dimen:
-                raise CategoryError(source.name, str(source.dimen), dest.name, str(dest.dimen))
+                raise CategoryError(source.name, source_category or "unknown",
+                                    dest.name, dest_category or "unknown")
 
         # Compare unit categories
         elif source_category != dest_category:

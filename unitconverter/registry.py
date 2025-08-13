@@ -101,7 +101,7 @@ class Registry:
             self.dimensions[category] = dimension
 
     def get_unit(self, name: str, exponent: int = 1) -> Unit:
-        """ Get unit by name, symbol, or alias.
+        """ Get a unit by name, symbol, or alias.
 
         Args:
             name (str): A unit name, symbol, or alias.
@@ -149,9 +149,16 @@ class Registry:
             str | None: The category name, or None if the unit isn't defined.
         """
         if not isinstance(unit, Unit):
-            raise ConverterError(f"{unit} is not a valid Unit")
+            raise ConverterError(f"{unit} is not a valid unit")
 
         try:
             return self.units[unit.name].category
         except KeyError:
-            return None
+            pass
+
+        # Check if there's a single matching category+dimension
+        matching = [name for name, dimen in self.dimensions.items() if dimen == unit.dimen]
+        if len(matching) == 1:
+            return matching[0]
+
+        return None

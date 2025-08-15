@@ -33,7 +33,7 @@ class Dimension(dict):
                 raise ConverterError(f"{units!r} is not a str or dict")
 
     def __pow__(self, exponent: int) -> Self:
-        """ Raise a dimension to a new exponent. Returns a new dimension."""
+        """ Raise a dimension to a new power. Returns a new dimension."""
         if not exponent or not isinstance(exponent, int):
             raise ConverterError(f"{exponent} must be a positive or negative integer")
 

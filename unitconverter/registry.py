@@ -5,18 +5,15 @@
 from unitconverter.exceptions import ConverterError
 from unitconverter.models.dimension import Dimension
 from unitconverter.models.prefix import get_prefixes
-from unitconverter.models.unit import Unit, UnitType
+from unitconverter.models.unit import Unit
 
 
 class Registry:
-    """ Used to store and retrieve information about units.
+    """ The registry is used to store pre-defined units.
 
-        Use new_unit() or add_unit() to add a unit to the registry.
-        Use get_unit() to retrieve a Unit from the registry.
-
-        TODO: add longer description about global vs local registries.
-
-     """
+        Use add_unit() to add a unit to the registry.
+        Use get_unit() to get a unit from the registry.
+    """
 
     def __init__(self,
                  dimensions: dict[str, Dimension] | None = None,

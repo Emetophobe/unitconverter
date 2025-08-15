@@ -21,7 +21,7 @@ class Unit(BaseUnit):
     """ A basic unit of measurement.
 
         Use Unit() if you want to create units that live outside of a registry.
-        Use registry.new_unit() if you want to add units to a specific registry.
+        Use registry.add_unit() if you want to add units to a specific registry.
 
     """
 

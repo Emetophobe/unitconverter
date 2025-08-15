@@ -10,7 +10,7 @@ from unitconverter.utils import parse_decimal
 
 # List of valid prefix options
 PREFIX_OPTIONS = [
-    "none",         # don"t generate prefixes (default)
+    "none",         # don't generate prefixes (default)
     "metric",       # metric prefixes
     "binary",       # binary prefixes (kilo, kibi, etc..)
 ]

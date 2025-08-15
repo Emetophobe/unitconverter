@@ -22,7 +22,7 @@ def parse_decimal(value: Decimal | int | str) -> Decimal:
             >>> Decimal(0.1) + Decimal(0.1) + Decimal(0.1) == Decimal(0.3)
             False
 
-        A float also doesn"t equal a string:
+        A float also doesn't equal a string:
 
             >>> Decimal(0.1) == Decimal("0.1")
             False

@@ -22,13 +22,13 @@ class UnitParser:
 
         Parameters
         ----------
-        name : str
+        `name` : str
             A unit name or composition of unit names (i.e "J/kg")
 
         Returns
         -------
         UnitType
-            Either a Unit or a CompositeUnit.
+            A Unit or a CompositeUnit.
         """
 
         # Check if we already have a unit
@@ -74,17 +74,7 @@ class UnitParser:
             raise ConverterError(f"{name} is not a valid unit")
 
     def _parse_composite_unit(self, name: str) -> UnitType:
-        """ Parse a unit string into a composite unit.
-
-        Args:
-            name (str): A unit name, symbol, or alias.
-
-        Raises:
-            ConverterError: If the unit can't be parsed.
-
-        Returns:
-            Unit: The new unit
-        """
+        """ Parse a unit string into a composite unit. """
         unit = CompositeUnit()
 
         # Separate units by division

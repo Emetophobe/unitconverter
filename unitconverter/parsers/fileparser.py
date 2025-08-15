@@ -13,14 +13,17 @@ from unitconverter.models.unit import Unit
 
 
 def load_units() -> tuple[dict[str, Dimension], dict[str, Unit]]:
-    """ Load pre-defined units from data files.
+    """ Load pre-defined dimensions and units.
 
-    Raises:
-        ConverterError: If there was an error parsing one of the unit files.
+    Returns
+    -------
+    tuple[dict[str, Dimension], dict[str, Unit]]
+        A tuple of the dimension and unit dictionaries.
 
-    Returns:
-        tuple[dict[str, Dimension], dict[str, Unit]]:
-            A tuple of the dimension and unit dictionaries.
+    Raises
+    ------
+    ConverterError
+        If the there was an error reading one of the files.
     """
 
     path = Path("data")

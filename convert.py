@@ -17,17 +17,17 @@ from unitconverter.utils import parse_decimal
 
 
 def print_error(msg: str, status: int = 1) -> None:
-    """ Helper function to print an error message and exit. """
+    """ Print an error message and exit. """
     print(msg, file=sys.stderr)
     sys.exit(status)
 
 
 def main() -> None:
-    parser = argparse.ArgumentParser(description="A unit converter written in Python")
+    parser = argparse.ArgumentParser(description="A simple unit converter")
 
     parser.add_argument(
         "value",
-        help="an integer or decimal value")
+        help="a decimal or integer value")
 
     parser.add_argument(
         "source",
@@ -94,6 +94,7 @@ def main() -> None:
     # Display results
     value = format_decimal(args.value, separators=args.separators)
     padding = " " * len(f"{value} {args.source}")
+
     for index, (result, dest) in enumerate(results):
         result = format_decimal(result, args.precision, args.exponent, args.separators)
         if index == 0:

@@ -8,19 +8,19 @@ from decimal import Decimal
 from pathlib import Path
 
 from unitconverter.exceptions import ConverterError
-from unitconverter.models.definition import Definition
 from unitconverter.models.dimension import Dimension
+from unitconverter.models.unit import Unit
 
 
-def load_units() -> tuple[dict[str, Dimension], dict[str, Definition]]:
-    """ Load pre-defined dimensions and units from json files.
+def load_units() -> tuple[dict[str, Dimension], dict[str, Unit]]:
+    """ Load pre-defined units from data files.
 
     Raises:
         ConverterError: If there was an error parsing one of the unit files.
 
     Returns:
-        tuple[dict[str, Dimension], dict[str, Definition]]:
-            A tuple of the dimensions and unit definitions.
+        tuple[dict[str, Dimension], dict[str, Unit]]:
+            A tuple of the dimension and unit dictionaries.
     """
 
     path = Path("data")
@@ -29,7 +29,7 @@ def load_units() -> tuple[dict[str, Dimension], dict[str, Definition]]:
     if not files:
         raise ConverterError(f"{path} is missing pre-defined unit files")
 
-    categories = {}
+    dimensions = {}
     units = {}
 
     for filename in files:
@@ -45,35 +45,38 @@ def load_units() -> tuple[dict[str, Dimension], dict[str, Definition]]:
         try:
             dimension = data.pop("dimension")
         except KeyError:
-            raise ConverterError("Unit file is missing required dimension", filename)
+            raise ConverterError("Unit file is missing required dimension", str(filename))
 
         try:
             category = data.pop("category")
         except KeyError:
-            raise ConverterError("Unit file is missing required category", filename)
+            raise ConverterError("Unit file is missing required category", str(filename))
 
-        if category in categories:
-            raise ConverterError(f"{category} is already defined")
-        else:
-            categories[category] = Dimension(dimension)
+        if category in dimensions:
+            raise ConverterError(f"{category} is already defined", str(filename))
+
+        # Store dimension label or "category"
+        dimensions[category] = Dimension(dimension)
 
         # Convert json dictionary to unit definitions
         for name, args in data.items():
             if name in units:
-                raise ConverterError(f"{name} is already defined")
+                raise ConverterError(f"{name} is already defined by {units[name]}")
 
-            # Required argument
+            # Factor is required
             try:
                 factor = args["factor"]
             except KeyError:
-                raise ConverterError(f"{name} is missing a conversion factor", filename)
+                raise ConverterError(f"{name} is missing a conversion factor", str(filename))
 
-            # Optional arguments
+            # Other arguments are optional
             symbols = args.get("symbols", [])
             aliases = args.get("aliases", [])
             prefix = args.get("prefix", None)
 
-            # Create the definition
-            units[name] = Definition(name, symbols, aliases, factor, category, dimension, prefix)
+            # TODO: validate data here early so we can raise an error with the filename
 
-    return (categories, units)
+            # Create the definition
+            units[name] = Unit(name, symbols, aliases, category, dimension, factor, prefix)
+
+    return (dimensions, units)

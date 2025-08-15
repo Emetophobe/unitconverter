@@ -6,7 +6,7 @@ import re
 import logging
 
 from unitconverter.exceptions import ConverterError
-from unitconverter.models.unit import Unit
+from unitconverter.models.unit import CompositeUnit, UnitType
 from unitconverter.registry import Registry
 
 
@@ -15,26 +15,30 @@ class UnitParser:
 
     def __init__(self, registry: Registry) -> None:
         """ Initialize unit parser. """
-        self._registry = registry
+        self.registry = registry
 
-    def parse_unit(self, name: Unit | str) -> Unit:
-        """ Parse a unit string into a unit instance.
+    def parse_unit(self, name: str | UnitType) -> UnitType:
+        """ Parse a string into a unit instance. Can be a composite unit.
 
-        Args:
-            name (Unit | str): A unit name, symbol or alias. Can be a composite unit.
+        Parameters
+        ----------
+        name : str
+            A unit name or composition of unit names (i.e "J/kg")
 
-        Raises:
-            ConverterError: If the unit is invalid or could not be parsed.
-
-        Returns:
-            Unit: A unit instance
+        Returns
+        -------
+        UnitType
+            Either a Unit or a CompositeUnit.
         """
 
         # Check if we already have a unit
-        if isinstance(name, Unit):
+        if isinstance(name, UnitType):
             return name
 
-        # Try to parse the string and find a matching unit
+        # Convert name into a simplied version
+        name = _simplify_unit(name)
+
+        # Try to parse the string into a unit
         try:
             return self._parse_unit_name(name)
         except ConverterError:
@@ -43,21 +47,12 @@ class UnitParser:
         # Try to create a composite unit
         return self._parse_composite_unit(name)
 
-    def _parse_unit_name(self, name: str) -> Unit:
-        """ Parse a unit string into a unit.
+    def _parse_unit_name(self, name: str) -> UnitType:
+        """ Parse a unit string into a unit instance. """
 
-        Args:
-            name (str): A unit name, symbol, or alias.
-
-        Raises:
-            ConverterError: If the unit can't be parsed.
-
-        Returns:
-            Unit: The new unit.
-        """
-        # Check if a simplified name is in the registry
+        # Check if name is in the registry
         try:
-            return self._registry.get_unit(_simplify_unit(name))
+            return self.registry.get_unit(name)
         except ConverterError:
             pass
 
@@ -67,11 +62,18 @@ class UnitParser:
 
         # Finally, try to split the unit name and exponent
         try:
-            return self._registry.get_unit(*_split_exponent(name))
+            name, exponent = _split_exponent(name)
+            unit = self.registry.get_unit(name)
+
+            if exponent != 1:
+                return CompositeUnit(unit.factor, unit.name, unit.dimen) ** exponent
+            else:
+                return unit
+
         except ConverterError:
             raise ConverterError(f"{name} is not a valid unit")
 
-    def _parse_composite_unit(self, name: str) -> Unit:
+    def _parse_composite_unit(self, name: str) -> UnitType:
         """ Parse a unit string into a composite unit.
 
         Args:
@@ -83,7 +85,7 @@ class UnitParser:
         Returns:
             Unit: The new unit
         """
-        unit = Unit()
+        unit = CompositeUnit()
 
         # Separate units by division
         if "/" in name:
@@ -102,16 +104,16 @@ class UnitParser:
         else:
             unit = self._parse_unit_name(name)
 
-        logging.debug(f"unit : {unit} ({unit.dimen!r})")
+        logging.debug(f"parse_composite_unit() - {unit} ({unit.dimen!r})")
 
         if not unit:
             raise ConverterError(f"{name} is not a valid unit")
 
         return unit
 
-    def _multiply_units(self, name: str) -> Unit:
+    def _multiply_units(self, name: str) -> UnitType:
         """ Parse a string with multiplication symbol into a single unit. """
-        units = Unit()
+        units = CompositeUnit()
         for name in name.split("*"):
             unit = self._parse_unit_name(name)
             # Check for unsupported temperature units
@@ -170,6 +172,7 @@ def _simplify_unit(name: str) -> str:
     for key, value in _replacements.items():
         if key in name:
             name = name.replace(key, value)
+
     return name
 
 
@@ -195,13 +198,12 @@ _replacements = {
     "⁹": "9",
 
     # simplify multiplication
-    "⋅": "-",
-    "*": "-",
+    "⋅": "*",
 
     # simplify division (convert "metre per second" to "metre/second")
     " per ": "/",
 
-    # regional spelling (this is easier and faster than adding additional aliases)
+    # regional spelling (this is easier than adding additional aliases)
     "meter": "metre",
     "liter": "litre",
 }

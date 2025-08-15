@@ -9,29 +9,20 @@ from unitconverter.formatting import format_display_name, format_type
 
 
 class Dimension(dict):
-    """ All units and dimensions can be expressed using a simple dictionary.
-
-        For example speed is length over time which can be expressed as the dimension LT⁻¹
-        An example speed unit would be metre/second which can be inverted to meter*second⁻¹
-
-        Storing the dimension or units as dictionaries would look like this:
-
-            >> dimension = {"length": 1, "time": -1}
-            >> units = {"metre": 1, "second": -1}
-
-        There's more to it than that but that's the basics of it. You can also create
-        composite units very easily this way by multiplying or dividing units.
-    """
+    """ All units and dimensions can be expressed using a simple exponent dictionary. """
 
     def __init__(self, units: str | dict[str, int] | None = None) -> None:
-        """ Create a Dimension dictionary.
+        """ Create a new dimension.
 
-        Args:
-            units (str | dict[str, int] | None, optional):
-                A string or dictionary representation of the units. Defaults to None.
+        Parameters
+        ----------
+        units : `str` | `dict[str, int]` | `None`, optional
+            A dimension name or dictionary, by default None
 
-        Raises:
-            ConverterError: If the units are invalid.
+        Raises
+        ------
+        ConverterError
+            If the dimen argument was invalid.
         """
         if units:
             if isinstance(units, str):
@@ -39,20 +30,10 @@ class Dimension(dict):
             elif isinstance(units, dict):
                 super().__init__(units)
             else:
-                raise ConverterError(f"{units} is not a valid dimension")
+                raise ConverterError(f"{units!r} is not a str or dict")
 
     def __pow__(self, exponent: int) -> Self:
-        """ Raise a dimension to a new exponent.
-
-        Args:
-            exponent (int): The integer value.
-
-        Raises:
-            ConverterError: If the exponent isn't valid.
-
-        Returns:
-            Self: _description_
-        """
+        """ Raise a dimension to a new exponent. Returns a new dimension."""
         if not exponent or not isinstance(exponent, int):
             raise ConverterError(f"{exponent} must be a positive or negative integer")
 
@@ -64,17 +45,7 @@ class Dimension(dict):
         return self.__class__(units)
 
     def __mul__(self, other: Self) -> Self:
-        """ Multiply two dimensions. Returns a new dimension.
-
-        Args:
-            other (Dimension): The second dimension.
-
-        Raises:
-            ConverterError: If the dimension is invalid.
-
-        Returns:
-            Dimension: A new dimension.
-        """
+        """ Multiply two dimensions. Returns a new dimension. """
         if not isinstance(other, Dimension | dict):
             raise ConverterError(f"Cannot multiply Dimension and {format_type(other)})")
 
@@ -88,17 +59,7 @@ class Dimension(dict):
         return self.__class__(units)
 
     def __truediv__(self, other: object) -> Self:
-        """ Divide two dimensions. Returns a new dimension.
-
-        Args:
-            other (Dimension): The second dimension.
-
-        Raises:
-            ConverterError: If the dimension is invalid.
-
-        Returns:
-            Dimension: A new dimension.
-        """
+        """ Divide two dimensions. Returns a new dimension. """
         if not isinstance(other, dict):
             raise ConverterError(f"Cannot divide Dimension and {format_type(other)})")
 

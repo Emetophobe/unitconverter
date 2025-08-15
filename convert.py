@@ -9,9 +9,11 @@ import argparse
 
 from decimal import DecimalException
 
+
 from unitconverter.converter import UnitConverter
 from unitconverter.exceptions import ConverterError
-from unitconverter.formatting import format_decimal, parse_decimal
+from unitconverter.formatting import format_decimal
+from unitconverter.utils import parse_decimal
 
 
 def print_error(msg: str, status: int = 1) -> None:
@@ -63,8 +65,8 @@ def main() -> None:
     # Try to convert value to a decimal
     try:
         args.value = parse_decimal(args.value)
-    except ConverterError:
-        print_error(f"Error: {args.value!r} is not a numerical value.")
+    except (ConverterError, DecimalException):
+        print_error(f"Error: {args.value!r} is not a valid decimal.")
 
     # Check precision
     if args.precision is not None and (args.precision < 0 or args.precision > 20):
@@ -80,7 +82,7 @@ def main() -> None:
 
     # Configure debug logger
     logging.getLogger().setLevel(logging.DEBUG if args.debug else logging.WARNING)
-    logging.basicConfig(format="debugging: %(message)s")
+    logging.basicConfig(format="debug: %(message)s")
 
     # Perform conversions
     converter = UnitConverter()
@@ -93,7 +95,7 @@ def main() -> None:
     value = format_decimal(args.value, separators=args.separators)
     padding = " " * len(f"{value} {args.source}")
     for index, (result, dest) in enumerate(results):
-        result = format_decimal(result, args.exponent, args.precision, args.separators)
+        result = format_decimal(result, args.precision, args.exponent, args.separators)
         if index == 0:
             print(f"{value} {args.source} = {result} {dest}")
         else:
@@ -103,7 +105,5 @@ def main() -> None:
 if __name__ == "__main__":
     try:
         main()
-    except DecimalException:
-        print_error("Error: Invalid decimal operation")
     except ConverterError as e:
-        print_error(str(e))
+        print_error("Error: " + str(e))

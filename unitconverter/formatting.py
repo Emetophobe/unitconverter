@@ -2,71 +2,45 @@
 # https://www.github.com/emetophobe/unitconverter
 
 
-from decimal import Decimal, DecimalException, ROUND_HALF_UP
-
-from unitconverter.exceptions import ConverterError
-
-
-def parse_decimal(value: Decimal | int | str) -> Decimal:
-    """ Parse value and return a Decimal.
-
-    Raises ConverterError if value is a float. Use a string instead
-    it will give a more accurate decimal value. See examples below:
-
-        This works with str:
-
-            >>> Decimal("0.1") + Decimal("0.1") + Decimal("0.1") == Decimal("0.3")
-            True
-
-        But not with float:
-
-            >>> Decimal(0.1) + Decimal(0.1) + Decimal(0.1) == Decimal(0.3)
-            False
-
-        A float also doesn"t equal a string:
-
-            >>> Decimal(0.1) == Decimal("0.1")
-            False
-
-        Source: https://www.laac.dev/blog/float-vs-decimal-python/
-    """
-    if isinstance(value, float):
-        raise ConverterError(f"{value} is a float which cannot be mixed with Decimals."
-                             " See docs/floating_point.txt for more details.")
-    try:
-        return Decimal(value)
-    except DecimalException:
-        raise ConverterError(f"{value!r} is not a valid Decimal")
+from decimal import Decimal, ROUND_HALF_UP
 
 
 def format_decimal(value: Decimal,
-                   exponent: bool = False,
                    precision: int | None = None,
-                   separators: bool = False
-                   ) -> str:
-    """ Format a decimal for display. Setting exponent to True overrides the other two settings.
+                   exponent: bool = False,
+                   separators: bool = False) -> str:
+    """ Format a decimal into a string for display.
 
-    Args:
-        value (Decimal): The decimal to format.
-        exponent (bool, optional): Show E notation if possible. Defaults to False.
-        precision (int | None, optional): Set rounding precision. Defaults to None.
-        separators (bool, optional): Show thouands separators (i.e 1,000,000). Defaults to False.
+    Parameters
+    ----------
+    number : `Decimal`
+        The decimal to format.
 
-    Returns:
-        str: The decimal formatted for output.
+    precision : `int` | `None`, optional
+        Set rounding precision, by default None
+
+    exponent : `bool`, optional
+        Show scientific E notation, by default False
+
+    separators : `bool`, optional
+        Show thousands separators (commas), by default False
+
+    Returns
+    -------
+    str
+        The formatted string.
     """
     if precision is not None:
-        try:
-            value = value.quantize(Decimal('10') ** -precision, rounding=ROUND_HALF_UP)
-        except DecimalException:
-            # Precision is too small for the result. Just show it without rounding
-            pass
+        print(value)
+        value = value.quantize(Decimal(10) ** -precision, ROUND_HALF_UP)
+        print(value)
 
+    precision_format = f".{precision}" if precision is not None else ""
     if exponent:
-        return f"{value:E}"
+        return f"{value:{precision_format}E}"
 
     comma = "," if separators else ""
-    return f"{value:{comma}f}"
+    return f"{value:{comma}{precision_format}f}"
 
 
 def format_name(units: dict[str, int], sort_keys: bool = False) -> str:
@@ -98,14 +72,14 @@ def format_display_name(units: dict[str, int], sort_keys: bool = False) -> str:
     return "*".join(numers) + "/" + "*".join(denoms)
 
 
-def format_type(obj: object) -> str:
-    """ Get a nice string representation of an object. """
-    return type(obj).__name__
-
-
 def format_exponent(name: str, exponent: int) -> str:
     """ Format unit name with optional exponent. """
     if exponent == 1:
         return name
     else:
         return f"{name}^{exponent}"
+
+
+def format_type(obj: object) -> str:
+    """ Get a nice string representation of an object. """
+    return type(obj).__name__

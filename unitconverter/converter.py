@@ -2,14 +2,15 @@
 # https://www.github.com/emetophobe/unitconverter
 
 
+import logging
 from decimal import Decimal, getcontext
 
 from unitconverter.exceptions import CategoryError, ConverterError
-from unitconverter.formatting import parse_decimal
-from unitconverter.models.unit import Unit
-from unitconverter.parsers.fileparser import load_units
+from unitconverter.models.unit import UnitType, Unit
 from unitconverter.parsers.unitparser import UnitParser
+from unitconverter.parsers.fileparser import load_units
 from unitconverter.registry import Registry
+from unitconverter.utils import parse_decimal
 
 
 # Set decimal precision
@@ -23,61 +24,35 @@ class UnitConverter:
         self.registry = Registry(*load_units())
         self.parser = UnitParser(self.registry)
 
-    def convert(self, value: Decimal | int | str, source: Unit | str, dest: Unit | str) -> Decimal:
-        """ Convert a value from the source unit to the destination unit.
+    def convert(self, value: Decimal, source: str | UnitType, dest: str | UnitType) -> Decimal:
+        """ Convert value from source unit to dest unit. Returns the converted value. """
 
-        Args:
-            value (Decimal | int | str): The value to convert.
-            source (Unit | str): A unit name or unit instance.
-            dest (Unit | str): A unit name or unit instance.
-
-        Raises:
-            CategoryError: If the unit categories are incompatible.
-            ConverterError: If an argument is invalid.
-
-        Returns:
-            Decimal: The conversion result.
-        """
         value = parse_decimal(value)
         source = self.parser.parse_unit(source)
         dest = self.parser.parse_unit(dest)
 
-        # Get the unit categories
-        source_category = self.registry.get_category(source)
-        dest_category = self.registry.get_category(dest)
+        logging.debug(f"convert() - {source}, {source.dimen!r}")
+        logging.debug(f"convert() - {dest}, {dest.dimen!r}")
 
-        # Compare unit dimensions if a unit has no pre-defined category
-        if source_category is None or dest_category is None:
-            if source.dimen != dest.dimen:
-                raise CategoryError(source.name, source_category or "unknown",
-                                    dest.name, dest_category or "unknown")
-
-        # Compare unit categories
-        elif source_category != dest_category:
-            raise CategoryError(source.name, source_category, dest.name, dest_category)
+        # Make sure the units are compatible
+        if not self.compatible(source, dest):
+            raise CategoryError(source, dest)
 
         # Temperature conversion
-        if source_category == "temperature":
+        if source.dimen == {"temperature": 1}:
             return self.convert_temperature(value, source, dest)
 
         # Regular conversion
         value = value * source.factor
         return value / dest.factor
 
-    def convert_temperature(self, value: Decimal, source: Unit, dest: Unit) -> Decimal:
-        """ Convert between temperature units.
+    def convert_temperature(self,
+                            value: Decimal,
+                            source: str | UnitType,
+                            dest: str | UnitType
+                            ) -> Decimal:
+        """ Convert from one temperature unit to another. """
 
-        Args:
-            value (Decimal | int | str): The value to convert.
-            source (Unit | str): The source unit.
-            dest (Unit | str): The destination unit.
-
-        Raises:
-            ConverterError: If a unit is not a valid temperature unit.
-
-        Returns:
-            Decimal: The conversion result.
-        """
         value = parse_decimal(value)
         source = self.parser.parse_unit(source)
         dest = self.parser.parse_unit(dest)
@@ -105,3 +80,14 @@ class UnitConverter:
             return value * Decimal(9) / Decimal(5)
         else:
             raise ConverterError(f"{dest} is not a temperature unit")
+
+    def compatible(self, source: UnitType, dest: UnitType) -> bool:
+        """ Check if the units are compatible. """
+        if isinstance(source, Unit) and isinstance(dest, Unit):
+            if source.category == dest.category:
+                return True
+
+        # TODO: better handling of composite units
+
+        # Just compare dimensions for now
+        return source.dimen == dest.dimen

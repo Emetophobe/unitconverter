@@ -5,8 +5,7 @@
 from decimal import Decimal
 
 from unitconverter.exceptions import ConverterError
-from unitconverter.formatting import parse_decimal
-from unitconverter.models.definition import Definition
+from unitconverter.utils import parse_decimal
 
 
 # List of valid prefix options
@@ -21,41 +20,10 @@ class Prefix:
     """ A Prefix can be combined with a Definition to make a prefixed definition. """
 
     def __init__(self, name: str, symbol: str, factor: Decimal | int | str) -> None:
-        """ Create a new prefix.
-
-        Args:
-            name (str): The prefix name.
-            symbol (str): The prefix symbol.
-            factor (Decimal | int | str): The multiplication factor.
-        """
+        """ Create a new prefix. """
         self.name = name
         self.symbol = symbol
         self.factor = parse_decimal(factor)
-
-    def __add__(self, other: Definition) -> Definition:
-        """ Add a prefix to a unit definition to create a new prefixed definition.
-
-        Args:
-            other (Definition): The unit definition to prefix.
-
-        Raises:
-            ConverterError: If the definition is invalid.
-
-        Returns:
-            Definition: A new prefixed definition.
-        """
-
-        if not isinstance(other, Definition):
-            raise ConverterError(f"Prefix {self.name} can only be added to a Definition")
-
-        # Create prefixed unit names and factor
-        name = self.name + other.name
-        symbols = [self.symbol + symbol for symbol in other.symbols]
-        aliases = [self.name + alias for alias in other.aliases]
-        factor = self.factor * other.factor
-
-        # Make sure prefix=None so that the unit can't be prefixed again
-        return Definition(name, symbols, aliases, factor, other.category, other.dimen, prefix=None)
 
     def __repr__(self) -> str:
         return f"Prefix({self.name!r}, {self.symbol!r}, {self.factor!r})"
@@ -114,17 +82,7 @@ BINARY_PREFIXES = [
 
 
 def get_prefixes(option: str | None) -> list[Prefix]:
-    """ Get a list of supported prefixes based on the prefix option.
-
-    Args:
-        option (str | None): The prefix setting ("none", "metric", or "binary")
-
-    Raises:
-        ConverterError: If the prefix option is invalid.
-
-    Returns:
-        list[Prefix]: The list of supported prefixes, or an empty list if not supported.
-    """
+    """ Get a list of supported prefixes based on the prefix option. """
     if option is None or option == "none":
         return []
     elif option == "metric":

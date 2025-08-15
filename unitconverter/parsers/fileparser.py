@@ -42,39 +42,39 @@ def load_units() -> tuple[dict[str, Dimension], dict[str, Unit]]:
         except json.JSONDecodeError as e:
             raise ConverterError(f"Invalid json syntax in {filename} - {e}")
 
+        # Remove dimension from the rest of the data
         try:
             dimension = data.pop("dimension")
         except KeyError:
-            raise ConverterError("Unit file is missing required dimension", str(filename))
+            raise ConverterError(f"Unit file is missing required dimension ({filename})")
 
+        # Remove category from the rest of the data
         try:
             category = data.pop("category")
         except KeyError:
-            raise ConverterError("Unit file is missing required category", str(filename))
+            raise ConverterError(f"Unit file is missing required category ({filename})")
 
         if category in dimensions:
-            raise ConverterError(f"{category} is already defined", str(filename))
+            raise ConverterError(f"{category} is already defined ({filename})")
 
-        # Store dimension label or "category"
+        # Store each unit files category and dimension info
         dimensions[category] = Dimension(dimension)
 
-        # Convert json dictionary to unit definitions
+        # Convert json dictionary to units
         for name, args in data.items():
             if name in units:
                 raise ConverterError(f"{name} is already defined by {units[name]}")
 
-            # Factor is required
+            # The conversion factor is required
             try:
                 factor = args["factor"]
             except KeyError:
-                raise ConverterError(f"{name} is missing a conversion factor", str(filename))
+                raise ConverterError(f"{name} is missing a conversion factor ({filename})")
 
-            # Other arguments are optional
+            # Other keys are optional
             symbols = args.get("symbols", [])
             aliases = args.get("aliases", [])
             prefix = args.get("prefix", None)
-
-            # TODO: validate data here early so we can raise an error with the filename
 
             # Create the definition
             units[name] = Unit(name, symbols, aliases, category, dimension, factor, prefix)

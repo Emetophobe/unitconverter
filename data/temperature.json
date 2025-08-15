@@ -9,16 +9,16 @@
 		"factor": 1
 	},
 	"celsius": {
-		"symbols": ["°C", "degC", "c"],
+		"symbols": ["°C", "degC"],
 		"aliases": ["centigrade"],
 		"factor": 1
 	},
 	"fahrenheit": {
-		"symbols": ["°F", "degF", "f"],
+		"symbols": ["°F", "degF"],
 		"factor": 1
 	},
 	"rankine": {
-		"symbols": ["°R", "°RA", "degR", "r"],
+		"symbols": ["°R", "°RA", "degR"],
 		"aliases": ["rankines"],
 		"factor": 1
 	}

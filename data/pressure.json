@@ -8,35 +8,39 @@
 		"prefix": "metric",
 		"factor": 1
 	},
-	"barye": {
+    "barye": {
 		"symbols": ["Ba"],
 		"aliases": ["baryes"],
+        "comment": "CGS unit of pressure",
 		"prefix": "metric",
 		"factor": 0.1
 	},
 	"bar": {
 		"aliases": ["bars"],
-		"prefix": "metric",
+        "comment": "Older metric unit of pressure",
+        "prefix": "metric",
 		"factor": 1E+5
 	},
-	"psi": {
-		"symbols": ["lbf/in2"],
-		"aliases": ["pound-force/inch2"],
-		"factor": 6894.75788951578
-	},
-	"ksi": {
-		"symbols": ["klbf/in2"],
-		"aliases": ["kilopound-force/inch2"],
-		"factor": 6894757.88951578
+    "torr": {
+		"symbols": ["Torr"],
+		"aliases": ["torrs"],
+        "comment": "Older metric unit of pressure",
+		"factor": 133.322
 	},
 	"pieze": {
 		"symbols": ["pz"],
+        "comment": "Older Metre-Tonne-Second (MTS) unit of pressure",
 		"factor": 1000
 	},
-	"torr": {
-		"symbols": ["Torr"],
-		"aliases": ["torrs"],
-		"factor": 133.322
+    "standard atmosphere": {
+		"symbols": ["atm"],
+		"aliases": ["standard-atmosphere"],
+		"factor": 101325
+	},
+	"technical atmosphere": {
+		"symbols": ["at"],
+		"aliases": ["technical-atmosphere"],
+		"factor": 98066.5
 	},
 	"metre of mercury": {
 		"symbols": ["mHg", "m Hg"],
@@ -49,14 +53,14 @@
 		"aliases": ["inches of mercury"],
 		"factor": 3386.389
 	},
-	"standard atmosphere": {
-		"symbols": ["atm"],
-		"aliases": ["standard-atmosphere"],
-		"factor": 101325
+	"psi": {
+		"symbols": ["lbf/in2"],
+		"aliases": ["pound-force/inch2"],
+		"factor": 6894.75788951578
 	},
-	"technical atmosphere": {
-		"symbols": ["at"],
-		"aliases": ["technical-atmosphere"],
-		"factor": 98066.5
+	"ksi": {
+		"symbols": ["klbf/in2"],
+		"aliases": ["kilopound-force/inch2"],
+		"factor": 6894757.88951578
 	}
 }

@@ -19,12 +19,5 @@
 	"imperial knot": {
 		"aliases": ["imperial knots"],
 		"factor": 0.5147733
-	},
-	"speed of sound": {
-		"factor": 343
-	},
-	"speed of light": {
-		"aliases": ["lightspeed"],
-		"factor": 299792458
 	}
 }

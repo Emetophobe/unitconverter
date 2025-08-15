@@ -4,6 +4,7 @@
 
 	"galileo": {
 		"symbols": ["Gal"],
+        "comment": "CGS unit of acceleration",
 		"factor": 0.01
 	}
 }

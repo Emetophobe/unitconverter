@@ -1,6 +1,6 @@
 {
-	"category": "data storage",
-	"dimension": {"data storage": 1},
+	"category": "bits",
+	"dimension": {"bits": 1},
 
 	"bit": {
 		"symbols": ["b"],

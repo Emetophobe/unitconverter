@@ -11,6 +11,7 @@
 	"maxwell": {
 		"symbols": ["Mx"],
 		"aliases": ["maxwells"],
+        "comment": "CGS unit of magnetic flux",
 		"prefix": "metric",
 		"factor": 1E-8
 	}

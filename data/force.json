@@ -14,11 +14,6 @@
 		"prefix": "metric",
 		"factor": 0.00980665
 	},
-	"kilopond": {
-		"symbols": ["kp"],
-		"aliases": ["kiloponds"],
-		"factor": 9.80665
-	},
     "tonne-force": {
 		"symbols": ["tf"],
 		"prefix": "metric",
@@ -27,6 +22,7 @@
 	"dyne": {
 		"symbols": ["dyn"],
 		"aliases": ["dynes"],
+        "comment": "CGS unit of force",
 		"prefix": "metric",
 		"factor": 0.00001
 	},

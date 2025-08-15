@@ -16,7 +16,6 @@
 	"statvolt": {
 		"symbols": ["statV"],
 		"aliases": ["statvolts"],
-        "comment": "1 statvolt is equal to 299.792458 volts",
 		"factor": 299.792458
 	}
 }

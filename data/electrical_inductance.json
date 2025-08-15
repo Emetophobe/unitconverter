@@ -16,7 +16,6 @@
 	"stathenry": {
 		"symbols": ["statH"],
 		"aliases": ["stathenries"],
-        "comment": "1 stathenry is 898,755,200,000 henries",
 		"factor": 898755200000
 	}
 }

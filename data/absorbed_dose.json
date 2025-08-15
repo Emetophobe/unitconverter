@@ -8,8 +8,9 @@
 		"prefix": "metric",
 		"factor": 1
 	},
-	"rad unit": {
+	"radiation unit": {
 		"symbols": ["Rad"],
+        "comment": "CGS unit of absorbed dose",
 		"factor": 0.01
 	}
 }

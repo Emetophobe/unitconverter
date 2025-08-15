@@ -4,6 +4,7 @@
 
 	"lux": {
 		"symbols": ["lx"],
+        "aliases": ["metre-candle"],
 		"prefix": "metric",
 		"factor": 1
 	},
@@ -11,14 +12,10 @@
 		"symbols": ["nx"],
 		"factor": 0.001
 	},
-	"metre-candle": {
-		"symbols": ["m-c"],
-		"prefix": "metric",
-		"factor": 1
-	},
 	"phot": {
 		"symbols": ["ph"],
 		"aliases": ["phots"],
+        "comment": "CGS unit of illuminance",
 		"factor": 10000
 	},
 	"foot-candle": {

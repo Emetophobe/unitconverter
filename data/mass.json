@@ -88,6 +88,7 @@
 		"aliases": ["troy pounds"],
 		"factor": 0.3732417216
 	},
+
 	"US stone": {
 		"symbols": ["usstone"],
 		"aliases": ["US stones"],
@@ -103,9 +104,9 @@
 		"aliases": ["US hundredweights", "short hundredweight", "short hundredweights"],
 		"factor": 45.359237
 	},
-	"short ton": {
+	"US ton": {
 		"symbols": ["tn"],
-		"aliases": ["short tons", "US ton", "US tons"],
+		"aliases": ["US tons", "short ton", "short tons"],
 		"factor": 907.18474
 	}
 }

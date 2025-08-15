@@ -16,7 +16,6 @@
 	"statohm": {
 		"symbols": ["stΩ"],
 		"aliases": ["statohms"],
-        "comment": "1 statohm is roughly 8.987552E+11 ohm",
 		"factor": 8.987552E+11
 	}
 }

@@ -11,6 +11,7 @@
 	"guass": {
 		"symbols": ["G"],
 		"aliases": ["gausses"],
+        "comment": "CGS unit of magnetic flux density",
 		"factor": 0.0001
 	}
 }

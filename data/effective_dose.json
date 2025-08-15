@@ -8,9 +8,9 @@
 		"prefix": "metric",
 		"factor": 1
 	},
-	"roentgen": {
+	"roentgen equivalent man": {
 		"symbols": ["rem"],
-		"aliases": ["roentgens"],
+        "comment": "CGS unit of effective dose",
 		"prefix": "metric",
 		"factor": 0.01
 	}

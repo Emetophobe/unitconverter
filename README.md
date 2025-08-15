@@ -3,45 +3,7 @@
 A basic unit converter written in Python.
 
 This script is meant to be used as a command line utility. If you're looking for a
-python library there are superior alternatives such as [pint][1] or [metrolopy][2].
-
-The following unit categories are currently supported:
-
-* Absorbed dose (gray, Rad)
-* Acceleration (metre/second², foot/second², mile/second²)
-* Amount of substance (mole)
-* Area (square metre, square mile, acre, hectare, etc...)
-* Catalytic activity (katal, mole/second, enzyme unit)
-* Data storage (bits, bytes, kilobytes, kibibytes, etc...)
-* Effective dose (sievert, roentgen)
-* Electric charge (coloumb, ampere-second, ampere-minute, ampere-hour)
-* Electric current (ampere, watt/volt, coulomb/second)
-* Electric potential (volt, joule/coulomb, watt/ampere, weber/second)
-* Electrical capacitance (farad, coulomb/volt)
-* Electrical conductance (siemens, ampere/volt)
-* Electrical inductance (henry, weber/ampere)
-* Electrical resistance (ohm, volt/ampere)
-* Energy (joule, calorie, btu, therm, watt-second, watt-hour, etc...)
-* Force (newton, dyne, poundal, gram-force, ton-force, etc...)
-* Frequency (hertz, rpm, cycles/minute, cycles/hour)
-* Illuminance (lux, nox, phot, watt/m², metre-candle, foot-candle)
-* Length (metre, inch, foot, etc...)
-* Luminance (cd/m², nit, stilb, apostilb, etc..)
-* Luminous flux (lumen, candela-steradian)
-* Luminous intensity (candela, lumen/steradian, candlepower)
-* Magnetic flux (weber, maxwell)
-* Magnetic flux density (tesla, guass, gamma)
-* Mass (gram, pound, ounce, metric ton, etc...)
-* Plane angle (radian, gradian, degree, arcsecond, arcminute, turn)
-* Power (watt, volt-ampere, joule/second, horsepower, etc...)
-* Pressure (pascal, bar, psi, torr, standard atmosphere, etc..)
-* Radioactivity (becquerel, curie, rutherford)
-* Solid angle (steradian, square degree, spat)
-* Speed (kilometres/hour, miles/hour, metre/second, inch/second, etc...)
-* Temperature (kelvin, celsius, fahrenheit, and rankine)
-* Time (second, minute, hour, day, week, month, year, etc...)
-* Viscosity (pascal-second and poise)
-* Volume (cubic metre, litre, quart, gallon, etc...)
+python library there are superior alternatives such as [pint][1] or [astropy][2].
 
 ## Features
 
@@ -51,16 +13,13 @@ scaling behaviour can be changed on a per-unit basis.
 The following prefix options are currently supported:
 
     none        - don't use prefix scaling (default)
-    metric      - use metric prefix table
+    metric      - use metric prefix table (quecto to quetta)
     binary      - use binary prefix table (kibi to yobi)
-    bit         - use bit prefix table (kilo to quetta)
-    byte        - use bit and binary tables
-    all         - use metric and binary tables
 
 
-Units can also be combined to create composite units. You can create a composite unit
+Units can be combined to create composite units. You can create a composite unit
 from any of the defined units (excluding temperature units). Temperature units use
-a custom conversion function and don't work with other units for now.
+a custom conversion function and don't work well with other units for now.
 
 For example you can create a speed unit by dividing any `length` unit by any `time` unit:
 
@@ -73,9 +32,8 @@ Many other unit combinations are possible:
     1 watt = 1 amp*volt
            = 1 joule/second
 
-    $ python convert.py 1 joule kg*m2*s^-2 pascal*metre^3 watt*second coulomb*volt
+    $ python convert.py 1 joule kg*m2*s^-2 watt*second coulomb*volt
     1 joule = 1 kg*m2*s^-2
-            = 1 pascal*metre^3
             = 1 watt*second
             = 1 coulomb*volt
 
@@ -97,16 +55,15 @@ Unit composition is an experimental feature and there are still bugs to be sorte
     A simple unit converter
 
     positional arguments:
-    value                 integer or decimal value
-    source                the source unit
-    dest                  one or more destination units
+      value                     an integer or decimal value
+      source                    the source unit
+      dest                      one or more destination units
 
     options:
-    -h, --help            show this help message and exit
-    -p ndigits, --precision ndigits
-                          set rounding precision (default: None)
-    -c, --commas          show thousands separator (default: False)
-    -e, --exponent        show E notation when possible (default: False)
+      -h, --help                show this help message and exit
+      -p, --precision ndigits   set rounding precision (default: None)
+      -s, --separators          show thousands separator (default: False)
+      -e, --exponent            show E notation when possible (default: False)
 
 
 ## Examples
@@ -127,17 +84,26 @@ Unit composition is an experimental feature and there are still bugs to be sorte
     $ python convert.py 10 amps kA
     10 amps = 0.01 kA
 
-### Unit names can also be composed of multiple units
+#### Convert multiple units at once
 
-    $ python convert.py 1 joule/second volt*amp
-    1 joule/second = 1 volt*amp
+    $ python convert.py 1 metre cm in ft -p 4
+    1 metre = 100.0000 cm
+            = 39.3701 in
+            = 3.2808 ft
+
+#### Use mathematical expressions to create composite units (experimental)
+
+    $ python convert.py 1 watt volt*amp joule/sec
+    1 watt = 1 volt*amp
+           = 1 joule/sec
+
 
 #### Set rounding precision with `-p`/`--precision`
 
     $ python convert.py 12 metres inches -p 5
     12 metres = 472.44094 inches
 
-#### Display thousands separators with `-c`/`--comma`
+#### Display thousands separators with `-s`/`--separators`
 
     $ python convert.py 5 cm nm -c
     5 cm = 50,000,000 nm
@@ -147,12 +113,6 @@ Unit composition is an experimental feature and there are still bugs to be sorte
     $ python convert.py 5 cm nm -e
     5 cm = 5E+7 nm
 
-#### Convert multiple units at once
-
-    $ python convert.py 1 metre cm in ft -p 4
-    1 metre = 100.0000 cm
-            = 39.3701 in
-            = 3.2808 ft
 
 #### Multi-word unit names are also supported but they need to be wrapped in quotes
 
@@ -164,4 +124,4 @@ Unit composition is an experimental feature and there are still bugs to be sorte
 
 
 [1]: https://github.com/hgrecco/pint/
-[2]: https://github.com/nrc-cnrc/MetroloPy/
+[2]: https://github.com/astropy/astropy

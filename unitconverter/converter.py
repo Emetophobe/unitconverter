@@ -3,7 +3,8 @@
 
 
 import logging
-from decimal import Decimal, getcontext
+from decimal import Decimal
+
 
 from unitconverter.exceptions import CategoryError, ConverterError
 from unitconverter.models.unit import UnitType, Unit
@@ -11,10 +12,6 @@ from unitconverter.parsers.unitparser import UnitParser
 from unitconverter.parsers.fileparser import load_units
 from unitconverter.registry import Registry
 from unitconverter.utils import parse_decimal
-
-
-# Set decimal precision
-getcontext().prec = 15
 
 
 class UnitConverter:

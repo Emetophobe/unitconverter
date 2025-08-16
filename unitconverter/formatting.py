@@ -2,7 +2,9 @@
 # https://www.github.com/emetophobe/unitconverter
 
 
-from decimal import Decimal, ROUND_HALF_UP
+import logging
+
+from decimal import Decimal, DecimalException, ROUND_HALF_UP
 
 
 def format_decimal(value: Decimal,
@@ -31,16 +33,17 @@ def format_decimal(value: Decimal,
         The formatted string.
     """
     if precision is not None:
-        print(value)
-        value = value.quantize(Decimal(10) ** -precision, ROUND_HALF_UP)
-        print(value)
+        try:
+            value = value.quantize(Decimal(10) ** -precision, ROUND_HALF_UP)
+        except DecimalException:
+            logging.debug(f"Failed to quantize {value} (precision = {precision})")
+            pass
 
-    precision_format = f".{precision}" if precision is not None else ""
     if exponent:
-        return f"{value:{precision_format}E}"
+        return f"{value:E}"
 
     comma = "," if separators else ""
-    return f"{value:{comma}{precision_format}f}"
+    return f"{value:{comma}f}"
 
 
 def format_name(units: dict[str, int], sort_keys: bool = False) -> str:

@@ -69,8 +69,8 @@ def main() -> None:
         print_error(f"Error: {args.value!r} is not a valid decimal.")
 
     # Check precision
-    if args.precision is not None and (args.precision < 0 or args.precision > 20):
-        print_error("Error: Precision must be between 0 and 20.")
+    if args.precision is not None and (args.precision < 0 or args.precision > 30):
+        print_error("Error: Precision must be between 0 and 30.")
 
     # Allow <source> to <unit> but check for syntax errors
     # Make sure to remove "to" from the dest units

@@ -57,7 +57,7 @@ class Unit(BaseUnit):
         self.symbols = symbols
         self.aliases = aliases
         self.category = category
-        self.dimen = dimen
+        self.dimen = Dimension(dimen)
         self.factor = parse_decimal(factor)
         self.prefixes = prefixes
 
@@ -174,7 +174,7 @@ class CompositeUnit(BaseUnit):
                              self.dimen ** exponent)
 
     def __repr__(self) -> str:
-        return f"CompositeUnit({self.factor}, {self.units}, {self.dimen})"
+        return f"CompositeUnit({self.factor!r}, {self.units!r}, {self.dimen!r})"
 
     def __str__(self) -> str:
         return format_display_name(self.units)

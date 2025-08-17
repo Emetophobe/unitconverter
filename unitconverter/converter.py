@@ -28,8 +28,8 @@ class UnitConverter:
         source = self.parser.parse_unit(source)
         dest = self.parser.parse_unit(dest)
 
-        logging.debug(f"convert() - {source}, {source.dimen!r}")
-        logging.debug(f"convert() - {dest}, {dest.dimen!r}")
+        logging.debug(f"convert() - {source} ({source.dimen})")
+        logging.debug(f"convert() - {dest} ({dest.dimen})")
 
         # Make sure the units are compatible
         if not self.compatible(source, dest):
@@ -81,10 +81,8 @@ class UnitConverter:
     def compatible(self, source: UnitType, dest: UnitType) -> bool:
         """ Check if the units are compatible. """
         if isinstance(source, Unit) and isinstance(dest, Unit):
-            if source.category == dest.category:
-                return True
+            return source.category == dest.category
 
         # TODO: better handling of composite units
-
         # Just compare dimensions for now
         return source.dimen == dest.dimen

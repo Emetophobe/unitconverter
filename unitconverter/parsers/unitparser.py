@@ -94,7 +94,7 @@ class UnitParser:
         else:
             unit = self._parse_unit_name(name)
 
-        logging.debug(f"parse_composite_unit() - {unit} ({unit.dimen!r})")
+        logging.debug(f"parse_composite_unit() - {unit} ({unit.dimen})")
 
         if not unit:
             raise ConverterError(f"{name} is not a valid unit")

@@ -6,8 +6,8 @@ import logging
 from decimal import Decimal
 
 
-from unitconverter.exceptions import CategoryError, ConverterError
-from unitconverter.models.unit import UnitType, Unit
+from unitconverter.exceptions import ConversionError, ConverterError
+from unitconverter.models.unit import BaseUnit
 from unitconverter.parsers.unitparser import UnitParser
 from unitconverter.parsers.fileparser import load_units
 from unitconverter.registry import Registry
@@ -18,25 +18,25 @@ class UnitConverter:
 
     def __init__(self) -> None:
         """ Initialize pre-defined dimensions and units. """
-        self.registry = Registry(*load_units())
+        self.registry = Registry(load_units())
         self.parser = UnitParser(self.registry)
 
-    def convert(self, value: Decimal, source: str | UnitType, dest: str | UnitType) -> Decimal:
+    def convert(self, value: Decimal, source: str | BaseUnit, dest: str | BaseUnit) -> Decimal:
         """ Convert value from source unit to dest unit. Returns the converted value. """
 
         value = parse_decimal(value)
         source = self.parser.parse_unit(source)
         dest = self.parser.parse_unit(dest)
 
-        logging.debug(f"convert() - {source} ({source.dimen})")
-        logging.debug(f"convert() - {dest} ({dest.dimen})")
+        logging.debug(f"convert() {source} ({source.dimension})")
+        logging.debug(f"convert() {dest} ({dest.dimension})")
 
-        # Make sure the units are compatible
-        if not self.compatible(source, dest):
-            raise CategoryError(source, dest)
+        # Check if the units are compatible
+        if source.dimension != dest.dimension:
+            raise ConversionError(source, dest)
 
         # Temperature conversion
-        if source.dimen == {"temperature": 1}:
+        if source.dimension.name == "temperature":
             return self.convert_temperature(value, source, dest)
 
         # Regular conversion
@@ -45,8 +45,8 @@ class UnitConverter:
 
     def convert_temperature(self,
                             value: Decimal,
-                            source: str | UnitType,
-                            dest: str | UnitType
+                            source: str | BaseUnit,
+                            dest: str | BaseUnit
                             ) -> Decimal:
         """ Convert from one temperature unit to another. """
 
@@ -77,12 +77,3 @@ class UnitConverter:
             return value * Decimal(9) / Decimal(5)
         else:
             raise ConverterError(f"{dest} is not a temperature unit")
-
-    def compatible(self, source: UnitType, dest: UnitType) -> bool:
-        """ Check if the units are compatible. """
-        if isinstance(source, Unit) and isinstance(dest, Unit):
-            return source.category == dest.category
-
-        # TODO: better handling of composite units
-        # Just compare dimensions for now
-        return source.dimen == dest.dimen

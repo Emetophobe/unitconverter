@@ -46,6 +46,11 @@ def main() -> None:
         type=int)
 
     parser.add_argument(
+        "-n", "--normalize",
+        help="normalize result by stripping the rightmost trailing zeros",
+        action="store_true")
+
+    parser.add_argument(
         "-s", "--separators",
         help="show thousands separator (default: False)",
         action="store_true")
@@ -96,7 +101,8 @@ def main() -> None:
     padding = " " * len(f"{value} {args.source}")
 
     for index, (result, dest) in enumerate(results):
-        result = format_decimal(result, args.precision, args.exponent, args.separators)
+        result = format_decimal(result, args.precision, args.normalize,
+                                args.exponent, args.separators)
         if index == 0:
             print(f"{value} {args.source} = {result} {dest}")
         else:

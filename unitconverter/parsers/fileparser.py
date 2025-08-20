@@ -8,22 +8,21 @@ from decimal import Decimal
 from pathlib import Path
 
 from unitconverter.exceptions import ConverterError
-from unitconverter.models.dimension import Dimension
 from unitconverter.models.unit import Unit
 
 
-def load_units() -> tuple[dict[str, Dimension], dict[str, Unit]]:
-    """ Load pre-defined dimensions and units.
+def load_units() -> dict[str, Unit]:
+    """ Load pre-defined units.
 
     Returns
     -------
-    tuple[dict[str, Dimension], dict[str, Unit]]
-        A tuple of the dimension and unit dictionaries.
+    dict[str, Unit]
+        A dictionary of unit names and unit objects.
 
     Raises
     ------
     ConverterError
-        If the there was an error reading one of the files.
+        If there was an error reading one of the files.
     """
 
     path = Path("data")
@@ -32,7 +31,6 @@ def load_units() -> tuple[dict[str, Dimension], dict[str, Unit]]:
     if not files:
         raise ConverterError(f"{path} is missing pre-defined unit files")
 
-    dimensions = {}
     units = {}
 
     for filename in files:
@@ -49,19 +47,13 @@ def load_units() -> tuple[dict[str, Dimension], dict[str, Unit]]:
         try:
             dimension = data.pop("dimension")
         except KeyError:
-            raise ConverterError(f"Unit file is missing required dimension ({filename})")
+            raise ConverterError(f"{filename} is missing required dimension")
 
         # Remove category from the rest of the data
         try:
-            category = data.pop("category")
+            data.pop("category")
         except KeyError:
-            raise ConverterError(f"Unit file is missing required category ({filename})")
-
-        if category in dimensions:
-            raise ConverterError(f"{category} is already defined ({filename})")
-
-        # Store each unit files category and dimension info
-        dimensions[category] = Dimension(dimension)
+            raise ConverterError(f"{filename} is missing required category")
 
         # Convert json dictionary to units
         for name, args in data.items():
@@ -79,7 +71,7 @@ def load_units() -> tuple[dict[str, Dimension], dict[str, Unit]]:
             aliases = args.get("aliases", [])
             prefix = args.get("prefix", None)
 
-            # Create the definition
-            units[name] = Unit(name, symbols, aliases, category, dimension, factor, prefix)
+            # Create the unit
+            units[name] = Unit(name, symbols, aliases, dimension, factor, prefix)
 
-    return (dimensions, units)
+    return units

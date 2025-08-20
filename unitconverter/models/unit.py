@@ -16,6 +16,67 @@ from unitconverter.utils import parse_decimal
 class BaseUnit:
     """ Abstract base class. Don't use this directly. """
 
+    @property
+    def name(self) -> str:
+        raise NotImplementedError
+
+    @property
+    def symbols(self) -> list[str]:
+        raise NotImplementedError
+
+    @property
+    def aliases(self) -> list[str]:
+        raise NotImplementedError
+
+    @property
+    def factor(self) -> Decimal:
+        raise NotImplementedError
+
+    @property
+    def units(self) -> list[tuple[Unit, int]]:
+        raise NotImplementedError
+
+    @property
+    def dimension(self) -> Dimension:
+        raise NotImplementedError
+
+    @property
+    def names(self) -> list[str]:
+        """ Get a list of all unit names, symbols, and aliases. """
+        return [self.name] + self.symbols + self.aliases
+
+    def __mul__(self, other: BaseUnit) -> BaseUnit:
+        """ Multiply a Unit with another Unit. Returns a new CompositeUnit. """
+        if isinstance(other, BaseUnit):
+            return CompositeUnit(self.units + other.units)
+
+        raise ConverterError(f"Can't multiply {format_type(self)} and {format_type(other)}")
+
+    def __truediv__(self, other: BaseUnit) -> BaseUnit:
+        """ Divide a Unit with another Unit. Returns a new CompositeUnit. """
+        if isinstance(other, BaseUnit):
+            units = [(unit, -exponent) for unit, exponent in other.units]
+            return CompositeUnit(self.units + units)
+
+        raise ConverterError(f"Can't divide {format_type(self)} and {format_type(other)}")
+
+    def __pow__(self, exponent: int) -> BaseUnit:
+        """ Raise a unit to a new exponent. Returns a Unit or CompositeUnit. """
+        if not isinstance(exponent, int) or exponent == 0:
+            raise ConverterError("exponent must be a non-zero integer")
+
+        if exponent == 1:
+            return self
+
+        units = [(unit, exp * exponent) for unit, exp in self.units]
+        return CompositeUnit(units)
+
+    def __repr__(self) -> str:
+        return "BaseUnit()"
+
+    def __str__(self) -> str:
+        return self.name
+
 
 class Unit(BaseUnit):
     """ A basic unit of measurement.
@@ -27,10 +88,9 @@ class Unit(BaseUnit):
 
     def __init__(self,
                  name: str,
-                 symbols: list[str],
-                 aliases: list[str],
-                 category: str,
-                 dimen: Dimension,
+                 symbols: list[str] | None = None,
+                 aliases: list[str] | None = None,
+                 dimen: Dimension | None = None,
                  factor: Decimal | str | int = 1,
                  prefixes: str | None = None
                  ) -> None:
@@ -39,149 +99,131 @@ class Unit(BaseUnit):
         Parameters
         ----------
         name : str
-            A unit name.
-        symbols : list[str]
-            A list of unit symbols.
-        aliases : list[str]
-            A list of unit aliases.
-        category : str
-            The category of the unit.
-        dimen : Dimension
-            The dimension of the unit.
+            The unit name
+
+        symbols : list[str] | None, optional
+            A list of unit symbols, by default None
+
+        aliases : list[str] | None, optional
+            A list of unit aliases, by default None
+
+        dimension : Dimension | None, optional
+            The dimension of the unit, by default None
+
         factor : Decimal | str | int, optional
             The conversion factor, by default 1
+
         prefixes : str | None, optional
             If the unit supports metric or binary prefixes, by default None
         """
-        self.name = name
-        self.symbols = symbols
-        self.aliases = aliases
-        self.category = category
-        self.dimen = Dimension(dimen)
-        self.factor = parse_decimal(factor)
-        self.prefixes = prefixes
+        self._name = name
+        self._symbols = symbols or []
+        self._aliases = aliases or []
+        self._dimension = Dimension(dimen)
+        self._factor = parse_decimal(factor)
+        self._prefixes = prefixes
 
-    def __mul__(self, other: UnitType) -> CompositeUnit:
-        """ Multiply a Unit with another Unit. Returns a new CompositeUnit. """
-        if isinstance(other, Unit):
-            other = CompositeUnit(other.factor, other.name, other.dimen)
-            return CompositeUnit(self.factor, self.name, self.dimen) * other
+    @property
+    def name(self) -> str:
+        return self._name
 
-        elif isinstance(other, CompositeUnit):
-            return CompositeUnit(self.factor, self.name, self.dimen) * other
+    @property
+    def symbols(self) -> list[str]:
+        return self._symbols
 
-        raise ConverterError("Can only multiply a Unit with an another Unit")
+    @property
+    def aliases(self) -> list[str]:
+        return self._aliases
 
-    def __truediv__(self, other: UnitType) -> CompositeUnit:
-        """ Divide a Unit with another Unit. Returns a new CompositeUnit. """
-        if isinstance(other, Unit):
-            other = CompositeUnit(other.factor, other.name, other.dimen)
-            return CompositeUnit(self.factor, self.name, self.dimen) / other
+    @property
+    def factor(self) -> Decimal:
+        return self._factor
 
-        elif isinstance(other, CompositeUnit):
-            return CompositeUnit(self.factor, self.name, self.dimen) / other
+    @property
+    def units(self) -> list[tuple[Unit, int]]:
+        return [(self, 1)]
 
-        raise ConverterError("Can only multiply a Unit with an another Unit")
-
-    def __pow__(self, exponent: int) -> CompositeUnit:
-        """ Exponentiation returns a new CompositeUnit. """
-        if isinstance(exponent, int) or exponent == 0:
-            raise ConverterError(f"{exponent!r} must be a positive or negative integer")
-
-        return CompositeUnit(self.factor, self.name, self.dimen) ** exponent
-
-    def names(self) -> list[str]:
-        """ Get all unit names, symbols, and aliases. """
-        return [self.name] + self.symbols + self.aliases
+    @property
+    def dimension(self) -> Dimension:
+        return self._dimension
 
     def __repr__(self) -> str:
-        return (f"Unit({self.name!r}, {self.symbols!r}, {self.aliases!r}, {self.category!r},"
-                f" {self.dimen!r}, {self.factor!r}, {self.prefixes!r})")
-
-    def __str__(self) -> str:
-        return self.name
+        return (f"Unit({self._name!r}, {self._symbols!r}, {self._aliases!r},"
+                f" {self._dimension!r}, {self._factor!r}, {self._prefixes!r})")
 
 
 class CompositeUnit(BaseUnit):
-    """ A composite unit is made up of one or more units.
+    """ A composite unit is made up of one or more units and their exponents. """
 
-        For now units and their dimensions are stored in two separate dictionaries
-        but this implementation detail will change in the future.
-    """
-
-    def __init__(self,
-                 factor: Decimal | int = 1,
-                 units: Dimension | dict[str, int] | str | None = None,
-                 dimen: Dimension | dict[str, int] | None = None
-                 ) -> None:
+    def __init__(self, units: list[tuple[Unit, int]], reduce: bool = True) -> None:
         """ Create a composite unit.
 
         Parameters
         ----------
-        factor : `Decimal` | `int`, optional
-            The composite unit factor, by default 1
+        units : list[tuple[Unit, int]]
+            A list of unit and exponent tuples
 
-        units : `Dimension` | `dict[str, int]` | `str` | `None`, optional
-            A dictionary of unit names and their exponents, by default None
-
-        dimen : `Dimension` | `dict[str, int]` | `None`, optional
-            A dictionary of dimensions and their exponents, by default None
+        reduce: bool
+            Reduce units to simpler terms, by default True
         """
-        self.factor = parse_decimal(factor)
-        self.units = Dimension(units)
-        self.dimen = Dimension(dimen)
+        self._units = self._reduce_units(units) if reduce else units
+
+        factor = Decimal(1)
+        dimension = Dimension()
+        names = []
+
+        # Compute factor, dimension, and name from the list of units
+        for unit, exponent in self._units:
+            factor *= unit.factor ** exponent
+            dimension *= unit.dimension ** exponent
+            names.append((unit.name, exponent))
+
+        self._factor = factor
+        self._dimension = dimension
+        self._name = format_display_name(names)
 
     @property
     def name(self) -> str:
-        """ Convert dictionary of units into a human readable string. """
-        return format_display_name(self.units)
+        return self._name
 
-    def __mul__(self, other: Unit | CompositeUnit) -> CompositeUnit:
-        """ Multiply this unit with another unit. Returns a new CompositeUnit. """
-        if isinstance(other, Unit):
-            return CompositeUnit(self.factor * other.factor,
-                                 self.units * Dimension(other.name),
-                                 self.dimen * other.dimen)
+    @property
+    def symbols(self) -> list[str]:
+        return []
 
-        elif isinstance(other, CompositeUnit):
-            return CompositeUnit(self.factor * other.factor,
-                                 self.units * other.units,
-                                 self.dimen * other.dimen)
+    @property
+    def aliases(self) -> list[str]:
+        return []
 
-        raise ConverterError(f"Cannot multiply CompositeUnit and {format_type(other)})")
+    @property
+    def factor(self) -> Decimal:
+        return self._factor
 
-    def __truediv__(self, other: Unit | CompositeUnit) -> CompositeUnit:
-        """ Divide this unit with another unit. Returns a new CompositeUnit."""
-        if isinstance(other, Unit):
-            return CompositeUnit(self.factor / other.factor,
-                                 self.units / Dimension(other.name),
-                                 self.dimen / other.dimen)
+    @property
+    def units(self) -> list[tuple[Unit, int]]:
+        return self._units
 
-        elif isinstance(other, CompositeUnit):
-            return CompositeUnit(self.factor / other.factor,
-                                 self.units / other.units,
-                                 self.dimen / other.dimen)
+    @property
+    def dimension(self) -> Dimension:
+        return self._dimension
 
-        raise ConverterError(f"Cannot multiply CompositeUnit and {format_type(other)})")
+    def _reduce_units(self, units: list[tuple[Unit, int]]) -> list[tuple[Unit, int]]:
+        """ Reduce units if possible. """
+        reduced = []
+        exponents = []
 
-    def __pow__(self, exponent: int) -> CompositeUnit:
-        """ Exponentiation returns a new CompositeUnit. """
-        if not exponent or not isinstance(exponent, int):
-            raise ConverterError(f"{exponent} is not a positive or negative integer")
+        for unit, exponent in units:
+            if unit not in reduced:
+                reduced.append(unit)
+                exponents.append(exponent)
+            else:
+                index = reduced.index(unit)
+                exponents[index] += exponent
 
-        return CompositeUnit(self.factor ** exponent,
-                             self.units ** exponent,
-                             self.dimen ** exponent)
+        return list(zip(reduced, exponents))
 
     def __repr__(self) -> str:
-        return f"CompositeUnit({self.factor!r}, {self.units!r}, {self.dimen!r})"
+        return f"CompositeUnit({self.units})"
 
-    def __str__(self) -> str:
-        return format_display_name(self.units)
-
-
-# Union of the two unit types for convenience
-UnitType = Unit | CompositeUnit
 
 # Special "one" unit for things like the reciprocal second (1/s)
-one = Unit("one", [], [], "dimensionless", Dimension(), 1)
+one = Unit("1")

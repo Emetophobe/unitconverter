@@ -3,10 +3,9 @@
 
 
 import re
-import logging
 
-from unitconverter.exceptions import ConverterError
-from unitconverter.models.unit import CompositeUnit, UnitType
+from unitconverter.exceptions import ConverterError, InvalidUnitError
+from unitconverter.models.unit import BaseUnit, CompositeUnit
 from unitconverter.registry import Registry
 
 
@@ -17,102 +16,90 @@ class UnitParser:
         """ Initialize unit parser. """
         self.registry = registry
 
-    def parse_unit(self, name: str | UnitType) -> UnitType:
+    def parse_unit(self, name: str | BaseUnit) -> BaseUnit:
         """ Parse a string into a unit instance. Can be a composite unit.
 
         Parameters
         ----------
-        `name` : str
+        name : str
             A unit name or composition of unit names (i.e "J/kg")
 
         Returns
         -------
-        UnitType
+        BaseUnit
             A Unit or a CompositeUnit.
         """
 
         # Check if we already have a unit
-        if isinstance(name, UnitType):
+        if isinstance(name, BaseUnit):
             return name
 
-        # Convert name into a simplied version
-        name = _simplify_unit(name)
+        if not isinstance(name, str):
+            raise ConverterError(f"{name!r} is not a string")
 
-        # Try to parse the string into a unit
-        try:
-            return self._parse_unit_name(name)
-        except ConverterError:
-            pass
+        # Try to parse a composite unit
+        simple_name = _simplify_unit(name)
+        if "*" in simple_name or "/" in simple_name:
+            return self._parse_composite_unit(name)
 
-        # Try to create a composite unit
-        return self._parse_composite_unit(name)
+        # Try to parse a unit with optional exponent
+        return self._parse_unit_name(name)
 
-    def _parse_unit_name(self, name: str) -> UnitType:
-        """ Parse a unit string into a unit instance. """
+    def _parse_unit_name(self, name: str) -> BaseUnit:
+        """ Parse a unit string with potential exponent into a unit instance. """
+        name, exponent = _split_exponent(name)
+        unit = self.registry.get_unit(name)
 
-        # Check if name is in the registry
-        try:
-            return self.registry.get_unit(name)
-        except ConverterError:
-            pass
+        if exponent != 1:
+            return CompositeUnit([(unit, exponent)])
 
-        # Check if name contains a mathematical expression (not valid here)
-        if "*" in name or "/" in name:
-            raise ConverterError(f"{name} is not a valid unit")
+        return unit
 
-        # Finally, try to split the unit name and exponent
-        try:
-            name, exponent = _split_exponent(name)
-            unit = self.registry.get_unit(name)
-
-            if exponent != 1:
-                return CompositeUnit(unit.factor, unit.name, unit.dimen) ** exponent
-            else:
-                return unit
-
-        except ConverterError:
-            raise ConverterError(f"{name} is not a valid unit")
-
-    def _parse_composite_unit(self, name: str) -> UnitType:
+    def _parse_composite_unit(self, name: str) -> BaseUnit:
         """ Parse a unit string into a composite unit. """
-        unit = CompositeUnit()
+
+        simple_name = _simplify_unit(name)
+        unit = None
 
         # Separate units by division
-        if "/" in name:
-            names = name.split("/")
+        if "/" in simple_name:
+            names = simple_name.split("/")
 
             # Get the unit(s) before the divisor
             unit = self._multiply_units(names.pop(0))
 
             # Get and divide the other units after the divisor
-            for name in names:
-                unit /= self._multiply_units(name)
+            for units in names:
+                unit /= self._multiply_units(units)
 
         # Separate units by multiplication
-        elif "*" in name:
-            unit = self._multiply_units(name)
+        elif "*" in simple_name:
+            unit = self._multiply_units(simple_name)
         else:
-            unit = self._parse_unit_name(name)
-
-        logging.debug(f"parse_composite_unit() - {unit} ({unit.dimen})")
+            unit = self._parse_unit_name(simple_name)
 
         if not unit:
-            raise ConverterError(f"{name} is not a valid unit")
+            raise InvalidUnitError(name)
 
         return unit
 
-    def _multiply_units(self, name: str) -> UnitType:
-        """ Parse a string with multiplication symbol into a single unit. """
-        units = CompositeUnit()
+    def _multiply_units(self, name: str) -> BaseUnit:
+        """ Parse a string with multiplication symbol into a composite unit. """
+        units = None
         for name in name.split("*"):
             unit = self._parse_unit_name(name)
-            # Check for unsupported temperature units
+            # Check for temperature units which can't be composited
             if unit.name in ("celsius", "fahrenheit", "rankine"):
                 raise ConverterError(f"{unit.name} cannot be composited with other units"
                                      " (only kelvin is currently supported)")
 
-            # Combine units
-            units *= unit
+            if units is None:
+                units = unit
+            else:
+                units *= unit
+
+        if not units:
+            raise InvalidUnitError(name)
 
         return units
 
@@ -133,9 +120,8 @@ def _split_exponent(name: str) -> tuple[str, int]:
         ("second", -1)
     """
     result = _pattern.match(_simplify_unit(name))
-
     if not result:
-        raise ConverterError(f"{name} is not a valid unit")
+        raise InvalidUnitError(name)
 
     if result.group("exp"):
         return (result.group("unit"), int(result.group("exp")))
@@ -156,9 +142,6 @@ def _simplify_unit(name: str) -> str:
         "joule/gram"
 
     """
-    if not isinstance(name, str):
-        raise ConverterError(f"{name} is not a valid unit")
-
     for key, value in _replacements.items():
         if key in name:
             name = name.replace(key, value)

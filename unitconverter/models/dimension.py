@@ -16,13 +16,13 @@ class Dimension(dict):
 
         Parameters
         ----------
-        dimension : `str` | `dict[str, int]` | `None`, optional
+        dimension : str | dict[str, int] | None, optional
             A dimension name or dictionary, by default None
 
         Raises
         ------
         ConverterError
-            If the dimension argument is invalid.
+            If the dimension isn't a string or dict.
         """
         if dimension:
             if isinstance(dimension, str):
@@ -31,6 +31,11 @@ class Dimension(dict):
                 super().__init__(dimension)
             else:
                 raise ConverterError(f"{dimension!r} is not a valid dimension")
+
+    @property
+    def name(self):
+        """ Convert dictionary into a human readable string. """
+        return format_display_name(list(self.items()))
 
     def __pow__(self, exponent: int) -> Dimension:
         """ Raise a dimension to a new power. Returns a new dimension."""
@@ -76,4 +81,4 @@ class Dimension(dict):
         return f"Dimension({super().__repr__()})"
 
     def __str__(self) -> str:
-        return format_display_name(self)
+        return self.name

@@ -10,7 +10,7 @@
 	},
 	"celsius": {
 		"symbols": ["°C", "degC"],
-		"aliases": ["centigrade"],
+        "prefix": "metric",
 		"factor": 1
 	},
 	"fahrenheit": {
@@ -18,7 +18,7 @@
 		"factor": 1
 	},
 	"rankine": {
-		"symbols": ["°R", "°RA", "degR"],
+		"symbols": ["°R", "degR"],
 		"aliases": ["rankines"],
 		"factor": 1
 	}

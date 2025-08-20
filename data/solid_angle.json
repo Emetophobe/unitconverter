@@ -8,11 +8,6 @@
 		"prefix": "metric",
 		"factor": 1
 	},
-	"square degree": {
-		"symbols": ["deg2"],
-		"aliases": ["square degrees"],
-		"factor": 0.000304617
-	},
 	"spat": {
 		"symbols": ["sp"],
 		"aliases": ["spats"],

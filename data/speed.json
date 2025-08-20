@@ -5,7 +5,7 @@
 	"kilometre/hour": {
 		"symbols": ["kph", "kmph", "km/h"],
 		"aliases": ["kilometres/hour"],
-		"factor": 0.277777777777778
+		"factor": 0.2777777777777777777777777778
 	},
 	"mile/hour": {
 		"symbols": ["mph", "mi/h"],
@@ -14,10 +14,6 @@
 	},
 	"knot": {
 		"aliases": ["knots"],
-		"factor": 0.5144444
-	},
-	"imperial knot": {
-		"aliases": ["imperial knots"],
-		"factor": 0.5147733
+		"factor": 0.5144444444444444444444444445
 	}
 }

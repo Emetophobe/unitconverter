@@ -167,6 +167,7 @@ class CompositeUnit(BaseUnit):
             Reduce units to simpler terms, by default True
         """
         self._units = self._reduce_units(units) if reduce else units
+        self._reduce = reduce
 
         factor = Decimal(1)
         dimension = Dimension()
@@ -222,7 +223,7 @@ class CompositeUnit(BaseUnit):
         return list(zip(reduced, exponents))
 
     def __repr__(self) -> str:
-        return f"CompositeUnit({self.units})"
+        return f"CompositeUnit({self._units}, {self._reduce})"
 
 
 # Special "one" unit for things like the reciprocal second (1/s)

@@ -29,7 +29,7 @@
 	},
 	"pieze": {
 		"symbols": ["pz"],
-        "comment": "Older Metre-Tonne-Second (MTS) unit of pressure",
+        "comment": "Older metric unit of pressure",
 		"factor": 1000
 	},
     "standard atmosphere": {

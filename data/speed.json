@@ -14,6 +14,7 @@
 	},
 	"knot": {
 		"aliases": ["knots"],
+        "comment": "1 knot = 1 nautical mile / hour",
 		"factor": 0.5144444444444444444444444445
 	}
 }

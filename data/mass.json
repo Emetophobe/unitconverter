@@ -37,6 +37,7 @@
 	"pound": {
 		"symbols": ["lbs", "lb"],
 		"aliases": ["pounds"],
+        "comment": "1 pound = 7000 grains",
 		"factor": 0.45359237
 	},
 	"kilopound": {
@@ -47,21 +48,25 @@
 	"stone": {
 		"symbols": ["st"],
 		"aliases": ["stones"],
+        "comment": "1 stone = 14 lbs",
 		"factor": 6.35029318
 	},
 	"quarter": {
 		"symbols": ["qr"],
 		"aliases": ["quarters"],
+        "comment": "1 quarter = 2 stones",
 		"factor": 12.70058636
 	},
 	"hundredweight": {
 		"symbols": ["cwt"],
 		"aliases": ["hundredweights", "long hundredweight", "long hundredweights"],
+        "comment": "1 hundredweight = 8 stones = 112 lbs",
 		"factor": 50.80234544
 	},
 	"long ton": {
 		"symbols": ["LT"],
 		"aliases": ["long tons", "imperial ton", "imperial tons"],
+        "comment": "1 long ton = 2240 pounds",
 		"factor": 1016.0469088
 	},
 	"slug": {
@@ -71,42 +76,38 @@
 	"dram": {
 		"symbols": ["dr"],
 		"aliases": ["drams", "drachms", "drachm"],
+        "comment": "1 dram = 1/16th of an ounce",
 		"factor": 0.0017718451953125
 	},
 	"pennyweight": {
 		"symbols": ["dwt"],
 		"aliases": ["pennyweights"],
+        "comment": "1 pennyweight = 24 grains",
 		"factor": 0.00155517384
 	},
 	"troy ounce": {
 		"symbols": ["ozt"],
 		"aliases": ["troy ounces"],
+        "comment": "1 troy ounce = 20 pennyweights",
 		"factor": 0.0311034768
 	},
 	"troy pound": {
 		"symbols": ["lbt"],
 		"aliases": ["troy pounds"],
+        "comment": "1 troy pound = 12 troy ounces",
 		"factor": 0.3732417216
 	},
 
-	"US stone": {
-		"symbols": ["usstone"],
-		"aliases": ["US stones"],
-		"factor": 5.669904625
-	},
-	"US quarter": {
-		"symbols": ["usquarter"],
-		"aliases": ["US quarters"],
-		"factor": 11.33980925
-	},
 	"US hundredweight": {
 		"symbols": ["uscwt"],
 		"aliases": ["US hundredweights", "short hundredweight", "short hundredweights"],
+        "comment": "1 short hundredweight = 100 pounds",
 		"factor": 45.359237
 	},
 	"US ton": {
 		"symbols": ["tn"],
 		"aliases": ["US tons", "short ton", "short tons"],
+        "comment": "1 short ton = 2000 pounds",
 		"factor": 907.18474
 	}
 }

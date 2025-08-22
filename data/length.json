@@ -107,19 +107,16 @@
 		"aliases": ["parsecs"],
 		"factor": 3.0857E+16
 	},
-	"international cable length": {
-		"symbols": ["cb"],
-		"aliases": ["cable length", "cable lengths"],
+	"imperial cable length": {
+		"symbols": ["cb", "cable"],
+		"aliases": ["imperial cable lengths", "cable length", "cable lengths"],
+        "comment": "1 cable = 1/10th of a nautical mile",
 		"factor": 185.2
 	},
-	"imperial cable length": {
-		"symbols": ["impcb"],
-		"aliases": ["imperial cable lengths"],
-		"factor": 185.32
-	},
 	"US cable length": {
-		"symbols": ["uscb"],
+		"symbols": ["uscb", "uscable"],
 		"aliases": ["US cable lengths"],
+        "comment": "1 US cable = 120 fathoms",
 		"factor": 219.456
 	},
     "US survey foot": {

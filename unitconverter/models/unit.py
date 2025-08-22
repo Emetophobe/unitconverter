@@ -220,6 +220,15 @@ class CompositeUnit(BaseUnit):
                 index = reduced.index(unit)
                 exponents[index] += exponent
 
+                if exponents[index] == 0:
+                    reduced.pop(index)
+                    exponents.pop(index)
+
+        # All composite unit instances must have atleast 1 unit
+        if not reduced or not exponents:
+            name = format_display_name([(unit.name, exponent) for unit, exponent in units])
+            raise ConverterError(f"{name!r} is not a valid unit")
+
         return list(zip(reduced, exponents))
 
     def __repr__(self) -> str:

@@ -50,20 +50,19 @@ Unit composition is an experimental feature and there are still bugs to be sorte
 
 ## Usage
 
-    usage: convert.py [-h] [-p ndigits] [-c] [-e] value source dest [dest ...]
-
-    A simple unit converter
+    usage: convert.py [-h] [-p ndigits] [-n] [-s] [-e] value source dest [dest ...]
 
     positional arguments:
-      value                     an integer or decimal value
-      source                    the source unit
-      dest                      one or more destination units
+    value                       decimal or integer value
+    source                      source unit
+    dest                        one or more destination units
 
     options:
-      -h, --help                show this help message and exit
-      -p, --precision ndigits   set rounding precision (default: None)
-      -s, --separators          show thousands separator (default: False)
-      -e, --exponent            show E notation when possible (default: False)
+    -h, --help                  show this help message and exit
+    -p, --precision ndigits     set rounding precision (default: None)
+    -n, --normalize             normalize result by stripping rightmost trailing zeros
+    -s, --separators            show thousands separator (default: False)
+    -e, --exponent              show E notation when possible (default: False)
 
 
 ## Examples

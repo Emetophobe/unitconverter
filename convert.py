@@ -27,11 +27,11 @@ def main() -> None:
 
     parser.add_argument(
         "value",
-        help="a decimal or integer value")
+        help="decimal or integer value")
 
     parser.add_argument(
         "source",
-        help="the source unit")
+        help="source unit")
 
     parser.add_argument(
         "dest",
@@ -47,7 +47,7 @@ def main() -> None:
 
     parser.add_argument(
         "-n", "--normalize",
-        help="normalize result by stripping the rightmost trailing zeros",
+        help="normalize result by stripping rightmost trailing zeros",
         action="store_true")
 
     parser.add_argument(

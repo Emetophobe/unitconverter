@@ -123,7 +123,7 @@ class UnitParser:
         return name
 
     # Unit name and exponent patterns
-    _unit_pattern = r"(?P<unit>[a-zA-Z°Ωµ-]*[a-zA-Z°Ωµ]+){1}"
+    _unit_pattern = r"(?P<unit>[a-zA-Z°Ωµ-]*[a-zA-Z°Ωµ ]+){1}"
     _exp_pattern = r"[\^]?(?P<exp>[-+]?[0-9]+)?"
     _pattern = re.compile(_unit_pattern + _exp_pattern)
 

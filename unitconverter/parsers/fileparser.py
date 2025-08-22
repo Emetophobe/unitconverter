@@ -26,7 +26,7 @@ def load_units() -> dict[str, Unit]:
     """
 
     path = Path("data")
-    files = path.rglob("*.json")
+    files = list(path.rglob("*.json"))
 
     if not files:
         raise ConverterError(f"{path} is missing pre-defined unit files")

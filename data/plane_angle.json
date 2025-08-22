@@ -9,13 +9,13 @@
 		"factor": 1
 	},
 	"arcsecond": {
-		"symbols": ["arcsec", "′"],
+		"symbols": ["arcsec", "″"],
 		"aliases": ["arcseconds"],
 		"prefix": "metric",
 		"factor": 0.000004848136811095359746910437451
 	},
 	"arcminute": {
-		"symbols": ["arcmin", "″"],
+		"symbols": ["arcmin", "′"],
 		"aliases": ["arcminutes"],
 		"factor": 0.0002908882086657215848146262471
 	},

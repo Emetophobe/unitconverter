@@ -21,59 +21,87 @@ class UnitConverter:
         self.registry = Registry(load_units())
         self.parser = UnitParser(self.registry)
 
-    def convert(self, value: Decimal, source: str | BaseUnit, dest: str | BaseUnit) -> Decimal:
-        """ Convert value from source unit to dest unit. Returns the converted value. """
+    def convert(self,
+                quantity: Decimal,
+                source: str | BaseUnit,
+                target: str | BaseUnit
+                ) -> Decimal:
+        """ Convert a quantity from the source unit to the target unit.
 
-        value = parse_decimal(value)
+        Parameters
+        ----------
+        quantity : Decimal
+            A quantity or value
+        source : str | BaseUnit
+            Source unit name or instance
+        target : str | BaseUnit
+            Target unit name or instance
+
+        Returns
+        -------
+        Decimal
+            The converted quantity
+
+        Raises
+        ------
+        ConverterError:
+            If the quantity could not be parsed
+        ConverterError:
+            If the units could not be parsed
+        ConversionError
+            If the units are incompatible
+        """
+
+        quantity = parse_decimal(quantity)
         source = self.parser.parse_unit(source)
-        dest = self.parser.parse_unit(dest)
+        target = self.parser.parse_unit(target)
 
         logging.debug(f"convert() {source} ({source.dimension})")
-        logging.debug(f"convert() {dest} ({dest.dimension})")
+        logging.debug(f"convert() {target} ({target.dimension})")
 
         # Check if the units are compatible
-        if source.dimension != dest.dimension:
-            raise ConversionError(source, dest)
+        if source.dimension != target.dimension:
+            raise ConversionError(source, target)
 
         # Temperature conversion
         if source.dimension.name == "temperature":
-            return self.convert_temperature(value, source, dest)
+            return self.convert_temperature(quantity, source, target)
 
         # Regular conversion
-        value = value * source.factor
-        return value / dest.factor
+        quantity = quantity * source.factor
+        return quantity / target.factor
 
     def convert_temperature(self,
-                            value: Decimal,
+                            quantity: Decimal,
                             source: str | BaseUnit,
-                            dest: str | BaseUnit
+                            target: str | BaseUnit
                             ) -> Decimal:
-        """ Convert from one temperature unit to another. """
+        """ Convert between temperature units. """
 
-        value = parse_decimal(value)
+        quantity = parse_decimal(quantity)
         source = self.parser.parse_unit(source)
-        dest = self.parser.parse_unit(dest)
+        target = self.parser.parse_unit(target)
 
-        # Convert from source to kelvin
+        # Convert from source unit to kelvin
         if source.name.endswith("kelvin"):
-            value = value * source.factor
-        elif source.name == "celsius":
-            value = value + Decimal("273.15")
-        elif source.name == "fahrenheit":
-            value = (value + Decimal("459.67")) * Decimal(5) / Decimal(9)
-        elif source.name == "rankine":
-            value = value * Decimal(5) / Decimal(9)
+            quantity = quantity * source.factor
+        elif source.name.endswith("celsius"):
+            quantity = quantity * source.factor + Decimal("273.15")
+        elif source.name.endswith("fahrenheit"):
+            quantity = (quantity * source.factor + Decimal("459.67")) * Decimal(5) / Decimal(9)
+        elif source.name.endswith("rankine"):
+            quantity = quantity * source.factor * Decimal(5) / Decimal(9)
         else:
             raise ConverterError(f"{source} is not a temperature unit")
 
-        # Convert from kelvin to dest
-        if dest.name.endswith("kelvin"):
-            return value / dest.factor
-        elif dest.name == "celsius":
-            return value - Decimal("273.15")
-        elif dest.name == "fahrenheit":
-            return value * Decimal(9) / Decimal(5) - Decimal("459.67")
-        elif dest.name == "rankine":
-            return value * Decimal(9) / Decimal(5)
+        # Convert from kelvin to target unit
+        if target.name.endswith("kelvin"):
+            return quantity / target.factor
+        elif target.name.endswith("celsius"):
+            return (quantity - Decimal("273.15")) / target.factor
+        elif target.name.endswith("fahrenheit"):
+            return (quantity * Decimal(9) / Decimal(5) - Decimal("459.67")) / target.factor
+        elif target.name.endswith("rankine"):
+            return (quantity * Decimal(9) / Decimal(5)) / target.factor
         else:
-            raise ConverterError(f"{dest} is not a temperature unit")
+            raise ConverterError(f"{target} is not a temperature unit")

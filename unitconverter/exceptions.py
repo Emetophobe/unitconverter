@@ -19,8 +19,8 @@ class ConverterError(Exception):
 class ConversionError(ConverterError):
     """ Incompatible unit errors. """
 
-    def __init__(self, source, dest) -> None:
-        super().__init__(f"Can't convert between {source} and {dest}")
+    def __init__(self, source, target) -> None:
+        super().__init__(f"Can't convert between {source} and {target}")
 
 
 class InvalidUnitError(ConverterError):

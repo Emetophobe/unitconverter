@@ -7,12 +7,12 @@ import logging
 from decimal import Decimal, DecimalException, ROUND_HALF_UP
 
 
-def format_decimal(value: Decimal,
-                   precision: int | None = None,
-                   normalize: bool = False,
-                   exponent: bool = False,
-                   separators: bool = False) -> str:
-    """ Format a decimal into a string for display.
+def format_quantity(quantity: Decimal,
+                    precision: int | None = None,
+                    normalize: bool = False,
+                    exponent: bool = False,
+                    separators: bool = False) -> str:
+    """ Format a decimal quantity into a string for display.
 
     If exponent is True the separators argument is ignored.
 
@@ -31,7 +31,7 @@ def format_decimal(value: Decimal,
         Show scientific E notation, by default False
 
     separators : bool, optional
-        Show thousands separators (commas), by default False
+        Show thousands separators (i.e 1,000,000), by default False
 
     Returns
     -------
@@ -40,19 +40,19 @@ def format_decimal(value: Decimal,
     """
     if precision is not None:
         try:
-            value = value.quantize(Decimal(10) ** -precision, ROUND_HALF_UP)
+            quantity = quantity.quantize(Decimal(10) ** -precision, ROUND_HALF_UP)
         except DecimalException:
-            logging.debug(f"Failed to quantize {value} (precision = {precision})")
+            logging.debug(f"Failed to quantize {quantity} (precision = {precision})")
             pass
 
     # Trim trailing zeroes
     if normalize:
-        value = value.normalize()
+        quantity = quantity.normalize()
 
     if exponent:
-        return f"{value:E}"
+        return f"{quantity:E}"
 
-    return f"{value:{"," if separators else ""}f}"
+    return f"{quantity:{"," if separators else ""}f}"
 
 
 def format_name(units: list[tuple[str, int]], sort_keys: bool = False) -> str:

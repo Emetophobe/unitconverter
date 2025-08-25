@@ -50,7 +50,7 @@ class BaseUnit:
         if isinstance(other, BaseUnit):
             return CompositeUnit(self.units + other.units)
 
-        raise ConverterError(f"Can't multiply {format_type(self)} and {format_type(other)}")
+        raise ConverterError(f"Cannot multiply {format_type(self)} and {format_type(other)}")
 
     def __truediv__(self, other: BaseUnit) -> BaseUnit:
         """ Divide a Unit with another Unit. Returns a new CompositeUnit. """
@@ -58,18 +58,18 @@ class BaseUnit:
             units = [(unit, -exponent) for unit, exponent in other.units]
             return CompositeUnit(self.units + units)
 
-        raise ConverterError(f"Can't divide {format_type(self)} and {format_type(other)}")
+        raise ConverterError(f"Cannot divide {format_type(self)} and {format_type(other)}")
 
     def __pow__(self, exponent: int) -> BaseUnit:
         """ Raise a unit to a new exponent. Returns a Unit or CompositeUnit. """
         if not isinstance(exponent, int) or exponent == 0:
-            raise ConverterError("exponent must be a non-zero integer")
+            raise ConverterError(f"'{self.name}' has an invalid exponent '{exponent}'",
+                                 "must be a non-zero integer")
 
         if exponent == 1:
             return self
 
-        units = [(unit, exp * exponent) for unit, exp in self.units]
-        return CompositeUnit(units)
+        return CompositeUnit([(unit, exp * exponent) for unit, exp in self.units])
 
     def __repr__(self) -> str:
         return "BaseUnit()"
@@ -169,23 +169,10 @@ class CompositeUnit(BaseUnit):
         self._units = self._reduce_units(units) if reduce else units
         self._reduce = reduce
 
-        factor = Decimal(1)
-        dimension = Dimension()
-        names = []
-
-        # Compute factor, dimension, and name from the list of units
-        for unit, exponent in self._units:
-            factor *= unit.factor ** exponent
-            dimension *= unit.dimension ** exponent
-            names.append((unit.name, exponent))
-
-        self._factor = factor
-        self._dimension = dimension
-        self._name = format_display_name(names)
-
     @property
     def name(self) -> str:
-        return self._name
+        names = [(unit.name, exponent) for unit, exponent in self.units]
+        return format_display_name(names)
 
     @property
     def symbols(self) -> list[str]:
@@ -197,15 +184,21 @@ class CompositeUnit(BaseUnit):
 
     @property
     def factor(self) -> Decimal:
-        return self._factor
+        factor = Decimal(1)
+        for unit, exponent in self.units:
+            factor *= unit.factor ** exponent
+        return factor
+
+    @property
+    def dimension(self) -> Dimension:
+        dimension = Dimension()
+        for unit, exponent in self.units:
+            dimension *= unit.dimension ** exponent
+        return dimension
 
     @property
     def units(self) -> list[tuple[Unit, int]]:
         return self._units
-
-    @property
-    def dimension(self) -> Dimension:
-        return self._dimension
 
     def _reduce_units(self, units: list[tuple[Unit, int]]) -> list[tuple[Unit, int]]:
         """ Reduce units if possible. """
@@ -233,7 +226,3 @@ class CompositeUnit(BaseUnit):
 
     def __repr__(self) -> str:
         return f"CompositeUnit({self._units}, {self._reduce})"
-
-
-# Special "one" unit for things like the reciprocal second (1/s)
-one = Unit("1")

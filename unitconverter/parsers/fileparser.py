@@ -36,7 +36,7 @@ def load_units() -> dict[str, Unit]:
     for filename in files:
         # Load each unit file individually
         try:
-            with open(filename, "rb") as fp:
+            with open(filename, "r", encoding="utf-8") as fp:
                 data = json.load(fp, parse_float=Decimal)
         except OSError as e:
             raise ConverterError(f"Failed to load units from {e.filename} ({e.strerror})")

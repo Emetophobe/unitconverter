@@ -12,7 +12,7 @@ from decimal import DecimalException
 
 from unitconverter.converter import UnitConverter
 from unitconverter.exceptions import ConverterError
-from unitconverter.formatting import format_decimal
+from unitconverter.formatting import format_quantity
 from unitconverter.utils import parse_decimal
 
 
@@ -23,20 +23,35 @@ def print_error(msg: str, status: int = 1) -> None:
 
 
 def main() -> None:
-    parser = argparse.ArgumentParser(description="A simple unit converter")
+    parser = argparse.ArgumentParser()
 
     parser.add_argument(
-        "value",
-        help="decimal or integer value")
+        "quantity",
+        help="quantity or value")
 
     parser.add_argument(
         "source",
-        help="source unit")
+        help="the source unit")
 
     parser.add_argument(
-        "dest",
-        help="one or more destination units",
+        "target",
+        help="one or more target units",
         nargs="+")
+
+    parser.add_argument(
+        "-n", "--normalize",
+        help="normalize result by stripping trailing zeros",
+        action="store_true")
+
+    parser.add_argument(
+        "-e", "--exponent",
+        help="show E notation if possible (default: False)",
+        action="store_true")
+
+    parser.add_argument(
+        "-s", "--separators",
+        help="show thousands separators if possible (default: False)",
+        action="store_true")
 
     parser.add_argument(
         "-p", "--precision",
@@ -46,67 +61,51 @@ def main() -> None:
         type=int)
 
     parser.add_argument(
-        "-n", "--normalize",
-        help="normalize result by stripping rightmost trailing zeros",
-        action="store_true")
-
-    parser.add_argument(
-        "-s", "--separators",
-        help="show thousands separator (default: False)",
-        action="store_true")
-
-    parser.add_argument(
-        "-e", "--exponent",
-        help="show E notation when possible (default: False)",
-        action="store_true")
-
-    parser.add_argument(
         "--debug",
         help=argparse.SUPPRESS,
         action="store_true")
 
     args = parser.parse_args()
 
-    # Try to convert value to a decimal
+    # Try to convert quantity to a decimal
     try:
-        args.value = parse_decimal(args.value)
+        args.quantity = parse_decimal(args.quantity)
     except (ConverterError, DecimalException):
-        print_error(f"Error: {args.value!r} is not a valid decimal.")
+        print_error(f"Error: {args.quantity!r} is not a decimal or integer value")
 
     # Check precision
     if args.precision is not None and (args.precision < 0 or args.precision > 30):
-        print_error("Error: Precision must be between 0 and 30.")
+        print_error("Error: Precision must be between 0 and 30")
 
-    # Allow <source> to <unit> but check for syntax errors
-    # Make sure to remove "to" from the dest units
-    if "to" in args.dest:
-        if args.dest.count("to") > 1 or args.dest[0] != "to" or len(args.dest) == 1:
-            print_error("Error: Invalid use of <source> to <dest> syntax")
-        else:
-            args.dest.remove("to")
+    # Allow <source> to <target> syntax but check for errors
+    if "to" in args.target:
+        if args.target.count("to") > 1 or args.target[0] != "to" or len(args.target) == 1:
+            print_error("Error: Invalid use of <source> to <target> syntax")
+        # Make sure to remove "to" from the target units
+        args.target.remove("to")
 
     # Configure debug logger
     logging.getLogger().setLevel(logging.DEBUG if args.debug else logging.WARNING)
     logging.basicConfig(format="debug: %(message)s")
 
-    # Perform conversions
-    converter = UnitConverter()
     results = []
 
-    for dest_unit in args.dest:
-        results.append((converter.convert(args.value, args.source, dest_unit), dest_unit))
+    # Perform conversions
+    converter = UnitConverter()
+    for target in args.target:
+        results.append((converter.convert(args.quantity, args.source, target), target))
 
     # Display results
-    value = format_decimal(args.value, separators=args.separators)
-    padding = " " * len(f"{value} {args.source}")
+    quantity = format_quantity(args.quantity, separators=args.separators)
+    padding = " " * len(f"{quantity} {args.source}")
 
-    for index, (result, dest) in enumerate(results):
-        result = format_decimal(result, args.precision, args.normalize,
-                                args.exponent, args.separators)
+    for index, (result, target) in enumerate(results):
+        result = format_quantity(result, args.precision, args.normalize,
+                                 args.exponent, args.separators)
         if index == 0:
-            print(f"{value} {args.source} = {result} {dest}")
+            print(f"{quantity} {args.source} = {result} {target}")
         else:
-            print(f"{padding} = {result} {dest}")
+            print(f"{padding} = {result} {target}")
 
 
 if __name__ == "__main__":

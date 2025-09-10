@@ -30,7 +30,7 @@ Unit composition is an experimental feature and there are still bugs to be sorte
 
 ## Requirements
 
-    Python 3.11 or newer
+    Python 3.12 or newer
 
 ## Installation
 
@@ -38,20 +38,21 @@ Unit composition is an experimental feature and there are still bugs to be sorte
 
 ## Usage
 
-    usage: convert.py [-h] [-p ndigits] [-s] [-e] [-n] quantity source target [target ...]
+    usage: convert.py [-h] [-f | -e | -s] [-p ndigits] [-n] quantity source target [target ...]
 
     positional arguments:
-      quantity                    quantity or value
-      source                      the source unit
-      target                      one or more target units
+      quantity              quantity or value (an integer, float, or fraction)
+      source                the source unit
+      target                one or more target units
 
     options:
-      -h, --help                  show this help message and exit
-      -n, --normalize             normalize result by stripping trailing zeros
-      -e, --exponent              show E notation if possible (default: False)
-      -s, --separators            show thousands separators if possible (default: False)
-      -p, --precision ndigits     set rounding precision (default: None)
-
+      -h, --help            show this help message and exit
+      -f, --fraction        display results using fractions
+      -e, --exponent        display results using scientific e notation
+      -s, --separators      display results using thousands separators
+      -p, --precision ndigits
+                            set rounding precision (default: None)
+      -n, --normalize       normalize result by stripping trailing zeros
 
 ## Examples
 
@@ -73,34 +74,39 @@ Unit composition is an experimental feature and there are still bugs to be sorte
 
 #### Convert multiple units at once by specifying multiple target units
 
-    $ ./convert.py 1 mile furlongs yards feet inches
+    $ python convert.py 1 mile furlongs yards feet inches
     1 mile = 8 furlongs
            = 1760 yards
            = 5280 feet
            = 63360 inches
 
-#### Set rounding precision with `-p`/`--precision`
+#### Set rounding precision with `-p` or `--precision`
 
     $ python convert.py 10 metres inches -p 3
     10 metres = 393.701 inches
 
-#### Show thousands separators with `-s`/`--separators`
+#### Display results using fractions with `-f` or `--fraction`
 
-    $ python convert.py 5 cm nm --separators
-    5 cm = 50,000,000 nm
+    $ python convert.py 3 inch foot -f
+    3 inch = 1/4 foot
 
-#### Show E notation with `-e`/`--exponent`
+#### Display results using scientific e notation with `-e` or `--exponent`
 
     $ python convert.py 5 cm nm -e
     5 cm = 5E+7 nm
 
+#### Display results using thousands separators with `-s` or `--separators`
+
+    $ python convert.py 5 cm nm --separators
+    5 cm = 50,000,000 nm
+
 #### Units can be converted as long as they have the same dimension (length, time, mass, etc..)
 
-    $ python convert.py 1 metre acre
-    Error: Can't convert between metre (length) and acre (area)
+    $ python convert.py 1 metre hectare
+    Error: Can't convert between metre and hectare
 
-    $ python convert.py 1 metre² acre
-    1 metre² = 0.000247 acre
+    $ python convert.py 1 metre² hectare
+    1 metre² = 0.0001 hectare
 
 #### Unit composition is possible with any of the pre-defined units. Multiplication, division, and exponents are currently supported.
 
@@ -113,15 +119,10 @@ Unit composition is an experimental feature and there are still bugs to be sorte
             = 1 watt*second
             = 1 coulomb*volt
 
-#### Multi-word unit names are also supported but they need to be wrapped in quotes if they contain spaces.
+#### Multi-word unit names are also supported but they need to be wrapped in quotes, otherwise the parser will think they're separate units
 
-    $ python convert.py 1 "US survey mile" "US survey feet"
-    1 US survey mile = 5280 US survey feet
-
-    # I recommend using symbols or shortforms if the unit has one:
-
-    $ python convert.py 1 surveymile surveyfeet
-    1 surveymile = 5280 surveyfeet
+    $ python convert.py 1 "astronomical unit" metres
+    1 astronomical unit = 149597870700 metres
 
 #
 ### Note: This script is a work in progress. Bug reports and suggestions are welcome.

@@ -4,7 +4,7 @@
 
 import json
 
-from decimal import Decimal
+from fractions import Fraction
 from pathlib import Path
 
 from unitconverter.exceptions import ConverterError
@@ -17,27 +17,26 @@ def load_units() -> dict[str, Unit]:
     Returns
     -------
     dict[str, Unit]
-        A dictionary of unit names and unit objects.
+        A dictionary of units
 
     Raises
     ------
     ConverterError
-        If there was an error reading one of the files.
+        If there was an error reading one of the unit files.
     """
 
     path = Path("data")
     files = list(path.rglob("*.json"))
 
     if not files:
-        raise ConverterError(f"{path} is missing pre-defined unit files")
+        raise ConverterError(f"No unit files found in '{path.absolute()}'")
 
     units = {}
-
     for filename in files:
         # Load each unit file individually
         try:
             with open(filename, "r", encoding="utf-8") as fp:
-                data = json.load(fp, parse_float=Decimal)
+                data = json.load(fp, parse_float=Fraction)
         except OSError as e:
             raise ConverterError(f"Failed to load units from {e.filename} ({e.strerror})")
         except json.JSONDecodeError as e:

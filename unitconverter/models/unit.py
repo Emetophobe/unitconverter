@@ -4,13 +4,13 @@
 
 from __future__ import annotations
 
-from decimal import Decimal
+from fractions import Fraction
 
 
 from unitconverter.exceptions import ConverterError
-from unitconverter.formatting import format_display_name, format_type
+from unitconverter.formatting import format_display_name
 from unitconverter.models.dimension import Dimension
-from unitconverter.utils import parse_decimal
+from unitconverter.utils import parse_fraction
 
 
 class BaseUnit:
@@ -29,7 +29,7 @@ class BaseUnit:
         raise NotImplementedError
 
     @property
-    def factor(self) -> Decimal:
+    def factor(self) -> Fraction:
         raise NotImplementedError
 
     @property
@@ -50,7 +50,7 @@ class BaseUnit:
         if isinstance(other, BaseUnit):
             return CompositeUnit(self.units + other.units)
 
-        raise ConverterError(f"Cannot multiply {format_type(self)} and {format_type(other)}")
+        return NotImplemented
 
     def __truediv__(self, other: BaseUnit) -> BaseUnit:
         """ Divide a Unit with another Unit. Returns a new CompositeUnit. """
@@ -58,16 +58,19 @@ class BaseUnit:
             units = [(unit, -exponent) for unit, exponent in other.units]
             return CompositeUnit(self.units + units)
 
-        raise ConverterError(f"Cannot divide {format_type(self)} and {format_type(other)}")
+        return NotImplemented
 
     def __pow__(self, exponent: int) -> BaseUnit:
         """ Raise a unit to a new exponent. Returns a Unit or CompositeUnit. """
-        if not isinstance(exponent, int) or exponent == 0:
-            raise ConverterError(f"'{self.name}' has an invalid exponent '{exponent}'",
-                                 "must be a non-zero integer")
+        if not isinstance(exponent, int):
+            return NotImplemented
 
         if exponent == 1:
             return self
+
+        if exponent == 0:
+            raise ConverterError(f"'{self.name}' has an invalid exponent '{exponent}'",
+                                 "must be a non-zero integer")
 
         return CompositeUnit([(unit, exp * exponent) for unit, exp in self.units])
 
@@ -91,7 +94,7 @@ class Unit(BaseUnit):
                  symbols: list[str] | None = None,
                  aliases: list[str] | None = None,
                  dimen: Dimension | None = None,
-                 factor: Decimal | str | int = 1,
+                 factor: Fraction | str | int = 1,
                  prefixes: str | None = None
                  ) -> None:
         """ Create a new unit.
@@ -110,7 +113,7 @@ class Unit(BaseUnit):
         dimension : Dimension | None, optional
             The dimension of the unit, by default None
 
-        factor : Decimal | str | int, optional
+        factor : Fraction | str | int, optional
             The conversion factor, by default 1
 
         prefixes : str | None, optional
@@ -120,7 +123,7 @@ class Unit(BaseUnit):
         self._symbols = symbols or []
         self._aliases = aliases or []
         self._dimension = Dimension(dimen)
-        self._factor = parse_decimal(factor)
+        self._factor = parse_fraction(factor)
         self._prefixes = prefixes
 
     @property
@@ -136,7 +139,7 @@ class Unit(BaseUnit):
         return self._aliases
 
     @property
-    def factor(self) -> Decimal:
+    def factor(self) -> Fraction:
         return self._factor
 
     @property
@@ -183,8 +186,8 @@ class CompositeUnit(BaseUnit):
         return []
 
     @property
-    def factor(self) -> Decimal:
-        factor = Decimal(1)
+    def factor(self) -> Fraction:
+        factor = Fraction(1)
         for unit, exponent in self.units:
             factor *= unit.factor ** exponent
         return factor
@@ -217,7 +220,6 @@ class CompositeUnit(BaseUnit):
                     reduced.pop(index)
                     exponents.pop(index)
 
-        # All composite unit instances must have atleast 1 unit
         if not reduced or not exponents:
             name = format_display_name([(unit.name, exponent) for unit, exponent in units])
             raise ConverterError(f"{name!r} is not a valid unit")

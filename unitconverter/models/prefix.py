@@ -2,10 +2,10 @@
 # https://www.github.com/emetophobe/unitconverter
 
 
-from decimal import Decimal
+from fractions import Fraction
 
 from unitconverter.exceptions import ConverterError
-from unitconverter.utils import parse_decimal
+from unitconverter.utils import parse_fraction
 
 
 # List of valid prefix options
@@ -17,13 +17,12 @@ PREFIX_OPTIONS = [
 
 
 class Prefix:
-    """ A Prefix can be combined with a Definition to make a prefixed definition. """
+    """ A prefix can be added to a unit that supports prefixing. """
 
-    def __init__(self, name: str, symbol: str, factor: Decimal | int | str) -> None:
-        """ Create a new prefix. """
+    def __init__(self, name: str, symbol: str, factor: Fraction | str | int) -> None:
         self.name = name
         self.symbol = symbol
-        self.factor = parse_decimal(factor)
+        self.factor = parse_fraction(factor)
 
     def __repr__(self) -> str:
         return f"Prefix({self.name!r}, {self.symbol!r}, {self.factor!r})"

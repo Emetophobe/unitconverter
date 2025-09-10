@@ -7,13 +7,9 @@ import sys
 import logging
 import argparse
 
-from decimal import DecimalException
-
-
 from unitconverter.converter import UnitConverter
 from unitconverter.exceptions import ConverterError
 from unitconverter.formatting import format_quantity
-from unitconverter.utils import parse_decimal
 
 
 def print_error(msg: str, status: int = 1) -> None:
@@ -27,7 +23,7 @@ def main() -> None:
 
     parser.add_argument(
         "quantity",
-        help="quantity or value")
+        help="quantity or value (an integer, float, or fraction)")
 
     parser.add_argument(
         "source",
@@ -38,19 +34,21 @@ def main() -> None:
         help="one or more target units",
         nargs="+")
 
-    parser.add_argument(
-        "-n", "--normalize",
-        help="normalize result by stripping trailing zeros",
+    subgroup = parser.add_mutually_exclusive_group()
+
+    subgroup.add_argument(
+        "-f", "--fraction",
+        help="display results using fractions",
         action="store_true")
 
-    parser.add_argument(
+    subgroup.add_argument(
         "-e", "--exponent",
-        help="show E notation if possible (default: False)",
+        help="display results using scientific e notation",
         action="store_true")
 
-    parser.add_argument(
+    subgroup.add_argument(
         "-s", "--separators",
-        help="show thousands separators if possible (default: False)",
+        help="display results using thousands separators",
         action="store_true")
 
     parser.add_argument(
@@ -61,17 +59,16 @@ def main() -> None:
         type=int)
 
     parser.add_argument(
+        "-n", "--normalize",
+        help="normalize result by stripping trailing zeros",
+        action="store_true")
+
+    parser.add_argument(
         "--debug",
         help=argparse.SUPPRESS,
         action="store_true")
 
     args = parser.parse_args()
-
-    # Try to convert quantity to a decimal
-    try:
-        args.quantity = parse_decimal(args.quantity)
-    except (ConverterError, DecimalException):
-        print_error(f"Error: {args.quantity!r} is not a decimal or integer value")
 
     # Check precision
     if args.precision is not None and (args.precision < 0 or args.precision > 30):
@@ -96,14 +93,16 @@ def main() -> None:
         results.append((converter.convert(args.quantity, args.source, target), target))
 
     # Display results
-    quantity = format_quantity(args.quantity, separators=args.separators)
-    padding = " " * len(f"{quantity} {args.source}")
-
+    padding = " " * len(f"{args.quantity} {args.source}")
     for index, (result, target) in enumerate(results):
-        result = format_quantity(result, args.precision, args.normalize,
-                                 args.exponent, args.separators)
+        result = format_quantity(result,
+                                 args.precision,
+                                 args.normalize,
+                                 args.exponent,
+                                 args.fraction,
+                                 args.separators)
         if index == 0:
-            print(f"{quantity} {args.source} = {result} {target}")
+            print(f"{args.quantity} {args.source} = {result} {target}")
         else:
             print(f"{padding} = {result} {target}")
 
@@ -111,5 +110,5 @@ def main() -> None:
 if __name__ == "__main__":
     try:
         main()
-    except ConverterError as e:
+    except (ConverterError, TypeError, ValueError) as e:
         print_error("Error: " + str(e))

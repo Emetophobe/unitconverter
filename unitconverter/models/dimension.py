@@ -5,11 +5,11 @@
 from __future__ import annotations
 
 from unitconverter.exceptions import ConverterError
-from unitconverter.formatting import format_display_name, format_type
+from unitconverter.formatting import format_display_name
 
 
 class Dimension(dict):
-    """ All units and dimensions can be expressed using a simple exponent dictionary. """
+    """ All unit dimensions can be represented using a custom exponent dictionary. """
 
     def __init__(self, dimension: str | dict[str, int] | None = None) -> None:
         """ Create a new dimension.
@@ -17,20 +17,19 @@ class Dimension(dict):
         Parameters
         ----------
         dimension : str | dict[str, int] | None, optional
-            A dimension name or dictionary, by default None
+            A dimension name or dimension dictionary, by default None
 
         Raises
         ------
         ConverterError
-            If the dimension isn't a string or dict.
+            If the dimension is invalid
         """
-        if dimension:
-            if isinstance(dimension, str):
-                super().__init__({dimension: 1})
-            elif isinstance(dimension, dict):
-                super().__init__(dimension)
-            else:
-                raise ConverterError(f"{dimension!r} is not a valid dimension")
+        if isinstance(dimension, str) and dimension:
+            super().__init__({dimension: 1})
+        elif isinstance(dimension, dict):
+            super().__init__(dimension)
+        elif dimension is not None:
+            raise ConverterError(f"{dimension!r} is not a valid dimension")
 
     @property
     def name(self):
@@ -39,7 +38,13 @@ class Dimension(dict):
 
     def __pow__(self, exponent: int) -> Dimension:
         """ Raise a dimension to a new power. Returns a new dimension."""
-        if not exponent or not isinstance(exponent, int):
+        if not isinstance(exponent, int):
+            return NotImplemented
+
+        if exponent == 1:
+            return self
+
+        if exponent == 0:
             raise ConverterError(f"{exponent} must be a positive or negative integer")
 
         # Pow just multiplies all exponents
@@ -49,33 +54,32 @@ class Dimension(dict):
 
         return Dimension(dimen)
 
-    def __mul__(self, other: dict) -> Dimension:
-        """ Multiply two dimensions. Returns a new dimension. """
-        if not isinstance(other, dict):
-            raise ConverterError(f"Cannot multiply Dimension and {format_type(other)}")
+    def __mul__(self, other: Dimension) -> Dimension:
+        """ Multiply a dimension with another dimension. Returns a new dimension. """
+        if not isinstance(other, Dimension):
+            return NotImplemented
 
         # Multiply just adds exponents from both dictionaries
-        dimen = self.copy()
+        dimension = self.copy()
         for name, exp in other.items():
-            dimen[name] = dimen.get(name, 0) + exp
-            if not dimen[name]:
-                del dimen[name]
+            dimension[name] = dimension.get(name, 0) + exp
+            if not dimension[name]:
+                del dimension[name]
 
-        return Dimension(dimen)
+        return Dimension(dimension)
 
-    def __truediv__(self, other: dict) -> Dimension:
-        """ Divide two dimensions. Returns a new dimension. """
-        if not isinstance(other, dict):
-            raise ConverterError(f"Cannot divide Dimension and {format_type(other)}")
+    def __truediv__(self, other: Dimension) -> Dimension:
+        """ Divide a dimension with another dimension. Returns a new dimension. """
+        if not isinstance(other, Dimension):
+            return NotImplemented
 
-        # Divide just subtracts exponents from both dictionaries
-        dimen = self.copy()
+        dimension = self.copy()
         for name, exp in other.items():
-            dimen[name] = dimen.get(name, 0) - exp
-            if not dimen[name]:
-                del dimen[name]
+            dimension[name] = dimension.get(name, 0) - exp
+            if not dimension[name]:
+                del dimension[name]
 
-        return Dimension(dimen)
+        return Dimension(dimension)
 
     def __repr__(self) -> str:
         return f"Dimension({super().__repr__()})"

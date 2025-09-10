@@ -2,37 +2,19 @@
 # https://www.github.com/emetophobe/unitconverter
 
 
-from decimal import Decimal, DecimalException
+from fractions import Fraction
 from unitconverter.exceptions import ConverterError
 
 
-def parse_decimal(value: Decimal | int | str) -> Decimal:
-    """ Parse value and return a Decimal.
+def parse_fraction(value: Fraction | str | int) -> Fraction:
+    """ Parse value and return a Fraction. """
+    if isinstance(value, Fraction):
+        return value
 
-    Raises ConverterError if value is a float. Use a string instead
-    it will give a more accurate decimal value. See examples below:
-
-        This works with str:
-
-            >>> Decimal("0.1") + Decimal("0.1") + Decimal("0.1") == Decimal("0.3")
-            True
-
-        But not with float:
-
-            >>> Decimal(0.1) + Decimal(0.1) + Decimal(0.1) == Decimal(0.3)
-            False
-
-        A float also doesn't equal a string:
-
-            >>> Decimal(0.1) == Decimal("0.1")
-            False
-
-        Source: https://www.laac.dev/blog/float-vs-decimal-python/
-    """
     if isinstance(value, float):
-        raise ConverterError(f"{value} is a float which cannot be mixed with Decimals."
-                             " See docs/floating_point.txt for more details.")
+        raise ConverterError("Cannot mix floats and fractions. For better accuracy"
+                             f"wrap float in a string; i.e Fraction(\"{value}\")")
     try:
-        return Decimal(value)
-    except DecimalException:
-        raise ConverterError(f"{value!r} is not a valid Decimal")
+        return Fraction(value)
+    except (TypeError, ValueError):
+        raise ConverterError(f"{value!r} is not a fraction or decimal value")

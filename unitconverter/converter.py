@@ -3,15 +3,15 @@
 
 
 import logging
-from decimal import Decimal
 
+from fractions import Fraction
 
 from unitconverter.exceptions import ConversionError, ConverterError
 from unitconverter.models.unit import BaseUnit
 from unitconverter.parsers.unitparser import UnitParser
 from unitconverter.parsers.fileparser import load_units
 from unitconverter.registry import Registry
-from unitconverter.utils import parse_decimal
+from unitconverter.utils import parse_fraction
 
 
 class UnitConverter:
@@ -22,15 +22,15 @@ class UnitConverter:
         self.parser = UnitParser(self.registry)
 
     def convert(self,
-                quantity: Decimal,
+                quantity: Fraction,
                 source: str | BaseUnit,
                 target: str | BaseUnit
-                ) -> Decimal:
-        """ Convert a quantity from the source unit to the target unit.
+                ) -> Fraction:
+        """ Convert quantity from the source unit to the target unit.
 
         Parameters
         ----------
-        quantity : Decimal
+        quantity : Fraction
             A quantity or value
         source : str | BaseUnit
             Source unit name or instance
@@ -39,7 +39,7 @@ class UnitConverter:
 
         Returns
         -------
-        Decimal
+        Fraction
             The converted quantity
 
         Raises
@@ -52,7 +52,7 @@ class UnitConverter:
             If the units are incompatible
         """
 
-        quantity = parse_decimal(quantity)
+        quantity = parse_fraction(quantity)
         source = self.parser.parse_unit(source)
         target = self.parser.parse_unit(target)
 
@@ -72,13 +72,13 @@ class UnitConverter:
         return quantity / target.factor
 
     def convert_temperature(self,
-                            quantity: Decimal,
+                            quantity: Fraction,
                             source: str | BaseUnit,
                             target: str | BaseUnit
-                            ) -> Decimal:
-        """ Convert between temperature units. """
+                            ) -> Fraction:
+        """ Convert from the source temperature unit to the target temperature unit. """
 
-        quantity = parse_decimal(quantity)
+        quantity = parse_fraction(quantity)
         source = self.parser.parse_unit(source)
         target = self.parser.parse_unit(target)
 
@@ -86,11 +86,11 @@ class UnitConverter:
         if source.name.endswith("kelvin"):
             quantity = quantity * source.factor
         elif source.name.endswith("celsius"):
-            quantity = quantity * source.factor + Decimal("273.15")
+            quantity = quantity * source.factor + Fraction("273.15")
         elif source.name.endswith("fahrenheit"):
-            quantity = (quantity * source.factor + Decimal("459.67")) * Decimal(5) / Decimal(9)
+            quantity = (quantity * source.factor + Fraction("459.67")) * Fraction(5, 9)
         elif source.name.endswith("rankine"):
-            quantity = quantity * source.factor * Decimal(5) / Decimal(9)
+            quantity = quantity * source.factor * Fraction(5, 9)
         else:
             raise ConverterError(f"{source} is not a temperature unit")
 
@@ -98,10 +98,10 @@ class UnitConverter:
         if target.name.endswith("kelvin"):
             return quantity / target.factor
         elif target.name.endswith("celsius"):
-            return (quantity - Decimal("273.15")) / target.factor
+            return (quantity - Fraction("273.15")) / target.factor
         elif target.name.endswith("fahrenheit"):
-            return (quantity * Decimal(9) / Decimal(5) - Decimal("459.67")) / target.factor
+            return (quantity * Fraction(9, 5) - Fraction("459.67")) / target.factor
         elif target.name.endswith("rankine"):
-            return (quantity * Decimal(9) / Decimal(5)) / target.factor
+            return (quantity * Fraction(9, 5)) / target.factor
         else:
             raise ConverterError(f"{target} is not a temperature unit")

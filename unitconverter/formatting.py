@@ -5,21 +5,24 @@
 import logging
 
 from decimal import Decimal, DecimalException, ROUND_HALF_UP
+from fractions import Fraction
 
 
-def format_quantity(quantity: Decimal,
+def format_quantity(quantity: Fraction,
                     precision: int | None = None,
                     normalize: bool = False,
+                    fraction: bool = False,
                     exponent: bool = False,
                     separators: bool = False) -> str:
-    """ Format a decimal quantity into a string for display.
+    """ Format quantity into a string for display.
 
+    If fragment is True all other arguments are ignored.
     If exponent is True the separators argument is ignored.
 
     Parameters
     ----------
-    number : Decimal
-        The decimal to format.
+    quantity : Fraction
+        The quantity or value
 
     precision : int | None, optional
         Set rounding precision, by default None
@@ -27,32 +30,40 @@ def format_quantity(quantity: Decimal,
     normalize : bool, optional
         Normalize value by stripping the rightmost trailing zeros, by default False
 
+    fraction : bool, optional
+        Show fraction, by default False
+
     exponent : bool, optional
-        Show scientific E notation, by default False
+        Show scientific e notation, by default False
 
     separators : bool, optional
-        Show thousands separators (i.e 1,000,000), by default False
+        Show thousands separators, by default False
 
     Returns
     -------
     str
-        The formatted string.
+        The formatted quantity
     """
+
+    if fraction:
+        return str(quantity)
+
+    value = Decimal(quantity.numerator) / Decimal(quantity.denominator)
+
     if precision is not None:
         try:
-            quantity = quantity.quantize(Decimal(10) ** -precision, ROUND_HALF_UP)
+            value = value.quantize(Decimal(10) ** -precision, ROUND_HALF_UP)
         except DecimalException:
             logging.debug(f"Failed to quantize {quantity} (precision = {precision})")
             pass
 
-    # Trim trailing zeroes
     if normalize:
-        quantity = quantity.normalize()
+        value = value.normalize()
 
     if exponent:
-        return f"{quantity:E}"
+        return f"{value:e}"
 
-    return f"{quantity:{"," if separators else ""}f}"
+    return f"{value:{"," if separators else ""}f}"
 
 
 def format_name(units: list[tuple[str, int]], sort_keys: bool = False) -> str:
@@ -65,7 +76,7 @@ def format_name(units: list[tuple[str, int]], sort_keys: bool = False) -> str:
 
 
 def format_display_name(units: list[tuple[str, int]], sort_keys: bool = False) -> str:
-    """ Format unit display name with divisor (i.e "metre/second") """
+    """ Format unit name with divisor (i.e "metre/second") """
     numers = []
     denoms = []
 
@@ -90,8 +101,3 @@ def format_exponent(name: str, exponent: int) -> str:
         return f"{name}^{exponent}"
     else:
         return name
-
-
-def format_type(obj: object) -> str:
-    """ Get a nice string representation of an object. """
-    return type(obj).__name__

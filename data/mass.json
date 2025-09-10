@@ -9,7 +9,6 @@
 		"factor": 0.001
 	},
 	"tonne": {
-		"symbols": ["ton"],
 		"aliases": ["tonnes"],
 		"prefix": "metric",
 		"factor": 1000
@@ -35,13 +34,13 @@
 		"factor": 0.028349523125
 	},
 	"pound": {
-		"symbols": ["lbs", "lb"],
+		"symbols": ["lb", "lbs"],
 		"aliases": ["pounds"],
         "comment": "1 pound = 7000 grains",
 		"factor": 0.45359237
 	},
 	"kilopound": {
-		"symbols": ["klbs", "klb"],
+		"symbols": ["klb", "klbs"],
 		"aliases": ["kilopounds"],
 		"factor": 453.59237
 	},
@@ -60,14 +59,26 @@
 	"hundredweight": {
 		"symbols": ["cwt"],
 		"aliases": ["hundredweights", "long hundredweight", "long hundredweights"],
-        "comment": "1 hundredweight = 8 stones = 112 lbs",
+        "comment": "1 long hundredweight = 8 stones = 112 lbs",
 		"factor": 50.80234544
 	},
+    "short hundredweight": {
+		"symbols": ["uscwt"],
+		"aliases": ["short hundredweights"],
+        "comment": "1 short hundredweight = 100 pounds",
+		"factor": 45.359237
+	},
 	"long ton": {
-		"symbols": ["LT"],
-		"aliases": ["long tons", "imperial ton", "imperial tons"],
+        "symbols": ["ton"],
+		"aliases": ["tons", "long tons"],
         "comment": "1 long ton = 2240 pounds",
 		"factor": 1016.0469088
+	},
+	"short ton": {
+		"symbols": ["tn", "uston"],
+		"aliases": ["short tons"],
+        "comment": "1 short ton = 2000 pounds",
+		"factor": 907.18474
 	},
 	"slug": {
 		"aliases": ["slugs"],
@@ -75,10 +86,15 @@
 	},
 	"dram": {
 		"symbols": ["dr"],
-		"aliases": ["drams", "drachms", "drachm"],
-        "comment": "1 dram = 1/16th of an ounce",
+		"aliases": ["drams"],
+        "comment": "1 dram = 1/16th of an avoirdupois ounce",
 		"factor": 0.0017718451953125
 	},
+    "drachm": {
+        "aliases": ["drachms"],
+        "comment": "1 drachm = 1/8th of an apothecaries ounce (same as a troy ounce)",
+        "factor": 0.0038879346
+    },
 	"pennyweight": {
 		"symbols": ["dwt"],
 		"aliases": ["pennyweights"],
@@ -96,18 +112,5 @@
 		"aliases": ["troy pounds"],
         "comment": "1 troy pound = 12 troy ounces",
 		"factor": 0.3732417216
-	},
-
-	"US hundredweight": {
-		"symbols": ["uscwt"],
-		"aliases": ["US hundredweights", "short hundredweight", "short hundredweights"],
-        "comment": "1 short hundredweight = 100 pounds",
-		"factor": 45.359237
-	},
-	"US ton": {
-		"symbols": ["tn"],
-		"aliases": ["US tons", "short ton", "short tons"],
-        "comment": "1 short ton = 2000 pounds",
-		"factor": 907.18474
 	}
 }

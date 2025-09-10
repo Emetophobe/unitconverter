@@ -118,50 +118,5 @@
 		"aliases": ["US cable lengths"],
         "comment": "1 US cable = 120 fathoms",
 		"factor": 219.456
-	},
-    "US survey foot": {
-		"symbols": ["surveyft"],
-		"aliases": ["US survey feet", "surveyfeet", "surveyfoot"],
-		"factor": 0.304800609601
-	},
-    "US survey link": {
-		"symbols": ["surveyli"],
-		"aliases": ["US survey links", "surveylinks", "surveylink"],
-		"factor": 0.201168402
-	},
-    "US survey fathom": {
-		"symbols": ["surveyftm"],
-		"aliases": ["US survey fathoms", "surveyfathoms", "surveyfathom"],
-		"factor": 1.828803658
-	},
-    "US survey rod": {
-		"symbols": ["surveyrd"],
-		"aliases": ["US survey rods", "surveyrods", "surveyrod"],
-		"factor": 5.029210058
-	},
-	"US survey chain": {
-		"symbols": ["surveych"],
-		"aliases": ["US survey chains", "surveychains", "surveychain"],
-		"factor": 20.116840234
-	},
-	"US survey furlong": {
-		"symbols": ["surveyfur"],
-		"aliases": ["US survey furlongs", "surveyfurlongs", "surveyfurlong"],
-		"factor": 201.168402337
-	},
-    "US survey cable length": {
-		"symbols": ["surveycb"],
-		"aliases": ["US survey cable", "surveycables", "surveycable"],
-		"factor": 219.456438913
-	},
-	"US survey mile": {
-		"symbols": ["surveymi"],
-		"aliases": ["US survey miles", "surveymiles", "surveymile"],
-		"factor": 1609.347218694
-	},
-    "US survey league": {
-		"symbols": ["surveylea"],
-		"aliases": ["US survey leagues", "surveyleagues", "surveyleague"],
-		"factor": 4828.041656083
 	}
 }

@@ -8,6 +8,13 @@
 		"prefix": "metric",
 		"factor": 1
 	},
+    "dyne": {
+		"symbols": ["dyn"],
+		"aliases": ["dynes"],
+        "comment": "CGS unit of force",
+		"prefix": "metric",
+		"factor": 0.00001
+	},
 	"gram-force": {
 		"symbols": ["gf"],
 		"aliases": ["grams-force"],
@@ -16,24 +23,23 @@
 	},
     "tonne-force": {
 		"symbols": ["tf"],
+        "aliases": ["tonnes-force"],
 		"prefix": "metric",
 		"factor": 9806.65
 	},
-	"dyne": {
-		"symbols": ["dyn"],
-		"aliases": ["dynes"],
-        "comment": "CGS unit of force",
-		"prefix": "metric",
-		"factor": 0.00001
+	"long ton-force": {
+		"symbols": ["tonf"],
+		"aliases": ["long tons-force"],
+		"factor": 9964.0164182
 	},
-	"poundal": {
-		"symbols": ["pdl"],
-		"aliases": ["poundals"],
-		"factor": 0.138254954376
+	"short ton-force": {
+		"symbols": ["tnf"],
+		"aliases": ["short tons-force"],
+		"factor": 8896.4432305
 	},
-	"ounce-force": {
+    "ounce-force": {
 		"symbols": ["ozf"],
-		"factor": 0.27801385
+        "factor": 0.278013875
 	},
 	"pound-force": {
 		"symbols": ["lbf"],
@@ -44,14 +50,10 @@
 		"aliases": ["kip-force", "kipf"],
 		"factor": 4448.222
 	},
-	"long ton-force": {
-		"symbols": ["tnf"],
-		"aliases": ["imperial ton-force"],
-		"factor": 9964.0164182
-	},
-	"short ton-force": {
-		"symbols": ["tonf"],
-		"aliases": ["US ton-force"],
-		"factor": 8896.4432305
+	"poundal": {
+		"symbols": ["pdl"],
+		"aliases": ["poundals"],
+        "comment": "1 poundal = 1 lb*ft/s²",
+		"factor": 0.138254954376
 	}
 }

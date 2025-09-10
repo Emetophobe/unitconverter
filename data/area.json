@@ -45,23 +45,5 @@
 		"symbols": ["circ in"],
 		"aliases": ["circular inches"],
 		"factor": 0.000506707479
-	},
-	"US survey acre": {
-		"symbols": ["surveyac"],
-		"aliases": ["US survey acres", "surveyacre", "surveyacres"],
-		"factor": 4046.872609874
-	},
-	"US survey homestead": {
-		"aliases": ["US survey homesteads", "homestead", "homesteads"],
-		"factor": 647497.02758
-	},
-	"US survey section": {
-		"aliases": ["US survey sections", "section", "sections"],
-		"factor": 2589988.1103
-	},
-	"US survey township": {
-		"symbols": ["twp"],
-		"aliases": ["US survey townships", "township", "townships"],
-		"factor": 93239571.972
 	}
 }

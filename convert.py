@@ -21,7 +21,7 @@ def print_error(msg: str, status: int = 1) -> None:
 
 def print_traceback(error: Exception) -> None:
     """ Print a stack trace and exit. """
-    traceback.print_exception(error)
+    traceback.print_exception(error, chain=False)
     sys.exit(1)
 
 

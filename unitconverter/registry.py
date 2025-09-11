@@ -258,12 +258,11 @@ class Registry:
                 return json.load(fp, parse_float=Fraction)
 
         except OSError as e:
-            raise ConverterError(f"Failed to load {filetype} from {filename}",
-                                 e.strerror) from None
+            raise ConverterError(f"Failed to load {filetype} from {filename}", e.strerror)
 
         except json.JSONDecodeError as e:
             raise ConverterError(f"Invalid json syntax in {filename}",
-                                 f"{e.msg}: line {e.lineno} column {e.colno}") from None
+                                 f"{e.msg}: line {e.lineno} column {e.colno}")
 
     # Unit name and exponent patterns
     _unit_pattern = r"(?P<unit>[a-zA-Z°Ωµ-]*[a-zA-Z°Ωµ ]+){1}"

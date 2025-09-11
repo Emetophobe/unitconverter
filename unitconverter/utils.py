@@ -12,8 +12,8 @@ def parse_fraction(value: Fraction | str | int) -> Fraction:
 
     if isinstance(value, float):
         raise TypeError("Cannot mix floats and fractions. For better accuracy"
-                        f"wrap float in a string; i.e Fraction(\"{value}\")") from None
+                        f"wrap float in a string; i.e Fraction(\"{value}\")")
     try:
         return Fraction(value)
     except (TypeError, ValueError):
-        raise TypeError(f"{value!r} is not a fraction or decimal value") from None
+        raise TypeError(f"{value!r} is not a fraction or decimal value")

@@ -98,12 +98,8 @@ def main() -> None:
     # Display results
     padding = " " * len(f"{args.quantity} {args.source}")
     for index, (result, target) in enumerate(results):
-        result = format_quantity(result,
-                                 args.precision,
-                                 args.normalize,
-                                 args.fraction,
-                                 args.exponent,
-                                 args.separators)
+        result = format_quantity(result, args.precision, args.normalize, args.fraction,
+                                 args.exponent, args.separators)
         if index == 0:
             print(f"{args.quantity} {args.source} = {result} {target}")
         else:

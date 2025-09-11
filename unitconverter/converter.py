@@ -8,7 +8,8 @@ from fractions import Fraction
 
 from unitconverter.exceptions import ConverterError, IncompatibleUnitError
 from unitconverter.models.unit import BaseUnit
-from unitconverter.registry import Registry
+from unitconverter.parsers.fileparser import FileParser
+from unitconverter.parsers.unitparser import UnitParser
 from unitconverter.utils import parse_fraction
 
 
@@ -17,7 +18,8 @@ class UnitConverter:
 
     def __init__(self) -> None:
         """ Create a unit converter. """
-        self.registry = Registry()
+        self.registry = FileParser().create_registry()
+        self.parser = UnitParser(self.registry)
 
     def convert(self,
                 quantity: Fraction,
@@ -42,8 +44,8 @@ class UnitConverter:
         """
 
         quantity = parse_fraction(quantity)
-        source = self.registry.parse_unit(source)
-        target = self.registry.parse_unit(target)
+        source = self.parser.parse_unit(source)
+        target = self.parser.parse_unit(target)
 
         logging.debug(f"convert() {source} ({source.dimension})")
         logging.debug(f"convert() {target} ({target.dimension})")
@@ -68,8 +70,8 @@ class UnitConverter:
         """ Convert quantity from the source temperature unit to the target unit. """
 
         quantity = parse_fraction(quantity)
-        source = self.registry.parse_unit(source)
-        target = self.registry.parse_unit(target)
+        source = self.parser.parse_unit(source)
+        target = self.parser.parse_unit(target)
 
         # Convert from source unit to kelvin
         if source.name.endswith("kelvin"):

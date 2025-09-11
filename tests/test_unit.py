@@ -4,9 +4,7 @@
 
 import unittest
 
-from unitconverter.exceptions import ConverterError
-
-from tests import metre, second
+from tests.mock_units import metre, second
 
 
 class TestUnit(unittest.TestCase):

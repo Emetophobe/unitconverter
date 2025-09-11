@@ -1,5 +1,4 @@
 {
-	"category": "energy",
 	"dimension": {"length": 2, "mass": 1, "time": -2},
 
 	"joule": {

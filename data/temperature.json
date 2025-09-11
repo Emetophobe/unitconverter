@@ -1,5 +1,4 @@
 {
-	"category": "temperature",
 	"dimension": {"temperature": 1},
 
 	"kelvin": {

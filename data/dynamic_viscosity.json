@@ -1,5 +1,4 @@
 {
-	"category": "dynamic viscosity",
 	"dimension": {"length": -1, "mass": 1, "time": -1},
 
 	"poise": {

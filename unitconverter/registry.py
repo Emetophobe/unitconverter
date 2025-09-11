@@ -224,9 +224,8 @@ class Registry:
             # Remove dimension from the rest of the data
             try:
                 dimension = data.pop("dimension")
-                data.pop("category")  # unused for now
-            except KeyError as key:
-                raise ConverterError(f"{filename} is missing required {key}")
+            except KeyError:
+                raise ConverterError(f"{filename} is missing required dimension")
 
             # Convert json dictionary to units
             for name, args in data.items():

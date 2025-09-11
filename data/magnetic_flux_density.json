@@ -1,5 +1,4 @@
 {
-	"category": "magnetic flux density",
 	"dimension": {"mass": 1, "time": -2, "electric current": -1},
 
 	"tesla": {

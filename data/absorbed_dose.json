@@ -1,5 +1,4 @@
 {
-	"category": "absorbed dose",
 	"dimension": {"length": 2, "time": -2},
 
 	"gray": {

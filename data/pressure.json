@@ -1,5 +1,4 @@
 {
-	"category": "pressure",
 	"dimension": {"length": -1, "mass": 1, "time": -2},
 
 	"pascal": {

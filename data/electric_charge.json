@@ -1,5 +1,4 @@
 {
-	"category": "electric charge",
 	"dimension": {"electric current": 1, "time": 1},
 
 	"coulomb": {

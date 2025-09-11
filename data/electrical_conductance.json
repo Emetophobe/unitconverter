@@ -1,5 +1,4 @@
 {
-	"category": "electrical conductance",
 	"dimension": {"length": -2, "mass": -1, "time": 3, "electric current": 2},
 
 	"siemens": {

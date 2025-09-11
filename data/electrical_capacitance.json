@@ -1,5 +1,4 @@
 {
-	"category": "electrical capacitance",
 	"dimension": {"length": -2, "mass": -1, "time": 4, "electric current": 2},
 
 	"farad": {

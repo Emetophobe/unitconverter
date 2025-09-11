@@ -41,6 +41,11 @@ class BaseUnit:
         raise NotImplementedError
 
     @property
+    def prefixes(self) -> str | None:
+        """ No prefixes by default. """
+        return None
+
+    @property
     def names(self) -> list[str]:
         """ Get a list of all unit names, symbols, and aliases. """
         return [self.name] + self.symbols + self.aliases
@@ -69,10 +74,20 @@ class BaseUnit:
             return self
 
         if exponent == 0:
-            raise ConverterError(f"'{self.name}' has an invalid exponent '{exponent}'",
-                                 "must be a non-zero integer")
+            raise ValueError("exponent must be a non-zero integer")
 
         return CompositeUnit([(unit, exp * exponent) for unit, exp in self.units])
+
+    def __eq__(self, other: object) -> bool:
+        """ Compare two units for equality. """
+        return (isinstance(other, BaseUnit)
+                and self.name == other.name
+                and self.symbols == other.symbols
+                and self.aliases == other.aliases
+                and self.dimension == other.dimension
+                and self.factor == other.factor
+                and self.units == other.units
+                and self.prefixes == other.prefixes)
 
     def __repr__(self) -> str:
         return "BaseUnit()"
@@ -82,12 +97,7 @@ class BaseUnit:
 
 
 class Unit(BaseUnit):
-    """ A basic unit of measurement.
-
-        Use Unit() if you want to create units that live outside of a registry.
-        Use registry.add_unit() if you want to add units to a specific registry.
-
-    """
+    """ A basic unit of measurement. """
 
     def __init__(self,
                  name: str,
@@ -139,16 +149,21 @@ class Unit(BaseUnit):
         return self._aliases
 
     @property
+    def dimension(self) -> Dimension:
+        return self._dimension
+
+    @property
     def factor(self) -> Fraction:
         return self._factor
 
     @property
     def units(self) -> list[tuple[Unit, int]]:
+        """ Get a list of unit and exponent tuples that represent this unit. """
         return [(self, 1)]
 
     @property
-    def dimension(self) -> Dimension:
-        return self._dimension
+    def prefixes(self) -> str | None:
+        return self._prefixes
 
     def __repr__(self) -> str:
         return (f"Unit({self._name!r}, {self._symbols!r}, {self._aliases!r},"
@@ -201,6 +216,7 @@ class CompositeUnit(BaseUnit):
 
     @property
     def units(self) -> list[tuple[Unit, int]]:
+        """ Get a list of unit and exponent tuples that represent this unit. """
         return self._units
 
     def _reduce_units(self, units: list[tuple[Unit, int]]) -> list[tuple[Unit, int]]:

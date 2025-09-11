@@ -52,15 +52,5 @@
 		"symbols": ["inHg", "in Hg"],
 		"aliases": ["inches of mercury"],
 		"factor": 3386.389
-	},
-	"psi": {
-		"symbols": ["lbf/in2"],
-		"aliases": ["pound-force/inch2"],
-		"factor": 6894.75788951578
-	},
-	"ksi": {
-		"symbols": ["klbf/in2"],
-		"aliases": ["kilopound-force/inch2"],
-		"factor": 6894757.88951578
 	}
 }

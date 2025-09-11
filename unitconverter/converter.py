@@ -6,20 +6,18 @@ import logging
 
 from fractions import Fraction
 
-from unitconverter.exceptions import ConversionError, ConverterError
+from unitconverter.exceptions import ConverterError, IncompatibleUnitError
 from unitconverter.models.unit import BaseUnit
-from unitconverter.parsers.unitparser import UnitParser
-from unitconverter.parsers.fileparser import load_units
 from unitconverter.registry import Registry
 from unitconverter.utils import parse_fraction
 
 
 class UnitConverter:
+    """ The unit converter handles loading, parsing, and converting units."""
 
     def __init__(self) -> None:
-        """ Initialize pre-defined dimensions and units. """
-        self.registry = Registry(load_units())
-        self.parser = UnitParser(self.registry)
+        """ Create a new unit converter. """
+        self.registry = Registry()
 
     def convert(self,
                 quantity: Fraction,
@@ -41,27 +39,18 @@ class UnitConverter:
         -------
         Fraction
             The converted quantity
-
-        Raises
-        ------
-        ConverterError:
-            If the quantity could not be parsed
-        ConverterError:
-            If the units could not be parsed
-        ConversionError
-            If the units are incompatible
         """
 
         quantity = parse_fraction(quantity)
-        source = self.parser.parse_unit(source)
-        target = self.parser.parse_unit(target)
+        source = self.registry.parse_unit(source)
+        target = self.registry.parse_unit(target)
 
         logging.debug(f"convert() {source} ({source.dimension})")
         logging.debug(f"convert() {target} ({target.dimension})")
 
         # Check if the units are compatible
         if source.dimension != target.dimension:
-            raise ConversionError(source, target)
+            raise IncompatibleUnitError(source, target)
 
         # Temperature conversion
         if source.dimension.name == "temperature":
@@ -76,11 +65,11 @@ class UnitConverter:
                             source: str | BaseUnit,
                             target: str | BaseUnit
                             ) -> Fraction:
-        """ Convert from the source temperature unit to the target temperature unit. """
+        """ Convert quantity from the source temperature unit to the target unit. """
 
         quantity = parse_fraction(quantity)
-        source = self.parser.parse_unit(source)
-        target = self.parser.parse_unit(target)
+        source = self.registry.parse_unit(source)
+        target = self.registry.parse_unit(target)
 
         # Convert from source unit to kelvin
         if source.name.endswith("kelvin"):

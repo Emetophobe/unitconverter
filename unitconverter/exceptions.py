@@ -16,7 +16,7 @@ class ConverterError(Exception):
             return self.msg
 
 
-class ConversionError(ConverterError):
+class IncompatibleUnitError(ConverterError):
     """ Incompatible unit errors. """
 
     def __init__(self, source, target) -> None:
@@ -24,7 +24,7 @@ class ConversionError(ConverterError):
 
 
 class InvalidUnitError(ConverterError):
-    """ Invalid/undefined unit errors. """
+    """ Invalid or undefined unit errors. """
 
     def __init__(self, name: str) -> None:
         super().__init__(f"{name!r} is not a defined unit")

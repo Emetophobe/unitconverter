@@ -4,7 +4,6 @@
 
 from __future__ import annotations
 
-from unitconverter.exceptions import ConverterError
 from unitconverter.formatting import format_display_name
 
 
@@ -18,18 +17,13 @@ class Dimension(dict):
         ----------
         dimension : str | dict[str, int] | None, optional
             A dimension name or dimension dictionary, by default None
-
-        Raises
-        ------
-        ConverterError
-            If the dimension is invalid
         """
         if isinstance(dimension, str) and dimension:
             super().__init__({dimension: 1})
         elif isinstance(dimension, dict):
             super().__init__(dimension)
         elif dimension is not None:
-            raise ConverterError(f"{dimension!r} is not a valid dimension")
+            raise TypeError(f"{dimension!r} is not a valid dimension")
 
     @property
     def name(self):
@@ -45,14 +39,14 @@ class Dimension(dict):
             return self
 
         if exponent == 0:
-            raise ConverterError(f"{exponent} must be a positive or negative integer")
+            raise ValueError("exponent must be a non-zero integer")
 
         # Pow just multiplies all exponents
-        dimen = self.copy()
-        for name in dimen.keys():
-            dimen[name] *= exponent
+        dimension = self.copy()
+        for name in dimension.keys():
+            dimension[name] *= exponent
 
-        return Dimension(dimen)
+        return Dimension(dimension)
 
     def __mul__(self, other: Dimension) -> Dimension:
         """ Multiply a dimension with another dimension. Returns a new dimension. """

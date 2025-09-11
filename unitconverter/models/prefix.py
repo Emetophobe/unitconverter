@@ -3,17 +3,7 @@
 
 
 from fractions import Fraction
-
-from unitconverter.exceptions import ConverterError
 from unitconverter.utils import parse_fraction
-
-
-# List of valid prefix options
-PREFIX_OPTIONS = [
-    "none",         # don't generate prefixes (default)
-    "metric",       # metric prefixes
-    "binary",       # binary prefixes (kilo, kibi, etc..)
-]
 
 
 class Prefix:
@@ -32,7 +22,7 @@ class Prefix:
 
 
 # SI prefixes
-METRIC_PREFIXES = [
+metric_prefixes = [
     Prefix("quecto", "q", "1E-30"),
     Prefix("ronto", "r", "1E-27"),
     Prefix("yocto", "y", "1E-24"),
@@ -60,7 +50,7 @@ METRIC_PREFIXES = [
 ]
 
 # Binary prefixes (used by bit and byte units)
-BINARY_PREFIXES = [
+binary_prefixes = [
     Prefix("kilo", "k", "1E+3"),
     Prefix("mega", "M", "1E+6"),
     Prefix("giga", "G", "1E+9"),
@@ -82,11 +72,11 @@ BINARY_PREFIXES = [
 
 def get_prefixes(option: str | None) -> list[Prefix]:
     """ Get a list of supported prefixes based on the prefix option. """
-    if option is None or option == "none":
+    if option is None:
         return []
     elif option == "metric":
-        return METRIC_PREFIXES
+        return metric_prefixes
     elif option == "binary":
-        return BINARY_PREFIXES
+        return binary_prefixes
     else:
-        raise ConverterError(f"{option} is not a valid prefix option")
+        raise TypeError(f"{option!r} is not a valid prefix option")

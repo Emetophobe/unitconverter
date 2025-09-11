@@ -3,7 +3,6 @@
 
 
 from fractions import Fraction
-from unitconverter.exceptions import ConverterError
 
 
 def parse_fraction(value: Fraction | str | int) -> Fraction:
@@ -12,9 +11,9 @@ def parse_fraction(value: Fraction | str | int) -> Fraction:
         return value
 
     if isinstance(value, float):
-        raise ConverterError("Cannot mix floats and fractions. For better accuracy"
-                             f"wrap float in a string; i.e Fraction(\"{value}\")")
+        raise TypeError("Cannot mix floats and fractions. For better accuracy"
+                        f"wrap float in a string; i.e Fraction(\"{value}\")") from None
     try:
         return Fraction(value)
     except (TypeError, ValueError):
-        raise ConverterError(f"{value!r} is not a fraction or decimal value")
+        raise TypeError(f"{value!r} is not a fraction or decimal value") from None

@@ -4,8 +4,9 @@
 
 
 import sys
-import logging
 import argparse
+import logging
+import traceback
 
 from unitconverter.converter import UnitConverter
 from unitconverter.exceptions import ConverterError
@@ -16,6 +17,12 @@ def print_error(msg: str, status: int = 1) -> None:
     """ Print an error message and exit. """
     print(msg, file=sys.stderr)
     sys.exit(status)
+
+
+def print_traceback(error: Exception) -> None:
+    """ Print a stack trace and exit. """
+    traceback.print_exception(error)
+    sys.exit(1)
 
 
 def main() -> None:
@@ -74,13 +81,6 @@ def main() -> None:
     if args.precision is not None and (args.precision < 0 or args.precision > 30):
         print_error("Error: Precision must be between 0 and 30")
 
-    # Allow <source> to <target> syntax but check for errors
-    if "to" in args.target:
-        if args.target.count("to") > 1 or args.target[0] != "to" or len(args.target) == 1:
-            print_error("Error: Invalid use of <source> to <target> syntax")
-        # Make sure to remove "to" from the target units
-        args.target.remove("to")
-
     # Configure debug logger
     logging.getLogger().setLevel(logging.DEBUG if args.debug else logging.WARNING)
     logging.basicConfig(format="debug: %(message)s")
@@ -88,9 +88,12 @@ def main() -> None:
     results = []
 
     # Perform conversions
-    converter = UnitConverter()
-    for target in args.target:
-        results.append((converter.convert(args.quantity, args.source, target), target))
+    try:
+        converter = UnitConverter()
+        for target in args.target:
+            results.append((converter.convert(args.quantity, args.source, target), target))
+    except (ConverterError, TypeError, ValueError) as error:
+        print_traceback(error) if args.debug else print_error(f"Error: {error}")
 
     # Display results
     padding = " " * len(f"{args.quantity} {args.source}")
@@ -98,8 +101,8 @@ def main() -> None:
         result = format_quantity(result,
                                  args.precision,
                                  args.normalize,
-                                 args.exponent,
                                  args.fraction,
+                                 args.exponent,
                                  args.separators)
         if index == 0:
             print(f"{args.quantity} {args.source} = {result} {target}")
@@ -108,7 +111,4 @@ def main() -> None:
 
 
 if __name__ == "__main__":
-    try:
-        main()
-    except (ConverterError, TypeError, ValueError) as e:
-        print_error("Error: " + str(e))
+    main()

@@ -36,24 +36,6 @@
 		"prefix": "metric",
 		"factor": 4.184E+9
 	},
-	"watt-second": {
-		"symbols": ["Ws", "W-s"],
-		"aliases": ["watt-seconds", "wattseconds", "wattsecond"],
-		"prefix": "metric",
-		"factor": 1
-	},
-	"watt-minute": {
-		"symbols": ["Wm", "W-m"],
-		"aliases": ["watt-minutes", "wattminutes", "wattminute"],
-		"prefix": "metric",
-		"factor": 60
-	},
-	"watt-hour": {
-		"symbols": ["Wh", "W-h"],
-		"aliases": ["watt-hours", "watthours", "watthour"],
-		"prefix": "metric",
-		"factor": 3600
-	},
 	"erg": {
 		"aliases": ["ergs"],
         "comment": "CGS unit of energy",

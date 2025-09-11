@@ -1,0 +1,10 @@
+{
+    "psi": "pound-force/in^2",
+    "ksi": "kilopound-force/in^2",
+    "Wh": "watt*hour",
+    "kWh": "kilowatt*hour",
+    "kmph": "kilometre/hour",
+    "kph": "kilometre/hour",
+    "mph": "mile/hour",
+    "knot": "nautical mile/hour"
+}

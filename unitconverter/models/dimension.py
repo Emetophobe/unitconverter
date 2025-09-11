@@ -27,11 +27,11 @@ class Dimension(dict):
 
     @property
     def name(self):
-        """ Convert dictionary into a human readable string. """
+        """ Get a string representation of the dimension. """
         return format_display_name(list(self.items()))
 
     def __pow__(self, exponent: int) -> Dimension:
-        """ Raise a dimension to a new power. Returns a new dimension."""
+        """ Raise a dimension to a new power. Returns a new dimension. """
         if not isinstance(exponent, int):
             return NotImplemented
 

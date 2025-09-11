@@ -42,7 +42,7 @@ class BaseUnit:
 
     @property
     def prefixes(self) -> str | None:
-        """ No prefixes by default. """
+        """ Get the prefix option. """
         return None
 
     @property
@@ -158,7 +158,7 @@ class Unit(BaseUnit):
 
     @property
     def units(self) -> list[tuple[Unit, int]]:
-        """ Get a list of unit and exponent tuples that represent this unit. """
+        """ Get a list of unit tuples that represent this unit. """
         return [(self, 1)]
 
     @property
@@ -189,6 +189,7 @@ class CompositeUnit(BaseUnit):
 
     @property
     def name(self) -> str:
+        """ Get a string representation of the unit. """
         names = [(unit.name, exponent) for unit, exponent in self.units]
         return format_display_name(names)
 
@@ -202,6 +203,7 @@ class CompositeUnit(BaseUnit):
 
     @property
     def factor(self) -> Fraction:
+        """ Get the composite unit factor. """
         factor = Fraction(1)
         for unit, exponent in self.units:
             factor *= unit.factor ** exponent
@@ -209,6 +211,7 @@ class CompositeUnit(BaseUnit):
 
     @property
     def dimension(self) -> Dimension:
+        """ Get the composite unit dimension. """
         dimension = Dimension()
         for unit, exponent in self.units:
             dimension *= unit.dimension ** exponent
@@ -216,7 +219,7 @@ class CompositeUnit(BaseUnit):
 
     @property
     def units(self) -> list[tuple[Unit, int]]:
-        """ Get a list of unit and exponent tuples that represent this unit. """
+        """ Get a list of unit tuples that represent this composite unit. """
         return self._units
 
     def _reduce_units(self, units: list[tuple[Unit, int]]) -> list[tuple[Unit, int]]:

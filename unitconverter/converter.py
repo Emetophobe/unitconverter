@@ -16,7 +16,7 @@ class UnitConverter:
     """ The unit converter handles loading, parsing, and converting units."""
 
     def __init__(self) -> None:
-        """ Create a new unit converter. """
+        """ Create a unit converter. """
         self.registry = Registry()
 
     def convert(self,

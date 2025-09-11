@@ -13,10 +13,11 @@ def format_quantity(quantity: Fraction,
                     normalize: bool = False,
                     fraction: bool = False,
                     exponent: bool = False,
-                    separators: bool = False) -> str:
+                    separators: bool = False
+                    ) -> str:
     """ Format quantity into a string for display.
 
-    If fragment is True all other arguments are ignored.
+    If fraction is True all other arguments are ignored.
     If exponent is True the separators argument is ignored.
 
     Parameters
@@ -28,7 +29,7 @@ def format_quantity(quantity: Fraction,
         Set rounding precision, by default None
 
     normalize : bool, optional
-        Normalize value by stripping the rightmost trailing zeros, by default False
+        Strip trailing zeros, by default False
 
     fraction : bool, optional
         Show fraction, by default False

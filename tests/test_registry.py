@@ -60,7 +60,6 @@ class TestRegistry(unittest.TestCase):
             registry.add_alias("metre", "metre")
 
     def test_get_unit(self) -> None:
-
         registry = Registry()
 
         with self.assertRaises(InvalidUnitError):

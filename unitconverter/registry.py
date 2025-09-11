@@ -14,19 +14,17 @@ from unitconverter.models.unit import BaseUnit, Unit
 
 
 class Registry:
-    """ The registry is used to store pre-defined units.
-
-        Use add_unit() to add a unit to the registry.
-        Use get_unit() to get a unit from the registry.
-    """
+    """ The registry is used to store and retrieve pre-defined units. """
 
     def __init__(self, units: list[BaseUnit] | None = None) -> None:
         """ Create a unit registry.
 
+        If no units are specified defaults are loaded from the json files.
+
         Parameters
         ----------
         units : list[Unit] | None, optional
-            A list of units (mainly used for testing), by default None
+            A list of units, by default None
         """
         self.units: dict[str, BaseUnit] = {}
 

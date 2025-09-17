@@ -28,8 +28,6 @@ class FileParser:
         if not files:
             raise ConverterError(f"No unit files found in '{path.absolute()}'")
 
-        units = {}
-
         # Load units
         for filename in files:
             # Parse alias file separately after all units have been loaded
@@ -46,9 +44,6 @@ class FileParser:
 
             # Convert json dictionary to units
             for name, args in data.items():
-                if name in units:
-                    raise ConverterError(f"{name} is already defined by {units[name]}")
-
                 # The conversion factor is required
                 try:
                     factor = args["factor"]

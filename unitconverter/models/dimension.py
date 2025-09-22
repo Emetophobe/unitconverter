@@ -2,35 +2,69 @@
 # https://www.github.com/emetophobe/unitconverter
 
 
-from __future__ import annotations
+from collections import defaultdict
+from collections.abc import Mapping
+from typing import Iterator, Self
 
 from unitconverter.formatting import format_display_name
 
 
-class Dimension(dict):
-    """ All unit dimensions can be represented using a custom exponent dictionary. """
+class Dimension(Mapping):
+    """ All unit dimensions are represented using a custom exponent dictionary.
 
-    def __init__(self, dimension: str | dict[str, int] | None = None) -> None:
-        """ Create a new dimension.
+        For convenience passing a string creates an equivalent dictionary:
 
-        Parameters
-        ----------
-        dimension : str | dict[str, int] | None, optional
-            A dimension name or dimension dictionary, by default None
-        """
-        if isinstance(dimension, str) and dimension:
-            super().__init__({dimension: 1})
-        elif isinstance(dimension, dict):
-            super().__init__(dimension)
-        elif dimension is not None:
+            >> Dimension("time") == Dimension({"time": 1})
+            True
+
+        Dimensions can be divided to create new dimensions:
+
+            >> length = Dimension("length")
+            >> time = Dimension("time")
+
+            >> speed = length / time
+
+            >> dict(speed)
+            {'length': 1, 'time': -1}
+
+            >> str(speed)
+            'length/time'
+
+        Multiplication and exponentiation are also supported:
+
+            >> area = length * length
+            >> dict(area)
+            {'length': 2}
+
+            >> volume = length ** 3
+            >> dict(volume)
+            {'length': 3}
+
+    """
+
+    def __init__(self,  dimension: str | Self | dict[str, int] | None = None) -> None:
+        """ Create a new dimension. """
+
+        if dimension is None:
+            dimension = {}
+
+        elif isinstance(dimension, str) and dimension != "":
+            dimension = {dimension: 1}
+
+        elif isinstance(dimension, Dimension):
+            dimension = dimension.dimension
+
+        elif not isinstance(dimension, dict):
             raise TypeError(f"{dimension!r} is not a valid dimension")
+
+        self.dimension = defaultdict(int, dimension)
 
     @property
     def name(self):
         """ Get a string representation of the dimension. """
         return format_display_name(list(self.items()))
 
-    def __pow__(self, exponent: int) -> Dimension:
+    def __pow__(self, exponent: int) -> Self:
         """ Raise a dimension to a new power. Returns a new dimension. """
         if not isinstance(exponent, int):
             return NotImplemented
@@ -42,41 +76,49 @@ class Dimension(dict):
             raise ValueError("exponent must be a non-zero integer")
 
         # Pow just multiplies all exponents
-        dimension = self.copy()
+        dimension = self.dimension.copy()
         for name in dimension.keys():
             dimension[name] *= exponent
 
-        return Dimension(dimension)
+        return self.__class__(dimension)
 
-    def __mul__(self, other: Dimension) -> Dimension:
+    def __mul__(self, other: Self) -> Self:
         """ Multiply a dimension with another dimension. Returns a new dimension. """
         if not isinstance(other, Dimension):
             return NotImplemented
 
-        # Multiply just adds exponents from both dictionaries
-        dimension = self.copy()
-        for name, exp in other.items():
-            dimension[name] = dimension.get(name, 0) + exp
+        dimension = self.dimension.copy()
+        for name, exponent in other.items():
+            dimension[name] += exponent
             if not dimension[name]:
                 del dimension[name]
 
-        return Dimension(dimension)
+        return self.__class__(dimension)
 
-    def __truediv__(self, other: Dimension) -> Dimension:
+    def __truediv__(self, other: Self) -> Self:
         """ Divide a dimension with another dimension. Returns a new dimension. """
         if not isinstance(other, Dimension):
             return NotImplemented
 
-        dimension = self.copy()
-        for name, exp in other.items():
-            dimension[name] = dimension.get(name, 0) - exp
+        dimension = self.dimension.copy()
+        for name, exponent in other.items():
+            dimension[name] -= exponent
             if not dimension[name]:
                 del dimension[name]
 
-        return Dimension(dimension)
+        return self.__class__(dimension)
+
+    def __getitem__(self, key: str) -> int:
+        return self.dimension[key]
+
+    def __iter__(self) -> Iterator:
+        return iter(self.dimension)
+
+    def __len__(self) -> int:
+        return len(self.dimension)
 
     def __repr__(self) -> str:
-        return f"Dimension({super().__repr__()})"
+        return f"Dimension({dict(self.dimension)!r})"
 
     def __str__(self) -> str:
         return self.name

@@ -103,7 +103,7 @@ class Unit(BaseUnit):
                  name: str,
                  symbols: list[str] | None = None,
                  aliases: list[str] | None = None,
-                 dimen: Dimension | None = None,
+                 dimension: Dimension | None = None,
                  factor: Fraction | str | int = 1,
                  prefixes: str | None = None
                  ) -> None:
@@ -132,7 +132,7 @@ class Unit(BaseUnit):
         self._name = name
         self._symbols = symbols or []
         self._aliases = aliases or []
-        self._dimension = Dimension(dimen)
+        self._dimension = Dimension(dimension)
         self._factor = parse_fraction(factor)
         self._prefixes = prefixes
 

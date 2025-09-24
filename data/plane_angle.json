@@ -11,25 +11,25 @@
 		"symbols": ["arcsec", "″"],
 		"aliases": ["arcseconds"],
 		"prefix": "metric",
-		"factor": 0.000004848136811095359746910437451
+		"factor": "3141592653589793/648000000000000000000"
 	},
 	"arcminute": {
 		"symbols": ["arcmin", "′"],
 		"aliases": ["arcminutes"],
-		"factor": 0.0002908882086657215848146262471
+		"factor": "3141592653589793/10800000000000000000"
 	},
 	"degree": {
 		"symbols": ["deg"],
 		"aliases": ["degrees"],
-		"factor": 0.01745329251994329508887757483
+        "factor": "3141592653589793/180000000000000000"
 	},
 	"gradian": {
 		"symbols": ["gon", "grad"],
 		"aliases": ["gradians", "grade"],
-		"factor": 0.01570796326794896557998981734
+		"factor": "3141592653589793/200000000000000000"
 	},
 	"turn": {
 		"symbols": ["tr"],
-		"factor": 6.283185307179586
+		"factor": "3141592653589793/500000000000000"
 	}
 }

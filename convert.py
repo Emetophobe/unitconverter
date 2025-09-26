@@ -79,10 +79,10 @@ def main() -> None:
 
     # Check precision
     if args.precision is not None and (args.precision < 0 or args.precision > 30):
-        print_error("Error: Precision must be between 0 and 30")
+        print_error("Error: precision must be between 0 and 30")
 
     # Configure debug logger
-    logging.getLogger().setLevel(logging.DEBUG if args.debug else logging.WARNING)
+    logging.getLogger().setLevel(logging.DEBUG if args.debug else logging.INFO)
     logging.basicConfig(format="debug: %(message)s")
 
     results = []

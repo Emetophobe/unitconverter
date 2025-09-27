@@ -13,7 +13,7 @@
 		"factor": 60
 	},
 	"hour": {
-		"symbols": ["hr", "hrs"],
+		"symbols": ["h", "hr", "hrs"],
 		"aliases": ["hours"],
 		"factor": 3600
 	},

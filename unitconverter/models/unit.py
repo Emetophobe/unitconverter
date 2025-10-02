@@ -3,9 +3,7 @@
 
 
 from __future__ import annotations
-
 from fractions import Fraction
-
 
 from unitconverter.exceptions import ConverterError
 from unitconverter.formatting import format_display_name
@@ -14,18 +12,10 @@ from unitconverter.utils import parse_fraction
 
 
 class BaseUnit:
-    """ Abstract base class. Don't use this directly. """
+    """ Base unit class. Don't use this directly. """
 
     @property
     def name(self) -> str:
-        raise NotImplementedError
-
-    @property
-    def symbols(self) -> list[str]:
-        raise NotImplementedError
-
-    @property
-    def aliases(self) -> list[str]:
         raise NotImplementedError
 
     @property
@@ -33,22 +23,12 @@ class BaseUnit:
         raise NotImplementedError
 
     @property
-    def units(self) -> list[tuple[Unit, int]]:
-        raise NotImplementedError
-
-    @property
     def dimension(self) -> Dimension:
         raise NotImplementedError
 
     @property
-    def prefixes(self) -> str | None:
-        """ Get the prefix option. """
-        return None
-
-    @property
-    def names(self) -> list[str]:
-        """ Get a list of all unit names, symbols, and aliases. """
-        return [self.name] + self.symbols + self.aliases
+    def units(self) -> list[tuple[Unit, int]]:
+        raise NotImplementedError
 
     def __mul__(self, other: BaseUnit) -> BaseUnit:
         """ Multiply a Unit with another Unit. Returns a new CompositeUnit. """
@@ -82,15 +62,13 @@ class BaseUnit:
         """ Compare two units for equality. """
         return (isinstance(other, BaseUnit)
                 and self.name == other.name
-                and self.symbols == other.symbols
-                and self.aliases == other.aliases
-                and self.dimension == other.dimension
                 and self.factor == other.factor
-                and self.units == other.units
-                and self.prefixes == other.prefixes)
+                and self.dimension == other.dimension
+                and self.units == other.units)
 
     def __repr__(self) -> str:
-        return "BaseUnit()"
+        args = [f"{k.lstrip("_")}={v!r}" for k, v in self.__dict__.items()]
+        return f"{self.__class__.__name__}({", ".join(args)})"
 
     def __str__(self) -> str:
         return self.name
@@ -149,12 +127,12 @@ class Unit(BaseUnit):
         return self._aliases
 
     @property
-    def dimension(self) -> Dimension:
-        return self._dimension
-
-    @property
     def factor(self) -> Fraction:
         return self._factor
+
+    @property
+    def dimension(self) -> Dimension:
+        return self._dimension
 
     @property
     def units(self) -> list[tuple[Unit, int]]:
@@ -162,12 +140,13 @@ class Unit(BaseUnit):
         return [(self, 1)]
 
     @property
+    def names(self) -> list[str]:
+        """ Get a list of all unit names and symbols. """
+        return [self.name] + self.symbols + self.aliases
+
+    @property
     def prefixes(self) -> str | None:
         return self._prefixes
-
-    def __repr__(self) -> str:
-        return (f"Unit({self._name!r}, {self._symbols!r}, {self._aliases!r},"
-                f" {self._dimension!r}, {self._factor!r}, {self._prefixes!r})")
 
 
 class CompositeUnit(BaseUnit):
@@ -194,14 +173,6 @@ class CompositeUnit(BaseUnit):
         return format_display_name(names)
 
     @property
-    def symbols(self) -> list[str]:
-        return []
-
-    @property
-    def aliases(self) -> list[str]:
-        return []
-
-    @property
     def factor(self) -> Fraction:
         """ Get the composite unit factor. """
         factor = Fraction(1)
@@ -219,7 +190,7 @@ class CompositeUnit(BaseUnit):
 
     @property
     def units(self) -> list[tuple[Unit, int]]:
-        """ Get a list of unit tuples that represent this composite unit. """
+        """ Get a list of unit tuples that represent this unit. """
         return self._units
 
     def _reduce_units(self, units: list[tuple[Unit, int]]) -> list[tuple[Unit, int]]:
@@ -244,6 +215,3 @@ class CompositeUnit(BaseUnit):
             raise ConverterError(f"{name!r} is not a valid unit")
 
         return list(zip(reduced, exponents))
-
-    def __repr__(self) -> str:
-        return f"CompositeUnit({self._units}, {self._reduce})"

@@ -14,59 +14,62 @@ from unitconverter.registry import Registry
 
 
 class FileParser:
-    """ Parse unit files into a unit registry. """
+    """ Load unit definitions into a unit registry. """
 
-    def create_registry(self) -> Registry:
-        """ Create a registry from pre-defined unit files. """
-        registry = Registry()
+    def load_units(self, registry: Registry) -> None:
+        """ Load pre-defined units into the specified registry. Clears existing units. """
+
+        if not isinstance(registry, Registry):
+            raise TypeError(f"{registry!r} is not a valid unit registry")
 
         path = Path("data")
-        alias_file = path / "aliases.json"
 
         files = list(path.glob("*.json"))
+        alias_file = path / "aliases.json"
+
+        # Remove aliases from the rest of the files
+        try:
+            files.remove(alias_file)
+        except ValueError:
+            raise ConverterError("missing required aliases.json file")
 
         if not files:
             raise ConverterError(f"No unit files found in '{path.absolute()}'")
 
-        # Load units
-        for filename in files:
-            # Parse alias file separately after all units have been loaded
-            if filename == alias_file:
-                continue
+        # Clear existing units to avoid duplicates
+        registry.clear()
 
+        # Load unit files
+        for filename in files:
             data = self._parse_json(filename)
 
-            # Remove dimension from the rest of the data
-            try:
-                dimension = data.pop("dimension")
-            except KeyError:
+            # Get dimension from the top of the unit file
+            dimension = data.pop("dimension", None)
+            if dimension is None:
                 raise ConverterError(f"{filename} is missing required dimension")
 
-            # Convert json dictionary to units
+            # Convert unit dictionary to unit instances
             for name, args in data.items():
                 # The conversion factor is required
-                try:
-                    factor = args["factor"]
-                except KeyError:
+                factor = args.get("factor", None)
+                if factor is None:
                     raise ConverterError(f"{name} is missing required factor")
 
                 # Other keys are optional
                 symbols = args.get("symbols", [])
                 aliases = args.get("aliases", [])
-                prefix = args.get("prefix", None)
+                prefixes = args.get("prefix", None)
 
-                # Add the unit
-                registry.add_unit(Unit(name, symbols, aliases, dimension, factor, prefix))
+                # Create the unit
+                registry.add_unit(Unit(name, symbols, aliases, dimension, factor, prefixes))
 
-        # Load additional unit aliases
+        # Load composite unit aliases
         aliases = self._parse_json(alias_file)
         parser = UnitParser(registry)
 
         for alias, name in aliases.items():
             unit = parser.parse_unit(name)
             registry.add_alias(alias, unit)
-
-        return registry
 
     def _parse_json(self, filename: Path) -> dict:
         """ Parse a json file into a dictionary. """

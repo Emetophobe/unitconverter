@@ -10,6 +10,7 @@ from unitconverter.exceptions import ConverterError, IncompatibleUnitError
 from unitconverter.models.unit import BaseUnit
 from unitconverter.parsers.fileparser import FileParser
 from unitconverter.parsers.unitparser import UnitParser
+from unitconverter.registry import Registry
 from unitconverter.utils import parse_fraction
 
 
@@ -18,8 +19,9 @@ class UnitConverter:
 
     def __init__(self) -> None:
         """ Create a unit converter. """
-        self.registry = FileParser().create_registry()
+        self.registry = Registry()
         self.parser = UnitParser(self.registry)
+        FileParser().load_units(self.registry)
 
     def convert(self,
                 quantity: Fraction,

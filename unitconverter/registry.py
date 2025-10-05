@@ -87,3 +87,7 @@ class Registry:
             return self.units[name]
         except KeyError:
             raise InvalidUnitError(name)
+
+    def clear(self) -> None:
+        """ Clear the unit registry. """
+        self.units.clear()

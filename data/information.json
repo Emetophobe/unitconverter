@@ -1,5 +1,5 @@
 {
-	"dimension": {"bits": 1},
+	"dimension": {"information": 1},
 
 	"bit": {
 		"symbols": ["b"],

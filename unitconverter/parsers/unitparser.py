@@ -10,12 +10,12 @@ from unitconverter.registry import Registry
 
 
 class UnitParser:
-    """ Parse a unit name or composite unit name into a unit instance. """
+    """ Parse a unit string into a unit instance. """
 
     def __init__(self, registry: Registry) -> None:
-        """ Create a unit parser with the specified unit registry. """
-        if not registry or not isinstance(registry, Registry):
-            raise TypeError(f"{registry!r} is not a Registry")
+        """ Create a unit parser. """
+        if not isinstance(registry, Registry):
+            raise TypeError(f"{registry!r} is not a valid unit registry")
 
         self.registry = registry
 
@@ -30,10 +30,10 @@ class UnitParser:
         Returns
         -------
         BaseUnit
-            The unit instance.
+            The unit instance
         """
 
-        # Check if we already have a unit (fast track without parsing)
+        # Check if we already have a unit
         if isinstance(name, BaseUnit):
             return name
 
@@ -42,7 +42,7 @@ class UnitParser:
 
         simple_name = self._simplify_unit(name)
 
-        # Check if the unit is in the registry (fast track without parsing)
+        # Check if the unit is in the registry
         try:
             return self.registry.get_unit(simple_name)
         except InvalidUnitError:

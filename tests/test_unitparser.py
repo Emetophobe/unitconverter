@@ -3,10 +3,12 @@
 
 
 import unittest
+from fractions import Fraction
 
 from tests.mock_units import metre, second
 
 from unitconverter.exceptions import InvalidUnitError
+from unitconverter.models.dimension import Dimension
 from unitconverter.parsers.unitparser import UnitParser
 from unitconverter.registry import Registry
 
@@ -34,16 +36,21 @@ class TestUnitParser(unittest.TestCase):
             self.parser.parse_unit("undefined unit")
 
         # Test division
-        unit = self.parser.parse_unit("metre/s")
-        self.assertTrue(unit.name, "metre/s")
-        self.assertTrue(unit.factor, 1)
-        self.assertTrue(unit.dimension, {"metre": 1, "second": -1})
+        unit = self.parser.parse_unit("m/s")
+        self.assertEqual(unit.name, "metre/second")
+        self.assertEqual(unit.factor, 1)
+        self.assertEqual(unit.dimension, Dimension({"length": 1, "time": -1}))
+
+        unit = self.parser.parse_unit("m/s/s")
+        self.assertEqual(unit.name, "metre/second^2")
+        self.assertEqual(unit.factor, 1)
+        self.assertEqual(unit.dimension, Dimension({"length": 1, "time": -2}))
 
         # Test multiplication
-        unit = self.parser.parse_unit("metre*s")
-        self.assertTrue(unit.name, "metre*s")
-        self.assertTrue(unit.factor, 1)
-        self.assertTrue(unit.dimension, {"metre": 1, "second": -1})
+        unit = self.parser.parse_unit("cm*s")
+        self.assertEqual(unit.name, "centimetre*second")
+        self.assertEqual(unit.factor, Fraction(1, 100))
+        self.assertEqual(unit.dimension, Dimension({"length": 1, "time": 1}))
 
         # Test positive exponents
         unit1 = self.parser.parse_unit("metre")

@@ -24,7 +24,7 @@
 		"symbols": ["Torr"],
 		"aliases": ["torrs"],
         "comment": "Older metric unit of pressure",
-		"factor": 133.322
+		"factor": "101325/760"
 	},
 	"pieze": {
 		"symbols": ["pz"],
@@ -45,7 +45,7 @@
 		"symbols": ["mHg", "m Hg"],
 		"aliases": ["metres of mercury"],
 		"prefix": "metric",
-		"factor": 133322.4
+        "factor": 133322.387415
 	},
 	"inch of mercury": {
 		"symbols": ["inHg", "in Hg"],

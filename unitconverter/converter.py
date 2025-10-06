@@ -85,7 +85,7 @@ class UnitConverter:
         elif source.name.endswith("fahrenheit"):
             quantity = (quantity * source.factor + Fraction("459.67")) * Fraction(5, 9)
         elif source.name.endswith("rankine"):
-            quantity = quantity * source.factor * Fraction(5, 9)
+            quantity = quantity * source.factor
         else:
             raise ConverterError(f"{source} is not a temperature unit")
 
@@ -97,6 +97,6 @@ class UnitConverter:
         elif target.name.endswith("fahrenheit"):
             return (quantity * Fraction(9, 5) - Fraction("459.67")) / target.factor
         elif target.name.endswith("rankine"):
-            return (quantity * Fraction(9, 5)) / target.factor
+            return quantity / target.factor
         else:
             raise ConverterError(f"{target} is not a temperature unit")

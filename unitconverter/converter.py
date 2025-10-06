@@ -7,7 +7,7 @@ import logging
 from fractions import Fraction
 
 from unitconverter.exceptions import ConverterError, IncompatibleUnitError
-from unitconverter.models.unit import BaseUnit
+from unitconverter.models.unit import Unit
 from unitconverter.parsers.fileparser import FileParser
 from unitconverter.parsers.unitparser import UnitParser
 from unitconverter.registry import Registry
@@ -25,8 +25,8 @@ class UnitConverter:
 
     def convert(self,
                 quantity: Fraction,
-                source: str | BaseUnit,
-                target: str | BaseUnit
+                source: str | Unit,
+                target: str | Unit
                 ) -> Fraction:
         """ Convert quantity from the source unit to the target unit.
 
@@ -34,9 +34,11 @@ class UnitConverter:
         ----------
         quantity : Fraction
             A quantity or value
-        source : str | BaseUnit
+
+        source : str | Unit
             Source unit name or instance
-        target : str | BaseUnit
+
+        target : str | Unit
             Target unit name or instance
 
         Returns
@@ -66,8 +68,8 @@ class UnitConverter:
 
     def convert_temperature(self,
                             quantity: Fraction,
-                            source: str | BaseUnit,
-                            target: str | BaseUnit
+                            source: str | Unit,
+                            target: str | Unit
                             ) -> Fraction:
         """ Convert quantity from the source temperature unit to the target unit. """
 

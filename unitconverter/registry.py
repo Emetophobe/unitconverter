@@ -4,89 +4,66 @@
 
 from unitconverter.exceptions import DuplicateUnitError, InvalidUnitError
 from unitconverter.models.prefix import get_prefixes
-from unitconverter.models.unit import BaseUnit, Unit
+from unitconverter.models.unit import Unit
 
 
 class Registry:
     """ The registry is used to store and retrieve pre-defined units. """
 
-    def __init__(self, units: list[Unit] | None = None) -> None:
+    def __init__(self, units: list[Unit] | tuple[Unit, ...] = ()) -> None:
         """ Create a unit registry.
 
         Parameters
         ----------
-        units : list[Unit] | None, optional
-            A list of units, by default None
+        units : list[Unit] | tuple[Unit, ...], optional
+            A list or tuple of units, by default ()
         """
-        self.units: dict[str, BaseUnit] = {}
-
-        if units is None:
-            units = []
-
-        elif not isinstance(units, list):
-            raise TypeError(f"{units!r} is not a list of units")
+        self.units: dict[str, Unit] = {}
 
         for unit in units:
             self.add_unit(unit)
 
     def add_unit(self, unit: Unit) -> None:
         """ Add a unit to the registry.
-
-        If the unit supports metric or binary prefixes then this method
-        will also create and register prefixed versions of the unit.
-
-        Parameters
-        ----------
-        unit : Unit
-            The unit instance
+            Also adds prefixed versions of the unit if the unit has a prefix setting.
         """
-
         if not isinstance(unit, Unit):
             raise TypeError(f"{unit!r} is not a valid unit")
 
-        # Add all unit names
+        # Register all unit names and symbols
         for name in unit.names:
-            self.add_alias(name, unit)
+            self.add_alias(unit, name)
 
-        # Add prefixed versions of the unit if the unit supports it
+        # Register prefixed units if the unit has a list of prefixes
         for prefix in get_prefixes(unit.prefixes):
+            factor = prefix.factor * unit.factor
             name = prefix.name + unit.name
             symbols = [prefix.symbol + symbol for symbol in unit.symbols]
             aliases = [prefix.name + alias for alias in unit.aliases]
-            factor = prefix.factor * unit.factor
 
-            # Make sure prefixes=None to prevent re-prefixing and infinite recursion
-            self.add_unit(Unit(name, symbols, aliases, unit.dimension, factor))
+            self.add_unit(Unit(factor, name, unit.dimension, symbols, aliases))
 
-    def add_alias(self, alias: str, unit: BaseUnit) -> None:
-        """ Add a unit alias to the registry.
-
-        Parameters
-        ----------
-        alias : str
-            The unit name, symbol, or alias.
-        unit : BaseUnit
-            The unit instance to alias
-        """
+    def add_alias(self, unit: Unit, alias: str) -> None:
+        """ Add a unit alias to the registry. """
+        if not isinstance(unit, Unit):
+            raise TypeError(f"{unit!r} is not a valid unit")
 
         if not alias or not isinstance(alias, str):
             raise TypeError(f"{alias!r} is not a valid unit alias")
 
-        if not isinstance(unit, BaseUnit):
-            raise TypeError(f"{unit!r} is not a valid unit")
-
+        # Check for duplicate aliases
         if alias in self.units:
             raise DuplicateUnitError(alias, self.units[alias].name)
 
-        # Add the alias
+        # Add the unit reference
         self.units[alias] = unit
 
-    def get_unit(self, name: str) -> BaseUnit:
+    def get_unit(self, name: str) -> Unit:
         """ Get a unit by name, symbol, or alias. """
         try:
             return self.units[name]
         except KeyError:
-            raise InvalidUnitError(name)
+            raise InvalidUnitError(name) from None
 
     def clear(self) -> None:
         """ Clear the unit registry. """

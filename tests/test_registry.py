@@ -4,10 +4,10 @@
 
 import unittest
 
-from tests.mock_units import metre
-
 from unitconverter.exceptions import DuplicateUnitError, InvalidUnitError
 from unitconverter.registry import Registry
+
+from tests import metre, second
 
 
 class TestRegistry(unittest.TestCase):
@@ -15,51 +15,38 @@ class TestRegistry(unittest.TestCase):
 
     def setUp(self) -> None:
         self.registry = Registry()
-
-    def test___init__(self) -> None:
-        self.assertEqual(len(self.registry.units), 0, "Default registry should have 0 units")
-
-        # Invalid units should raise a TypeError
-        with self.assertRaises(TypeError):
-            Registry("not a list of units")  # type: ignore
-
-        # Duplicate units should raise a DuplicateUnitError
-        with self.assertRaises(DuplicateUnitError):
-            Registry([metre, metre])
-
-    def test_add_unit(self) -> None:
         self.registry.add_unit(metre)
 
+    def test_add_unit(self) -> None:
+        self.registry.add_unit(second)
+
         # Invalid units should raise a TypeError
         with self.assertRaises(TypeError):
-            self.registry.add_unit("not a unit")  # type: ignore
+            self.registry.add_unit(None)  # type: ignore
 
         # Duplicate units should raise a DuplicateUnitError
         with self.assertRaises(DuplicateUnitError):
             self.registry.add_unit(metre)
 
     def test_add_alias(self) -> None:
-        self.registry.add_unit(metre)
-        self.registry.add_alias("test_alias", metre)
+        self.registry.add_alias(metre, "new alias 1")
 
-        # Invalid alias should raise a TypeError
+        # Invalid units should raise a TypeError
         with self.assertRaises(TypeError):
-            self.registry.add_alias(None, metre)  # type: ignore
+            self.registry.add_alias(None, "new alias 2")  # type: ignore
 
-        # Invalid unit should raise a TypeError
+        # Invalid aliases should raise a TypeError
         with self.assertRaises(TypeError):
-            self.registry.add_alias("test_alias", None)  # type: ignore
+            self.registry.add_alias(metre, None)  # type: ignore
 
         # Duplicate aliases should raise a DuplicateUnitError
         with self.assertRaises(DuplicateUnitError):
-            self.registry.add_alias("metre", metre)
+            self.registry.add_alias(metre, "metre")
 
     def test_get_unit(self) -> None:
-        self.registry.add_unit(metre)
-
         # TODO: this should probably raise a TypeError
         with self.assertRaises(InvalidUnitError):
-            self.registry.get_unit(3.14)  # type: ignore
+            self.registry.get_unit(None)  # type: ignore
 
         # Invalid or undefined unit should raise an InvalidUnitError
         with self.assertRaises(InvalidUnitError):

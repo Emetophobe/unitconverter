@@ -4,7 +4,7 @@
 
 import unittest
 
-from tests.mock_units import metre, second
+from tests import metre, second
 
 
 class TestUnit(unittest.TestCase):
@@ -12,7 +12,7 @@ class TestUnit(unittest.TestCase):
 
     def test___init__(self) -> None:
         # TODO: Test Unit() construction
-        ...
+        pass
 
     def test__mul__(self) -> None:
         with self.assertRaises(TypeError):

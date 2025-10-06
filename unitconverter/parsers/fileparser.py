@@ -17,7 +17,9 @@ class FileParser:
     """ Load unit definitions into a unit registry. """
 
     def load_units(self, registry: Registry) -> None:
-        """ Load pre-defined units into the specified registry. Clears existing units. """
+        """ Load pre-defined units into the specified registry.
+            Clears any pre-existing registry units.
+        """
 
         if not isinstance(registry, Registry):
             raise TypeError(f"{registry!r} is not a valid unit registry")
@@ -31,7 +33,7 @@ class FileParser:
         try:
             files.remove(alias_file)
         except ValueError:
-            raise ConverterError("missing required aliases.json file")
+            raise ConverterError(f"No alias file found in '{alias_file.absolute()}'")
 
         if not files:
             raise ConverterError(f"No unit files found in '{path.absolute()}'")
@@ -43,25 +45,24 @@ class FileParser:
         for filename in files:
             data = self._parse_json(filename)
 
-            # Get dimension from the top of the unit file
+            # Remove dimension from the top of the unit file
             dimension = data.pop("dimension", None)
             if dimension is None:
                 raise ConverterError(f"{filename} is missing required dimension")
 
-            # Convert unit dictionary to unit instances
+            # Convert json dictionary to unit instances
             for name, args in data.items():
-                # The conversion factor is required
                 factor = args.get("factor", None)
                 if factor is None:
                     raise ConverterError(f"{name} is missing required factor")
 
-                # Other keys are optional
                 symbols = args.get("symbols", [])
                 aliases = args.get("aliases", [])
                 prefixes = args.get("prefix", None)
 
-                # Create the unit
-                registry.add_unit(Unit(name, symbols, aliases, dimension, factor, prefixes))
+                # Register the unit
+                unit = Unit(factor, name, dimension, symbols, aliases, prefixes)
+                registry.add_unit(unit)
 
         # Load composite unit aliases
         aliases = self._parse_json(alias_file)
@@ -69,7 +70,7 @@ class FileParser:
 
         for alias, name in aliases.items():
             unit = parser.parse_unit(name)
-            registry.add_alias(alias, unit)
+            registry.add_alias(unit, alias)
 
     def _parse_json(self, filename: Path) -> dict:
         """ Parse a json file into a dictionary. """

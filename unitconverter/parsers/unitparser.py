@@ -5,7 +5,7 @@
 import re
 
 from unitconverter.exceptions import ConverterError, InvalidUnitError
-from unitconverter.models.unit import BaseUnit
+from unitconverter.models.unit import Unit
 from unitconverter.registry import Registry
 
 
@@ -19,7 +19,7 @@ class UnitParser:
 
         self.registry = registry
 
-    def parse_unit(self, name: str | BaseUnit) -> BaseUnit:
+    def parse_unit(self, name: str | Unit) -> Unit:
         """ Parse a unit name into a unit instance.
 
         Parameters
@@ -29,12 +29,12 @@ class UnitParser:
 
         Returns
         -------
-        BaseUnit
+        Unit
             The unit instance
         """
 
         # Check if we already have a unit
-        if isinstance(name, BaseUnit):
+        if isinstance(name, Unit):
             return name
 
         if not name or not isinstance(name, str):
@@ -74,7 +74,7 @@ class UnitParser:
 
         return unit
 
-    def _parse_unit_name(self, name: str) -> BaseUnit:
+    def _parse_unit_name(self, name: str) -> Unit:
         """ Parse a unit string with potential exponent into a unit instance. """
         name, exponent = self._split_exponent(name)
         unit = self.registry.get_unit(name)
@@ -84,7 +84,7 @@ class UnitParser:
 
         return unit ** exponent
 
-    def _multiply_units(self, name: str) -> BaseUnit:
+    def _multiply_units(self, name: str) -> Unit:
         """ Parse a unit string with multiplication symbol into a composite unit. """
         units = None
         for name in name.split("*"):

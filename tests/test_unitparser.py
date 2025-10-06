@@ -5,20 +5,22 @@
 import unittest
 from fractions import Fraction
 
-from tests.mock_units import metre, second
-
 from unitconverter.exceptions import InvalidUnitError
 from unitconverter.models.dimension import Dimension
 from unitconverter.parsers.unitparser import UnitParser
 from unitconverter.registry import Registry
+
+from tests import metre, second
 
 
 class TestUnitParser(unittest.TestCase):
     """ Tests for the UnitParser class. """
 
     def setUp(self) -> None:
-        self.registry = Registry([metre, second])
-        self.parser = UnitParser(self.registry)
+        registry = Registry()
+        registry.add_unit(metre)
+        registry.add_unit(second)
+        self.parser = UnitParser(registry)
 
     def test__init__(self):
         # Invalid registry should raise a typeError

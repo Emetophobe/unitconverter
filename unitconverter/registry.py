@@ -27,8 +27,7 @@ class Registry:
         """ Add a unit to the registry.
             Also adds prefixed versions of the unit if the unit has a prefix setting.
         """
-        if not isinstance(unit, Unit):
-            raise TypeError(f"{unit!r} is not a valid unit")
+        validate_unit(unit)
 
         # Register all unit names and symbols
         for name in unit.names:
@@ -41,15 +40,12 @@ class Registry:
             symbols = [prefix.symbol + symbol for symbol in unit.symbols]
             aliases = [prefix.name + alias for alias in unit.aliases]
 
-            self.add_unit(Unit(factor, name, unit.dimension, symbols, aliases))
+            self.add_unit(Unit(name, factor, unit.dimension, symbols, aliases))
 
     def add_alias(self, unit: Unit, alias: str) -> None:
         """ Add a unit alias to the registry. """
-        if not isinstance(unit, Unit):
-            raise TypeError(f"{unit!r} is not a valid unit")
-
-        if not alias or not isinstance(alias, str):
-            raise TypeError(f"{alias!r} is not a valid unit alias")
+        validate_unit(unit)
+        validate_alias(alias)
 
         # Check for duplicate aliases
         if alias in self.units:
@@ -68,3 +64,19 @@ class Registry:
     def clear(self) -> None:
         """ Clear the unit registry. """
         self.units.clear()
+
+
+def validate_unit(unit: Unit) -> Unit:
+    """ Check if the unit is valid. """
+    if not isinstance(unit, Unit):
+        raise TypeError(f"{unit!r} is not a valid unit")
+
+    return unit
+
+
+def validate_alias(alias: str) -> str:
+    """ Check if a unit alias is valid. """
+    if not alias or not isinstance(alias, str):
+        raise TypeError(f"{alias!r} is not a valid unit alias")
+
+    return alias

@@ -18,7 +18,7 @@ class FileParser:
 
     def load_units(self, registry: Registry) -> None:
         """ Load pre-defined units into the specified registry.
-            Clears any pre-existing registry units.
+            Clears any existing registry units.
         """
 
         if not isinstance(registry, Registry):
@@ -60,8 +60,8 @@ class FileParser:
                 aliases = args.get("aliases", [])
                 prefixes = args.get("prefix", None)
 
-                # Register the unit
-                unit = Unit(factor, name, dimension, symbols, aliases, prefixes)
+                # Create  and registerthe unit
+                unit = Unit(name, factor, dimension, symbols, aliases, prefixes)
                 registry.add_unit(unit)
 
         # Load composite unit aliases

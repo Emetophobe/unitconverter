@@ -13,8 +13,8 @@ class Unit:
     """ A unit can represent a single unit or a composite unit. """
 
     def __init__(self,
-                 factor: Fraction | str | int,
                  name: str | Dimension,
+                 factor: Fraction | str | int,
                  dimension: str | Dimension | None,
                  symbols: list[str] | None = None,
                  aliases: list[str] | None = None,
@@ -24,11 +24,11 @@ class Unit:
 
         Parameters
         ----------
-        factor : Fraction | str | int
-            The conversion or multiplication factor.
-
         name : str | Dimension
             A unit name or a dictionary of unit names and exponents.
+
+        factor : Fraction | str | int
+            The conversion or multiplication factor.
 
         dimension : Dimension | None
             A dimension name or dictionary of dimension names and exponents.
@@ -42,11 +42,11 @@ class Unit:
         prefixes: str | None, optional
             If the unit supports metric or binary prefixes, by default None
         """
-        self.factor = parse_fraction(factor)
         self.units = Dimension(name)
+        self.factor = parse_fraction(factor)
         self.dimension = Dimension(dimension)
-        self.symbols = symbols or []
-        self.aliases = aliases or []
+        self.symbols = symbols or []  # TODO: handle composite symbols
+        self.aliases = aliases or []  # TODO: handle composite aliases
         self.prefixes = prefixes
 
     @property
@@ -62,19 +62,17 @@ class Unit:
     def __mul__(self, other: Self) -> Self:
         """ Multiply a unit with another unit. Returns a new unit. """
         if isinstance(other, Unit):
-            return self.__class__(self.factor * other.factor,
-                                  self.units * other.units,
+            return self.__class__(self.units * other.units,
+                                  self.factor * other.factor,
                                   self.dimension * other.dimension)
-
         return NotImplemented
 
     def __truediv__(self, other: Self) -> Self:
         """ Divide a unit with another unit. Returns a new unit. """
         if isinstance(other, Unit):
-            return self.__class__(self.factor / other.factor,
-                                  self.units / other.units,
+            return self.__class__(self.units / other.units,
+                                  self.factor / other.factor,
                                   self.dimension / other.dimension)
-
         return NotImplemented
 
     def __pow__(self, exponent: int) -> Self:
@@ -83,8 +81,8 @@ class Unit:
             if exponent == 0:
                 raise ValueError("exponent must be a non-zero integer")
 
-            return self.__class__(self.factor ** exponent,
-                                  self.units ** exponent,
+            return self.__class__(self.units ** exponent,
+                                  self.factor ** exponent,
                                   self.dimension ** exponent)
 
         return NotImplemented
@@ -95,7 +93,8 @@ class Unit:
                 and self.name == other.name
                 and self.factor == other.factor
                 and self.dimension == other.dimension
-                and self.units == other.units)
+                and self.symbols == other.symbols
+                and self.aliases == other.aliases)
 
     def __repr__(self) -> str:
         args = [repr(val) for val in self.__dict__.items()]

@@ -5,5 +5,5 @@
 from unitconverter.models.unit import Unit
 
 # Mock units
-metre = Unit(1, "metre", "length", ["m"], ["metres"], "metric")
-second = Unit(1, "second", "time", ["s"], ["seconds"], "metric")
+metre = Unit("metre", 1, "length", ["m"], ["metres"], "metric")
+second = Unit("second", 1, "time", ["s"], ["seconds"], "metric")

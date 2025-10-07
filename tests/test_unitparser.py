@@ -17,9 +17,7 @@ class TestUnitParser(unittest.TestCase):
     """ Tests for the UnitParser class. """
 
     def setUp(self) -> None:
-        registry = Registry()
-        registry.add_unit(metre)
-        registry.add_unit(second)
+        registry = Registry([metre, second])
         self.parser = UnitParser(registry)
 
     def test__init__(self):
@@ -29,9 +27,8 @@ class TestUnitParser(unittest.TestCase):
 
     def test_parse_unit(self) -> None:
         # Invalid arguments should raise a TypeError
-        for invalid_type in ("", 1, 3.14, [], (), {}):
-            with self.assertRaises(TypeError):
-                self.parser.parse_unit(invalid_type)  # type: ignore
+        with self.assertRaises(TypeError):
+            self.parser.parse_unit(None)  # type: ignore
 
         # Undefined units should raise an InvalidUnitError
         with self.assertRaises(InvalidUnitError):

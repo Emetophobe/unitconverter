@@ -16,4 +16,4 @@ def parse_fraction(value: Fraction | str | int) -> Fraction:
     try:
         return Fraction(value)
     except (TypeError, ValueError):
-        raise TypeError(f"{value!r} is not a fraction or decimal value")
+        raise TypeError(f"{value!r} is not a numeric value")

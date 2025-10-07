@@ -33,7 +33,7 @@ class FileParser:
         try:
             files.remove(alias_file)
         except ValueError:
-            raise ConverterError(f"No alias file found in '{alias_file.absolute()}'")
+            raise ConverterError(f"Missing alias file '{alias_file}'")
 
         if not files:
             raise ConverterError(f"No unit files found in '{path.absolute()}'")

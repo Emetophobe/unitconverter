@@ -15,7 +15,7 @@ class Unit:
     def __init__(self,
                  name: str | Dimension,
                  factor: Fraction | str | int,
-                 dimension: str | Dimension | None,
+                 dimension: str | Dimension,
                  symbols: list[str] | None = None,
                  aliases: list[str] | None = None,
                  prefixes: str | None = None
@@ -30,7 +30,7 @@ class Unit:
         factor : Fraction | str | int
             The conversion or multiplication factor.
 
-        dimension : Dimension | None
+        dimension : str | Dimension
             A dimension name or dictionary of dimension names and exponents.
 
         symbols : list[str] | None, optional
@@ -97,8 +97,7 @@ class Unit:
                 and self.aliases == other.aliases)
 
     def __repr__(self) -> str:
-        args = [repr(val) for val in self.__dict__.items()]
-        return f"Unit({", ".join(args)})"
+        return f"Unit({self.name}, {self.factor}, {self.dimension}"
 
     def __str__(self) -> str:
         return self.name

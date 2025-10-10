@@ -94,7 +94,7 @@ class Dimension(dict[str, int]):
         return self.__class__(dimension)
 
     def __repr__(self) -> str:
-        return f"Dimension({super().__repr__()})"
+        return super().__repr__()
 
     def __str__(self) -> str:
         return self.name

@@ -90,11 +90,10 @@ class UnitParser:
         for name in name.split("*"):
             unit = self._parse_unit_name(name)
 
-            # Check for temperature units which can't be composited
-            if (unit.dimension.name == "temperature" and not unit.name.endswith("kelvin")
-                    and not unit.name == "rankine"):
-                raise ConverterError(f"{unit.name} cannot be composited with other units"
-                                     " (only kelvin and rankine are currently supported)")
+            # Check for offset temperature units which can't be composited
+            if unit.name in ("celsius", "fahrenheit"):
+                raise ConverterError(f"{unit.name} cannot be composited with other units",
+                                     "only kelvin and rankine are currently supported")
 
             if units is None:
                 units = unit
